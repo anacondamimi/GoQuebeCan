@@ -2,104 +2,75 @@
 
 const componentMap: Record<string, () => Promise<any>> = {
   'anse-saint-jean': () =>
-    import('app/components/blogpost/BlogArticleAnseSaintJean').then((mod) => mod.default),
+    import('@/components/blogpost/BlogArticleAnseSaintJean').then((mod) => mod.default),
   'baie-saint-paul': () =>
-    import('app/components/blogpost/BlogArticleBaieSaintPaul').then((mod) => mod.default),
-  bic: () => import('app/components/blogpost/BlogArticleBic').then((mod) => mod.BlogArticleBic),
+    import('@/components/blogpost/BlogArticleBaieSaintPaul').then((mod) => mod.default),
+  bic: () =>
+    import('@/components/blogpost/BlogArticleBic').then((mod) => mod.default),
   'bromont-granby': () =>
-    import('app/components/blogpost/BlogArticleBromontGranby').then(
-      (mod) => mod.BlogArticleBromontGranby
-    ),
+    import('@/components/blogpost/BlogArticleBromontGranby').then((mod) => mod.default),
   canyon: () =>
-    import('app/components/blogpost/BlogArticleCanyon').then((mod) => mod.BlogArticleCanyon),
+    import('@/components/blogpost/BlogArticleCanyon').then((mod) => mod.default),
   carleton: () =>
-    import('app/components/blogpost/BlogArticleCarleton').then((mod) => mod.BlogArticleCarleton),
+    import('@/components/blogpost/BlogArticleCarleton').then((mod) => mod.default),
   'eeyou-istchee': () =>
-    import('app/components/blogpost/BlogArticleEeyouIstchee').then(
-      (mod) => mod.BlogArticleEeyouIstchee
-    ),
+    import('@/components/blogpost/BlogArticleEeyouIstchee').then((mod) => mod.default),
   forillon: () =>
-    import('app/components/blogpost/BlogArticleForillon').then((mod) => mod.BlogArticleForillon),
+    import('@/components/blogpost/BlogArticleForillon').then((mod) => mod.default),
   gaspesie: () =>
-    import('app/components/blogpost/BlogArticleGaspesie').then((mod) => mod.BlogArticleGaspesie),
+    import('@/components/blogpost/BlogArticleGaspesie').then((mod) => mod.default),
   'grand-bend': () =>
-    import('app/components/blogpost/BlogArticleGrandBend').then((mod) => mod.BlogArticleGrandBend),
+    import('@/components/blogpost/BlogArticleGrandBend').then((mod) => mod.default),
   'hautes-gorges': () =>
-    import('app/components/blogpost/BlogArticleHautesGorges').then(
-      (mod) => mod.BlogArticleHautesGorges
-    ),
+    import('@/components/blogpost/BlogArticleHautesGorges').then((mod) => mod.default),
   kamouraska: () =>
-    import('app/components/blogpost/BlogArticleKamouraska').then(
-      (mod) => mod.BlogArticleKamouraska
-    ),
+    import('@/components/blogpost/BlogArticleKamouraska').then((mod) => mod.default),
   kuururjuaq: () =>
-    import('app/components/blogpost/BlogArticleKuururjuaq').then(
-      (mod) => mod.BlogArticleKuururjuaq
-    ),
+    import('@/components/blogpost/BlogArticleKuururjuaq').then((mod) => mod.default),
   levis: () =>
-    import('app/components/blogpost/BlogArticleLevis').then((mod) => mod.BlogArticleLevis),
+    import('@/components/blogpost/BlogArticleLevis').then((mod) => mod.default),
   'location-v-r': () =>
-    import('app/components/blogpost/BlogArticleLocationVR').then(
-      (mod) => mod.BlogArticleLocationVR
-    ),
+    import('@/components/blogpost/BlogArticleLocationVR').then((mod) => mod.default),
   'magog-orford': () =>
-    import('app/components/blogpost/BlogArticleMagogOrford').then(
-      (mod) => mod.BlogArticleMagogOrford
-    ),
+    import('@/components/blogpost/BlogArticleMagogOrford').then((mod) => mod.default),
   massif: () =>
-    import('app/components/blogpost/BlogArticleMassif').then((mod) => mod.BlogArticleMassif),
+    import('@/components/blogpost/BlogArticleMassif').then((mod) => mod.default),
   mingan: () =>
-    import('app/components/blogpost/BlogArticleMingan').then((mod) => mod.BlogArticleMingan),
+    import('@/components/blogpost/BlogArticleMingan').then((mod) => mod.default),
   montmorency: () =>
-    import('app/components/blogpost/BlogArticleMontmorency').then(
-      (mod) => mod.BlogArticleMontmorency
-    ),
+    import('@/components/blogpost/BlogArticleMontmorency').then((mod) => mod.default),
   montreal: () =>
-    import('app/components/blogpost/BlogArticleMontreal').then((mod) => mod.BlogArticleMontreal),
+    import('@/components/blogpost/BlogArticleMontreal').then((mod) => mod.default),
   orleans: () =>
-    import('app/components/blogpost/BlogArticleOrleans').then((mod) => mod.BlogArticleOrleans),
+    import('@/components/blogpost/BlogArticleOrleans').then((mod) => mod.default),
   perce: () =>
-    import('app/components/blogpost/BlogArticlePerce').then((mod) => mod.BlogArticlePerce),
+    import('@/components/blogpost/BlogArticlePerce').then((mod) => mod.default),
   'port-au-persil': () =>
-    import('app/components/blogpost/BlogArticlePortAuPersil').then(
-      (mod) => mod.BlogArticlePortAuPersil
-    ),
+    import('@/components/blogpost/BlogArticlePortAuPersil').then((mod) => mod.default),
   'port-cartier': () =>
-    import('app/components/blogpost/BlogArticlePortCartier').then(
-      (mod) => mod.BlogArticlePortCartier
-    ),
+    import('@/components/blogpost/BlogArticlePortCartier').then((mod) => mod.default),
   'port-dover': () =>
-    import('app/components/blogpost/BlogArticlePortDover').then((mod) => mod.BlogArticlePortDover),
+    import('@/components/blogpost/BlogArticlePortDover').then((mod) => mod.default),
   quebec: () =>
-    import('app/components/blogpost/BlogArticleQuebec').then((mod) => mod.BlogArticleQuebec),
+    import('@/components/blogpost/BlogArticleQuebec').then((mod) => mod.default),
   'rivieredu-loup': () =>
-    import('app/components/blogpost/BlogArticleRiviereduLoup').then(
-      (mod) => mod.BlogArticleRiviereduLoup
-    ),
+    import('@/components/blogpost/BlogArticleRiviereduLoup').then((mod) => mod.default),
   sabrevois: () =>
-    import('app/components/blogpost/BlogArticleSabrevois').then((mod) => mod.BlogArticleSabrevois),
+    import('@/components/blogpost/BlogArticleSabrevois').then((mod) => mod.default),
   sandbanks: () =>
-    import('app/components/blogpost/BlogArticleSandbanks').then((mod) => mod.BlogArticleSandbanks),
+    import('@/components/blogpost/BlogArticleSandbanks').then((mod) => mod.default),
   'sauble-beach': () =>
-    import('app/components/blogpost/BlogArticleSaubleBeach').then(
-      (mod) => mod.BlogArticleSaubleBeach
-    ),
+    import('@/components/blogpost/BlogArticleSaubleBeach').then((mod) => mod.default),
   'sept-iles': () =>
-    import('app/components/blogpost/BlogArticleSeptIles').then((mod) => mod.BlogArticleSeptIles),
+    import('@/components/blogpost/BlogArticleSeptIles').then((mod) => mod.default),
   sherbrooke: () =>
-    import('app/components/blogpost/BlogArticleSherbrooke').then(
-      (mod) => mod.BlogArticleSherbrooke
-    ),
+    import('@/components/blogpost/BlogArticleSherbrooke').then((mod) => mod.default),
   'singing-sands': () =>
-    import('app/components/blogpost/BlogArticleSingingSands').then(
-      (mod) => mod.BlogArticleSingingSands
-    ),
+    import('@/components/blogpost/BlogArticleSingingSands').then((mod) => mod.default),
   tadoussac: () =>
-    import('app/components/blogpost/BlogArticleTadoussac').then((mod) => mod.BlogArticleTadoussac),
+    import('@/components/blogpost/BlogArticleTadoussac').then((mod) => mod.default),
   'wasaga-beach': () =>
-    import('app/components/blogpost/BlogArticleWasagaBeach').then(
-      (mod) => mod.BlogArticleWasagaBeach
-    ),
+    import('@/components/blogpost/BlogArticleWasagaBeach').then((mod) => mod.default),
 };
 
 export default componentMap;
