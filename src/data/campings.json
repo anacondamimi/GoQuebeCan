@@ -1,0 +1,26 @@
+{
+  "camping-aventure-megantic": {
+    "title": "Camping Aventure Mégantic",
+    "location": "Frontenac, Cantons-de-l'Est",
+    "description": "Situé près du lac Mégantic, ce camping offre des installations modernes et un environnement paisible.",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80",
+    "price": "À partir de 30$/nuit",
+    "bestFor": "Amateurs d'astronomie",
+    "facilities": ["Douches", "Électricité", "Wifi"],
+    "activities": ["Observation des étoiles", "Randonnée", "Baignade"],
+    "season": "Mai à Octobre",
+    "capacity": "150 emplacements"
+  },
+  "camping-15-30": {
+    "title": "Camping 15/30",
+    "location": "Saint-Philippe-de-Laprairie, Montérégie",
+    "description": "Ce camping familial est réputé pour ses installations aquatiques, notamment ses trois glissades d'eau.",
+    "image": "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80",
+    "price": "À partir de 35$/nuit",
+    "bestFor": "Familles",
+    "facilities": ["Glissades d'eau", "Piscine", "Terrain de jeux"],
+    "activities": ["Baignade", "Sports nautiques", "Animations"],
+    "season": "Mai à Septembre",
+    "capacity": "200 emplacements"
+  }
+}

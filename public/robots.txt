@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Prevent duplicate content
+Disallow: /*?*
+Disallow: /*?
+
+# Sitemaps
+Sitemap: https://goquebecan.com/sitemap.xml
+
+
+# Optimize crawling
+Crawl-delay: 1

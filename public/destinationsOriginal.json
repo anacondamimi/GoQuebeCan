@@ -1,0 +1,578 @@
+[
+  {
+    "slug": "anse-saint-jean",
+    "ville": "Anse Saint Jean",
+    "resume": "Découverte de Anse Saint Jean et de ses attraits touristiques.",
+    "activites": [
+      "Croisière sur le Fjord",
+      "Mont-Édouard",
+      "Kayak de Mer",
+      "Via Ferrata du Fjord",
+      "Plage municipale",
+      "Petit Train du Fjord",
+      "Initiation au Kayak",
+      "École de Voile",
+      "Vélo de Montagne",
+      "Randonnée Alpine"
+    ],
+    "hebergements": ["Auberge des Cévennes", "Chalets sur le Fjord", "Gîte du Fjord"],
+    "publics": ["familles", "ados", "aventuriers"]
+  },
+  {
+    "slug": "baie-saint-paul",
+    "ville": "Baie Saint Paul",
+    "resume": "Découverte de Baie Saint Paul et de ses attraits touristiques.",
+    "activites": [
+      "Circuit des Galeries d",
+      "Randonnée Le Gouffre",
+      "Train de Charlevoix",
+      "Parc du Boisé",
+      "Atelier de Peinture",
+      "Ferme Basque",
+      "Location de Vélos",
+      "Cours de Photo",
+      "Rafting sur la Rivière"
+    ],
+    "hebergements": ["Le Germain Charlevoix", "Auberge La Grande Maison", "Maison Otis"],
+    "publics": ["familles", "ados", "amateurs de culture", "aventuriers"]
+  },
+  {
+    "slug": "bic",
+    "ville": "Bic",
+    "resume": "Découverte de Bic et de ses attraits touristiques.",
+    "activites": [
+      "Observation des Phoques",
+      "Randonnée Pic Champlain",
+      "Kayak de Mer",
+      "Sentier Le Chemin du Nord",
+      "Centre de Découverte",
+      "Plage du Havre du Bic",
+      "Vélo de Montagne",
+      "Kayak Aventure",
+      "Randonnée Photo"
+    ],
+    "hebergements": ["Auberge du Mange Grenouille", "Gîte du Bic", "Camping du Bic"],
+    "publics": ["familles", "ados", "aventuriers"]
+  },
+  {
+    "slug": "bromont-granby",
+    "ville": "Bromont Granby",
+    "resume": "Découverte de Bromont Granby et de ses attraits touristiques.",
+    "activites": [
+      "Zoo de Granby",
+      "Parc aquatique Bromont",
+      "Yamaska National Park",
+      "Vélo de Montagne",
+      "Arbre en Arbre",
+      "Ski de Soirée"
+    ],
+    "hebergements": ["St-Martin Bromont", "Château-Bromont", "Hôtel Castel & Spa Confort"],
+    "publics": ["familles", "ados"]
+  },
+  {
+    "slug": "canyon",
+    "ville": "Canyon",
+    "resume": "Découverte de Canyon et de ses attraits touristiques.",
+    "activites": [
+      "Passerelle Suspendue",
+      "Sentiers de Randonnée",
+      "Via Ferrata",
+      "Sentier Découverte",
+      "Mini-Passerelle",
+      "Rallye Nature",
+      "Via Ferrata Découverte",
+      "Randonnée Extrême",
+      "Photographie Nature"
+    ],
+    "hebergements": ["Hôtel Rimouski", "Auberge du Portage", "Motel de la Montagne"],
+    "publics": ["familles", "ados", "aventuriers"]
+  },
+  {
+    "slug": "carleton",
+    "ville": "Carleton",
+    "resume": "Découverte de Carleton et de ses attraits touristiques.",
+    "activites": [
+      "Mont Saint-Joseph",
+      "Plage de Carleton",
+      "Club nautique",
+      "Initiation au Kayak",
+      "Chasse aux Trésors",
+      "Mini-Golf Maritime",
+      "École de Voile",
+      "Planche à Pagaie",
+      "Vélo de Montagne"
+    ],
+    "hebergements": ["Hostellerie Baie Bleue", "Manoir Belle Plage", "Auberge du Marchand"],
+    "publics": ["familles", "ados", "amateurs de culture", "aventuriers"]
+  },
+  {
+    "slug": "eeyou-istchee",
+    "ville": "Eeyou Istchee",
+    "resume": "Découverte de Eeyou Istchee et de ses attraits touristiques.",
+    "activites": [
+      "Kayak à Wemindji",
+      "Randonnée Taïga",
+      "Centre Culturel Cri",
+      "Atelier Culture Crie",
+      "Mini-Expédition Nature",
+      "Initiation Pêche",
+      "Survie en Forêt",
+      "Kayak Aventure",
+      "Photo Safari"
+    ],
+    "hebergements": ["Auberge Radisson", "Hôtel Matagami", "Éco-gîtes de Matagami"],
+    "publics": ["familles", "ados", "amateurs de culture", "aventuriers"]
+  },
+  {
+    "slug": "forillon",
+    "ville": "Forillon",
+    "resume": "Découverte de Forillon et de ses attraits touristiques.",
+    "activites": [
+      "Randonnée Les Graves",
+      "Observation des Baleines",
+      "Phare de Cap-des-Rosiers",
+      "Plage de Cap-Bon-Ami",
+      "Xplorateurs du Parc",
+      "Initiation à la Pêche",
+      "Découverte des Marées",
+      "Randonnée Mont Saint-Alban",
+      "Vélo de Montagne",
+      "Kayak de Mer"
+    ],
+    "hebergements": ["Hôtel Baker", "Auberge Gaspé", "Motel Adams"],
+    "publics": ["familles", "ados", "amateurs de culture", "aventuriers"]
+  },
+  {
+    "slug": "gaspesie",
+    "ville": "Gaspesie",
+    "resume": "Découverte de Gaspesie et de ses attraits touristiques.",
+    "activites": [],
+    "hebergements": [],
+    "publics": ["aventuriers"]
+  },
+  {
+    "slug": "grand-bend",
+    "ville": "Grand Bend",
+    "resume": "Découverte de Grand Bend et de ses attraits touristiques.",
+    "activites": [
+      "Main Beach",
+      "Pinery Provincial Park",
+      "Grand Bend Marina",
+      "Plage Familiale",
+      "Grand Bend Splash Pad",
+      "Mini-Golf Adventure",
+      "École de Surf",
+      "Location de Jet-Ski",
+      "Parasailing"
+    ],
+    "hebergements": ["Pine Dale Motor Inn", "Oakwood Resort", "Colonial Hotel"],
+    "publics": ["familles", "ados"]
+  },
+  {
+    "slug": "hautes-gorges",
+    "ville": "Hautes Gorges",
+    "resume": "Découverte de Hautes Gorges et de ses attraits touristiques.",
+    "activites": [
+      "Croisière sur la Rivière Malbaie",
+      "Sentier des Érables",
+      "Via Ferrata de la Charlevoix",
+      "Mini-Croisière Découverte",
+      "Rallye Nature",
+      "Atelier Junior Ranger",
+      "Initiation à l",
+      "Location de Kayak",
+      "Randonnée L"
+    ],
+    "hebergements": [
+      "Auberge des Hautes-Gorges",
+      "Fairmont Le Manoir Richelieu",
+      "Auberge La Marmite"
+    ],
+    "publics": ["familles", "ados", "aventuriers"]
+  },
+  {
+    "slug": "kamouraska",
+    "ville": "Kamouraska",
+    "resume": "Découverte de Kamouraska et de ses attraits touristiques.",
+    "activites": [
+      "Coucher de Soleil sur le Fleuve",
+      "Musée régional de Kamouraska",
+      "Sentier du Cabouron",
+      "Plage de Kamouraska",
+      "Centre d",
+      "Ferme Gijamika",
+      "Location de Kayak",
+      "Vélo sur la Route Verte",
+      "Atelier Photo"
+    ],
+    "hebergements": ["Auberge des Îles", "Motel des Mariniers", "Gîte des Coquillages"],
+    "publics": ["familles", "ados", "amateurs de culture", "aventuriers"]
+  },
+  {
+    "slug": "kuururjuaq",
+    "ville": "Kuururjuaq",
+    "resume": "Découverte de Kuururjuaq et de ses attraits touristiques.",
+    "activites": ["Mont D", "Rivière Koroc", "Randonnée Tundra"],
+    "hebergements": ["Auberge Kuujjuaq", "Camps de Base Kuururjuaq"],
+    "publics": ["amateurs de culture", "aventuriers"]
+  },
+  {
+    "slug": "levis",
+    "ville": "Levis",
+    "resume": "Découverte de Levis et de ses attraits touristiques.",
+    "activites": [
+      "Terrasse de Lévis",
+      "Parc des Chutes-de-la-Chaudière",
+      "Parcours des Anses",
+      "Parc des Chutes-de-la-Chaudière",
+      "Aquarium du Québec",
+      "Lieu historique du Fort-Numéro-Un",
+      "Vélo sur le Parcours des Anses",
+      "Escalade Intérieure",
+      "Paintball Lévis"
+    ],
+    "hebergements": [
+      "Four Points by Sheraton Lévis",
+      "Comfort Inn Lévis",
+      "Quality Inn & Suites Lévis"
+    ],
+    "publics": ["familles", "ados"]
+  },
+  {
+    "slug": "pourquoi-louer-un-vr-au-quebec-avec-authentik-canada",
+    "ville": "Pourquoi louer un VR au Québec avec Authentik Canada ?",
+    "resume": "Découverte de Pourquoi louer un VR au Québec avec Authentik Canada ? et de ses attraits touristiques.",
+    "activites": [],
+    "hebergements": [],
+    "publics": []
+  },
+  {
+    "slug": "magog-orford",
+    "ville": "Magog Orford",
+    "resume": "Découverte de Magog Orford et de ses attraits touristiques.",
+    "activites": [
+      "Parc de la Plage-des-Cantons",
+      "École de Voile",
+      "Marais de la Rivière aux Cerises",
+      "Vélo de Montagne",
+      "Location de Kayak",
+      "Escalade"
+    ],
+    "hebergements": ["Manoir Hovey", "Estrimont Suites & Spa", "Auberge du Grand Lac"],
+    "publics": ["familles", "ados", "aventuriers"]
+  },
+  {
+    "slug": "massif",
+    "ville": "Massif",
+    "resume": "Découverte de Massif et de ses attraits touristiques.",
+    "activites": [
+      "École de Ski Junior",
+      "Parc d",
+      "Chasse au Trésor",
+      "Snowpark",
+      "Camp Ados Freeride",
+      "Descente en Fat Bike"
+    ],
+    "hebergements": ["Hôtel Le Massif", "Refuge Le Massif", "Chalets du Massif"],
+    "publics": ["familles", "ados", "aventuriers"]
+  },
+  {
+    "slug": "mingan",
+    "ville": "Mingan",
+    "resume": "Découverte de Mingan et de ses attraits touristiques.",
+    "activites": [
+      "Excursion aux Monolithes",
+      "Randonnée Île Niapiskau",
+      "Observation des Oiseaux",
+      "Découverte des Fossiles",
+      "Mini-Croisière",
+      "Centre d",
+      "Kayak de Mer",
+      "Randonnée Photo",
+      "Zodiac Aventure"
+    ],
+    "hebergements": ["Auberge de l", "Gîte Chez Marie", "Chalets des Îles"],
+    "publics": ["familles", "ados", "aventuriers"]
+  },
+  {
+    "slug": "montmorency",
+    "ville": "Montmorency",
+    "resume": "Découverte de Montmorency et de ses attraits touristiques.",
+    "activites": [
+      "Via Ferrata de la Chute",
+      "Téléphérique Panoramique",
+      "Randonnée des Chutes",
+      "Tyrolienne Double",
+      "Jeux d",
+      "Rallye-découverte"
+    ],
+    "hebergements": ["Manoir Montmorency", "Auberge Baker", "Comfort Inn Beauport"],
+    "publics": ["familles", "aventuriers"]
+  },
+  {
+    "slug": "montreal",
+    "ville": "Montreal",
+    "resume": "Découverte de Montreal et de ses attraits touristiques.",
+    "activites": ["Vieux-Montréal", "Mont Royal", "Biodôme"],
+    "hebergements": ["Fairmont Le Reine Elizabeth", "Hôtel Nelligan", "Le Plateau Hotel"],
+    "publics": ["amateurs de culture"]
+  },
+  {
+    "slug": "orleans",
+    "ville": "Orleans",
+    "resume": "Découverte de Orleans et de ses attraits touristiques.",
+    "activites": ["Tour Gourmand de l", "Location de Vélos", "Vignobles et Cidreries"],
+    "hebergements": ["Auberge La Grange de l", "Le Domaine Orléans", "Les Chalets de l"],
+    "publics": ["aventuriers"]
+  },
+  {
+    "slug": "perce",
+    "ville": "Perce",
+    "resume": "Découverte de Perce et de ses attraits touristiques.",
+    "activites": [
+      "Croisière aux Baleines",
+      "Île Bonaventure",
+      "Géoparc de Percé",
+      "Rallye du Géoparc",
+      "Mini-Croisière",
+      "Plage de l",
+      "Initiation au Kayak de Mer",
+      "Atelier Photo Nature",
+      "Randonnée Nocturne"
+    ],
+    "hebergements": ["Riotel Percé", "Hôtel La Normandie", "Au Pic de l"],
+    "publics": ["familles", "ados", "aventuriers"]
+  },
+  {
+    "slug": "port-au-persil",
+    "ville": "Port Au Persil",
+    "resume": "Découverte de Port Au Persil et de ses attraits touristiques.",
+    "activites": [
+      "Observation des Baleines",
+      "Sentier des Caps",
+      "Kayak de Mer",
+      "Plage de Port-au-Persil",
+      "Pêche aux Coques",
+      "Mini-Croisière",
+      "Randonnée Photo",
+      "Kayak Aventure",
+      "Vélo de Montagne"
+    ],
+    "hebergements": ["Auberge des Falaises", "Gîte du Hameau", "Chalets Port-au-Persil"],
+    "publics": ["familles", "ados", "aventuriers"]
+  },
+  {
+    "slug": "port-cartier",
+    "ville": "Port Cartier",
+    "resume": "Découverte de Port Cartier et de ses attraits touristiques.",
+    "activites": [
+      "Parc de la Taïga",
+      "Rivière aux Rochers",
+      "Port Industriel",
+      "Plage Rochelois",
+      "Centre d",
+      "Parc Récréotouristique",
+      "Vélo de Montagne",
+      "Kayak de Mer",
+      "Pêche au Saumon"
+    ],
+    "hebergements": ["Hôtel Port-Cartier", "Motel du Havre", "Auberge de la Rivière"],
+    "publics": ["familles", "ados", "amateurs de culture"]
+  },
+  {
+    "slug": "port-dover",
+    "ville": "Port Dover",
+    "resume": "Découverte de Port Dover et de ses attraits touristiques.",
+    "activites": [
+      "Port Dover Beach",
+      "Port Dover Harbour Museum",
+      "Long Point Eco-Adventures",
+      "Plage Principale",
+      "Mini-Golf Pirates",
+      "Port Dover Harbour Museum",
+      "Location de SUP",
+      "Surf sur le Lac",
+      "Tyrolienne"
+    ],
+    "hebergements": ["Erie Beach Hotel", "Dover Coast Resort", "Lighthouse Festival Theatre Inn"],
+    "publics": ["familles", "ados", "amateurs de culture"]
+  },
+  {
+    "slug": "quebec",
+    "ville": "Quebec",
+    "resume": "Découverte de Quebec et de ses attraits touristiques.",
+    "activites": [
+      "Visite guidée du Vieux-Québec",
+      "Croisière sur le Saint-Laurent",
+      "Musée de la Civilisation",
+      "Plaines d",
+      "Musée de la Civilisation",
+      "Chasse au Trésor dans le Vieux-Québec"
+    ],
+    "hebergements": [
+      "Fairmont Le Château Frontenac",
+      "Auberge Saint-Antoine",
+      "Hôtel Le Germain Québec"
+    ],
+    "publics": ["familles", "amateurs de culture"]
+  },
+  {
+    "slug": "rivieredu-loup",
+    "ville": "Rivieredu Loup",
+    "resume": "Découverte de Rivieredu Loup et de ses attraits touristiques.",
+    "activites": [
+      "Croisière aux Baleines",
+      "Parc des Chutes",
+      "Manoir Fraser",
+      "Centre Premier Tech",
+      "Parc des Chutes",
+      "Mini-Croisière",
+      "Vélo sur la Route Verte",
+      "Kayak de Mer",
+      "Escalade Intérieure"
+    ],
+    "hebergements": ["Hôtel Universel", "Quality Inn", "Auberge de la Pointe"],
+    "publics": ["familles", "ados", "amateurs de culture"]
+  },
+  {
+    "slug": "sabrevois",
+    "ville": "Sabrevois",
+    "resume": "Découverte de Sabrevois et de ses attraits touristiques.",
+    "activites": [
+      "Nuitée en Hutte Flottante",
+      "Kayak sur le Richelieu",
+      "Pêche Sportive",
+      "Mini-Croisière",
+      "Plage du Richelieu",
+      "Ferme Pédagogique",
+      "Location de SUP",
+      "Vélo le long du Richelieu",
+      "Cours de Voile"
+    ],
+    "hebergements": ["Les Huttes du Richelieu", "Auberge du Richelieu", "Gîte des Îles"],
+    "publics": ["familles", "ados"]
+  },
+  {
+    "slug": "sandbanks",
+    "ville": "Sandbanks",
+    "resume": "Découverte de Sandbanks et de ses attraits touristiques.",
+    "activites": [
+      "Dunes de Sandbanks",
+      "Outlet Beach",
+      "West Lake",
+      "Plage Outlet",
+      "Exploration des Dunes",
+      "Location de Pédalos",
+      "Planche à Voile",
+      "Vélo de Montagne",
+      "Surf sur le Lac"
+    ],
+    "hebergements": ["Sandbanks Summer Village", "The June Motel", "Picton Harbour Inn"],
+    "publics": ["familles", "ados"]
+  },
+  {
+    "slug": "sauble-beach",
+    "ville": "Sauble Beach",
+    "resume": "Découverte de Sauble Beach et de ses attraits touristiques.",
+    "activites": [
+      "Plage de Sauble",
+      "Sauble Falls Provincial Park",
+      "Sauble Speedway",
+      "Zone Familiale de la Plage",
+      "Mini-Golf Sauble",
+      "Parc Aquatique Gonflable",
+      "École de Surf",
+      "Location de Jet-Ski",
+      "Beach Volleyball"
+    ],
+    "hebergements": ["Sauble Beach Lodge", "Beach Resort Sauble", "Sauble River Marina"],
+    "publics": ["familles", "ados"]
+  },
+  {
+    "slug": "sept-iles",
+    "ville": "Sept Iles",
+    "resume": "Découverte de Sept Iles et de ses attraits touristiques.",
+    "activites": [
+      "Archipel des Sept Îles",
+      "Vieux-Quai",
+      "Musée Régional de la Côte-Nord",
+      "Plage Monaghan",
+      "Centre des Sciences",
+      "Mini-Croisière",
+      "Kayak de Mer",
+      "Randonnée des Falaises",
+      "Planche à Pagaie"
+    ],
+    "hebergements": ["Hôtel Sept-Îles", "Château Arnaud", "Le Voyageur"],
+    "publics": ["familles", "ados", "amateurs de culture", "aventuriers"]
+  },
+  {
+    "slug": "sherbrooke",
+    "ville": "Sherbrooke",
+    "resume": "Découverte de Sherbrooke et de ses attraits touristiques.",
+    "activites": [
+      "Musée de la Nature et des Sciences",
+      "Parc Jacques-Cartier",
+      "Centre de Sciences",
+      "Vélo de Montagne",
+      "Escalade Intérieure",
+      "Skateparc"
+    ],
+    "hebergements": ["OTL Gouverneur Sherbrooke", "Grand Times Hotel", "Hôtel Le Président"],
+    "publics": ["familles", "ados", "amateurs de culture", "aventuriers"]
+  },
+  {
+    "slug": "singing-sands",
+    "ville": "Singing Sands",
+    "resume": "Découverte de Singing Sands et de ses attraits touristiques.",
+    "activites": [
+      "Singing Sands Beach",
+      "Bruce Peninsula National Park",
+      "Fathom Five Marine Park",
+      "Plage Singing Sands",
+      "Sentier des Orchidées",
+      "Centre des Visiteurs",
+      "Randonnée Bruce Trail",
+      "Kayak sur le Lac",
+      "Plongée en Apnée"
+    ],
+    "hebergements": ["Bruce Anchor Motel", "Tobermory Princess Hotel", "Cedar Vista Motel"],
+    "publics": ["familles", "ados", "aventuriers"]
+  },
+  {
+    "slug": "tadoussac",
+    "ville": "Tadoussac",
+    "resume": "Découverte de Tadoussac et de ses attraits touristiques.",
+    "activites": [
+      "Croisière aux Baleines",
+      "Sentier de la Pointe-de-l",
+      "Centre d",
+      "Mini-Croisière",
+      "Plage de Tadoussac",
+      "Atelier Découverte des Baleines",
+      "Kayak de Mer",
+      "Randonnée du Fjord",
+      "Zodiac Aventure"
+    ],
+    "hebergements": ["Hôtel Tadoussac", "Auberge La Galouïne", "Motel Le Beluga"],
+    "publics": ["familles", "ados", "amateurs de culture", "aventuriers"]
+  },
+  {
+    "slug": "wasaga-beach",
+    "ville": "Wasaga Beach",
+    "resume": "Découverte de Wasaga Beach et de ses attraits touristiques.",
+    "activites": [
+      "Plage Principale",
+      "Wasaga Beach Provincial Park",
+      "Nancy Island Historic Site",
+      "Plage Zone 1",
+      "Location de Pédalos",
+      "Mini-Golf Pirates",
+      "Location de SUP",
+      "Beach Volleyball",
+      "Surf sur la Baie"
+    ],
+    "hebergements": ["Wasaga Riverdocks Hotel", "Beach Front Resort", "Wasaga Motel"],
+    "publics": ["familles", "ados", "amateurs de culture"]
+  }
+]

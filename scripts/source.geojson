@@ -1,0 +1,2627 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-05-17T15:41:56Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/462590758",
+        "addr:city": "Saint-Eugène de l'Islet",
+        "addr:housenumber": "29",
+        "addr:postcode": "G0R 1X0",
+        "addr:street": "Chemin Lamartine Est",
+        "contact:phone": "+1 418 247 5478",
+        "name": "Fruits et Légumes RG",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.327937,
+          47.0938468
+        ]
+      },
+      "id": "node/462590758"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/469867191",
+        "addr:city": "Saint-Henri-de-Lévis",
+        "addr:housenumber": "270",
+        "addr:postcode": "G0R 3E0",
+        "addr:street": "Chemin Jean-Guérin Ouest",
+        "contact:phone": "+1 418 882 2929",
+        "contact:website": "https://lesomnambule.com/",
+        "name": "Cidrerie Le Somnambule",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.0765364,
+          46.6619084
+        ]
+      },
+      "id": "node/469867191"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/947592289",
+        "addr:housenumber": "1257",
+        "addr:postcode": "J1X 3W5",
+        "addr:street": "Chemin de la Rivière",
+        "craft": "winery",
+        "name": "Le Cep d'Argent",
+        "website": "https://www.cepdargent.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.0561952,
+          45.2912118
+        ]
+      },
+      "id": "node/947592289"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1294534786",
+        "addr:city": "Rougemont",
+        "addr:housenumber": "501",
+        "addr:street": "Rue Principale",
+        "name": "La Fruiteraie des Gadbois",
+        "phone": "+1-450-469-3842",
+        "place": "farm",
+        "shop": "farm",
+        "source": "NRCan-CanVec-7.0",
+        "website": "https://lafruiteraie.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.0632586,
+          45.4432377
+        ]
+      },
+      "id": "node/1294534786"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1344056806",
+        "addr:housenumber": "317",
+        "addr:street": "Rue Saint-Jean-Baptiste",
+        "contact:facebook": "100086620583112",
+        "email": "magasin@chasse-pinte.com",
+        "name": "Le magasin",
+        "name:fr": "Le magasin",
+        "opening_hours": "Th-Sa 12:00-17:00",
+        "phone": "+1 418 608 8005",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.1966212,
+          48.2395286
+        ]
+      },
+      "id": "node/1344056806"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1700245168",
+        "addr:city": "Stanstead-Est",
+        "addr:housenumber": "3465",
+        "addr:postcode": "J0B 3E0",
+        "addr:street": "route 143 est",
+        "amenity": "marketplace",
+        "contact:phone": "+1-819-876-7568",
+        "contact:website": "http://www.bleuetorbleu.com/",
+        "name": "Bleuetière l’Or Bleu",
+        "note": "U-pick",
+        "shop": "farm",
+        "source": "Bing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.0617632,
+          45.0601912
+        ]
+      },
+      "id": "node/1700245168"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1816150081",
+        "name": "M Blé D'inde",
+        "produce": "corn",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.7070108,
+          46.1621616
+        ]
+      },
+      "id": "node/1816150081"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2018091043",
+        "craft": "winery",
+        "name": "Vignoble Clos St-Ignace"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.1173877,
+          46.0929795
+        ]
+      },
+      "id": "node/2018091043"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2400999716",
+        "craft": "winery",
+        "name": "Le Barbocheux"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.7905464,
+          47.4128877
+        ]
+      },
+      "id": "node/2400999716"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2584459098",
+        "landuse": "orchard",
+        "name": "Petch's Orchard",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5961223,
+          45.0461259
+        ]
+      },
+      "id": "node/2584459098"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4109497489",
+        "addr:housenumber": "380",
+        "addr:postcode": "J0B 1L0",
+        "addr:street": "Chemin de la Station",
+        "name": "Cidrerie Verger Ferland",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.856537,
+          45.2415039
+        ]
+      },
+      "id": "node/4109497489"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4337070670",
+        "addr:city": "Saint-Donat-de-Montcalm",
+        "addr:housenumber": "390",
+        "addr:postcode": "J0T 2C0",
+        "addr:street": "Rue Principale",
+        "name": "Fruiterie St-Donat",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.223983,
+          46.3198128
+        ]
+      },
+      "id": "node/4337070670"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4409660842",
+        "addr:housenumber": "225",
+        "addr:street": "Avenue du Viaduc",
+        "name": "Ferme Bourdages Tradition",
+        "opening_hours": "08:00-18:00",
+        "phone": "+14185342700",
+        "shop": "farm",
+        "shop_1": "alcohol",
+        "website": "http://fermebourdages.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.5936653,
+          48.0782669
+        ]
+      },
+      "id": "node/4409660842"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4413315336",
+        "addr:city": "Rougemont",
+        "addr:housenumber": "1130",
+        "addr:street": "La Petite-Caroline",
+        "check_date": "2023-10-01",
+        "craft": "winery",
+        "name": "Cidrerie Michel Jodoin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.0381738,
+          45.4568374
+        ]
+      },
+      "id": "node/4413315336"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4565218500",
+        "addr:housenumber": "150",
+        "addr:street": "Chemin de Richford",
+        "craft": "winery",
+        "name": "Domaine Pinnacle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.7843632,
+          45.0268508
+        ]
+      },
+      "id": "node/4565218500"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4565218503",
+        "name": "Verger Au Coeur De La Pomme",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.8533789,
+          45.0650155
+        ]
+      },
+      "id": "node/4565218503"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4565219210",
+        "addr:city": "Dunham",
+        "addr:housenumber": "1086",
+        "addr:street": "Rue Bruce",
+        "craft": "winery",
+        "name": "Vignoble de l'Orpailleur"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.8593664,
+          45.1098653
+        ]
+      },
+      "id": "node/4565219210"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4565219212",
+        "addr:city": "Dunham",
+        "addr:housenumber": "1046",
+        "addr:street": "Rue Bruce",
+        "craft": "winery",
+        "name": "Vignoble Gagliano"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.8564506,
+          45.1097782
+        ]
+      },
+      "id": "node/4565219212"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4565219214",
+        "addr:city": "Dunham",
+        "addr:housenumber": "1047",
+        "addr:street": "Rue Bruce",
+        "craft": "winery",
+        "name": "UNION LIBRE cidre & vin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.8564956,
+          45.1091289
+        ]
+      },
+      "id": "node/4565219214"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4565219215",
+        "addr:housenumber": "341",
+        "addr:street": "Rue Bruce",
+        "craft": "winery",
+        "name": "Vignoble les Trois Clochers Enr."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.8159134,
+          45.1257182
+        ]
+      },
+      "id": "node/4565219215"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4565219216",
+        "addr:housenumber": "3848",
+        "addr:street": "Rue Principale",
+        "check_date": "2023-10-01",
+        "craft": "winery",
+        "name": "Vignoble Centaure"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.8012405,
+          45.129706
+        ]
+      },
+      "id": "node/4565219216"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4565744956",
+        "craft": "winery",
+        "name": "Vergers et Cidrerie Denis Charbonneau"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.1502327,
+          45.3476028
+        ]
+      },
+      "id": "node/4565744956"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4569917946",
+        "addr:city": "Saint-Armand",
+        "addr:housenumber": "395",
+        "addr:street": "Chemin des Érables",
+        "craft": "winery",
+        "name": "Vignoble Pigeon Hill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.9380554,
+          45.0403451
+        ]
+      },
+      "id": "node/4569917946"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4574021090",
+        "name": "Marché Fermier du comté de Huntingdon",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.1751995,
+          45.0888643
+        ]
+      },
+      "id": "node/4574021090"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4596330520",
+        "name": "Kiosque du Coin",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5779831,
+          45.9536625
+        ]
+      },
+      "id": "node/4596330520"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4618645648",
+        "craft": "winery",
+        "name": "Vignoble du Vent Maudit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.2220071,
+          46.1160108
+        ]
+      },
+      "id": "node/4618645648"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4661616878",
+        "name": "Marché champêtre de North Hatley",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.9720551,
+          45.2784467
+        ]
+      },
+      "id": "node/4661616878"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4677461180",
+        "addr:housenumber": "5 QC-137",
+        "addr:postcode": "J0E 2C0",
+        "addr:street": "Route 137 Nord",
+        "name": "Les Vergers de la Colline",
+        "name:en": "Cidrerie Milton",
+        "name:fr": "Cidrerie Milton",
+        "opening_hours": "Sa-We 08:00-18:00; Th-Fr 08:00-20:00",
+        "shop": "farm",
+        "website": "https://cidreriemilton.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.7596182,
+          45.4835419
+        ]
+      },
+      "id": "node/4677461180"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4685699295",
+        "craft": "winery",
+        "name": "Le Domaine Perdu"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.6666577,
+          45.1190419
+        ]
+      },
+      "id": "node/4685699295"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4716736456",
+        "addr:city": "Saint-Paul-d'Abostsford",
+        "addr:housenumber": "305",
+        "addr:postcode": "J0E1A0",
+        "addr:street": "Rue Principale Ouest",
+        "amenity": "social_facility",
+        "email": "info@jardinsdelaterre.org",
+        "name": "Les Jardins de la Terre",
+        "organic": "yes",
+        "shop": "farm",
+        "website": "https://jardinsdelaterre.org"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.9282614,
+          45.4197694
+        ]
+      },
+      "id": "node/4716736456"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4734354907",
+        "amenity": "marketplace",
+        "name": "Marché public de Saint-Jérôme",
+        "seasonal": "summer",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9989097,
+          45.7764411
+        ]
+      },
+      "id": "node/4734354907"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4756216521",
+        "addr:housenumber": "617",
+        "addr:street": "Route 202 Est",
+        "craft": "winery",
+        "name": "Domaine Neige"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5710667,
+          45.0457332
+        ]
+      },
+      "id": "node/4756216521"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4756216522",
+        "addr:housenumber": "633",
+        "addr:street": "Route 202 Est",
+        "craft": "winery",
+        "name": "Vignoble Le Chat Botté"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5673305,
+          45.0457306
+        ]
+      },
+      "id": "node/4756216522"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4783356570",
+        "craft": "winery",
+        "name": "Vignoble Rivière du Chêne"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9754427,
+          45.5637069
+        ]
+      },
+      "id": "node/4783356570"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4847467588",
+        "addr:housenumber": "239",
+        "addr:street": "Chemin de Fulford",
+        "craft": "winery",
+        "name": "La Belle Alliance"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.5551775,
+          45.3099105
+        ]
+      },
+      "id": "node/4847467588"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4916823842",
+        "name": "La Magie de la Pomme",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0059519,
+          45.5695985
+        ]
+      },
+      "id": "node/4916823842"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4964897022",
+        "craft": "winery",
+        "name": "Les Vallons de Wadleigh"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.2386592,
+          45.7230092
+        ]
+      },
+      "id": "node/4964897022"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5058147796",
+        "craft": "winery",
+        "name": "Vignoble Lano d’Or"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.253342,
+          45.9121405
+        ]
+      },
+      "id": "node/5058147796"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5315676706",
+        "craft": "winery",
+        "name": "Vignoble Domaine du Clos de L'Isle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.4859988,
+          46.3448124
+        ]
+      },
+      "id": "node/5315676706"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5418559222",
+        "addr:housenumber": "285",
+        "addr:postcode": "J0E 1S0",
+        "addr:street": "Chemin de Brome",
+        "craft": "winery",
+        "name": "Domaine les Brome Léon Courville",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+1-450-243-0266"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.5924666,
+          45.2591189
+        ]
+      },
+      "id": "node/5418559222"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5507881314",
+        "addr:housenumber": "155",
+        "addr:street": "Chemin des Érables",
+        "craft": "winery",
+        "name": "Vignoble de la Bauge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.8542268,
+          45.2342304
+        ]
+      },
+      "id": "node/5507881314"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5975908749",
+        "name": "Lavender Ridge",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.9935769,
+          45.5231477
+        ]
+      },
+      "id": "node/5975908749"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6165067017",
+        "craft": "distillery",
+        "name": "Distillerie Fils du Roy Québec"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.4372633,
+          47.9155272
+        ]
+      },
+      "id": "node/6165067017"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6190935396",
+        "addr:city": "Saint-Vallier",
+        "addr:housenumber": "348",
+        "addr:street": "Rue Principale",
+        "name": "Cooperative La Mauve",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8239859,
+          46.8924156
+        ]
+      },
+      "id": "node/6190935396"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6195149181",
+        "craft": "winery",
+        "name": "Cidrerie Vergers Pedneault"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.3774765,
+          47.4212175
+        ]
+      },
+      "id": "node/6195149181"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6264988298",
+        "name": "Ferme la Chouette Lapone",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.4863769,
+          46.617033
+        ]
+      },
+      "id": "node/6264988298"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6501154828",
+        "addr:housenumber": "165",
+        "addr:street": "Chemin de Calumet Ouest",
+        "craft": "winery",
+        "name": "Little Red Wagon Winery",
+        "name:fr": "Vignoble Petit Chariot Rouge",
+        "opening_hours": "Fr-Su 13:00-17:00",
+        "phone": "+1-819-744-0842"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.5342093,
+          45.6173615
+        ]
+      },
+      "id": "node/6501154828"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6705077487",
+        "addr:housenumber": "662",
+        "addr:street": "Rang des Chalets",
+        "name": "Les Herbes aux Soins",
+        "shop": "farm",
+        "website": "https://lesherbesauxsoins.ca/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.230692,
+          45.9639452
+        ]
+      },
+      "id": "node/6705077487"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7391324279",
+        "addr:city": "Saint-Jean-sur-Richelieu",
+        "addr:housenumber": "2234",
+        "addr:postcode": "J2X 4C5",
+        "addr:street": "Route 133",
+        "alt_name": "Les fermes d'Isabelle",
+        "meat": "chicken; beef; pig",
+        "name": "Ferme Avicole Bio-grain",
+        "phone": "+1-450-542-9026",
+        "produce": "product",
+        "shop": "farm",
+        "website": "http://fermeavicolebio-grain.ca/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.2295693,
+          45.2745872
+        ]
+      },
+      "id": "node/7391324279"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7495520340",
+        "name": "Kiosque chez Forget",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.6010406,
+          45.6722011
+        ]
+      },
+      "id": "node/7495520340"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7659702760",
+        "addr:city": "Alma (quartier St-Coeur de Marie)",
+        "addr:housenumber": "5022",
+        "addr:postcode": "G8E 1T1",
+        "addr:province": "Québec",
+        "addr:street": "Avenue du pont Nord",
+        "name": "Les jardins Mistook",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.6781006,
+          48.6272744
+        ]
+      },
+      "id": "node/7659702760"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7671731820",
+        "seasonal": "yes",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.421803,
+          45.8284612
+        ]
+      },
+      "id": "node/7671731820"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7680185066",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.5217877,
+          45.8669343
+        ]
+      },
+      "id": "node/7680185066"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7773526714",
+        "seasonal": "yes",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.4667638,
+          45.8576962
+        ]
+      },
+      "id": "node/7773526714"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7777892755",
+        "addr:housenumber": "2635",
+        "addr:street": "Route 202",
+        "description": "Farm offering self-picking of fruits such as blueberries, raspberries, strawberries and apples.",
+        "name": "Ferme des Petits Cailloux",
+        "phone": "+1-450-827-2456",
+        "shop": "farm",
+        "website": "https://fermedespetitscailloux.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8749695,
+          45.0392456
+        ]
+      },
+      "id": "node/7777892755"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7920739322",
+        "addr:housenumber": "1419",
+        "addr:street": "Route 132",
+        "craft": "winery",
+        "name": "Vignoble Leblanc"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.3448606,
+          45.1412416
+        ]
+      },
+      "id": "node/7920739322"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8003699683",
+        "addr:city": "Mansonville",
+        "addr:housenumber": "236",
+        "addr:street": "Chemin West Hill",
+        "name": "Les Bleuets du Marquis",
+        "organic": "only",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.4519365,
+          45.0703929
+        ]
+      },
+      "id": "node/8003699683"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8122047532",
+        "man_made": "works",
+        "name": "Mosti Mondiale",
+        "product": "wine"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.6008228,
+          45.3942858
+        ]
+      },
+      "id": "node/8122047532"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8157957772",
+        "name": "Kiosque Sylvain",
+        "organic": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0250988,
+          45.4972689
+        ]
+      },
+      "id": "node/8157957772"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8166176867",
+        "man_made": "works",
+        "name": "Les viandes AMS",
+        "product": "meat"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.490577,
+          45.4118738
+        ]
+      },
+      "id": "node/8166176867"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8272743739",
+        "addr:housenumber": "145",
+        "addr:street": "Rue Cowie",
+        "craft": "distillery",
+        "name": "La Chaufferie",
+        "website": "https://lachaufferie.ca/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.7274582,
+          45.3972856
+        ]
+      },
+      "id": "node/8272743739"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8292085281",
+        "description": "Produits d'argousier",
+        "name": "Les jardins de Hatley",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.9766162,
+          45.3036756
+        ]
+      },
+      "id": "node/8292085281"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8331717187",
+        "name": "Kiosque Joli-Bois Fruit et Légume",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0344207,
+          45.745841
+        ]
+      },
+      "id": "node/8331717187"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8532154130",
+        "name": "Ferme Marineau",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7927461,
+          45.5214368
+        ]
+      },
+      "id": "node/8532154130"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8547084155",
+        "addr:city": "Montréal",
+        "addr:housenumber": "182",
+        "addr:postcode": "h2s1a1",
+        "addr:province": "Quebec",
+        "addr:street": "Place du Marché-du-Nord",
+        "check_date": "2024-04-23",
+        "name": "Leopoldo Fruits & Vegetables",
+        "name:fr": "Leopoldo",
+        "opening_hours": "Mo-Su 05:00-17:00",
+        "organic": "yes",
+        "payment:cash": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+15142735456",
+        "shop": "farm",
+        "website": "https://www.leopoldo.ca/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.6146311,
+          45.535295
+        ]
+      },
+      "id": "node/8547084155"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8668653020",
+        "addr:city": "Oka",
+        "addr:housenumber": "21",
+        "addr:postcode": "J0N1M0",
+        "addr:province": "QC",
+        "addr:street": "Rang Sainte-Sophie",
+        "name": "Verger Coeur-de-Pomme",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0374076,
+          45.5016332
+        ]
+      },
+      "id": "node/8668653020"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8668653021",
+        "name": "Verger Saab",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0391852,
+          45.5022323
+        ]
+      },
+      "id": "node/8668653021"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8790173399",
+        "addr:city": "Saint-Joseph-du-Lac",
+        "addr:housenumber": "4315",
+        "addr:province": "QC",
+        "addr:street": "Chemin d'Oka",
+        "name": "Verger Yvan des Pommes",
+        "produce": "apple",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0015297,
+          45.5020815
+        ]
+      },
+      "id": "node/8790173399"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8790264731",
+        "addr:city": "Saint-Joseph-du-Lac",
+        "addr:housenumber": "41",
+        "addr:province": "QC",
+        "addr:street": "Rue Binette",
+        "name": "Cueillette 640",
+        "produce": "apple",
+        "self_service": "yes",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9912064,
+          45.5206026
+        ]
+      },
+      "id": "node/8790264731"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8790264732",
+        "addr:city": "Saint-Joseph-du-Lac",
+        "addr:housenumber": "494",
+        "addr:province": "QC",
+        "addr:street": "Chemin Principal",
+        "name": "Le Pomiculteur du Bûcheron",
+        "produce": "apple",
+        "self_service": "yes",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.990817,
+          45.5217905
+        ]
+      },
+      "id": "node/8790264732"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8790619405",
+        "addr:city": "Saint-Joseph-du-Lac",
+        "addr:housenumber": "4421",
+        "addr:province": "QC",
+        "addr:street": "Chemin d'Oka",
+        "name": "L'Érapom Lemaire",
+        "produce": "apple;maple",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0087599,
+          45.5040287
+        ]
+      },
+      "id": "node/8790619405"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8790651414",
+        "addr:city": "Oka",
+        "addr:housenumber": "1283",
+        "addr:province": "QC",
+        "addr:street": "Chemin d'Oka",
+        "name": "H et Y Gemme",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0116522,
+          45.5014114
+        ]
+      },
+      "id": "node/8790651414"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8790679261",
+        "addr:city": "Saint-Joseph-du-Lac",
+        "addr:housenumber": "4377",
+        "addr:province": "QC",
+        "addr:street": "Chemin d'Oka",
+        "name": "Le Verger Trottier",
+        "produce": "apple",
+        "self_service": "yes",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0057988,
+          45.502897
+        ]
+      },
+      "id": "node/8790679261"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8791686240",
+        "addr:city": "Saint-Joseph-du-Lac",
+        "addr:housenumber": "699",
+        "addr:province": "QC",
+        "addr:street": "Rue Lavallée",
+        "name": "Verger Sylvain Lavallée",
+        "produce": "apple",
+        "self_service": "yes",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9979656,
+          45.5046448
+        ]
+      },
+      "id": "node/8791686240"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8791944079",
+        "addr:city": "Saint-Joseph-du-Lac",
+        "addr:housenumber": "341",
+        "addr:province": "QC",
+        "addr:street": "Rue Binette",
+        "name": "Verger Lavallée",
+        "produce": "apple",
+        "self_service": "yes",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9943306,
+          45.5124582
+        ]
+      },
+      "id": "node/8791944079"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8791944081",
+        "addr:city": "Saint-Joseph-du-Lac",
+        "addr:housenumber": "425",
+        "addr:province": "QC",
+        "addr:street": "Rue Binette",
+        "name": "Verger Richard Legault",
+        "produce": "apple",
+        "self_service": "yes",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9951413,
+          45.5099128
+        ]
+      },
+      "id": "node/8791944081"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8791944276",
+        "addr:city": "Saint-Joseph-du-Lac",
+        "addr:housenumber": "90",
+        "addr:province": "QC",
+        "addr:street": "Rue Lacroix",
+        "name": "À la croisée des pommes - Verger Bio",
+        "produce": "apple",
+        "self_service": "yes",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9914868,
+          45.5187973
+        ]
+      },
+      "id": "node/8791944276"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8994476926",
+        "addr:city": "Magog",
+        "addr:housenumber": "2525",
+        "addr:street": "Rue Principale Ouest",
+        "name": "Bleu Lavande",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.1919332,
+          45.283943
+        ]
+      },
+      "id": "node/8994476926"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8994521226",
+        "addr:city": "Pointe-à-la-Croix",
+        "addr:housenumber": "15",
+        "addr:postcode": "G0C 1L0",
+        "addr:province": "Quebec",
+        "addr:street": "Rue du Verger",
+        "name": "verger NNMA (Pomme en Fête)",
+        "opening_hours": "Sa-Su 9:00-17:00",
+        "operator": "Nourir Notre Monde Avignon",
+        "organic": "only",
+        "payment:cash": "yes",
+        "phone": "+1 581-624-8194",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.7119926,
+          48.0690265
+        ]
+      },
+      "id": "node/8994521226"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9015236188",
+        "addr:city": "Les Cèdres",
+        "addr:housenumber": "1025",
+        "addr:postcode": "J7T 1P5",
+        "addr:province": "QC",
+        "addr:street": "Chemin Saint-Dominique",
+        "email": "info@fermetournesol.qc.ca",
+        "name": "Ferme coopérative Tourne-Sol",
+        "operator:type": "cooperative",
+        "organic": "only",
+        "phone": "+1-450-452-4271",
+        "produce": "vegetables",
+        "shop": "farm",
+        "website": "https://www.fermetournesol.qc.ca"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.1383267,
+          45.3432454
+        ]
+      },
+      "id": "node/9015236188"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9324880854",
+        "addr:city": "Trois-Rivières",
+        "addr:housenumber": "4170",
+        "addr:postcode": "G8Y 1V8",
+        "addr:province": "Québec",
+        "addr:street": "Boulevard des Forges",
+        "craft": "distillery",
+        "name": "La Barik",
+        "operator": "La Barik",
+        "phone": "+1 (819) 694-0324",
+        "website": "https://labarik.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.5863721,
+          46.3572255
+        ]
+      },
+      "id": "node/9324880854"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9399644798",
+        "addr:city": "Saint-Lazare",
+        "addr:housenumber": "2914",
+        "addr:province": "QC",
+        "addr:street": "Route Harwood",
+        "seasonal": "yes",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.1687656,
+          45.4460597
+        ]
+      },
+      "id": "node/9399644798"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9400905246",
+        "addr:housenumber": "300",
+        "addr:street": "Boulevard Perron Est",
+        "craft": "distillery",
+        "name": "Distillerie des Marigots"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.6374283,
+          48.0894401
+        ]
+      },
+      "id": "node/9400905246"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9412773396",
+        "addr:city": "Bécancour",
+        "addr:housenumber": "14825",
+        "addr:postcode": "G9H 2L1",
+        "addr:province": "Québec",
+        "addr:street": "Boulevard Bécancour",
+        "craft": "distillery",
+        "name": "Distillerie du quai",
+        "operator": "Distillerie du quai",
+        "phone": "+1 (819) 266-7602",
+        "website": "https://www.distillerieduquai.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.5123618,
+          46.3324719
+        ]
+      },
+      "id": "node/9412773396"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9450668522",
+        "name": "Érablière Brunelle",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.6959613,
+          45.2950029
+        ]
+      },
+      "id": "node/9450668522"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9463035906",
+        "addr:city": "Les Cèdres",
+        "addr:housenumber": "1468",
+        "addr:province": "QC",
+        "addr:street": "Chemin Saint-Féréol",
+        "craft": "winery",
+        "name": "Vignoble d'Ovila"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.1083162,
+          45.3710317
+        ]
+      },
+      "id": "node/9463035906"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9463286477",
+        "addr:city": "Sainte-Anne-de-la-Pérade",
+        "addr:housenumber": "1433",
+        "addr:postcode": "G0X 2J0",
+        "addr:province": "Québec",
+        "addr:street": "Boulevard De Lanaudière",
+        "name": "Verger Barry",
+        "operator": "Verger Barry",
+        "phone": "+1 (418) 325-2274",
+        "shop": "farm",
+        "website": "https://www.vergerbarry.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.1275685,
+          46.5927143
+        ]
+      },
+      "id": "node/9463286477"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9463286494",
+        "addr:city": "Sainte-Anne-de-la-Pérade",
+        "addr:housenumber": "1365",
+        "addr:postcode": "G0X 2J0",
+        "addr:province": "Québec",
+        "addr:street": "Boulevard De Lanaudière",
+        "name": "Verger Sauvageau",
+        "operator": "Verger Sauvageau",
+        "phone": "+1 (418) 325-2482",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.1311557,
+          46.5899123
+        ]
+      },
+      "id": "node/9463286494"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9463335358",
+        "addr:city": "Saint-Anne-de-la-Pérade",
+        "addr:housenumber": "1266",
+        "addr:postcode": "G0X 2J0",
+        "addr:province": "Québec",
+        "addr:street": "Boulevard De Lanaudière",
+        "name": "Verger Mayrand Kiosque De La Pomme",
+        "operator": "Verger Mayrand Kiosque De La Pomme",
+        "phone": "+1 (418) 325-2489",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.1392391,
+          46.5886502
+        ]
+      },
+      "id": "node/9463335358"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9463456003",
+        "addr:city": "Sainte-Anne-de-la-Pérade",
+        "addr:housenumber": "661",
+        "addr:postcode": "G0X 2J0",
+        "addr:province": "Québec",
+        "addr:street": "Rue Principale",
+        "craft": "distillery",
+        "name": "Le Garage - Microbrasserie",
+        "operator": "Le Garage - Microbrasserie",
+        "phone": "+1 (418) 325-1400"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.2146715,
+          46.5591788
+        ]
+      },
+      "id": "node/9463456003"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9601914534",
+        "addr:housenumber": "110",
+        "addr:street": "Boulevard Comeau",
+        "craft": "distillery",
+        "name": "Distillerie Vent du Nord"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.1914458,
+          49.226196
+        ]
+      },
+      "id": "node/9601914534"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9627589313",
+        "email": "terre-mere@outlook.com",
+        "name": "Terre-Mère, maraîcher biologique",
+        "organic": "yes",
+        "phone": "+1-438-763-3835",
+        "place": "farm",
+        "shop": "farm",
+        "website": "https://www.terre-mere.ca/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.2102513,
+          45.2920109
+        ]
+      },
+      "id": "node/9627589313"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9627590147",
+        "name": "Ferme Ammerlaan",
+        "organic": "yes",
+        "phone": "+1-450-291-5258",
+        "place": "farm",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.3263085,
+          45.1187251
+        ]
+      },
+      "id": "node/9627590147"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9629200180",
+        "addr:city": "Sainte-Angèle-de-Monnoir",
+        "addr:housenumber": "133",
+        "addr:street": "Chemin du Vide",
+        "name": "Les Légumes Charbonneau",
+        "place": "farm",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.1093118,
+          45.4065554
+        ]
+      },
+      "id": "node/9629200180"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9629215552",
+        "addr:city": "Saint-Mathias-sur-Richelieu",
+        "addr:housenumber": "559",
+        "addr:street": "Chemin des Trente",
+        "email": "cjvalton@gmail.com",
+        "name": "Domaine Valton Osiris",
+        "phone": "+1-450-658-7131",
+        "place": "farm",
+        "shop": "farm",
+        "website": "http://www.domainevaltonosiris.com/coordonnees.html"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.224408,
+          45.5035103
+        ]
+      },
+      "id": "node/9629215552"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9631569077",
+        "addr:city": "Saint-Mathias-sur-Richelieu",
+        "addr:housenumber": "842",
+        "addr:street": "Chemin des Patriotes",
+        "name": "Havre Vert",
+        "organic": "yes",
+        "place": "farm",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.2336008,
+          45.5256616
+        ]
+      },
+      "id": "node/9631569077"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9664109844",
+        "addr:city": "Senneville",
+        "addr:housenumber": "39",
+        "addr:province": "QC",
+        "addr:street": "Avenue Phillips",
+        "name": "Les Jardins Carya",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9514915,
+          45.4409919
+        ]
+      },
+      "id": "node/9664109844"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9709092635",
+        "addr:city": "Bécancour",
+        "addr:housenumber": "20280",
+        "addr:street": "Boulevard des Acadiens",
+        "craft": "winery",
+        "name": "Vignoble Le Fief de la Rivière"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.5355177,
+          46.2517485
+        ]
+      },
+      "id": "node/9709092635"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9908328001",
+        "craft": "winery",
+        "name": "Vignoble Domaine DesDuc"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.4920742,
+          47.3735905
+        ]
+      },
+      "id": "node/9908328001"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9975569118",
+        "contact:facebook": "https://www.facebook.com/p/Maison-de-la-prune-100064751764154/",
+        "contact:phone": "+1 418 493 2616",
+        "name": "La Maison de la prune",
+        "opening_hours": "Aug 18-Oct 1 Fr-Su 10:00-17:00",
+        "produce": "plum",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.6981952,
+          47.6934952
+        ]
+      },
+      "id": "node/9975569118"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10153637466",
+        "name": "Dans la Musette",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.1802681,
+          46.1299811
+        ]
+      },
+      "id": "node/10153637466"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10292264105",
+        "addr:housenumber": "330",
+        "addr:street": "Rang du Cordon",
+        "name": "Vergers Arsène Poisson",
+        "shop": "farm",
+        "website": "https://chemindessept.ca/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.0916432,
+          45.4808636
+        ]
+      },
+      "id": "node/10292264105"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10559226008",
+        "craft": "winery",
+        "name": "Vignoble J.O. Montpetit & Fils"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9127989,
+          45.2486764
+        ]
+      },
+      "id": "node/10559226008"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10560584863",
+        "craft": "winery",
+        "name": "Vignoble du Marathonien"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7883203,
+          45.0456164
+        ]
+      },
+      "id": "node/10560584863"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10682137753",
+        "name": "Mielerie du cratère",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.2270463,
+          47.5247955
+        ]
+      },
+      "id": "node/10682137753"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10775285545",
+        "addr:city": "Dunham",
+        "addr:housenumber": "3734",
+        "addr:street": "Rue Principale",
+        "craft": "winery",
+        "name": "Vignoble Clos Ste-Coix"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.8008288,
+          45.1327445
+        ]
+      },
+      "id": "node/10775285545"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10775371912",
+        "addr:city": "Warwick",
+        "addr:housenumber": "49",
+        "addr:street": "Route 116 Est",
+        "name": "Verger Canard Goûteux",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.9777921,
+          45.9682545
+        ]
+      },
+      "id": "node/10775371912"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10822288273",
+        "addr:housenumber": "135",
+        "addr:street": "Av. du Père Nouvel",
+        "craft": "distillery",
+        "description": "Distillerie de spiritueux fait à base de produits locaux.",
+        "name": "Distillerie du Saint-Laurent",
+        "website": "https://www.distilleriedustlaurent.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.4679058,
+          48.5153516
+        ]
+      },
+      "id": "node/10822288273"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10893068371",
+        "craft": "winery",
+        "name": "Vignoble côte des limousins"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.609721,
+          45.4162392
+        ]
+      },
+      "id": "node/10893068371"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11007476642",
+        "addr:city": "Mirabel",
+        "addr:housenumber": "15001",
+        "addr:province": "QC",
+        "addr:street": "Boulevard Curé-Labelle",
+        "name": "Ferme Michel Lauzon",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9538311,
+          45.7216739
+        ]
+      },
+      "id": "node/11007476642"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11075001751",
+        "check_date": "2023-07-28",
+        "name": "Complexe touristique du bleuet",
+        "shop": "farm",
+        "website": "https://complexetouristiquebleuet.com",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.5405913,
+          48.6779167
+        ]
+      },
+      "id": "node/11075001751"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11078493301",
+        "craft": "winery",
+        "name": "Vignoble Souffle de Vie"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9675134,
+          45.4240911
+        ]
+      },
+      "id": "node/11078493301"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11110230206",
+        "name": "Terre Fruitière",
+        "shop": "farm",
+        "website": "https://terrefruitiere.ca"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.4328511,
+          45.5118059
+        ]
+      },
+      "id": "node/11110230206"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11199140589",
+        "addr:city": "Saint-Fabien-de-Panet",
+        "addr:housenumber": "15",
+        "addr:street": "Rue Principale Ouest",
+        "name": "Ferme Hirondelle",
+        "operator": "Daniel et François Brisson",
+        "phone": "+1 418-249-4420",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.1481208,
+          46.6535634
+        ]
+      },
+      "id": "node/11199140589"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11199140590",
+        "addr:city": "Saint-Fabien-de-Panet",
+        "addr:housenumber": "353",
+        "addr:street": "Route 283",
+        "name": "Érablière Camille Bilodeau",
+        "operator": "Camille Bilodeau",
+        "phone": "+1 418-249-4011",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.1205417,
+          46.6365779
+        ]
+      },
+      "id": "node/11199140590"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11227849641",
+        "addr:city": "Saint-Fabien-de-Panet",
+        "addr:housenumber": "151",
+        "addr:postcode": "G0R2J0",
+        "addr:street": "Rang Sainte-Marie",
+        "name": "151 Rang Sainte-Marie",
+        "produce": "oeufs (eggs)",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.1705515,
+          46.638342
+        ]
+      },
+      "id": "node/11227849641"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11230013807",
+        "addr:housenumber": "1030",
+        "addr:street": "Route 317",
+        "check_date": "2023-09-30",
+        "description": "Ferme maraîchaire et florale bio à Ripon. Paniers biologiques, kiosque à la ferme, fruits et légumes d'une grande qualité sans compromis.",
+        "email": "auxcolibris@gmail.com",
+        "name": "Ferme aux Colibris",
+        "name:en": "Hummingird Farms",
+        "name:fr": "Ferme aux Colibris",
+        "opening_hours": "Fr 13:00-17:00; Sa 10:00-17:00",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+1 819-616-2872",
+        "shop": "farm",
+        "website": "https://www.facebook.com/auxcolibris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1441041,
+          45.7209312
+        ]
+      },
+      "id": "node/11230013807"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11258192354",
+        "name": "Verger Poméloi",
+        "product": "apple",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.9449983,
+          47.2407187
+        ]
+      },
+      "id": "node/11258192354"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11268085105",
+        "name": "Verger Fleuripom",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9958704,
+          45.5271711
+        ]
+      },
+      "id": "node/11268085105"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11292120159",
+        "name": "Verger Joannette",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9938214,
+          45.5241585
+        ]
+      },
+      "id": "node/11292120159"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11695082651",
+        "craft": "winery",
+        "name": "Au Vignoble d'Orford"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.1446817,
+          45.3107137
+        ]
+      },
+      "id": "node/11695082651"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11867215626",
+        "addr:city": "Mont-Saint-Hilaire",
+        "addr:housenumber": "1130",
+        "addr:province": "Québec",
+        "addr:street": "Boulevard Sir-Wilfrid-Laurier",
+        "description": "Vente de tartes aux pommes, de pommes, de bleuts et d'autres produits similaires. Pendant la saison, possibilité de cueillir des bleuts et des pommes. (été et automne respectivement). https://www.pavillondelapomme.com/",
+        "name": "Au Pavillon de la Pomme",
+        "opening_hours": "Mo-Su 09:00-17:00",
+        "operator": "Au Pavillon de la Pomme",
+        "organic": "no",
+        "phone": "+1 450-464-2654",
+        "shop": "farm",
+        "website": "https://www.pavillondelapomme.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.1666809,
+          45.5789138
+        ]
+      },
+      "id": "node/11867215626"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11950450471",
+        "addr:housenumber": "537",
+        "addr:street": "5e Avenue",
+        "contact:email": "kiosque@racinepetitsfruits.com",
+        "description": "Farmers Kiosque food store with fresh produce, pies, eggs, etc.",
+        "name": "Le Kiosque Racíne",
+        "opening_hours": "Mo-We 09:00-19:00; Th, Fr 09:00-20:00; Sa, Su 09:00-18:00",
+        "phone": "+1 450-478-0457",
+        "shop": "farm",
+        "website": "https://racinepetitsfruits.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7797406,
+          45.752838
+        ]
+      },
+      "id": "node/11950450471"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11986525930",
+        "craft": "winery",
+        "name": "Vignoble Domaine Bresee"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.6128711,
+          45.148865
+        ]
+      },
+      "id": "node/11986525930"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11989002761",
+        "name": "Bleuets du Massif Sutton",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.6431701,
+          45.0649993
+        ]
+      },
+      "id": "node/11989002761"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12022658312",
+        "craft": "winery",
+        "name": "Vignoble Bromont"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.7357027,
+          45.2530761
+        ]
+      },
+      "id": "node/12022658312"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12022658379",
+        "craft": "winery",
+        "name": "Vignoble du PicBois"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.7100806,
+          45.2521613
+        ]
+      },
+      "id": "node/12022658379"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12138131811",
+        "contact:facebook": "Distillerie-Cap-aux-péchés-100089305693943",
+        "craft": "distillery",
+        "name": "Distillerie Cap-aux-Péchés"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.9031101,
+          49.2247842
+        ]
+      },
+      "id": "node/12138131811"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12368270202",
+        "addr:housenumber": "175",
+        "addr:postcode": "G3Z2K1",
+        "addr:street": "Rue Ambroise-Fafard",
+        "name": "Ferme l'oiseau bleu",
+        "opening_hours": "Th-Sa 10:00-16:00",
+        "shop": "farm",
+        "website": "https://www.fermeoiseaubleu.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.5103851,
+          47.4283157
+        ]
+      },
+      "id": "node/12368270202"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12420604501",
+        "addr:street": "Chemin du Lac-Lévesque",
+        "contact:facebook": "lafermedelaube",
+        "name": "La Ferme de l'Aube",
+        "shop": "farm",
+        "website": "https://www.lafermedelaube.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.858129,
+          45.957645
+        ]
+      },
+      "id": "node/12420604501"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12420604601",
+        "addr:street": "Rue du Domaine-des-Pins",
+        "name": "MacCuaig Family Farm",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.4110282,
+          45.3853256
+        ]
+      },
+      "id": "node/12420604601"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12489361345",
+        "craft": "winery",
+        "name": "Vignoble La Manse"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.6287612,
+          45.4474677
+        ]
+      },
+      "id": "node/12489361345"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12498490432",
+        "addr:city": "Rougemont",
+        "addr:housenumber": "1110",
+        "addr:province": "QC",
+        "addr:street": "La Petite-Caroline",
+        "craft": "winery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.0419969,
+          45.4509044
+        ]
+      },
+      "id": "node/12498490432"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12594406773",
+        "name": "Les jardins d'Oka",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.049795,
+          45.5066861
+        ]
+      },
+      "id": "node/12594406773"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12605225019",
+        "name": "Bleu sucré",
+        "shop": "farm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0861333,
+          45.4921526
+        ]
+      },
+      "id": "node/12605225019"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12647741330",
+        "addr:city": "Magog",
+        "addr:housenumber": "120",
+        "addr:province": "Québec",
+        "addr:street": "Rue des Pins",
+        "craft": "distillery",
+        "name": "Cherry River Distillerie"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.1523042,
+          45.2677592
+        ]
+      },
+      "id": "node/12647741330"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12811720250",
+        "craft": "winery",
+        "name": "Le Château Taillefer Lafon - Vignoble & Cidrerie"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.8233467,
+          45.5510738
+        ]
+      },
+      "id": "node/12811720250"
+    }
+  ]
+}
