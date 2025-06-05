@@ -1,10 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { saveFeedback } from '@/components/lib/saveFeedback';
+import { saveContact } from '@/components/lib/saveContact';
+import type { ContactForm } from '@/components/lib/saveContact';
+
 
 export default function ContactPage() {
-  const [form, setForm] = useState({
+ const [form, setForm] = useState<ContactForm>({
+
     nom: '',
     email: '',
     message: '',
@@ -21,7 +24,8 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const { error } = await saveFeedback(form);
+    const { error } = await saveContact(form);
+
 
     if (error) {
       setConfirmation("❌ Une erreur s'est produite. Merci de réessayer.");
@@ -37,14 +41,15 @@ export default function ContactPage() {
         <h1 className="text-3xl font-bold text-indigo-700 mb-4">📬 Contact</h1>
 
         <p className="mb-6 text-gray-600">
-          Vous êtes producteur local, voyageur, ou souhaitez partager un itinéraire ?  
-          Remplissez ce formulaire, nous vous répondrons rapidement.
+          Vous êtes producteur local, voyageur, ou souhaitez partager un itinéraire ? Remplissez ce
+          formulaire, nous vous répondrons rapidement.
         </p>
 
         {/* Message spécifique si type = itineraire */}
         {form.type === 'itineraire' && (
           <div className="mb-4 bg-yellow-100 border border-yellow-400 text-yellow-700 p-3 rounded text-sm text-left">
-            🧭 <strong>Vous souhaitez partager un itinéraire ?</strong><br />
+            🧭 <strong>Vous souhaitez partager un itinéraire ?</strong>
+            <br />
             Merci de remplir ce formulaire puis d’envoyer votre PDF à :<br />
             <span className="text-indigo-700 font-medium">📧 contact@goquebecan.com</span>
           </div>
@@ -53,8 +58,10 @@ export default function ContactPage() {
         {/* Message spécifique si type = producteur */}
         {form.type === 'producteur' && (
           <div className="mb-4 bg-blue-50 border border-blue-400 text-blue-700 p-3 rounded text-sm text-left">
-            🏞️ <strong>Vous êtes un producteur local ?</strong><br />
-            Merci de remplir ce formulaire puis d’envoyer une ou plusieurs photos de votre ferme à :<br />
+            🏞️ <strong>Vous êtes un producteur local ?</strong>
+            <br />
+            Merci de remplir ce formulaire puis d’envoyer une ou plusieurs photos de votre ferme à :
+            <br />
             <span className="text-indigo-700 font-medium">📧 contact@goquebecan.com</span>
           </div>
         )}
@@ -95,10 +102,10 @@ export default function ContactPage() {
             name="message"
             placeholder={
               form.type === 'itineraire'
-                ? "Décrivez brièvement votre itinéraire : région, durée, thèmes, etc."
+                ? 'Décrivez brièvement votre itinéraire : région, durée, thèmes, etc.'
                 : form.type === 'producteur'
-                ? "Décrivez votre activité (type de production, localisation, etc.)"
-                : "Votre message"
+                  ? 'Décrivez votre activité (type de production, localisation, etc.)'
+                  : 'Votre message'
             }
             value={form.message}
             onChange={handleChange}
@@ -115,9 +122,7 @@ export default function ContactPage() {
           </button>
         </form>
 
-        {confirmation && (
-          <p className="mt-4 text-sm text-green-600">{confirmation}</p>
-        )}
+        {confirmation && <p className="mt-4 text-sm text-green-600">{confirmation}</p>}
       </div>
     </main>
   );

@@ -17,10 +17,10 @@
     "isolatedModules": true,
     "jsx": "preserve",
     // 🔁 Alias @/ vers /src
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "*"
+        "src/*"
       ]
     },
     // ✅ Types globaux (Node, Next, etc.)

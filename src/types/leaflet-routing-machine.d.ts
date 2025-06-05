@@ -1,11 +1,28 @@
-// types/leaflet-routing-machine.d.ts
-declare namespace L {
-  namespace Routing {
-    function control(options: any): any;
+import * as L from 'leaflet';
 
-    class Control extends L.Control {
-      getPlan(): any;
-      setWaypoints(waypoints: L.LatLng[]): void;
+declare module 'leaflet-routing-machine' {
+  namespace L {
+    namespace Routing {
+      interface RoutingOptions {
+        waypoints?: L.LatLng[];
+        router?: any;
+        plan?: any;
+        routeWhileDragging?: boolean;
+        createMarker?: () => L.Marker | null;
+        show?: boolean;
+      }
+
+      class RoutingControl extends L.Control {
+        constructor(options?: RoutingOptions);
+        on(event: string, callback: (e: any) => void): this;
+        getPlan(): any;
+        setWaypoints(waypoints: L.LatLng[]): void;
+      }
+
+      function control(options?: RoutingOptions): RoutingControl;
     }
   }
+
+  export = L.Routing;
 }
+

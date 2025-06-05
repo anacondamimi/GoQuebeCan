@@ -18,7 +18,7 @@ export const metadata = {
   hebergements: ['Riotel Percé', 'Hôtel La Normandie', 'Au Pic de l'],
   publics: ['familles', 'ados', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Fish,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Fish } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -452,5 +452,3 @@ export default function BlogArticlePerce() {
     </article>
   );
 }
-
-

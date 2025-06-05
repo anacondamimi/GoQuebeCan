@@ -15,7 +15,8 @@ export default function VolsClient() {
           Revenez-nous voir le <strong>21 juin 2025</strong> pour réserver votre vol ✈️
         </p>
         <p className="text-md text-gray-600 mb-8">
-          En attendant, profitez de notre <strong>assistant de voyage</strong> 🤖 pour planifier vos vacances au Québec et au Canada.
+          En attendant, profitez de notre <strong>assistant de voyage</strong> 🤖 pour planifier vos
+          vacances au Québec et au Canada.
         </p>
 
         <div className="space-y-3">

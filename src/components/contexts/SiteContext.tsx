@@ -2,7 +2,6 @@
 
 import { createContext, useContext, useState, ReactNode } from 'react';
 
-
 // ✅ Type du message utilisé dans le chatbot
 export interface Message {
   text: string;

@@ -7,7 +7,10 @@ export async function POST(req: Request) {
 
     if (!messages || !Array.isArray(messages)) {
       console.error('[API ERROR] Messages invalides :', messages);
-      return NextResponse.json({ error: 'Messages manquants ou au mauvais format' }, { status: 400 });
+      return NextResponse.json(
+        { error: 'Messages manquants ou au mauvais format' },
+        { status: 400 }
+      );
     }
 
     const apiKey = process.env.OPENAI_API_KEY;
@@ -58,7 +61,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Erreur OpenAI', detail: data }, { status: 500 });
     }
 
-    const reply = data.choices?.[0]?.message?.content || 'Je n’ai pas compris, peux-tu reformuler ?';
+    const reply =
+      data.choices?.[0]?.message?.content || 'Je n’ai pas compris, peux-tu reformuler ?';
 
     return NextResponse.json({ message: reply });
   } catch (error) {
@@ -66,4 +70,3 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Erreur serveur ou OpenAI' }, { status: 500 });
   }
 }
-

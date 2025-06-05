@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import supabase from '@/components/lib/supabase';
+import { supabase } from '@/components/lib/supabase';
 import { v4 as uuidv4 } from 'uuid';
 import html2pdf from 'html2pdf.js';
-import { saveFeedback } from 'src/components/lib/saveFeedback';
+import { saveFeedback } from '@/components/lib/saveFeedback';
 
 interface Step {
   id: string;
@@ -71,7 +71,7 @@ export default function SharedItineraryPage() {
 
   const handleSendFeedback = async () => {
     try {
-      await saveFeedback(slug as string, feedback);
+      await saveFeedback(slug as string, feedback); // ✅ corrigé pour fonctionner avec la nouvelle signature
       setSubmitted(true);
       setFeedback('');
     } catch (e) {
@@ -85,7 +85,8 @@ export default function SharedItineraryPage() {
       <h1 className="text-3xl font-bold mb-4 text-indigo-700">🧭 Itinéraire partagé</h1>
 
       <p className="text-gray-600 mb-4">
-        Lien :<code className="text-sm bg-gray-100 px-2 py-1 rounded ml-2">{slug}</code>
+        Lien :
+        <code className="text-sm bg-gray-100 px-2 py-1 rounded ml-2">{slug}</code>
         <button
           onClick={() => {
             navigator.clipboard.writeText(window.location.href);

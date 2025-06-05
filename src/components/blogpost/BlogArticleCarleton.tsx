@@ -18,7 +18,7 @@ export const metadata = {
   hebergements: ['Hostellerie Baie Bleue', 'Manoir Belle Plage', 'Auberge du Marchand'],
   publics: ['familles', 'ados', 'amateurs de culture', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Wind,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Wind } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 

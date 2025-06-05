@@ -25,9 +25,7 @@ export default function VideosPage() {
   return (
     <main className="min-h-screen pt-8">
       {/* ✅ H1 invisible pour SEO */}
-      <h1 className="sr-only">
-        Vidéos Populaires sur le Québec et le Canada
-      </h1>
+      <h1 className="sr-only">Vidéos Populaires sur le Québec et le Canada</h1>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <PopularVideos />

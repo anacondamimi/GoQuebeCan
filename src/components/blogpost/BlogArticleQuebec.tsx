@@ -19,7 +19,7 @@ export const metadata = {
   ],
   publics: ['familles', 'amateurs de culture'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -422,4 +422,3 @@ export default function BlogArticleQuebec() {
     </article>
   );
 }
-

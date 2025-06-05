@@ -8,7 +8,17 @@ export const metadata = {
   hebergements: ['Auberge Kuujjuaq', 'Camps de Base Kuururjuaq'],
   publics: ['amateurs de culture', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun, Snowflake,  } from 'lucide-react';
+import {
+  Hotel,
+  Utensils,
+  Bus,
+  Calendar,
+  DollarSign,
+  Shield,
+  Star,
+  Sun,
+  Snowflake,
+} from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -405,5 +415,3 @@ export default function BlogArticleKuururjuaq() {
     </article>
   );
 }
-
-

@@ -3,7 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { MessageSquare, X, Send } from 'lucide-react';
-import { useSite } from '../contexts/SiteContext'; // Corrigé ici
+import { useSite } from '@/components/contexts/SiteContext'; // Corrigé ici
 import { suggestNearbyProducers } from '@/utils/suggestNearbyProducers';
 
 const MapWithRouting = dynamic(() => import('@/components/MapWithRouting'), {
@@ -77,7 +77,7 @@ export default function Chatbot() {
     // Exemple spécifique
     if (userText.includes('montréal') && userText.includes('tadoussac')) {
       const startPoint: [number, number] = [45.5017, -73.5673]; // Montréal
-      const endPoint: [number, number] = [48.1394, -69.6866];   // Tadoussac
+      const endPoint: [number, number] = [48.1394, -69.6866]; // Tadoussac
 
       setStart(startPoint);
       setEnd(endPoint);
@@ -193,7 +193,6 @@ export default function Chatbot() {
           {start && end && (
             <div className="p-4 border-t bg-white">
               <MapWithRouting points={[start, end]} producers={nearbyProducers} />
-
             </div>
           )}
 

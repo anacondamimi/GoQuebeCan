@@ -12,17 +12,24 @@
 /* Styles de base personnalisés */
 @layer base {
   html {
-    @apply font-sans;            /* Inter partout par défaut */
+    @apply font-sans; /* Inter partout par défaut */
   }
 
   body {
     @apply text-gray-900 bg-warm-50; /* Couleur de fond douce */
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display font-semibold;
   }
-p { @apply font-body; }
+  p {
+    @apply font-body;
+  }
   /* Smooth scrolling pour les ancres */
   html {
     scroll-behavior: smooth;
@@ -127,7 +134,7 @@ p { @apply font-body; }
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }

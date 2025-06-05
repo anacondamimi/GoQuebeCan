@@ -18,7 +18,7 @@ export const metadata = {
   hebergements: ['Hôtel Sept-Îles', 'Château Arnaud', 'Le Voyageur'],
   publics: ['familles', 'ados', 'amateurs de culture', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Compass,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Compass } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -409,5 +409,3 @@ export default function BlogArticleSeptIles() {
     </article>
   );
 }
-
-

@@ -13,8 +13,8 @@ const geojson = JSON.parse(raw);
 
 // 🧹 Filtrage et transformation
 const producers = geojson.features
-  .filter(f => f.geometry?.type === 'Point' && f.properties?.name)
-  .map(f => ({
+  .filter((f) => f.geometry?.type === 'Point' && f.properties?.name)
+  .map((f) => ({
     id: f.id || f.properties.name.toLowerCase().replace(/\s/g, '-'),
     name: f.properties.name,
     lat: f.geometry.coordinates[1],

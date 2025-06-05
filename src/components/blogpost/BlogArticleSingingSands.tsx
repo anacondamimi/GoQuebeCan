@@ -18,7 +18,7 @@ export const metadata = {
   hebergements: ['Bruce Anchor Motel', 'Tobermory Princess Hotel', 'Cedar Vista Motel'],
   publics: ['familles', 'ados', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -411,5 +411,3 @@ export default function BlogArticleSingingSands() {
     </article>
   );
 }
-
-

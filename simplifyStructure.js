@@ -6,8 +6,8 @@ function walk(dir, depth = 0, maxDepth = 3) {
 
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   return entries
-    .filter(entry => !['node_modules', '.next', '.git', 'dist', 'out'].includes(entry.name))
-    .map(entry => {
+    .filter((entry) => !['node_modules', '.next', '.git', 'dist', 'out'].includes(entry.name))
+    .map((entry) => {
       const indent = '  '.repeat(depth);
       const name = entry.isDirectory() ? `${entry.name}/` : entry.name;
       const fullPath = path.join(dir, entry.name);

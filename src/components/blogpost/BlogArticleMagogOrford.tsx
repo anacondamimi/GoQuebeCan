@@ -15,7 +15,7 @@ export const metadata = {
   hebergements: ['Manoir Hovey', 'Estrimont Suites & Spa', 'Auberge du Grand Lac'],
   publics: ['familles', 'ados', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -455,5 +455,3 @@ export default function BlogArticleMagogOrford() {
     </article>
   );
 }
-
-

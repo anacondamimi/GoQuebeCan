@@ -19,7 +19,7 @@ export const metadata = {
   hebergements: ['Auberge des Cévennes', 'Chalets sur le Fjord', 'Gîte du Fjord'],
   publics: ['familles', 'ados', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
 
 export default function BlogArticleAnseSaintJean() {
   // ✅ Imports déplacés automatiquement
@@ -424,5 +424,3 @@ export default function BlogArticleAnseSaintJean() {
     </article>
   );
 }
-
-

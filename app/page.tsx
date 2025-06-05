@@ -18,7 +18,6 @@ const PopularDestinations = dynamic(() => import('@/components/PopularDestinatio
 });
 
 export default function Home() {
- 
   return (
     <>
       <Navbar />

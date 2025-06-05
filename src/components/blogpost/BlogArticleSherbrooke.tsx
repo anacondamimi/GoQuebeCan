@@ -15,7 +15,7 @@ export const metadata = {
   hebergements: ['OTL Gouverneur Sherbrooke', 'Grand Times Hotel', 'Hôtel Le Président'],
   publics: ['familles', 'ados', 'amateurs de culture', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Palette, } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Palette } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -453,5 +453,3 @@ export default function BlogArticleSherbrooke() {
     </article>
   );
 }
-
-

@@ -29,9 +29,7 @@ fs.readdirSync(folderPath)
         .filter((icon) => !iconsToRemove.includes(icon));
 
       const newImportLine =
-        cleanedIcons.length > 0
-          ? `import { ${cleanedIcons.join(', ')} } from 'lucide-react';`
-          : '';
+        cleanedIcons.length > 0 ? `import { ${cleanedIcons.join(', ')} } from 'lucide-react';` : '';
 
       content = content.replace(importRegex, newImportLine);
     }

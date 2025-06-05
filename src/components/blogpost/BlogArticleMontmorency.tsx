@@ -15,7 +15,7 @@ export const metadata = {
   hebergements: ['Manoir Montmorency', 'Auberge Baker', 'Comfort Inn Beauport'],
   publics: ['familles', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -443,5 +443,3 @@ export default function BlogArticleMontmorency() {
     </article>
   );
 }
-
-

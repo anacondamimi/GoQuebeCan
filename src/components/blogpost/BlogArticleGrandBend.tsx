@@ -18,7 +18,7 @@ export const metadata = {
   hebergements: ['Pine Dale Motor Inn', 'Oakwood Resort', 'Colonial Hotel'],
   publics: ['familles', 'ados'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 

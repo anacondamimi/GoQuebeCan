@@ -19,7 +19,6 @@ export const metadata = {
   publics: ['familles', 'ados', 'aventuriers'],
 };
 import {
-
   Hotel,
   Utensils,
   Bus,
@@ -425,5 +424,3 @@ export default function BlogArticleBic() {
     </article>
   );
 }
-
-

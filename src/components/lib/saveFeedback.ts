@@ -1,19 +1,15 @@
-import { supabase } from '@/components/lib/supabase';
+import { supabase } from './supabase';
 
-export async function saveFeedback({
-  nom,
-  email,
-  message,
-  type,
-}: {
-  nom: string;
-  email: string;
-  message: string;
-  type: string;
-}) {
-  const { data, error } = await supabase
-    .from('contact_messages')
-    .insert([{ nom, email, message, type }]);
+export async function saveFeedback(slug: string, feedback: string) {
+  const { error } = await supabase.from('feedbacks').insert([
+    {
+      slug,
+      feedback,
+      created_at: new Date().toISOString(),
+    },
+  ]);
 
-  return { data, error };
+  if (error) {
+    throw new Error('Erreur sauvegarde : ' + error.message);
+  }
 }

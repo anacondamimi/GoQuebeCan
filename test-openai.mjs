@@ -1,6 +1,5 @@
 import fetch from 'node-fetch';
 
-
 // Remplace par ta clé à tester (TEMPORAIREMENT ici, ne la partage jamais ailleurs)
 const apiKey = 'sk-...'; // ta clé ici entre guillemets
 

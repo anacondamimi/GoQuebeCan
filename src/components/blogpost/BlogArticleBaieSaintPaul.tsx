@@ -18,7 +18,7 @@ export const metadata = {
   hebergements: ['Le Germain Charlevoix', 'Auberge La Grande Maison', 'Maison Otis'],
   publics: ['familles', 'ados', 'amateurs de culture', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Palette,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Palette } from 'lucide-react';
 
 export default function BlogArticleBaieSaintPaul() {
   // ✅ Imports déplacés automatiquement
@@ -416,5 +416,3 @@ export default function BlogArticleBaieSaintPaul() {
     </article>
   );
 }
-
-

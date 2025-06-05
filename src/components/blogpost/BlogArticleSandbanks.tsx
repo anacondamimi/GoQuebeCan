@@ -21,7 +21,7 @@ export const metadata = {
   hebergements: ['Sandbanks Summer Village', 'The June Motel', 'Picton Harbour Inn'],
   publics: ['familles', 'ados'],
 };
-import { Hotel, Utensils, Bus, Beer, Calendar, DollarSign, Shield, Star, Sun,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Beer, Calendar, DollarSign, Shield, Star, Sun } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -156,7 +156,8 @@ export default function BlogArticleSandbanks() {
           Guide Complet : Sandbanks - Les Plus Grandes Dunes de Sable d'Eau Douce au Monde
         </h1>
         <p className="text-xl text-gray-600">
-          Découvrez ce parc provincial unique de l'Ontario, avec ses dunes spectaculaires, ses plages de sable blanc et ses eaux turquoise.
+          Découvrez ce parc provincial unique de l'Ontario, avec ses dunes spectaculaires, ses
+          plages de sable blanc et ses eaux turquoise.
         </p>
       </header>
 
@@ -419,8 +420,8 @@ export default function BlogArticleSandbanks() {
           </a>
         </div>
       </section>
-    
-  <SectionTitle
+
+      <SectionTitle
         title="Producteurs Locaux à Découvrir"
         subtitle="Savourez les trésors artisanaux du comté de Prince Edward."
         icon={<Beer className="h-6 w-6" />}
@@ -429,23 +430,38 @@ export default function BlogArticleSandbanks() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h3 className="text-xl font-semibold text-gray-900 mb-2">Waupoos Winery</h3>
-          <p className="text-gray-700">Vignoble emblématique avec vue sur le lac Ontario, dégustations de vins biologiques et table fermière sur place.</p>
+          <p className="text-gray-700">
+            Vignoble emblématique avec vue sur le lac Ontario, dégustations de vins biologiques et
+            table fermière sur place.
+          </p>
         </div>
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h3 className="text-xl font-semibold text-gray-900 mb-2">County Cider Company</h3>
-          <p className="text-gray-700">Cidrerie artisanale avec terrasse panoramique, parfaite pour un lunch après la plage.</p>
+          <p className="text-gray-700">
+            Cidrerie artisanale avec terrasse panoramique, parfaite pour un lunch après la plage.
+          </p>
         </div>
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">Bloomfield Public House Market</h3>
-          <p className="text-gray-700">Épicerie locale avec produits artisanaux, boulangerie maison et plats prêts à emporter.</p>
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            Bloomfield Public House Market
+          </h3>
+          <p className="text-gray-700">
+            Épicerie locale avec produits artisanaux, boulangerie maison et plats prêts à emporter.
+          </p>
         </div>
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h3 className="text-xl font-semibold text-gray-900 mb-2">Parsons Brewing Company</h3>
-          <p className="text-gray-700">Microbrasserie familiale offrant bières de caractère, aire de jeux pour enfants et ambiance conviviale.</p>
+          <p className="text-gray-700">
+            Microbrasserie familiale offrant bières de caractère, aire de jeux pour enfants et
+            ambiance conviviale.
+          </p>
         </div>
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h3 className="text-xl font-semibold text-gray-900 mb-2">Fifth Town Artisan Cheese</h3>
-          <p className="text-gray-700">Fromagerie durable proposant une sélection de fromages fins faits sur place à partir de lait de chèvre et de brebis.</p>
+          <p className="text-gray-700">
+            Fromagerie durable proposant une sélection de fromages fins faits sur place à partir de
+            lait de chèvre et de brebis.
+          </p>
         </div>
       </div>
     </article>

@@ -8,7 +8,7 @@ export const metadata = {
   hebergements: ['Auberge La Grange de l', 'Le Domaine Orléans', 'Les Chalets de l'],
   publics: ['aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -448,5 +448,3 @@ export default function BlogArticleOrleans() {
     </article>
   );
 }
-
-

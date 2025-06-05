@@ -143,7 +143,7 @@ const videos: VideoItem[] = [
     id: 'video19',
     title: 'Road trip au Bas-Saint-Laurent',
     destination: 'Bas-Saint-Laurent',
-    thumbnail:'https://img.youtube.com/vi/HB6WPSolvFk/hqdefault.jpg',
+    thumbnail: 'https://img.youtube.com/vi/HB6WPSolvFk/hqdefault.jpg',
     videoUrl: 'https://www.youtube.com/embed/HB6WPSolvFk',
   },
   {
@@ -225,11 +225,10 @@ const videos: VideoItem[] = [
   },
   {
     id: 'video31',
-title: 'Sandbanks: Dunes de sable spectaculaires',
-destination: "Plages de l'Ontario",
-thumbnail: 'https://img.youtube.com/vi/lZLhS_M_zJU/hqdefault.jpg',
-videoUrl: 'https://www.youtube.com/embed/lZLhS_M_zJU',
-
+    title: 'Sandbanks: Dunes de sable spectaculaires',
+    destination: "Plages de l'Ontario",
+    thumbnail: 'https://img.youtube.com/vi/lZLhS_M_zJU/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/embed/lZLhS_M_zJU',
   },
 ];
 

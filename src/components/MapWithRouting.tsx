@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import 'leaflet-routing-machine';
+require('leaflet-routing-machine'); // important : ne pas utiliser "import" ici
 import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
 
 export default function MapWithRouting({ points, producers = [] }: Props) {
   const mapRef = useRef<L.Map | null>(null);
-  const routingRef = useRef<L.Routing.Control | null>(null);
+  const routingRef = useRef<any>(null);
   const [distanceKm, setDistanceKm] = useState<number | null>(null);
 
   useEffect(() => {
@@ -26,22 +26,21 @@ export default function MapWithRouting({ points, producers = [] }: Props) {
 
     const waypoints = points.map((p) => L.latLng(p[0], p[1]));
 
-    // @ts-ignore
-    const route = L.Routing.control({
+    const routingControl = (L as any).Routing.control({
       waypoints,
       routeWhileDragging: false,
       show: false,
-      addWaypoints: false,
       createMarker: () => null,
-    })
-      .on('routesfound', function (e: any) {
-        const route = e.routes[0];
-        const distanceMeters = route.summary.totalDistance;
-        setDistanceKm(parseFloat((distanceMeters / 1000).toFixed(1)));
-      })
-      .addTo(mapRef.current);
+    });
 
-    routingRef.current = route;
+    routingControl.on('routesfound', (e: any) => {
+      const route = e.routes[0];
+      const distanceMeters = route.summary.totalDistance;
+      setDistanceKm(parseFloat((distanceMeters / 1000).toFixed(1)));
+    });
+
+    routingControl.addTo(mapRef.current);
+    routingRef.current = routingControl;
   }, [points]);
 
   const producerIcon = new L.Icon({
@@ -76,13 +75,10 @@ export default function MapWithRouting({ points, producers = [] }: Props) {
           ))}
 
           {producers.map((p, idx) => (
-            <Marker
-              key={`prod-${idx}`}
-              position={[p.lat, p.lng]}
-              icon={producerIcon}
-            >
+            <Marker key={`prod-${idx}`} position={[p.lat, p.lng]} icon={producerIcon}>
               <Popup>
-                <strong>{p.name}</strong><br />
+                <strong>{p.name}</strong>
+                <br />
                 {p.type || 'Producteur'}
               </Popup>
             </Marker>
@@ -91,9 +87,7 @@ export default function MapWithRouting({ points, producers = [] }: Props) {
       </div>
 
       {distanceKm && (
-        <p className="text-center mt-4 text-lg font-medium">
-          Distance totale : {distanceKm} km
-        </p>
+        <p className="text-center mt-4 text-lg font-medium">Distance totale : {distanceKm} km</p>
       )}
     </div>
   );

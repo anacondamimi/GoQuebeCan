@@ -4,7 +4,8 @@ export default function ConfidentialitePage() {
       <h1 className="text-3xl font-bold mb-6">Politique de confidentialité</h1>
 
       <p className="mb-4">
-        GoQuebecan s'engage à protéger votre vie privée. Cette politique de confidentialité explique comment nous recueillons, utilisons et protégeons vos données personnelles.
+        GoQuebecan s'engage à protéger votre vie privée. Cette politique de confidentialité explique
+        comment nous recueillons, utilisons et protégeons vos données personnelles.
       </p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">1. Collecte des informations</h2>
@@ -29,7 +30,8 @@ export default function ConfidentialitePage() {
 
       <h2 className="text-xl font-semibold mt-6 mb-2">3. Partage des données</h2>
       <p className="mb-4">
-        Vos données ne sont jamais vendues. Elles peuvent être partagées uniquement avec des partenaires de confiance pour améliorer nos services, sous réserve de confidentialité.
+        Vos données ne sont jamais vendues. Elles peuvent être partagées uniquement avec des
+        partenaires de confiance pour améliorer nos services, sous réserve de confidentialité.
       </p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">4. Vos droits</h2>
@@ -40,17 +42,25 @@ export default function ConfidentialitePage() {
           <li>Droit de rectification ou de suppression</li>
           <li>Droit de retrait de votre consentement</li>
         </ul>
-        Pour toute demande, veuillez nous contacter via la page <a href="/contact" className="text-indigo-600 hover:underline">Contact</a>.
+        Pour toute demande, veuillez nous contacter via la page{' '}
+        <a href="/contact" className="text-indigo-600 hover:underline">
+          Contact
+        </a>
+        .
       </p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">5. Cookies</h2>
       <p className="mb-4">
-        Le site utilise des cookies pour analyser le trafic et proposer des contenus adaptés. Vous pouvez les désactiver à tout moment via les paramètres de votre navigateur.
+        Le site utilise des cookies pour analyser le trafic et proposer des contenus adaptés. Vous
+        pouvez les désactiver à tout moment via les paramètres de votre navigateur.
       </p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">6. Contact</h2>
       <p>
-        Pour toute question concernant cette politique, veuillez nous écrire à : <a href="mailto:contact@goquebecan.com" className="text-indigo-600 hover:underline">contact@goquebecan.com</a>
+        Pour toute question concernant cette politique, veuillez nous écrire à :{' '}
+        <a href="mailto:contact@goquebecan.com" className="text-indigo-600 hover:underline">
+          contact@goquebecan.com
+        </a>
       </p>
     </main>
   );

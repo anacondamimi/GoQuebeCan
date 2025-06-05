@@ -15,7 +15,7 @@ export const metadata = {
   hebergements: ['St-Martin Bromont', 'Château-Bromont', 'Hôtel Castel & Spa Confort'],
   publics: ['familles', 'ados'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 

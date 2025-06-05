@@ -22,9 +22,7 @@ export default function ItineraryPlanner() {
   const [waypoints, setWaypoints] = useState<[number, number][]>([]);
   const [stepInput, setStepInput] = useState('');
   const [tempSteps, setTempSteps] = useState<string[]>([]);
-  const [steps, setSteps] = useState<{ id: string; name: string; coordinates: [number, number] }[]>(
-    []
-  );
+  const [steps, setSteps] = useState<{ id: string; name: string; coordinates: [number, number] }[]>([]);
   const [producerSuggestions, setProducerSuggestions] = useState<
     { stepIndex: number; producer: any; distance: number }[]
   >([]);
@@ -46,14 +44,14 @@ export default function ItineraryPlanner() {
     const itinerary: { id: string; name: string; coordinates: [number, number] }[] = [];
 
     coords.push(start);
-    itinerary.push({ id: 'start', name: 'Départ', coordinates: start });
+    itinerary.push({ id: 'start', name: startInput || 'Départ', coordinates: start });
 
     for (const [index, city] of tempSteps.entries()) {
       itinerary.push({ id: `step-${index}`, name: city, coordinates: [0, 0] }); // à géocoder plus tard
     }
 
     coords.push(end);
-    itinerary.push({ id: 'end', name: 'Arrivée', coordinates: end });
+    itinerary.push({ id: 'end', name: endInput || 'Arrivée', coordinates: end });
 
     setWaypoints(coords.slice(1, coords.length - 1));
     setSteps(itinerary);

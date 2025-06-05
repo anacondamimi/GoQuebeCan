@@ -4,7 +4,6 @@ import HeroBanner from '@/components/ui/HeroBanner';
 import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun } from 'lucide-react';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 
-
 export const metadata = {
   slug: 'sauble-beach',
   ville: 'Sauble Beach',
@@ -141,7 +140,7 @@ const teenActivities = [
 ];
 
 export default function BlogArticleSaubleBeach() {
-   return (
+  return (
     <article id="blog_article_sauble_beach" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <HeroBanner
         image="/images/destinations/Sauble Beach.avif"
@@ -351,8 +350,7 @@ export default function BlogArticleSaubleBeach() {
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <Shield className="h-5 w-5 text-indigo-600" />
-              À Noter
+              <Shield className="h-5 w-5 text-indigo-600" />À Noter
             </h3>
             <p className="text-gray-600">
               Réservation essentielle en haute saison. Stationnement payant près de la plage.

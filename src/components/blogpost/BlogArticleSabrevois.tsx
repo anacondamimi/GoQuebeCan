@@ -18,7 +18,7 @@ export const metadata = {
   hebergements: ['Les Huttes du Richelieu', 'Auberge du Richelieu', 'Gîte des Îles'],
   publics: ['familles', 'ados'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -408,5 +408,3 @@ export default function BlogArticleSabrevois() {
     </article>
   );
 }
-
-

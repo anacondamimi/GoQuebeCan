@@ -18,7 +18,16 @@ export const metadata = {
   hebergements: ['Hôtel Tadoussac', 'Auberge La Galouïne', 'Motel Le Beluga'],
   publics: ['familles', 'ados', 'amateurs de culture', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Scale as Whale,  } from 'lucide-react';
+import {
+  Hotel,
+  Utensils,
+  Bus,
+  Calendar,
+  DollarSign,
+  Shield,
+  Star,
+  Scale as Whale,
+} from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -414,5 +423,3 @@ export default function BlogArticleTadoussac() {
     </article>
   );
 }
-
-

@@ -18,7 +18,7 @@ export const metadata = {
   hebergements: ['Wasaga Riverdocks Hotel', 'Beach Front Resort', 'Wasaga Motel'],
   publics: ['familles', 'ados', 'amateurs de culture'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -67,7 +67,7 @@ const restaurants = [
     schedule: "Toute l'année",
   },
   {
-    name: 'Sunset Beach Bar',
+    name: 'Beach Bar',
     type: 'Bar & Grill',
     speciality: 'Cuisine de plage',
     price: '$$',
@@ -411,5 +411,3 @@ export default function BlogArticleWasagaBeach() {
     </article>
   );
 }
-
-

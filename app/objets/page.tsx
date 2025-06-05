@@ -26,9 +26,7 @@ export default function ObjetsPage() {
   return (
     <main className="min-h-screen pt-8">
       {/* ✅ Titre pour le SEO, invisible pour l'utilisateur */}
-      <h1 className="sr-only">
-        Objets Indispensables pour Voyager au Québec et au Canada
-      </h1>
+      <h1 className="sr-only">Objets Indispensables pour Voyager au Québec et au Canada</h1>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <TravelEssentials />

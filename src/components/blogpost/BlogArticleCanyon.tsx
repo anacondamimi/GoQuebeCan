@@ -18,7 +18,7 @@ export const metadata = {
   hebergements: ['Hôtel Rimouski', 'Auberge du Portage', 'Motel de la Montagne'],
   publics: ['familles', 'ados', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Compass,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Compass } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -410,5 +410,3 @@ export default function BlogArticleCanyon() {
     </article>
   );
 }
-
-

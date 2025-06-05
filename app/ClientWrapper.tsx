@@ -1,4 +1,3 @@
-
 'use client';
 
 import { ReactNode, useEffect } from 'react';
@@ -23,7 +22,7 @@ export default function ClientWrapper({ children }: { children: ReactNode }) {
 
   return (
     <SiteProvider>
-      {children}     {/*   <-- plus de <Navbar /> ici   */}
+      {children} {/*   <-- plus de <Navbar /> ici   */}
       <Chatbot />
     </SiteProvider>
   );

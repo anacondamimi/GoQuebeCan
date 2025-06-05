@@ -18,7 +18,7 @@ export const metadata = {
   hebergements: ['Auberge de l', 'Gîte Chez Marie', 'Chalets des Îles'],
   publics: ['familles', 'ados', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 

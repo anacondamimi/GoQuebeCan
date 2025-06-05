@@ -1,82 +1,82 @@
 [
-    {
-        "name": "Parc national de la Jacques-Cartier",
-        "url": ""
-    },
-    {
-        "name": "Parc national de la Gaspésie",
-        "url": ""
-    },
-    {
-        "name": "Camping Aventure Mégantic",
-        "url": ""
-    },
-    {
-        "name": "Camping Carleton-Sur-Mer",
-        "url": ""
-    },
-    {
-        "name": "Camping Belle-Vie",
-        "url": ""
-    },
-    {
-        "name": "Camping Amqui",
-        "url": ""
-    },
-    {
-        "name": "Camping de L'Île",
-        "url": ""
-    },
-    {
-        "name": "Camping Valcartier",
-        "url": ""
-    },
-    {
-        "name": "Camping Pointe-aux-Oies",
-        "url": ""
-    },
-    {
-        "name": "Camping la Clé des Champs",
-        "url": ""
-    },
-    {
-        "name": "Camping Falaise-sur-Mer",
-        "url": ""
-    },
-    {
-        "name": "Camping Etsanha",
-        "url": ""
-    },
-    {
-        "name": "Camping Chalets Lac St-Augustin",
-        "url": ""
-    },
-    {
-        "name": "Camping Parc Bromont",
-        "url": ""
-    },
-    {
-        "name": "Camping Domaine Tournesol",
-        "url": ""
-    },
-    {
-        "name": "Camping De Compton",
-        "url": ""
-    },
-    {
-        "name": "Camping du Fort De La Martiniere",
-        "url": ""
-    },
-    {
-        "name": "Camping Domaine Lausanne",
-        "url": ""
-    },
-    {
-        "name": "Camping Bon-Désir",
-        "url": ""
-    },
-    {
-        "name": "Camping des Appalaches",
-        "url": ""
-    }
+  {
+    "name": "Parc national de la Jacques-Cartier",
+    "url": ""
+  },
+  {
+    "name": "Parc national de la Gaspésie",
+    "url": ""
+  },
+  {
+    "name": "Camping Aventure Mégantic",
+    "url": ""
+  },
+  {
+    "name": "Camping Carleton-Sur-Mer",
+    "url": ""
+  },
+  {
+    "name": "Camping Belle-Vie",
+    "url": ""
+  },
+  {
+    "name": "Camping Amqui",
+    "url": ""
+  },
+  {
+    "name": "Camping de L'Île",
+    "url": ""
+  },
+  {
+    "name": "Camping Valcartier",
+    "url": ""
+  },
+  {
+    "name": "Camping Pointe-aux-Oies",
+    "url": ""
+  },
+  {
+    "name": "Camping la Clé des Champs",
+    "url": ""
+  },
+  {
+    "name": "Camping Falaise-sur-Mer",
+    "url": ""
+  },
+  {
+    "name": "Camping Etsanha",
+    "url": ""
+  },
+  {
+    "name": "Camping Chalets Lac St-Augustin",
+    "url": ""
+  },
+  {
+    "name": "Camping Parc Bromont",
+    "url": ""
+  },
+  {
+    "name": "Camping Domaine Tournesol",
+    "url": ""
+  },
+  {
+    "name": "Camping De Compton",
+    "url": ""
+  },
+  {
+    "name": "Camping du Fort De La Martiniere",
+    "url": ""
+  },
+  {
+    "name": "Camping Domaine Lausanne",
+    "url": ""
+  },
+  {
+    "name": "Camping Bon-Désir",
+    "url": ""
+  },
+  {
+    "name": "Camping des Appalaches",
+    "url": ""
+  }
 ]

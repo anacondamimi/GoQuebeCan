@@ -1,7 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-
 interface Props {
   selected: string[];
   onToggle: (category: string) => void;

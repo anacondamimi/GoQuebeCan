@@ -15,7 +15,7 @@ export const metadata = {
   hebergements: ['Hôtel Le Massif', 'Refuge Le Massif', 'Chalets du Massif'],
   publics: ['familles', 'ados', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Snowflake,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Snowflake } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -453,5 +453,3 @@ export default function BlogArticleMassif() {
     </article>
   );
 }
-
-

@@ -115,17 +115,17 @@ export default function Footer() {
               <span>Confidentialité</span>
             </Link>
             <Link
-  href="/conditions-utilisation"
-  className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
->
-  <span>Conditions d’utilisation</span>
-</Link>
-<Link
-  href="/accessibilite"
-  className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
->
-  <span>Accessibilité</span>
-</Link>
+              href="/conditions-utilisation"
+              className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
+            >
+              <span>Conditions d’utilisation</span>
+            </Link>
+            <Link
+              href="/accessibilite"
+              className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
+            >
+              <span>Accessibilité</span>
+            </Link>
 
             <Link
               href="/mentions-legales"
@@ -140,4 +140,3 @@ export default function Footer() {
     </footer>
   );
 }
-

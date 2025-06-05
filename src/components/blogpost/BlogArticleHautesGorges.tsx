@@ -18,7 +18,7 @@ export const metadata = {
   hebergements: ['Auberge des Hautes-Gorges', 'Fairmont Le Manoir Richelieu', 'Auberge La Marmite'],
   publics: ['familles', 'ados', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Compass,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Compass } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 

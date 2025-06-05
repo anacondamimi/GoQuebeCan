@@ -19,7 +19,7 @@ export const metadata = {
   hebergements: ['Hôtel Baker', 'Auberge Gaspé', 'Motel Adams'],
   publics: ['familles', 'ados', 'amateurs de culture', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Tent,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Tent } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 

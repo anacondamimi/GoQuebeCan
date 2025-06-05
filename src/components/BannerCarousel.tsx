@@ -20,15 +20,10 @@ const images = [
   '/images/banner4.avif',
 ];
 
-export default function BannerCarousel({
-  title,
-  subtitle,
-  onOpenChat,
-}: Props) {
+export default function BannerCarousel({ title, subtitle, onOpenChat }: Props) {
   const [index, setIndex] = useState(0);
   const [hydrated, setHydrated] = useState(false);
   const router = useRouter();
-
 
   useEffect(() => {
     setHydrated(true);
@@ -97,7 +92,8 @@ export default function BannerCarousel({
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-4 text-white/90 text-base sm:text-lg max-w-2xl"
         >
-          Guides experts, itinéraires personnalisés et conseils locaux pour une aventure inoubliable en 2025
+          Guides experts, itinéraires personnalisés et conseils locaux pour une aventure inoubliable
+          en 2025
         </motion.p>
 
         <motion.div
@@ -107,11 +103,11 @@ export default function BannerCarousel({
           className="mt-6 flex flex-col sm:flex-row gap-4 justify-center"
         >
           <button
-  onClick={() => router.push('/planificateur')}
-  className="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-lg text-lg font-semibold"
->
-  Planifier mon voyage <span className="ml-2">▼</span>
-</button>
+            onClick={() => router.push('/planificateur')}
+            className="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-lg text-lg font-semibold"
+          >
+            Planifier mon voyage <span className="ml-2">▼</span>
+          </button>
 
           <button
             onClick={onOpenChat}
@@ -134,4 +130,3 @@ export default function BannerCarousel({
     </div>
   );
 }
-

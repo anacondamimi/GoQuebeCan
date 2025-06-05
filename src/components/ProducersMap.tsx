@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import L, { Icon } from 'leaflet';
+import { Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import producers from '../data/producers.json';
+import producers from '@/data/producers.json';
 
 // Icônes par type
 const icons: Record<string, Icon> = {

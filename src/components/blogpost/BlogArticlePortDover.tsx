@@ -18,7 +18,7 @@ export const metadata = {
   hebergements: ['Erie Beach Hotel', 'Dover Coast Resort', 'Lighthouse Festival Theatre Inn'],
   publics: ['familles', 'ados', 'amateurs de culture'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -407,5 +407,3 @@ export default function BlogArticlePortDover() {
     </article>
   );
 }
-
-

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-
   return (
     <html lang="fr" className={`${inter.variable} ${playfair.variable}`}>
       <body className="bg-warm-50 text-gray-800 font-sans">
@@ -33,5 +32,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-
-

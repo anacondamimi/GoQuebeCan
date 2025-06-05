@@ -8,7 +8,7 @@ export const metadata = {
   hebergements: ['Fairmont Le Reine Elizabeth', 'Hôtel Nelligan', 'Le Plateau Hotel'],
   publics: ['amateurs de culture'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Building,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Building } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -355,4 +355,3 @@ export default function BlogArticleMontreal() {
     </article>
   );
 }
-

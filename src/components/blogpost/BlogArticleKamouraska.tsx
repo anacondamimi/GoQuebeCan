@@ -1,4 +1,5 @@
 import React from 'react';
+import { Sunset } from 'lucide-react';
 
 export const metadata = {
   slug: 'kamouraska',

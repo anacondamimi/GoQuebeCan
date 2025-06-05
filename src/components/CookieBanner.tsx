@@ -30,7 +30,8 @@ export default function CookieBanner() {
             className="rounded-md shadow-md hidden md:block"
           />
           <p className="text-sm md:text-base">
-            Ce site utilise des cookies pour améliorer votre expérience. En continuant, vous acceptez notre politique de confidentialité.
+            Ce site utilise des cookies pour améliorer votre expérience. En continuant, vous
+            acceptez notre politique de confidentialité.
           </p>
         </div>
         <button

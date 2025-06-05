@@ -13,9 +13,10 @@ export default function IAMathieuPage() {
       </h1>
 
       <p className="mb-6 text-lg text-center">
-        Je suis <strong>Mathieu Marciniak</strong>, entrepreneur passionné par l’<em>innovation</em>,
-        la <em>qualité industrielle</em>, le <em>voyage authentique</em> et la <em>création assistée par IA</em>.
-        Cette carte vous ouvre les portes de mes projets, de mes idées, et de mes outils IA.
+        Je suis <strong>Mathieu Marciniak</strong>, entrepreneur passionné par l’<em>innovation</em>
+        , la <em>qualité industrielle</em>, le <em>voyage authentique</em> et la{' '}
+        <em>création assistée par IA</em>. Cette carte vous ouvre les portes de mes projets, de mes
+        idées, et de mes outils IA.
       </p>
 
       <div className="mb-6">
@@ -31,12 +32,18 @@ export default function IAMathieuPage() {
             </Link>
           </li>
           <li>
-            <Link href="https://anamimiglobalwellness.com/fr" className="text-blue-600 hover:underline">
+            <Link
+              href="https://anamimiglobalwellness.com/fr"
+              className="text-blue-600 hover:underline"
+            >
               😴 AnaMimi – Bien-être et anti-ronflement
             </Link>
           </li>
           <li>
-            <Link href="https://spectacular-belekoy-84f3e7.netlify.app" className="text-blue-600 hover:underline">
+            <Link
+              href="https://spectacular-belekoy-84f3e7.netlify.app"
+              className="text-blue-600 hover:underline"
+            >
               🏭 Gemba Walk – Application qualité augmentée
             </Link>
           </li>

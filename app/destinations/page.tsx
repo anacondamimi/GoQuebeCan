@@ -25,9 +25,7 @@ export default function DestinationsPage() {
   return (
     <main className="min-h-screen pt-8">
       {/* ✅ H1 invisible pour les moteurs de recherche */}
-      <h1 className="sr-only">
-        Destinations Populaires au Québec et au Canada
-      </h1>
+      <h1 className="sr-only">Destinations Populaires au Québec et au Canada</h1>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <PopularDestinations />

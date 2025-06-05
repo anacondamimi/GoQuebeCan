@@ -18,7 +18,7 @@ export const metadata = {
   hebergements: ['Hôtel Universel', 'Quality Inn', 'Auberge de la Pointe'],
   publics: ['familles', 'ados', 'amateurs de culture'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star,  } from 'lucide-react';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
@@ -414,4 +414,3 @@ export default function BlogArticleRiviereduLoup() {
     </article>
   );
 }
-
