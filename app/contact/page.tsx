@@ -4,10 +4,8 @@ import { useState } from 'react';
 import { saveContact } from '@/components/lib/saveContact';
 import type { ContactForm } from '@/components/lib/saveContact';
 
-
 export default function ContactPage() {
- const [form, setForm] = useState<ContactForm>({
-
+  const [form, setForm] = useState<ContactForm>({
     nom: '',
     email: '',
     message: '',
@@ -25,7 +23,6 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const { error } = await saveContact(form);
-
 
     if (error) {
       setConfirmation("❌ Une erreur s'est produite. Merci de réessayer.");

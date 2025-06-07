@@ -1,5 +1,3 @@
-import * as L from 'leaflet';
-
 declare module 'leaflet-routing-machine' {
   namespace L {
     namespace Routing {
@@ -25,4 +23,3 @@ declare module 'leaflet-routing-machine' {
 
   export = L.Routing;
 }
-

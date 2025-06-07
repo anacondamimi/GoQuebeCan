@@ -1,5 +1,5 @@
+"use client";
 // src/components/blogpost/BlogArticleLevis.tsx
-'use client';
 
 import React from 'react';
 import { Star, Hotel, Utensils, Bus, Calendar, DollarSign, Shield } from 'lucide-react';

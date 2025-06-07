@@ -1,4 +1,5 @@
-'use client';
+"use client";
+import React from 'react';
 
 import Link from 'next/link';
 import { Mail, FileText, Scale, MapPin, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
@@ -99,7 +100,7 @@ export default function Footer() {
           <div className="text-gray-400 text-sm">
             © {new Date().getFullYear()} GoQuebecan. Tous droits réservés.
           </div>
-          <div className="flex space-x-6">
+          <div className="flex flex-wrap gap-6 items-center">
             <Link
               href="/contact"
               className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
@@ -126,7 +127,6 @@ export default function Footer() {
             >
               <span>Accessibilité</span>
             </Link>
-
             <Link
               href="/mentions-legales"
               className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
@@ -134,6 +134,15 @@ export default function Footer() {
               <Scale className="h-4 w-4 mr-2" />
               <span>Mentions Légales</span>
             </Link>
+            <button
+              onClick={() => {
+                localStorage.removeItem('cookie_consent');
+                window.location.reload();
+              }}
+              className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
+            >
+              <span>🎛 Cookies</span>
+            </button>
           </div>
         </div>
       </div>

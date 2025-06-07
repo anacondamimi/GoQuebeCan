@@ -85,8 +85,7 @@ export default function SharedItineraryPage() {
       <h1 className="text-3xl font-bold mb-4 text-indigo-700">🧭 Itinéraire partagé</h1>
 
       <p className="text-gray-600 mb-4">
-        Lien :
-        <code className="text-sm bg-gray-100 px-2 py-1 rounded ml-2">{slug}</code>
+        Lien :<code className="text-sm bg-gray-100 px-2 py-1 rounded ml-2">{slug}</code>
         <button
           onClick={() => {
             navigator.clipboard.writeText(window.location.href);

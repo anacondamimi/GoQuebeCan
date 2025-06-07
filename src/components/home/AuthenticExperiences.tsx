@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from 'react';
 import Link from 'next/link';
 import { Compass, Mountain, TreePine } from 'lucide-react';

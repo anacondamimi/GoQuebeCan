@@ -1,10 +1,10 @@
-'use client';
-
+"use client";
 import React, { useRef, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { MessageSquare, X, Send } from 'lucide-react';
-import { useSite } from '@/components/contexts/SiteContext'; // Corrigé ici
+import { useSite } from '@/components/contexts/SiteContext';
 import { suggestNearbyProducers } from '@/utils/suggestNearbyProducers';
+import { getContentSuggestions } from '@/components/lib/getContentSuggestions';
 
 const MapWithRouting = dynamic(() => import('@/components/MapWithRouting'), {
   ssr: false,
@@ -74,16 +74,16 @@ export default function Chatbot() {
 
     const userText = input.toLowerCase();
 
-    // Exemple spécifique
+    // Exemple itinéraire spécifique
     if (userText.includes('montréal') && userText.includes('tadoussac')) {
-      const startPoint: [number, number] = [45.5017, -73.5673]; // Montréal
-      const endPoint: [number, number] = [48.1394, -69.6866]; // Tadoussac
+      const startPoint: [number, number] = [45.5017, -73.5673];
+      const endPoint: [number, number] = [48.1394, -69.6866];
 
       setStart(startPoint);
       setEnd(endPoint);
 
       const route = [startPoint, endPoint];
-      const nearby = suggestNearbyProducers(route, 10); // rayon 10 km
+      const nearby = suggestNearbyProducers(route, 10);
       setNearbyProducers(nearby);
 
       setMessages((prev: Message[]) => [
@@ -95,6 +95,22 @@ export default function Chatbot() {
         },
       ]);
 
+      setIsTyping(false);
+      return;
+    }
+
+    // Suggestions de contenu
+    const slug = extractDestinationSlug(userText);
+    const suggestion = getContentSuggestions(slug);
+    if (suggestion) {
+      setMessages((prev: Message[]) => [
+        ...prev,
+        {
+          text: `✨ Voici des suggestions pour ${suggestion.destination} :\n\n📘 Article : [Cliquez ici](${suggestion.blogUrl})\n🎥 Vidéo : [Voir les vidéos](${suggestion.videoUrl})\n🎒 Objets utiles : [Découvrir](${suggestion.objectsUrl})\n🗺️ Planifiez votre itinéraire : [C’est par ici](${suggestion.plannerUrl})`,
+          isUser: false,
+          timestamp: new Date(),
+        },
+      ]);
       setIsTyping(false);
       return;
     }
@@ -133,9 +149,6 @@ export default function Chatbot() {
     }
   };
 
-  const formatTime = (date: Date) =>
-    new Date(date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
   return (
     <>
       {!isOpen && (
@@ -150,6 +163,7 @@ export default function Chatbot() {
 
       {isOpen && (
         <div className="fixed bottom-0 right-0 sm:bottom-6 sm:right-6 w-full sm:w-96 bg-white rounded-t-xl sm:rounded-xl shadow-2xl z-50 flex flex-col animate-slide-up">
+          {/* Header */}
           <div className="flex items-center justify-between bg-indigo-600 text-white p-4 rounded-t-xl">
             <div className="flex items-center gap-2">
               <MessageSquare className="h-5 w-5" />
@@ -160,8 +174,9 @@ export default function Chatbot() {
             </button>
           </div>
 
+          {/* Messages */}
           <div className="flex-grow h-96 overflow-y-auto p-4 bg-gray-50">
-            {messages.map((msg: Message, i: number) => (
+            {messages.map((msg, i) => (
               <div key={i} className={`flex ${msg.isUser ? 'justify-end' : 'justify-start'} mb-2`}>
                 <div
                   className={`max-w-[85%] p-3 rounded-2xl ${
@@ -171,7 +186,12 @@ export default function Chatbot() {
                   }`}
                 >
                   <p className="mb-1 whitespace-pre-wrap">{msg.text}</p>
-                  <p className="text-xs text-right text-gray-400">{formatTime(msg.timestamp)}</p>
+                  <p className="text-xs text-right text-gray-400">
+                    {new Date(msg.timestamp).toLocaleTimeString([], {
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })}
+                  </p>
                 </div>
               </div>
             ))}
@@ -190,17 +210,19 @@ export default function Chatbot() {
             <div ref={messagesEndRef} />
           </div>
 
+          {/* Carte si itinéraire présent */}
           {start && end && (
             <div className="p-4 border-t bg-white">
               <MapWithRouting points={[start, end]} producers={nearbyProducers} />
             </div>
           )}
 
+          {/* Producteurs à proximité */}
           {nearbyProducers.length > 0 && (
             <div className="p-4 border-t bg-white max-h-48 overflow-y-auto">
               <p className="text-sm font-medium mb-2">🥬 Producteurs à proximité du trajet :</p>
               <ul className="text-sm list-disc pl-5 space-y-1">
-                {nearbyProducers.map((p: any, i: number) => (
+                {nearbyProducers.map((p, i) => (
                   <li key={i}>
                     {p.name} ({p.type || 'Producteur'})
                   </li>
@@ -209,6 +231,7 @@ export default function Chatbot() {
             </div>
           )}
 
+          {/* Formulaire d'envoi */}
           <form onSubmit={handleSend} className="p-4 border-t bg-white flex gap-2 items-center">
             <input
               value={input}
@@ -228,4 +251,42 @@ export default function Chatbot() {
       )}
     </>
   );
+}
+function extractDestinationSlug(text: string): string {
+  const slugs = [
+    'gaspesie',
+    'perce',
+    'carleton',
+    'forillon',
+    'baie-saint-paul',
+    'massif',
+    'port-au-persil',
+    'hautes-gorges',
+    'sept-iles',
+    'mingan',
+    'port-cartier',
+    'tadoussac',
+    'magog-orford',
+    'bromont-granby',
+    'sherbrooke',
+    'bic',
+    'kamouraska',
+    'rivieredu-loup',
+    'quebec',
+    'levis',
+    'montmorency',
+    'orleans',
+    'wasaga-beach',
+    'port-dover',
+    'grand-bend',
+    'sauble-beach',
+    'sandbanks',
+    'singing-sands',
+    'eeyou-istchee',
+    'kuururjuaq',
+    'sabrevois',
+    'canyon',
+    'pourquoi-louer-un-vr-au-quebec-avec-authentik-canada',
+  ];
+  return slugs.find((slug) => text.includes(slug)) || '';
 }

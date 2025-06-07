@@ -1,6 +1,5 @@
-'use client';
-
-import { useEffect, useRef, useState } from 'react';
+"use client";
+import React, { useEffect, useState, useRef } from 'react';
 
 interface MapboxAutocompleteProps {
   label: string;

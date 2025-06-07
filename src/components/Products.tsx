@@ -1,4 +1,5 @@
-'use client';
+"use client";
+import React from 'react';
 import { ExternalLink, Tent, Briefcase as Suitcase, Plane, Car, Package } from 'lucide-react';
 
 const categories = [

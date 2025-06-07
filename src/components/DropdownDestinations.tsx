@@ -1,6 +1,5 @@
-'use client';
-
-import { useState, useEffect, useRef } from 'react';
+"use client";
+import React, { useEffect, useState, useRef  } from 'react';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 import DropdownPortal from './ui/DropdownPortal'; // ajuste le chemin si besoin

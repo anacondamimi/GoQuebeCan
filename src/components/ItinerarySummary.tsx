@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import html2pdf from 'html2pdf.js';
 
 export default function ItinerarySummary() {

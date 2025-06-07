@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ES2020"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ES2020"],
     "module": "ESNext",
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -19,19 +15,11 @@
     // 🔁 Alias @/ vers /src
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
     // ✅ Types globaux (Node, Next, etc.)
-    "types": [
-      "node",
-      "next"
-    ],
-    "typeRoots": [
-      "./types",
-      "./node_modules/@types"
-    ],
+    "types": ["node", "next"],
+    "typeRoots": ["./types", "./node_modules/@types"],
     // 🧼 Clean code
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
@@ -44,15 +32,6 @@
       }
     ]
   },
-  "include": [
-    "next-env.d.ts",
-    "src",
-    "scripts",
-    ".next/types/**/*.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "src", "scripts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

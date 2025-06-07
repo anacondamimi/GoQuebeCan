@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from 'react';
 import { Tent, MapPin, DollarSign, Star } from 'lucide-react';
 

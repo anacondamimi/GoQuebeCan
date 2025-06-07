@@ -1,6 +1,6 @@
 // 🔧 Auto-generated componentMap.ts
 
-const componentMap: Record<string, () => Promise<any>> = {
+const componentMap: Record<string, () => Promise<React.ComponentType<any>>> = {
   'anse-saint-jean': () =>
     import('@/components/blogpost/BlogArticleAnseSaintJean').then((mod) => mod.default),
   'baie-saint-paul': () =>

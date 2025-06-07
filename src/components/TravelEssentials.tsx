@@ -1,4 +1,5 @@
-'use client';
+"use client";
+import React from 'react';
 import { Tent, Briefcase as Suitcase, Plane, Car } from 'lucide-react';
 
 export default function TravelEssentials() {

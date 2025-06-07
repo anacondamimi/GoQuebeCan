@@ -1,6 +1,6 @@
-'use client';
+"use client";
+import React, { useState } from 'react';
 
-import { useState } from 'react';
 import MapboxAutocomplete from './MapboxAutocomplete';
 import MapWithRouting from './MapWithRouting';
 import ProducersMap from './ProducersMapFiltrable';
@@ -11,21 +11,24 @@ import { saveItinerary } from './lib/saveItinerary';
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
 export default function ItineraryPlanner() {
-  if (!MAPBOX_TOKEN) {
-    return <div className="text-red-600">❌ MAPBOX_TOKEN manquant dans .env.local</div>;
-  }
-
   const [startInput, setStartInput] = useState('');
   const [endInput, setEndInput] = useState('');
   const [start, setStart] = useState<[number, number] | null>(null);
   const [end, setEnd] = useState<[number, number] | null>(null);
-  const [waypoints, setWaypoints] = useState<[number, number][]>([]);
   const [stepInput, setStepInput] = useState('');
   const [tempSteps, setTempSteps] = useState<string[]>([]);
-  const [steps, setSteps] = useState<{ id: string; name: string; coordinates: [number, number] }[]>([]);
+  const [steps, setSteps] = useState<{ id: string; name: string; coordinates: [number, number] }[]>(
+    []
+  );
+  const [waypoints, setWaypoints] = useState<[number, number][]>([]);
   const [producerSuggestions, setProducerSuggestions] = useState<
     { stepIndex: number; producer: any; distance: number }[]
   >([]);
+  const [formError, setFormError] = useState('');
+
+  if (!MAPBOX_TOKEN) {
+    return <div className="text-red-600">❌ MAPBOX_TOKEN manquant dans .env.local</div>;
+  }
 
   const handleAddStep = () => {
     if (stepInput.trim()) {
@@ -36,9 +39,10 @@ export default function ItineraryPlanner() {
 
   const handleGeocodeAll = () => {
     if (!start || !end) {
-      alert('Merci de remplir au minimum un point de départ et d’arrivée.');
+      setFormError('Merci de remplir au minimum un point de départ et d’arrivée.');
       return;
     }
+    setFormError('');
 
     const coords: [number, number][] = [];
     const itinerary: { id: string; name: string; coordinates: [number, number] }[] = [];
@@ -47,7 +51,7 @@ export default function ItineraryPlanner() {
     itinerary.push({ id: 'start', name: startInput || 'Départ', coordinates: start });
 
     for (const [index, city] of tempSteps.entries()) {
-      itinerary.push({ id: `step-${index}`, name: city, coordinates: [0, 0] }); // à géocoder plus tard
+      itinerary.push({ id: `step-${index}`, name: city, coordinates: [0, 0] });
     }
 
     coords.push(end);
@@ -65,9 +69,10 @@ export default function ItineraryPlanner() {
     setEnd(null);
     setStartInput('');
     setEndInput('');
-    setWaypoints([]);
+    setStepInput('');
     setTempSteps([]);
     setSteps([]);
+    setWaypoints([]);
     setProducerSuggestions([]);
     alert('🗑️ Ton itinéraire a été effacé.');
   };
@@ -77,6 +82,12 @@ export default function ItineraryPlanner() {
       <h1 className="text-3xl font-bold text-center mb-6">🗺️ Planifie ton itinéraire</h1>
 
       <div className="bg-white p-6 rounded-lg shadow space-y-6">
+        {formError && (
+          <div className="bg-red-100 text-red-800 border border-red-300 rounded-md px-4 py-2 animate-shake">
+            {formError}
+          </div>
+        )}
+
         <MapboxAutocomplete
           label="📍 Départ"
           placeholder="Ex : Montréal"
@@ -103,25 +114,31 @@ export default function ItineraryPlanner() {
             <input
               value={stepInput}
               onChange={(e) => setStepInput(e.target.value)}
-              className="border px-3 py-2 flex-1 rounded"
+              className="border px-3 py-2 flex-1 rounded focus:ring-2 focus:ring-blue-500"
               placeholder="Ex : Trois-Rivières"
             />
-            <button className="bg-blue-600 text-white px-4 py-2 rounded" onClick={handleAddStep}>
+            <button
+              type="button"
+              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              onClick={handleAddStep}
+            >
               Ajouter
             </button>
           </div>
-          <ul className="list-disc list-inside mt-2 text-sm text-gray-700">
-            {tempSteps.map((step, i) => (
-              <li key={i}>{step}</li>
-            ))}
-          </ul>
+          {tempSteps.length > 0 && (
+            <ul className="list-disc list-inside mt-2 text-sm text-gray-700">
+              {tempSteps.map((step, i) => (
+                <li key={i}>{step}</li>
+              ))}
+            </ul>
+          )}
         </div>
 
         <button
           onClick={handleGeocodeAll}
-          className="bg-green-600 text-white px-6 py-2 mt-4 rounded"
+          className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 font-semibold"
         >
-          Tracer l’itinéraire
+          Tracer l'itinéraire
         </button>
       </div>
 

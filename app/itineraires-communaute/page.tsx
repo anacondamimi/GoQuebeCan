@@ -1,7 +1,7 @@
 import { supabase } from '@/components/lib/supabase'; // ✅ corrigé
 
 export default async function CommunautéPage() {
-  const { data: pdfs, } = await supabase.from('community_pdfs').select('*');
+  const { data: pdfs } = await supabase.from('community_pdfs').select('*');
 
   return (
     <main className="max-w-6xl mx-auto px-4 py-10">

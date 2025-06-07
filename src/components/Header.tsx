@@ -1,6 +1,6 @@
-// components/Header.tsx
-'use client';
-import { useState, useEffect } from 'react';
+"use client";
+import React, { useEffect, useState } from 'react';
+
 import Link from 'next/link';
 import { Menu, X, MessageSquare } from 'lucide-react';
 

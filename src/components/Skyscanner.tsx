@@ -1,8 +1,7 @@
-// src/components/Skyscanner.tsx
 
-'use client';
-import React, { useEffect } from 'react';
+"use client";
 
+import React, { useEffect} from 'react';
 export function Skyscanner() {
   useEffect(() => {
     const script = document.createElement('script');

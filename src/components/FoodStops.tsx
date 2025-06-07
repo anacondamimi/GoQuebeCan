@@ -1,5 +1,6 @@
-'use client';
+"use client";
 import React, { useState } from 'react';
+
 import { UtensilsCrossed, Search } from 'lucide-react';
 
 const foodStops = [

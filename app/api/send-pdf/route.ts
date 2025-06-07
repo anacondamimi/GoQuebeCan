@@ -1,8 +1,18 @@
 import { NextResponse } from 'next/server';
 
+type ChatMessage = {
+  text: string;
+  isUser: boolean;
+  timestamp: string; // ou Date si tu veux faire `new Date(msg.timestamp)`
+};
+
+type ChatRequestBody = {
+  messages: ChatMessage[];
+};
+
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
+    const body: ChatRequestBody = await req.json();
     const messages = body.messages;
 
     if (!messages || !Array.isArray(messages)) {
@@ -21,7 +31,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Clé API ou Project ID manquant' }, { status: 500 });
     }
 
-    const limitedMessages = messages.slice(-10); // Limiter à 10 messages pour contexte
+    const limitedMessages = messages.slice(-10);
 
     console.log('[DEBUG] Envoi à OpenAI avec:', {
       apiKey: apiKey.substring(0, 10) + '...',
@@ -44,7 +54,7 @@ export async function POST(req: Request) {
             content:
               'Tu es un assistant voyage expert du Québec et du Canada. Tu poses des questions pertinentes et proposes des destinations, activités, campings ou hôtels adaptés au profil (famille, ado, etc.). Termine toujours avec une question ou un conseil utile.',
           },
-          ...limitedMessages.map((msg: any) => ({
+          ...limitedMessages.map((msg) => ({
             role: msg.isUser ? 'user' : 'assistant',
             content: msg.text,
           })),
