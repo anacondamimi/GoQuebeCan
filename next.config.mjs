@@ -1,9 +1,70 @@
 /** @type {import('next').NextConfig} */
 const isDev = process.env.NODE_ENV !== 'production';
 
-const csp = isDev
-  ? "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: *; style-src 'self' 'unsafe-inline'; connect-src *; img-src * data: blob:;"
-  : "default-src 'self'; script-src 'self' https://*.vercel.app https://*.supabase.co https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; connect-src *; img-src * data: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'self';";
+const csp = `
+  default-src 'self';
+  connect-src 'self'
+    https://m.media-amazon.com
+    https://www.amazon.ca
+    https://cf.bstatic.com
+    https://www.getyourguide.com
+    https://images.unsplash.com
+    https://widgets.skyscanner.net
+    https://www.amazon.com
+    https://chargehub.com
+    https://abetterrouteplanner.com
+    https://apps.apple.com
+    https://play.google.com
+    https://sovrn.co
+    https://www.w3.org
+    https://cdn-icons-png.flaticon.com
+    https://api.mapbox.com
+    https://turo.com
+    https://connect.facebook.net
+    https://goquebecan.com
+    https://facebook.com
+    https://twitter.com
+    https://instagram.com
+    https://localhost:3000
+    https://localhost:3001
+    https://192.168.2.170:3008
+    https://www.wasagabeach.com
+    https://www.croisieres-aml.com
+    https://www.pc.gc.ca
+    https://www.destinationsherbrooke.com
+    https://tourismesetpiles.ca
+    https://www.saublebeach.com
+    https://www.ontarioparks.com
+    https://www.tourisme-monteregie.qc.ca
+    https://www.portdover.ca
+    https://villeport-cartier.com
+    https://www.tourisme-charlevoix.com
+    https://www.croisieresgaspe.ca
+    https://www.sepaq.com
+    https://geoparcdeperce.com
+    https://www.quebec-cite.com
+    https://www.locationvelos.com
+    https://www.tourisme.iledorleans.com
+    https://www.mtl.org
+    https://www.lemassif.com
+    https://www.nunavikparks.ca
+    https://www.airinuit.com
+    https://www.tourisme-kamouraska.com
+    https://www.grandbend.com
+    https://www.decrochezcommejamais.com
+    https://carletonsurmer.com
+    https://www.canyonportesenfer.qc.ca
+    https://www.skibromont.com;
+  script-src 'self' https://www.googletagmanager.com;
+  frame-src https://www.youtube.com https://player.vimeo.com;
+  style-src 'self' 'unsafe-inline';
+  img-src * data: blob:;
+  object-src 'none';
+  base-uri 'self';
+  frame-ancestors 'none';
+`.replace(/\n/g, '');
+
+
 
 const nextConfig = {
   reactStrictMode: true,

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "csp:scan": "node scripts/generateCSPDirectives.js",
     "check:default-exports": "node verify-default-exports.js",
     "start": "next start",
     "fix:entities": "eslint \"src/**/*.{tsx,jsx}\" --fix --rule \"react/no-unescaped-entities:error\"",
