@@ -1,86 +1,87 @@
-"use client";
-import React, { useEffect, useState, useRef } from 'react';
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
 
 interface MapboxAutocompleteProps {
   label: string;
-  placeholder?: string;
-  onSelect: (coords: [number, number], label: string) => void;
+  placeholder: string;
   token: string;
+  onSelect: (coordinates: [number, number], label: string) => void;
+  className?: string;
 }
 
 export default function MapboxAutocomplete({
   label,
   placeholder,
-  onSelect,
   token,
+  onSelect,
+  className = '',
 }: MapboxAutocompleteProps) {
-  const [inputValue, setInputValue] = useState('');
+  const [input, setInput] = useState('');
   const [suggestions, setSuggestions] = useState<any[]>([]);
-  const [isFocused, setIsFocused] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [selected, setSelected] = useState(false);
+  const timeoutRef = useRef<any>(null);
 
   useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
-        setIsFocused(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+    if (input.length < 3) {
+      setSuggestions([]);
+      return;
+    }
 
-  useEffect(() => {
-    const fetchSuggestions = async () => {
-      if (!inputValue) {
-        setSuggestions([]);
-        return;
-      }
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
 
-      const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
-        inputValue
-      )}.json?access_token=${token}&autocomplete=true&country=CA&language=fr`;
-
+    timeoutRef.current = setTimeout(async () => {
       try {
-        const res = await fetch(url);
+        const res = await fetch(
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
+            input
+          )}.json?access_token=${token}&autocomplete=true&language=fr`
+        );
         const data = await res.json();
         setSuggestions(data.features || []);
       } catch (error) {
         console.error('Erreur Mapbox:', error);
         setSuggestions([]);
       }
-    };
-
-    const delay = setTimeout(fetchSuggestions, 300);
-    return () => clearTimeout(delay);
-  }, [inputValue, token]);
-
-  const handleSelect = (feature: any) => {
-    const coords: [number, number] = [feature.center[1], feature.center[0]];
-    setInputValue(feature.place_name);
-    setSuggestions([]);
-    onSelect(coords, feature.place_name);
-  };
+    }, 300);
+  }, [input, token]);
 
   return (
-    <div className="relative" ref={containerRef}>
+    <div className={`mb-4 relative ${className}`}>
       <label className="block font-semibold mb-1">{label}</label>
       <input
         type="text"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        onFocus={() => setIsFocused(true)}
+        value={input}
+        onChange={(e) => {
+          setInput(e.target.value);
+          setSelected(false);
+        }}
+        className={`border px-3 py-2 w-full rounded ${
+          !selected && input.length > 3 ? 'border-red-500' : ''
+        }`}
         placeholder={placeholder}
-        className="w-full border px-3 py-2 rounded"
       />
-      {isFocused && suggestions.length > 0 && (
-        <ul className="absolute z-10 bg-white border mt-1 w-full rounded shadow">
-          {suggestions.map((feature) => (
+      {!selected && input.length > 3 && (
+        <p className="text-red-500 text-sm mt-1">
+          Veuillez choisir une ville dans la liste.
+        </p>
+      )}
+
+      {suggestions.length > 0 && (
+        <ul className="absolute z-10 bg-white border w-full mt-1 rounded shadow max-h-60 overflow-y-auto">
+          {suggestions.map((sugg, idx) => (
             <li
-              key={feature.id}
-              onClick={() => handleSelect(feature)}
-              className="px-4 py-2 cursor-pointer hover:bg-gray-100 text-sm"
+              key={idx}
+              className="px-4 py-2 hover:bg-blue-100 cursor-pointer text-sm"
+              onClick={() => {
+                const [lng, lat] = sugg.center;
+                setInput(sugg.place_name);
+                setSuggestions([]);
+                setSelected(true);
+                onSelect([lat, lng], sugg.place_name);
+              }}
             >
-              {feature.place_name}
+              {sugg.place_name}
             </li>
           ))}
         </ul>

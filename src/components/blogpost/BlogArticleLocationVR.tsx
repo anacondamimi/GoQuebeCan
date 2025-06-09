@@ -18,7 +18,7 @@ export default function BlogArticleLocationVR() {
       <h1>Pourquoi louer un VR au Québec avec Authentik Canada ?</h1>
       <div className="relative w-full h-[400px] my-8">
         <img
-          src="/images/location-vr-quebec.jpg"
+          src="/images/destinations/VR2.avif"
           alt="VR sur une route panoramique du Québec"
           className="object-cover rounded-lg absolute inset-0 w-full h-full"
         />

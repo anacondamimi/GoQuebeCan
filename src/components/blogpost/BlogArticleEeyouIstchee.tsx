@@ -178,7 +178,7 @@ export default function BlogArticleEeyouIstchee() {
     <article id="blog_article_eeyou_istchee" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Eeyou Istchee Baie-James - Immersion dans le Grand Nord Québécois
+           Eeyou Istchee Baie-James - Immersion dans le Grand Nord Québécois
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce vaste territoire où nature sauvage et culture crie se rencontrent dans une
@@ -194,7 +194,7 @@ export default function BlogArticleEeyouIstchee() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80"
+             src="/images/destinations/Eeyou Istchee,BaieJames.avif"
             alt="Eeyou Istchee Baie-James"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

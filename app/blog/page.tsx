@@ -23,14 +23,14 @@ const blogPosts = [
   },
   {
     slug: 'montreal',
-    title: 'Guide Complet : Montréal',
+    title: ' Montréal',
     description: 'Découvrez la métropole culturelle et festive du Québec',
     image: 'https://images.unsplash.com/photo-1519178614-68673b201f36?auto=format&fit=crop&q=80',
     category: 'Montréal',
   },
   {
     slug: 'charlevoix',
-    title: 'Guide Complet : Charlevoix',
+    title: ' Charlevoix',
     description: 'Entre mer et montagnes, découvrez cette région spectaculaire',
     image: 'https://images.unsplash.com/photo-1572463459372-70c9cf5cb795?auto=format&fit=crop&q=80',
     category: 'Charlevoix',

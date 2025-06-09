@@ -144,7 +144,7 @@ export default function BlogArticlePortAuPersil() {
     <article id="blog_article_port_au_persil" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Port-au-Persil - Joyau Caché de Charlevoix
+           Port-au-Persil - Joyau Caché de Charlevoix
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce village pittoresque où falaises escarpées et traditions maritimes créent un
@@ -160,7 +160,7 @@ export default function BlogArticlePortAuPersil() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1513977055326-8ae6272d90a7?auto=format&fit=crop&q=80"
+            src="/images/destinations/Port-au-Persil.avif"
             alt="Port-au-Persil"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

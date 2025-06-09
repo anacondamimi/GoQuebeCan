@@ -213,7 +213,7 @@ export default function BlogArticleBromontGranby() {
     <article id="blog_article_bromont_granby" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Bromont et Granby - Plaisirs Quatre Saisons
+           Bromont et Granby - Plaisirs Quatre Saisons
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez deux villes complémentaires offrant sports de montagne, attractions familiales
@@ -230,7 +230,7 @@ export default function BlogArticleBromontGranby() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1582653292481-44c51f429f78?auto=format&fit=crop&q=80"
+             src="/images/destinations/Bromont.avif"
             alt="Bromont en été"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

@@ -145,7 +145,7 @@ export function BlogArticleKamouraska() {
     <article id="blog_article_kamouraska" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Kamouraska - Le Village aux Plus Beaux Couchers de Soleil
+           Kamouraska - Le Village aux Plus Beaux Couchers de Soleil
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce joyau du Bas-Saint-Laurent, entre patrimoine historique et paysages
@@ -162,7 +162,7 @@ export function BlogArticleKamouraska() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1596238259704-d47dc656b2a7?auto=format&fit=crop&q=80"
+            src="/images/destinations/Kamouraska.avif"
             alt="Kamouraska"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

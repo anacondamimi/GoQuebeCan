@@ -176,7 +176,7 @@ export function BlogArticleForillon() {
     <article id="blog_article_forillon" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Parc national Forillon - Joyau naturel de la Gaspésie
+           Parc national Forillon - Joyau naturel de la Gaspésie
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez un territoire préservé où la mer, la montagne et la forêt se rencontrent
@@ -191,7 +191,7 @@ export function BlogArticleForillon() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1596472195295-9e0cb3799405?auto=format&fit=crop&q=80"
+            src="/images/destinations/Forillon.avif"
             alt="Parc national Forillon"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

@@ -95,7 +95,7 @@ export default function BlogArticleMontreal() {
     <article className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Montréal - Métropole Culturelle et Festive
+           Montréal - Métropole Culturelle et Festive
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez la plus grande ville francophone d'Amérique, où histoire, culture et modernité
@@ -112,7 +112,7 @@ export default function BlogArticleMontreal() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1519178614-68673b201f36?auto=format&fit=crop&q=80"
+           src="/images/destinations/Montreal.avif"
             alt="Montréal"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

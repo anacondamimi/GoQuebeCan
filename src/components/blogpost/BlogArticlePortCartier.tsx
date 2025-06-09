@@ -144,7 +144,7 @@ export default function BlogArticlePortCartier() {
     <article id="blog_article_port_cartier" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Port-Cartier - Entre Mer et Forêt sur la Côte-Nord
+           Port-Cartier - Entre Mer et Forêt sur la Côte-Nord
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez cette ville dynamique où activités maritimes et plein air se rencontrent dans un
@@ -161,7 +161,7 @@ export default function BlogArticlePortCartier() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1596238686005-38e08058f08f?auto=format&fit=crop&q=80"
+            src="/images/destinations/Port cartier.avif"
             alt="Port-Cartier"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

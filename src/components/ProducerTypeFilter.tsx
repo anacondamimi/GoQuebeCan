@@ -12,6 +12,8 @@ const categories = [
   { id: 'cheese', label: '🧀 Fromage' },
   { id: 'berry', label: '🫐 Fruits' },
   { id: 'beer', label: '🍺 Bière' },
+  { id: 'farm', label: '🥩 Ferme' },
+
 ];
 
 export default function ProducerTypeFilter({ selected, onToggle }: Props) {

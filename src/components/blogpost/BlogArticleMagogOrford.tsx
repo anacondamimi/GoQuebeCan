@@ -165,7 +165,7 @@ export default function BlogArticleMagogOrford() {
     <article id="blog_article_magog_orford" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Magog-Orford - Entre Lacs et Montagnes
+           Magog-Orford - Entre Lacs et Montagnes
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce joyau des Cantons-de-l'Est où nature, gastronomie et activités de plein air
@@ -182,7 +182,7 @@ export default function BlogArticleMagogOrford() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1596238259704-d47dc656b2a7?auto=format&fit=crop&q=80"
+            src="/images/destinations/Magog.avif"
             alt="Lac Memphrémagog"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

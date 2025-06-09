@@ -137,7 +137,7 @@ export default function BlogArticleKuururjuaq() {
     <article id="blog_article_kuururjuaq" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Parc national Kuururjuaq - L'Ultime Aventure Arctique
+           Parc national Kuururjuaq - L'Ultime Aventure Arctique
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez l'un des parcs les plus septentrionaux du Québec, où toundra, montagnes et
@@ -154,7 +154,7 @@ export default function BlogArticleKuururjuaq() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80"
+            src="/images/destinations/Kuururjuaq.avif"
             alt="Parc Kuururjuaq"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

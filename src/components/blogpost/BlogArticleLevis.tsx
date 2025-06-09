@@ -173,7 +173,7 @@ export default function BlogArticleLevis() {
     <article id="blog_article_levis" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Lévis – L’Autre Rive de Québec
+           Lévis – L’Autre Rive de Québec
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez cette ville dynamique offrant la plus belle vue sur Québec et des attractions
@@ -189,7 +189,7 @@ export default function BlogArticleLevis() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1572463459372-70c9cf5cb795?auto=format&fit=crop&q=80"
+            src="/images/destinations/Levis.avif"
             alt="Vue sur Québec depuis Lévis"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

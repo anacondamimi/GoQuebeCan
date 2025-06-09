@@ -144,7 +144,7 @@ export default function BlogArticleRiviereduLoup() {
     <article id="blog_article_riviere_du_loup" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Rivière-du-Loup - Porte d'entrée du Bas-Saint-Laurent
+           Rivière-du-Loup - Porte d'entrée du Bas-Saint-Laurent
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez cette ville historique où le fleuve Saint-Laurent rencontre la nature sauvage
@@ -160,7 +160,7 @@ export default function BlogArticleRiviereduLoup() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1589352511666-541c12c8e6c7?auto=format&fit=crop&q=80"
+            src="/images/destinations/Chute Riviere-du-Loup.avif"
             alt="Rivière-du-Loup"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

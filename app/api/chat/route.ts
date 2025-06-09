@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 type ChatMessage = {
   text: string;
   isUser: boolean;
-  timestamp: string; // ou Date selon ton usage
+  timestamp: string;
 };
 
 type ChatRequestBody = {
@@ -17,10 +17,7 @@ export async function POST(req: Request) {
 
     if (!messages || !Array.isArray(messages)) {
       console.error('[API ERROR] Messages invalides :', messages);
-      return NextResponse.json(
-        { error: 'Messages manquants ou au mauvais format' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Messages invalides' }, { status: 400 });
     }
 
     const apiKey = process.env.OPENAI_API_KEY;
@@ -33,12 +30,6 @@ export async function POST(req: Request) {
 
     const limitedMessages = messages.slice(-10);
 
-    console.log('[DEBUG] Envoi à OpenAI avec:', {
-      apiKey: apiKey.substring(0, 10) + '...',
-      projectId,
-      messages: limitedMessages,
-    });
-
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -47,20 +38,42 @@ export async function POST(req: Request) {
         'OpenAI-Project': projectId,
       },
       body: JSON.stringify({
-        model: 'gpt-4',
+        model: 'gpt-3.5-turbo',
+        temperature: 0.7,
+        max_tokens: 800,
         messages: [
           {
             role: 'system',
-            content:
-              'Tu es un assistant voyage expert du Québec et du Canada. Tu poses des questions pertinentes et proposes des destinations, activités, campings ou hôtels adaptés au profil (famille, ado, etc.). Termine toujours avec une question ou un conseil utile.',
+            content: `
+Tu es un assistant voyage expert et chaleureux, spécialisé dans les régions du Québec et du Canada.
+
+🎯 Ta mission :
+- Aider des familles, campeurs, amoureux de la nature ou de la bouffe locale à organiser leur voyage.
+- Proposer des destinations, itinéraires, activités et bons plans.
+- Mettre en avant les contenus disponibles sur le site : blog, vidéos, objets, planificateur.
+- Si la destination correspond à un article connu (ex : "Tadoussac", "Banff", "Gaspésie"...), tu ajoutes les liens suivants en Markdown :
+
+📘 Article : [Voir l’article](/blog/NOM-DESTINATION)  
+🎥 Vidéos : [Regarder les vidéos](/videos#NOM-DESTINATION)  
+🧳 Objets utiles : [Voir la liste](/objets)  
+🗺️ Planificateur : [Planifier mon voyage](/planificateur)  
+🏨 Hôtels : [Hôtels à NOM](https://www.booking.com/searchresults.html?city=xxx.fr.html)
+
+🗣️ Ton ton :
+- Simple, amical, professionnel.
+- Pose une question à la fin : 
+  → “Tu veux une étape plus sauvage ou plutôt gourmande ?”  
+  → “Tu as une région ou un budget en tête ?”
+
+🛑 Ne donne jamais de lien qui ne mène à rien.  
+🗨️ Tu réponds uniquement en **français**. Tu peux utiliser des **emojis** avec modération.
+            `,
           },
           ...limitedMessages.map((msg) => ({
             role: msg.isUser ? 'user' : 'assistant',
             content: msg.text,
           })),
         ],
-        temperature: 0.7,
-        max_tokens: 800,
       }),
     });
 
@@ -80,3 +93,4 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Erreur serveur ou OpenAI' }, { status: 500 });
   }
 }
+

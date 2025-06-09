@@ -144,7 +144,7 @@ export function BlogArticleGrandBend() {
     <article id="blog_article_grand_bend" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Grand Bend - Paradis des Couchers de Soleil sur le Lac Huron
+           Grand Bend - Paradis des Couchers de Soleil sur le Lac Huron
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez cette station balnéaire animée de l'Ontario, réputée pour ses plages de sable
@@ -161,7 +161,7 @@ export function BlogArticleGrandBend() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1595880238394-5b606a6ee1e8?auto=format&fit=crop&q=80"
+            src="/images/destinations/Grand bend.avif"
             alt="Grand Bend"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

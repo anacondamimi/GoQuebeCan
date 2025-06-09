@@ -144,7 +144,7 @@ export default function BlogArticleSeptIles() {
     <article id="blog_article_sept_iles" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Sept-Îles - Porte d'entrée de la Côte-Nord
+           Sept-Îles - Porte d'entrée de la Côte-Nord
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez cette ville dynamique où nature sauvage et culture innue se rencontrent
@@ -160,7 +160,7 @@ export default function BlogArticleSeptIles() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1596238686005-38e08058f08f?auto=format&fit=crop&q=80"
+            src="/images/destinations/Sept-iles.avif"
             alt="Sept-Îles"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

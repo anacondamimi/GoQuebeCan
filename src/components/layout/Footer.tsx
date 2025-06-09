@@ -1,8 +1,9 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 
 import Link from 'next/link';
-import { Mail, FileText, Scale, MapPin, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Mail, FileText, Scale, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 
 const footerLinks = [
   {
@@ -51,8 +52,12 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center" aria-label="Accueil">
-              <MapPin className="h-8 w-8 text-indigo-400" />
-              <span className="ml-2 text-xl font-bold">GoQuebecan</span>
+              <Image
+  src="/images/logo.jpg"
+  alt="Logo GoQuebecan"
+  width={133}
+  height={75}
+/>
             </Link>
             <p className="text-gray-400 text-sm">
               Votre guide complet pour explorer le Québec et le Canada avec des conseils d'experts

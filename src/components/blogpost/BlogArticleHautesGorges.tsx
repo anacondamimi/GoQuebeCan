@@ -161,7 +161,7 @@ export function BlogArticleHautesGorges() {
     <article id="blog_article_hautes_gorges" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Parc national des Hautes-Gorges-de-la-Rivière-Malbaie
+           Parc national des Hautes-Gorges-de-la-Rivière-Malbaie
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez l'un des plus beaux parcs du Québec, où fjord, montagnes et rivière créent un
@@ -177,7 +177,7 @@ export function BlogArticleHautesGorges() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1472120435266-53107fd0c44a?auto=format&fit=crop&q=80"
+            src="/images/destinations/Hautes gorges.avif"
             alt="Hautes-Gorges"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

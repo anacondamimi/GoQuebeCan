@@ -144,7 +144,7 @@ export default function BlogArticleSingingSands() {
     <article id="blog_article_singing_sands" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Singing Sands Beach - La Plage au Sable Chantant
+           Singing Sands Beach - La Plage au Sable Chantant
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez cette plage unique de la péninsule Bruce, où le sable émet un son mystérieux
@@ -161,7 +161,7 @@ export default function BlogArticleSingingSands() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1596238686005-38e08058f08f?auto=format&fit=crop&q=80"
+            src="/images/destinations/Singing Sands.avif"
             alt="Singing Sands Beach"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

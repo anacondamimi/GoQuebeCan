@@ -144,7 +144,7 @@ export default function BlogArticleWasagaBeach() {
     <article id="blog_article_wasaga_beach" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Wasaga Beach - La Plus Longue Plage d'Eau Douce au Monde
+           Wasaga Beach - La Plus Longue Plage d'Eau Douce au Monde
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce paradis balnéaire de l'Ontario, avec ses 14 kilomètres de sable fin et ses
@@ -161,7 +161,7 @@ export default function BlogArticleWasagaBeach() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1595880238394-5b606a6ee1e8?auto=format&fit=crop&q=80"
+            src="/images/destinations/Wasaga Beach.avif"
             alt="Wasaga Beach"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

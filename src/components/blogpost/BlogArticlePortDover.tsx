@@ -144,7 +144,7 @@ export default function BlogArticlePortDover() {
     <article id="blog_article_port_dover" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Port Dover - Charme Balnéaire sur le Lac Érié
+           Port Dover - Charme Balnéaire sur le Lac Érié
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez cette charmante ville portuaire de l'Ontario, réputée pour ses plages dorées, sa
@@ -161,7 +161,7 @@ export default function BlogArticlePortDover() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1596238686005-38e08058f08f?auto=format&fit=crop&q=80"
+           src="/images/destinations/Port Dover.avif"
             alt="Port Dover"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

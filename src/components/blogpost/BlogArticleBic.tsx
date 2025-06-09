@@ -154,7 +154,7 @@ export default function BlogArticleBic() {
     <article id="blog_article_bic" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Parc national du Bic - Paradis des Phoques et des Randonneurs
+           Parc national du Bic - Paradis des Phoques et des Randonneurs
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce joyau naturel du Bas-Saint-Laurent, où montagnes et mer se rencontrent dans
@@ -171,7 +171,7 @@ export default function BlogArticleBic() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1596472195295-9e0cb3799405?auto=format&fit=crop&q=80"
+            src="/images/destinations/Bic.avif"
             alt="Parc national du Bic"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

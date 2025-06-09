@@ -153,7 +153,7 @@ export default function BlogArticleTadoussac() {
     <article id="blog_article_tadoussac" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Tadoussac - Le Royaume des Baleines
+           Tadoussac - Le Royaume des Baleines
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce village historique où le fjord du Saguenay rencontre le Saint-Laurent, créant
@@ -170,7 +170,7 @@ export default function BlogArticleTadoussac() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1589352511666-541c12c8e6c7?auto=format&fit=crop&q=80"
+            src="/images/destinations/Tadoussac.avif"
             alt="Tadoussac"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

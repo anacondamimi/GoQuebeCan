@@ -1,6 +1,8 @@
-"use client";
+'use client';
 import React, { useRef, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { MessageSquare, X, Send } from 'lucide-react';
 import { useSite } from '@/components/contexts/SiteContext';
 import { suggestNearbyProducers } from '@/utils/suggestNearbyProducers';
@@ -34,15 +36,17 @@ export default function Chatbot() {
   const [nearbyProducers, setNearbyProducers] = useState<any[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  // Scroll auto vers le dernier message
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  // Ouvre le chat automatiquement au premier appel
   useEffect(() => {
     const handleOpenChat = () => {
       setIsOpen(true);
       if (!autoOpened) {
-        setMessages((prev: Message[]) => [
+        setMessages((prev) => [
           ...prev,
           {
             text: '💬 En quoi puis-je vous aider aujourd’hui ?',
@@ -68,28 +72,25 @@ export default function Chatbot() {
       timestamp: new Date(),
     };
 
-    setMessages((prev: Message[]) => [...prev, userMessage]);
+    setMessages((prev) => [...prev, userMessage]);
     setInput('');
     setIsTyping(true);
 
     const userText = input.toLowerCase();
 
-    // Exemple itinéraire spécifique
+    // Cas particulier Montréal → Tadoussac
     if (userText.includes('montréal') && userText.includes('tadoussac')) {
       const startPoint: [number, number] = [45.5017, -73.5673];
       const endPoint: [number, number] = [48.1394, -69.6866];
-
       setStart(startPoint);
       setEnd(endPoint);
-
-      const route = [startPoint, endPoint];
-      const nearby = suggestNearbyProducers(route, 10);
+      const nearby = suggestNearbyProducers([startPoint, endPoint], 10);
       setNearbyProducers(nearby);
 
-      setMessages((prev: Message[]) => [
+      setMessages((prev) => [
         ...prev,
         {
-          text: `Voici le trajet entre Montréal et Tadoussac 🗺️ avec les producteurs à proximité 🍇🧀`,
+          text: `🗺️ Voici le trajet entre Montréal et Tadoussac avec des producteurs locaux à découvrir 🍇🧀`,
           isUser: false,
           timestamp: new Date(),
         },
@@ -99,14 +100,19 @@ export default function Chatbot() {
       return;
     }
 
-    // Suggestions de contenu
+    // Suggestions basées sur une destination
     const slug = extractDestinationSlug(userText);
     const suggestion = getContentSuggestions(slug);
     if (suggestion) {
-      setMessages((prev: Message[]) => [
+      setMessages((prev) => [
         ...prev,
         {
-          text: `✨ Voici des suggestions pour ${suggestion.destination} :\n\n📘 Article : [Cliquez ici](${suggestion.blogUrl})\n🎥 Vidéo : [Voir les vidéos](${suggestion.videoUrl})\n🎒 Objets utiles : [Découvrir](${suggestion.objectsUrl})\n🗺️ Planifiez votre itinéraire : [C’est par ici](${suggestion.plannerUrl})`,
+          text: `✨ Voici des suggestions pour ${suggestion.destination} :
+
+📘 [Lire l’article](${suggestion.blogUrl})
+🎥 [Voir les vidéos](${suggestion.videoUrl})
+🎒 [Objets utiles](${suggestion.objectsUrl})
+🗺️ [Planifier l’itinéraire](${suggestion.plannerUrl})`,
           isUser: false,
           timestamp: new Date(),
         },
@@ -123,10 +129,9 @@ export default function Chatbot() {
       });
 
       if (!res.ok) throw new Error(`Erreur API: ${res.status}`);
-
       const data = await res.json();
 
-      setMessages((prev: Message[]) => [
+      setMessages((prev) => [
         ...prev,
         {
           text: data.message || 'Je n’ai pas compris, pouvez-vous reformuler ?',
@@ -135,11 +140,11 @@ export default function Chatbot() {
         },
       ]);
     } catch (error) {
-      console.error('Erreur lors de la requête au chatbot:', error);
-      setMessages((prev: Message[]) => [
+      console.error('Erreur requête API:', error);
+      setMessages((prev) => [
         ...prev,
         {
-          text: '❌ Erreur de connexion. Veuillez réessayer plus tard.',
+          text: '❌ Erreur réseau. Réessayez plus tard.',
           isUser: false,
           timestamp: new Date(),
         },
@@ -169,58 +174,78 @@ export default function Chatbot() {
               <MessageSquare className="h-5 w-5" />
               <span className="font-semibold">Assistant Voyage</span>
             </div>
-            <button onClick={() => setIsOpen(false)}>
-              <X className="h-5 w-5" />
-            </button>
+            <button onClick={() => setIsOpen(false)}><X className="h-5 w-5" /></button>
           </div>
 
-          {/* Messages */}
-          <div className="flex-grow h-96 overflow-y-auto p-4 bg-gray-50">
-            {messages.map((msg, i) => (
-              <div key={i} className={`flex ${msg.isUser ? 'justify-end' : 'justify-start'} mb-2`}>
-                <div
-                  className={`max-w-[85%] p-3 rounded-2xl ${
-                    msg.isUser
-                      ? 'bg-indigo-600 text-white rounded-br-none'
-                      : 'bg-white text-gray-800 rounded-bl-none shadow'
-                  }`}
+   {/* Messages */}
+<div className="flex-grow h-96 overflow-y-auto p-4 bg-gray-50">
+  {messages.map((msg, i) => (
+    <div key={i} className={`flex ${msg.isUser ? 'justify-end' : 'justify-start'} mb-2`}>
+      <div
+        className={`max-w-[85%] p-3 rounded-2xl ${
+          msg.isUser
+            ? 'bg-indigo-600 text-white rounded-br-none'
+            : 'bg-white text-gray-800 rounded-bl-none shadow'
+        }`}
+      >
+        {msg.isUser ? (
+          <p className="mb-1 whitespace-pre-wrap">{msg.text}</p>
+        ) : (
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              p: ({ children }) => (
+                <p className="mb-1 whitespace-pre-wrap">{children}</p>
+              ),
+              a: ({ href, children }) => (
+                <a
+                  href={href || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline"
                 >
-                  <p className="mb-1 whitespace-pre-wrap">{msg.text}</p>
-                  <p className="text-xs text-right text-gray-400">
-                    {new Date(msg.timestamp).toLocaleTimeString([], {
-                      hour: '2-digit',
-                      minute: '2-digit',
-                    })}
-                  </p>
-                </div>
-              </div>
-            ))}
+                  {children}
+                </a>
+              ),
+            }}
+          >
+            {msg.text}
+          </ReactMarkdown>
+        )}
+        <p className="text-xs text-right text-gray-400">
+          {new Date(msg.timestamp).toLocaleTimeString([], {
+            hour: '2-digit',
+            minute: '2-digit',
+          })}
+        </p>
+      </div>
+    </div>
+  ))}
+  {isTyping && (
+    <div className="flex justify-start">
+      <div className="bg-white text-gray-800 p-3 rounded-2xl shadow max-w-[85%]">
+        <div className="flex gap-1 animate-pulse">
+          <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+          <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+          <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+        </div>
+      </div>
+    </div>
+  )}
+  <div ref={messagesEndRef} />
+</div>
 
-            {isTyping && (
-              <div className="flex justify-start">
-                <div className="bg-white text-gray-800 p-3 rounded-2xl shadow max-w-[85%]">
-                  <div className="flex gap-1 animate-pulse">
-                    <div className="w-2 h-2 rounded-full bg-gray-400"></div>
-                    <div className="w-2 h-2 rounded-full bg-gray-400"></div>
-                    <div className="w-2 h-2 rounded-full bg-gray-400"></div>
-                  </div>
-                </div>
-              </div>
-            )}
-            <div ref={messagesEndRef} />
-          </div>
 
-          {/* Carte si itinéraire présent */}
+          {/* Carte + producteurs */}
           {start && end && (
             <div className="p-4 border-t bg-white">
               <MapWithRouting points={[start, end]} producers={nearbyProducers} />
             </div>
           )}
 
-          {/* Producteurs à proximité */}
           {nearbyProducers.length > 0 && (
             <div className="p-4 border-t bg-white max-h-48 overflow-y-auto">
-              <p className="text-sm font-medium mb-2">🥬 Producteurs à proximité du trajet :</p>
+              <p className="text-sm font-medium mb-2">🥬 Producteurs à proximité :</p>
               <ul className="text-sm list-disc pl-5 space-y-1">
                 {nearbyProducers.map((p, i) => (
                   <li key={i}>
@@ -231,7 +256,7 @@ export default function Chatbot() {
             </div>
           )}
 
-          {/* Formulaire d'envoi */}
+          {/* Input */}
           <form onSubmit={handleSend} className="p-4 border-t bg-white flex gap-2 items-center">
             <input
               value={input}
@@ -243,6 +268,7 @@ export default function Chatbot() {
             <button
               type="submit"
               className="bg-indigo-600 text-white p-2 rounded-lg hover:bg-indigo-700"
+              disabled={isTyping}
             >
               <Send className="h-5 w-5" />
             </button>
@@ -252,41 +278,16 @@ export default function Chatbot() {
     </>
   );
 }
+
 function extractDestinationSlug(text: string): string {
   const slugs = [
-    'gaspesie',
-    'perce',
-    'carleton',
-    'forillon',
-    'baie-saint-paul',
-    'massif',
-    'port-au-persil',
-    'hautes-gorges',
-    'sept-iles',
-    'mingan',
-    'port-cartier',
-    'tadoussac',
-    'magog-orford',
-    'bromont-granby',
-    'sherbrooke',
-    'bic',
-    'kamouraska',
-    'rivieredu-loup',
-    'quebec',
-    'levis',
-    'montmorency',
-    'orleans',
-    'wasaga-beach',
-    'port-dover',
-    'grand-bend',
-    'sauble-beach',
-    'sandbanks',
-    'singing-sands',
-    'eeyou-istchee',
-    'kuururjuaq',
-    'sabrevois',
-    'canyon',
-    'pourquoi-louer-un-vr-au-quebec-avec-authentik-canada',
+    'gaspesie', 'perce', 'carleton', 'forillon', 'baie-saint-paul', 'massif',
+    'port-au-persil', 'hautes-gorges', 'sept-iles', 'mingan', 'port-cartier',
+    'tadoussac', 'magog-orford', 'bromont-granby', 'sherbrooke', 'bic',
+    'kamouraska', 'rivieredu-loup', 'quebec', 'levis', 'montmorency', 'orleans',
+    'wasaga-beach', 'port-dover', 'grand-bend', 'sauble-beach', 'sandbanks',
+    'singing-sands', 'eeyou-istchee', 'kuururjuaq', 'sabrevois', 'canyon',
+    'pourquoi-louer-un-vr-au-quebec-avec-authentik-canada'
   ];
   return slugs.find((slug) => text.includes(slug)) || '';
 }

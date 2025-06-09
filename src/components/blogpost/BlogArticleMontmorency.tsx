@@ -123,7 +123,7 @@ export default function BlogArticleMontmorency() {
     <article id="blog_article_montmorency" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Chute Montmorency et Chaudière-Appalaches
+           Chute Montmorency et Chaudière-Appalaches
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez la majestueuse chute de 83 mètres et explorez la région naturelle de
@@ -138,7 +138,7 @@ export default function BlogArticleMontmorency() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1472120435266-53107fd0c44a?auto=format&fit=crop&q=80"
+            src="/images/destinations/Montmorency.avif"
             alt="Chute Montmorency"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

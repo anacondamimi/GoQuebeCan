@@ -16,6 +16,14 @@
     "website": null
   },
   {
+    "id": "prod-012",
+    "name": "Boucherie du Lac",
+    "lat": 46.9,
+    "lng": -71.2,
+    "type": "farm",
+    "website": "https://boucheriedulac.ca"
+  },
+  {
     "id": "node/947592289",
     "name": "Le Cep d'Argent",
     "lat": 45.2912118,

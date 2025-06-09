@@ -165,7 +165,7 @@ export default function BlogArticleMassif() {
     <article id="blog_article_massif" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Le Massif de Charlevoix - Entre Montagne et Fleuve
+           Le Massif de Charlevoix - Entre Montagne et Fleuve
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez la plus haute station de ski à l'est des Rocheuses canadiennes, où les pistes
@@ -181,7 +181,7 @@ export default function BlogArticleMassif() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&q=80"
+            src="/images/destinations/Le massif.avif"
             alt="Le Massif en hiver"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

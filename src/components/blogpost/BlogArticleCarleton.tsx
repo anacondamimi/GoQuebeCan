@@ -144,7 +144,7 @@ export function BlogArticleCarleton() {
     <article id="blog_article_carleton" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Carleton-sur-Mer - Perle de la Baie des Chaleurs
+           Carleton-sur-Mer - Perle de la Baie des Chaleurs
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez un paradis balnéaire entre mer et montagnes au cœur de la Gaspésie
@@ -159,7 +159,7 @@ export function BlogArticleCarleton() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1596238259704-d47dc656b2a7?auto=format&fit=crop&q=80"
+             src="/images/destinations/Carleton.avif"
             alt="Baie des Chaleurs"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

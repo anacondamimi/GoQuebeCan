@@ -144,7 +144,7 @@ export default function BlogArticleSabrevois() {
     <article id="blog_article_sabrevois" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Sainte-Anne-de-Sabrevois - L'Expérience Unique des Huttes sur l'Eau
+           Sainte-Anne-de-Sabrevois - L'Expérience Unique des Huttes sur l'Eau
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce village unique de la Montérégie où des huttes polynésiennes flottantes
@@ -160,7 +160,7 @@ export default function BlogArticleSabrevois() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1470010762743-1fa2363f65ca?auto=format&fit=crop&q=80"
+            src="/images/destinations/Sabrevois.avif"
             alt="Huttes flottantes"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

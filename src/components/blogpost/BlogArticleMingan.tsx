@@ -144,7 +144,7 @@ export function BlogArticleMingan() {
     <article id="blog_article_mingan" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Mingan - L'Archipel aux Monolithes Légendaires
+           Mingan - L'Archipel aux Monolithes Légendaires
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez un paysage unique au monde avec ses sculptures naturelles et sa biodiversité
@@ -161,7 +161,7 @@ export function BlogArticleMingan() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1596239223210-1bfe71b87817?auto=format&fit=crop&q=80"
+            src="/images/destinations/Mingan.avif"
             alt="Monolithes de Mingan"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

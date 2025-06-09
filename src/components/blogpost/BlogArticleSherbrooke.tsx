@@ -165,7 +165,7 @@ export default function BlogArticleSherbrooke() {
     <article id="blog_article_sherbrooke" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Sherbrooke - La Ville des Murales et de la Culture
+           Sherbrooke - La Ville des Murales et de la Culture
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez la capitale culturelle des Cantons-de-l'Est, entre art urbain, nature et
@@ -182,7 +182,7 @@ export default function BlogArticleSherbrooke() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1595880375338-a78c3a07cef5?auto=format&fit=crop&q=80"
+            src="/images/destinations/Sherbrooke.avif"
             alt="Sherbrooke"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

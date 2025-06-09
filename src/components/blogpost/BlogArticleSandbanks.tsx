@@ -147,13 +147,13 @@ export default function BlogArticleSandbanks() {
     <article id="blog_article_sandbanks" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <HeroBanner
         image="/images/destinations/Sand banks.avif"
-        title="Guide Complet : Sandbanks - Dunes, Plages et Plaisirs en Famille"
+        title=" Sandbanks - Dunes, Plages et Plaisirs en Famille"
         subtitle="Découvrez un joyau naturel au cœur du Prince Edward County, idéal pour les familles, les amateurs de plein air et les épicuriens."
       />
 
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Sandbanks - Les Plus Grandes Dunes de Sable d'Eau Douce au Monde
+           Sandbanks - Les Plus Grandes Dunes de Sable d'Eau Douce au Monde
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce parc provincial unique de l'Ontario, avec ses dunes spectaculaires, ses
@@ -170,7 +170,7 @@ export default function BlogArticleSandbanks() {
         </p>
         <div className="my-8">
           <Image
-            src="https://images.unsplash.com/photo-1595880238394-5b606a6ee1e8?auto=format&fit=crop&q=80"
+            src="/images/destinations/Sand banks.avif"
             alt="Sandbanks"
             width={1200}
             height={600}

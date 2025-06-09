@@ -147,7 +147,7 @@ export default function BlogArticleBaieSaintPaul() {
     <article id="blog_article_baie_saint_paul" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Baie-Saint-Paul - Le Cœur Artistique de Charlevoix
+           Baie-Saint-Paul - Le Cœur Artistique de Charlevoix
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce village pittoresque où art, gastronomie et nature se rencontrent dans un
@@ -163,7 +163,7 @@ export default function BlogArticleBaieSaintPaul() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1595880375338-a78c3a07cef5?auto=format&fit=crop&q=80"
+             src="/images/destinations/Baie-St-Paul.avif"
             alt="Baie-Saint-Paul"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

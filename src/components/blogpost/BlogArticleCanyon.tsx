@@ -144,7 +144,7 @@ export default function BlogArticleCanyon() {
     <article id="blog_article_canyon" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Guide Complet : Canyon des Portes de l'Enfer - Aventure Vertigineuse au Bas-Saint-Laurent
+           Canyon des Portes de l'Enfer - Aventure Vertigineuse au Bas-Saint-Laurent
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce site naturel spectaculaire avec sa passerelle suspendue et ses sentiers
@@ -160,7 +160,7 @@ export default function BlogArticleCanyon() {
         </p>
         <div className="my-8">
           <img
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80"
+             src="/images/destinations/Canyon.avif"
             alt="Canyon des Portes de l'Enfer"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />
