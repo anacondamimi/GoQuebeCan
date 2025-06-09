@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 
 export const metadata: Metadata = {
-  title: 'Guide Camping au Québec | GoQuebecan',
+  title: 'Camping au Québec | GoQuebecan',
   description:
     'Découvrez les meilleurs campings du Québec. Guide complet avec emplacements, tarifs, équipements et conseils pour une expérience de camping réussie.',
 };
