@@ -4,17 +4,29 @@ import { Metadata } from 'next';
 import { blogMeta } from '@/components/lib/data/blogMeta';
 import componentMap from '@/components/blog/BlogComponents';
 
+// Génère les slugs pour le build statique (production)
+export async function generateStaticParams() {
+  const slugs = Object.keys(blogMeta);
+
+  return slugs.map((slug) => ({
+    slug,
+  }));
+}
+
+// Métadonnées pour SEO et OpenGraph
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
   const meta = blogMeta[params.slug];
+
   if (!meta) {
-    return { title: 'Article non trouvé' };
+    return {
+      title: 'Article non trouvé',
+    };
   }
 
-  // Fallback si pas d'image
   const ogImage = meta.image ?? '/images/default-og.jpg';
 
   return {
@@ -28,9 +40,10 @@ export async function generateMetadata({
   };
 }
 
+// Page principale
 export default function BlogArticle({ params }: { params: { slug: string } }) {
-  // Récupère directement ton composant
   const ArticleComponent = componentMap[params.slug];
+
   if (!ArticleComponent) {
     return notFound();
   }
