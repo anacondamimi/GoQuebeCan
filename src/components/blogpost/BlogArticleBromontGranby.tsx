@@ -21,12 +21,12 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide
 
 const hotels = [
   {
-    name: 'St-Martin Bromont',
-    category: 'Luxe',
-    description: 'Hôtel & Spa avec vue sur la montagne',
-    price: 'À partir de 199$/nuit',
-    link: 'https://www.booking.com/hotel/ca/st-martin-bromont.html',
-    image: 'https://images.unsplash.com/photo-1582653292481-44c51f429f78?auto=format&fit=crop&q=80',
+     name: "Splendid Mountain View Condo",
+  category: "Sport & télétravail",
+  description: "Condo moderne avec vue sur la montagne, piscine, BBQ et Wi-Fi rapide. Parfait pour le ski, vélo, golf ou télétravail.",
+  price: "Tarif selon la saison et disponibilités",
+  link: "https://www.booking.com/hotel/ca/splendid-mountain-view-condo-with-pool-amp-bbq-ski-mtb-cycling-golf-telework.fr.html",
+  image: "/images/destinations/hotels/appartement bromont.avif",
   },
   {
     name: 'Château-Bromont',
@@ -34,7 +34,7 @@ const hotels = [
     description: 'Au pied des pistes avec golf',
     price: 'À partir de 189$/nuit',
     link: 'https://www.booking.com/hotel/ca/chateau-bromont.html',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
+    image: "/images/destinations/hotels/vallea bromont.avif",
   },
   {
     name: 'Hôtel Castel & Spa Confort',
@@ -42,7 +42,7 @@ const hotels = [
     description: 'À proximité du Zoo de Granby',
     price: 'À partir de 159$/nuit',
     link: 'https://www.booking.com/hotel/ca/castel-granby.html',
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80',
+    image: "/images/destinations/hotels/hotel castel granby.avif",
   },
 ];
 
