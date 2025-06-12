@@ -21,28 +21,28 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Snowflake } f
 
 const hotels = [
   {
-    name: 'Hôtel Le Massif',
-    category: 'Luxe',
-    description: 'Hôtel ski-in/ski-out avec vue panoramique',
-    price: 'À partir de 299$/nuit',
-    link: 'https://www.booking.com/hotel/ca/le-massif-petite-riviere-saint-francois.html',
-    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&q=80',
+     name: 'Au Grand Merisier',
+  category: 'Chalet alpin',
+  description: 'Chalet 4 chambres avec vue, 3 salles de bain, grande cuisine et espace familial chaleureux.',
+  price: 'À partir de 465$/nuit',
+  link: 'https://www.booking.com/hotel/ca/au-grand-merisier.html', // ou le lien exact selon URL finale
+  image: '/images/destinations/hotels/chalet alpin.avif',
   },
   {
-    name: 'Refuge Le Massif',
-    category: 'Charme',
-    description: 'Hébergement confortable au pied des pistes',
-    price: 'À partir de 189$/nuit',
-    link: 'https://www.booking.com/hotel/ca/refuge-le-massif.html',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
+    name: 'Cottage Québec - Olivine',
+  category: 'Chalet nature',
+  description: 'Chalet tout équipé avec 3 chambres, cuisine, terrasse et spa, parfait pour familles ou amis.',
+  price: 'À partir de 227$/nuit',
+  link: 'https://www.booking.com/hotel/ca/cottage-quebec-olivine.fr.html',
+  image: '/images/destinations/hotels/cottage olivine.avif',
   },
   {
-    name: 'Chalets du Massif',
-    category: 'Chalet',
-    description: 'Chalets indépendants avec cuisine équipée',
-    price: 'À partir de 259$/nuit',
-    link: 'https://www.booking.com/hotel/ca/chalets-du-massif.html',
-    image: 'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&q=80',
+    name: 'Cottage Québec - La Zéolite',
+  category: 'Appartement spacieux',
+  description: 'Appartement 4 chambres avec grande cuisine et vue panoramique, parfait pour groupes ou familles.',
+  price: 'À partir de 313$/nuit',
+  link: 'https://www.booking.com/hotel/ca/cottage-quebec-la-zeolite.fr.html',
+  image: '/images/destinations/hotels/cottage zeolite.avif',
   },
 ];
 

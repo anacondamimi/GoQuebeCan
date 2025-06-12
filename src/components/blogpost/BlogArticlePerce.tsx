@@ -29,7 +29,8 @@ const hotels = [
     description: 'Vue imprenable sur le Rocher Percé',
     price: 'À partir de 199$/nuit',
     link: 'https://www.booking.com/hotel/ca/riotel-perce.html',
-    image: 'https://images.unsplash.com/photo-1578607974203-0e5657088821?auto=format&fit=crop&q=80',
+    image:"/images/destinations/hotels/perce.avif"
+    
   },
   {
     name: 'Hôtel La Normandie',

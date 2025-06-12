@@ -31,7 +31,7 @@ export default function BlogArticleBaieSaintPaul() {
       price: 'À partir de 259$/nuit',
       link: 'https://www.booking.com/hotel/ca/la-ferme.html',
       image:
-        'https://images.unsplash.com/photo-1595880375338-a78c3a07cef5?auto=format&fit=crop&q=80',
+        '/images/destinations/hotels/le germain Charlevoix.avif',
     },
     {
       name: 'Auberge La Grande Maison',
@@ -40,16 +40,15 @@ export default function BlogArticleBaieSaintPaul() {
       price: 'À partir de 169$/nuit',
       link: 'https://www.booking.com/hotel/ca/auberge-la-grande-maison.html',
       image:
-        'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
+        '/images/destinations/hotels/auberge la grande maison.avif',
     },
     {
-      name: 'Maison Otis',
-      category: 'Boutique',
-      description: 'Élégance contemporaine dans un bâtiment ancestral',
-      price: 'À partir de 189$/nuit',
-      link: 'https://www.booking.com/hotel/ca/maison-otis.html',
-      image:
-        'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80',
+      name: 'La Pignoronde',
+  category: 'Appartement de luxe',
+  description: 'Appartement 3 chambres avec terrasse et vue panoramique sur Baie-Saint-Paul.',
+  price: 'À partir de 880$ pour 4 nuits',
+  link: 'https://www.booking.com/hotel/ca/la-pignoronde.html', // à valider si différent
+  image: '/images/destinations/hotels/la pignoronde.avif',
     },
   ];
 

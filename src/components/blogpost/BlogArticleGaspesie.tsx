@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
+import { Utensils, Calendar, DollarSign, Shield, Star } from 'lucide-react';
 
 export const metadata = {
   slug: 'gaspesie',
@@ -8,9 +10,8 @@ export const metadata = {
   hebergements: [],
   publics: ['aventuriers'],
 };
-import { Utensils, Calendar, DollarSign, Shield, Star } from 'lucide-react';
 
-// ✅ Imports déplacés automatiquement
+
 
 export function BlogArticleGaspesie() {
   return (
@@ -31,11 +32,15 @@ export function BlogArticleGaspesie() {
           pour les amateurs de plein air.
         </p>
         <div className="my-8">
-          <img
-           src="/images/destinations/Parc Gaspesie.avif"
-            alt="Parc national de la Gaspésie"
-            className="w-full h-96 object-cover rounded-lg shadow-lg"
-          />
+        <Image
+  src="/images/destinations/parc gaspesie.avif"
+  alt="Côte rocheuse de la Gaspésie"
+  width={800}
+  height={500}
+  loading="lazy"
+  className="rounded-lg shadow-md object-cover w-full h-auto"
+/>
+
         </div>
       </section>
 

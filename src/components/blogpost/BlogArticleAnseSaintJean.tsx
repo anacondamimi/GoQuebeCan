@@ -1,4 +1,7 @@
 import React from 'react';
+import { SEO } from '@/components/SEO'; // ✅ Assure-toi que ce chemin est bon dans ton projet
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
+import Image from 'next/image'; // ✅ CORRECt
 
 export const metadata = {
   slug: 'anse-saint-jean',
@@ -19,8 +22,9 @@ export const metadata = {
   hebergements: ['Auberge des Cévennes', 'Chalets sur le Fjord', 'Gîte du Fjord'],
   publics: ['familles', 'ados', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
 
+//const Chatbot = dynamic(() => import('@/components/ui/Chatbot'), { ssr: false });
+//const MapWithRouting = dynamic(() => import('@/components/MapWithRouting'), { ssr: false });
 export default function BlogArticleAnseSaintJean() {
   // ✅ Imports déplacés automatiquement
 
@@ -152,6 +156,19 @@ export default function BlogArticleAnseSaintJean() {
   ];
 
   return (
+    <>
+    {/* ✅ NOUVEAU composant SEO pour le référencement 2025 */}
+      <SEO
+        title="L'Anse-Saint-Jean - Perle du Fjord du Saguenay"
+        description="Découvrez ce village pittoresque du Québec entre fjord majestueux, nature et activités familiales."
+        url="https://goquebecan.com/blog/anse-saint-jean"
+        image="https://goquebecan.com/images/destinations/L'anse-Saint-Jean.avif"
+        keywords="Anse-Saint-Jean, Fjord Saguenay, kayak, randonnée, hébergement, Québec, tourisme nature"
+        type="article"
+        author="GoQuébeCan"
+        publishedTime="2025-06-10"
+        jsonLd={true}
+      />
     <article id="blog_article_anse_saint_jean" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -171,10 +188,14 @@ export default function BlogArticleAnseSaintJean() {
           expérience unique aux visiteurs en quête d'aventure et de sérénité.
         </p>
         <div className="my-8">
-          <img
-            src="/images/destinations/L'anse-Saint-Jean.avif"
-            alt="L'Anse-Saint-Jean"
-            className="w-full h-96 object-cover rounded-lg shadow-lg"
+       <Image
+  src="/images/destinations/L'anse-Saint-Jean.avif"
+  alt="L'Anse-Saint-Jean"
+  width={800}
+  height={500}
+  className="rounded-lg shadow-lg object-cover w-full h-auto"
+  priority={false}
+  loading="lazy"
           />
         </div>
       </section>
@@ -422,5 +443,6 @@ export default function BlogArticleAnseSaintJean() {
         </div>
       </section>
     </article>
+    </>
   );
 }

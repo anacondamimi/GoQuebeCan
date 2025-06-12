@@ -25,28 +25,28 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Tent } from '
 
 const hotels = [
   {
-    name: 'Hôtel Baker',
-    category: 'Vue sur Mer',
-    description: 'Vue sur la baie de Gaspé',
-    price: 'À partir de 179$/nuit',
-    link: 'https://www.booking.com/hotel/ca/baker-gaspe.html',
-    image: 'https://images.unsplash.com/photo-1596472195295-9e0cb3799405?auto=format&fit=crop&q=80',
+    name: 'Griffon Aventure',
+    category: 'Chalet nature',
+    description: 'Chalet pour 5 pers. avec salon et vue sur la mer, idéal pour les aventuriers.',
+    price: 'À partir de 946$ pour 4 nuits',
+    link: 'https://www.booking.com/hotel/ca/griffon-aventure.html', // lien à valider
+    image: '/images/destinations/hotels/auberge griffon.avif',
   },
   {
-    name: 'Auberge Gaspé',
-    category: 'Charme',
-    description: 'À proximité du parc',
-    price: 'À partir de 149$/nuit',
-    link: 'https://www.booking.com/hotel/ca/auberge-gaspe.html',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
+    name: 'Motel du Haut Phare',
+    category: 'Vue exceptionnelle',
+    description: 'Chalet avec 2 lits superposés, proche du Cap-des-Rosiers et du phare.',
+    price: 'À partir de 713$ pour 4 nuits',
+    link: 'https://www.booking.com/hotel/ca/motel-du-haut-phare.html', // lien à valider
+    image: '/images/destinations/hotels/motel haut phare.avif',
   },
   {
-    name: 'Motel Adams',
-    category: 'Économique',
-    description: 'Option abordable près du parc',
-    price: 'À partir de 119$/nuit',
-    link: 'https://www.booking.com/hotel/ca/motel-adams-gaspe.html',
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80',
+    name: 'Auberge La Petite École',
+    category: 'Confort abordable',
+    description: 'Auberge familiale bien notée à Gaspé, parfaite pour explorer Forillon.',
+    price: 'Note : 8,7/10 sur 300+ avis',
+    link: 'https://www.booking.com/hotel/ca/auberge-la-petite-ecole.html', // lien à valider
+    image: '/images/destinations/hotels/auberge petite ecole.avif',
   },
 ];
 

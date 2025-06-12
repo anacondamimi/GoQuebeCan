@@ -24,12 +24,12 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Wind } from '
 
 const hotels = [
   {
-    name: 'Hostellerie Baie Bleue',
+    name: 'Riotel Carleton-sur-Mer',
     category: 'Vue sur Mer',
     description: 'Vue panoramique sur la baie des Chaleurs',
     price: 'À partir de 159$/nuit',
     link: 'https://www.booking.com/hotel/ca/hostellerie-baie-bleue.html',
-    image: 'https://images.unsplash.com/photo-1596238259704-d47dc656b2a7?auto=format&fit=crop&q=80',
+    image: '/images/destinations/hotels/riotel carleton.avif',
   },
   {
     name: 'Manoir Belle Plage',
@@ -40,12 +40,12 @@ const hotels = [
     image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
   },
   {
-    name: 'Auberge du Marchand',
-    category: 'B&B',
-    description: 'Ambiance chaleureuse et familiale',
-    price: 'À partir de 129$/nuit',
-    link: 'https://www.booking.com/hotel/ca/auberge-du-marchand.html',
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80',
+name: 'Motel l’Abri',
+    category: 'Économique',
+    description: 'Option abordable à proximité du centre-ville et de la plage',
+    price: 'À partir de 139$/nuit',
+    link: 'https://www.booking.com/hotel/ca/motel-l-abri.html',
+    image: '/images/destinations/hotels/hotel abri Carleton.avif',
   },
 ];
 

@@ -13,33 +13,41 @@ interface HeadProps {
 export function Head({
   title,
   description,
-  image = 'https://images.unsplash.com/photo-1525638164172-b31ea4222ef7?auto=format&fit=crop&q=80',
+  image = 'https://goquebecan.com/default-og.jpg',
   url = 'https://goquebecan.com',
   type = 'website',
   canonicalUrl,
 }: HeadProps) {
+  const finalCanonical = canonicalUrl || url;
+
   return (
     <Helmet>
-      {/* Balises de base */}
+      {/* Balises principales */}
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta charSet="utf-8" />
 
-      {/* Open Graph / Facebook */}
+      {/* Canonical */}
+      <link rel="canonical" href={finalCanonical} />
+
+      {/* Open Graph */}
       <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
 
-      {/* Twitter */}
+      {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
 
-      {/* Canonical URL */}
-      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      {/* Favicon + thème couleur (optionnel mais conseillé) */}
+      <meta name="theme-color" content="#ffffff" />
+      <link rel="icon" href="/favicon.ico" />
     </Helmet>
   );
 }
