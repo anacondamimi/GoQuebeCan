@@ -7,14 +7,23 @@ require('leaflet-routing-machine');
 import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 import Link from 'next/link';
 import destinations from '@/data/destinations.json';
-import producers from '@/data/producers.json';
+
+interface Producer {
+  id: string;
+  name: string;
+  lat: number;
+  lng: number;
+  type?: string;
+  website?: string;
+}
 
 interface Props {
   points: [number, number][];
   onAddDestinationStep?: (name: string, coords: [number, number]) => void;
+  producers?: Producer[];  // ✅ Ajouté pour accepter les producteurs dynamiques
 }
 
-export default function MapWithRouting({ points, onAddDestinationStep }: Props) {
+export default function MapWithRouting({ points, onAddDestinationStep, producers = [] }: Props) {
   const mapRef = useRef<L.Map | null>(null);
   const routingRef = useRef<any>(null);
   const [distanceKm, setDistanceKm] = useState<number | null>(null);
@@ -27,10 +36,11 @@ export default function MapWithRouting({ points, onAddDestinationStep }: Props) 
     cheese: new Icon({ iconUrl: '/icons/cheese.png', iconSize: [28, 28] }),
     berry: new Icon({ iconUrl: '/icons/berry.png', iconSize: [28, 28] }),
     beer: new Icon({ iconUrl: '/icons/beer.png', iconSize: [28, 28] }),
-    farm: new Icon({ iconUrl: '/icons/farm.png', iconSize: [28, 28] })
+    farm: new Icon({ iconUrl: '/icons/farm.png', iconSize: [28, 28] }),
+    default: new Icon({ iconUrl: '/icons/farm.png', iconSize: [28, 28] })
   };
 
-  function detectCategory(prod: any): string {
+  function detectCategory(prod: Producer): string {
     const name = prod.name?.toLowerCase() || '';
     const type = prod.type?.toLowerCase() || '';
 
@@ -39,6 +49,7 @@ export default function MapWithRouting({ points, onAddDestinationStep }: Props) 
     if (name.includes('fromage') || type.includes('cheese')) return 'cheese';
     if (name.includes('bleuet') || name.includes('camerise') || name.includes('fruit')) return 'berry';
     if (name.includes('bière') || name.includes('microbrasserie') || type.includes('brewery')) return 'beer';
+    if (type.includes('farm') || name.includes('ferme') || name.includes('boucherie')) return 'farm';
     return 'default';
   }
 
@@ -83,13 +94,18 @@ export default function MapWithRouting({ points, onAddDestinationStep }: Props) 
   return (
     <div className="my-6">
       <div className="mb-4 flex flex-wrap gap-2">
-        {['apple', 'grape', 'cheese', 'berry', 'beer'].map((cat) => (
+        {['apple', 'grape', 'cheese', 'berry', 'beer', 'farm'].map((cat) => (
           <button
             key={cat}
             onClick={() => toggleCategory(cat)}
             className={`px-3 py-1.5 rounded-full text-sm font-medium transition ${selectedCategories.includes(cat) ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
           >
-            {cat === 'apple' ? '🍎 Pomme' : cat === 'grape' ? '🍇 Raisin' : cat === 'cheese' ? '🧀 Fromage' : cat === 'berry' ? '🫐 Fruits' : '🍺 Bière'}
+            {cat === 'apple' ? '🍎 Pomme'
+              : cat === 'grape' ? '🍇 Raisin'
+              : cat === 'cheese' ? '🧀 Fromage'
+              : cat === 'berry' ? '🫐 Fruits'
+              : cat === 'beer' ? '🍺 Bière'
+              : '🥩 Ferme'}
           </button>
         ))}
         <button
@@ -140,9 +156,8 @@ export default function MapWithRouting({ points, onAddDestinationStep }: Props) 
               </Marker>
             ))}
 
-          {destinations.map((d, idx) => {
-            if (typeof d.lat !== 'number' || typeof d.lng !== 'number') return null;
-            return (
+          {destinations.map((d, idx) => (
+            typeof d.lat === 'number' && typeof d.lng === 'number' && (
               <Marker key={`dest-${idx}`} position={[d.lat, d.lng]} icon={questionIcon}>
                 <Popup>
                   <div className="text-sm space-y-2">
@@ -165,8 +180,8 @@ export default function MapWithRouting({ points, onAddDestinationStep }: Props) 
                   </div>
                 </Popup>
               </Marker>
-            );
-          })}
+            )
+          ))}
         </MapContainer>
       </div>
 

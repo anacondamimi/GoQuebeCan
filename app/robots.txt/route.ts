@@ -1,23 +1,21 @@
-// app/robots.txt/route.ts
-import { MetadataRoute } from 'next';
+import { NextResponse } from 'next/server';
 
-export default function robots(): MetadataRoute.Robots {
-    return {
-        rules: [
-            {
-                userAgent: '*',
-                allow: '/',
-                disallow: [
-                    '/api/',
-                    '/_next/',
-                    '/admin',
-                    '/dashboard',
-                    '/login',
-                    '/planificateur/test', // exemple de route temporaire
-                ],
-            },
-        ],
-        sitemap: 'https://goquebecan.com/sitemap.xml',
-        host: 'https://goquebecan.com',
-    };
+export function GET() {
+    const content = `
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /login
+Disallow: /planificateur/test
+Sitemap: https://goquebecan.com/sitemap.xml
+Host: https://goquebecan.com
+  `;
+    return new NextResponse(content.trim(), {
+        headers: {
+            'Content-Type': 'text/plain',
+        },
+    });
 }
