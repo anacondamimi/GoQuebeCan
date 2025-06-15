@@ -78,9 +78,10 @@ export const destinations = [
       { title: 'Sabrevois', slug: 'sabrevois' },
       { title: 'Canyon', slug: 'canyon' },
       {
-        title: 'Pourquoi Louer Un Vr Au Quebec Avec Authentik Canada',
-        slug: 'pourquoi-louer-un-vr-au-quebec-avec-authentik-canada',
+        title: 'Louer Un Vr Au Quebec',
+        slug: 'pourquoi-louer-un-vr-au-quebec'
       },
+      { slug: 'parc-aquatique', title: 'Parc Aquatique' },  // ➡ ajouté
     ],
   },
 ];

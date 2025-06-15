@@ -255,9 +255,9 @@ const contentMap: Record<string, Suggestion> = {
     objectsUrl: baseUrls.objects,
     plannerUrl: baseUrls.planner,
   },
-  'pourquoi-louer-un-vr-au-quebec-avec-authentik-canada': {
+  'pourquoi-louer-un-vr-au-quebec': {
     destination: 'Voyager en VR',
-    blogUrl: `${baseUrls.blog}pourquoi-louer-un-vr-au-quebec-avec-authentik-canada`,
+    blogUrl: `${baseUrls.blog}pourquoi-louer-un-vr-au-quebec`,
     videoUrl: `${baseUrls.videos}#vr`,
     objectsUrl: baseUrls.objects,
     plannerUrl: baseUrls.planner,

@@ -194,7 +194,7 @@ export default function BlogArticleEeyouIstchee() {
         </p>
         <div className="my-8">
           <img
-             src="/images/destinations/Eeyou Istchee,BaieJames.avif"
+             src="/images/destinations/eeyou-istchee-baiejames.avif"
             alt="Eeyou Istchee Baie-James"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

@@ -161,7 +161,7 @@ export function BlogArticleMingan() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Mingan.avif"
+            src="/images/destinations/mingan.avif"
             alt="Monolithes de Mingan"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

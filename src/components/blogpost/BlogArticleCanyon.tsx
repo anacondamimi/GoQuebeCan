@@ -160,7 +160,7 @@ export default function BlogArticleCanyon() {
         </p>
         <div className="my-8">
           <img
-             src="/images/destinations/Canyon.avif"
+             src="/images/destinations/canyon.avif"
             alt="Canyon des Portes de l'Enfer"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

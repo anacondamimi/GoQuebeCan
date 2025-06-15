@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export const metadata = {
   slug: 'orleans',
@@ -149,6 +150,17 @@ export default function BlogArticleOrleans() {
           34 kilomètres de long, surnommée le "Jardin de Québec", vous invite à un voyage dans le
           temps et les saveurs.
         </p>
+             <div className="my-8">
+                <Image
+          src="/images/destinations/ile-dorleans.avif"
+          alt="Découvrez les trésors de l'île d'Orleans"
+          width={800}
+          height={500}
+          loading="lazy"
+          className="rounded-lg shadow-md object-cover w-full h-auto"
+        />
+        
+                </div>
       </section>
 
       <section className="mb-16">

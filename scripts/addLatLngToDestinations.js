@@ -1,23 +1,33 @@
-// scripts/addLatLngToDestinations.js
-const fs = require('fs');
-const path = require('path');
-const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+import fs from 'fs';
+import path from 'path';
+import fetch from 'node-fetch';
+import { fileURLToPath } from 'url';
 
-require('dotenv').config({ path: './app/.env.local' }); // 🔑 charge la clé
+// Détermine __dirname en ES module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const apiKey = process.env.OPENCAGE_API_KEY;
+import dotenv from 'dotenv';
+dotenv.config({ path: './.env.local' });
+console.log('🌱 ENV CHARGÉ :', process.env);
+
+
+
+const apiKey = process.env.OPENCAGE_API_KEY_GEO;
 if (!apiKey) {
+  console.log(`🔑 Clé API détectée : ${apiKey}`);
   console.error('❌ Clé API OpenCage non trouvée. Vérifie .env.local et le nom de la variable.');
   process.exit(1);
 }
 
-const inputPath = path.resolve('./public/destinationsOriginal.json');
-const outputPath = path.resolve('./public/destinationsWithCoords.json');
+const inputPath = path.resolve(__dirname, '../src/data/producersWithCategories.json');
+const outputPath = path.resolve(__dirname, '../src/data/producersWithCoords.json');
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-async function geocode(city) {
-  const url = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(city + ', Québec, Canada')}&key=${apiKey}&language=fr&limit=1`;
+async function geocode(adresse, ville) {
+  const query = `${adresse}, ${ville}, Québec, Canada`;
+  const url = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(query)}&key=${apiKey}&language=fr&limit=1`;
   const res = await fetch(url);
   const data = await res.json();
   if (data.results && data.results[0]) {
@@ -29,22 +39,24 @@ async function geocode(city) {
 
 async function run() {
   const raw = fs.readFileSync(inputPath, 'utf-8');
-  const destinations = JSON.parse(raw);
+  const producers = JSON.parse(raw);
 
-  for (const dest of destinations) {
-    console.log(`📍 Géocodage de : ${dest.ville}`);
-    const coords = await geocode(dest.ville);
+  for (const producer of producers) {
+    const adresse = producer.adresse || '';
+    const ville = producer.ville || '';
+    console.log(`📍 Géocodage de : ${producer.name} (${adresse}, ${ville})`);
+    const coords = await geocode(adresse, ville);
     if (coords) {
-      dest.lat = coords.lat;
-      dest.lng = coords.lng;
-      console.log(`✅ ${dest.ville} → (${coords.lat}, ${coords.lng})`);
+      producer.lat = coords.lat;
+      producer.lng = coords.lng;
+      console.log(`✅ ${producer.name} → (${coords.lat}, ${coords.lng})`);
     } else {
-      console.warn(`❌ Coordonnées introuvables pour : ${dest.ville}`);
+      console.warn(`❌ Coordonnées introuvables pour : ${producer.name}`);
     }
-    await delay(1000); // limite d'OpenCage (1 requête/sec)
+    await delay(1000); // Respect des limites API
   }
 
-  fs.writeFileSync(outputPath, JSON.stringify(destinations, null, 2), 'utf-8');
+  fs.writeFileSync(outputPath, JSON.stringify(producers, null, 2), 'utf-8');
   console.log(`🎉 Fichier enrichi sauvegardé : ${outputPath}`);
 }
 

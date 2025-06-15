@@ -191,7 +191,7 @@ export function BlogArticleForillon() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Forillon.avif"
+            src="/images/destinations/forillon.avif"
             alt="Parc national Forillon"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

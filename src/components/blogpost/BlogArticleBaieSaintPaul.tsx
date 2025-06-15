@@ -162,7 +162,7 @@ export default function BlogArticleBaieSaintPaul() {
         </p>
         <div className="my-8">
           <img
-             src="/images/destinations/Baie-St-Paul.avif"
+             src="/images/destinations/baie-st-paul.avif"
             alt="Baie-Saint-Paul"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

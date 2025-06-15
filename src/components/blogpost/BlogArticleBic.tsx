@@ -34,20 +34,20 @@ import {
 
 const hotels = [
   {
-    name: 'Auberge du Mange Grenouille',
-    category: 'Charme',
-    description: 'Auberge historique avec vue sur le parc',
-    price: 'À partir de 169$/nuit',
-    link: 'https://www.booking.com/hotel/ca/auberge-du-mange-grenouille.html',
-    image: 'https://images.unsplash.com/photo-1596472195295-9e0cb3799405?auto=format&fit=crop&q=80',
+    name: "Hôtel Rimouski",
+  category: "Confort & services",
+  description: "Hôtel idéalement situé face au fleuve Saint-Laurent, parfait pour les familles et les voyageurs d’affaires.",
+  price: "Tarif selon la saison et le type de chambre",
+  link: "https://www.booking.com/hotel/ca/rimouski.fr.html",
+  image: "/images/destinations/hotels/rimouski.avif",
   },
   {
-    name: 'Gîte du Bic',
-    category: 'B&B',
-    description: 'Accueil chaleureux et petit-déjeuner local',
-    price: 'À partir de 129$/nuit',
-    link: 'https://www.booking.com/hotel/ca/gite-du-bic.html',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
+     name: "Hôtel Le Saint-Germain",
+  category: "Boutique & moderne",
+  description: "Hôtel boutique élégant au cœur de Rimouski. Chambres spacieuses, parfait pour un séjour raffiné.",
+  price: "Tarif selon la saison et le type de chambre",
+  link: "https://www.booking.com/hotel/ca/le-saint-germain.fr.html",
+  image: "/images/destinations/hotels/saint germain rimouski.avif",
   },
   {
     name: 'Camping du Bic',
@@ -55,7 +55,7 @@ const hotels = [
     description: 'Sites de camping avec vue sur mer',
     price: 'À partir de 30$/nuit',
     link: 'https://www.sepaq.com/pq/bic/',
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80',
+    image: "/images/destinations/hotels/camping bic.avif",
   },
 ];
 
@@ -171,7 +171,7 @@ export default function BlogArticleBic() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Bic.avif"
+            src="/images/destinations/bic.avif"
             alt="Parc national du Bic"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

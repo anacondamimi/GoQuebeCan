@@ -112,7 +112,7 @@ export default function BlogArticleMontreal() {
         </p>
         <div className="my-8">
           <img
-           src="/images/destinations/Montreal.avif"
+           src="/images/destinations/montreal.avif"
             alt="Montréal"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

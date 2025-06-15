@@ -189,7 +189,7 @@ export default function BlogArticleLevis() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Levis.avif"
+            src="/images/destinations/levis.avif"
             alt="Vue sur Québec depuis Lévis"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

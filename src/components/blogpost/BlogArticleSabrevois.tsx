@@ -160,7 +160,7 @@ export default function BlogArticleSabrevois() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Sabrevois.avif"
+            src="/images/destinations/sabrevois.avif"
             alt="Huttes flottantes"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

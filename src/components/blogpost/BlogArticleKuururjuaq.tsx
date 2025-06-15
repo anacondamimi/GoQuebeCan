@@ -154,7 +154,7 @@ export default function BlogArticleKuururjuaq() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Kuururjuaq.avif"
+            src="/images/destinations/kuururjuaq.avif"
             alt="Parc Kuururjuaq"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

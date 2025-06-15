@@ -182,7 +182,7 @@ export default function BlogArticleSherbrooke() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Sherbrooke.avif"
+            src="/images/destinations/sherbrooke.avif"
             alt="Sherbrooke"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

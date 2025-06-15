@@ -25,12 +25,12 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide
 
 const hotels = [
   {
-    name: 'Auberge des Îles',
-    category: 'Vue sur Mer',
-    description: 'Vue imprenable sur le Saint-Laurent',
-    price: 'À partir de 159$/nuit',
-    link: 'https://www.booking.com/hotel/ca/auberge-des-iles-kamouraska.html',
-    image: 'https://images.unsplash.com/photo-1596238259704-d47dc656b2a7?auto=format&fit=crop&q=80',
+   name: "Auberge Akamaraska",
+  category: "Simplicité & authenticité",
+  description: "Chambre avec lit Queen et balcon, à 100 m du centre du village. Note 7,8/10.",
+  price: "Tarif selon la saison",
+  link: "https://www.booking.com/hotel/ca/akamaraska.fr.html",
+  image: "/images/destinations/hotels/akamaraska.avif",
   },
   {
     name: 'Motel des Mariniers',
@@ -38,15 +38,15 @@ const hotels = [
     description: 'Au cœur du village historique',
     price: 'À partir de 129$/nuit',
     link: 'https://www.booking.com/hotel/ca/motel-des-mariniers.html',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
+    image: "/images/destinations/hotels/mariniers.avif",
   },
   {
-    name: 'Gîte des Coquillages',
-    category: 'B&B',
-    description: 'Maison ancestrale avec petit-déjeuner',
-    price: 'À partir de 119$/nuit',
-    link: 'https://www.booking.com/hotel/ca/gite-des-coquillages.html',
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80',
+   name: "Auberge Comme au premier jour",
+  category: "Charme & piscine",
+  description: "Chambre double avec vue sur la piscine, à 18 km de Kamouraska. Note 8,8/10.",
+  price: "Tarif selon la saison",
+  link: "https://www.booking.com/hotel/ca/auberge-comme-au-premier-jour.fr.html",
+  image: "/images/destinations/hotels/auberge saint pacome.avif",
   },
 ];
 
@@ -162,7 +162,7 @@ export function BlogArticleKamouraska() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Kamouraska.avif"
+            src="/images/destinations/kamouraska.avif"
             alt="Kamouraska"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

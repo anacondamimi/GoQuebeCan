@@ -143,7 +143,7 @@ export default function BlogArticleSaubleBeach() {
   return (
     <article id="blog_article_sauble_beach" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <HeroBanner
-        image="/images/destinations/Sauble Beach.avif"
+        image="/images/destinations/sauble-beach.avif"
         title=" Sauble Beach – 11 km de Paradis sur le Lac Huron"
         subtitle="Sable blanc, eau cristalline, ambiance estivale et couchers de soleil inoubliables."
       />
@@ -157,7 +157,7 @@ export default function BlogArticleSaubleBeach() {
         </p>
         <div className="my-8">
           <Image
-            src="/images/destinations/Sauble Beach.avif"
+            src="/images/destinations/sauble-beach.avif"
             alt="Sauble Beach"
             width={1200}
             height={600}

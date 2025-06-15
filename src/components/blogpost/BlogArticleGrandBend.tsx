@@ -161,7 +161,7 @@ export function BlogArticleGrandBend() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Grand bend.avif"
+            src="/images/destinations/grand-bend.avif"
             alt="Grand Bend"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

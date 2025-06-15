@@ -170,7 +170,7 @@ export default function BlogArticleTadoussac() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Tadoussac.avif"
+            src="/images/destinations/tadoussac.avif"
             alt="Tadoussac"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

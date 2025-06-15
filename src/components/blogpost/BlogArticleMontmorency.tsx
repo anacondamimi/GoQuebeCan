@@ -138,18 +138,12 @@ export default function BlogArticleMontmorency() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Montmorency.avif"
+            src="/images/destinations/chute-montmorency.avif"
             alt="Chute Montmorency"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />
         </div>
-        <div className="my-8">
-          <img
-            src="https://images.unsplash.com/photo-1469262764225-a9b959ea0fb0?auto=format&fit=crop&q=80"
-            alt="Chute de la Chaudière"
-            className="w-full h-96 object-cover rounded-lg shadow-lg"
-          />
-        </div>
+        
         <p>
           Combinée à la région pittoresque de Chaudière-Appalaches, elle offre une expérience unique
           entre nature spectaculaire et aventure.
@@ -244,7 +238,7 @@ export default function BlogArticleMontmorency() {
         </h2>
         <div className="bg-white p-6 rounded-lg shadow-md">
           <img
-            src="https://images.unsplash.com/photo-1469262764225-a9b959ea0fb0?auto=format&fit=crop&q=80"
+            src="/images/destinations/chaudiere-2.avif"
             alt="Chutes de la Chaudière"
             className="w-full h-96 object-cover rounded-lg shadow-lg mb-4"
           />

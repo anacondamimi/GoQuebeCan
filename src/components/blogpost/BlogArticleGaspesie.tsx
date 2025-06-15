@@ -33,7 +33,7 @@ export function BlogArticleGaspesie() {
         </p>
         <div className="my-8">
         <Image
-  src="/images/destinations/parc gaspesie.avif"
+  src="/images/destinations/parc-gaspesie.avif"
   alt="Côte rocheuse de la Gaspésie"
   width={800}
   height={500}

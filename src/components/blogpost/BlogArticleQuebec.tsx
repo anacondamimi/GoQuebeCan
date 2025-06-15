@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export const metadata = {
   slug: 'quebec',
@@ -138,6 +139,16 @@ export default function BlogArticleQuebec() {
           ruelles pavées, son architecture européenne et sa culture vivante en font une destination
           incontournable au Canada.
         </p>
+           <div className="my-8">
+            <Image
+                  src="/images/destinations/quebec.avif"
+                  alt="Découvrez la ville de Québec"
+                  width={800}
+                  height={500}
+                  loading="lazy"
+                  className="rounded-lg shadow-md object-cover w-full h-auto"
+                />
+                 </div>
       </section>
 
       <section className="mb-16">

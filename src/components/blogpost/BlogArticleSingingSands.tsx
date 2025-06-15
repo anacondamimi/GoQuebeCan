@@ -161,7 +161,7 @@ export default function BlogArticleSingingSands() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Singing Sands.avif"
+            src="/images/destinations/singing-sands.avif"
             alt="Singing Sands Beach"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

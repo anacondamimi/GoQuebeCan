@@ -161,7 +161,7 @@ export default function BlogArticlePortCartier() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Port cartier.avif"
+            src="/images/destinations/port-cartier.avif"
             alt="Port-Cartier"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

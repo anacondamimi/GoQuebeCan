@@ -162,7 +162,7 @@ export default function BlogArticlePerce() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Perce.avif"
+            src="/images/destinations/perce.avif"
             alt="Rocher Percé"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

@@ -36,6 +36,7 @@ const blogPosts = [
   { slug: 'canyon' },
   { slug: 'sabrevois' },
   { slug: 'orleans' },
+  { slug: 'parc-aquatique' },
   { slug: 'montmorency' },
 ];
 

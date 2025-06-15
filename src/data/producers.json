@@ -1,6 +1,6 @@
 [
   {
-    "id": "node/462590758",
+    "id": "prod-001",
     "name": "Fruits et Légumes RG",
     "lat": 47.0938468,
     "lng": -70.327937,
@@ -8,7 +8,7 @@
     "website": null
   },
   {
-    "id": "node/469867191",
+    "id": "prod-002",
     "name": "Cidrerie Le Somnambule",
     "lat": 46.6619084,
     "lng": -71.0765364,
@@ -16,7 +16,7 @@
     "website": null
   },
   {
-    "id": "prod-012",
+    "id": "prod-003",
     "name": "Boucherie du Lac",
     "lat": 46.9,
     "lng": -71.2,
@@ -24,7 +24,7 @@
     "website": "https://boucheriedulac.ca"
   },
   {
-    "id": "node/947592289",
+    "id": "prod-004",
     "name": "Le Cep d'Argent",
     "lat": 45.2912118,
     "lng": -72.0561952,
@@ -32,7 +32,7 @@
     "website": "https://www.cepdargent.com/"
   },
   {
-    "id": "node/1294534786",
+    "id": "prod-005",
     "name": "La Fruiteraie des Gadbois",
     "lat": 45.4432377,
     "lng": -73.0632586,
@@ -40,7 +40,7 @@
     "website": "https://lafruiteraie.com/"
   },
   {
-    "id": "node/1344056806",
+    "id": "prod-006",
     "name": "Le magasin",
     "lat": 48.2395286,
     "lng": -70.1966212,
@@ -48,7 +48,7 @@
     "website": null
   },
   {
-    "id": "node/1700245168",
+    "id": "prod-007",
     "name": "Bleuetière l’Or Bleu",
     "lat": 45.0601912,
     "lng": -72.0617632,
@@ -56,7 +56,7 @@
     "website": null
   },
   {
-    "id": "node/1816150081",
+    "id": "prod-008",
     "name": "M Blé D'inde",
     "lat": 46.1621616,
     "lng": -74.7070108,
@@ -64,7 +64,7 @@
     "website": null
   },
   {
-    "id": "node/2018091043",
+    "id": "prod-009",
     "name": "Vignoble Clos St-Ignace",
     "lat": 46.0929795,
     "lng": -73.1173877,
@@ -72,7 +72,7 @@
     "website": null
   },
   {
-    "id": "node/2400999716",
+    "id": "prod-010",
     "name": "Le Barbocheux",
     "lat": 47.4128877,
     "lng": -61.7905464,
@@ -80,7 +80,7 @@
     "website": null
   },
   {
-    "id": "node/2584459098",
+    "id": "prod-011",
     "name": "Petch's Orchard",
     "lat": 45.0461259,
     "lng": -73.5961223,
@@ -88,7 +88,7 @@
     "website": null
   },
   {
-    "id": "node/4109497489",
+    "id": "prod-012",
     "name": "Cidrerie Verger Ferland",
     "lat": 45.2415039,
     "lng": -71.856537,
@@ -96,7 +96,7 @@
     "website": null
   },
   {
-    "id": "node/4337070670",
+    "id": "prod-013",
     "name": "Fruiterie St-Donat",
     "lat": 46.3198128,
     "lng": -74.223983,
@@ -104,7 +104,7 @@
     "website": null
   },
   {
-    "id": "node/4409660842",
+    "id": "prod-014",
     "name": "Ferme Bourdages Tradition",
     "lat": 48.0782669,
     "lng": -65.5936653,
@@ -112,7 +112,7 @@
     "website": "http://fermebourdages.com/"
   },
   {
-    "id": "node/4413315336",
+    "id": "prod-015",
     "name": "Cidrerie Michel Jodoin",
     "lat": 45.4568374,
     "lng": -73.0381738,
@@ -120,7 +120,7 @@
     "website": null
   },
   {
-    "id": "node/4565218500",
+    "id": "prod-016",
     "name": "Domaine Pinnacle",
     "lat": 45.0268508,
     "lng": -72.7843632,
@@ -128,7 +128,7 @@
     "website": null
   },
   {
-    "id": "node/4565218503",
+    "id": "prod-017",
     "name": "Verger Au Coeur De La Pomme",
     "lat": 45.0650155,
     "lng": -72.8533789,
@@ -136,7 +136,7 @@
     "website": null
   },
   {
-    "id": "node/4565219210",
+    "id": "prod-018",
     "name": "Vignoble de l'Orpailleur",
     "lat": 45.1098653,
     "lng": -72.8593664,
@@ -144,7 +144,7 @@
     "website": null
   },
   {
-    "id": "node/4565219212",
+    "id": "prod-019",
     "name": "Vignoble Gagliano",
     "lat": 45.1097782,
     "lng": -72.8564506,
@@ -152,7 +152,7 @@
     "website": null
   },
   {
-    "id": "node/4565219214",
+    "id": "prod-020",
     "name": "UNION LIBRE cidre & vin",
     "lat": 45.1091289,
     "lng": -72.8564956,
@@ -160,7 +160,7 @@
     "website": null
   },
   {
-    "id": "node/4565219215",
+    "id": "prod-021",
     "name": "Vignoble les Trois Clochers Enr.",
     "lat": 45.1257182,
     "lng": -72.8159134,
@@ -168,7 +168,7 @@
     "website": null
   },
   {
-    "id": "node/4565219216",
+    "id": "prod-022",
     "name": "Vignoble Centaure",
     "lat": 45.129706,
     "lng": -72.8012405,
@@ -176,7 +176,7 @@
     "website": null
   },
   {
-    "id": "node/4565744956",
+    "id": "prod-023",
     "name": "Vergers et Cidrerie Denis Charbonneau",
     "lat": 45.3476028,
     "lng": -73.1502327,
@@ -184,7 +184,7 @@
     "website": null
   },
   {
-    "id": "node/4569917946",
+    "id": "prod-024",
     "name": "Vignoble Pigeon Hill",
     "lat": 45.0403451,
     "lng": -72.9380554,
@@ -192,7 +192,7 @@
     "website": null
   },
   {
-    "id": "node/4574021090",
+    "id": "prod-025",
     "name": "Marché Fermier du comté de Huntingdon",
     "lat": 45.0888643,
     "lng": -74.1751995,
@@ -200,7 +200,7 @@
     "website": null
   },
   {
-    "id": "node/4596330520",
+    "id": "prod-026",
     "name": "Kiosque du Coin",
     "lat": 45.9536625,
     "lng": -73.5779831,
@@ -208,7 +208,7 @@
     "website": null
   },
   {
-    "id": "node/4618645648",
+    "id": "prod-027",
     "name": "Vignoble du Vent Maudit",
     "lat": 46.1160108,
     "lng": -73.2220071,
@@ -216,7 +216,7 @@
     "website": null
   },
   {
-    "id": "node/4661616878",
+    "id": "prod-028",
     "name": "Marché champêtre de North Hatley",
     "lat": 45.2784467,
     "lng": -71.9720551,
@@ -224,15 +224,15 @@
     "website": null
   },
   {
-    "id": "node/4677461180",
-    "name": "Les Vergers de la Colline",
+    "id": "prod-029",
+    "name": "Cidrerie Milton",
     "lat": 45.4835419,
     "lng": -72.7596182,
     "type": "farm",
     "website": "https://cidreriemilton.com/"
   },
   {
-    "id": "node/4685699295",
+    "id": "prod-030",
     "name": "Le Domaine Perdu",
     "lat": 45.1190419,
     "lng": -72.6666577,
@@ -240,7 +240,7 @@
     "website": null
   },
   {
-    "id": "node/4716736456",
+    "id": "prod-031",
     "name": "Les Jardins de la Terre",
     "lat": 45.4197694,
     "lng": -72.9282614,
@@ -248,7 +248,7 @@
     "website": "https://jardinsdelaterre.org"
   },
   {
-    "id": "node/4734354907",
+    "id": "prod-032",
     "name": "Marché public de Saint-Jérôme",
     "lat": 45.7764411,
     "lng": -73.9989097,
@@ -256,7 +256,7 @@
     "website": null
   },
   {
-    "id": "node/4756216521",
+    "id": "prod-033",
     "name": "Domaine Neige",
     "lat": 45.0457332,
     "lng": -73.5710667,
@@ -264,7 +264,7 @@
     "website": null
   },
   {
-    "id": "node/4756216522",
+    "id": "prod-034",
     "name": "Vignoble Le Chat Botté",
     "lat": 45.0457306,
     "lng": -73.5673305,
@@ -272,7 +272,7 @@
     "website": null
   },
   {
-    "id": "node/4783356570",
+    "id": "prod-035",
     "name": "Vignoble Rivière du Chêne",
     "lat": 45.5637069,
     "lng": -73.9754427,
@@ -280,7 +280,7 @@
     "website": null
   },
   {
-    "id": "node/4847467588",
+    "id": "prod-036",
     "name": "La Belle Alliance",
     "lat": 45.3099105,
     "lng": -72.5551775,
@@ -288,7 +288,7 @@
     "website": null
   },
   {
-    "id": "node/4916823842",
+    "id": "prod-037",
     "name": "La Magie de la Pomme",
     "lat": 45.5695985,
     "lng": -74.0059519,
@@ -296,7 +296,7 @@
     "website": null
   },
   {
-    "id": "node/4964897022",
+    "id": "prod-038",
     "name": "Les Vallons de Wadleigh",
     "lat": 45.7230092,
     "lng": -72.2386592,
@@ -304,7 +304,7 @@
     "website": null
   },
   {
-    "id": "node/5058147796",
+    "id": "prod-039",
     "name": "Vignoble Lano d’Or",
     "lat": 45.9121405,
     "lng": -73.253342,
@@ -312,7 +312,7 @@
     "website": null
   },
   {
-    "id": "node/5315676706",
+    "id": "prod-040",
     "name": "Vignoble Domaine du Clos de L'Isle",
     "lat": 46.3448124,
     "lng": -72.4859988,
@@ -320,7 +320,7 @@
     "website": null
   },
   {
-    "id": "node/5418559222",
+    "id": "prod-041",
     "name": "Domaine les Brome Léon Courville",
     "lat": 45.2591189,
     "lng": -72.5924666,
@@ -328,7 +328,7 @@
     "website": null
   },
   {
-    "id": "node/5507881314",
+    "id": "prod-042",
     "name": "Vignoble de la Bauge",
     "lat": 45.2342304,
     "lng": -72.8542268,
@@ -336,7 +336,7 @@
     "website": null
   },
   {
-    "id": "node/5975908749",
+    "id": "prod-043",
     "name": "Lavender Ridge",
     "lat": 45.5231477,
     "lng": -75.9935769,
@@ -344,7 +344,7 @@
     "website": null
   },
   {
-    "id": "node/6165067017",
+    "id": "prod-044",
     "name": "Distillerie Fils du Roy Québec",
     "lat": 47.9155272,
     "lng": -69.4372633,
@@ -352,7 +352,7 @@
     "website": null
   },
   {
-    "id": "node/6190935396",
+    "id": "prod-045",
     "name": "Cooperative La Mauve",
     "lat": 46.8924156,
     "lng": -70.8239859,
@@ -360,7 +360,7 @@
     "website": null
   },
   {
-    "id": "node/6195149181",
+    "id": "prod-046",
     "name": "Cidrerie Vergers Pedneault",
     "lat": 47.4212175,
     "lng": -70.3774765,
@@ -368,7 +368,7 @@
     "website": null
   },
   {
-    "id": "node/6264988298",
+    "id": "prod-047",
     "name": "Ferme la Chouette Lapone",
     "lat": 46.617033,
     "lng": -72.4863769,
@@ -376,7 +376,7 @@
     "website": null
   },
   {
-    "id": "node/6501154828",
+    "id": "prod-048",
     "name": "Little Red Wagon Winery",
     "lat": 45.6173615,
     "lng": -76.5342093,
@@ -384,7 +384,7 @@
     "website": null
   },
   {
-    "id": "node/6705077487",
+    "id": "prod-049",
     "name": "Les Herbes aux Soins",
     "lat": 45.9639452,
     "lng": -72.230692,
@@ -392,7 +392,7 @@
     "website": "https://lesherbesauxsoins.ca/"
   },
   {
-    "id": "node/7391324279",
+    "id": "prod-050",
     "name": "Ferme Avicole Bio-grain",
     "lat": 45.2745872,
     "lng": -73.2295693,
@@ -400,7 +400,7 @@
     "website": "http://fermeavicolebio-grain.ca/"
   },
   {
-    "id": "node/7495520340",
+    "id": "prod-051",
     "name": "Kiosque chez Forget",
     "lat": 45.6722011,
     "lng": -73.6010406,
@@ -408,7 +408,7 @@
     "website": null
   },
   {
-    "id": "node/7659702760",
+    "id": "prod-052",
     "name": "Les jardins Mistook",
     "lat": 48.6272744,
     "lng": -71.6781006,
@@ -416,7 +416,7 @@
     "website": null
   },
   {
-    "id": "node/7777892755",
+    "id": "prod-053",
     "name": "Ferme des Petits Cailloux",
     "lat": 45.0392456,
     "lng": -73.8749695,
@@ -424,7 +424,7 @@
     "website": "https://fermedespetitscailloux.com/"
   },
   {
-    "id": "node/7920739322",
+    "id": "prod-054",
     "name": "Vignoble Leblanc",
     "lat": 45.1412416,
     "lng": -74.3448606,
@@ -432,7 +432,7 @@
     "website": null
   },
   {
-    "id": "node/8003699683",
+    "id": "prod-055",
     "name": "Les Bleuets du Marquis",
     "lat": 45.0703929,
     "lng": -72.4519365,
@@ -440,7 +440,7 @@
     "website": null
   },
   {
-    "id": "node/8122047532",
+    "id": "prod-056",
     "name": "Mosti Mondiale",
     "lat": 45.3942858,
     "lng": -73.6008228,
@@ -448,7 +448,7 @@
     "website": null
   },
   {
-    "id": "node/8157957772",
+    "id": "prod-057",
     "name": "Kiosque Sylvain",
     "lat": 45.4972689,
     "lng": -74.0250988,
@@ -456,7 +456,7 @@
     "website": null
   },
   {
-    "id": "node/8166176867",
+    "id": "prod-058",
     "name": "Les viandes AMS",
     "lat": 45.4118738,
     "lng": -73.490577,
@@ -464,7 +464,7 @@
     "website": null
   },
   {
-    "id": "node/8272743739",
+    "id": "prod-059",
     "name": "La Chaufferie",
     "lat": 45.3972856,
     "lng": -72.7274582,
@@ -472,7 +472,7 @@
     "website": "https://lachaufferie.ca/"
   },
   {
-    "id": "node/8292085281",
+    "id": "prod-060",
     "name": "Les jardins de Hatley",
     "lat": 45.3036756,
     "lng": -71.9766162,
@@ -480,7 +480,7 @@
     "website": null
   },
   {
-    "id": "node/8331717187",
+    "id": "prod-061",
     "name": "Kiosque Joli-Bois Fruit et Légume",
     "lat": 45.745841,
     "lng": -74.0344207,
@@ -488,7 +488,7 @@
     "website": null
   },
   {
-    "id": "node/8532154130",
+    "id": "prod-062",
     "name": "Ferme Marineau",
     "lat": 45.5214368,
     "lng": -73.7927461,
@@ -496,7 +496,7 @@
     "website": null
   },
   {
-    "id": "node/8547084155",
+    "id": "prod-063",
     "name": "Leopoldo Fruits & Vegetables",
     "lat": 45.535295,
     "lng": -73.6146311,
@@ -504,7 +504,7 @@
     "website": "https://www.leopoldo.ca/"
   },
   {
-    "id": "node/8668653020",
+    "id": "prod-064",
     "name": "Verger Coeur-de-Pomme",
     "lat": 45.5016332,
     "lng": -74.0374076,
@@ -512,7 +512,7 @@
     "website": null
   },
   {
-    "id": "node/8668653021",
+    "id": "prod-065",
     "name": "Verger Saab",
     "lat": 45.5022323,
     "lng": -74.0391852,
@@ -520,7 +520,7 @@
     "website": null
   },
   {
-    "id": "node/8790173399",
+    "id": "prod-066",
     "name": "Verger Yvan des Pommes",
     "lat": 45.5020815,
     "lng": -74.0015297,
@@ -528,7 +528,7 @@
     "website": null
   },
   {
-    "id": "node/8790264731",
+    "id": "prod-067",
     "name": "Cueillette 640",
     "lat": 45.5206026,
     "lng": -73.9912064,
@@ -536,7 +536,7 @@
     "website": null
   },
   {
-    "id": "node/8790264732",
+    "id": "prod-068",
     "name": "Le Pomiculteur du Bûcheron",
     "lat": 45.5217905,
     "lng": -73.990817,
@@ -544,7 +544,7 @@
     "website": null
   },
   {
-    "id": "node/8790619405",
+    "id": "prod-069",
     "name": "L'Érapom Lemaire",
     "lat": 45.5040287,
     "lng": -74.0087599,
@@ -552,7 +552,7 @@
     "website": null
   },
   {
-    "id": "node/8790651414",
+    "id": "prod-070",
     "name": "H et Y Gemme",
     "lat": 45.5014114,
     "lng": -74.0116522,
@@ -560,7 +560,7 @@
     "website": null
   },
   {
-    "id": "node/8790679261",
+    "id": "prod-071",
     "name": "Le Verger Trottier",
     "lat": 45.502897,
     "lng": -74.0057988,
@@ -568,7 +568,7 @@
     "website": null
   },
   {
-    "id": "node/8791686240",
+    "id": "prod-072",
     "name": "Verger Sylvain Lavallée",
     "lat": 45.5046448,
     "lng": -73.9979656,
@@ -576,7 +576,7 @@
     "website": null
   },
   {
-    "id": "node/8791944079",
+    "id": "prod-073",
     "name": "Verger Lavallée",
     "lat": 45.5124582,
     "lng": -73.9943306,
@@ -584,7 +584,7 @@
     "website": null
   },
   {
-    "id": "node/8791944081",
+    "id": "prod-074",
     "name": "Verger Richard Legault",
     "lat": 45.5099128,
     "lng": -73.9951413,
@@ -592,7 +592,7 @@
     "website": null
   },
   {
-    "id": "node/8791944276",
+    "id": "prod-075",
     "name": "À la croisée des pommes - Verger Bio",
     "lat": 45.5187973,
     "lng": -73.9914868,
@@ -600,7 +600,7 @@
     "website": null
   },
   {
-    "id": "node/8994476926",
+    "id": "prod-076",
     "name": "Bleu Lavande",
     "lat": 45.283943,
     "lng": -72.1919332,
@@ -608,7 +608,7 @@
     "website": null
   },
   {
-    "id": "node/8994521226",
+    "id": "prod-077",
     "name": "verger NNMA (Pomme en Fête)",
     "lat": 48.0690265,
     "lng": -66.7119926,
@@ -616,7 +616,7 @@
     "website": null
   },
   {
-    "id": "node/9015236188",
+    "id": "prod-078",
     "name": "Ferme coopérative Tourne-Sol",
     "lat": 45.3432454,
     "lng": -74.1383267,
@@ -624,7 +624,7 @@
     "website": "https://www.fermetournesol.qc.ca"
   },
   {
-    "id": "node/9324880854",
+    "id": "prod-079",
     "name": "La Barik",
     "lat": 46.3572255,
     "lng": -72.5863721,
@@ -632,7 +632,7 @@
     "website": "https://labarik.com/"
   },
   {
-    "id": "node/9400905246",
+    "id": "prod-080",
     "name": "Distillerie des Marigots",
     "lat": 48.0894401,
     "lng": -65.6374283,
@@ -640,7 +640,7 @@
     "website": null
   },
   {
-    "id": "node/9412773396",
+    "id": "prod-081",
     "name": "Distillerie du quai",
     "lat": 46.3324719,
     "lng": -72.5123618,
@@ -648,7 +648,7 @@
     "website": "https://www.distillerieduquai.com/"
   },
   {
-    "id": "node/9450668522",
+    "id": "prod-082",
     "name": "Érablière Brunelle",
     "lat": 45.2950029,
     "lng": -72.6959613,
@@ -656,7 +656,7 @@
     "website": null
   },
   {
-    "id": "node/9463035906",
+    "id": "prod-083",
     "name": "Vignoble d'Ovila",
     "lat": 45.3710317,
     "lng": -74.1083162,
@@ -664,7 +664,7 @@
     "website": null
   },
   {
-    "id": "node/9463286477",
+    "id": "prod-084",
     "name": "Verger Barry",
     "lat": 46.5927143,
     "lng": -72.1275685,
@@ -672,7 +672,7 @@
     "website": "https://www.vergerbarry.com/"
   },
   {
-    "id": "node/9463286494",
+    "id": "prod-085",
     "name": "Verger Sauvageau",
     "lat": 46.5899123,
     "lng": -72.1311557,
@@ -680,7 +680,7 @@
     "website": null
   },
   {
-    "id": "node/9463335358",
+    "id": "prod-086",
     "name": "Verger Mayrand Kiosque De La Pomme",
     "lat": 46.5886502,
     "lng": -72.1392391,
@@ -688,7 +688,7 @@
     "website": null
   },
   {
-    "id": "node/9463456003",
+    "id": "prod-087",
     "name": "Le Garage - Microbrasserie",
     "lat": 46.5591788,
     "lng": -72.2146715,
@@ -696,7 +696,7 @@
     "website": null
   },
   {
-    "id": "node/9601914534",
+    "id": "prod-088",
     "name": "Distillerie Vent du Nord",
     "lat": 49.226196,
     "lng": -68.1914458,
@@ -704,7 +704,7 @@
     "website": null
   },
   {
-    "id": "node/9627589313",
+    "id": "prod-089",
     "name": "Terre-Mère, maraîcher biologique",
     "lat": 45.2920109,
     "lng": -73.2102513,
@@ -712,7 +712,7 @@
     "website": "https://www.terre-mere.ca/"
   },
   {
-    "id": "node/9627590147",
+    "id": "prod-090",
     "name": "Ferme Ammerlaan",
     "lat": 45.1187251,
     "lng": -73.3263085,
@@ -720,7 +720,7 @@
     "website": null
   },
   {
-    "id": "node/9629200180",
+    "id": "prod-091",
     "name": "Les Légumes Charbonneau",
     "lat": 45.4065554,
     "lng": -73.1093118,
@@ -728,7 +728,7 @@
     "website": null
   },
   {
-    "id": "node/9629215552",
+    "id": "prod-092",
     "name": "Domaine Valton Osiris",
     "lat": 45.5035103,
     "lng": -73.224408,
@@ -736,7 +736,7 @@
     "website": "http://www.domainevaltonosiris.com/coordonnees.html"
   },
   {
-    "id": "node/9631569077",
+    "id": "prod-093",
     "name": "Havre Vert",
     "lat": 45.5256616,
     "lng": -73.2336008,
@@ -744,7 +744,7 @@
     "website": null
   },
   {
-    "id": "node/9664109844",
+    "id": "prod-094",
     "name": "Les Jardins Carya",
     "lat": 45.4409919,
     "lng": -73.9514915,
@@ -752,7 +752,7 @@
     "website": null
   },
   {
-    "id": "node/9709092635",
+    "id": "prod-095",
     "name": "Vignoble Le Fief de la Rivière",
     "lat": 46.2517485,
     "lng": -72.5355177,
@@ -760,7 +760,7 @@
     "website": null
   },
   {
-    "id": "node/9908328001",
+    "id": "prod-096",
     "name": "Vignoble Domaine DesDuc",
     "lat": 47.3735905,
     "lng": -79.4920742,
@@ -768,7 +768,7 @@
     "website": null
   },
   {
-    "id": "node/9975569118",
+    "id": "prod-097",
     "name": "La Maison de la prune",
     "lat": 47.6934952,
     "lng": -69.6981952,
@@ -776,7 +776,7 @@
     "website": null
   },
   {
-    "id": "node/10153637466",
+    "id": "prod-098",
     "name": "Dans la Musette",
     "lat": 46.1299811,
     "lng": -74.1802681,
@@ -784,7 +784,7 @@
     "website": null
   },
   {
-    "id": "node/10292264105",
+    "id": "prod-099",
     "name": "Vergers Arsène Poisson",
     "lat": 45.4808636,
     "lng": -73.0916432,
@@ -792,7 +792,7 @@
     "website": "https://chemindessept.ca/"
   },
   {
-    "id": "node/10559226008",
+    "id": "prod-100",
     "name": "Vignoble J.O. Montpetit & Fils",
     "lat": 45.2486764,
     "lng": -73.9127989,
@@ -800,7 +800,7 @@
     "website": null
   },
   {
-    "id": "node/10560584863",
+    "id": "prod-101",
     "name": "Vignoble du Marathonien",
     "lat": 45.0456164,
     "lng": -73.7883203,
@@ -808,7 +808,7 @@
     "website": null
   },
   {
-    "id": "node/10682137753",
+    "id": "prod-102",
     "name": "Mielerie du cratère",
     "lat": 47.5247955,
     "lng": -70.2270463,
@@ -816,7 +816,7 @@
     "website": null
   },
   {
-    "id": "node/10775285545",
+    "id": "prod-103",
     "name": "Vignoble Clos Ste-Coix",
     "lat": 45.1327445,
     "lng": -72.8008288,
@@ -824,7 +824,7 @@
     "website": null
   },
   {
-    "id": "node/10775371912",
+    "id": "prod-104",
     "name": "Verger Canard Goûteux",
     "lat": 45.9682545,
     "lng": -71.9777921,
@@ -832,7 +832,7 @@
     "website": null
   },
   {
-    "id": "node/10822288273",
+    "id": "prod-105",
     "name": "Distillerie du Saint-Laurent",
     "lat": 48.5153516,
     "lng": -68.4679058,
@@ -840,7 +840,7 @@
     "website": "https://www.distilleriedustlaurent.com/"
   },
   {
-    "id": "node/10893068371",
+    "id": "prod-106",
     "name": "Vignoble côte des limousins",
     "lat": 45.4162392,
     "lng": -72.609721,
@@ -848,7 +848,7 @@
     "website": null
   },
   {
-    "id": "node/11007476642",
+    "id": "prod-107",
     "name": "Ferme Michel Lauzon",
     "lat": 45.7216739,
     "lng": -73.9538311,
@@ -856,7 +856,7 @@
     "website": null
   },
   {
-    "id": "node/11075001751",
+    "id": "prod-108",
     "name": "Complexe touristique du bleuet",
     "lat": 48.6779167,
     "lng": -71.5405913,
@@ -864,7 +864,7 @@
     "website": "https://complexetouristiquebleuet.com"
   },
   {
-    "id": "node/11078493301",
+    "id": "prod-109",
     "name": "Vignoble Souffle de Vie",
     "lat": 45.4240911,
     "lng": -73.9675134,
@@ -872,7 +872,7 @@
     "website": null
   },
   {
-    "id": "node/11110230206",
+    "id": "prod-110",
     "name": "Terre Fruitière",
     "lat": 45.5118059,
     "lng": -73.4328511,
@@ -880,7 +880,7 @@
     "website": "https://terrefruitiere.ca"
   },
   {
-    "id": "node/11199140589",
+    "id": "prod-111",
     "name": "Ferme Hirondelle",
     "lat": 46.6535634,
     "lng": -70.1481208,
@@ -888,7 +888,7 @@
     "website": null
   },
   {
-    "id": "node/11199140590",
+    "id": "prod-112",
     "name": "Érablière Camille Bilodeau",
     "lat": 46.6365779,
     "lng": -70.1205417,
@@ -896,7 +896,7 @@
     "website": null
   },
   {
-    "id": "node/11227849641",
+    "id": "prod-113",
     "name": "151 Rang Sainte-Marie",
     "lat": 46.638342,
     "lng": -70.1705515,
@@ -904,7 +904,7 @@
     "website": null
   },
   {
-    "id": "node/11230013807",
+    "id": "prod-114",
     "name": "Ferme aux Colibris",
     "lat": 45.7209312,
     "lng": -75.1441041,
@@ -912,7 +912,7 @@
     "website": "https://www.facebook.com/auxcolibris"
   },
   {
-    "id": "node/11258192354",
+    "id": "prod-115",
     "name": "Verger Poméloi",
     "lat": 47.2407187,
     "lng": -61.9449983,
@@ -920,7 +920,7 @@
     "website": null
   },
   {
-    "id": "node/11268085105",
+    "id": "prod-116",
     "name": "Verger Fleuripom",
     "lat": 45.5271711,
     "lng": -73.9958704,
@@ -928,7 +928,7 @@
     "website": null
   },
   {
-    "id": "node/11292120159",
+    "id": "prod-117",
     "name": "Verger Joannette",
     "lat": 45.5241585,
     "lng": -73.9938214,
@@ -936,7 +936,7 @@
     "website": null
   },
   {
-    "id": "node/11695082651",
+    "id": "prod-118",
     "name": "Au Vignoble d'Orford",
     "lat": 45.3107137,
     "lng": -72.1446817,
@@ -944,7 +944,7 @@
     "website": null
   },
   {
-    "id": "node/11867215626",
+    "id": "prod-119",
     "name": "Au Pavillon de la Pomme",
     "lat": 45.5789138,
     "lng": -73.1666809,
@@ -952,7 +952,7 @@
     "website": "https://www.pavillondelapomme.com/"
   },
   {
-    "id": "node/11950450471",
+    "id": "prod-120",
     "name": "Le Kiosque Racíne",
     "lat": 45.752838,
     "lng": -73.7797406,
@@ -960,7 +960,7 @@
     "website": "https://racinepetitsfruits.com/"
   },
   {
-    "id": "node/11986525930",
+    "id": "prod-121",
     "name": "Vignoble Domaine Bresee",
     "lat": 45.148865,
     "lng": -72.6128711,
@@ -968,7 +968,7 @@
     "website": null
   },
   {
-    "id": "node/11989002761",
+    "id": "prod-122",
     "name": "Bleuets du Massif Sutton",
     "lat": 45.0649993,
     "lng": -72.6431701,
@@ -976,7 +976,7 @@
     "website": null
   },
   {
-    "id": "node/12022658312",
+    "id": "prod-123",
     "name": "Vignoble Bromont",
     "lat": 45.2530761,
     "lng": -72.7357027,
@@ -984,7 +984,7 @@
     "website": null
   },
   {
-    "id": "node/12022658379",
+    "id": "prod-124",
     "name": "Vignoble du PicBois",
     "lat": 45.2521613,
     "lng": -72.7100806,
@@ -992,7 +992,7 @@
     "website": null
   },
   {
-    "id": "node/12138131811",
+    "id": "prod-125",
     "name": "Distillerie Cap-aux-Péchés",
     "lat": 49.2247842,
     "lng": -65.9031101,
@@ -1000,7 +1000,7 @@
     "website": null
   },
   {
-    "id": "node/12368270202",
+    "id": "prod-126",
     "name": "Ferme l'oiseau bleu",
     "lat": 47.4283157,
     "lng": -70.5103851,
@@ -1008,7 +1008,7 @@
     "website": "https://www.fermeoiseaubleu.com/"
   },
   {
-    "id": "node/12420604501",
+    "id": "prod-127",
     "name": "La Ferme de l'Aube",
     "lat": 45.957645,
     "lng": -74.858129,
@@ -1016,7 +1016,7 @@
     "website": "https://www.lafermedelaube.com/"
   },
   {
-    "id": "node/12420604601",
+    "id": "prod-128",
     "name": "MacCuaig Family Farm",
     "lat": 45.3853256,
     "lng": -74.4110282,
@@ -1024,7 +1024,7 @@
     "website": null
   },
   {
-    "id": "node/12489361345",
+    "id": "prod-129",
     "name": "Vignoble La Manse",
     "lat": 45.4474677,
     "lng": -72.6287612,
@@ -1032,7 +1032,7 @@
     "website": null
   },
   {
-    "id": "node/12594406773",
+    "id": "prod-130",
     "name": "Les jardins d'Oka",
     "lat": 45.5066861,
     "lng": -74.049795,
@@ -1040,7 +1040,7 @@
     "website": null
   },
   {
-    "id": "node/12605225019",
+    "id": "prod-131",
     "name": "Bleu sucré",
     "lat": 45.4921526,
     "lng": -74.0861333,
@@ -1048,7 +1048,7 @@
     "website": null
   },
   {
-    "id": "node/12647741330",
+    "id": "prod-132",
     "name": "Cherry River Distillerie",
     "lat": 45.2677592,
     "lng": -72.1523042,
@@ -1056,7 +1056,7 @@
     "website": null
   },
   {
-    "id": "node/12811720250",
+    "id": "prod-133",
     "name": "Le Château Taillefer Lafon - Vignoble & Cidrerie",
     "lat": 45.5510738,
     "lng": -73.8233467,

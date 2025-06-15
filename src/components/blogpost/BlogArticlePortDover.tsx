@@ -161,7 +161,7 @@ export default function BlogArticlePortDover() {
         </p>
         <div className="my-8">
           <img
-           src="/images/destinations/Port Dover.avif"
+           src="/images/destinations/port-dover.avif"
             alt="Port Dover"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

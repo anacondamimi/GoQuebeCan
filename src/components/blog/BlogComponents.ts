@@ -34,7 +34,7 @@ import BlogArticleSherbrooke from '@/components//blogpost/BlogArticleSherbrooke'
 import BlogArticleSingingSands from '@/components//blogpost/BlogArticleSingingSands';
 import BlogArticleTadoussac from '@/components//blogpost/BlogArticleTadoussac';
 import BlogArticleWasagaBeach from '@/components//blogpost/BlogArticleWasagaBeach';
-
+import BlogArticleWaterParks from '@/components//blogpost/BlogArticleWaterParks';
 // On déclare que chaque slug (string) pointe vers un FunctionComponent React
 const componentMap: Record<string, FC> = {
   quebec: BlogArticleQuebec,
@@ -51,6 +51,7 @@ const componentMap: Record<string, FC> = {
   carleton: BlogArticleCarleton,
   'hautes-gorges': BlogArticleHautesGorges,
   massif: BlogArticleMassif,
+  'parc-aquatique': BlogArticleWaterParks,
   'bromont-granby': BlogArticleBromontGranby,
   sherbrooke: BlogArticleSherbrooke,
   'riviere-du-loup': BlogArticleRiviereduLoup,

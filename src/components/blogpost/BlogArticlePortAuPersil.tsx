@@ -160,7 +160,7 @@ export default function BlogArticlePortAuPersil() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Port-au-Persil.avif"
+            src="/images/destinations/port-au-persil.avif"
             alt="Port-au-Persil"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

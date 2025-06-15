@@ -146,7 +146,7 @@ export default function BlogArticleSandbanks() {
   return (
     <article id="blog_article_sandbanks" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <HeroBanner
-        image="/images/destinations/Sand banks.avif"
+        image="/images/destinations/sand-banks.avif"
         title=" Sandbanks - Dunes, Plages et Plaisirs en Famille"
         subtitle="Découvrez un joyau naturel au cœur du Prince Edward County, idéal pour les familles, les amateurs de plein air et les épicuriens."
       />
@@ -170,7 +170,7 @@ export default function BlogArticleSandbanks() {
         </p>
         <div className="my-8">
           <Image
-            src="/images/destinations/Sand banks.avif"
+            src="/images/destinations/sand-banks.avif"
             alt="Sandbanks"
             width={1200}
             height={600}

@@ -24,27 +24,24 @@ export default function DropdownDestinations() {
 
   // Ferme le menu si clic en dehors
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(event.target as Node)
-      ) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') setOpen(false);
+  };
+  document.addEventListener('keydown', handleKeyDown);
+  return () => document.removeEventListener('keydown', handleKeyDown);
+}, []);
+
 
   return (
     <>
       <button
-        ref={buttonRef}
-        onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 text-sm text-gray-700 hover:text-[#e11d48] hover:bg-[#e11d48]/10 px-2 py-2 rounded-md"
-      >
+  ref={buttonRef}
+  onClick={() => setOpen(!open)}
+  aria-expanded={open}
+  aria-haspopup="true"
+  className="flex items-center gap-2 text-sm text-gray-700 hover:text-[#e11d48] hover:bg-[#e11d48]/10 px-2 py-2 rounded-md"
+>
+
         <span>Destinations</span>
         <ChevronDown size={18} />
       </button>
@@ -52,15 +49,12 @@ export default function DropdownDestinations() {
       {open && (
         <DropdownPortal>
           <div
-            ref={menuRef}
-            style={{
-              position: 'absolute',
-              top: position.top,
-              left: position.left,
-              zIndex: 9999,
-            }}
-            className="bg-white shadow-xl w-80 max-h-[80vh] overflow-y-auto rounded-lg p-4"
-          >
+  ref={menuRef}
+  role="menu"
+  style={{ position: 'absolute', top: position.top, left: position.left, zIndex: 9999 }}
+  className="bg-white shadow-xl w-80 max-h-[80vh] overflow-y-auto rounded-lg p-4"
+>
+
             {destinations.map((region) => (
               <div key={region.slug} className="mb-4">
                 <p className="font-semibold text-indigo-600 mb-1">{region.title}</p>

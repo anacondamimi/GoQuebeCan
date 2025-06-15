@@ -246,5 +246,11 @@ export const destinationMap = {
         objectsUrl: '/objets',
         plannerUrl: '/planificateur',
     },
+    'parc-aquatique': {
+        label: 'parc-aquatique',
+        blogUrl: '/blog/parc-aquatique',
+        videoUrl: '/videos#parc-aquatique',
+        objectsUrl: '/objets',
+        plannerUrl: '/planificateur',
+    }
 };
-

@@ -55,6 +55,8 @@ const componentMap: Record<string, () => Promise<React.ComponentType<any>>> = {
   tadoussac: () => import('@/components/blogpost/BlogArticleTadoussac').then((mod) => mod.default),
   'wasaga-beach': () =>
     import('@/components/blogpost/BlogArticleWasagaBeach').then((mod) => mod.default),
+  'parc-aquatique': () =>
+    import('@/components/blogpost/BlogArticleWaterParks').then((mod) => mod.default),
 };
 
 export default componentMap;

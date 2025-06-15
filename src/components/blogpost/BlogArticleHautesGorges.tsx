@@ -177,7 +177,7 @@ export function BlogArticleHautesGorges() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Hautes gorges.avif"
+            src="/images/destinations/hautes-gorges.avif"
             alt="Hautes-Gorges"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

@@ -24,7 +24,7 @@ const regions: Region[] = [
       {
         name: 'Montréal',
         description: 'Métropole culturelle entre histoire et modernité',
-        image: '/images/destinations/Montreal.avif',
+        image: '/images/destinations/montreal.avif',
         blogId: 'blog_article_montreal',
       },
     ],
@@ -43,19 +43,20 @@ const regions: Region[] = [
       {
         name: "Île d'Orléans",
         description: 'Terroir québécois, vignobles et patrimoine agricole',
-        image: "/images/destinations/ile d'orleans.avif",
+        image: "/images/destinations/ile-dorleans.avif",
         blogId: 'blog_article_orleans',
       },
       {
         name: 'Chute Montmorency',
         description: 'Cascade spectaculaire de 83 mètres de hauteur',
-        image: '/images/destinations/Montmorency.avif',
+        image: '/images/destinations/chute-montmorency.avif',
         blogId: 'blog_article_montmorency',
+        
       },
       {
         name: 'Lévis',
         description: 'Vue imprenable sur Québec et patrimoine maritime',
-        image: '/images/destinations/Levis.avif',
+        image: '/images/destinations/levis.avif',
         blogId: 'blog_article_levis',
       },
     ],
@@ -67,19 +68,19 @@ const regions: Region[] = [
       {
         name: 'Percé',
         description: "Célèbre pour son rocher et l'île Bonaventure",
-        image: '/images/destinations/Perce.avif',
+        image: '/images/destinations/perce.avif',
         blogId: 'blog_article_perce',
       },
       {
         name: 'Parc national Forillon',
         description: 'Randonnées spectaculaires et observation des baleines',
-        image: '/images/destinations/Forillon.avif',
+        image: '/images/destinations/forillon.avif',
         blogId: 'blog_article_forillon',
       },
       {
         name: 'Carleton-sur-Mer',
         description: 'Plages magnifiques et sports nautiques',
-        image: '/images/destinations/Carleton.avif',
+        image: '/images/destinations/carleton.avif',
         blogId: 'blog_article_carleton',
       },
     ],
@@ -91,19 +92,19 @@ const regions: Region[] = [
       {
         name: 'Baie-Saint-Paul',
         description: "Village d'artistes et gastronomie locale",
-        image: '/images/destinations/Baie-St-Paul.avif',
+        image: '/images/destinations/baie-st-paul.avif',
         blogId: 'blog_article_baie_saint_paul',
       },
       {
         name: 'Le Massif de Charlevoix',
         description: 'Station de ski avec vue sur le fleuve Saint-Laurent',
-        image: '/images/destinations/Le massif.avif',
+        image: '/images/destinations/le-massif.avif',
         blogId: 'blog_article_massif',
       },
       {
         name: 'Parc national des Hautes-Gorges',
         description: 'Croisières et randonnées spectaculaires',
-        image: '/images/destinations/Hautes gorges.avif',
+        image: '/images/destinations/hautes-gorges.avif',
         blogId: 'blog_article_hautes_gorges',
       },
     ],
@@ -115,19 +116,19 @@ const regions: Region[] = [
       {
         name: 'Magog-Orford',
         description: 'Lac Memphrémagog et activités de plein air',
-        image: '/images/destinations/Magog.avif',
+        image: '/images/destinations/magog.avif',
         blogId: 'blog_article_magog_orford',
       },
       {
         name: 'Sherbrooke',
         description: 'Ville culturelle et murales urbaines',
-        image: '/images/destinations/Sherbrooke.avif',
+        image: '/images/destinations/sherbrooke.avif',
         blogId: 'blog_article_sherbrooke',
       },
       {
         name: 'Bromont et Granby',
         description: 'Activités quatre saisons et Zoo de Granby',
-        image: '/images/destinations/Bromont.avif',
+        image: '/images/destinations/bromont.avif',
         blogId: 'blog_article_bromont_granby',
       },
     ],
@@ -139,19 +140,19 @@ const regions: Region[] = [
       {
         name: 'Rivière-du-Loup',
         description: 'Observation des baleines et îles du Saint-Laurent',
-        image: '/images/destinations/Chute Riviere-du-Loup.avif',
+        image: '/images/destinations/chute-riviere-du-loup.avif',
         blogId: 'blog_article_riviere_du_loup',
       },
       {
         name: 'Parc national du Bic',
         description: 'Phoques, randonnée et paysages maritimes',
-        image: '/images/destinations/Bic.avif',
+        image: '/images/destinations/bic.avif',
         blogId: 'blog_article_bic',
       },
       {
         name: 'Kamouraska',
         description: 'Village historique et couchers de soleil légendaires',
-        image: '/images/destinations/Kamouraska.avif',
+        image: '/images/destinations/kamouraska.avif',
         blogId: 'blog_article_kamouraska',
       },
     ],
@@ -163,25 +164,25 @@ const regions: Region[] = [
       {
         name: 'Tadoussac',
         description: 'Observation des baleines et fjord du Saguenay',
-        image: '/images/destinations/Tadoussac.avif',
+        image: '/images/destinations/tadoussac.avif',
         blogId: 'blog_article_tadoussac',
       },
       {
         name: 'Sept-Îles',
         description: 'Archipel et culture innue',
-        image: '/images/destinations/Sept-iles.avif',
+        image: '/images/destinations/sept-iles.avif',
         blogId: 'blog_article_sept_iles',
       },
       {
         name: 'Mingan',
         description: 'Monolithes et îles uniques',
-        image: '/images/destinations/Mingan.avif',
+        image: '/images/destinations/mingan.avif',
         blogId: 'blog_article_mingan',
       },
       {
         name: 'Port-Cartier',
         description: 'Ville portuaire dynamique entre mer et forêt',
-        image: '/images/destinations/Port cartier.avif',
+        image: '/images/destinations/port-cartier.avif',
         blogId: 'blog_article_port_cartier',
       },
     ],
@@ -193,37 +194,37 @@ const regions: Region[] = [
       {
         name: 'Wasaga Beach',
         description: "La plus longue plage d'eau douce au monde",
-        image: '/images/destinations/Wasaga Beach.avif',
+        image: '/images/destinations/wasaga-beach.avif',
         blogId: 'blog_article_wasaga_beach',
       },
       {
         name: 'Sauble Beach',
         description: '11 km de sable blanc',
-        image: '/images/destinations/Sauble Beach.avif',
+        image: '/images/destinations/sauble-beach.avif',
         blogId: 'blog_article_sauble_beach',
       },
       {
         name: 'Grand Bend',
         description: 'Couchers de soleil spectaculaires',
-        image: '/images/destinations/Grand bend.avif',
+        image: '/images/destinations/grand-bend.avif',
         blogId: 'blog_article_grand_bend',
       },
       {
         name: 'Port Dover',
         description: 'Ambiance de ville balnéaire',
-        image: '/images/destinations/Port Dover.avif',
+        image: '/images/destinations/port-dover.avif',
         blogId: 'blog_article_port_dover',
       },
       {
         name: 'Sandbanks',
         description: 'Dunes de sable spectaculaires',
-        image: '/images/destinations/Sand banks.avif',
+        image: '/images/destinations/sand-banks.avif',
         blogId: 'blog_article_sandbanks',
       },
       {
         name: 'Singing Sands Beach',
         description: 'Plage naturelle avec eaux peu profondes et sable chantant',
-        image: '/images/destinations/Singing Sands.avif',
+        image: '/images/destinations/singing-sands.avif',
         blogId: 'blog_article_singingsands',
       },
     ],
@@ -236,13 +237,13 @@ const regions: Region[] = [
         name: 'Eeyou Istchee Baie-James',
         description:
           'Territoire nordique avec taïga et lacs immenses, éco-gîtes de Matagami et kayak à Wemindji',
-        image: '/images/destinations/Eeyou Istchee,BaieJames.avif',
+        image: '/images/destinations/eeyou-istchee-baiejames.avif',
         blogId: 'blog_article_eeyou_istchee',
       },
       {
         name: 'Kuururjuaq',
         description: "Mont D'Iberville et rivière George, paradis pour les amateurs de plein air",
-        image: '/images/destinations/Kuururjuaq.avif',
+        image: '/images/destinations/kuururjuaq.avif',
         blogId: 'blog_article_kuururjuaq',
       },
     ],
@@ -254,13 +255,13 @@ const regions: Region[] = [
       {
         name: 'Port-au-Persil',
         description: "Hameau aux airs d'Écosse dans Charlevoix",
-        image: '/images/destinations/Port-au-Persil.avif',
+        image: '/images/destinations/port-au-persil.avif',
         blogId: 'blog_article_port_au_persil',
       },
       {
         name: "L'Anse-Saint-Jean",
         description: 'Village historique avec kayak de mer et navettes maritimes du Fjord',
-        image: "/images/destinations/L'anse-Saint-jean.avif",
+        image: "/images/destinations/anse-saint-jean.avif",
         blogId: 'blog_article_anse_saint_jean',
       },
     ],
@@ -279,10 +280,6 @@ export default function PopularDestinations() {
         </p>
       </div>
 
-      {/* Ici tu pourras insérer l'image comme sur ta page Home */}
-      {/* <div className="mt-12">
-          <img src="/images/page-accueil.avif"" alt="Bannière" className="mx-auto rounded-xl shadow-lg" />
-        {/* Boucle sur les régions */}
       {regions.map((region) => (
         <div key={region.title} className="mb-16 last:mb-0">
           {/* Titre de région + icône */}
@@ -300,33 +297,31 @@ export default function PopularDestinations() {
           {/* Grille de destinations */}
           <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {region.destinations.map((d) => (
-              <Link
-                key={d.name}
-                href={d.blogId ? `/blog/${d.blogId}` : '#'}
-                className={`group bg-white rounded-xl shadow-card hover:shadow-card-hover overflow-hidden transition-shadow ${
-                  d.blogId ? 'cursor-pointer' : 'cursor-default'
-                }`}
-              >
-                {/* Image */}
-                <div className="relative h-48">
-                  <Image
-                    src={d.image}
-                    alt={d.name}
-                    fill
-                    sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                    priority
-                  />
-                </div>
+             <Link
+  key={d.name}
+  href={d.blogId ? `/blog/${d.blogId}` : '#'}
+  className={`group bg-white rounded-xl shadow-card hover:shadow-card-hover overflow-hidden transition-shadow ${
+    d.blogId ? 'cursor-pointer' : 'cursor-default'
+  }`}
+>
+  <div className="relative aspect-w-16 aspect-h-9">
+    <Image
+      src={d.image}
+      alt={d.name}
+      fill
+      sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
+      className="object-cover object-center group-hover:scale-105 transition-transform duration-300 rounded-xl"
+      priority
+    />
+  </div>
 
-                {/* Texte */}
-                <div className="p-5">
-                  <h4 className="text-lg font-display font-semibold text-gray-900 mb-1">
-                    {d.name}
-                  </h4>
-                  <p className="text-sm text-gray-600">{d.description}</p>
-                </div>
-              </Link>
+  <div className="p-5">
+    <h4 className="text-lg font-display font-semibold text-gray-900 mb-1">
+      {d.name}
+    </h4>
+    <p className="text-sm text-gray-600">{d.description}</p>
+  </div>
+</Link>
             ))}
           </div>
         </div>

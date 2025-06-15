@@ -1,8 +1,10 @@
 import React from 'react';
+import Image from 'next/image';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
 
 export const metadata = {
-  slug: 'rivieredu-loup',
-  ville: 'Rivieredu Loup',
+  slug: 'riviere-du-loup',
+  ville: 'Riviere-du Loup',
   resume: 'Découverte de Rivieredu Loup et de ses attraits touristiques.',
   activites: [
     'Croisière aux Baleines',
@@ -18,7 +20,7 @@ export const metadata = {
   hebergements: ['Hôtel Universel', 'Quality Inn', 'Auberge de la Pointe'],
   publics: ['familles', 'ados', 'amateurs de culture'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
+
 
 // ✅ Imports déplacés automatiquement
 
@@ -159,10 +161,12 @@ export default function BlogArticleRiviereduLoup() {
           les Maritimes, elle offre une expérience authentique du Bas-Saint-Laurent.
         </p>
         <div className="my-8">
-          <img
-            src="/images/destinations/Chute Riviere-du-Loup.avif"
-            alt="Rivière-du-Loup"
-            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          <Image
+  src="/images/destinations/chute-riviere-du-loup.avif"
+  alt="Rivière-du-Loup"
+  width={1200}
+  height={500}
+  className="w-full object-cover rounded-lg shadow-lg"
           />
         </div>
       </section>

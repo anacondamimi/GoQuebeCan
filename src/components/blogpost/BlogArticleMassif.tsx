@@ -181,7 +181,7 @@ export default function BlogArticleMassif() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Le massif.avif"
+            src="/images/destinations/le-massif.avif"
             alt="Le Massif en hiver"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

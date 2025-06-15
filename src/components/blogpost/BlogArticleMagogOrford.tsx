@@ -182,7 +182,7 @@ export default function BlogArticleMagogOrford() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Magog.avif"
+            src="/images/destinations/magog.avif"
             alt="Lac Memphrémagog"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

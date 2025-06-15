@@ -161,7 +161,7 @@ export default function BlogArticleWasagaBeach() {
         </p>
         <div className="my-8">
           <img
-            src="/images/destinations/Wasaga Beach.avif"
+            src="/images/destinations/wasaga-beach.avif"
             alt="Wasaga Beach"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />

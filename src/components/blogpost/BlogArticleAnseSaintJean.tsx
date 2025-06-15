@@ -162,7 +162,7 @@ export default function BlogArticleAnseSaintJean() {
         title="L'Anse-Saint-Jean - Perle du Fjord du Saguenay"
         description="Découvrez ce village pittoresque du Québec entre fjord majestueux, nature et activités familiales."
         url="https://goquebecan.com/blog/anse-saint-jean"
-        image="https://goquebecan.com/images/destinations/L'anse-Saint-Jean.avif"
+        image="https://goquebecan.com/images/destinations/anse-saint-jean.avif"
         keywords="Anse-Saint-Jean, Fjord Saguenay, kayak, randonnée, hébergement, Québec, tourisme nature"
         type="article"
         author="GoQuébeCan"
