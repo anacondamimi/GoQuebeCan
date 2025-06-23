@@ -1,0 +1,11 @@
+# Scripts et fichiers auxiliaires
+scripts/**
+*.js
+*.mjs
+*.cjs
+
+# Dossiers à ignorer
+node_modules/
+dist/
+.next/
+out/

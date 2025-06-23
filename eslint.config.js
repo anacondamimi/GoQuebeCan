@@ -9,28 +9,23 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import unusedImports from 'eslint-plugin-unused-imports';
 import prettier from 'eslint-plugin-prettier';
 
-/** @type {import("eslint").Linter.FlatConfig[]} */
 export default [
   js.configs.recommended,
+
+  // TypeScript + React
   {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
-    ignores: ['**/*.d.ts', '**/*.test.ts', '**/*.mjs', 'node_modules/**', 'dist/**'],
+    files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
       parser,
       parserOptions: {
         project: './tsconfig.json',
         ecmaVersion: 2020,
         sourceType: 'module',
-        ecmaFeatures: {
-          jsx: true,
-        },
+        ecmaFeatures: { jsx: true },
       },
       globals: {
         ...globals.browser,
         ...globals.node,
-        console: true,
-        require: true,
-        process: true,
       },
     },
     plugins: {
@@ -42,29 +37,20 @@ export default [
       prettier,
     },
     settings: {
-      react: {
-        version: 'detect',
-      },
+      react: { version: 'detect' },
     },
     rules: {
       ...tseslint.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
-
       'react/react-in-jsx-scope': 'off',
-      'react/no-unescaped-entities': 'off', // ⛔ désactivée pour avancer vite
+      'react/no-unescaped-entities': 'off',
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-      '@typescript-eslint/no-explicit-any': 'warn', // 💡 warning seulement
-
+      '@typescript-eslint/no-explicit-any': 'warn',
       'unused-imports/no-unused-imports': 'error',
       'unused-imports/no-unused-vars': [
         'warn',
-        {
-          vars: 'all',
-          varsIgnorePattern: '^_',
-          args: 'after-used',
-          argsIgnorePattern: '^_',
-        },
+        { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
       ],
       'prettier/prettier': 'warn',
     },
