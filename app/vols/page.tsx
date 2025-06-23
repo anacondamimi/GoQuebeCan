@@ -3,12 +3,13 @@ import dynamicImport from 'next/dynamic'; // ✅ Renommé pour éviter le confli
 
 // ✅ Métadonnées SEO
 export const metadata: Metadata = {
-  title: 'Comparateur de Vols pour le Québec et le Canada | GoQuebecan',
+  title: 'Vols pas chers de Montréal vers la France | GoQuebeCan',
   description:
-    "Trouvez les meilleurs tarifs pour vos vols vers le Québec et le Canada. Comparateur intelligent avec conseils d'experts et astuces pour économiser.",
+    "Trouvez les meilleurs prix pour vos billets d'avion entre Montréal et la France. Comparez, réservez et économisez grâce à nos partenaires comme French Bee.",
   openGraph: {
-    title: 'Comparateur de Vols pour le Québec et le Canada | GoQuebecan',
-    description: 'Trouvez les meilleurs tarifs pour vos vols vers le Québec et le Canada',
+    title: 'Vols pas chers de Montréal vers la France | GoQuebeCan',
+    description:
+      "Comparez les tarifs des vols entre Montréal et la France. Bénéficiez des meilleures offres et conseils d'experts.",
     images: [
       'https://images.unsplash.com/photo-1525638164172-b31ea4222ef7?auto=format&fit=crop&q=80',
     ],

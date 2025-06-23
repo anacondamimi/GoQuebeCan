@@ -62,9 +62,7 @@ export default function MapboxAutocomplete({
         placeholder={placeholder}
       />
       {!selected && input.length > 3 && (
-        <p className="text-red-500 text-sm mt-1">
-          Veuillez choisir une ville dans la liste.
-        </p>
+        <p className="text-red-500 text-sm mt-1">Veuillez choisir une ville dans la liste.</p>
       )}
 
       {suggestions.length > 0 && (

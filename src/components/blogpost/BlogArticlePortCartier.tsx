@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -24,28 +25,31 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide
 
 const hotels = [
   {
-    name: "Chalets Lac Walker & Lac Arthur",
-  category: "Nature sauvage & tranquillité",
-  description: "Séjour dans la réserve faunique : pêche, canot et randonnées. Idéal pour se ressourcer.",
-  price: "Tarifs via Sépaq",
-  link: "https://www.sepaq.com/pq/rpc/hebergement/chalet.dot",
-  image: "/images/destinations/hotels/reserve faunique port cartier.avif",
+    name: 'Chalets Lac Walker & Lac Arthur',
+    category: 'Nature sauvage & tranquillité',
+    description:
+      'Séjour dans la réserve faunique : pêche, canot et randonnées. Idéal pour se ressourcer.',
+    price: 'Tarifs via Sépaq',
+    link: 'https://www.sepaq.com/pq/rpc/hebergement/chalet.dot',
+    image: '/images/destinations/hotels/reserve faunique port cartier.avif',
   },
   {
-    name: "Camping municipal Le Paradis",
-  category: "Avec et sans services",
-  description: "39 emplacements bien situés, en bordure du boulevard du Portage-des-Mousses. Parfait pour VR ou tente.",
-  price: "À partir de ~25$/nuit (info à confirmer)",
-  link: "https://www.villeport-cartier.com/tourisme/camping-municipal",
-  image: "/images/destinations/hotels/camping 2 port cartier.avif",
+    name: 'Camping municipal Le Paradis',
+    category: 'Avec et sans services',
+    description:
+      '39 emplacements bien situés, en bordure du boulevard du Portage-des-Mousses. Parfait pour VR ou tente.',
+    price: 'À partir de ~25$/nuit (info à confirmer)',
+    link: 'https://www.villeport-cartier.com/tourisme/camping-municipal',
+    image: '/images/destinations/hotels/camping 2 port cartier.avif',
   },
   {
-     name: "Camping municipal Patterson",
-  category: "Sans service - Nature pure",
-  description: "17 emplacements rustiques en pleine nature sur l’Île Patterson Sud. Déconnexion garantie.",
-  price: "Tarif accessible (info locale)",
-  link: "https://www.villeport-cartier.com/tourisme/camping-municipal",
-  image: "/images/destinations/hotels/camping 1 port cartier.avif",
+    name: 'Camping municipal Patterson',
+    category: 'Sans service - Nature pure',
+    description:
+      '17 emplacements rustiques en pleine nature sur l’Île Patterson Sud. Déconnexion garantie.',
+    price: 'Tarif accessible (info locale)',
+    link: 'https://www.villeport-cartier.com/tourisme/camping-municipal',
+    image: '/images/destinations/hotels/camping 1 port cartier.avif',
   },
 ];
 
@@ -144,7 +148,7 @@ export default function BlogArticlePortCartier() {
     <article id="blog_article_port_cartier" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Port-Cartier - Entre Mer et Forêt sur la Côte-Nord
+          Port-Cartier - Entre Mer et Forêt sur la Côte-Nord
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez cette ville dynamique où activités maritimes et plein air se rencontrent dans un
@@ -160,10 +164,12 @@ export default function BlogArticlePortCartier() {
           préservée.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/port-cartier.avif"
             alt="Port-Cartier"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -261,7 +267,13 @@ export default function BlogArticlePortCartier() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

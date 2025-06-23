@@ -1,4 +1,5 @@
-"use client";
+'use client';
+import Image from 'next/image';
 
 import React from 'react';
 import Link from 'next/link';
@@ -75,11 +76,13 @@ export default function Offers() {
             className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group"
           >
             <div className="relative h-48 overflow-hidden">
-              <img
+              <Image
                 src={offer.image}
                 alt={offer.title}
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
+                width={800}
+                height={600}
               />
               {offer.discount && (
                 <div className="absolute top-3 right-3 bg-red-600 text-white px-2 py-1 rounded-full text-sm font-bold">

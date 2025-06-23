@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
@@ -62,7 +63,13 @@ const CampingBlog = () => {
 
       <article className="bg-white rounded-xl shadow-lg overflow-hidden">
         <div className="relative h-96">
-          <img src={camping.image} alt={camping.title} className="w-full h-full object-cover" />
+          <Image
+            src={camping.image}
+            alt={camping.title}
+            className="w-full h-full object-cover"
+            width={800}
+            height={600}
+          />
           <div className="absolute inset-0 bg-black bg-opacity-40" />
           <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
             <h1 className="text-4xl font-bold mb-2">{camping.title}</h1>

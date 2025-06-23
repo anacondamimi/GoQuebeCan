@@ -1,4 +1,5 @@
-"use client";
+'use client';
+import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 import { Compass, Mountain, TreePine } from 'lucide-react';
@@ -94,10 +95,12 @@ export function AuthenticExperiences() {
                     className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow block"
                   >
                     <div className="relative h-40 sm:h-48 overflow-hidden">
-                      <img
+                      <Image
                         src={destination.image}
                         alt={destination.name}
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                        width={800}
+                        height={600}
                       />
                     </div>
                     <div className="p-4 sm:p-6">

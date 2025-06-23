@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -33,28 +34,31 @@ import {
 
 const hotels = [
   {
-    name: "Hôtel Tadoussac",
-  category: "En bord de plage – Éco-certifié",
-  description: "Un hôtel emblématique face au fleuve Saint-Laurent avec une note exceptionnelle de 9.7/10. Certificat de durabilité.",
-  price: "Tarifs variables selon la saison",
-  link: "https://www.booking.com/hotel/ca/tadoussac.fr.html",
-  image: "/images/destinations/hotels/hotel tadoussac.avif",
+    name: 'Hôtel Tadoussac',
+    category: 'En bord de plage – Éco-certifié',
+    description:
+      'Un hôtel emblématique face au fleuve Saint-Laurent avec une note exceptionnelle de 9.7/10. Certificat de durabilité.',
+    price: 'Tarifs variables selon la saison',
+    link: 'https://www.booking.com/hotel/ca/tadoussac.fr.html',
+    image: '/images/destinations/hotels/hotel tadoussac.avif',
   },
   {
-    name: "Hôtel Motel Le Béluga",
-  category: "Emplacement central",
-  description: "À seulement 100 mètres du centre de Tadoussac. Idéal pour rejoindre les départs d'excursion aux baleines à pied.",
-  price: "À partir de ~135$/nuit (selon la saison)",
-  link: "https://www.booking.com/hotel/ca/le-beluga.fr.html",
-  image: "/images/destinations/hotels/motel beluga.avif",
+    name: 'Hôtel Motel Le Béluga',
+    category: 'Emplacement central',
+    description:
+      "À seulement 100 mètres du centre de Tadoussac. Idéal pour rejoindre les départs d'excursion aux baleines à pied.",
+    price: 'À partir de ~135$/nuit (selon la saison)',
+    link: 'https://www.booking.com/hotel/ca/le-beluga.fr.html',
+    image: '/images/destinations/hotels/motel beluga.avif',
   },
   {
-    name: "Auberge du Café chez Sam",
-  category: "Authentique & convivial",
-  description: "Située à Baie-Sainte-Catherine, à seulement 4 km de Tadoussac. Note de 8,3/10 par plus de 500 voyageurs.",
-  price: "Tarif variable selon la saison",
-  link: "https://www.booking.com/hotel/ca/auberge-du-cafe-chez-sam.fr.html",
-  image: "/images/destinations/hotels/auberge chez sam.avif",
+    name: 'Auberge du Café chez Sam',
+    category: 'Authentique & convivial',
+    description:
+      'Située à Baie-Sainte-Catherine, à seulement 4 km de Tadoussac. Note de 8,3/10 par plus de 500 voyageurs.',
+    price: 'Tarif variable selon la saison',
+    link: 'https://www.booking.com/hotel/ca/auberge-du-cafe-chez-sam.fr.html',
+    image: '/images/destinations/hotels/auberge chez sam.avif',
   },
 ];
 
@@ -153,7 +157,7 @@ export default function BlogArticleTadoussac() {
     <article id="blog_article_tadoussac" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Tadoussac - Le Royaume des Baleines
+          Tadoussac - Le Royaume des Baleines
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce village historique où le fjord du Saguenay rencontre le Saint-Laurent, créant
@@ -169,10 +173,12 @@ export default function BlogArticleTadoussac() {
           de nature spectaculaire et d'aventures maritimes.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/tadoussac.avif"
             alt="Tadoussac"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -274,7 +280,13 @@ export default function BlogArticleTadoussac() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

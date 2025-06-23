@@ -232,7 +232,13 @@ export default function BlogArticleSaubleBeach() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

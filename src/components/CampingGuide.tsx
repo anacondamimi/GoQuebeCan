@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 import { Tent, MapPin, DollarSign, Star } from 'lucide-react';
 
@@ -178,7 +178,7 @@ export interface HeaderProps {
   onScrollToSection?: (id: string) => void;
 }
 
-export function CampingGuide({ onScrollToSection: _ }: HeaderProps) {
+export function CampingGuide() {
   const [sortBy, setSortBy] = React.useState<'name' | 'price' | 'rating'>('rating');
   const [searchTerm, setSearchTerm] = React.useState('');
 

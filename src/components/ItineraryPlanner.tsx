@@ -1,5 +1,5 @@
 // Amélioration UX pour ton composant ItineraryPlanner
-"use client";
+'use client';
 import React, { useState } from 'react';
 import MapboxAutocomplete from '@/components/MapboxAutocomplete';
 import MapWithRouting from './MapWithRouting';
@@ -16,7 +16,9 @@ export default function ItineraryPlanner() {
   const [start, setStart] = useState<[number, number] | null>(null);
   const [end, setEnd] = useState<[number, number] | null>(null);
   const [tempSteps, setTempSteps] = useState<string[]>([]);
-  const [steps, setSteps] = useState<{ id: string; name: string; coordinates: [number, number] }[]>([]);
+  const [steps, setSteps] = useState<{ id: string; name: string; coordinates: [number, number] }[]>(
+    []
+  );
   const [waypoints, setWaypoints] = useState<[number, number][]>([]);
   const [producerSuggestions, setProducerSuggestions] = useState<
     { stepIndex: number; producer: any; distance: number }[]
@@ -26,7 +28,6 @@ export default function ItineraryPlanner() {
   if (!MAPBOX_TOKEN) {
     return <div className="text-red-600">❌ MAPBOX_TOKEN manquant dans .env.local</div>;
   }
-
 
   const handleGeocodeAll = () => {
     if (!start || !end || !startInput.trim() || !endInput.trim()) {
@@ -123,9 +124,10 @@ export default function ItineraryPlanner() {
             token={MAPBOX_TOKEN}
             onSelect={(coords, label) => {
               if (!tempSteps.includes(label)) {
-              setTempSteps((prev) => [...prev, label]);
-              setWaypoints((prev) => [...prev, coords]);
-            }}}
+                setTempSteps((prev) => [...prev, label]);
+                setWaypoints((prev) => [...prev, coords]);
+              }
+            }}
           />
 
           {tempSteps.length > 0 && (
@@ -138,7 +140,9 @@ export default function ItineraryPlanner() {
         </div>
 
         <div className="bg-gray-100 p-4 rounded text-sm text-gray-700">
-          <p><strong>Résumé :</strong></p>
+          <p>
+            <strong>Résumé :</strong>
+          </p>
           <p>Départ : {startInput || 'Non défini'}</p>
           <p>Arrivée : {endInput || 'Non défini'}</p>
           {tempSteps.length > 0 && <p>Étapes : {tempSteps.join(', ')}</p>}
@@ -186,7 +190,8 @@ export default function ItineraryPlanner() {
               const stepName = steps[stepIndex]?.name || `étape ${stepIndex + 1}`;
               return (
                 <li key={`${producer.id}-${stepIndex}`}>
-                  <strong>{producer.name}</strong> ({producer.type}) — à ~{distance.toFixed(1)} km de {stepName}
+                  <strong>{producer.name}</strong> ({producer.type}) — à ~{distance.toFixed(1)} km
+                  de {stepName}
                   {producer.website && (
                     <>
                       {' — '}

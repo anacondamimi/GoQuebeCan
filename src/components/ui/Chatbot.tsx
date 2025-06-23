@@ -174,67 +174,66 @@ export default function Chatbot() {
               <MessageSquare className="h-5 w-5" />
               <span className="font-semibold">Assistant Voyage</span>
             </div>
-            <button onClick={() => setIsOpen(false)}><X className="h-5 w-5" /></button>
+            <button onClick={() => setIsOpen(false)}>
+              <X className="h-5 w-5" />
+            </button>
           </div>
 
-   {/* Messages */}
-<div className="flex-grow h-96 overflow-y-auto p-4 bg-gray-50">
-  {messages.map((msg, i) => (
-    <div key={i} className={`flex ${msg.isUser ? 'justify-end' : 'justify-start'} mb-2`}>
-      <div
-        className={`max-w-[85%] p-3 rounded-2xl ${
-          msg.isUser
-            ? 'bg-indigo-600 text-white rounded-br-none'
-            : 'bg-white text-gray-800 rounded-bl-none shadow'
-        }`}
-      >
-        {msg.isUser ? (
-          <p className="mb-1 whitespace-pre-wrap">{msg.text}</p>
-        ) : (
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            components={{
-              p: ({ children }) => (
-                <p className="mb-1 whitespace-pre-wrap">{children}</p>
-              ),
-              a: ({ href, children }) => (
-                <a
-                  href={href || '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 underline"
+          {/* Messages */}
+          <div className="flex-grow h-96 overflow-y-auto p-4 bg-gray-50">
+            {messages.map((msg, i) => (
+              <div key={i} className={`flex ${msg.isUser ? 'justify-end' : 'justify-start'} mb-2`}>
+                <div
+                  className={`max-w-[85%] p-3 rounded-2xl ${
+                    msg.isUser
+                      ? 'bg-indigo-600 text-white rounded-br-none'
+                      : 'bg-white text-gray-800 rounded-bl-none shadow'
+                  }`}
                 >
-                  {children}
-                </a>
-              ),
-            }}
-          >
-            {msg.text}
-          </ReactMarkdown>
-        )}
-        <p className="text-xs text-right text-gray-400">
-          {new Date(msg.timestamp).toLocaleTimeString([], {
-            hour: '2-digit',
-            minute: '2-digit',
-          })}
-        </p>
-      </div>
-    </div>
-  ))}
-  {isTyping && (
-    <div className="flex justify-start">
-      <div className="bg-white text-gray-800 p-3 rounded-2xl shadow max-w-[85%]">
-        <div className="flex gap-1 animate-pulse">
-          <div className="w-2 h-2 rounded-full bg-gray-400"></div>
-          <div className="w-2 h-2 rounded-full bg-gray-400"></div>
-          <div className="w-2 h-2 rounded-full bg-gray-400"></div>
-        </div>
-      </div>
-    </div>
-  )}
-  <div ref={messagesEndRef} />
-</div>
-
+                  {msg.isUser ? (
+                    <p className="mb-1 whitespace-pre-wrap">{msg.text}</p>
+                  ) : (
+                    <ReactMarkdown
+                      remarkPlugins={[remarkGfm]}
+                      components={{
+                        p: ({ children }) => <p className="mb-1 whitespace-pre-wrap">{children}</p>,
+                        a: ({ href, children }) => (
+                          <a
+                            href={href || '#'}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 underline"
+                          >
+                            {children}
+                          </a>
+                        ),
+                      }}
+                    >
+                      {msg.text}
+                    </ReactMarkdown>
+                  )}
+                  <p className="text-xs text-right text-gray-400">
+                    {new Date(msg.timestamp).toLocaleTimeString([], {
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })}
+                  </p>
+                </div>
+              </div>
+            ))}
+            {isTyping && (
+              <div className="flex justify-start">
+                <div className="bg-white text-gray-800 p-3 rounded-2xl shadow max-w-[85%]">
+                  <div className="flex gap-1 animate-pulse">
+                    <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+                    <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+                    <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+                  </div>
+                </div>
+              </div>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
 
           {/* Carte + producteurs */}
           {start && end && (
@@ -281,13 +280,39 @@ export default function Chatbot() {
 
 function extractDestinationSlug(text: string): string {
   const slugs = [
-    'gaspesie', 'perce', 'carleton', 'forillon', 'baie-saint-paul', 'massif',
-    'port-au-persil', 'hautes-gorges', 'sept-iles', 'mingan', 'port-cartier',
-    'tadoussac', 'magog-orford', 'bromont-granby', 'sherbrooke', 'bic',
-    'kamouraska', 'rivieredu-loup', 'quebec', 'levis', 'montmorency', 'orleans',
-    'wasaga-beach', 'port-dover', 'grand-bend', 'sauble-beach', 'sandbanks',
-    'singing-sands', 'eeyou-istchee', 'kuururjuaq', 'sabrevois', 'canyon',
-    'pourquoi-louer-un-vr-au-quebec-avec-authentik-canada'
+    'gaspesie',
+    'perce',
+    'carleton',
+    'forillon',
+    'baie-saint-paul',
+    'massif',
+    'port-au-persil',
+    'hautes-gorges',
+    'sept-iles',
+    'mingan',
+    'port-cartier',
+    'tadoussac',
+    'magog-orford',
+    'bromont-granby',
+    'sherbrooke',
+    'bic',
+    'kamouraska',
+    'rivieredu-loup',
+    'quebec',
+    'levis',
+    'montmorency',
+    'orleans',
+    'wasaga-beach',
+    'port-dover',
+    'grand-bend',
+    'sauble-beach',
+    'sandbanks',
+    'singing-sands',
+    'eeyou-istchee',
+    'kuururjuaq',
+    'sabrevois',
+    'canyon',
+    'pourquoi-louer-un-vr-au-quebec-avec-authentik-canada',
   ];
   return slugs.find((slug) => text.includes(slug)) || '';
 }

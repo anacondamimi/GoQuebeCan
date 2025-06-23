@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -144,7 +145,7 @@ export function BlogArticleGrandBend() {
     <article id="blog_article_grand_bend" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Grand Bend - Paradis des Couchers de Soleil sur le Lac Huron
+          Grand Bend - Paradis des Couchers de Soleil sur le Lac Huron
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez cette station balnéaire animée de l'Ontario, réputée pour ses plages de sable
@@ -160,10 +161,12 @@ export function BlogArticleGrandBend() {
           détente et divertissement.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/grand-bend.avif"
             alt="Grand Bend"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -258,7 +261,13 @@ export function BlogArticleGrandBend() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

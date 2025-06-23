@@ -1,7 +1,6 @@
+'use client';
 
-"use client";
-
-import React, { useEffect} from 'react';
+import React, { useEffect } from 'react';
 export function Skyscanner() {
   useEffect(() => {
     const script = document.createElement('script');

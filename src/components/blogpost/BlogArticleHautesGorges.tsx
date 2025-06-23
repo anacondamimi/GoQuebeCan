@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -25,27 +26,27 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Compass } fro
 const hotels = [
   {
     name: 'Auberge La Châtelaine',
-  category: 'Vue exceptionnelle',
-  description: 'Chambre double avec salle de bain privée, petit-déjeuner inclus. Note 9,5/10.',
-  price: 'À partir de 156$/nuit',
-  link: 'https://www.booking.com/hotel/ca/auberge-la-chatelaine.fr.html',
-  image: '/images/destinations/hotels/auberge chatelaine.avif',
+    category: 'Vue exceptionnelle',
+    description: 'Chambre double avec salle de bain privée, petit-déjeuner inclus. Note 9,5/10.',
+    price: 'À partir de 156$/nuit',
+    link: 'https://www.booking.com/hotel/ca/auberge-la-chatelaine.fr.html',
+    image: '/images/destinations/hotels/auberge chatelaine.avif',
   },
   {
     name: 'Auberge Les Sources',
-  category: 'Tranquillité',
-  description: 'Petite chambre double au charme rustique, avec annulation gratuite.',
-  price: 'À partir de 115$/nuit',
-  link: 'https://www.booking.com/hotel/ca/auberge-les-sources.fr.html',
-  image: '/images/destinations/hotels/auberge les sources.avif',
+    category: 'Tranquillité',
+    description: 'Petite chambre double au charme rustique, avec annulation gratuite.',
+    price: 'À partir de 115$/nuit',
+    link: 'https://www.booking.com/hotel/ca/auberge-les-sources.fr.html',
+    image: '/images/destinations/hotels/auberge les sources.avif',
   },
   {
     name: 'Auberge La Marmite',
-  category: 'Confort & Cuisine',
-  description: 'Chambre double standard avec petit-déjeuner inclus. Note 8,6/10.',
-  price: 'À partir de 155$/nuit',
-  link: 'https://www.booking.com/hotel/ca/auberge-la-marmite.fr.html',
-  image: '/images/destinations/hotels/auberge la marmite.avif',
+    category: 'Confort & Cuisine',
+    description: 'Chambre double standard avec petit-déjeuner inclus. Note 8,6/10.',
+    price: 'À partir de 155$/nuit',
+    link: 'https://www.booking.com/hotel/ca/auberge-la-marmite.fr.html',
+    image: '/images/destinations/hotels/auberge la marmite.avif',
   },
 ];
 
@@ -161,7 +162,7 @@ export function BlogArticleHautesGorges() {
     <article id="blog_article_hautes_gorges" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Parc national des Hautes-Gorges-de-la-Rivière-Malbaie
+          Parc national des Hautes-Gorges-de-la-Rivière-Malbaie
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez l'un des plus beaux parcs du Québec, où fjord, montagnes et rivière créent un
@@ -176,10 +177,12 @@ export function BlogArticleHautesGorges() {
           souffle et des expériences uniques en toute saison.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/hautes-gorges.avif"
             alt="Hautes-Gorges"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -279,7 +282,13 @@ export function BlogArticleHautesGorges() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

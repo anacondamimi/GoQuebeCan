@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -137,7 +138,7 @@ export default function BlogArticleKuururjuaq() {
     <article id="blog_article_kuururjuaq" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Parc national Kuururjuaq - L'Ultime Aventure Arctique
+          Parc national Kuururjuaq - L'Ultime Aventure Arctique
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez l'un des parcs les plus septentrionaux du Québec, où toundra, montagnes et
@@ -153,10 +154,12 @@ export default function BlogArticleKuururjuaq() {
           se mêle à la culture inuite millénaire.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/kuururjuaq.avif"
             alt="Parc Kuururjuaq"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -266,7 +269,13 @@ export default function BlogArticleKuururjuaq() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

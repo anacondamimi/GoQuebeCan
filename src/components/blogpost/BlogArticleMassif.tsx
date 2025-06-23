@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -21,28 +22,31 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Snowflake } f
 
 const hotels = [
   {
-     name: 'Au Grand Merisier',
-  category: 'Chalet alpin',
-  description: 'Chalet 4 chambres avec vue, 3 salles de bain, grande cuisine et espace familial chaleureux.',
-  price: 'À partir de 465$/nuit',
-  link: 'https://www.booking.com/hotel/ca/au-grand-merisier.html', // ou le lien exact selon URL finale
-  image: '/images/destinations/hotels/chalet alpin.avif',
+    name: 'Au Grand Merisier',
+    category: 'Chalet alpin',
+    description:
+      'Chalet 4 chambres avec vue, 3 salles de bain, grande cuisine et espace familial chaleureux.',
+    price: 'À partir de 465$/nuit',
+    link: 'https://www.booking.com/hotel/ca/au-grand-merisier.html', // ou le lien exact selon URL finale
+    image: '/images/destinations/hotels/chalet alpin.avif',
   },
   {
     name: 'Cottage Québec - Olivine',
-  category: 'Chalet nature',
-  description: 'Chalet tout équipé avec 3 chambres, cuisine, terrasse et spa, parfait pour familles ou amis.',
-  price: 'À partir de 227$/nuit',
-  link: 'https://www.booking.com/hotel/ca/cottage-quebec-olivine.fr.html',
-  image: '/images/destinations/hotels/cottage olivine.avif',
+    category: 'Chalet nature',
+    description:
+      'Chalet tout équipé avec 3 chambres, cuisine, terrasse et spa, parfait pour familles ou amis.',
+    price: 'À partir de 227$/nuit',
+    link: 'https://www.booking.com/hotel/ca/cottage-quebec-olivine.fr.html',
+    image: '/images/destinations/hotels/cottage olivine.avif',
   },
   {
     name: 'Cottage Québec - La Zéolite',
-  category: 'Appartement spacieux',
-  description: 'Appartement 4 chambres avec grande cuisine et vue panoramique, parfait pour groupes ou familles.',
-  price: 'À partir de 313$/nuit',
-  link: 'https://www.booking.com/hotel/ca/cottage-quebec-la-zeolite.fr.html',
-  image: '/images/destinations/hotels/cottage zeolite.avif',
+    category: 'Appartement spacieux',
+    description:
+      'Appartement 4 chambres avec grande cuisine et vue panoramique, parfait pour groupes ou familles.',
+    price: 'À partir de 313$/nuit',
+    link: 'https://www.booking.com/hotel/ca/cottage-quebec-la-zeolite.fr.html',
+    image: '/images/destinations/hotels/cottage zeolite.avif',
   },
 ];
 
@@ -165,7 +169,7 @@ export default function BlogArticleMassif() {
     <article id="blog_article_massif" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Le Massif de Charlevoix - Entre Montagne et Fleuve
+          Le Massif de Charlevoix - Entre Montagne et Fleuve
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez la plus haute station de ski à l'est des Rocheuses canadiennes, où les pistes
@@ -180,10 +184,12 @@ export default function BlogArticleMassif() {
           propose des panoramas à couper le souffle et des activités quatre saisons.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/le-massif.avif"
             alt="Le Massif en hiver"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -306,7 +312,13 @@ export default function BlogArticleMassif() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

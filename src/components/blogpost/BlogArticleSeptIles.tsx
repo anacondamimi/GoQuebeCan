@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -25,27 +26,27 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Compass } fro
 const hotels = [
   {
     name: 'Hôtels Gouverneur Sept-Îles',
-  category: 'Familial',
-  description: 'Chambre double avec 2 lits, séjour gratuit pour les enfants. Note 8/10.',
-  price: 'À partir de 194$/nuit',
-  link: 'https://www.booking.com/hotel/ca/gouverneur-sept-iles.fr.html',
-  image: '/images/destinations/hotels/gouverneur.avif',
+    category: 'Familial',
+    description: 'Chambre double avec 2 lits, séjour gratuit pour les enfants. Note 8/10.',
+    price: 'À partir de 194$/nuit',
+    link: 'https://www.booking.com/hotel/ca/gouverneur-sept-iles.fr.html',
+    image: '/images/destinations/hotels/gouverneur.avif',
   },
   {
     name: 'Hôtel Le Voyageur',
-  category: 'Confort & Calme',
-  description: 'Chambre double avec 2 lits. Idéal pour famille. Note 8,3/10.',
-  price: 'À partir de 174$/nuit',
-  link: 'https://www.booking.com/hotel/ca/le-voyageur-sept-iles.fr.html',
-  image: '/images/destinations/hotels/le voyageur.avif',
+    category: 'Confort & Calme',
+    description: 'Chambre double avec 2 lits. Idéal pour famille. Note 8,3/10.',
+    price: 'À partir de 174$/nuit',
+    link: 'https://www.booking.com/hotel/ca/le-voyageur-sept-iles.fr.html',
+    image: '/images/destinations/hotels/le voyageur.avif',
   },
   {
-   name: 'Auberge Internationale Le Tangon',
-  category: 'Auberge économique',
-  description: 'Dortoir de 6 lits superposés, ambiance conviviale. Note 8,3/10.',
-  price: 'À partir de 74$/nuit',
-  link: 'https://www.booking.com/hotel/ca/auberge-internationale-le-tangon.fr.html',
-  image: '/images/destinations/hotels/auberge tangon.avif',
+    name: 'Auberge Internationale Le Tangon',
+    category: 'Auberge économique',
+    description: 'Dortoir de 6 lits superposés, ambiance conviviale. Note 8,3/10.',
+    price: 'À partir de 74$/nuit',
+    link: 'https://www.booking.com/hotel/ca/auberge-internationale-le-tangon.fr.html',
+    image: '/images/destinations/hotels/auberge tangon.avif',
   },
 ];
 
@@ -144,7 +145,7 @@ export default function BlogArticleSeptIles() {
     <article id="blog_article_sept_iles" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Sept-Îles - Porte d'entrée de la Côte-Nord
+          Sept-Îles - Porte d'entrée de la Côte-Nord
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez cette ville dynamique où nature sauvage et culture innue se rencontrent
@@ -159,10 +160,12 @@ export default function BlogArticleSeptIles() {
           destination unique pour les amateurs de plein air et de culture.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/sept-iles.avif"
             alt="Sept-Îles"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -262,7 +265,13 @@ export default function BlogArticleSeptIles() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

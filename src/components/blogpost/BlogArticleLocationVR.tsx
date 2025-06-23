@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -17,10 +18,12 @@ export default function BlogArticleLocationVR() {
     <article className="prose prose-lg lg:prose-xl mx-auto p-4 md:p-10">
       <h1>Pourquoi louer un VR au Québec avec Authentik Canada ?</h1>
       <div className="relative w-full h-[400px] my-8">
-        <img
+        <Image
           src="/images/destinations/vr2.avif"
           alt="VR sur une route panoramique du Québec"
           className="object-cover rounded-lg absolute inset-0 w-full h-full"
+          width={800}
+          height={600}
         />
       </div>
       <p>

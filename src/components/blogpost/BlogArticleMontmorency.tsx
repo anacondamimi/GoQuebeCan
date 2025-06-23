@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -123,7 +124,7 @@ export default function BlogArticleMontmorency() {
     <article id="blog_article_montmorency" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Chute Montmorency et Chaudière-Appalaches
+          Chute Montmorency et Chaudière-Appalaches
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez la majestueuse chute de 83 mètres et explorez la région naturelle de
@@ -137,13 +138,15 @@ export default function BlogArticleMontmorency() {
           hauteur vertigineuse de 83 mètres (plus haute que les chutes Niagara!).
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/chute-montmorency.avif"
             alt="Chute Montmorency"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
-        
+
         <p>
           Combinée à la région pittoresque de Chaudière-Appalaches, elle offre une expérience unique
           entre nature spectaculaire et aventure.
@@ -237,10 +240,12 @@ export default function BlogArticleMontmorency() {
           Découvrir Chaudière-Appalaches
         </h2>
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <img
+          <Image
             src="/images/destinations/chaudiere-2.avif"
             alt="Chutes de la Chaudière"
             className="w-full h-96 object-cover rounded-lg shadow-lg mb-4"
+            width={800}
+            height={600}
           />
           <h3 className="text-xl font-semibold text-gray-900 mb-2">Les Chutes de la Chaudière</h3>
           <p className="text-gray-600">
@@ -288,7 +293,13 @@ export default function BlogArticleMontmorency() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

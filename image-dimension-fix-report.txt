@@ -1,0 +1,491 @@
+app\blog\page.tsx: <Image
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                  /> -> <Image
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                   width={800} height={600} />
+app\itineraires-communaute\page.tsx: <Image src={pdf.image_url} alt={pdf.titre} className="rounded mb-3" /> -> <Image src={pdf.image_url} alt={pdf.titre} className="rounded mb-3"  width={800} height={600} />
+node_modules\canvg\lib\presets\offscreen.d.ts: <ImageBitmap> -> <ImageBitmap width={800} height={600} />
+node_modules\mapbox-gl\dist\mapbox-gl-dev.js: <ImageBitmap | HTMLCanvasElement | HTMLImageElement | ImageData> -> <ImageBitmap | HTMLCanvasElement | HTMLImageElement | ImageData width={800} height={600} />
+node_modules\mapbox-gl\dist\mapbox-gl-dev.js: <ImageId> -> <ImageId width={800} height={600} />
+node_modules\mapbox-gl\dist\mapbox-gl-unminified.js: <ImageBitmap | HTMLCanvasElement | HTMLImageElement | ImageData> -> <ImageBitmap | HTMLCanvasElement | HTMLImageElement | ImageData width={800} height={600} />
+node_modules\mapbox-gl\dist\mapbox-gl-unminified.js: <ImageId> -> <ImageId width={800} height={600} />
+node_modules\mapbox-gl\dist\mapbox-gl.d.ts: <ImageId[]> -> <ImageId[] width={800} height={600} />
+node_modules\mapbox-gl\dist\mapbox-gl.d.ts: <ImageId> -> <ImageId width={800} height={600} />
+node_modules\mapbox-gl\dist\mapbox-gl.d.ts: <ImageId> -> <ImageId width={800} height={600} />
+node_modules\mapbox-gl\dist\mapbox-gl.d.ts: <ImageProvider["id"], ImageProvider> -> <ImageProvider["id"], ImageProvider width={800} height={600} />
+node_modules\mapbox-gl\dist\mapbox-gl.d.ts: <ImageId> -> <ImageId width={800} height={600} />
+node_modules\mapbox-gl\dist\mapbox-gl.d.ts: <ImageId> -> <ImageId width={800} height={600} />
+node_modules\mapbox-gl\dist\mapbox-gl.d.ts: <ImageId> -> <ImageId width={800} height={600} />
+node_modules\mapbox-gl\dist\mapbox-gl.d.ts: <ImageId> -> <ImageId width={800} height={600} />
+node_modules\mapbox-gl\dist\mapbox-gl.d.ts: <ImageVariant> -> <ImageVariant width={800} height={600} />
+node_modules\mapbox-gl\dist\mapbox-gl.d.ts: <ImageData | ImageBitmap | HTMLCanvasElement | HTMLImageElement> -> <ImageData | ImageBitmap | HTMLCanvasElement | HTMLImageElement width={800} height={600} />
+node_modules\mapbox-gl\dist\mapbox-gl.d.ts: <ImageBitmap | HTMLImageElement | ImageData> -> <ImageBitmap | HTMLImageElement | ImageData width={800} height={600} />
+node_modules\next\dist\client\legacy\image.js: <Image src="i.png" layout="fill" /> -> <Image src="i.png" layout="fill"  width={800} height={600} />
+node_modules\next\dist\client\legacy\image.js: <Image src="i.png" /> -> <Image src="i.png"  width={800} height={600} />
+node_modules\next\dist\compiled\@vercel\og\index.node.d.ts: <ImageResponseNodeOptions, 'status' | 'statusText' | 'headers'> -> <ImageResponseNodeOptions, 'status' | 'statusText' | 'headers' width={800} height={600} />
+node_modules\next\dist\esm\client\legacy\image.js: <Image src="i.png" layout="fill" /> -> <Image src="i.png" layout="fill"  width={800} height={600} />
+node_modules\next\dist\esm\client\legacy\image.js: <Image src="i.png" /> -> <Image src="i.png"  width={800} height={600} />
+node_modules\next\dist\server\config-shared.d.ts: <ImageConfigComplete> -> <ImageConfigComplete width={800} height={600} />
+node_modules\next\dist\server\lib\squoosh\codecs.d.ts: <ImageData> -> <ImageData width={800} height={600} />
+node_modules\next\dist\server\lib\squoosh\impl.d.ts: <ImageData> -> <ImageData width={800} height={600} />
+node_modules\next\dist\server\lib\squoosh\impl.d.ts: <ImageData> -> <ImageData width={800} height={600} />
+node_modules\next\dist\server\lib\squoosh\impl.d.ts: <ImageData> -> <ImageData width={800} height={600} />
+node_modules\next\dist\shared\lib\get-img-props.d.ts: <ImageProps, 'src' | 'alt' | 'loader'> -> <ImageProps, 'src' | 'alt' | 'loader' width={800} height={600} />
+node_modules\next\dist\shared\lib\get-img-props.d.ts: <ImageProps['placeholder']> -> <ImageProps['placeholder'] width={800} height={600} />
+node_modules\next\dist\shared\lib\image-config-context.shared-runtime.d.ts: <ImageConfigComplete> -> <ImageConfigComplete width={800} height={600} />
+node_modules\next\dist\shared\lib\image-config.d.ts: <ImageConfig> -> <ImageConfig width={800} height={600} />
+node_modules\next\dist\shared\lib\image-config.d.ts: <ImageConfigComplete> -> <ImageConfigComplete width={800} height={600} />
+node_modules\openai\resources\images.d.ts: <ImagesResponse> -> <ImagesResponse width={800} height={600} />
+node_modules\openai\resources\images.d.ts: <ImagesResponse> -> <ImagesResponse width={800} height={600} />
+node_modules\openai\resources\images.d.ts: <ImagesResponse> -> <ImagesResponse width={800} height={600} />
+node_modules\openai\resources\images.d.ts: <Image> -> <Image width={800} height={600} />
+node_modules\openai\src\resources\images.ts: <ImagesResponse> -> <ImagesResponse width={800} height={600} />
+node_modules\openai\src\resources\images.ts: <ImagesResponse> -> <ImagesResponse width={800} height={600} />
+node_modules\openai\src\resources\images.ts: <ImagesResponse> -> <ImagesResponse width={800} height={600} />
+node_modules\openai\src\resources\images.ts: <Image> -> <Image width={800} height={600} />
+node_modules\react-leaflet\lib\ImageOverlay.d.ts: <ImageOverlayProps & import("react").RefAttributes<LeafletImageOverlay> -> <ImageOverlayProps & import("react").RefAttributes<LeafletImageOverlay width={800} height={600} />
+node_modules\typescript\lib\lib.dom.d.ts: <ImageDecodeResult> -> <ImageDecodeResult width={800} height={600} />
+node_modules\typescript\lib\lib.dom.d.ts: <ImageBitmap> -> <ImageBitmap width={800} height={600} />
+node_modules\typescript\lib\lib.dom.d.ts: <ImageBitmap> -> <ImageBitmap width={800} height={600} />
+node_modules\typescript\lib\lib.dom.d.ts: <ImageBitmap> -> <ImageBitmap width={800} height={600} />
+node_modules\typescript\lib\lib.dom.d.ts: <ImageBitmap> -> <ImageBitmap width={800} height={600} />
+node_modules\typescript\lib\lib.dom.iterable.d.ts: <ImageTrack> -> <ImageTrack width={800} height={600} />
+node_modules\typescript\lib\lib.webworker.d.ts: <ImageDecodeResult> -> <ImageDecodeResult width={800} height={600} />
+node_modules\typescript\lib\lib.webworker.d.ts: <ImageBitmap> -> <ImageBitmap width={800} height={600} />
+node_modules\typescript\lib\lib.webworker.d.ts: <ImageBitmap> -> <ImageBitmap width={800} height={600} />
+node_modules\typescript\lib\lib.webworker.d.ts: <ImageBitmap> -> <ImageBitmap width={800} height={600} />
+node_modules\typescript\lib\lib.webworker.d.ts: <ImageBitmap> -> <ImageBitmap width={800} height={600} />
+node_modules\typescript\lib\lib.webworker.iterable.d.ts: <ImageTrack> -> <ImageTrack width={800} height={600} />
+src\components\AffiliateCard.tsx: <Image src={image} alt={title} className="h-40 w-full object-cover rounded-lg mb-2" /> -> <Image src={image} alt={title} className="h-40 w-full object-cover rounded-lg mb-2"  width={800} height={600} />
+src\components\BannerCarousel.tsx: <Image
+            src={src}
+            alt={`Bannière ${i + 1}`}
+            fill
+            sizes="100vw"
+            priority={i === index}
+            className="object-cover"
+          /> -> <Image
+            src={src}
+            alt={`Bannière ${i + 1}`}
+            fill
+            sizes="100vw"
+            priority={i === index}
+            className="object-cover"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleAnseSaintJean.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleBaieSaintPaul.tsx: <Image
+             src="/images/destinations/baie-st-paul.avif"
+            alt="Baie-Saint-Paul"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+             src="/images/destinations/baie-st-paul.avif"
+            alt="Baie-Saint-Paul"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleBaieSaintPaul.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleBic.tsx: <Image
+            src="/images/destinations/bic.avif"
+            alt="Parc national du Bic"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/bic.avif"
+            alt="Parc national du Bic"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleBic.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleBromontGranby.tsx: <Image
+             src="/images/destinations/bromont.avif"
+            alt="Bromont en été"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+             src="/images/destinations/bromont.avif"
+            alt="Bromont en été"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleBromontGranby.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleCanyon.tsx: <Image
+             src="/images/destinations/canyon.avif"
+            alt="Canyon des Portes de l'Enfer"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+             src="/images/destinations/canyon.avif"
+            alt="Canyon des Portes de l'Enfer"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleCanyon.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleCarleton.tsx: <Image
+             src="/images/destinations/carleton.avif"
+            alt="Baie des Chaleurs"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+             src="/images/destinations/carleton.avif"
+            alt="Baie des Chaleurs"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleCarleton.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleEeyouIstchee.tsx: <Image
+             src="/images/destinations/eeyou-istchee-baiejames.avif"
+            alt="Eeyou Istchee Baie-James"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+             src="/images/destinations/eeyou-istchee-baiejames.avif"
+            alt="Eeyou Istchee Baie-James"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleEeyouIstchee.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleForillon.tsx: <Image
+            src="/images/destinations/forillon.avif"
+            alt="Parc national Forillon"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/forillon.avif"
+            alt="Parc national Forillon"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleForillon.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleGrandBend.tsx: <Image
+            src="/images/destinations/grand-bend.avif"
+            alt="Grand Bend"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/grand-bend.avif"
+            alt="Grand Bend"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleGrandBend.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleHautesGorges.tsx: <Image
+            src="/images/destinations/hautes-gorges.avif"
+            alt="Hautes-Gorges"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/hautes-gorges.avif"
+            alt="Hautes-Gorges"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleHautesGorges.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleKamouraska.tsx: <Image
+            src="/images/destinations/kamouraska.avif"
+            alt="Kamouraska"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/kamouraska.avif"
+            alt="Kamouraska"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleKamouraska.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleKuururjuaq.tsx: <Image
+            src="/images/destinations/kuururjuaq.avif"
+            alt="Parc Kuururjuaq"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/kuururjuaq.avif"
+            alt="Parc Kuururjuaq"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleKuururjuaq.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleLevis.tsx: <Image
+            src="/images/destinations/levis.avif"
+            alt="Vue sur Québec depuis Lévis"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/levis.avif"
+            alt="Vue sur Québec depuis Lévis"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleLevis.tsx: <Image src={h.image} alt={h.name} className="w-full h-full object-cover" /> -> <Image src={h.image} alt={h.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleLocationVR.tsx: <Image
+          src="/images/destinations/vr2.avif"
+          alt="VR sur une route panoramique du Québec"
+          className="object-cover rounded-lg absolute inset-0 w-full h-full"
+        /> -> <Image
+          src="/images/destinations/vr2.avif"
+          alt="VR sur une route panoramique du Québec"
+          className="object-cover rounded-lg absolute inset-0 w-full h-full"
+         width={800} height={600} />
+src\components\blogpost\BlogArticleMagogOrford.tsx: <Image
+            src="/images/destinations/magog.avif"
+            alt="Lac Memphrémagog"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/magog.avif"
+            alt="Lac Memphrémagog"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleMagogOrford.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleMassif.tsx: <Image
+            src="/images/destinations/le-massif.avif"
+            alt="Le Massif en hiver"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/le-massif.avif"
+            alt="Le Massif en hiver"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleMassif.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleMingan.tsx: <Image
+            src="/images/destinations/mingan.avif"
+            alt="Monolithes de Mingan"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/mingan.avif"
+            alt="Monolithes de Mingan"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleMingan.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleMontmorency.tsx: <Image
+            src="/images/destinations/chute-montmorency.avif"
+            alt="Chute Montmorency"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/chute-montmorency.avif"
+            alt="Chute Montmorency"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleMontmorency.tsx: <Image
+            src="/images/destinations/chaudiere-2.avif"
+            alt="Chutes de la Chaudière"
+            className="w-full h-96 object-cover rounded-lg shadow-lg mb-4"
+          /> -> <Image
+            src="/images/destinations/chaudiere-2.avif"
+            alt="Chutes de la Chaudière"
+            className="w-full h-96 object-cover rounded-lg shadow-lg mb-4"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleMontmorency.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleMontreal.tsx: <Image
+           src="/images/destinations/montreal.avif"
+            alt="Montréal"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+           src="/images/destinations/montreal.avif"
+            alt="Montréal"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleMontreal.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleOrleans.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticlePerce.tsx: <Image
+            src="/images/destinations/perce.avif"
+            alt="Rocher Percé"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/perce.avif"
+            alt="Rocher Percé"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticlePerce.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticlePortAuPersil.tsx: <Image
+            src="/images/destinations/port-au-persil.avif"
+            alt="Port-au-Persil"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/port-au-persil.avif"
+            alt="Port-au-Persil"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticlePortAuPersil.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticlePortCartier.tsx: <Image
+            src="/images/destinations/port-cartier.avif"
+            alt="Port-Cartier"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/port-cartier.avif"
+            alt="Port-Cartier"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticlePortCartier.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticlePortDover.tsx: <Image
+           src="/images/destinations/port-dover.avif"
+            alt="Port Dover"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+           src="/images/destinations/port-dover.avif"
+            alt="Port Dover"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticlePortDover.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleQuebec.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleRiviereduLoup.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleSabrevois.tsx: <Image
+            src="/images/destinations/sabrevois.avif"
+            alt="Huttes flottantes"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/sabrevois.avif"
+            alt="Huttes flottantes"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleSabrevois.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleSandbanks.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleSaubleBeach.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleSeptIles.tsx: <Image
+            src="/images/destinations/sept-iles.avif"
+            alt="Sept-Îles"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/sept-iles.avif"
+            alt="Sept-Îles"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleSeptIles.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleSherbrooke.tsx: <Image
+            src="/images/destinations/sherbrooke.avif"
+            alt="Sherbrooke"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/sherbrooke.avif"
+            alt="Sherbrooke"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleSherbrooke.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleSingingSands.tsx: <Image
+            src="/images/destinations/singing-sands.avif"
+            alt="Singing Sands Beach"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/singing-sands.avif"
+            alt="Singing Sands Beach"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleSingingSands.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleTadoussac.tsx: <Image
+            src="/images/destinations/tadoussac.avif"
+            alt="Tadoussac"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/tadoussac.avif"
+            alt="Tadoussac"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleTadoussac.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleWasagaBeach.tsx: <Image
+            src="/images/destinations/wasaga-beach.avif"
+            alt="Wasaga Beach"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          /> -> <Image
+            src="/images/destinations/wasaga-beach.avif"
+            alt="Wasaga Beach"
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+           width={800} height={600} />
+src\components\blogpost\BlogArticleWasagaBeach.tsx: <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" /> -> <Image src={hotel.image} alt={hotel.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\blogpost\BlogArticleWaterParks.tsx: <Image
+                src={park.image}
+                alt={park.name}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              /> -> <Image
+                src={park.image}
+                alt={park.name}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+               width={800} height={600} />
+src\components\CampingBlog.tsx: <Image src={camping.image} alt={camping.title} className="w-full h-full object-cover" /> -> <Image src={camping.image} alt={camping.title} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\CampingList.tsx: <Image
+                  src={camping.image}
+                  alt={camping.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                /> -> <Image
+                  src={camping.image}
+                  alt={camping.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                 width={800} height={600} />
+src\components\home\AuthenticExperiences.tsx: <Image
+                        src={destination.image}
+                        alt={destination.name}
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                      /> -> <Image
+                        src={destination.image}
+                        alt={destination.name}
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                       width={800} height={600} />
+src\components\home\DestinationCard.tsx: <Image
+          src={image}
+          alt={name}
+          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+          loading="lazy"
+        /> -> <Image
+          src={image}
+          alt={name}
+          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+          loading="lazy"
+         width={800} height={600} />
+src\components\Offers.tsx: <Image
+                src={offer.image}
+                alt={offer.title}
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              /> -> <Image
+                src={offer.image}
+                alt={offer.title}
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+               width={800} height={600} />
+src\components\PopularDestinations.tsx: <Image
+      src={d.image}
+      alt={d.name}
+      fill
+      sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
+      className="object-cover object-center group-hover:scale-105 transition-transform duration-300 rounded-xl"
+      priority
+    /> -> <Image
+      src={d.image}
+      alt={d.name}
+      fill
+      sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
+      className="object-cover object-center group-hover:scale-105 transition-transform duration-300 rounded-xl"
+      priority
+     width={800} height={600} />
+src\components\PopularVideos.tsx: <Image
+                  src={video.thumbnail}
+                  alt={video.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
+                /> -> <Image
+                  src={video.thumbnail}
+                  alt={video.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
+                 width={800} height={600} />
+src\components\Products.tsx: <Image
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover"
+                      /> -> <Image
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover"
+                       width={800} height={600} />
+src\components\Products.tsx: <Image src={app.icon} alt={app.name} className="w-full h-full object-cover" /> -> <Image src={app.icon} alt={app.name} className="w-full h-full object-cover"  width={800} height={600} />
+src\components\TravelGuide.tsx: <Image src={place.image} alt={place.name} className="w-full h-64 object-cover" /> -> <Image src={place.image} alt={place.name} className="w-full h-64 object-cover"  width={800} height={600} />
+src\components\ui\Card.tsx: <Image
+            src={image}
+            alt={title}
+            className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${imageClassName}`}
+            loading="lazy"
+          /> -> <Image
+            src={image}
+            alt={title}
+            className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${imageClassName}`}
+            loading="lazy"
+           width={800} height={600} />
+src\components\ui\HeroBanner.tsx: <Image
+        src={image}
+        alt={title}
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+        priority
+      /> -> <Image
+        src={image}
+        alt={title}
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+        priority
+       width={800} height={600} />

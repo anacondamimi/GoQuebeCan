@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 
 export default function ComingSoonBanner() {
@@ -9,7 +9,7 @@ export default function ComingSoonBanner() {
       </h2>
       <p className="text-sm">
         Nous travaillons activement pour regrouper toutes les informations essentielles à votre
-        séjour. Revenez nous voir le <strong>21 juin 2025</strong> pour profiter de l’expérience
+        séjour. Revenez nous voir le <strong>01 juillet 2025</strong> pour profiter de l’expérience
         complète ✨
       </p>
     </div>

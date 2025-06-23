@@ -93,4 +93,3 @@ Tu es un assistant voyage expert et chaleureux, spécialisé dans les régions d
     return NextResponse.json({ error: 'Erreur serveur ou OpenAI' }, { status: 500 });
   }
 }
-

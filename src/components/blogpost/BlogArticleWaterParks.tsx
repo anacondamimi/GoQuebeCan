@@ -1,8 +1,7 @@
-"use client";
-import React from "react";
-import { Waves, Hotel,Link as LinkIcon } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react';
+import { Waves, Hotel, Link as LinkIcon } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata = {
   slug: 'parc-aquatique',
@@ -13,53 +12,55 @@ export const metadata = {
 
 const waterParks = [
   {
-    name: "Village Vacances Valcartier",
-    description: "Le plus grand parc aquatique de l'est-du-Canada, avec glissades, eaux intérieures et activités familiales.",
-    image: "/images/destinations/parc-valcartier.avif",
+    name: 'Village Vacances Valcartier',
+    description:
+      "Le plus grand parc aquatique de l'est-du-Canada, avec glissades, eaux intérieures et activités familiales.",
+    image: '/images/destinations/parc-valcartier.avif',
     hotels: [
       {
-        name: "Auberge Valcartier",
-        link: "https://www.booking.com/hotel/ca/auberge-valcartier.html",
-        distance: "Sur place",
-        price: "À partir de 90 $/nuit",
+        name: 'Auberge Valcartier',
+        link: 'https://www.booking.com/hotel/ca/auberge-valcartier.html',
+        distance: 'Sur place',
+        price: 'À partir de 90 $/nuit',
       },
       {
-        name: "Vallée Jeunesse Québec",
-        link: "https://www.booking.com/hotel/ca/vallee-jeunesse.html",
-        distance: "5 km",
-        price: "À partir de 53 $/nuit",
+        name: 'Vallée Jeunesse Québec',
+        link: 'https://www.booking.com/hotel/ca/vallee-jeunesse.html',
+        distance: '5 km',
+        price: 'À partir de 53 $/nuit',
       },
       {
-        name: "Le Manoir du Lac Delage",
-      link: "https://www.booking.com/hotel/ca/manoir-du-lac-delage.html",
-      distance: "10 km du centre",
-      price: "Hôtel 4*, très bien noté",
+        name: 'Le Manoir du Lac Delage',
+        link: 'https://www.booking.com/hotel/ca/manoir-du-lac-delage.html',
+        distance: '10 km du centre',
+        price: 'Hôtel 4*, très bien noté',
       },
     ],
   },
   {
     name: "Bromont, montagne d'expériences",
-    description: "Parc aquatique en montagne, panoramas et sensations fortes combinés avec activités extérieures.",
-    image: "/images/destinations/glissades-bromont.avif",
+    description:
+      'Parc aquatique en montagne, panoramas et sensations fortes combinés avec activités extérieures.',
+    image: '/images/destinations/glissades-bromont.avif',
     hotels: [
       {
-      name: "Le 204 Champlain Bromont",
-      link: "https://www.booking.com/hotel/ca/le-204-champlain-bromont.html",
-      distance: "1,5 km du centre",
-      price: "Appartement entier, Exceptionnel 9,7",
-    },
-    {
-      name: "Le 201 Champlain Bromont",
-      link: "https://www.booking.com/hotel/ca/le-201-champlain-bromont.html",
-      distance: "1,6 km du centre",
-      price: "Appartement entier, note excellente",
-    },
-    {
-      name: "Condos Château-Bromont",
-      link: "https://www.booking.com/hotel/ca/condos-chateau-bromont.html",
-      distance: "2,3 km du centre",
-      price: "Condo tout équipé, très bien noté",
-    },
+        name: 'Le 204 Champlain Bromont',
+        link: 'https://www.booking.com/hotel/ca/le-204-champlain-bromont.html',
+        distance: '1,5 km du centre',
+        price: 'Appartement entier, Exceptionnel 9,7',
+      },
+      {
+        name: 'Le 201 Champlain Bromont',
+        link: 'https://www.booking.com/hotel/ca/le-201-champlain-bromont.html',
+        distance: '1,6 km du centre',
+        price: 'Appartement entier, note excellente',
+      },
+      {
+        name: 'Condos Château-Bromont',
+        link: 'https://www.booking.com/hotel/ca/condos-chateau-bromont.html',
+        distance: '2,3 km du centre',
+        price: 'Condo tout équipé, très bien noté',
+      },
     ],
   },
 ];
@@ -79,7 +80,7 @@ export default function BlogArticleWaterParks() {
         </p>
       </header>
 
-     {waterParks.map((park) => (
+      {waterParks.map((park) => (
         <section key={park.name} className="bg-white rounded-xl shadow-lg mb-12 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="relative h-64 md:h-auto">
@@ -126,7 +127,7 @@ export default function BlogArticleWaterParks() {
       ))}
 
       <footer className="mt-16 text-center text-gray-500 text-sm">
-        Découvrez aussi d'autres guides dans notre{" "}
+        Découvrez aussi d'autres guides dans notre{' '}
         <Link href="/blog" className="text-indigo-600 hover:underline">
           blog voyage
         </Link>

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -144,7 +145,7 @@ export default function BlogArticleSingingSands() {
     <article id="blog_article_singing_sands" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Singing Sands Beach - La Plage au Sable Chantant
+          Singing Sands Beach - La Plage au Sable Chantant
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez cette plage unique de la péninsule Bruce, où le sable émet un son mystérieux
@@ -160,10 +161,12 @@ export default function BlogArticleSingingSands() {
           spectaculaires, elle offre une expérience balnéaire incomparable.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/singing-sands.avif"
             alt="Singing Sands Beach"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -264,7 +267,13 @@ export default function BlogArticleSingingSands() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

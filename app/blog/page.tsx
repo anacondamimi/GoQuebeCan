@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -116,10 +117,12 @@ export default function BlogPage() {
                 className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
               >
                 <div className="relative h-48 overflow-hidden">
-                  <img
+                  <Image
                     src={post.image}
                     alt={post.title}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                    width={800}
+                    height={600}
                   />
                 </div>
                 <div className="p-6">

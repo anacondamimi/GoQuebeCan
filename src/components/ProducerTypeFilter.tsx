@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 
 interface Props {
@@ -12,7 +12,7 @@ const categories = [
   { id: 'cheese', label: '🧀 Fromage' },
   { id: 'berry', label: '🫐 Fruits' },
   { id: 'beer', label: '🍺 Bière' },
-  { id: 'farm', label: '🚜 Ferme' },  // 🚜 Un pictogramme plus clair pour une ferme (vs 🥩 qui fait penser à un boucher)
+  { id: 'farm', label: '🚜 Ferme' }, // 🚜 Un pictogramme plus clair pour une ferme (vs 🥩 qui fait penser à un boucher)
 ];
 
 export default function ProducerTypeFilter({ selected, onToggle }: Props) {
@@ -25,9 +25,11 @@ export default function ProducerTypeFilter({ selected, onToggle }: Props) {
             key={id}
             onClick={() => onToggle(id)}
             className={`px-3 py-1.5 rounded-full text-sm font-medium transition
-              ${isSelected
-                ? 'bg-indigo-600 text-white shadow-md'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}
+              ${
+                isSelected
+                  ? 'bg-indigo-600 text-white shadow-md'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }
             `}
             aria-pressed={isSelected}
           >

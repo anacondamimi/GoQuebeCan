@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -26,7 +27,7 @@ const hotels = [
     description: 'Au cœur du centre-ville avec vue panoramique',
     price: 'À partir de 189$/nuit',
     link: 'https://www.booking.com/hotel/ca/gouverneur-sherbrooke.html',
-    image: "/images/destinations/hotels/gouverneur sherbrooke.avif",
+    image: '/images/destinations/hotels/gouverneur sherbrooke.avif',
   },
   {
     name: 'Grand Times Hotel',
@@ -34,15 +35,16 @@ const hotels = [
     description: 'Design contemporain et confort',
     price: 'À partir de 159$/nuit',
     link: 'https://www.booking.com/hotel/ca/grand-times-sherbrooke.html',
-    image: "/images/destinations/hotels/time sherbrooke.avif",
+    image: '/images/destinations/hotels/time sherbrooke.avif',
   },
   {
-    name: "Motel Le Refuge",
-  category: "Économique",
-  description: "Situé à Sherbrooke, ce motel offre un excellent rapport qualité-prix et une localisation pratique à proximité des services.",
-  price: "Tarif abordable selon la période",
-  link: "https://www.booking.com/hotel/ca/motel-le-refuge-sherbrooke.fr.html",
-  image: "/images/destinations/hotels/motel refuge.avif",
+    name: 'Motel Le Refuge',
+    category: 'Économique',
+    description:
+      'Situé à Sherbrooke, ce motel offre un excellent rapport qualité-prix et une localisation pratique à proximité des services.',
+    price: 'Tarif abordable selon la période',
+    link: 'https://www.booking.com/hotel/ca/motel-le-refuge-sherbrooke.fr.html',
+    image: '/images/destinations/hotels/motel refuge.avif',
   },
 ];
 
@@ -165,7 +167,7 @@ export default function BlogArticleSherbrooke() {
     <article id="blog_article_sherbrooke" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Sherbrooke - La Ville des Murales et de la Culture
+          Sherbrooke - La Ville des Murales et de la Culture
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez la capitale culturelle des Cantons-de-l'Est, entre art urbain, nature et
@@ -181,10 +183,12 @@ export default function BlogArticleSherbrooke() {
           d'activités de plein air.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/sherbrooke.avif"
             alt="Sherbrooke"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -305,7 +309,13 @@ export default function BlogArticleSherbrooke() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

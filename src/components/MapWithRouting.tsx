@@ -1,9 +1,8 @@
-"use client";
+'use client';
 import React, { useEffect, useState, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L, { Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-require('leaflet-routing-machine');
 import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 import Link from 'next/link';
 import destinations from '@/data/destinations.json';
@@ -20,14 +19,20 @@ interface Producer {
 interface Props {
   points: [number, number][];
   onAddDestinationStep?: (name: string, coords: [number, number]) => void;
-  producers?: Producer[];  // ✅ Ajouté pour accepter les producteurs dynamiques
+  producers?: Producer[]; // ✅ Ajouté pour accepter les producteurs dynamiques
 }
 
 export default function MapWithRouting({ points, onAddDestinationStep, producers = [] }: Props) {
   const mapRef = useRef<L.Map | null>(null);
   const routingRef = useRef<any>(null);
   const [distanceKm, setDistanceKm] = useState<number | null>(null);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>(["apple", "grape", "cheese", "berry", "beer"]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([
+    'apple',
+    'grape',
+    'cheese',
+    'berry',
+    'beer',
+  ]);
   const [showProducers, setShowProducers] = useState(true);
 
   const categoryIcons: Record<string, Icon> = {
@@ -37,7 +42,7 @@ export default function MapWithRouting({ points, onAddDestinationStep, producers
     berry: new Icon({ iconUrl: '/icons/berry.png', iconSize: [28, 28] }),
     beer: new Icon({ iconUrl: '/icons/beer.png', iconSize: [28, 28] }),
     farm: new Icon({ iconUrl: '/icons/farm.png', iconSize: [28, 28] }),
-    default: new Icon({ iconUrl: '/icons/farm.png', iconSize: [28, 28] })
+    default: new Icon({ iconUrl: '/icons/farm.png', iconSize: [28, 28] }),
   };
 
   function detectCategory(prod: Producer): string {
@@ -45,11 +50,15 @@ export default function MapWithRouting({ points, onAddDestinationStep, producers
     const type = prod.type?.toLowerCase() || '';
 
     if (name.includes('cidre') || name.includes('pom') || type.includes('cidrerie')) return 'apple';
-    if (name.includes('vignoble') || name.includes('raisin') || type.includes('winery')) return 'grape';
+    if (name.includes('vignoble') || name.includes('raisin') || type.includes('winery'))
+      return 'grape';
     if (name.includes('fromage') || type.includes('cheese')) return 'cheese';
-    if (name.includes('bleuet') || name.includes('camerise') || name.includes('fruit')) return 'berry';
-    if (name.includes('bière') || name.includes('microbrasserie') || type.includes('brewery')) return 'beer';
-    if (type.includes('farm') || name.includes('ferme') || name.includes('boucherie')) return 'farm';
+    if (name.includes('bleuet') || name.includes('camerise') || name.includes('fruit'))
+      return 'berry';
+    if (name.includes('bière') || name.includes('microbrasserie') || type.includes('brewery'))
+      return 'beer';
+    if (type.includes('farm') || name.includes('ferme') || name.includes('boucherie'))
+      return 'farm';
     return 'default';
   }
 
@@ -58,7 +67,7 @@ export default function MapWithRouting({ points, onAddDestinationStep, producers
     className: 'custom-question-icon',
     iconSize: [24, 24],
     iconAnchor: [12, 12],
-    popupAnchor: [0, -12]
+    popupAnchor: [0, -12],
   });
 
   useEffect(() => {
@@ -88,7 +97,9 @@ export default function MapWithRouting({ points, onAddDestinationStep, producers
   }, [points]);
 
   const toggleCategory = (cat: string) => {
-    setSelectedCategories((prev) => prev.includes(cat) ? prev.filter(c => c !== cat) : [...prev, cat]);
+    setSelectedCategories((prev) =>
+      prev.includes(cat) ? prev.filter((c) => c !== cat) : [...prev, cat]
+    );
   };
 
   return (
@@ -100,12 +111,17 @@ export default function MapWithRouting({ points, onAddDestinationStep, producers
             onClick={() => toggleCategory(cat)}
             className={`px-3 py-1.5 rounded-full text-sm font-medium transition ${selectedCategories.includes(cat) ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
           >
-            {cat === 'apple' ? '🍎 Pomme'
-              : cat === 'grape' ? '🍇 Raisin'
-              : cat === 'cheese' ? '🧀 Fromage'
-              : cat === 'berry' ? '🫐 Fruits'
-              : cat === 'beer' ? '🍺 Bière'
-              : '🥩 Ferme'}
+            {cat === 'apple'
+              ? '🍎 Pomme'
+              : cat === 'grape'
+                ? '🍇 Raisin'
+                : cat === 'cheese'
+                  ? '🧀 Fromage'
+                  : cat === 'berry'
+                    ? '🫐 Fruits'
+                    : cat === 'beer'
+                      ? '🍺 Bière'
+                      : '🥩 Ferme'}
           </button>
         ))}
         <button
@@ -138,50 +154,65 @@ export default function MapWithRouting({ points, onAddDestinationStep, producers
             </Marker>
           ))}
 
-          {showProducers && producers
-            .filter((p) => selectedCategories.includes(detectCategory(p)))
-            .map((p, idx) => (
-              <Marker
-                key={`prod-${idx}`}
-                position={[p.lat, p.lng]}
-                icon={categoryIcons[detectCategory(p)] || categoryIcons.default}
-              >
-                <Popup>
-                  <strong>{p.name}</strong><br />
-                  {p.type || 'Producteur'}<br />
-                  {p.website && (
-                    <a href={p.website} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">site web</a>
-                  )}
-                </Popup>
-              </Marker>
-            ))}
-
-          {destinations.map((d, idx) => (
-            typeof d.lat === 'number' && typeof d.lng === 'number' && (
-              <Marker key={`dest-${idx}`} position={[d.lat, d.lng]} icon={questionIcon}>
-                <Popup>
-                  <div className="text-sm space-y-2">
-                    <div>
-                      <strong>{d.ville}</strong><br />
-                      <Link href={`/blog/${d.slug}`} className="text-blue-600 underline">Lire l'article</Link>
-                    </div>
-                    <div>
-                      <button
-                        onClick={() => {
-                          const coords: [number, number] = [d.lat, d.lng];
-                          if (mapRef.current) mapRef.current.setView(coords, 8);
-                          onAddDestinationStep?.(d.ville, coords);
-                        }}
-                        className="text-sm bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700"
+          {showProducers &&
+            producers
+              .filter((p) => selectedCategories.includes(detectCategory(p)))
+              .map((p, idx) => (
+                <Marker
+                  key={`prod-${idx}`}
+                  position={[p.lat, p.lng]}
+                  icon={categoryIcons[detectCategory(p)] || categoryIcons.default}
+                >
+                  <Popup>
+                    <strong>{p.name}</strong>
+                    <br />
+                    {p.type || 'Producteur'}
+                    <br />
+                    {p.website && (
+                      <a
+                        href={p.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 underline"
                       >
-                        ✅ Ajouter à l’itinéraire
-                      </button>
+                        site web
+                      </a>
+                    )}
+                  </Popup>
+                </Marker>
+              ))}
+
+          {destinations.map(
+            (d, idx) =>
+              typeof d.lat === 'number' &&
+              typeof d.lng === 'number' && (
+                <Marker key={`dest-${idx}`} position={[d.lat, d.lng]} icon={questionIcon}>
+                  <Popup>
+                    <div className="text-sm space-y-2">
+                      <div>
+                        <strong>{d.ville}</strong>
+                        <br />
+                        <Link href={`/blog/${d.slug}`} className="text-blue-600 underline">
+                          Lire l'article
+                        </Link>
+                      </div>
+                      <div>
+                        <button
+                          onClick={() => {
+                            const coords: [number, number] = [d.lat, d.lng];
+                            if (mapRef.current) mapRef.current.setView(coords, 8);
+                            onAddDestinationStep?.(d.ville, coords);
+                          }}
+                          className="text-sm bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700"
+                        >
+                          ✅ Ajouter à l’itinéraire
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                </Popup>
-              </Marker>
-            )
-          ))}
+                  </Popup>
+                </Marker>
+              )
+          )}
         </MapContainer>
       </div>
 

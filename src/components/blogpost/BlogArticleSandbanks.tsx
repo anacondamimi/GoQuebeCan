@@ -153,7 +153,7 @@ export default function BlogArticleSandbanks() {
 
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Sandbanks - Les Plus Grandes Dunes de Sable d'Eau Douce au Monde
+          Sandbanks - Les Plus Grandes Dunes de Sable d'Eau Douce au Monde
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce parc provincial unique de l'Ontario, avec ses dunes spectaculaires, ses
@@ -275,7 +275,13 @@ export default function BlogArticleSandbanks() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

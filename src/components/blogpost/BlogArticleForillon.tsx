@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -176,7 +177,7 @@ export function BlogArticleForillon() {
     <article id="blog_article_forillon" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Parc national Forillon - Joyau naturel de la Gaspésie
+          Parc national Forillon - Joyau naturel de la Gaspésie
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez un territoire préservé où la mer, la montagne et la forêt se rencontrent
@@ -190,10 +191,12 @@ export function BlogArticleForillon() {
           côtoient dans une harmonie parfaite.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/forillon.avif"
             alt="Parc national Forillon"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -323,7 +326,13 @@ export function BlogArticleForillon() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

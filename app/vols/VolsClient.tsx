@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 import Link from 'next/link';
 
@@ -10,16 +11,20 @@ export default function VolsClient() {
   return (
     <main className="min-h-screen flex items-center justify-center px-4 py-16 bg-yellow-50">
       <div className="max-w-xl text-center bg-white p-8 rounded-xl shadow-md border border-yellow-200">
-        <h1 className="text-2xl font-bold text-yellow-700 mb-4">🛠️ Site en construction</h1>
+        <h1 className="text-2xl font-bold text-yellow-700 mb-4">
+          ✈️ Vols pas chers de Montréal vers la France – Site en construction
+        </h1>
         <p className="text-lg text-gray-700 mb-6">
-          Revenez-nous voir le <strong>21 juin 2025</strong> pour réserver votre vol ✈️
+          Nous travaillons à vous proposer les meilleures offres de billets d'avion entre Montréal
+          et les principales villes de France (Paris, Lyon, Nice). Revenez-nous voir le{' '}
+          <strong>01 juillet 2025</strong> pour réserver votre vol pas cher.
         </p>
         <p className="text-md text-gray-600 mb-8">
-          En attendant, profitez de notre <strong>assistant de voyage</strong> 🤖 pour planifier vos
-          vacances au Québec et au Canada.
+          En attendant, utilisez notre <strong>assistant de voyage</strong> 🤖 pour planifier vos
+          vacances au Québec et découvrir nos partenaires aériens comme French Bee.
         </p>
 
-        <div className="space-y-3">
+        <div className="space-y-3 mb-8">
           <button
             onClick={openChat}
             className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg shadow hover:bg-indigo-700 transition"
@@ -45,7 +50,42 @@ export default function VolsClient() {
             </button>
           </Link>
         </div>
+
+        {/* Bannière French Bee */}
+        <div className="my-6">
+          <a
+            rel="sponsored noreferrer"
+            href="https://frenchbeefr.pxf.io/c/6175749/2240413/25450"
+            target="_blank"
+            id="2240413"
+          >
+            <Image
+              src="//a.impactradius-go.com/display-ad/25450-2240413"
+              alt="Vol Paris-New York à prix de rêve - French Bee"
+              width="250"
+              height="250"
+              className="mx-auto rounded-lg shadow-md hover:scale-105 transition-transform"
+            />
+          </a>
+          <img
+            height="0"
+            width="0"
+            src="https://imp.pxf.io/i/6175749/2240413/25450"
+            style={{ position: 'absolute', visibility: 'hidden' }}
+            alt=""
+          />
+
+          <p className="mt-2 text-sm text-gray-500">
+            Découvrez la France avec French Bee — Cliquez sur la bannière pour réserver.
+          </p>
+        </div>
       </div>
+      {/* H2 SEO-friendly */}
+      <h2 className="text-xl font-semibold mt-6">Réservez un vol pas cher de Montréal à Paris</h2>
+      <p className="text-gray-500 text-sm">
+        Avec French Bee, bénéficiez d’un vol direct à prix compétitif entre Montréal et Paris.
+        Cliquez sur la bannière ci-dessus pour découvrir les offres spéciales.
+      </p>
     </main>
   );
 }

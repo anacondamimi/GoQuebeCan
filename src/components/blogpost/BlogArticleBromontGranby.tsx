@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -21,12 +22,13 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide
 
 const hotels = [
   {
-     name: "Splendid Mountain View Condo",
-  category: "Sport & télétravail",
-  description: "Condo moderne avec vue sur la montagne, piscine, BBQ et Wi-Fi rapide. Parfait pour le ski, vélo, golf ou télétravail.",
-  price: "Tarif selon la saison et disponibilités",
-  link: "https://www.booking.com/hotel/ca/splendid-mountain-view-condo-with-pool-amp-bbq-ski-mtb-cycling-golf-telework.fr.html",
-  image: "/images/destinations/hotels/appartement bromont.avif",
+    name: 'Splendid Mountain View Condo',
+    category: 'Sport & télétravail',
+    description:
+      'Condo moderne avec vue sur la montagne, piscine, BBQ et Wi-Fi rapide. Parfait pour le ski, vélo, golf ou télétravail.',
+    price: 'Tarif selon la saison et disponibilités',
+    link: 'https://www.booking.com/hotel/ca/splendid-mountain-view-condo-with-pool-amp-bbq-ski-mtb-cycling-golf-telework.fr.html',
+    image: '/images/destinations/hotels/appartement bromont.avif',
   },
   {
     name: 'Château-Bromont',
@@ -34,7 +36,7 @@ const hotels = [
     description: 'Au pied des pistes avec golf',
     price: 'À partir de 189$/nuit',
     link: 'https://www.booking.com/hotel/ca/chateau-bromont.html',
-    image: "/images/destinations/hotels/vallea bromont.avif",
+    image: '/images/destinations/hotels/vallea bromont.avif',
   },
   {
     name: 'Hôtel Castel & Spa Confort',
@@ -42,7 +44,7 @@ const hotels = [
     description: 'À proximité du Zoo de Granby',
     price: 'À partir de 159$/nuit',
     link: 'https://www.booking.com/hotel/ca/castel-granby.html',
-    image: "/images/destinations/hotels/hotel castel granby.avif",
+    image: '/images/destinations/hotels/hotel castel granby.avif',
   },
 ];
 
@@ -213,7 +215,7 @@ export default function BlogArticleBromontGranby() {
     <article id="blog_article_bromont_granby" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Bromont et Granby - Plaisirs Quatre Saisons
+          Bromont et Granby - Plaisirs Quatre Saisons
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez deux villes complémentaires offrant sports de montagne, attractions familiales
@@ -229,10 +231,12 @@ export default function BlogArticleBromontGranby() {
           toute saison.
         </p>
         <div className="my-8">
-          <img
-             src="/images/destinations/bromont.avif"
+          <Image
+            src="/images/destinations/bromont.avif"
             alt="Bromont en été"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -352,7 +356,13 @@ export default function BlogArticleBromontGranby() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

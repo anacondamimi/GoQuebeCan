@@ -5,16 +5,18 @@ const csp = `
   default-src 'self';
   script-src 'self' 'unsafe-inline' ${isDev ? "'unsafe-eval'" : ''} https://www.googletagmanager.com https://cdn.jsdelivr.net;
   frame-src https://www.youtube.com https://player.vimeo.com;
-  connect-src *;
+  connect-src 'self' https://www.googletagmanager.com https://cdn.jsdelivr.net;
   style-src 'self' 'unsafe-inline';
   img-src * data: blob:;
   object-src 'none';
   base-uri 'self';
   frame-ancestors 'none';
-`.replace(/\n/g, '').replace(/\s{2,}/g, ' '); // clean extra whitespaces
+`.replace(/\n/g, '').replace(/\s{2,}/g, ' ');
 
 const nextConfig = {
   reactStrictMode: true,
+  compress: true,
+  swcMinify: true,
   images: {
     domains: [
       'img.youtube.com',
@@ -25,6 +27,7 @@ const nextConfig = {
       'res.cloudinary.com',
       'goquebecan.vercel.app',
     ],
+    formats: ['image/avif', 'image/webp'],
   },
   async headers() {
     return [
@@ -36,11 +39,9 @@ const nextConfig = {
           { key: 'X-XSS-Protection', value: '1; mode=block' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           { key: 'Permissions-Policy', value: 'geolocation=(), microphone=(), camera=()' },
-          {
-            key: 'Strict-Transport-Security',
-            value: 'max-age=63072000; includeSubDomains; preload',
-          },
+          { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
           { key: 'Content-Security-Policy', value: csp },
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
         ],
       },
     ];

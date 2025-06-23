@@ -1,5 +1,6 @@
-"use client";
-import React, {useState} from 'react';
+'use client';
+import Image from 'next/image';
+import React, { useState } from 'react';
 import {
   Compass,
   Map,
@@ -237,7 +238,13 @@ export function TravelGuide() {
               {region.places.map((place) => (
                 <div key={place.name} className="bg-white rounded-xl shadow-lg overflow-hidden">
                   <div className="aspect-w-16 aspect-h-9">
-                    <img src={place.image} alt={place.name} className="w-full h-64 object-cover" />
+                    <Image
+                      src={place.image}
+                      alt={place.name}
+                      className="w-full h-64 object-cover"
+                      width={800}
+                      height={600}
+                    />
                   </div>
                   <div className="p-6">
                     <h4 className="text-xl font-bold text-gray-900 mb-2">{place.name}</h4>

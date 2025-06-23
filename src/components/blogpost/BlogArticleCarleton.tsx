@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -40,7 +41,7 @@ const hotels = [
     image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
   },
   {
-name: 'Motel l’Abri',
+    name: 'Motel l’Abri',
     category: 'Économique',
     description: 'Option abordable à proximité du centre-ville et de la plage',
     price: 'À partir de 139$/nuit',
@@ -144,7 +145,7 @@ export function BlogArticleCarleton() {
     <article id="blog_article_carleton" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Carleton-sur-Mer - Perle de la Baie des Chaleurs
+          Carleton-sur-Mer - Perle de la Baie des Chaleurs
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez un paradis balnéaire entre mer et montagnes au cœur de la Gaspésie
@@ -158,10 +159,12 @@ export function BlogArticleCarleton() {
           couper le souffle.
         </p>
         <div className="my-8">
-          <img
-             src="/images/destinations/carleton.avif"
+          <Image
+            src="/images/destinations/carleton.avif"
             alt="Baie des Chaleurs"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -258,7 +261,13 @@ export function BlogArticleCarleton() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

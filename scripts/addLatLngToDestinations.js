@@ -11,8 +11,6 @@ import dotenv from 'dotenv';
 dotenv.config({ path: './.env.local' });
 console.log('🌱 ENV CHARGÉ :', process.env);
 
-
-
 const apiKey = process.env.OPENCAGE_API_KEY_GEO;
 if (!apiKey) {
   console.log(`🔑 Clé API détectée : ${apiKey}`);

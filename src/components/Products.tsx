@@ -1,4 +1,5 @@
-"use client";
+'use client';
+import Image from 'next/image';
 import React from 'react';
 import { ExternalLink, Tent, Briefcase as Suitcase, Plane, Car, Package } from 'lucide-react';
 
@@ -12,6 +13,8 @@ const categories = [
         description: 'Avec piquets, bâche et kit de réparation',
         image:
           'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&q=80',
+        imageWidth: 800,
+        imageHeight: 600,
         link: 'https://www.amazon.com/tente-affiliation',
         article: {
           title: 'Les Meilleures Tentes de Camping 2024 - Guide Complet',
@@ -20,6 +23,12 @@ const categories = [
 Une tente fiable est la base de toute aventure en camping. Notre guide vous aide à choisir le modèle idéal pour vos besoins.
 
 👉 [Découvrez les meilleures offres ici](#comparatif)
+        }
+      }
+    ]
+  }
+];
+
 
 ## Pourquoi une bonne tente est essentielle ?
 
@@ -431,10 +440,12 @@ export default function Products() {
                     className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
                   >
                     <div className="relative h-40 sm:h-48">
-                      <img
+                      <Image
                         src={product.image}
                         alt={product.name}
                         className="w-full h-full object-cover"
+                        width={800}
+                        height={600}
                       />
                     </div>
                     <div className="p-4 sm:p-6">
@@ -498,7 +509,13 @@ export default function Products() {
                 >
                   <div className="p-6 flex items-center gap-4">
                     <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
-                      <img src={app.icon} alt={app.name} className="w-full h-full object-cover" />
+                      <Image
+                        src={app.icon}
+                        alt={app.name}
+                        className="w-full h-full object-cover"
+                        width={800}
+                        height={600}
+                      />
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-2 flex items-center gap-2">

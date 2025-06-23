@@ -1,6 +1,7 @@
-"use client";
+'use client';
+import Image from 'next/image';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 
 interface CardProps {
@@ -36,11 +37,13 @@ export function Card({
     >
       {image && (
         <div className="relative h-48 overflow-hidden">
-          <img
+          <Image
             src={image}
             alt={title}
             className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${imageClassName}`}
             loading="lazy"
+            width={800}
+            height={600}
           />
           {badge && (
             <div className="absolute top-3 right-3">
@@ -71,7 +74,7 @@ export function Card({
           </a>
         )
       : ({ children }: { children: React.ReactNode }) => (
-          <Link to={link} className="group block">
+          <Link href={link!} className="group block">
             {children}
           </Link>
         );

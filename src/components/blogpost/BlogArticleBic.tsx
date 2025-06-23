@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -34,20 +35,22 @@ import {
 
 const hotels = [
   {
-    name: "Hôtel Rimouski",
-  category: "Confort & services",
-  description: "Hôtel idéalement situé face au fleuve Saint-Laurent, parfait pour les familles et les voyageurs d’affaires.",
-  price: "Tarif selon la saison et le type de chambre",
-  link: "https://www.booking.com/hotel/ca/rimouski.fr.html",
-  image: "/images/destinations/hotels/rimouski.avif",
+    name: 'Hôtel Rimouski',
+    category: 'Confort & services',
+    description:
+      'Hôtel idéalement situé face au fleuve Saint-Laurent, parfait pour les familles et les voyageurs d’affaires.',
+    price: 'Tarif selon la saison et le type de chambre',
+    link: 'https://www.booking.com/hotel/ca/rimouski.fr.html',
+    image: '/images/destinations/hotels/rimouski.avif',
   },
   {
-     name: "Hôtel Le Saint-Germain",
-  category: "Boutique & moderne",
-  description: "Hôtel boutique élégant au cœur de Rimouski. Chambres spacieuses, parfait pour un séjour raffiné.",
-  price: "Tarif selon la saison et le type de chambre",
-  link: "https://www.booking.com/hotel/ca/le-saint-germain.fr.html",
-  image: "/images/destinations/hotels/saint germain rimouski.avif",
+    name: 'Hôtel Le Saint-Germain',
+    category: 'Boutique & moderne',
+    description:
+      'Hôtel boutique élégant au cœur de Rimouski. Chambres spacieuses, parfait pour un séjour raffiné.',
+    price: 'Tarif selon la saison et le type de chambre',
+    link: 'https://www.booking.com/hotel/ca/le-saint-germain.fr.html',
+    image: '/images/destinations/hotels/saint germain rimouski.avif',
   },
   {
     name: 'Camping du Bic',
@@ -55,7 +58,7 @@ const hotels = [
     description: 'Sites de camping avec vue sur mer',
     price: 'À partir de 30$/nuit',
     link: 'https://www.sepaq.com/pq/bic/',
-    image: "/images/destinations/hotels/camping bic.avif",
+    image: '/images/destinations/hotels/camping bic.avif',
   },
 ];
 
@@ -154,7 +157,7 @@ export default function BlogArticleBic() {
     <article id="blog_article_bic" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Parc national du Bic - Paradis des Phoques et des Randonneurs
+          Parc national du Bic - Paradis des Phoques et des Randonneurs
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce joyau naturel du Bas-Saint-Laurent, où montagnes et mer se rencontrent dans
@@ -170,10 +173,12 @@ export default function BlogArticleBic() {
           montagnes et une riche biodiversité.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/bic.avif"
             alt="Parc national du Bic"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -276,7 +281,13 @@ export default function BlogArticleBic() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

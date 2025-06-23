@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { supabase } from '@/components/lib/supabase'; // ✅ corrigé
 
 export default async function CommunautéPage() {
@@ -18,7 +19,13 @@ export default async function CommunautéPage() {
           }) => (
             <div key={pdf.id} className="border p-4 rounded shadow bg-white">
               {pdf.image_url && (
-                <img src={pdf.image_url} alt={pdf.titre} className="rounded mb-3" />
+                <Image
+                  src={pdf.image_url}
+                  alt={pdf.titre}
+                  className="rounded mb-3"
+                  width={800}
+                  height={600}
+                />
               )}
               <h3 className="font-semibold text-lg">{pdf.titre}</h3>
               {pdf.auteur && <p className="text-sm text-gray-500">par {pdf.auteur}</p>}

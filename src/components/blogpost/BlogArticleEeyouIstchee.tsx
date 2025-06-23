@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -178,7 +179,7 @@ export default function BlogArticleEeyouIstchee() {
     <article id="blog_article_eeyou_istchee" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Eeyou Istchee Baie-James - Immersion dans le Grand Nord Québécois
+          Eeyou Istchee Baie-James - Immersion dans le Grand Nord Québécois
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce vaste territoire où nature sauvage et culture crie se rencontrent dans une
@@ -193,10 +194,12 @@ export default function BlogArticleEeyouIstchee() {
           l'aventure en pleine nature avec la découverte des traditions millénaires du peuple cri.
         </p>
         <div className="my-8">
-          <img
-             src="/images/destinations/eeyou-istchee-baiejames.avif"
+          <Image
+            src="/images/destinations/eeyou-istchee-baiejames.avif"
             alt="Eeyou Istchee Baie-James"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -318,7 +321,13 @@ export default function BlogArticleEeyouIstchee() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

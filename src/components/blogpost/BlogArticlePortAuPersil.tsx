@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -25,27 +26,27 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide
 const hotels = [
   {
     name: 'Horizon 777',
-  category: 'Petit-déjeuner inclus',
-  description: 'Chambre double avec salle de bain privée et vue. Note 9,2/10.',
-  price: 'À partir de 159$/nuit avec petit-déjeuner',
-  link: 'https://www.booking.com/hotel/ca/horizon-777.fr.html',
-  image: '/images/destinations/hotels/horizon 777.avif',
+    category: 'Petit-déjeuner inclus',
+    description: 'Chambre double avec salle de bain privée et vue. Note 9,2/10.',
+    price: 'À partir de 159$/nuit avec petit-déjeuner',
+    link: 'https://www.booking.com/hotel/ca/horizon-777.fr.html',
+    image: '/images/destinations/hotels/horizon 777.avif',
   },
   {
     name: 'La Gentilhommière',
-  category: 'Vue sur mer',
-  description: 'Chambre lit Queen avec vue, notée 9,5/10. Calme et confort assurés.',
-  price: 'À partir de 139$/nuit',
-  link: 'https://www.booking.com/hotel/ca/la-gentilhommiere.fr.html',
-  image: '/images/destinations/hotels/gentilhommiere.avif',
+    category: 'Vue sur mer',
+    description: 'Chambre lit Queen avec vue, notée 9,5/10. Calme et confort assurés.',
+    price: 'À partir de 139$/nuit',
+    link: 'https://www.booking.com/hotel/ca/la-gentilhommiere.fr.html',
+    image: '/images/destinations/hotels/gentilhommiere.avif',
   },
   {
     name: 'Motel Cofotel',
-  category: 'Rapport qualité-prix',
-  description: 'Chambre lit Queen, annulation gratuite, situé à 4 km du centre.',
-  price: 'À partir de 139$/nuit',
-  link: 'https://www.booking.com/hotel/ca/motel-cofotel.fr.html',
-  image: '/images/destinations/hotels/motel cofotel.avif',
+    category: 'Rapport qualité-prix',
+    description: 'Chambre lit Queen, annulation gratuite, situé à 4 km du centre.',
+    price: 'À partir de 139$/nuit',
+    link: 'https://www.booking.com/hotel/ca/motel-cofotel.fr.html',
+    image: '/images/destinations/hotels/motel cofotel.avif',
   },
 ];
 
@@ -144,7 +145,7 @@ export default function BlogArticlePortAuPersil() {
     <article id="blog_article_port_au_persil" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Port-au-Persil - Joyau Caché de Charlevoix
+          Port-au-Persil - Joyau Caché de Charlevoix
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce village pittoresque où falaises escarpées et traditions maritimes créent un
@@ -159,10 +160,12 @@ export default function BlogArticlePortAuPersil() {
           ancestrales et son petit port naturel, semble figé dans le temps.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/port-au-persil.avif"
             alt="Port-au-Persil"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -261,7 +264,13 @@ export default function BlogArticlePortAuPersil() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

@@ -150,17 +150,16 @@ export default function BlogArticleOrleans() {
           34 kilomètres de long, surnommée le "Jardin de Québec", vous invite à un voyage dans le
           temps et les saveurs.
         </p>
-             <div className="my-8">
-                <Image
-          src="/images/destinations/ile-dorleans.avif"
-          alt="Découvrez les trésors de l'île d'Orleans"
-          width={800}
-          height={500}
-          loading="lazy"
-          className="rounded-lg shadow-md object-cover w-full h-auto"
-        />
-        
-                </div>
+        <div className="my-8">
+          <Image
+            src="/images/destinations/ile-dorleans.avif"
+            alt="Découvrez les trésors de l'île d'Orleans"
+            width={800}
+            height={500}
+            loading="lazy"
+            className="rounded-lg shadow-md object-cover w-full h-auto"
+          />
+        </div>
       </section>
 
       <section className="mb-16">
@@ -268,7 +267,13 @@ export default function BlogArticleOrleans() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

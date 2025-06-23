@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 
 import Image from 'next/image';
@@ -43,7 +43,7 @@ const regions: Region[] = [
       {
         name: "Île d'Orléans",
         description: 'Terroir québécois, vignobles et patrimoine agricole',
-        image: "/images/destinations/ile-dorleans.avif",
+        image: '/images/destinations/ile-dorleans.avif',
         blogId: 'blog_article_orleans',
       },
       {
@@ -51,7 +51,6 @@ const regions: Region[] = [
         description: 'Cascade spectaculaire de 83 mètres de hauteur',
         image: '/images/destinations/chute-montmorency.avif',
         blogId: 'blog_article_montmorency',
-        
       },
       {
         name: 'Lévis',
@@ -261,7 +260,7 @@ const regions: Region[] = [
       {
         name: "L'Anse-Saint-Jean",
         description: 'Village historique avec kayak de mer et navettes maritimes du Fjord',
-        image: "/images/destinations/anse-saint-jean.avif",
+        image: '/images/destinations/anse-saint-jean.avif',
         blogId: 'blog_article_anse_saint_jean',
       },
     ],
@@ -297,31 +296,31 @@ export default function PopularDestinations() {
           {/* Grille de destinations */}
           <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {region.destinations.map((d) => (
-             <Link
-  key={d.name}
-  href={d.blogId ? `/blog/${d.blogId}` : '#'}
-  className={`group bg-white rounded-xl shadow-card hover:shadow-card-hover overflow-hidden transition-shadow ${
-    d.blogId ? 'cursor-pointer' : 'cursor-default'
-  }`}
->
-  <div className="relative aspect-w-16 aspect-h-9">
-    <Image
-      src={d.image}
-      alt={d.name}
-      fill
-      sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-      className="object-cover object-center group-hover:scale-105 transition-transform duration-300 rounded-xl"
-      priority
-    />
-  </div>
+              <Link
+                key={d.name}
+                href={d.blogId ? `/blog/${d.blogId}` : '#'}
+                className={`group bg-white rounded-xl shadow-card hover:shadow-card-hover overflow-hidden transition-shadow ${
+                  d.blogId ? 'cursor-pointer' : 'cursor-default'
+                }`}
+              >
+                <div className="relative aspect-w-16 aspect-h-9">
+                  <Image
+                    src={d.image}
+                    alt={d.name}
+                    fill
+                    sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-300 rounded-xl"
+                    priority
+                  />
+                </div>
 
-  <div className="p-5">
-    <h4 className="text-lg font-display font-semibold text-gray-900 mb-1">
-      {d.name}
-    </h4>
-    <p className="text-sm text-gray-600">{d.description}</p>
-  </div>
-</Link>
+                <div className="p-5">
+                  <h4 className="text-lg font-display font-semibold text-gray-900 mb-1">
+                    {d.name}
+                  </h4>
+                  <p className="text-sm text-gray-600">{d.description}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -21,7 +21,6 @@ export const metadata = {
   publics: ['familles', 'ados', 'amateurs de culture'],
 };
 
-
 // ✅ Imports déplacés automatiquement
 
 const hotels = [
@@ -146,7 +145,7 @@ export default function BlogArticleRiviereduLoup() {
     <article id="blog_article_riviere_du_loup" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Rivière-du-Loup - Porte d'entrée du Bas-Saint-Laurent
+          Rivière-du-Loup - Porte d'entrée du Bas-Saint-Laurent
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez cette ville historique où le fleuve Saint-Laurent rencontre la nature sauvage
@@ -162,11 +161,11 @@ export default function BlogArticleRiviereduLoup() {
         </p>
         <div className="my-8">
           <Image
-  src="/images/destinations/chute-riviere-du-loup.avif"
-  alt="Rivière-du-Loup"
-  width={1200}
-  height={500}
-  className="w-full object-cover rounded-lg shadow-lg"
+            src="/images/destinations/chute-riviere-du-loup.avif"
+            alt="Rivière-du-Loup"
+            width={1200}
+            height={500}
+            className="w-full object-cover rounded-lg shadow-lg"
           />
         </div>
       </section>
@@ -268,7 +267,13 @@ export default function BlogArticleRiviereduLoup() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

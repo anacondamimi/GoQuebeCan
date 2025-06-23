@@ -1,3 +1,5 @@
+import React from 'react';
+
 import BlogComponents from '@/components/blog/BlogComponents';
 
 export type Camping = {

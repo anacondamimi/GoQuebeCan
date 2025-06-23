@@ -1,4 +1,5 @@
-"use client";
+'use client';
+import Image from 'next/image';
 import React from 'react';
 import { MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -32,11 +33,13 @@ export function DestinationCard({
   const content = (
     <div className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
       <div className="relative h-48 overflow-hidden">
-        <img
+        <Image
           src={image}
           alt={name}
           className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
           loading="lazy"
+          width={800}
+          height={600}
         />
         {location && (
           <div className="absolute top-3 left-3">

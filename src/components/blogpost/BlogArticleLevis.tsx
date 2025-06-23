@@ -1,7 +1,7 @@
-"use client";
+import React from 'react';
+import Image from 'next/image';
 // src/components/blogpost/BlogArticleLevis.tsx
 
-import React from 'react';
 import { Star, Hotel, Utensils, Bus, Calendar, DollarSign, Shield } from 'lucide-react';
 
 export const metadata = {
@@ -26,15 +26,7 @@ export const metadata = {
   publics: ['familles', 'ados'],
 };
 
-interface Hotel {
-  name: string;
-  category: string;
-  description: string;
-  price: string;
-  link: string;
-  image: string;
-}
-const hotels: Hotel[] = [
+const hotels = [
   {
     name: 'Four Points by Sheraton Lévis',
     category: 'Vue sur Québec',
@@ -172,9 +164,7 @@ export default function BlogArticleLevis() {
   return (
     <article id="blog_article_levis" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Lévis – L’Autre Rive de Québec
-        </h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">Lévis – L’Autre Rive de Québec</h1>
         <p className="text-xl text-gray-600">
           Découvrez cette ville dynamique offrant la plus belle vue sur Québec et des attractions
           uniques.
@@ -188,10 +178,12 @@ export default function BlogArticleLevis() {
           préservée et vie culturelle animée, le tout à quelques minutes du Vieux-Québec.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/levis.avif"
             alt="Vue sur Québec depuis Lévis"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -285,7 +277,13 @@ export default function BlogArticleLevis() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={h.image} alt={h.name} className="w-full h-full object-cover" />
+                <Image
+                  src={h.image}
+                  alt={h.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

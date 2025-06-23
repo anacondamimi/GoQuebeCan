@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -29,8 +30,7 @@ const hotels = [
     description: 'Vue imprenable sur le Rocher Percé',
     price: 'À partir de 199$/nuit',
     link: 'https://www.booking.com/hotel/ca/riotel-perce.html',
-    image:"/images/destinations/hotels/perce.avif"
-    
+    image: '/images/destinations/hotels/perce.avif',
   },
   {
     name: 'Hôtel La Normandie',
@@ -147,7 +147,7 @@ export default function BlogArticlePerce() {
     <article id="blog_article_perce" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Percé en Gaspésie - Le Joyau du Saint-Laurent
+          Percé en Gaspésie - Le Joyau du Saint-Laurent
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez l'iconique Rocher Percé, l'île Bonaventure et les merveilles de la péninsule
@@ -161,10 +161,12 @@ export default function BlogArticlePerce() {
           falaises majestueuses et sa colonie de fous de Bassan, la plus accessible au monde.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/perce.avif"
             alt="Rocher Percé"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -308,7 +310,13 @@ export default function BlogArticlePerce() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

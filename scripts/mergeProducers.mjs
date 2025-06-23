@@ -2,7 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 const producers = JSON.parse(fs.readFileSync('./src/data/producers.json', 'utf-8'));
-const microbreweries = JSON.parse(fs.readFileSync('./public/microbreweriesWithCoords.json', 'utf-8'));
+const microbreweries = JSON.parse(
+  fs.readFileSync('./public/microbreweriesWithCoords.json', 'utf-8')
+);
 
 const all = [...producers, ...microbreweries];
 

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -25,27 +26,27 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide
 const hotels = [
   {
     name: 'Chalets Didoche',
-  category: 'Chalet en bord de mer',
-  description: 'Chalets confortables au cœur de la nature. Note 9/10.',
-  price: 'Tarifs variables selon la saison',
-  link: 'https://www.booking.com/hotel/ca/chalets-didoche-havre-saint-pierre.fr.html',
-  image: '/images/destinations/hotels/chalets didoche.avif',
+    category: 'Chalet en bord de mer',
+    description: 'Chalets confortables au cœur de la nature. Note 9/10.',
+    price: 'Tarifs variables selon la saison',
+    link: 'https://www.booking.com/hotel/ca/chalets-didoche-havre-saint-pierre.fr.html',
+    image: '/images/destinations/hotels/chalets didoche.avif',
   },
   {
-    name: "L’Escale Lam-Air",
-  category: "Vue mer & plage",
-  description: "Hébergement chaleureux avec vue sur l’eau. Note 9,5/10.",
-  price: "Tarif variable selon la saison",
-  link: "https://www.booking.com/hotel/ca/escale-lam-air.fr.html",
-  image: "/images/destinations/hotels/escale lam-air.avif",
+    name: 'L’Escale Lam-Air',
+    category: 'Vue mer & plage',
+    description: 'Hébergement chaleureux avec vue sur l’eau. Note 9,5/10.',
+    price: 'Tarif variable selon la saison',
+    link: 'https://www.booking.com/hotel/ca/escale-lam-air.fr.html',
+    image: '/images/destinations/hotels/escale lam-air.avif',
   },
   {
-     name: 'Hôtels Gouverneur Sept-Îles',
-  category: 'Familial',
-  description: 'Chambre double avec 2 lits, séjour gratuit pour les enfants. Note 8/10.',
-  price: 'À partir de 194$/nuit',
-  link: 'https://www.booking.com/hotel/ca/gouverneur-sept-iles.fr.html',
-  image: '/images/destinations/hotels/gouverneur.avif',
+    name: 'Hôtels Gouverneur Sept-Îles',
+    category: 'Familial',
+    description: 'Chambre double avec 2 lits, séjour gratuit pour les enfants. Note 8/10.',
+    price: 'À partir de 194$/nuit',
+    link: 'https://www.booking.com/hotel/ca/gouverneur-sept-iles.fr.html',
+    image: '/images/destinations/hotels/gouverneur.avif',
   },
 ];
 
@@ -144,7 +145,7 @@ export function BlogArticleMingan() {
     <article id="blog_article_mingan" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Mingan - L'Archipel aux Monolithes Légendaires
+          Mingan - L'Archipel aux Monolithes Légendaires
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez un paysage unique au monde avec ses sculptures naturelles et sa biodiversité
@@ -160,10 +161,12 @@ export function BlogArticleMingan() {
           expérience inoubliable.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/mingan.avif"
             alt="Monolithes de Mingan"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -260,7 +263,13 @@ export function BlogArticleMingan() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

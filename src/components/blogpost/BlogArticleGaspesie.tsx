@@ -11,8 +11,6 @@ export const metadata = {
   publics: ['aventuriers'],
 };
 
-
-
 export function BlogArticleGaspesie() {
   return (
     <article className="max-w-4xl mx-auto px-4 py-12 bg-white">
@@ -32,15 +30,14 @@ export function BlogArticleGaspesie() {
           pour les amateurs de plein air.
         </p>
         <div className="my-8">
-        <Image
-  src="/images/destinations/parc-gaspesie.avif"
-  alt="Côte rocheuse de la Gaspésie"
-  width={800}
-  height={500}
-  loading="lazy"
-  className="rounded-lg shadow-md object-cover w-full h-auto"
-/>
-
+          <Image
+            src="/images/destinations/parc-gaspesie.avif"
+            alt="Côte rocheuse de la Gaspésie"
+            width={800}
+            height={500}
+            loading="lazy"
+            className="rounded-lg shadow-md object-cover w-full h-auto"
+          />
         </div>
       </section>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Link } from 'react-router-dom';
 import campingArticles from '@/data/campings.json';
 import type { CampingData } from '@/types/CampingData';
@@ -15,10 +16,12 @@ export default function CampingList() {
           <div key={slug} className="bg-white rounded-xl shadow-md overflow-hidden">
             <Link to={`/camping/${slug}`}>
               <div className="h-48 overflow-hidden">
-                <img
+                <Image
                   src={camping.image}
                   alt={camping.title}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  width={800}
+                  height={600}
                 />
               </div>
               <div className="p-4">

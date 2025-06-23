@@ -1,7 +1,6 @@
-"use client";
+'use client';
 import React from 'react';
 import Image from 'next/image';
-
 import Link from 'next/link';
 import { Mail, FileText, Scale, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 
@@ -47,23 +46,23 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer */}
-        <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Column */}
-          <div className="space-y-6">
-            <Link href="/" className="flex items-center" aria-label="Accueil">
+          <div className="space-y-6 text-center md:text-left">
+            <Link href="/" aria-label="Accueil" className="inline-block">
               <Image
-  src="/images/logo.jpg"
-  alt="Logo GoQuebecan"
-  width={133}
-  height={75}
-/>
+                src="/images/logo.jpg"
+                alt="Logo GoQuebeCan"
+                width={120}
+                height={120}
+                className="rounded-lg shadow-md mx-auto md:mx-0"
+              />
             </Link>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 text-sm leading-relaxed">
               Votre guide complet pour explorer le Québec et le Canada avec des conseils d'experts
               et des offres exclusives.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex justify-center md:justify-start space-x-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -88,10 +87,10 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors inline-flex items-center"
+                      className="text-gray-400 hover:text-white transition-colors"
                       aria-label={link.label}
                     >
-                      <span>{link.label}</span>
+                      {link.label}
                     </Link>
                   </li>
                 ))}
@@ -100,53 +99,34 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom Footer */}
         <div className="py-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} GoQuebecan. Tous droits réservés.
+            © {new Date().getFullYear()} GoQuebeCan. Tous droits réservés.
           </div>
-          <div className="flex flex-wrap gap-6 items-center">
-            <Link
-              href="/contact"
-              className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
-            >
-              <Mail className="h-4 w-4 mr-2" />
-              <span>Contact</span>
+          <div className="flex flex-wrap gap-4 items-center justify-center">
+            <Link href="/contact" className="footer-link">
+              <Mail className="h-4 w-4 mr-1" /> Contact
             </Link>
-            <Link
-              href="/confidentialite"
-              className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
-            >
-              <FileText className="h-4 w-4 mr-2" />
-              <span>Confidentialité</span>
+            <Link href="/confidentialite" className="footer-link">
+              <FileText className="h-4 w-4 mr-1" /> Confidentialité
             </Link>
-            <Link
-              href="/conditions-utilisation"
-              className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
-            >
-              <span>Conditions d’utilisation</span>
+            <Link href="/conditions-utilisation" className="footer-link">
+              Conditions d’utilisation
             </Link>
-            <Link
-              href="/accessibilite"
-              className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
-            >
-              <span>Accessibilité</span>
+            <Link href="/accessibilite" className="footer-link">
+              Accessibilité
             </Link>
-            <Link
-              href="/mentions-legales"
-              className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
-            >
-              <Scale className="h-4 w-4 mr-2" />
-              <span>Mentions Légales</span>
+            <Link href="/mentions-legales" className="footer-link">
+              <Scale className="h-4 w-4 mr-1" /> Mentions Légales
             </Link>
             <button
               onClick={() => {
                 localStorage.removeItem('cookie_consent');
                 window.location.reload();
               }}
-              className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
+              className="text-gray-400 hover:text-white transition-colors text-sm"
             >
-              <span>🎛 Cookies</span>
+              🎛 Cookies
             </button>
           </div>
         </div>

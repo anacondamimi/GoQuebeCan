@@ -79,9 +79,9 @@ export const destinations = [
       { title: 'Canyon', slug: 'canyon' },
       {
         title: 'Louer Un Vr Au Quebec',
-        slug: 'pourquoi-louer-un-vr-au-quebec'
+        slug: 'pourquoi-louer-un-vr-au-quebec',
       },
-      { slug: 'parc-aquatique', title: 'Parc Aquatique' },  // ➡ ajouté
+      { slug: 'parc-aquatique', title: 'Parc Aquatique' }, // ➡ ajouté
     ],
   },
 ];

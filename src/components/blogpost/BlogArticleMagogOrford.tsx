@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
@@ -26,7 +27,7 @@ const hotels = [
     description: 'Relais & Châteaux au bord du lac',
     price: 'À partir de 399$/nuit',
     link: 'https://www.booking.com/hotel/ca/manoir-hovey.html',
-    image: "/images/destinations/hotels/manoir hovey.avif",
+    image: '/images/destinations/hotels/manoir hovey.avif',
   },
   {
     name: 'Estrimont Suites & Spa',
@@ -34,15 +35,16 @@ const hotels = [
     description: 'Vue sur le Mont Orford',
     price: 'À partir de 229$/nuit',
     link: 'https://www.booking.com/hotel/ca/estrimont-suites-spa.html',
-    image: "/images/destinations/hotels/estrimont.avif",
+    image: '/images/destinations/hotels/estrimont.avif',
   },
   {
-    name: "Appartement ",
-  category: "Nature & confort",
-  description: "Chalet très bien noté (9.3/10) à Magog-Orford, à proximité du lac Memphrémagog, des plages et du Mont-Orford.",
-  price: "Tarif variable selon la saison",
-  link: "https://www.booking.com/hotel/ca/nouveaute-foyer-au-bois-plage-montagne-et-plus.fr.html",
-  image: "/images/destinations/hotels/appartement orford.avif",
+    name: 'Appartement ',
+    category: 'Nature & confort',
+    description:
+      'Chalet très bien noté (9.3/10) à Magog-Orford, à proximité du lac Memphrémagog, des plages et du Mont-Orford.',
+    price: 'Tarif variable selon la saison',
+    link: 'https://www.booking.com/hotel/ca/nouveaute-foyer-au-bois-plage-montagne-et-plus.fr.html',
+    image: '/images/destinations/hotels/appartement orford.avif',
   },
 ];
 
@@ -165,7 +167,7 @@ export default function BlogArticleMagogOrford() {
     <article id="blog_article_magog_orford" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Magog-Orford - Entre Lacs et Montagnes
+          Magog-Orford - Entre Lacs et Montagnes
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce joyau des Cantons-de-l'Est où nature, gastronomie et activités de plein air
@@ -181,10 +183,12 @@ export default function BlogArticleMagogOrford() {
           randonnées en montagne et expériences gastronomiques.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/magog.avif"
             alt="Lac Memphrémagog"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -307,7 +311,13 @@ export default function BlogArticleMagogOrford() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">

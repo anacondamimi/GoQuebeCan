@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import { Sunset } from 'lucide-react';
 
@@ -25,12 +26,12 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide
 
 const hotels = [
   {
-   name: "Auberge Akamaraska",
-  category: "Simplicité & authenticité",
-  description: "Chambre avec lit Queen et balcon, à 100 m du centre du village. Note 7,8/10.",
-  price: "Tarif selon la saison",
-  link: "https://www.booking.com/hotel/ca/akamaraska.fr.html",
-  image: "/images/destinations/hotels/akamaraska.avif",
+    name: 'Auberge Akamaraska',
+    category: 'Simplicité & authenticité',
+    description: 'Chambre avec lit Queen et balcon, à 100 m du centre du village. Note 7,8/10.',
+    price: 'Tarif selon la saison',
+    link: 'https://www.booking.com/hotel/ca/akamaraska.fr.html',
+    image: '/images/destinations/hotels/akamaraska.avif',
   },
   {
     name: 'Motel des Mariniers',
@@ -38,15 +39,15 @@ const hotels = [
     description: 'Au cœur du village historique',
     price: 'À partir de 129$/nuit',
     link: 'https://www.booking.com/hotel/ca/motel-des-mariniers.html',
-    image: "/images/destinations/hotels/mariniers.avif",
+    image: '/images/destinations/hotels/mariniers.avif',
   },
   {
-   name: "Auberge Comme au premier jour",
-  category: "Charme & piscine",
-  description: "Chambre double avec vue sur la piscine, à 18 km de Kamouraska. Note 8,8/10.",
-  price: "Tarif selon la saison",
-  link: "https://www.booking.com/hotel/ca/auberge-comme-au-premier-jour.fr.html",
-  image: "/images/destinations/hotels/auberge saint pacome.avif",
+    name: 'Auberge Comme au premier jour',
+    category: 'Charme & piscine',
+    description: 'Chambre double avec vue sur la piscine, à 18 km de Kamouraska. Note 8,8/10.',
+    price: 'Tarif selon la saison',
+    link: 'https://www.booking.com/hotel/ca/auberge-comme-au-premier-jour.fr.html',
+    image: '/images/destinations/hotels/auberge saint pacome.avif',
   },
 ];
 
@@ -145,7 +146,7 @@ export function BlogArticleKamouraska() {
     <article id="blog_article_kamouraska" className="max-w-4xl mx-auto px-4 py-12 bg-white">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
-           Kamouraska - Le Village aux Plus Beaux Couchers de Soleil
+          Kamouraska - Le Village aux Plus Beaux Couchers de Soleil
         </h1>
         <p className="text-xl text-gray-600">
           Découvrez ce joyau du Bas-Saint-Laurent, entre patrimoine historique et paysages
@@ -161,10 +162,12 @@ export function BlogArticleKamouraska() {
           maritime.
         </p>
         <div className="my-8">
-          <img
+          <Image
             src="/images/destinations/kamouraska.avif"
             alt="Kamouraska"
             className="w-full h-96 object-cover rounded-lg shadow-lg"
+            width={800}
+            height={600}
           />
         </div>
       </section>
@@ -266,7 +269,13 @@ export function BlogArticleKamouraska() {
               className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="relative h-48">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover" />
+                <Image
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">
