@@ -3,7 +3,7 @@ const isDev = process.env.NODE_ENV !== 'production';
 
 const csp = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' ${isDev ? "'unsafe-eval'" : ''} https://www.googletagmanager.com https://cdn.jsdelivr.net;
+  script-src 'self' 'unsafe-inline' ${isDev ? "'unsafe-eval'" : ''} https://connect.facebook.net https://www.googletagmanager.com https://cdn.jsdelivr.net;
   frame-src https://www.youtube.com https://player.vimeo.com;
   connect-src 'self' https://www.googletagmanager.com https://cdn.jsdelivr.net;
   style-src 'self' 'unsafe-inline';

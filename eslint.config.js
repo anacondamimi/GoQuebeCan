@@ -9,6 +9,7 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import unusedImports from 'eslint-plugin-unused-imports';
 import prettier from 'eslint-plugin-prettier';
 
+/** @type {import("eslint").Linter.FlatConfig[]} */
 export default [
   js.configs.recommended,
 
@@ -50,9 +51,54 @@ export default [
       'unused-imports/no-unused-imports': 'error',
       'unused-imports/no-unused-vars': [
         'warn',
-        { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+        {
+          vars: 'all',
+          varsIgnorePattern: '^_',
+          args: 'after-used',
+          argsIgnorePattern: '^_',
+        },
       ],
       'prettier/prettier': 'warn',
     },
+  },
+
+  // Scripts Node.js (JS, MJS, CJS)
+  {
+    files: ['scripts/**/*.{js,mjs,cjs}', '*.config.{js,mjs,cjs}'],
+    languageOptions: {
+      ecmaVersion: 2020,
+      sourceType: 'module',
+      globals: {
+        ...globals.node,
+        console: true,
+        require: true,
+        process: true,
+        __dirname: true,
+        module: true,
+        setTimeout: true,
+        fetch: true,
+      },
+    },
+    rules: {
+      'no-undef': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+      '@typescript-eslint/no-require-imports': 'off',
+      'no-useless-escape': 'warn',
+      'no-redeclare': 'warn',
+    },
+  },
+
+  // Ignore files
+  {
+    ignores: [
+      'node_modules/**',
+      'dist/**',
+      '.next/**',
+      '**/*.d.ts',
+      '**/*.test.ts',
+      '**/*.test.tsx',
+      'verify-default-exports.js',
+      'test-openai.mjs',
+    ],
   },
 ];
