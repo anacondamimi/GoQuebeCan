@@ -1,0 +1,6 @@
+onlyBuiltDependencies:
+  - bufferutil
+  - core-js
+  - esbuild
+  - puppeteer
+  - utf-8-validate

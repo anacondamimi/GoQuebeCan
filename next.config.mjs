@@ -22,6 +22,7 @@ const nextConfig = {
 
   experimental: {
     serverComponentsExternalPackages: ['unsplash-js'],
+    instrumentationHook: true, // permet Vercel Analytics si souhaité
   },
 
   images: {
@@ -54,7 +55,6 @@ const nextConfig = {
             value: 'max-age=63072000; includeSubDomains; preload',
           },
           { key: 'Content-Security-Policy', value: csp },
-          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
         ],
       },
     ];
@@ -70,5 +70,8 @@ const nextConfig = {
 
     return config;
   },
+
+  output: 'standalone', // optimisation Vercel + Docker
 };
+
 export default nextConfig;
