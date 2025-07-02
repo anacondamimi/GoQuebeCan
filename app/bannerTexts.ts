@@ -28,7 +28,7 @@ const bannerTexts: Record<string, { title: string; subtitle: string }> = {
     subtitle:
       'Découvrez nos sélections de vidéos immersives sur les destinations, activités et conseils pratiques à travers le Canada.',
   },
-  '/canada-en-vr': {
+  '/location-vr': {
     title: 'Voyager d’un Océan à l’Autre en Véhicule Récréatif',
     subtitle:
       'Explorez le Canada librement en VR : itinéraires incontournables, conseils pour campeurs nomades et haltes nature du Pacifique à l’Atlantique.',

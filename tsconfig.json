@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ES2020"
-    ],
+    "target": "esnext",
+    "lib": ["DOM", "DOM.Iterable", "ESnext"],
     "module": "ESNext",
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -19,19 +15,11 @@
     // 🔁 Alias @/ vers /src
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
     // ✅ Types globaux (Node, Next, etc.)
-    "types": [
-      "node",
-      "next"
-    ],
-    "typeRoots": [
-      "./types",
-      "./node_modules/@types"
-    ],
+    "types": ["node", "next"],
+    "typeRoots": ["./types", "./node_modules/@types"],
     // 🧼 Clean code
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
@@ -48,12 +36,11 @@
     "next-env.d.ts",
     "src",
     "scripts",
-    ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "find-img-tags.js"
+    "find-img-tags.js",
+    "next.config.mjs",
+    ".next/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules", ".next"]
 }

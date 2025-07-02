@@ -1,9 +1,11 @@
-// 📁 Place ce fichier à la racine de ton projet
+import fs from 'fs';
+import path from 'path';
+import util from 'util';
 
-const fs = require('fs');
-const path = require('path');
+const readdir = util.promisify(fs.readdir);
+const stat = util.promisify(fs.stat);
 
-const IGNORE = [
+const ignoreDirs = [
   'node_modules',
   '.git',
   '.next',
@@ -14,23 +16,42 @@ const IGNORE = [
   'public',
   '.turbo',
   '.idea',
+  '.vscode',
+  'coverage',
+  'scripts',
 ];
 
-function walk(dir, indent = '') {
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
+async function printDirStructure(dir, prefix = '') {
+  let files;
+  try {
+    files = await readdir(dir);
+  } catch (err) {
+    console.error(`Error reading directory ${dir}:`, err);
+    return;
+  }
 
-  entries
-    .filter((entry) => !IGNORE.includes(entry.name) && !entry.name.startsWith('.'))
-    .sort((a, b) => a.name.localeCompare(b.name))
-    .forEach((entry) => {
-      const fullPath = path.join(dir, entry.name);
-      console.log(`${indent}├── ${entry.name}`);
+  for (const file of files) {
+    if (ignoreDirs.includes(file)) continue;
+    const filePath = path.join(dir, file);
+    let fileStat;
+    try {
+      fileStat = await stat(filePath);
+    } catch (err) {
+      console.error(`Error getting stats for ${filePath}:`, err);
+      continue;
+    }
 
-      if (entry.isDirectory()) {
-        walk(fullPath, indent + '│   ');
-      }
-    });
+    console.log(`${prefix}${file}`);
+    if (fileStat.isDirectory()) {
+      await printDirStructure(filePath, `${prefix}  `);
+    }
+  }
 }
 
-console.log('📁 Structure du projet :\n');
-walk('.');
+// Encapsulation pour autoriser le top-level await
+async function main() {
+  const targetDir = process.argv[2] || '.';
+  await printDirStructure(targetDir);
+}
+
+main();

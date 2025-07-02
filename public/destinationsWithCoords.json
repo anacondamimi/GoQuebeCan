@@ -15,16 +15,8 @@
       "Vélo de Montagne",
       "Randonnée Alpine"
     ],
-    "hebergements": [
-      "Auberge des Cévennes",
-      "Chalets sur le Fjord",
-      "Gîte du Fjord"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "aventuriers"
-    ],
+    "hebergements": ["Auberge des Cévennes", "Chalets sur le Fjord", "Gîte du Fjord"],
+    "publics": ["familles", "ados", "aventuriers"],
     "lat": 48.235223,
     "lng": -70.20101
   },
@@ -43,17 +35,8 @@
       "Cours de Photo",
       "Rafting sur la Rivière"
     ],
-    "hebergements": [
-      "Le Germain Charlevoix",
-      "Auberge La Grande Maison",
-      "Maison Otis"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "amateurs de culture",
-      "aventuriers"
-    ],
+    "hebergements": ["Le Germain Charlevoix", "Auberge La Grande Maison", "Maison Otis"],
+    "publics": ["familles", "ados", "amateurs de culture", "aventuriers"],
     "lat": 47.444343,
     "lng": -70.505447
   },
@@ -72,16 +55,8 @@
       "Kayak Aventure",
       "Randonnée Photo"
     ],
-    "hebergements": [
-      "Auberge du Mange Grenouille",
-      "Gîte du Bic",
-      "Camping du Bic"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "aventuriers"
-    ],
+    "hebergements": ["Auberge du Mange Grenouille", "Gîte du Bic", "Camping du Bic"],
+    "publics": ["familles", "ados", "aventuriers"],
     "lat": 48.372095,
     "lng": -68.7112149
   },
@@ -97,15 +72,8 @@
       "Arbre en Arbre",
       "Ski de Soirée"
     ],
-    "hebergements": [
-      "St-Martin Bromont",
-      "Château-Bromont",
-      "Hôtel Castel & Spa Confort"
-    ],
-    "publics": [
-      "familles",
-      "ados"
-    ],
+    "hebergements": ["St-Martin Bromont", "Château-Bromont", "Hôtel Castel & Spa Confort"],
+    "publics": ["familles", "ados"],
     "lat": 45.3400228,
     "lng": -72.7076191
   },
@@ -124,16 +92,8 @@
       "Randonnée Extrême",
       "Photographie Nature"
     ],
-    "hebergements": [
-      "Hôtel Rimouski",
-      "Auberge du Portage",
-      "Motel de la Montagne"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "aventuriers"
-    ],
+    "hebergements": ["Hôtel Rimouski", "Auberge du Portage", "Motel de la Montagne"],
+    "publics": ["familles", "ados", "aventuriers"],
     "lat": 52.00017,
     "lng": -71.99907
   },
@@ -152,17 +112,8 @@
       "Planche à Pagaie",
       "Vélo de Montagne"
     ],
-    "hebergements": [
-      "Hostellerie Baie Bleue",
-      "Manoir Belle Plage",
-      "Auberge du Marchand"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "amateurs de culture",
-      "aventuriers"
-    ],
+    "hebergements": ["Hostellerie Baie Bleue", "Manoir Belle Plage", "Auberge du Marchand"],
+    "publics": ["familles", "ados", "amateurs de culture", "aventuriers"],
     "lat": 48.101464,
     "lng": -66.1140521
   },
@@ -181,17 +132,8 @@
       "Kayak Aventure",
       "Photo Safari"
     ],
-    "hebergements": [
-      "Auberge Radisson",
-      "Hôtel Matagami",
-      "Éco-gîtes de Matagami"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "amateurs de culture",
-      "aventuriers"
-    ],
+    "hebergements": ["Auberge Radisson", "Hôtel Matagami", "Éco-gîtes de Matagami"],
+    "publics": ["familles", "ados", "amateurs de culture", "aventuriers"],
     "lat": 51.1652956,
     "lng": -78.3004409
   },
@@ -211,17 +153,8 @@
       "Vélo de Montagne",
       "Kayak de Mer"
     ],
-    "hebergements": [
-      "Hôtel Baker",
-      "Auberge Gaspé",
-      "Motel Adams"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "amateurs de culture",
-      "aventuriers"
-    ],
+    "hebergements": ["Hôtel Baker", "Auberge Gaspé", "Motel Adams"],
+    "publics": ["familles", "ados", "amateurs de culture", "aventuriers"],
     "lat": 48.8832451,
     "lng": -64.3827751
   },
@@ -231,9 +164,7 @@
     "resume": "Découverte de Gaspesie et de ses attraits touristiques.",
     "activites": [],
     "hebergements": [],
-    "publics": [
-      "aventuriers"
-    ],
+    "publics": ["aventuriers"],
     "lat": 48.6146774,
     "lng": -66.0665726
   },
@@ -252,15 +183,8 @@
       "Location de Jet-Ski",
       "Parasailing"
     ],
-    "hebergements": [
-      "Pine Dale Motor Inn",
-      "Oakwood Resort",
-      "Colonial Hotel"
-    ],
-    "publics": [
-      "familles",
-      "ados"
-    ],
+    "hebergements": ["Pine Dale Motor Inn", "Oakwood Resort", "Colonial Hotel"],
+    "publics": ["familles", "ados"],
     "lat": 52.00017,
     "lng": -71.99907
   },
@@ -284,11 +208,7 @@
       "Fairmont Le Manoir Richelieu",
       "Auberge La Marmite"
     ],
-    "publics": [
-      "familles",
-      "ados",
-      "aventuriers"
-    ],
+    "publics": ["familles", "ados", "aventuriers"],
     "lat": 52.00017,
     "lng": -71.99907
   },
@@ -307,17 +227,8 @@
       "Vélo sur la Route Verte",
       "Atelier Photo"
     ],
-    "hebergements": [
-      "Auberge des Îles",
-      "Motel des Mariniers",
-      "Gîte des Coquillages"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "amateurs de culture",
-      "aventuriers"
-    ],
+    "hebergements": ["Auberge des Îles", "Motel des Mariniers", "Gîte des Coquillages"],
+    "publics": ["familles", "ados", "amateurs de culture", "aventuriers"],
     "lat": 47.4680992,
     "lng": -69.7909498
   },
@@ -325,19 +236,9 @@
     "slug": "kuururjuaq",
     "ville": "Kuururjuaq",
     "resume": "Découverte de Kuururjuaq et de ses attraits touristiques.",
-    "activites": [
-      "Mont D",
-      "Rivière Koroc",
-      "Randonnée Tundra"
-    ],
-    "hebergements": [
-      "Auberge Kuujjuaq",
-      "Camps de Base Kuururjuaq"
-    ],
-    "publics": [
-      "amateurs de culture",
-      "aventuriers"
-    ],
+    "activites": ["Mont D", "Rivière Koroc", "Randonnée Tundra"],
+    "hebergements": ["Auberge Kuujjuaq", "Camps de Base Kuururjuaq"],
+    "publics": ["amateurs de culture", "aventuriers"],
     "lat": 58.6972357,
     "lng": -65.9432771
   },
@@ -361,10 +262,7 @@
       "Comfort Inn Lévis",
       "Quality Inn & Suites Lévis"
     ],
-    "publics": [
-      "familles",
-      "ados"
-    ],
+    "publics": ["familles", "ados"],
     "lat": 46.8033114,
     "lng": -71.1778792
   },
@@ -380,16 +278,8 @@
       "Location de Kayak",
       "Escalade"
     ],
-    "hebergements": [
-      "Manoir Hovey",
-      "Estrimont Suites & Spa",
-      "Auberge du Grand Lac"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "aventuriers"
-    ],
+    "hebergements": ["Manoir Hovey", "Estrimont Suites & Spa", "Auberge du Grand Lac"],
+    "publics": ["familles", "ados", "aventuriers"],
     "lat": 45.3110418,
     "lng": -72.2256187
   },
@@ -405,16 +295,8 @@
       "Camp Ados Freeride",
       "Descente en Fat Bike"
     ],
-    "hebergements": [
-      "Hôtel Le Massif",
-      "Refuge Le Massif",
-      "Chalets du Massif"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "aventuriers"
-    ],
+    "hebergements": ["Hôtel Le Massif", "Refuge Le Massif", "Chalets du Massif"],
+    "publics": ["familles", "ados", "aventuriers"],
     "lat": 47.2796204,
     "lng": -70.5981718
   },
@@ -433,16 +315,8 @@
       "Randonnée Photo",
       "Zodiac Aventure"
     ],
-    "hebergements": [
-      "Auberge de l",
-      "Gîte Chez Marie",
-      "Chalets des Îles"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "aventuriers"
-    ],
+    "hebergements": ["Auberge de l", "Gîte Chez Marie", "Chalets des Îles"],
+    "publics": ["familles", "ados", "aventuriers"],
     "lat": 50.2911567,
     "lng": -64.0231369
   },
@@ -458,15 +332,8 @@
       "Jeux d",
       "Rallye-découverte"
     ],
-    "hebergements": [
-      "Manoir Montmorency",
-      "Auberge Baker",
-      "Comfort Inn Beauport"
-    ],
-    "publics": [
-      "familles",
-      "aventuriers"
-    ],
+    "hebergements": ["Manoir Montmorency", "Auberge Baker", "Comfort Inn Beauport"],
+    "publics": ["familles", "aventuriers"],
     "lat": 45.558436,
     "lng": -73.7216312
   },
@@ -474,19 +341,9 @@
     "slug": "montreal",
     "ville": "Montreal",
     "resume": "Découverte de Montreal et de ses attraits touristiques.",
-    "activites": [
-      "Vieux-Montréal",
-      "Mont Royal",
-      "Biodôme"
-    ],
-    "hebergements": [
-      "Fairmont Le Reine Elizabeth",
-      "Hôtel Nelligan",
-      "Le Plateau Hotel"
-    ],
-    "publics": [
-      "amateurs de culture"
-    ],
+    "activites": ["Vieux-Montréal", "Mont Royal", "Biodôme"],
+    "hebergements": ["Fairmont Le Reine Elizabeth", "Hôtel Nelligan", "Le Plateau Hotel"],
+    "publics": ["amateurs de culture"],
     "lat": 45.5031824,
     "lng": -73.5698065
   },
@@ -494,19 +351,9 @@
     "slug": "orleans",
     "ville": "Orleans",
     "resume": "Découverte de Orleans et de ses attraits touristiques.",
-    "activites": [
-      "Tour Gourmand de l",
-      "Location de Vélos",
-      "Vignobles et Cidreries"
-    ],
-    "hebergements": [
-      "Auberge La Grange de l",
-      "Le Domaine Orléans",
-      "Les Chalets de l"
-    ],
-    "publics": [
-      "aventuriers"
-    ],
+    "activites": ["Tour Gourmand de l", "Location de Vélos", "Vignobles et Cidreries"],
+    "hebergements": ["Auberge La Grange de l", "Le Domaine Orléans", "Les Chalets de l"],
+    "publics": ["aventuriers"],
     "lat": 46.9352057,
     "lng": -70.9452668
   },
@@ -525,16 +372,8 @@
       "Atelier Photo Nature",
       "Randonnée Nocturne"
     ],
-    "hebergements": [
-      "Riotel Percé",
-      "Hôtel La Normandie",
-      "Au Pic de l"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "aventuriers"
-    ],
+    "hebergements": ["Riotel Percé", "Hôtel La Normandie", "Au Pic de l"],
+    "publics": ["familles", "ados", "aventuriers"],
     "lat": 48.5222989,
     "lng": -64.2136423
   },
@@ -553,16 +392,8 @@
       "Kayak Aventure",
       "Vélo de Montagne"
     ],
-    "hebergements": [
-      "Auberge des Falaises",
-      "Gîte du Hameau",
-      "Chalets Port-au-Persil"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "aventuriers"
-    ],
+    "hebergements": ["Auberge des Falaises", "Gîte du Hameau", "Chalets Port-au-Persil"],
+    "publics": ["familles", "ados", "aventuriers"],
     "lat": 47.8083092,
     "lng": -69.8988341
   },
@@ -581,16 +412,8 @@
       "Kayak de Mer",
       "Pêche au Saumon"
     ],
-    "hebergements": [
-      "Hôtel Port-Cartier",
-      "Motel du Havre",
-      "Auberge de la Rivière"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "amateurs de culture"
-    ],
+    "hebergements": ["Hôtel Port-Cartier", "Motel du Havre", "Auberge de la Rivière"],
+    "publics": ["familles", "ados", "amateurs de culture"],
     "lat": 50.0187481,
     "lng": -66.8756913
   },
@@ -609,16 +432,8 @@
       "Surf sur le Lac",
       "Tyrolienne"
     ],
-    "hebergements": [
-      "Erie Beach Hotel",
-      "Dover Coast Resort",
-      "Lighthouse Festival Theatre Inn"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "amateurs de culture"
-    ],
+    "hebergements": ["Erie Beach Hotel", "Dover Coast Resort", "Lighthouse Festival Theatre Inn"],
+    "publics": ["familles", "ados", "amateurs de culture"],
     "lat": 52.00017,
     "lng": -71.99907
   },
@@ -639,10 +454,7 @@
       "Auberge Saint-Antoine",
       "Hôtel Le Germain Québec"
     ],
-    "publics": [
-      "familles",
-      "amateurs de culture"
-    ],
+    "publics": ["familles", "amateurs de culture"],
     "lat": 46.8137431,
     "lng": -71.2084061
   },
@@ -661,16 +473,8 @@
       "Kayak de Mer",
       "Escalade Intérieure"
     ],
-    "hebergements": [
-      "Hôtel Universel",
-      "Quality Inn",
-      "Auberge de la Pointe"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "amateurs de culture"
-    ],
+    "hebergements": ["Hôtel Universel", "Quality Inn", "Auberge de la Pointe"],
+    "publics": ["familles", "ados", "amateurs de culture"],
     "lat": 52.00017,
     "lng": -71.99907
   },
@@ -689,15 +493,8 @@
       "Vélo le long du Richelieu",
       "Cours de Voile"
     ],
-    "hebergements": [
-      "Les Huttes du Richelieu",
-      "Auberge du Richelieu",
-      "Gîte des Îles"
-    ],
-    "publics": [
-      "familles",
-      "ados"
-    ],
+    "hebergements": ["Les Huttes du Richelieu", "Auberge du Richelieu", "Gîte des Îles"],
+    "publics": ["familles", "ados"],
     "lat": 45.2067857,
     "lng": -73.2294969
   },
@@ -716,15 +513,8 @@
       "Vélo de Montagne",
       "Surf sur le Lac"
     ],
-    "hebergements": [
-      "Sandbanks Summer Village",
-      "The June Motel",
-      "Picton Harbour Inn"
-    ],
-    "publics": [
-      "familles",
-      "ados"
-    ],
+    "hebergements": ["Sandbanks Summer Village", "The June Motel", "Picton Harbour Inn"],
+    "publics": ["familles", "ados"],
     "lat": 52.00017,
     "lng": -71.99907
   },
@@ -743,15 +533,8 @@
       "Location de Jet-Ski",
       "Beach Volleyball"
     ],
-    "hebergements": [
-      "Sauble Beach Lodge",
-      "Beach Resort Sauble",
-      "Sauble River Marina"
-    ],
-    "publics": [
-      "familles",
-      "ados"
-    ],
+    "hebergements": ["Sauble Beach Lodge", "Beach Resort Sauble", "Sauble River Marina"],
+    "publics": ["familles", "ados"],
     "lat": 52.00017,
     "lng": -71.99907
   },
@@ -770,17 +553,8 @@
       "Randonnée des Falaises",
       "Planche à Pagaie"
     ],
-    "hebergements": [
-      "Hôtel Sept-Îles",
-      "Château Arnaud",
-      "Le Voyageur"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "amateurs de culture",
-      "aventuriers"
-    ],
+    "hebergements": ["Hôtel Sept-Îles", "Château Arnaud", "Le Voyageur"],
+    "publics": ["familles", "ados", "amateurs de culture", "aventuriers"],
     "lat": 50.2109579,
     "lng": -66.3790642
   },
@@ -796,17 +570,8 @@
       "Escalade Intérieure",
       "Skateparc"
     ],
-    "hebergements": [
-      "OTL Gouverneur Sherbrooke",
-      "Grand Times Hotel",
-      "Hôtel Le Président"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "amateurs de culture",
-      "aventuriers"
-    ],
+    "hebergements": ["OTL Gouverneur Sherbrooke", "Grand Times Hotel", "Hôtel Le Président"],
+    "publics": ["familles", "ados", "amateurs de culture", "aventuriers"],
     "lat": 45.403271,
     "lng": -71.889038
   },
@@ -825,16 +590,8 @@
       "Kayak sur le Lac",
       "Plongée en Apnée"
     ],
-    "hebergements": [
-      "Bruce Anchor Motel",
-      "Tobermory Princess Hotel",
-      "Cedar Vista Motel"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "aventuriers"
-    ],
+    "hebergements": ["Bruce Anchor Motel", "Tobermory Princess Hotel", "Cedar Vista Motel"],
+    "publics": ["familles", "ados", "aventuriers"],
     "lat": 52.00017,
     "lng": -71.99907
   },
@@ -853,17 +610,8 @@
       "Randonnée du Fjord",
       "Zodiac Aventure"
     ],
-    "hebergements": [
-      "Hôtel Tadoussac",
-      "Auberge La Galouïne",
-      "Motel Le Beluga"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "amateurs de culture",
-      "aventuriers"
-    ],
+    "hebergements": ["Hôtel Tadoussac", "Auberge La Galouïne", "Motel Le Beluga"],
+    "publics": ["familles", "ados", "amateurs de culture", "aventuriers"],
     "lat": 48.1433429,
     "lng": -69.7174574
   },
@@ -882,16 +630,8 @@
       "Beach Volleyball",
       "Surf sur la Baie"
     ],
-    "hebergements": [
-      "Wasaga Riverdocks Hotel",
-      "Beach Front Resort",
-      "Wasaga Motel"
-    ],
-    "publics": [
-      "familles",
-      "ados",
-      "amateurs de culture"
-    ],
+    "hebergements": ["Wasaga Riverdocks Hotel", "Beach Front Resort", "Wasaga Motel"],
+    "publics": ["familles", "ados", "amateurs de culture"],
     "lat": 52.00017,
     "lng": -71.99907
   }

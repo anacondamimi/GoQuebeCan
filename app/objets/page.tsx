@@ -1,7 +1,12 @@
 import { Metadata } from 'next';
-import Products from '@/components/Products';
 import TravelEssentials from '@/components/TravelEssentials';
 
+import BlogArticleVoyageHotel from '@/components/blogpost/BlogArticleVoyageHotel';
+import BlogArticleVoyageCamping from '@/components/blogpost/BlogArticleVoyageCamping';
+import BlogArticleVoyageAvion from '@/components/blogpost/BlogArticleVoyageAvion';
+import BlogArticleVoyageVoitureElectrique from '@/components/blogpost/BlogArticleVoyageVoitureElectrique';
+
+// eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
   title: 'Objets Indispensables pour Voyager au Québec et au Canada | GoQuebecan',
   description:
@@ -28,9 +33,15 @@ export default function ObjetsPage() {
       {/* ✅ Titre pour le SEO, invisible pour l'utilisateur */}
       <h1 className="sr-only">Objets Indispensables pour Voyager au Québec et au Canada</h1>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+        {/* Section planification rapide */}
         <TravelEssentials />
-        <Products />
+
+        {/* Articles objets utiles */}
+        <BlogArticleVoyageHotel />
+        <BlogArticleVoyageCamping />
+        <BlogArticleVoyageAvion />
+        <BlogArticleVoyageVoitureElectrique />
       </div>
     </main>
   );

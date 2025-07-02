@@ -1,5 +1,5 @@
 // 🔧 Auto-generated componentMap.ts
-
+import React from 'react';
 const componentMap: Record<string, () => Promise<React.ComponentType<any>>> = {
   'anse-saint-jean': () =>
     import('@/components/blogpost/BlogArticleAnseSaintJean').then((mod) => mod.default),
@@ -23,7 +23,7 @@ const componentMap: Record<string, () => Promise<React.ComponentType<any>>> = {
   kuururjuaq: () =>
     import('@/components/blogpost/BlogArticleKuururjuaq').then((mod) => mod.default),
   levis: () => import('@/components/blogpost/BlogArticleLevis').then((mod) => mod.default),
-  'location-v-r': () =>
+  'location-vr': () =>
     import('@/components/blogpost/BlogArticleLocationVR').then((mod) => mod.default),
   'magog-orford': () =>
     import('@/components/blogpost/BlogArticleMagogOrford').then((mod) => mod.default),

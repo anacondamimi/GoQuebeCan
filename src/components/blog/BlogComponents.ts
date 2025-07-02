@@ -35,6 +35,10 @@ import BlogArticleSingingSands from '@/components//blogpost/BlogArticleSingingSa
 import BlogArticleTadoussac from '@/components//blogpost/BlogArticleTadoussac';
 import BlogArticleWasagaBeach from '@/components//blogpost/BlogArticleWasagaBeach';
 import BlogArticleWaterParks from '@/components//blogpost/BlogArticleWaterParks';
+import BlogArticleVoyageHotel from '@/components/blogpost/BlogArticleVoyageHotel';
+import BlogArticleVoyageCamping from '@/components/blogpost/BlogArticleVoyageCamping';
+import BlogArticleVoyageAvion from '@/components/blogpost/BlogArticleVoyageAvion';
+import BlogArticleVoyageVoitureElectrique from '@/components/blogpost/BlogArticleVoyageVoitureElectrique';
 // On déclare que chaque slug (string) pointe vers un FunctionComponent React
 const componentMap: Record<string, FC> = {
   quebec: BlogArticleQuebec,
@@ -75,6 +79,10 @@ const componentMap: Record<string, FC> = {
   gaspesie: BlogArticleGaspesie,
   'port-au-persil': BlogArticlePortAuPersil,
   'location-vr': BlogArticleLocationVR,
+  'voyage-hotel': BlogArticleVoyageHotel,
+  'voyage-camping': BlogArticleVoyageCamping,
+  'voiture-electrique': BlogArticleVoyageVoitureElectrique,
+  'voyage-avion': BlogArticleVoyageAvion,
 };
 
 export default componentMap;

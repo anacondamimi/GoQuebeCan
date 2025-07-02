@@ -8,8 +8,12 @@ import AddProducteur from '@/components/admin/AddProducteur';
 import TravelEssentials from '@/components/TravelEssentials';
 import ComingSoonBanner from '@/components/ComingSoonBanner';
 
-// ✅ Chargements dynamiques client-only
-const Products = dynamic(() => import('@/components/Products'), { ssr: false });
+import BlogArticleVoyageHotel from '@/components/blogpost/BlogArticleVoyageHotel';
+import BlogArticleVoyageCamping from '@/components/blogpost/BlogArticleVoyageCamping';
+import BlogArticleVoyageAvion from '@/components/blogpost/BlogArticleVoyageAvion';
+import BlogArticleVoyageVoitureElectrique from '@/components/blogpost/BlogArticleVoyageVoitureElectrique';
+
+// Composants dynamiques
 const PopularVideos = dynamic(() => import('@/components/PopularVideos'), { ssr: false });
 const Offers = dynamic(() => import('@/components/Offers'), { ssr: false });
 const Chatbot = dynamic(() => import('@/components/ui/Chatbot'), { ssr: false });
@@ -40,8 +44,17 @@ export default function Home() {
           <PopularDestinations />
         </section>
 
-        <section id="objets_utiles">
-          <Products />
+        {/* ✅ Section Objets indispensables pour voyager */}
+        <section id="objets_utiles" className="py-12 px-4 bg-white">
+          <h2 className="text-2xl font-bold mb-6 text-center">
+            Produits indispensables pour voyager
+          </h2>
+          <div className="space-y-12">
+            <BlogArticleVoyageHotel />
+            <BlogArticleVoyageCamping />
+            <BlogArticleVoyageAvion />
+            <BlogArticleVoyageVoitureElectrique />
+          </div>
         </section>
 
         <section id="videos_populaires">

@@ -12,6 +12,7 @@ import LayoutWithBanner from './LayoutWithBanner'; // 🟢 Bon endroit pour le h
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
   title: 'GoQuebecan | Explorez le Québec et le Canada',
   metadataBase: new URL('https://GoQuebeCan.com'),

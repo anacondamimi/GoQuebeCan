@@ -324,7 +324,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   montreal: {
     title: 'Montreal',
     description: 'Découverte de Montreal et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/montreal.avif',
     activites: ['Vieux-Montréal', 'Mont Royal', 'Biodôme'],
     hebergements: ['Fairmont Le Reine Elizabeth', 'Hôtel Nelligan', 'Le Plateau Hotel'],
     publics: ['amateurs de culture'],
@@ -340,7 +340,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   perce: {
     title: 'Perce',
     description: 'Découverte de Perce et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/perce.avif',
     activites: [
       'Croisière aux Baleines',
       'Île Bonaventure',

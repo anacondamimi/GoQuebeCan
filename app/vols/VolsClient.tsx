@@ -68,12 +68,12 @@ export default function VolsClient() {
             />
           </a>
           <img
-  src="https://imp.pxf.io/i/6175749/2240413/25450"
-  alt=""
-  width="1"
-  height="1"
-  style={{ position: 'absolute', visibility: 'hidden' }}
-/>
+            src="https://imp.pxf.io/i/6175749/2240413/25450"
+            alt=""
+            width="1"
+            height="1"
+            style={{ position: 'absolute', visibility: 'hidden' }}
+          />
 
           <p className="mt-2 text-sm text-gray-500">
             Découvrez la France avec French Bee — Cliquez sur la bannière pour réserver.
