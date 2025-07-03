@@ -71,7 +71,6 @@ const nextConfig = {
     return config;
   },
 
-  output: 'standalone', // optimisation Vercel + Docker
 };
 
 export default nextConfig;

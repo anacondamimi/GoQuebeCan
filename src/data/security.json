@@ -1,0 +1,29 @@
+[
+  {
+    "asin": "B00ID8HBK6",
+    "title": "Cadenas TSA Master Lock",
+    "category": "security",
+    "description": "Cadenas à combinaison approuvé TSA pour sécuriser vos valises en voyage.",
+    "price": "$14.99 CAD",
+    "image": "https://m.media-amazon.com/images/I/71W1o7tDLxL._AC_SL1500_.jpg",
+    "link": "https://www.amazon.ca/dp/B00ID8HBK6?tag=tonaffiliation"
+  },
+  {
+    "asin": "B08FCX7L2L",
+    "title": "Porte-carte RFID minimaliste",
+    "category": "security",
+    "description": "Protège vos cartes bancaires et passeport contre le vol de données.",
+    "price": "$24.99 CAD",
+    "image": "https://m.media-amazon.com/images/I/61zFqZUK7dL._AC_SL1500_.jpg",
+    "link": "https://www.amazon.ca/dp/B08FCX7L2L?tag=tonaffiliation"
+  },
+  {
+    "asin": "B07QGHZVZ2",
+    "title": "Caméra Wi-Fi intérieure TP-Link",
+    "category": "security",
+    "description": "Surveillez votre maison pendant vos absences depuis votre mobile.",
+    "price": "$39.99 CAD",
+    "image": "https://m.media-amazon.com/images/I/61CwYF6UuhL._AC_SL1500_.jpg",
+    "link": "https://www.amazon.ca/dp/B07QGHZVZ2?tag=tonaffiliation"
+  }
+]

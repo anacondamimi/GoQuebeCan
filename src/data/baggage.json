@@ -1,0 +1,29 @@
+[
+{
+    "asin": "B07P6X3VFW",
+    "title": "Sac de compression voyage",
+    "category": "baggage",
+    "description": "Optimise l'espace dans votre valise et organise vos vêtements facilement.",
+    "price": "$29.99 CAD",
+    "image": "https://m.media-amazon.com/images/I/81hszKGrO+L._AC_SL1500_.jpg",
+    "link": "https://www.amazon.ca/dp/B07P6X3VFW?tag=tonaffiliation"
+  },
+  {
+    "asin": "B07H8TWBRT",
+    "title": "Organisateur de valise (packing cubes)",
+    "category": "baggage",
+    "description": "Rangez et classez vos vêtements pour un voyage organisé.",
+    "price": "$19.99 CAD",
+    "image": "https://m.media-amazon.com/images/I/81niG7O7dxL._AC_SL1500_.jpg",
+    "link": "https://www.amazon.ca/dp/B07H8TWBRT?tag=tonaffiliation"
+  },
+  {
+    "asin": "B01N7T60S8",
+    "title": "Balance de bagage électronique",
+    "category": "baggage",
+    "description": "Évitez les frais d'excédent grâce à cette balance compacte et précise.",
+    "price": "$15.99 CAD",
+    "image": "https://m.media-amazon.com/images/I/71YxTWugmNL._AC_SL1500_.jpg",
+    "link": "https://www.amazon.ca/dp/B01N7T60S8?tag=tonaffiliation"
+  }
+]

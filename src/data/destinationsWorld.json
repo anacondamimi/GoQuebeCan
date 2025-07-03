@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "cuba",
+    "title": "Séjour tout-inclus à Cuba",
+    "image": "/images/destinations/cuba.avif",
+    "description": "Profitez d'une semaine au soleil dans les Caraïbes pour échapper à l'hiver canadien.",
+    "category": "sejours-sud",
+    "region": "Caraïbes"
+  },
+  {
+    "slug": "paris",
+    "title": "Explorer Paris",
+    "image": "/images/destinations/paris.avif",
+    "description": "Découvrez la Ville Lumière avec nos bons plans et astuces pour économiser.",
+    "category": "europe",
+    "region": "Europe"
+  },
+  {
+    "slug": "tokyo",
+    "title": "Voyager à Tokyo",
+    "image": "/images/destinations/tokyo.avif",
+    "description": "Explorez Tokyo et le Japon sans vous ruiner grâce à nos conseils pratiques.",
+    "category": "asie",
+    "region": "Asie"
+  }
+]

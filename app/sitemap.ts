@@ -1,78 +1,53 @@
-import { MetadataRoute } from 'next';
+// app/sitemap.ts
 
-// Liste des articles de blog
+import { MetadataRoute } from 'next';
+import destinations from '@/data/destinations.json';
+
+// Slugs d'articles (tu peux ajouter ici facilement si besoin)
 const blogPosts = [
-  { slug: 'Quebec' },
-  { slug: 'gaspesie' },
-  { slug: 'montreal' },
-  { slug: 'charlevoix' },
-  { slug: 'tadoussac' },
-  { slug: 'perce' },
-  { slug: 'magog-orford' },
-  { slug: 'wasaga-beach' },
-  { slug: 'eeyou-istchee' },
-  { slug: 'forillon' },
-  { slug: 'carleton' },
-  { slug: 'baie-saint-paul' },
-  { slug: 'hautes-gorges' },
-  { slug: 'massif' },
-  { slug: 'bromont-granby' },
-  { slug: 'sherbrooke' },
-  { slug: 'riviere-du-loup' },
-  { slug: 'kamouraska' },
-  { slug: 'mingan' },
-  { slug: 'sept-iles' },
-  { slug: 'port-cartier' },
-  { slug: 'sauble-beach' },
-  { slug: 'sandbanks' },
-  { slug: 'grand-bend' },
-  { slug: 'port-dover' },
-  { slug: 'singing-sands' },
-  { slug: 'bic' },
-  { slug: 'kuururjuaq' },
-  { slug: 'levis' },
-  { slug: 'anse-saint-jean' },
-  { slug: 'port-au-persil' },
-  { slug: 'canyon' },
-  { slug: 'sabrevois' },
-  { slug: 'orleans' },
-  { slug: 'parc-aquatique' },
-  { slug: 'montmorency' },
+  'quebec', 'gaspesie', 'montreal', 'charlevoix', 'tadoussac', 'perce',
+  'magog-orford', 'wasaga-beach', 'eeyou-istchee', 'forillon', 'carleton',
+  'baie-saint-paul', 'hautes-gorges', 'massif', 'bromont-granby', 'sherbrooke',
+  'riviere-du-loup', 'kamouraska', 'mingan', 'sept-iles', 'port-cartier',
+  'sauble-beach', 'sandbanks', 'grand-bend', 'port-dover', 'singing-sands',
+  'bic', 'kuururjuaq', 'levis', 'anse-saint-jean', 'port-au-persil', 'canyon',
+  'sabrevois', 'orleans', 'parc-aquatique', 'montmorency'
 ];
 
-// Liste des pages principales
+// Pages principales
 const mainPages = [
-  { path: '/' },
-  { path: '/destinations' },
-  { path: '/carte' },
-  { path: '/vols' },
-  { path: '/experiences' },
-  { path: '/camping' },
-  { path: '/objets' },
-  { path: '/videos' },
-  { path: '/vr' },
-  { path: '/blog' },
+  '/', '/destinations', '/carte', '/vols', '/experiences', '/camping',
+  '/objets', '/videos', '/vr', '/blog', '/planificateur', '/contact',
+  '/notre-mission', '/conditions-utilisation', '/confidentialite', '/mentions-legales', '/accessibilite'
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://goquebecan.com';
+  const baseUrl = 'https://www.goquebecan.com';
   const currentDate = new Date().toISOString();
 
-  // Pages principales
-  const mainRoutes = mainPages.map((page) => ({
-    url: `${baseUrl}${page.path}`,
+  // Génération des pages principales
+  const mainRoutes = mainPages.map(path => ({
+    url: `${baseUrl}${path}`,
     lastModified: currentDate,
-    changeFrequency: page.path === '/' ? 'weekly' : ('monthly' as 'weekly' | 'monthly'),
-    priority: page.path === '/' ? 1 : 0.8,
+    changeFrequency: path === '/' ? 'weekly' : ('monthly' as 'weekly' | 'monthly'),
+    priority: path === '/' ? 1 : 0.8,
   }));
 
-  // Pages de blog
-  const blogRoutes = blogPosts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
+  // Génération des articles de blog
+  const blogRoutes = blogPosts.map(slug => ({
+    url: `${baseUrl}/blog/${slug}`,
     lastModified: currentDate,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
 
-  return [...mainRoutes, ...blogRoutes];
+  // Génération des destinations à partir de destinations.json
+  const destinationRoutes = destinations.map(dest => ({
+    url: `${baseUrl}/destinations/${dest.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...mainRoutes, ...blogRoutes, ...destinationRoutes];
 }
