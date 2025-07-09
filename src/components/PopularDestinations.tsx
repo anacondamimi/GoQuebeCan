@@ -269,62 +269,54 @@ const regions: Region[] = [
 export default function PopularDestinations() {
   return (
     <section id="destinations" className="bg-warm-50 py-20">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">
-          Destinations Populaires au Québec et au Canada
-        </h2>
-        <p className="mt-4 text-lg text-gray-700">
-          Explorez nos guides détaillés des plus beaux endroits à visiter, avec conseils d'experts,
-          hébergements recommandés et activités incontournables.
-        </p>
+      <div className="max-w-6xl mx-auto px-4">
+        {regions.map((region) => (
+          <div key={region.title} className="mb-16 last:mb-0">
+            {/* Titre de région + icône */}
+            <div className="flex items-center gap-3 mb-8">
+              {region.title === 'Gaspésie' ? (
+                <Compass className="h-8 w-8 text-indigo-600" />
+              ) : region.title === 'Ville de Québec et sa région' ? (
+                <MapPin className="h-8 w-8 text-indigo-600" />
+              ) : (
+                <Waves className="h-8 w-8 text-indigo-600" />
+              )}
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">{region.title}</h3>
+            </div>
+
+            {/* Grille de destinations */}
+            <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {region.destinations.map((d) => (
+                <Link
+                  key={d.name}
+                  href={d.blogId ? `/blog/${d.blogId}` : '#'}
+                  className={`group bg-white rounded-xl shadow-card hover:shadow-card-hover overflow-hidden transition-shadow ${
+                    d.blogId ? 'cursor-pointer' : 'cursor-default'
+                  }`}
+                >
+                  <div className="relative aspect-w-16 aspect-h-9">
+                    <Image
+                      src={d.image}
+                      alt={d.name}
+                      fill
+                      sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-300 rounded-xl"
+                      priority
+                    />
+                  </div>
+
+                  <div className="p-5">
+                    <h4 className="text-lg font-display font-semibold text-gray-900 mb-1">
+                      {d.name}
+                    </h4>
+                    <p className="text-sm text-gray-600">{d.description}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-
-      {regions.map((region) => (
-        <div key={region.title} className="mb-16 last:mb-0">
-          {/* Titre de région + icône */}
-          <div className="flex items-center gap-3 mb-8">
-            {region.title === 'Gaspésie' ? (
-              <Compass className="h-8 w-8 text-indigo-600" />
-            ) : region.title === 'Ville de Québec et sa région' ? (
-              <MapPin className="h-8 w-8 text-indigo-600" />
-            ) : (
-              <Waves className="h-8 w-8 text-indigo-600" />
-            )}
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">{region.title}</h3>
-          </div>
-
-          {/* Grille de destinations */}
-          <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {region.destinations.map((d) => (
-              <Link
-                key={d.name}
-                href={d.blogId ? `/blog/${d.blogId}` : '#'}
-                className={`group bg-white rounded-xl shadow-card hover:shadow-card-hover overflow-hidden transition-shadow ${
-                  d.blogId ? 'cursor-pointer' : 'cursor-default'
-                }`}
-              >
-                <div className="relative aspect-w-16 aspect-h-9">
-                  <Image
-                    src={d.image}
-                    alt={d.name}
-                    fill
-                    sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-300 rounded-xl"
-                    priority
-                  />
-                </div>
-
-                <div className="p-5">
-                  <h4 className="text-lg font-display font-semibold text-gray-900 mb-1">
-                    {d.name}
-                  </h4>
-                  <p className="text-sm text-gray-600">{d.description}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      ))}
     </section>
   );
 }

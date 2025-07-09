@@ -1,6 +1,6 @@
 // 🔧 Auto-generated componentMap.ts
 import React from 'react';
-const componentMap: Record<string, () => Promise<React.ComponentType<any>>> = {
+const componentMap: Record<string, () => Promise<React.ComponentType<unknown>>> = {
   'anse-saint-jean': () =>
     import('@/components/blogpost/BlogArticleAnseSaintJean').then((mod) => mod.default),
   'baie-saint-paul': () =>
@@ -58,5 +58,5 @@ const componentMap: Record<string, () => Promise<React.ComponentType<any>>> = {
   'parc-aquatique': () =>
     import('@/components/blogpost/BlogArticleWaterParks').then((mod) => mod.default),
 };
-
+export const slugs: string[] = Object.keys(componentMap);
 export default componentMap;

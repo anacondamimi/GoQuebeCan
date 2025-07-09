@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { supabase } from '@/components/lib/supabase';
 import { v4 as uuidv4 } from 'uuid';
-import html2pdf from 'html2pdf.js';
 import { saveFeedback } from '@/components/lib/saveFeedback';
 
 interface Step {
@@ -56,16 +55,19 @@ export default function SharedItineraryPage() {
     else console.error('Erreur duplication:', error.message);
   }
 
-  const handleExportPDF = () => {
-    const content = document.getElementById('pdf-section');
-    if (content) {
-      html2pdf(content, {
-        margin: 0.5,
-        filename: `itineraire-${slug}.pdf`,
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-      });
+  const handleExportPDF = async () => {
+    if (typeof window !== 'undefined') {
+      const html2pdf = (await import('html2pdf.js')).default;
+      const content = document.getElementById('pdf-section');
+      if (content) {
+        html2pdf(content, {
+          margin: 0.5,
+          filename: `itineraire-${slug}.pdf`,
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+        });
+      }
     }
   };
 
@@ -88,8 +90,10 @@ export default function SharedItineraryPage() {
         Lien :<code className="text-sm bg-gray-100 px-2 py-1 rounded ml-2">{slug}</code>
         <button
           onClick={() => {
-            navigator.clipboard.writeText(window.location.href);
-            alert('🔗 Lien copié dans le presse-papier');
+            if (typeof window !== 'undefined') {
+              navigator.clipboard.writeText(window.location.href);
+              alert('🔗 Lien copié dans le presse-papier');
+            }
           }}
           className="ml-2 px-3 py-1 text-sm bg-gray-200 hover:bg-gray-300 rounded"
         >

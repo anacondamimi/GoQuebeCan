@@ -15,8 +15,12 @@ export async function saveItinerary(data: ItineraryStep[], title = '') {
     }
 
     return slug;
-  } catch (err: any) {
+  } catch (err) {
+    if (err instanceof Error) {
+      console.error('❌ Erreur réseau ou Supabase :', err);
+      throw new Error('Erreur sauvegarde : ' + err.message);
+    }
     console.error('❌ Erreur réseau ou Supabase :', err);
-    throw new Error('Erreur sauvegarde : ' + (err.message || 'Erreur inconnue'));
+    throw new Error('Erreur sauvegarde : erreur inconnue');
   }
 }

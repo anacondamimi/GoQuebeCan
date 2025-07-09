@@ -1,27 +1,50 @@
-// Amélioration UX pour ton composant ItineraryPlanner
 'use client';
 import React, { useState } from 'react';
 import MapboxAutocomplete from '@/components/MapboxAutocomplete';
-import MapWithRouting from './MapWithRouting';
-import ProducersMap from './ProducersMapFiltrable';
-import ItinerarySummary from './ItinerarySummary';
+import dynamic from 'next/dynamic';
+
+// Imports dynamiques pour éviter les erreurs SSR
+const ProducersMap = dynamic(() => import('./ProducersMapFiltrable'), { ssr: false });
+const MapWithRouting = dynamic(() => import('@/components/MapWithRouting'), { ssr: false });
+
+// ✅ CORRECTION: Import dynamique d'ItinerarySummary
+const ItinerarySummary = dynamic(() => import('./ItinerarySummary'), {
+  ssr: false,
+  loading: () => (
+    <div className="animate-pulse">
+      <div className="h-32 bg-gray-200 rounded-lg mb-4"></div>
+    </div>
+  ),
+});
+
 import { suggestNearbyProducers } from '@/utils/suggestNearbyProducers';
-import { saveItinerary } from './lib/saveItinerary';
+import { saveItinerary } from '@/utils/itineraryStorage';
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
+
+interface Producer {
+  id: string;
+  name: string;
+  lat: number;
+  lng: number;
+  type?: string;
+  website?: string | null;
+}
 
 export default function ItineraryPlanner() {
   const [startInput, setStartInput] = useState('');
   const [endInput, setEndInput] = useState('');
   const [start, setStart] = useState<[number, number] | null>(null);
   const [end, setEnd] = useState<[number, number] | null>(null);
-  const [tempSteps, setTempSteps] = useState<string[]>([]);
+  const [tempSteps, setTempSteps] = useState<
+    { id: string; name: string; coordinates: [number, number] }[]
+  >([]);
   const [steps, setSteps] = useState<{ id: string; name: string; coordinates: [number, number] }[]>(
     []
   );
   const [waypoints, setWaypoints] = useState<[number, number][]>([]);
   const [producerSuggestions, setProducerSuggestions] = useState<
-    { stepIndex: number; producer: any; distance: number }[]
+    { stepIndex: number; producer: Producer; distance: number }[]
   >([]);
   const [formError, setFormError] = useState('');
 
@@ -31,10 +54,9 @@ export default function ItineraryPlanner() {
 
   const handleGeocodeAll = () => {
     if (!start || !end || !startInput.trim() || !endInput.trim()) {
-      setFormError('Merci de remplir un point de départ et un point d’arrivée valides.');
+      setFormError("Merci de remplir un point de départ et un point d'arrivée valides.");
       return;
     }
-
     setFormError('');
 
     const coords: [number, number][] = [];
@@ -43,8 +65,9 @@ export default function ItineraryPlanner() {
     coords.push(start);
     itinerary.push({ id: 'start', name: startInput || 'Départ', coordinates: start });
 
-    for (const [index, city] of tempSteps.entries()) {
-      itinerary.push({ id: `step-${index}`, name: city, coordinates: [0, 0] });
+    for (const step of tempSteps) {
+      coords.push(step.coordinates);
+      itinerary.push(step);
     }
 
     coords.push(end);
@@ -52,12 +75,28 @@ export default function ItineraryPlanner() {
 
     setWaypoints(coords.slice(1, coords.length - 1));
     setSteps(itinerary);
-    setProducerSuggestions(suggestNearbyProducers(coords));
+
+    setProducerSuggestions(
+      suggestNearbyProducers(coords) as {
+        stepIndex: number;
+        producer: Producer;
+        distance: number;
+      }[]
+    );
+
     saveItinerary(itinerary);
   };
 
   const handleClearItinerary = () => {
-    localStorage.removeItem('itinerary');
+    // ✅ CORRECTION: Vérification plus robuste
+    if (typeof window !== 'undefined' && window.localStorage) {
+      try {
+        localStorage.removeItem('itinerary');
+        alert('🗑️ Ton itinéraire a été effacé.');
+      } catch (error) {
+        console.error('Erreur lors de la suppression:', error);
+      }
+    }
     setStart(null);
     setEnd(null);
     setStartInput('');
@@ -66,7 +105,6 @@ export default function ItineraryPlanner() {
     setSteps([]);
     setWaypoints([]);
     setProducerSuggestions([]);
-    alert('🗑️ Ton itinéraire a été effacé.');
   };
 
   const handleSwapPoints = () => {
@@ -123,8 +161,13 @@ export default function ItineraryPlanner() {
             placeholder="Ex : Trois-Rivières"
             token={MAPBOX_TOKEN}
             onSelect={(coords, label) => {
-              if (!tempSteps.includes(label)) {
-                setTempSteps((prev) => [...prev, label]);
+              if (!tempSteps.some((step) => step.name === label)) {
+                const newStep = {
+                  id: `step-${tempSteps.length}`,
+                  name: label,
+                  coordinates: coords,
+                };
+                setTempSteps((prev) => [...prev, newStep]);
                 setWaypoints((prev) => [...prev, coords]);
               }
             }}
@@ -133,19 +176,10 @@ export default function ItineraryPlanner() {
           {tempSteps.length > 0 && (
             <ul className="list-disc list-inside mt-2 text-sm text-gray-700">
               {tempSteps.map((step, i) => (
-                <li key={i}>{step}</li>
+                <li key={i}>{step.name}</li>
               ))}
             </ul>
           )}
-        </div>
-
-        <div className="bg-gray-100 p-4 rounded text-sm text-gray-700">
-          <p>
-            <strong>Résumé :</strong>
-          </p>
-          <p>Départ : {startInput || 'Non défini'}</p>
-          <p>Arrivée : {endInput || 'Non défini'}</p>
-          {tempSteps.length > 0 && <p>Étapes : {tempSteps.join(', ')}</p>}
         </div>
 
         <button
@@ -160,23 +194,13 @@ export default function ItineraryPlanner() {
         <MapWithRouting
           points={[start, ...waypoints, end]}
           onAddDestinationStep={(name, coords) => {
-            const newStep = {
-              id: `step-${steps.length}`,
-              name,
-              coordinates: coords,
-            };
+            const newStep = { id: `step-${steps.length}`, name, coordinates: coords };
             setSteps((prev) => {
               const updated = [...prev];
               updated.splice(updated.length - 1, 0, newStep);
               return updated;
             });
-
-            setWaypoints((prev) => {
-              const updated = [...prev];
-              updated.splice(updated.length, 0, coords);
-              return updated;
-            });
-
+            setWaypoints((prev) => [...prev, coords]);
             alert(`✅ ${name} a été ajoutée à ton itinéraire !`);
           }}
         />

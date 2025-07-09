@@ -125,7 +125,7 @@ export default function BlogArticleVoyageVoitureElectrique() {
           <h2 className="text-3xl font-bold mb-8">🛠️ Détails des Meilleurs Produits 2025</h2>
           <h3 className="text-2xl font-semibold">🔌 Lectron Tesla to J1772 Adapter</h3>
           <Image
-            src="/images/lectron-adapter.jpg"
+            src="/images/default.avif"
             alt="Adaptateur Lectron Tesla-J1772"
             width={600}
             height={400}
@@ -153,7 +153,7 @@ export default function BlogArticleVoyageVoitureElectrique() {
         <section>
           <h3 className="text-2xl font-semibold">🔌 ChargePoint Home Flex Cable</h3>
           <Image
-            src="/images/chargepoint-cable.jpg"
+            src="/images/default.avif"
             alt="Câble de recharge ChargePoint"
             width={600}
             height={400}
@@ -218,7 +218,7 @@ export default function BlogArticleVoyageVoitureElectrique() {
         <section className="mb-12">
           <h3 className="text-2xl font-semibold">🔋 Jackery Explorer 300</h3>
           <Image
-            src="/images/jackery-300.jpg"
+            src="/images/default.avif"
             alt="Batterie portable Jackery Explorer 300"
             width={600}
             height={400}
@@ -241,7 +241,7 @@ export default function BlogArticleVoyageVoitureElectrique() {
         <section>
           <h3 className="text-2xl font-semibold">🔋 EcoFlow River 2</h3>
           <Image
-            src="/images/ecoflow-river2.jpg"
+            src="/images/default.avif"
             alt="Batterie portable EcoFlow River 2"
             width={600}
             height={400}

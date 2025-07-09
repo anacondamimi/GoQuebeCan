@@ -157,7 +157,7 @@ export default function BlogArticleVoyageCamping() {
           <h3 className="text-2xl font-bold text-gray-800 mb-2">Tente MSR Elixir 2</h3>
           <figure className="mb-4">
             <img
-              src="/images/msr-elixir.jpg"
+              src="/images/msr-elixir.avif"
               alt="Tente MSR Elixir 2 installée sur un emplacement de camping"
               className="rounded-xl w-full h-auto"
             />
@@ -202,7 +202,7 @@ export default function BlogArticleVoyageCamping() {
           <h3 className="text-2xl font-bold text-gray-800 mb-2">Tente Coleman Sundome 3</h3>
           <figure className="mb-4">
             <img
-              src="/images/coleman-sundome.jpg"
+              src="/images/default.avif"
               alt="Tente Coleman Sundome 3 installée sur un emplacement de camping"
               className="rounded-xl w-full h-auto"
             />

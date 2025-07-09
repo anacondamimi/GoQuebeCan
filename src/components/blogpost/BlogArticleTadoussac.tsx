@@ -49,7 +49,7 @@ const hotels = [
       "À seulement 100 mètres du centre de Tadoussac. Idéal pour rejoindre les départs d'excursion aux baleines à pied.",
     price: 'À partir de ~135$/nuit (selon la saison)',
     link: 'https://www.booking.com/hotel/ca/le-beluga.fr.html',
-    image: '/images/destinations/hotels/motel beluga.avif',
+    image: '/images/destinations/hotels/motel-beluga.avif',
   },
   {
     name: 'Auberge du Café chez Sam',

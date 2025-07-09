@@ -16,5 +16,6 @@ export default function DropdownPortal({ children }: DropdownPortalProps) {
 
   if (!mounted) return null;
 
+  if (typeof document === 'undefined') return null;
   return createPortal(children, document.body);
 }

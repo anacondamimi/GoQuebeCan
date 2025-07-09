@@ -22,13 +22,18 @@ export default function LayoutWithBanner({ children }: { children: ReactNode }) 
 
   // Optionnel : ces fonctions peuvent être définies ici si besoin
   const scrollToSection = (id: string) => {
-    const section = document.getElementById(id);
-    if (section) section.scrollIntoView({ behavior: 'smooth' });
+    if (typeof document !== 'undefined') {
+      const section = document.getElementById(id);
+
+      if (section) section.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const openChat = () => {
-    const chatEvent = new CustomEvent('openChat');
-    window.dispatchEvent(chatEvent);
+    if (typeof window !== 'undefined') {
+      const chatEvent = new CustomEvent('openChat');
+      window.dispatchEvent(chatEvent);
+    }
   };
 
   return (

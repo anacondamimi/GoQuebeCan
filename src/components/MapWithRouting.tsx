@@ -1,11 +1,14 @@
 'use client';
+
 import React, { useEffect, useState, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import L, { Icon } from 'leaflet';
+import * as L from 'leaflet'; // ✅ Utiliser * as L pour TypeScript
 import 'leaflet/dist/leaflet.css';
+import 'leaflet-routing-machine';
 import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
+import 'lrm-mapbox'; // ✅ Extension Leaflet Routing Machine pour Mapbox
 import Link from 'next/link';
-import destinations from '@/data/destinations.json';
+import destinations from '@/data/destinationsWithCoords.json';
 
 interface Producer {
   id: string;
@@ -13,7 +16,7 @@ interface Producer {
   lat: number;
   lng: number;
   type?: string;
-  website?: string;
+  website?: string | null;
 }
 
 interface Props {
@@ -24,7 +27,8 @@ interface Props {
 
 export default function MapWithRouting({ points, onAddDestinationStep, producers = [] }: Props) {
   const mapRef = useRef<L.Map | null>(null);
-  const routingRef = useRef<any>(null);
+  const routingRef = useRef<L.Routing.RoutingControl | null>(null);
+
   const [distanceKm, setDistanceKm] = useState<number | null>(null);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([
     'apple',
@@ -35,14 +39,14 @@ export default function MapWithRouting({ points, onAddDestinationStep, producers
   ]);
   const [showProducers, setShowProducers] = useState(true);
 
-  const categoryIcons: Record<string, Icon> = {
-    apple: new Icon({ iconUrl: '/icons/apple.png', iconSize: [28, 28] }),
-    grape: new Icon({ iconUrl: '/icons/grapes.png', iconSize: [28, 28] }),
-    cheese: new Icon({ iconUrl: '/icons/cheese.png', iconSize: [28, 28] }),
-    berry: new Icon({ iconUrl: '/icons/berry.png', iconSize: [28, 28] }),
-    beer: new Icon({ iconUrl: '/icons/beer.png', iconSize: [28, 28] }),
-    farm: new Icon({ iconUrl: '/icons/farm.png', iconSize: [28, 28] }),
-    default: new Icon({ iconUrl: '/icons/farm.png', iconSize: [28, 28] }),
+  const categoryIcons: Record<string, L.Icon> = {
+    apple: new L.Icon({ iconUrl: '/icons/apple.png', iconSize: [28, 28] }),
+    grape: new L.Icon({ iconUrl: '/icons/grapes.png', iconSize: [28, 28] }),
+    cheese: new L.Icon({ iconUrl: '/icons/cheese.png', iconSize: [28, 28] }),
+    berry: new L.Icon({ iconUrl: '/icons/berry.png', iconSize: [28, 28] }),
+    beer: new L.Icon({ iconUrl: '/icons/beer.png', iconSize: [28, 28] }),
+    farm: new L.Icon({ iconUrl: '/icons/farm.png', iconSize: [28, 28] }),
+    default: new L.Icon({ iconUrl: '/icons/farm.png', iconSize: [28, 28] }),
   };
 
   function detectCategory(prod: Producer): string {
@@ -71,26 +75,31 @@ export default function MapWithRouting({ points, onAddDestinationStep, producers
   });
 
   useEffect(() => {
-    if (!mapRef.current || points.length < 2) return;
+    if (!mapRef.current || points.length < 2 || !L.Routing) return;
 
     if (routingRef.current) {
       mapRef.current.removeControl(routingRef.current);
     }
 
     const waypoints = points.map((p) => L.latLng(p[0], p[1]));
+    console.log('Waypoints:', waypoints);
 
-    const routingControl = (L as any).Routing.control({
+    const routingControl: L.Routing.RoutingControl = L.Routing.control({
       waypoints,
+      router: L.Routing.mapbox(process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string),
       routeWhileDragging: false,
       show: false,
       createMarker: () => null,
     });
 
-    routingControl.on('routesfound', (e: any) => {
-      const route = e.routes[0];
-      const distanceMeters = route.summary.totalDistance;
-      setDistanceKm(parseFloat((distanceMeters / 1000).toFixed(1)));
-    });
+    routingControl.on(
+      'routesfound',
+      (e: { routes: Array<{ summary: { totalDistance: number; totalTime: number } }> }) => {
+        const route = e.routes[0];
+        const distanceMeters = route.summary.totalDistance;
+        setDistanceKm(parseFloat((distanceMeters / 1000).toFixed(1)));
+      }
+    );
 
     routingControl.addTo(mapRef.current);
     routingRef.current = routingControl;
@@ -182,37 +191,35 @@ export default function MapWithRouting({ points, onAddDestinationStep, producers
                 </Marker>
               ))}
 
-          {destinations.map(
-            (d, idx) =>
-              typeof d.lat === 'number' &&
-              typeof d.lng === 'number' && (
-                <Marker key={`dest-${idx}`} position={[d.lat, d.lng]} icon={questionIcon}>
-                  <Popup>
-                    <div className="text-sm space-y-2">
-                      <div>
-                        <strong>{d.ville}</strong>
-                        <br />
-                        <Link href={`/blog/${d.slug}`} className="text-blue-600 underline">
-                          Lire l'article
-                        </Link>
-                      </div>
-                      <div>
-                        <button
-                          onClick={() => {
-                            const coords: [number, number] = [d.lat, d.lng];
-                            if (mapRef.current) mapRef.current.setView(coords, 8);
-                            onAddDestinationStep?.(d.ville, coords);
-                          }}
-                          className="text-sm bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700"
-                        >
-                          ✅ Ajouter à l’itinéraire
-                        </button>
-                      </div>
+          {destinations
+            .filter((d) => typeof d.lat === 'number' && typeof d.lng === 'number')
+            .map((d, idx) => (
+              <Marker key={`dest-${idx}`} position={[d.lat, d.lng]} icon={questionIcon}>
+                <Popup>
+                  <div className="text-sm space-y-2">
+                    <div>
+                      <strong>{d.ville}</strong>
+                      <br />
+                      <Link href={`/blog/${d.slug}`} className="text-blue-600 underline">
+                        Lire l'article
+                      </Link>
                     </div>
-                  </Popup>
-                </Marker>
-              )
-          )}
+                    <div>
+                      <button
+                        onClick={() => {
+                          const coords: [number, number] = [d.lat, d.lng];
+                          if (mapRef.current) mapRef.current.setView(coords, 8);
+                          onAddDestinationStep?.(d.ville, coords);
+                        }}
+                        className="text-sm bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700"
+                      >
+                        ✅ Ajouter à l’itinéraire
+                      </button>
+                    </div>
+                  </div>
+                </Popup>
+              </Marker>
+            ))}
         </MapContainer>
       </div>
 

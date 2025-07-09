@@ -12,26 +12,24 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    // 🔁 Alias @/ vers /src
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@/app/*": ["app/*"],
+      "@/utils/itineraryStorage": ["src/utils/itineraryStorage"]
     },
-    // ✅ Types globaux (Node, Next, etc.)
-    "types": ["node", "next"],
-    "typeRoots": ["./types", "./node_modules/@types"],
-    // 🧼 Clean code
-    "forceConsistentCasingInFileNames": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
     "incremental": true,
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
   },
+
   "include": [
     "next-env.d.ts",
     "src",
@@ -42,5 +40,19 @@
     "next.config.mjs",
     ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules", ".next"]
+
+  "exclude": [
+    "node_modules",
+    ".next"
+  ],
+
+  "typeRoots": [
+    "./types",
+    "./node_modules/@types"
+  ],
+
+  "types": [
+    "node",
+    "next"
+  ]
 }

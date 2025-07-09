@@ -29,8 +29,7 @@ export default function Offers() {
       price: '599',
       duration: '3 jours',
       location: 'Gaspésie',
-      image:
-        'https://images.unsplash.com/photo-1578607974203-0e5657088821?auto=format&fit=crop&q=80',
+      image: '/images/default.avif',
       discount: '20%',
       validUntil: '30 juin 2025',
       tag: 'Nouveau',

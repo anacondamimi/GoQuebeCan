@@ -202,12 +202,12 @@ export function CampingGuide() {
         <div className="flex items-center justify-center gap-3 mb-6">
           <Tent className="h-8 w-8 text-indigo-600" />
           <h2 className="text-4xl font-bold text-center text-gray-900">
-            Guide des Meilleurs Campings au Québec
+            Guide des plus beaux campings au Québec
           </h2>
         </div>
 
         <p className="text-xl text-center text-gray-600 mb-12">
-          Découvrez notre sélection des plus beaux terrains de camping
+          Découvrez notre sélection pour découvrir notre région
         </p>
 
         <div className="flex flex-col md:flex-row gap-4 mb-8">

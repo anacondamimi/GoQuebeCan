@@ -1,25 +1,26 @@
-declare module 'leaflet-routing-machine' {
-  namespace L {
-    namespace Routing {
-      interface RoutingOptions {
-        waypoints?: L.LatLng[];
-        router?: any;
-        plan?: any;
-        routeWhileDragging?: boolean;
-        createMarker?: () => L.Marker | null;
-        show?: boolean;
-      }
+import * as L from 'leaflet';
 
-      class RoutingControl extends L.Control {
-        constructor(options?: RoutingOptions);
-        on(event: string, callback: (e: any) => void): this;
-        getPlan(): any;
-        setWaypoints(waypoints: L.LatLng[]): void;
-      }
-
-      function control(options?: RoutingOptions): RoutingControl;
+declare module 'leaflet' {
+  namespace Routing {
+    interface RoutingOptions {
+      waypoints?: L.LatLng[];
+      router?: any;
+      plan?: any;
+      routeWhileDragging?: boolean;
+      createMarker?: () => L.Marker | null;
+      show?: boolean;
     }
-  }
 
-  export = L.Routing;
+    class RoutingControl extends L.Control {
+      constructor(options?: RoutingOptions);
+      on(event: string, callback: (e: any) => void): this;
+      getPlan(): any;
+      setWaypoints(waypoints: L.LatLng[]): void;
+    }
+
+    function control(options?: RoutingOptions): RoutingControl;
+
+    // ✅ AJOUTER CECI :
+    function mapbox(accessToken: string, options?: any): any;
+  }
 }

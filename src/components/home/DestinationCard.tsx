@@ -22,7 +22,7 @@ export function DestinationCard({
   link,
 }: DestinationCardProps) {
   const handleClick = () => {
-    if (blogId) {
+    if (typeof document !== 'undefined' && blogId) {
       const element = document.getElementById(blogId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });

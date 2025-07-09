@@ -42,7 +42,7 @@ import BlogArticleVoyageVoitureElectrique from '@/components/blogpost/BlogArticl
 // On déclare que chaque slug (string) pointe vers un FunctionComponent React
 const componentMap: Record<string, FC> = {
   quebec: BlogArticleQuebec,
-  blog_article_montreal: BlogArticleMontreal,
+  montreal: BlogArticleMontreal,
   levis: BlogArticleLevis,
   montmorency: BlogArticleMontmorency,
   orleans: BlogArticleOrleans,

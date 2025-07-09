@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 export const metadata: Metadata = {
   title: 'Camping au Québec | GoQuebecan',
   description:
-    'Découvrez les meilleurs campings du Québec. Guide complet avec emplacements, tarifs, équipements et conseils pour une expérience de camping réussie.',
+    'Découvrez les meilleurs campings du Québec. Les plus beaux campings au Québec pour passer de bonnes vacances.',
 };
 
 const CampingGuideClient = dynamic(

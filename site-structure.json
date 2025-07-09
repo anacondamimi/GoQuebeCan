@@ -710,10 +710,7 @@
             "type": "file",
             "name": "CampingList.tsx"
           },
-          {
-            "type": "file",
-            "name": "ComingSoonBanner.tsx"
-          },
+        
           {
             "type": "folder",
             "name": "contexts",

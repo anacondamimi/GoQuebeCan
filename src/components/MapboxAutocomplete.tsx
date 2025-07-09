@@ -10,6 +10,11 @@ interface MapboxAutocompleteProps {
   className?: string;
 }
 
+type MapboxSuggestion = {
+  place_name: string;
+  center: [number, number];
+};
+
 export default function MapboxAutocomplete({
   label,
   placeholder,
@@ -18,9 +23,9 @@ export default function MapboxAutocomplete({
   className = '',
 }: MapboxAutocompleteProps) {
   const [input, setInput] = useState('');
-  const [suggestions, setSuggestions] = useState<any[]>([]);
+  const [suggestions, setSuggestions] = useState<MapboxSuggestion[]>([]);
   const [selected, setSelected] = useState(false);
-  const timeoutRef = useRef<any>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (input.length < 3) {

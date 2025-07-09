@@ -5,9 +5,10 @@ import Link from 'next/link';
 
 export default function VolsClient() {
   const openChat = () => {
-    window.dispatchEvent(new Event('openChat'));
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new Event('openChat'));
+    }
   };
-
   return (
     <main className="min-h-screen flex items-center justify-center px-4 py-16 bg-yellow-50">
       <div className="max-w-xl text-center bg-white p-8 rounded-xl shadow-md border border-yellow-200">
@@ -60,7 +61,7 @@ export default function VolsClient() {
             id="2240413"
           >
             <Image
-              src="/images/frenchbee.png"
+              src="/images/frenchbee.avif"
               alt="Vol Montréal-Paris à prix de rêve - French Bee"
               width={250}
               height={250}

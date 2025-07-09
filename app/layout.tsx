@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://GoQuebeCan.com'),
   description: 'Guide complet des itinéraires, logements et activités au Canada et au Québec.',
   icons: {
-    icon: '/favicon.png',
+    icon: '/favicon.avif',
   },
 };
 

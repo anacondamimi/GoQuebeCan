@@ -13,7 +13,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   'anse-saint-jean': {
     title: 'Anse Saint Jean',
     description: 'Découverte de Anse Saint Jean et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/anse-saint-jean.avif',
     activites: [
       'Croisière sur le Fjord',
       'Mont-Édouard',
@@ -32,7 +32,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   'baie-saint-paul': {
     title: 'Baie Saint Paul',
     description: 'Découverte de Baie Saint Paul et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/baie-st-paul.avif',
     activites: [
       'Circuit des Galeries d',
       'Randonnée Le Gouffre',
@@ -50,7 +50,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   bic: {
     title: 'Bic',
     description: 'Découverte de Bic et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/bic.avif',
     activites: [
       'Observation des Phoques',
       'Randonnée Pic Champlain',
@@ -68,7 +68,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   'bromont-granby': {
     title: 'Bromont Granby',
     description: 'Découverte de Bromont Granby et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/bromont.avif',
     activites: [
       'Zoo de Granby',
       'Parc aquatique Bromont',
@@ -83,7 +83,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   canyon: {
     title: 'Canyon',
     description: 'Découverte de Canyon et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/canyon.avif',
     activites: [
       'Passerelle Suspendue',
       'Sentiers de Randonnée',
@@ -101,7 +101,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   carleton: {
     title: 'Carleton',
     description: 'Découverte de Carleton et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/carleton.avif',
     activites: [
       'Mont Saint-Joseph',
       'Plage de Carleton',
@@ -119,7 +119,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   'eeyou-istchee': {
     title: 'Eeyou Istchee',
     description: 'Découverte de Eeyou Istchee et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/eeyou-istchee-baiejames.avif',
     activites: [
       'Kayak à Wemindji',
       'Randonnée Taïga',
@@ -137,7 +137,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   forillon: {
     title: 'Forillon',
     description: 'Découverte de Forillon et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/forillon.avif',
     activites: [
       'Randonnée Les Graves',
       'Observation des Baleines',
@@ -156,7 +156,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   gaspesie: {
     title: 'Gaspesie',
     description: 'Découverte de Gaspesie et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/parc-gaspesie.avif',
     activites: [],
     hebergements: [],
     publics: ['aventuriers'],
@@ -164,7 +164,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   'grand-bend': {
     title: 'Grand Bend',
     description: 'Découverte de Grand Bend et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/grand-bend.avif',
     activites: [
       'Main Beach',
       'Pinery Provincial Park',
@@ -182,7 +182,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   'hautes-gorges': {
     title: 'Hautes Gorges',
     description: 'Découverte de Hautes Gorges et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/hautes-gorges.avif',
     activites: [
       'Croisière sur la Rivière Malbaie',
       'Sentier des Érables',
@@ -204,7 +204,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   kamouraska: {
     title: 'Kamouraska',
     description: 'Découverte de Kamouraska et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/kamouraska.avif',
     activites: [
       'Coucher de Soleil sur le Fleuve',
       'Musée régional de Kamouraska',
@@ -222,7 +222,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   kuururjuaq: {
     title: 'Kuururjuaq',
     description: 'Découverte de Kuururjuaq et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/kuururjuaq.avif',
     activites: ['Mont D', 'Rivière Koroc', 'Randonnée Tundra'],
     hebergements: ['Auberge Kuujjuaq', 'Camps de Base Kuururjuaq'],
     publics: ['amateurs de culture', 'aventuriers'],
@@ -230,7 +230,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   levis: {
     title: 'Levis',
     description: 'Découverte de Levis et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/levis.avif',
     activites: [
       'Terrasse de Lévis',
       'Parc des Chutes-de-la-Chaudière',
@@ -253,7 +253,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
     title: 'Pourquoi louer un VR au Québec avec Authentik Canada ?',
     description:
       'Découverte de Pourquoi louer un VR au Québec avec Authentik Canada ? et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/vr.avif',
     activites: [],
     hebergements: [],
     publics: [],
@@ -261,7 +261,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   'magog-orford': {
     title: 'Magog Orford',
     description: 'Découverte de Magog Orford et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/magog.avif',
     activites: [
       'Parc de la Plage-des-Cantons',
       'École de Voile',
@@ -276,7 +276,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   massif: {
     title: 'Massif',
     description: 'Découverte de Massif et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/le-massif.avif',
     activites: [
       'École de Ski Junior',
       'Parc d',
@@ -291,7 +291,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   mingan: {
     title: 'Mingan',
     description: 'Découverte de Mingan et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/mingan.avif',
     activites: [
       'Excursion aux Monolithes',
       'Randonnée Île Niapiskau',
@@ -309,7 +309,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   montmorency: {
     title: 'Montmorency',
     description: 'Découverte de Montmorency et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/chute-montmorency.avif',
     activites: [
       'Via Ferrata de la Chute',
       'Téléphérique Panoramique',
@@ -332,7 +332,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   orleans: {
     title: 'Orleans',
     description: 'Découverte de Orleans et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/ile-dorleans.avif',
     activites: ['Tour Gourmand de l', 'Location de Vélos', 'Vignobles et Cidreries'],
     hebergements: ['Auberge La Grange de l', 'Le Domaine Orléans', 'Les Chalets de l'],
     publics: ['aventuriers'],
@@ -358,7 +358,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   'port-au-persil': {
     title: 'Port Au Persil',
     description: 'Découverte de Port Au Persil et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/port-au-persil.avif',
     activites: [
       'Observation des Baleines',
       'Sentier des Caps',
@@ -376,7 +376,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   'port-cartier': {
     title: 'Port Cartier',
     description: 'Découverte de Port Cartier et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/port-cartier.avif',
     activites: [
       'Parc de la Taïga',
       'Rivière aux Rochers',
@@ -394,7 +394,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   'port-dover': {
     title: 'Port Dover',
     description: 'Découverte de Port Dover et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/port-dover.avif',
     activites: [
       'Port Dover Beach',
       'Port Dover Harbour Museum',
@@ -412,7 +412,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   quebec: {
     title: 'Quebec',
     description: 'Découverte de Quebec et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/quebec.avif',
     activites: [
       'Visite guidée du Vieux-Québec',
       'Croisière sur le Saint-Laurent',
@@ -431,7 +431,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   'rivieredu-loup': {
     title: 'Rivieredu Loup',
     description: 'Découverte de Rivieredu Loup et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/chute-riviere-du-loup.avif',
     activites: [
       'Croisière aux Baleines',
       'Parc des Chutes',
@@ -449,7 +449,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   sabrevois: {
     title: 'Sabrevois',
     description: 'Découverte de Sabrevois et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/sabrevois.avif',
     activites: [
       'Nuitée en Hutte Flottante',
       'Kayak sur le Richelieu',
@@ -467,7 +467,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   sandbanks: {
     title: 'Sandbanks',
     description: 'Découverte de Sandbanks et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/sand-banks.avif',
     activites: [
       'Dunes de Sandbanks',
       'Outlet Beach',
@@ -485,7 +485,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   'sauble-beach': {
     title: 'Sauble Beach',
     description: 'Découverte de Sauble Beach et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/sauble-beach.avif',
     activites: [
       'Plage de Sauble',
       'Sauble Falls Provincial Park',
@@ -503,7 +503,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   'sept-iles': {
     title: 'Sept Iles',
     description: 'Découverte de Sept Iles et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/sept-iles.avif',
     activites: [
       'Archipel des Sept Îles',
       'Vieux-Quai',
@@ -521,7 +521,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   sherbrooke: {
     title: 'Sherbrooke',
     description: 'Découverte de Sherbrooke et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/sherbrooke.avif',
     activites: [
       'Musée de la Nature et des Sciences',
       'Parc Jacques-Cartier',
@@ -536,7 +536,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   'singing-sands': {
     title: 'Singing Sands',
     description: 'Découverte de Singing Sands et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/singing-sands.avif',
     activites: [
       'Singing Sands Beach',
       'Bruce Peninsula National Park',
@@ -554,7 +554,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   tadoussac: {
     title: 'Tadoussac',
     description: 'Découverte de Tadoussac et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/tadoussac.avif',
     activites: [
       'Croisière aux Baleines',
       'Sentier de la Pointe-de-l',
@@ -572,7 +572,7 @@ export const blogMeta: Record<string, BlogMetaItem> = {
   'wasaga-beach': {
     title: 'Wasaga Beach',
     description: 'Découverte de Wasaga Beach et de ses attraits touristiques.',
-    image: '/images/cover-mon-article.jpg',
+    image: '/images/destinations/wasaga-beach.avif',
     activites: [
       'Plage Principale',
       'Wasaga Beach Provincial Park',

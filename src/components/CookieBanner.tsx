@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 declare global {
   interface Window {
-    dataLayer: any[];
+    dataLayer: unknown[];
   }
 }
 
@@ -44,17 +44,9 @@ export default function CookieBanner() {
     typeof navigator !== 'undefined' && navigator.language.startsWith('en') ? 'en' : 'fr';
   const t = translations[userLang];
 
-  useEffect(() => {
-    const stored = localStorage.getItem('cookie_consent');
-    if (!stored) {
-      setVisible(true);
-    } else {
-      const parsed = JSON.parse(stored);
-      loadConsentedScripts(parsed);
-    }
-  }, []);
+  const loadConsentedScripts = React.useCallback((prefs: typeof preferences) => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
 
-  const loadConsentedScripts = (prefs: typeof preferences) => {
     if (prefs.statistics) {
       const ga = document.createElement('script');
       ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX';
@@ -62,7 +54,7 @@ export default function CookieBanner() {
       document.head.appendChild(ga);
 
       window.dataLayer = window.dataLayer || [];
-      function gtag(...args: any[]) {
+      function gtag(...args: unknown[]) {
         window.dataLayer.push(args);
       }
       gtag('js', new Date());
@@ -75,9 +67,23 @@ export default function CookieBanner() {
       fb.async = true;
       document.head.appendChild(fb);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || typeof localStorage === 'undefined') return;
+
+    const stored = localStorage.getItem('cookie_consent');
+    if (!stored) {
+      setVisible(true);
+    } else {
+      const parsed = JSON.parse(stored);
+      loadConsentedScripts(parsed);
+    }
+  }, [loadConsentedScripts]);
 
   const acceptAll = () => {
+    if (typeof window === 'undefined' || typeof localStorage === 'undefined') return;
+
     const all = { functional: true, statistics: true, marketing: true };
     localStorage.setItem('cookie_consent', JSON.stringify(all));
     setPreferences(all);
@@ -86,6 +92,8 @@ export default function CookieBanner() {
   };
 
   const saveConsent = () => {
+    if (typeof window === 'undefined' || typeof localStorage === 'undefined') return;
+
     localStorage.setItem('cookie_consent', JSON.stringify(preferences));
     loadConsentedScripts(preferences);
     setVisible(false);

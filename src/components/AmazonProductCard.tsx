@@ -6,13 +6,23 @@ interface Props {
   asin: string;
 }
 
+type AmazonAPIResponse = {
+  ItemsResult: {
+    Items: {
+      Images: { Primary: { Medium: { URL: string } } };
+      ItemInfo: { Title: { DisplayValue: string } };
+      Offers: { Listings: { Price: { DisplayAmount: string } }[] };
+    }[];
+  };
+};
+
 export default function AmazonProductCard({ asin }: Props) {
-  const [product, setProduct] = useState<any>(null);
+  const [product, setProduct] = useState<AmazonAPIResponse | null>(null);
 
   useEffect(() => {
     const fetchProduct = async () => {
       const res = await fetch(`/api/amazon-product?asin=${asin}`);
-      const data = await res.json();
+      const data: AmazonAPIResponse = await res.json();
       setProduct(data);
     };
     fetchProduct();

@@ -16,23 +16,24 @@ export const Header = ({ onScrollToSection, onOpenChat }: HeaderProps) => {
 
   // Pour détecter le défilement (facultatif, uniquement pour l'apparence visuelle)
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+    if (typeof window !== 'undefined') {
+      const handleScroll = () => {
+        if (window.scrollY > 20) {
+          setIsScrolled(true);
+        } else {
+          setIsScrolled(false);
+        }
+      };
 
-    // Puisque nous n'utilisons pas de défilement, vous pouvez simplement définir isScrolled à true
-    // après un délai pour simuler le comportement, ou le supprimer complètement
-    setTimeout(() => {
-      setIsScrolled(true);
-    }, 2000);
+      window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+      // Définir l'état initial côté client uniquement
+      handleScroll();
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
   }, []);
 
   const toggleMenu = () => {

@@ -51,7 +51,7 @@ export default function Footer() {
           <div className="space-y-6 text-center md:text-left">
             <Link href="/" aria-label="Accueil" className="inline-block">
               <Image
-                src="/images/logo.jpg"
+                src="/images/logo.avif"
                 alt="Logo GoQuebeCan"
                 width={120}
                 height={120}
@@ -121,8 +121,10 @@ export default function Footer() {
             </Link>
             <button
               onClick={() => {
-                localStorage.removeItem('cookie_consent');
-                window.location.reload();
+                if (typeof window !== 'undefined') {
+                  localStorage.removeItem('cookie_consent');
+                  window.location.reload();
+                }
               }}
               className="text-gray-400 hover:text-white transition-colors text-sm"
             >

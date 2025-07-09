@@ -122,7 +122,7 @@ export default function BlogArticleVoyageAvion() {
             Trtl Pillow Plus – Le soutien cervical intelligent
           </h3>
           <Image
-            src="/images/trtl-pillow-plus.jpg"
+            src="/images/default.avif"
             alt="Trtl Pillow Plus"
             width={400}
             height={300}
@@ -166,7 +166,7 @@ export default function BlogArticleVoyageAvion() {
             Cabeau Evolution S3 – L’ergonomie ultime
           </h3>
           <Image
-            src="/images/cabeau-evolution-s3.jpg"
+            src="/images/default.avif"
             alt="Cabeau Evolution S3"
             width={400}
             height={300}

@@ -7,7 +7,7 @@ import { MapPin, Calendar, Users, DollarSign } from 'lucide-react';
 import { addToItinerary } from '@/utils/itineraryStorage';
 import type { CampingData } from '@/types/CampingData';
 import campingArticles from '@/data/campings.json';
-import destinationsWithCoords from '@/../public/destinationsWithCoords.json'; // ✅ JSON public
+import destinationsWithCoords from '@/data/destinationsWithCoords.json'; // ✅ JSON public
 
 const articles = campingArticles as Record<string, CampingData>;
 const destinations = destinationsWithCoords as Array<{

@@ -1,22 +1,51 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import html2pdf from 'html2pdf.js';
 
+type ItineraryStep = {
+  id: string;
+  name: string;
+  coordinates: [number, number];
+};
+
+type Producer = {
+  id: string;
+  name: string;
+  lat: number;
+  lng: number;
+  type?: string;
+  website?: string | null;
+};
+
+type SuggestedProducer = {
+  producer: Producer;
+  distance: number;
+};
+
 export default function ItinerarySummary() {
-  const [summary, setSummary] = useState<any[]>([]);
-  const [producers, setProducers] = useState<any[]>([]);
+  const [summary, setSummary] = useState<ItineraryStep[]>([]);
+  const [producers, setProducers] = useState<SuggestedProducer[]>([]);
   const [email, setEmail] = useState('');
   const pdfRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const steps = localStorage.getItem('itinerary');
     const prod = localStorage.getItem('producerSuggestions');
-    if (steps) setSummary(JSON.parse(steps));
-    if (prod) setProducers(JSON.parse(prod));
+    try {
+      if (steps) setSummary(JSON.parse(steps));
+    } catch {
+      console.error('Invalid itinerary JSON in localStorage');
+    }
+    try {
+      if (prod) setProducers(JSON.parse(prod));
+    } catch {
+      console.error('Invalid producerSuggestions JSON in localStorage');
+    }
   }, []);
 
   const translate = (fr: string) => {
+    if (!fr) return '';
     const dict: Record<string, string> = {
       fromage: 'cheese',
       cidre: 'cider',
@@ -31,16 +60,15 @@ export default function ItinerarySummary() {
     return dict[fr.toLowerCase()] || fr;
   };
 
-  const generateAIComment = () => {
+  const generateAIComment = useCallback(() => {
     if (!summary || summary.length === 0) return '';
     const from = summary[0]?.name || 'le départ';
     const to = summary[summary.length - 1]?.name || 'la destination finale';
     const count = summary.length - 2;
-    return `Vous partez de ${from} pour un voyage jusqu’à ${to} avec ${count > 0 ? count + ' étape(s)' : 'aucune étape'}, ponctué de découvertes locales. 
-    // You are traveling from ${from} to ${to} with ${count > 0 ? count + ' stop(s)' : 'no stops'}, featuring local discoveries.`;
-  };
+    return `Vous partez de ${from} pour un voyage jusqu’à ${to} avec ${count > 0 ? count + ' étape(s)' : 'aucune étape'}, ponctué de découvertes locales. // You are traveling from ${from} to ${to} with ${count > 0 ? count + ' stop(s)' : 'no stops'}, featuring local discoveries.`;
+  }, [summary]);
 
-  const handleExportPDF = () => {
+  const handleExportPDF = useCallback(() => {
     if (!pdfRef.current) return;
     html2pdf(pdfRef.current, {
       margin: 0.5,
@@ -49,10 +77,15 @@ export default function ItinerarySummary() {
       html2canvas: { scale: 2 },
       jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
     });
-  };
+  }, []);
 
   const handleSendEmail = async () => {
-    alert('Fonctionnalité à connecter à Mailjet ou Resend');
+    if (!email.includes('@')) {
+      alert("Veuillez entrer un email valide avant l'envoi.");
+
+      return;
+    }
+    alert(`Fonctionnalité d'envoi par email à ${email} à connecter à Mailjet ou Resend.`);
   };
 
   if (!summary || summary.length === 0) {
@@ -69,7 +102,7 @@ export default function ItinerarySummary() {
 
         <ul className="list-decimal list-inside text-gray-800 space-y-2 mb-4">
           {summary.map((step, index) => (
-            <li key={index}>
+            <li key={step.id}>
               <strong>
                 {index === 0 && 'Départ / Start'}
                 {index === summary.length - 1 && 'Arrivée / Arrival'}
@@ -84,10 +117,10 @@ export default function ItinerarySummary() {
           <div className="mt-6">
             <h3 className="text-xl font-semibold mb-2">🍓 Suggestions locales / Local stops</h3>
             <ul className="list-disc list-inside text-gray-700 space-y-1">
-              {producers.map(({ producer, distance }, i) => (
-                <li key={i}>
-                  <strong>{producer.name}</strong> ({producer.type} / {translate(producer.type)}) à
-                  ~{distance.toFixed(1)} km
+              {producers.map(({ producer, distance }) => (
+                <li key={producer.id}>
+                  <strong>{producer.name}</strong> ({producer.type} /{' '}
+                  {translate(producer.type ?? '')}) à ~{distance.toFixed(1)} km
                   {producer.website && (
                     <>
                       {' — '}
@@ -123,7 +156,11 @@ export default function ItinerarySummary() {
           }}
           className="flex flex-col sm:flex-row gap-2 items-center"
         >
+          <label htmlFor="emailInput" className="sr-only">
+            Email
+          </label>
           <input
+            id="emailInput"
             type="email"
             placeholder="your@email.com"
             value={email}

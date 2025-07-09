@@ -27,7 +27,7 @@ export async function generateMetadata({
     };
   }
 
-  const ogImage = meta.image ?? '/images/default-og.jpg';
+  const ogImage = meta.image ?? '/images/default.avif';
 
   return {
     title: meta.title,

@@ -39,6 +39,17 @@ export const destinations = [
     ],
   },
   {
+    title: 'Montréal Rive-Sud',
+    slug: 'montreal-rive-sud',
+    articles: [
+      { title: 'Montréal', slug: 'montreal', published: true },
+      { title: 'Chambly', slug: 'chambly', published: false },
+      { title: 'Brossard', slug: 'brossard', published: false },
+      { title: 'Saint-Jean-sur-Richelieu', slug: 'saint-jean-sur-richelieu', published: false },
+    ],
+  },
+
+  {
     title: 'Bas-Saint-Laurent',
     slug: 'bas-saint-laurent',
     articles: [

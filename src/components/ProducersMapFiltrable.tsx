@@ -5,7 +5,7 @@ import { Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import producers from '@/data/producers.json';
 import ProducerTypeFilter from './ProducerTypeFilter';
-
+import { Producer } from '@/types/Producer';
 interface ProducersMapProps {
   points: [number, number][];
 }
@@ -28,7 +28,7 @@ function haversineDistance(coord1: Coord, coord2: Coord): number {
   return R * c;
 }
 
-function detectCategory(prod: any): string {
+function detectCategory(prod: Producer): string {
   const name = prod.name?.toLowerCase() || '';
   const type = prod.type?.toLowerCase() || '';
 
@@ -41,7 +41,6 @@ function detectCategory(prod: any): string {
   if (name.includes('bière') || name.includes('microbrasserie') || type.includes('brewery'))
     return 'beer';
 
-  // ✅ Amélioration : détection plus large des fermes et producteurs agricoles
   if (
     type.includes('farm') ||
     type.includes('agriculture') ||
@@ -51,8 +50,9 @@ function detectCategory(prod: any): string {
     name.includes('fromagerie') ||
     name.includes('maraîcher') ||
     name.includes('élevage')
-  )
+  ) {
     return 'farm';
+  }
 
   return 'default';
 }

@@ -13,7 +13,7 @@ interface HeadProps {
 export function Head({
   title,
   description,
-  image = 'https://goquebecan.com/default-og.jpg',
+  image = 'https://goquebecan.com/default.avif',
   url = 'https://goquebecan.com',
   type = 'website',
   canonicalUrl,
@@ -47,7 +47,7 @@ export function Head({
 
       {/* Favicon + thème couleur (optionnel mais conseillé) */}
       <meta name="theme-color" content="#ffffff" />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.avif" />
     </Helmet>
   );
 }
