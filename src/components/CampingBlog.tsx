@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { MapPin, Calendar, Users, DollarSign } from 'lucide-react';
-import { addToItinerary } from '@/utils/itineraryStorage';
+import { addToItinerary } from '@/utils/itineraryStorage.client';
 import type { CampingData } from '@/types/CampingData';
 import campingArticles from '@/data/campings.json';
 import destinationsWithCoords from '@/data/destinationsWithCoords.json'; // ✅ JSON public

@@ -18,7 +18,7 @@ const ItinerarySummary = dynamic(() => import('./ItinerarySummary'), {
 });
 
 import { suggestNearbyProducers } from '@/utils/suggestNearbyProducers';
-import { saveItinerary } from '@/utils/itineraryStorage';
+import { saveItinerary } from '@/utils/itineraryStorage.client';
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 

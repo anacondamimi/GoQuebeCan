@@ -988,7 +988,7 @@
         "children": [
           {
             "type": "file",
-            "name": "itineraryStorage.ts"
+            "name": "itineraryStorage.client.ts"
           },
           {
             "type": "file",

@@ -16,7 +16,7 @@
     "paths": {
       "@/*": ["src/*"],
       "@/app/*": ["app/*"],
-      "@/utils/itineraryStorage": ["src/utils/itineraryStorage"]
+      "@/utils/itineraryStorage.client": ["src/utils/itineraryStorage.client"]
     },
     "incremental": true,
     "plugins": [

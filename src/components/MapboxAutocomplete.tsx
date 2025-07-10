@@ -53,8 +53,11 @@ export default function MapboxAutocomplete({
 
   return (
     <div className={`mb-4 relative ${className}`}>
-      <label className="block font-semibold mb-1">{label}</label>
+      <label htmlFor="mapbox-autocomplete" className="block font-semibold mb-1">
+        {label}
+      </label>
       <input
+        id="mapbox-autocomplete"
         type="text"
         value={input}
         onChange={(e) => {
