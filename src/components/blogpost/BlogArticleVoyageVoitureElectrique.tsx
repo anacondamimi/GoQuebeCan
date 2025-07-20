@@ -263,7 +263,7 @@ export default function BlogArticleVoyageVoitureElectrique() {
         </section>
         <section className="mb-12">
           <h3 className="text-2xl font-semibold">🧳 Frunk Organizer Tesla Model 3/Y</h3>
-          <Image src="/images/frunk-bag.jpg" alt="Sac frunk Tesla" width={600} height={400} />
+          <Image src="/images/carte.avif" alt="Sac frunk Tesla" width={600} height={400} />
           <p>
             <strong>Prix :</strong> ~69 CAD
           </p>
@@ -282,7 +282,7 @@ export default function BlogArticleVoyageVoitureElectrique() {
         <section className="mb-12">
           <h3 className="text-2xl font-semibold">🪑 Coussin de siège ventilé Lusso Gear</h3>
           <Image
-            src="/images/lusso-cushion.jpg"
+            src="/images/carte.avif"
             alt="Coussin Lusso Gear ventilé"
             width={600}
             height={400}

@@ -28,7 +28,9 @@ export default function MapboxAutocomplete({
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
+    console.log('INPUT VALUE:', input);
     if (input.length < 3) {
+      console.log('Input too short, skipping fetch');
       setSuggestions([]);
       return;
     }
@@ -43,6 +45,7 @@ export default function MapboxAutocomplete({
           )}.json?access_token=${token}&autocomplete=true&language=fr`
         );
         const data = await res.json();
+        console.log('MAPBOX RESPONSE:', data);
         setSuggestions(data.features || []);
       } catch (error) {
         console.error('Erreur Mapbox:', error);

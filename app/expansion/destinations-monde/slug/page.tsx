@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import destinations from '@/data/destinationsWorld.json';
 import AffiliateCarousel from '@/components/AffiliateCarousel';
 import { CTABanner } from '@/components/CTAComponents';
@@ -28,13 +29,20 @@ export default function DestinationPage({ params }: PageProps) {
   return (
     <main className="max-w-3xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-4">{destination.title}</h1>
-      <img
-        src={destination.image}
-        alt={destination.title}
-        className="rounded-lg object-cover mb-4 w-full h-64"
-      />
+      <div className="relative w-full h-64 mb-4">
+        <Image
+          src={destination.image}
+          alt={destination.title}
+          fill
+          className="rounded-lg object-cover"
+          sizes="(max-width: 768px) 100vw, 700px"
+          priority
+        />
+      </div>
       <p className="mb-6">{destination.description}</p>
+
       <AffiliateCarousel />
+
       <section className="mt-8">
         <h2 className="text-2xl font-semibold mb-4">
           💳 Financer votre voyage avec des cartes de crédit

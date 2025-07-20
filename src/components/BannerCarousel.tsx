@@ -100,6 +100,13 @@ export default function BannerCarousel({ title, subtitle, onOpenChat }: Props) {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1 }}
           className="mt-6 flex flex-col sm:flex-row gap-4 justify-center"
+        ></motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="mt-6 flex flex-col sm:flex-row gap-4 justify-center flex-wrap"
         >
           <button
             onClick={() => router.push('/planificateur')}
@@ -115,16 +122,16 @@ export default function BannerCarousel({ title, subtitle, onOpenChat }: Props) {
             <MessageSquareText size={20} />
             Parler à notre assistant
           </button>
+
+          <button
+            onClick={() => router.push('/producteurs')}
+            className="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg text-lg font-semibold"
+          >
+            🧀 Découvrir les producteurs québécois
+          </button>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.4 }}
-          className="mt-6 animate-bounce"
-        >
-          <ArrowDown size={32} className="text-white opacity-70" />
-        </motion.div>
+        <ArrowDown size={32} className="text-white opacity-70" />
       </div>
     </div>
   );

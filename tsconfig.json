@@ -41,18 +41,9 @@
     ".next/types/**/*.ts"
   ],
 
-  "exclude": [
-    "node_modules",
-    ".next"
-  ],
+  "exclude": ["node_modules", ".next"],
 
-  "typeRoots": [
-    "./types",
-    "./node_modules/@types"
-  ],
+  "typeRoots": ["./types", "./node_modules/@types"],
 
-  "types": [
-    "node",
-    "next"
-  ]
+  "types": ["node", "next"]
 }

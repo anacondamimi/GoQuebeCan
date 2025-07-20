@@ -334,8 +334,8 @@
     ],
     "hebergements": ["Manoir Montmorency", "Auberge Baker", "Comfort Inn Beauport"],
     "publics": ["familles", "aventuriers"],
-    "lat": 45.558436,
-    "lng": -73.7216312
+    "lat": 46.89074,
+    "lng": 71.14773
   },
   {
     "slug": "montreal",
@@ -374,8 +374,8 @@
     ],
     "hebergements": ["Riotel Percé", "Hôtel La Normandie", "Au Pic de l"],
     "publics": ["familles", "ados", "aventuriers"],
-    "lat": 48.5222989,
-    "lng": -64.2136423
+    "lat": 48.3222989,
+    "lng": -64.136423
   },
   {
     "slug": "port-au-persil",

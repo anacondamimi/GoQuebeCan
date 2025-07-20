@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import html2pdf from 'html2pdf.js';
+import type { Suggestion } from '@/utils/suggestNearbyProducers';
 
 type ItineraryStep = {
   id: string;
@@ -9,23 +10,9 @@ type ItineraryStep = {
   coordinates: [number, number];
 };
 
-type Producer = {
-  id: string;
-  name: string;
-  lat: number;
-  lng: number;
-  type?: string;
-  website?: string | null;
-};
-
-type SuggestedProducer = {
-  producer: Producer;
-  distance: number;
-};
-
 export default function ItinerarySummary() {
   const [summary, setSummary] = useState<ItineraryStep[]>([]);
-  const [producers, setProducers] = useState<SuggestedProducer[]>([]);
+  const [producers, setProducers] = useState<Suggestion[]>([]);
   const [email, setEmail] = useState('');
   const pdfRef = useRef<HTMLDivElement>(null);
 

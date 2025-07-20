@@ -96,7 +96,7 @@ export const regionsData: Region[] = [
       {
         id: 'montmorency',
         name: 'Chute Montmorency',
-        coordinates: [46.8883, -71.1477],
+        coordinates: [46.89074, -71.1477],
         image: 'https://images.unsplash.com/photo-1503437313881-503a91226423',
         excerpt: 'Une chute plus haute que les chutes du Niagara.',
         description:

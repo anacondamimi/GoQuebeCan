@@ -710,7 +710,7 @@
             "type": "file",
             "name": "CampingList.tsx"
           },
-        
+
           {
             "type": "folder",
             "name": "contexts",

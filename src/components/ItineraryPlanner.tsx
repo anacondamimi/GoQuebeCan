@@ -1,13 +1,11 @@
 'use client';
-import React, { useState } from 'react';
-import MapboxAutocomplete from '@/components/MapboxAutocomplete';
-import dynamic from 'next/dynamic';
 
-// Imports dynamiques pour éviter les erreurs SSR
+import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
+import MapboxAutocomplete from '@/components/MapboxAutocomplete';
+
 const ProducersMap = dynamic(() => import('./ProducersMapFiltrable'), { ssr: false });
 const MapWithRouting = dynamic(() => import('@/components/MapWithRouting'), { ssr: false });
-
-// ✅ CORRECTION: Import dynamique d'ItinerarySummary
 const ItinerarySummary = dynamic(() => import('./ItinerarySummary'), {
   ssr: false,
   loading: () => (
@@ -20,15 +18,17 @@ const ItinerarySummary = dynamic(() => import('./ItinerarySummary'), {
 import { suggestNearbyProducers } from '@/utils/suggestNearbyProducers';
 import { saveItinerary } from '@/utils/itineraryStorage.client';
 
-const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
+// ✅ Import des producteurs JSON
+import producersData from '@/data/producers.json';
+import { Producer } from '@/types/Producer';
 
-interface Producer {
-  id: string;
-  name: string;
-  lat: number;
-  lng: number;
-  type?: string;
-  website?: string | null;
+// ✅ Conversion en tableau typé
+const producersList: Producer[] = producersData as Producer[];
+
+const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? '';
+
+if (!MAPBOX_TOKEN) {
+  console.warn('⚠️ Mapbox token manquant dans NEXT_PUBLIC_MAPBOX_TOKEN');
 }
 
 export default function ItineraryPlanner() {
@@ -76,13 +76,7 @@ export default function ItineraryPlanner() {
     setWaypoints(coords.slice(1, coords.length - 1));
     setSteps(itinerary);
 
-    setProducerSuggestions(
-      suggestNearbyProducers(coords) as {
-        stepIndex: number;
-        producer: Producer;
-        distance: number;
-      }[]
-    );
+    setProducerSuggestions(suggestNearbyProducers(producersList, waypoints));
 
     saveItinerary(itinerary);
   };

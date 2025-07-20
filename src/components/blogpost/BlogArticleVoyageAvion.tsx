@@ -122,7 +122,7 @@ export default function BlogArticleVoyageAvion() {
             Trtl Pillow Plus – Le soutien cervical intelligent
           </h3>
           <Image
-            src="/images/default.avif"
+            src="/images/carte.avif"
             alt="Trtl Pillow Plus"
             width={400}
             height={300}
@@ -166,7 +166,7 @@ export default function BlogArticleVoyageAvion() {
             Cabeau Evolution S3 – L’ergonomie ultime
           </h3>
           <Image
-            src="/images/default.avif"
+            src="/images/carte.avif"
             alt="Cabeau Evolution S3"
             width={400}
             height={300}
@@ -207,7 +207,7 @@ export default function BlogArticleVoyageAvion() {
             Bose QC45 – La référence du silence
           </h3>
           <Image
-            src="/images/bose-qc45.jpg"
+            src="/images/carte.avif"
             alt="Bose QC45"
             width={400}
             height={300}
@@ -247,7 +247,7 @@ export default function BlogArticleVoyageAvion() {
             Sony WH-1000XM5 – Le roi de la polyvalence
           </h3>
           <Image
-            src="/images/sony-wh1000xm5.jpg"
+            src="/images/carte.avif"
             alt="Sony WH-1000XM5"
             width={400}
             height={300}
@@ -287,7 +287,7 @@ export default function BlogArticleVoyageAvion() {
             Etekcity Pèse-bagage – Le compact fiable
           </h3>
           <Image
-            src="/images/etekcity-pese.jpg"
+            src="/images/carte.avif"
             alt="Etekcity Pèse-bagage"
             width={400}
             height={300}
@@ -328,7 +328,7 @@ export default function BlogArticleVoyageAvion() {
             Samsonite Digital – La précision en toute simplicité
           </h3>
           <Image
-            src="/images/samsonite-pese.jpg"
+            src="/images/carte.avif"
             alt="Samsonite Pèse-bagage"
             width={400}
             height={300}
@@ -367,7 +367,7 @@ export default function BlogArticleVoyageAvion() {
             Hydrapak Stash – L’hydratation compacte
           </h3>
           <Image
-            src="/images/hydrapak-stash.jpg"
+            src="/images/carte.avif"
             alt="Hydrapak Stash"
             width={400}
             height={300}
@@ -406,7 +406,7 @@ export default function BlogArticleVoyageAvion() {
             Nomader Collapsible – L’alternative écologique
           </h3>
           <Image
-            src="/images/nomader-collapsible.jpg"
+            src="/images/carte.avif"
             alt="Nomader Collapsible"
             width={400}
             height={300}

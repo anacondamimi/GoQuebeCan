@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
+import GroupedDestinations from '@/components/GroupedDestinations';
 import FeaturedGuides from '@/components/home/FeaturedGuides';
 import Testimonials from '@/components/home/Testimonials';
 import ItineraryPlanner from '@/components/ItineraryPlanner';
@@ -12,9 +13,6 @@ import AddProducteur from '@/components/admin/AddProducteur';
 const PopularVideos = dynamic(() => import('@/components/PopularVideos'), { ssr: false });
 const Offers = dynamic(() => import('@/components/Offers'), { ssr: false });
 const Chatbot = dynamic(() => import('@/components/ui/Chatbot'), { ssr: false });
-const PopularDestinations = dynamic(() => import('@/components/PopularDestinations'), {
-  ssr: false,
-});
 
 export default function Home() {
   return (
@@ -64,7 +62,7 @@ export default function Home() {
             <p className="text-lg text-secondary mb-6">
               Explorez nos suggestions des lieux incontournables au Québec et au Canada.
             </p>
-            <PopularDestinations />
+            <GroupedDestinations /> {/* ← ton nouveau composant dynamique */}
           </div>
         </section>
 

@@ -156,16 +156,20 @@ export default function BlogArticleVoyageCamping() {
         <section className="mb-12">
           <h3 className="text-2xl font-bold text-gray-800 mb-2">Tente MSR Elixir 2</h3>
           <figure className="mb-4">
-            <img
+            <Image
               src="/images/msr-elixir.avif"
               alt="Tente MSR Elixir 2 installée sur un emplacement de camping"
+              width={800}
+              height={533}
               className="rounded-xl w-full h-auto"
+              sizes="(max-width: 768px) 100vw, 800px"
             />
-            <figcaption className="text-sm text-gray-500 mt-1">
+            <figcaption className="text-sm text-gray-500 mt-1 text-center">
               Tente MSR Elixir 2 en situation réelle
             </figcaption>
           </figure>
-          <p className="text-gray-700">
+
+          <p className="text-gray-700 mt-4">
             <strong>Prix :</strong> ~499 CAD •{' '}
             <a
               href="https://www.amazon.ca/dp/B00G6S4IJG"
@@ -201,15 +205,19 @@ export default function BlogArticleVoyageCamping() {
         <section className="mb-12">
           <h3 className="text-2xl font-bold text-gray-800 mb-2">Tente Coleman Sundome 3</h3>
           <figure className="mb-4">
-            <img
-              src="/images/default.avif"
+            <Image
+              src="/images/carte.avif"
               alt="Tente Coleman Sundome 3 installée sur un emplacement de camping"
+              width={800}
+              height={533}
               className="rounded-xl w-full h-auto"
+              sizes="(max-width: 768px) 100vw, 800px"
             />
-            <figcaption className="text-sm text-gray-500 mt-1">
+            <figcaption className="text-sm text-gray-500 mt-1 text-center">
               Tente Coleman Sundome 3 en condition réelle
             </figcaption>
           </figure>
+
           <p className="text-gray-700">
             <strong>Prix :</strong> ~189 CAD •{' '}
             <a
@@ -248,7 +256,7 @@ export default function BlogArticleVoyageCamping() {
             Matelas Therm-a-Rest NeoAir Xlite
           </h3>
           <Image
-            src="/images/neoair-xlite.jpg"
+            src="/images/carte.avif"
             alt="Matelas Therm-a-Rest NeoAir Xlite"
             width={600}
             height={400}
@@ -290,7 +298,7 @@ export default function BlogArticleVoyageCamping() {
             Matelas Hikenture double auto-gonflant
           </h3>
           <Image
-            src="/images/hikenture-matelas.jpg"
+            src="/images/carte.avif"
             alt="Matelas Hikenture double auto-gonflant"
             width={600}
             height={400}
@@ -331,7 +339,7 @@ export default function BlogArticleVoyageCamping() {
         <section>
           <h3 className="text-2xl font-bold text-gray-800 mb-2">Réchaud Jetboil Flash</h3>
           <Image
-            src="/images/jetboil-flash.jpg"
+            src="/images/carte.avif"
             alt="Réchaud Jetboil Flash"
             width={600}
             height={400}
@@ -373,7 +381,7 @@ export default function BlogArticleVoyageCamping() {
         <section>
           <h3 className="text-2xl font-bold text-gray-800 mb-2">Réchaud MSR PocketRocket Deluxe</h3>
           <Image
-            src="/images/msr-pocketrocket.jpg"
+            src="/images/carte.avif"
             alt="Réchaud MSR PocketRocket Deluxe"
             width={600}
             height={400}
@@ -413,7 +421,7 @@ export default function BlogArticleVoyageCamping() {
             Lampe frontale Black Diamond Spot 400
           </h3>
           <Image
-            src="/images/spot400.jpg"
+            src="/images/carte.avif"
             alt="Lampe frontale Black Diamond Spot 400"
             width={600}
             height={400}
@@ -456,7 +464,7 @@ export default function BlogArticleVoyageCamping() {
             Lampe frontale BioLite HeadLamp 425
           </h3>
           <Image
-            src="/images/biolite-headlamp.jpg"
+            src="/images/carte.avif"
             alt="Lampe BioLite HeadLamp 425"
             width={600}
             height={400}

@@ -1,12 +1,15 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const guides = [
   {
     title: 'Découvrir les producteurs du Québec',
     description:
       'Trouvez les fermes, microbrasseries et artisans locaux le long de votre itinéraire.',
-    href: '/planificateur',
+    href: '/producteurs',
     image: '/images/producteurs.avif',
   },
   {
@@ -56,11 +59,15 @@ export default function FeaturedGuides() {
           href={guide.href}
           className="block rounded-2xl overflow-hidden border border-gray-200 bg-gray-50 hover:bg-white hover:shadow-md transition-colors duration-300"
         >
-          <img
-            src={guide.image}
-            alt={guide.title}
-            className="w-full h-40 object-cover border-b border-gray-200"
-          />
+          <div className="relative w-full h-40">
+            <Image
+              src={guide.image}
+              alt={guide.title}
+              fill
+              className="object-cover border-b border-gray-200"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+            />
+          </div>
           <div className="p-4 bg-gray-50 hover:bg-white transition-colors duration-300">
             <h3 className="text-lg font-semibold mb-2 text-gray-900">{guide.title}</h3>
             <p className="text-gray-700 text-sm leading-relaxed">{guide.description}</p>

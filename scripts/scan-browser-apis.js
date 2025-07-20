@@ -5,7 +5,7 @@ import path from 'path';
 const directory = './';
 
 function scanDir(dir) {
-  fs.readdirSync(dir).forEach(file => {
+  fs.readdirSync(dir).forEach((file) => {
     const fullPath = path.join(dir, file);
     if (
       fs.statSync(fullPath).isDirectory() &&

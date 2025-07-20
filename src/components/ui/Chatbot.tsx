@@ -9,7 +9,12 @@ import { MessageSquare, X, Send } from 'lucide-react';
 import { useSite } from '@/components/contexts/SiteContext';
 import { getContentSuggestions } from '@/components/lib/getContentSuggestions';
 import { suggestNearbyProducers } from '@/utils/suggestNearbyProducers';
-import type { SuggestedProducer } from '@/utils/suggestNearbyProducers';
+import type { Suggestion } from '@/utils/suggestNearbyProducers';
+import type { Producer } from '@/types/Producer';
+
+import producersData from '@/data/producers.json'; // ✅ AJOUTÉ
+const producersList: Producer[] = producersData as Producer[]; // ✅ AJOUTÉ
+
 import { slugs } from '@/app/blog/componentMap';
 
 const MapWithRouting = dynamic(() => import('@/components/MapWithRouting'), {
@@ -37,7 +42,7 @@ export default function Chatbot() {
   const [start, setStart] = useState<[number, number] | null>(null);
   const [end, setEnd] = useState<[number, number] | null>(null);
   const [autoOpened, setAutoOpened] = useState(false);
-  const [nearbyProducers, setNearbyProducers] = useState<SuggestedProducer[]>([]);
+  const [nearbyProducers, setNearbyProducers] = useState<Suggestion[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Scroll auto vers le dernier message
@@ -105,8 +110,8 @@ Posez-moi une question pour commencer !`,
       setEnd([48.1446, -69.7174]);
 
       try {
-        const suggested = suggestNearbyProducers([[48.1446, -69.7174]]);
-
+        const waypoint: [number, number][] = [[48.1446, -69.7174]];
+        const suggested = suggestNearbyProducers(producersList, waypoint);
         setNearbyProducers(suggested);
       } catch (error) {
         console.error('Erreur lors de la récupération des producteurs :', error);
