@@ -33,4 +33,4 @@ export { default as BlogArticleSherbrooke } from './BlogArticleSherbrooke';
 export { default as BlogArticleSingingSands } from './BlogArticleSingingSands';
 export { default as BlogArticleTadoussac } from './BlogArticleTadoussac';
 export { default as BlogArticleWasagaBeach } from './BlogArticleWasagaBeach';
-export { default as BlogArticleWaterParks } from './BlogArticleWaterParks';
+export { default as BlogArticleParcAquatique } from './BlogArticleParcAquatique';

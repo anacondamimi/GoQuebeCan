@@ -1,451 +1,536 @@
 'use client';
 
 import React from 'react';
+import H1 from '@/components/typography/H1';
+import H2 from '@/components/typography/H2';
+
 import Head from 'next/head';
-import Image from 'next/image';
+import {
+  ProductSection,
+  QuickChips,
+  DecisionTable,
+  FAQ,
+  Checklist2Col,
+  ConclusionLinks,
+  ItemListJsonLd,
+} from '@/components/TravelContentKit';
 
 export default function BlogArticleVoyageHotel() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: 'Produits Indispensables pour un Voyage à l’Hôtel au Canada | Comparatif 2025',
+    headline: 'Produits Indispensables pour un Voyage à l’Hôtel au Canada | Guide 2025',
     description:
-      'Découvrez les accessoires essentiels pour séjourner confortablement à l’hôtel : kits hygiène, organiseurs de valise, cadenas TSA, adaptateurs de voyage. Comparatif, conseils, prix en CAD.',
+      "Le kit d'accessoires essentiels pour bien vivre à l’hôtel, au Canada et à l’étranger : adaptateur universel, power bank 20 000 mAh, cubes de rangement, trousse de toilette à crochet, kit sommeil, cadenas TSA, etc.",
     datePublished: '2025-01-20',
-    dateModified: '2025-01-20',
+    dateModified: '2025-09-10', // maj
     publisher: {
       '@type': 'Organization',
       name: 'Voyage Canada Expert',
     },
   };
 
+  // Liste pour JSON-LD ItemList (SEO)
+  const HOTEL_ITEMS = [
+    {
+      name: 'Protège-dents anti-grincement (AnaMimi Global Wellness)',
+      url: 'https://anamimiglobalwellness.com/',
+    },
+    { name: 'Adaptateur universel VYLEE (multi-ports)', url: 'https://amzn.to/3G7Gi3D' },
+    { name: 'Batterie externe 20 000 mAh (USB-C PD)', url: 'https://amzn.to/4pikrYN' },
+    { name: 'cables-2m-65w', url: 'https://amzn.to/3HVSHbS' }, // TODO remplace par ton lien
+    { name: 'Organiseur de valise BAGSMART (cubes)', url: 'https://amzn.to/44bWutV' },
+    { name: 'Sacs de compression/vide GONGSHI', url: 'https://amzn.to/4euLP0T' },
+    { name: 'Trousse de toilette à crochet (TSA-friendly)', url: 'https://amzn.to/47Dzvdk' }, // TODO
+    { name: 'Kit sommeil : masque + bouchons', url: 'https://amzn.to/4gixyVG' }, // TODO
+    { name: 'Cadenas TSA FOSMON (câble flexible)', url: 'https://amzn.to/3TgpWZr' },
+  ];
+
   return (
     <>
       <Head>
-        <title>Produits Indispensables pour un Voyage à l’Hôtel au Canada | Comparatif 2025</title>
+        <title>Produits Indispensables pour un Voyage à l’Hôtel au Canada | Guide 2025</title>
         <meta
           name="description"
-          content="Découvrez les accessoires essentiels pour séjourner confortablement à l’hôtel : kits hygiène, organiseurs de valise, cadenas TSA, adaptateurs de voyage. Comparatif, conseils, prix en CAD."
+          content="Le kit d'accessoires essentiels pour bien vivre à l’hôtel, au Canada et à l’étranger : adaptateur universel, power bank, cubes de rangement, trousse à crochet, kit sommeil, cadenas TSA, etc."
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Liste de produits structurée pour SEO */}
+        {<ItemListJsonLd items={HOTEL_ITEMS} />}
       </Head>
 
-      <article className="max-w-4xl mx-auto px-6 py-12 space-y-16">
+      <article className="mx-auto max-w-4xl px-6 py-12">
+        {/* Header */}
         <header className="mb-12 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">
-            Produits Indispensables pour un Voyage à l’Hôtel au Canada en 2025
-          </h1>
-          <p className="text-xl text-gray-700 leading-relaxed">
-            Que vous séjourniez dans un hôtel de luxe au centre-ville de Montréal ou un gîte
-            pittoresque dans les Laurentides, le confort ne dépend pas uniquement du lieu… mais
-            aussi des accessoires que vous avez emportés. Ce guide vous aide à ne rien oublier pour
-            transformer chaque nuitée en hôtel en une expérience aussi pratique que relaxante.
+          <H1 className="mb-4">
+            Indispensables pour un Séjour à l’Hôtel (Canada & International) — 2025
+          </H1>
+          <p className="text-xl leading-relaxed text-gray-700">
+            Que ce soit à Montréal, Québec ou à l’étranger, ce kit minimaliste te garantit un séjour
+            fluide : charge partout, dors bien, range mieux, sécurise l’essentiel — et profite.
           </p>
         </header>
 
-        <section>
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            Pourquoi ces produits sont-ils essentiels?
-          </h2>
-          <p className="text-gray-700 mb-4">
-            Même les meilleurs hôtels ne couvrent pas toujours tous vos besoins personnels :
-            organisation, hygiène, sécurité ou confort. Des petits objets bien choisis comme un
-            cadenas TSA ou un adaptateur universel peuvent faire toute la différence entre un séjour
-            réussi et une suite de frustrations.
+        {/* Pourquoi */}
+        <section className="mb-12">
+          <H2 className="mb-4 text-3xl font-semibold text-gray-900">Pourquoi ce kit d’hôtel ?</H2>
+          <p className="text-gray-700">
+            Même les meilleurs hôtels n’anticipent pas tous tes besoins personnels (énergie,
+            sommeil, organisation, sécurité). Ces 8 essentiels couvrent 95 % des galères courantes —
+            en gardant ta valise simple et légère.
           </p>
         </section>
 
-        <section>
-          <h2 className="text-3xl font-semibold text-gray-900 mb-8">
-            Comparatif des meilleurs accessoires 2025
-          </h2>
-          <div className="overflow-x-auto">
-            <table className="min-w-full border border-gray-300">
-              <thead className="bg-gray-100">
-                <tr>
-                  <th className="border border-gray-300 px-4 py-2">Produit</th>
-                  <th className="border border-gray-300 px-4 py-2">Dimensions</th>
-                  <th className="border border-gray-300 px-4 py-2">Poids</th>
-                  <th className="border border-gray-300 px-4 py-2">Prix CAD</th>
-                  <th className="border border-gray-300 px-4 py-2">Idéal pour</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="border border-gray-300 px-4 py-2">
-                    Organiseur de valise BAGSMART
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2">25 x 17 x 8 cm</td>
-                  <td className="border border-gray-300 px-4 py-2">300g</td>
-                  <td className="border border-gray-300 px-4 py-2">36 $</td>
-                  <td className="border border-gray-300 px-4 py-2">
-                    Optimiser l’espace dans la valise
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-gray-300 px-4 py-2">
-                    Sacs de stockage sous vide GONGSHI
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2">10 x 6 x 6 cm</td>
-                  <td className="border border-gray-300 px-4 py-2">210g</td>
-                  <td className="border border-gray-300 px-4 py-2">26 $</td>
-                  <td className="border border-gray-300 px-4 py-2">
-                    Réduire le volume des vêtements
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-gray-300 px-4 py-2">Cadenas TSA FOSMON</td>
-                  <td className="border border-gray-300 px-4 py-2">7 x 4 x 1.5 cm</td>
-                  <td className="border border-gray-300 px-4 py-2">110g</td>
-                  <td className="border border-gray-300 px-4 py-2">27 $</td>
-                  <td className="border border-gray-300 px-4 py-2">
-                    Sécuriser les valises et casiers d’hôtel
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-gray-300 px-4 py-2">
-                    Adaptateur pour zone Euro VYLEE
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2">8 x 5 x 5 cm</td>
-                  <td className="border border-gray-300 px-4 py-2">220g</td>
-                  <td className="border border-gray-300 px-4 py-2">20 $</td>
-                  <td className="border border-gray-300 px-4 py-2">Recharger tous vos appareils</td>
-                </tr>
-              </tbody>
-            </table>
+        {/* Raccourcis (chips) */}
+        <div className="mb-8">
+          <QuickChips
+            items={[
+              { href: '#protege-dent-bruxisme', label: 'Protège-dents (nuit)' },
+              { href: '#adaptateur-vylee', label: 'Adaptateur universel' },
+              { href: '#powerbank-20000', label: 'Énergie 2–3 jours' },
+              { href: '#cables-2m-65w', label: 'Câbles 2 m' },
+              { href: '#cubes-bagsmart', label: 'Cubes valise' },
+              { href: '#sous-vide-gongshi', label: 'Compression' },
+              { href: '#trousse-toilette-hook', label: 'Trousse crochet' },
+              { href: '#kit-sommeil', label: 'Sommeil' },
+              { href: '#cadenas-tsa-fosmon', label: 'Cadenas TSA' },
+            ]}
+          />
+        </div>
+
+        {/* 8 FICHES PRODUIT — standardisées comme l’article Camping */}
+        <ProductSection
+          id="protege-dent-bruxisme"
+          title="Protège-dents anti-grincement (bruxisme) — AnaMimi Global Wellness"
+          href="https://anamimiglobalwellness.com/"
+          priceText="selon l’offre"
+          image={{
+            src: '/images/produits/AnaMimi.avif', // mets ton asset local
+            alt: 'Protège-dents de nuit contre le bruxisme — moulable, étui de transport, usage hôtel & voyage',
+            width: 1200,
+            height: 900,
+            caption: 'Soulage la mâchoire, protège l’émail — nuits plus calmes en déplacement.',
+          }}
+          description="Moulable à chaud, il limite le grincement nocturne et aide à détendre la mâchoire — pratique en voyage quand le stress augmente."
+          pros="Protège l’émail, moulage personnalisé, étui compact."
+          cons="Nécessite un moulage correct; période d’adaptation; hygiène à surveiller."
+          tips="Suis bien les videos d'explication pour le moulage (https://www.youtube.com/@AnaMimiOfficial/videos) ; remplace périodiquement ; rince et sèche avant l’étui."
+          scenario="Nuit d’hôtel après une grosse journée : tu t’endors serein, sans réveils à cause du grincement."
+        />
+
+        <ProductSection
+          id="adaptateur-vylee"
+          title="Adaptateur universel VYLEE (multi-ports USB/USB-C)"
+          href="https://amzn.to/4npWqxg"
+          priceText="~42.49 CAD"
+          image={{
+            src: '/images/produits/adaptateur-chargeur-65w.avif',
+            alt: "Adaptateur universel VYLEE — ports multiples pour recharger à l'hôtel et à l'étranger",
+            width: 1200,
+            height: 900,
+            caption: 'Recharge partout sans stress (multi-pays, multi-ports).',
+          }}
+          description="Compatibilité mondiale, plusieurs ports pour recharger tel/tablette/laptop la nuit."
+          pros="Compatibilité étendue, multi-ports, simple à utiliser."
+          cons="Peut être un peu volumineux dans certaines prises murales anciennes."
+          tips="Vérifie le 100–240 V de tes appareils; emporte un câble 2 m pour la prise loin du lit."
+          scenario="Tu branches tout en arrivant, tout est full chargement au matin."
+        />
+
+        <ProductSection
+          id="powerbank-20000"
+          title="Batterie externe 20 000 mAh (USB-C PD)"
+          href="https://amzn.to/4pikrYN"
+          priceText="~34.19 CAD"
+          image={{
+            src: '/images/produits/chargeur-batterie.avif',
+            alt: 'Power bank 20 000 mAh — affichage du pourcentage, lampe intégrée',
+            width: 1200,
+            height: 800,
+            caption: '2–3 jours de sérénité en visites.',
+          }}
+          description="Recharge téléphone, frontale, petite lampe; affichage clair du % restant."
+          pros="Grosse capacité, affichage pratique."
+          cons="Un peu lourde; recharge complète longue; non étanche."
+          tips="Charge à 100 % la veille; garde-la au chaud si tu sors par temps froid."
+          scenario="Journée entière de visites sans chercher de prise."
+        />
+
+        <ProductSection
+          id="cables-2m-65w"
+          title="Câbles USB-C 65W + câble 4-en-1 (2 m)"
+          href="https://amzn.to/3HVSHbS" // TODO ton lien
+          priceText="~13.99 CAD"
+          image={{
+            src: '/images/produits/cable-recharge-4in1.avif',
+            alt: 'Câbles USB-C 65W et câble 4-en-1 de 2 mètres pour recharger confortablement depuis le lit',
+            width: 1200,
+            height: 900,
+            caption: 'La longueur qui change tout (prise loin du lit).',
+          }}
+          description="Un USB-C 65W pour laptop + un 4-en-1 robuste pour couvrir tous les appareils."
+          pros="Rapide, polyvalent, pratique depuis la tête de lit."
+          cons="Les multi-têtes cheap s’usent vite."
+          tips="Prends un 2 m tressé; en rechange, une version courte pour l’aéroport."
+          scenario="Tu scrolles au lit pendant la recharge — sans déplacer la table de nuit."
+        />
+
+        <ProductSection
+          id="cubes-bagsmart"
+          title="Organiseur de valise BAGSMART (cubes compressibles)"
+          href="https://amzn.to/44bWutV"
+          priceText="~49.95 CAD"
+          image={{
+            src: '/images/produits/organisateur-bagsmart-noirjpg.avif',
+            alt: 'Cubes de rangement BAGSMART — valise organisée, moins de repassage',
+            width: 1200,
+            height: 900,
+            caption: 'Tu ouvres la valise : tout est déjà “tiroirs”.',
+          }}
+          description="Compartimente tes vêtements et garde ta chambre d’hôtel rangée en 30 secondes."
+          pros="Organisation visuelle, lavable, compactable."
+          cons="Prend un peu de place en cabine si tu en utilises beaucoup."
+          tips="Un cube “linge sale” — le retour devient un jeu d’enfant."
+          scenario="Tu vis 5 jours sur 2 cubes, sans éparpiller tes affaires partout."
+        />
+
+        <ProductSection
+          id="sous-vide-gongshi"
+          title="Sacs de compression / vide GONGSHI"
+          href="https://amzn.to/4euLP0T"
+          priceText="~19.37 CAD"
+          image={{
+            src: '/images/produits/sac-compression-habits.avif',
+            alt: 'Sacs sous vide GONGSHI — gain de place à la valise',
+            width: 1200,
+            height: 900,
+            caption: 'Gagne de la place (surtout au retour).',
+          }}
+          description="Réduit le volume des vêtements; parfait pour un voyage multi-hôtels ou pour ramener des souvenirs."
+          pros="Gain de place, léger, facile à transporter."
+          cons="Nécessite une source d’air ou un roulage soigné selon le modèle."
+          tips="Utilise la power bank + mini pompe si tu en as une; sinon roule bien pour chasser l’air."
+          scenario="Road-trip urbain : tu compresses avant chaque check-out en 2 minutes."
+        />
+
+        <ProductSection
+          id="trousse-toilette-hook"
+          title="Trousse de toilette à crochet (TSA-friendly)"
+          href="https://amzn.to/47Dzvdk" // TODO ton lien
+          priceText="~18.99 CAD"
+          image={{
+            src: '/images/produits/trousse-toilet-crochet.avif',
+            alt: "Trousse de toilette voyage à crochet — format cabin-friendly, s'accroche au dos de la porte",
+            width: 1200,
+            height: 900,
+            caption: 'Comptoir libre, salle de bain propre.',
+          }}
+          description="Accroche-la au dos de la porte. Tout est visible et à portée — même dans une petite salle de bain."
+          pros="Hook pratique, poches visibles, formats 100 ml."
+          cons="À recharger en produits après 7–10 jours."
+          tips="Ajoute un petit sac étanche pour la lingerie/maillot."
+          scenario="Douches express sans fouiller au fond d’une trousse molle."
+        />
+
+        <ProductSection
+          id="kit-sommeil"
+          title="Kit sommeil : masque + bouchons d’oreilles"
+          href="https://amzn.to/4gixyVG" // TODO ton lien
+          priceText="~13.99 CAD"
+          image={{
+            src: '/images/produits/masque-sommeil+bouchons.avif',
+            alt: 'Masque de nuit et bouchons — dormir malgré les couloirs bruyants et l’ascenseur',
+            width: 1200,
+            height: 900,
+            caption: 'Tu dors bien, même près de l’ascenseur.',
+          }}
+          description="Pour couper la lumière et le bruit : combo gagnant si la chambre donne sur le couloir ou la rue."
+          pros="Améliore nettement le sommeil."
+          cons="Bouchons mousses parfois gênants si tu dors sur le côté."
+          tips="Teste le duo mousse + silicone avant le départ."
+          scenario="Mariage le samedi : tu dors à 23 h, pas à 2 h."
+        />
+
+        <ProductSection
+          id="cadenas-tsa-fosmon"
+          title="Cadenas TSA FOSMON (câble flexible)"
+          href="https://amzn.to/3TgpWZr"
+          priceText="~27 CAD"
+          image={{
+            src: '/images/produits/cadenas-bagages.avif',
+            alt: 'Cadenas TSA FOSMON — sécuriser valises et casiers à l’hôtel',
+            width: 1200,
+            height: 900,
+            caption: 'Simple, efficace, approuvé TSA.',
+          }}
+          description="Sécurise valises et casiers d’hôtel, câble souple pratique pour les fermetures Éclair."
+          pros="Approuvé TSA, câble flexible, léger."
+          cons="Nécessite de bien gérer la clé ou le code."
+          tips="Photo de la combinaison dans un coffre numérique; étiquette avec e-mail/numéro."
+          scenario="Late check-out et bagagerie : tu pars serein, cadenas posé."
+        />
+
+        {/* Guide d'achat (décisionnel) */}
+        <section id="guide-achat" className="mb-12 mt-4">
+          <H2 className="mb-4 text-3xl font-semibold text-gray-900">🛒 Guide d'achat</H2>
+
+          <div className="mb-4">
+            <QuickChips
+              items={[
+                { href: '#protege-dent-bruxisme', label: 'Protège-dents (nuit)' },
+                { href: '#adaptateur-vylee', label: 'Prises internationales' },
+                { href: '#powerbank-20000', label: 'Autonomie' },
+                { href: '#cubes-bagsmart', label: 'Organisation' },
+                { href: '#trousse-toilette-hook', label: 'Salle de bain' },
+                { href: '#kit-sommeil', label: 'Sommeil' },
+                { href: '#cadenas-tsa-fosmon', label: 'Sécurité' },
+              ]}
+            />
           </div>
-        </section>
 
-        <section>
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Organiseur de valise BAGSMART – L’élégance du rangement
-          </h3>
-          <Image
-            src="/images/produits/organisateur-bagsmart-noirjpg.avif"
-            alt="Organiseur de valise BAGSMART"
-            width={400}
-            height={300}
-            className="rounded-lg mb-4"
+          <DecisionTable
+            rows={[
+              {
+                profil: 'Sommeil + mâchoire tendue',
+                criteres: 'Confort • Moulage',
+                reco: (
+                  <a href="#protege-dent-bruxisme" className="text-blue-600 underline">
+                    Protège-dents AnaMimi
+                  </a>
+                ),
+              },
+
+              {
+                profil: 'Journée complète en ville',
+                criteres: 'Batterie • % restant',
+                reco: (
+                  <a href="#powerbank-20000" className="text-blue-600 underline">
+                    Power bank 20 000 mAh
+                  </a>
+                ),
+              },
+              {
+                profil: 'International / multi-pays',
+                criteres: 'Compatibilité • Ports',
+                reco: (
+                  <a href="#adaptateur-vylee" className="text-blue-600 underline">
+                    Adaptateur VYLEE
+                  </a>
+                ),
+              },
+              {
+                profil: 'Valise nette',
+                criteres: 'Compartiments • Compression',
+                reco: (
+                  <a href="#cubes-bagsmart" className="text-blue-600 underline">
+                    Cubes BAGSMART
+                  </a>
+                ),
+              },
+              {
+                profil: 'Salle de bain petite',
+                criteres: 'Accrochage • Accès',
+                reco: (
+                  <a href="#trousse-toilette-hook" className="text-blue-600 underline">
+                    Trousse à crochet
+                  </a>
+                ),
+              },
+              {
+                profil: 'Sommeil léger',
+                criteres: 'Obscurité • Bruit',
+                reco: (
+                  <a href="#kit-sommeil" className="text-blue-600 underline">
+                    Masque + bouchons
+                  </a>
+                ),
+              },
+              {
+                profil: 'Sécuriser l’essentiel',
+                criteres: 'TSA • Souple',
+                reco: (
+                  <a href="#cadenas-tsa-fosmon" className="text-blue-600 underline">
+                    Cadenas FOSMON
+                  </a>
+                ),
+              },
+            ]}
           />
-          <p className="text-gray-700 mb-2">
-            Un set de pochettes résistantes pour compartimenter vos vêtements, chaussures et
-            accessoires dans la valise. Idéal pour les séjours de 2 à 10 jours.
-          </p>
-          <p className="text-gray-700 mb-2 font-semibold">Prix : 39 CAD</p>
-          <a
-            href="https://amzn.to/44bWutV"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 underline"
-          >
-            Voir sur Amazon.ca →
-          </a>
-          <ul className="mt-4 text-gray-700 list-disc list-inside">
+        </section>
+
+        {/* Conseils d'utilisation */}
+        <section id="conseils" className="mb-12">
+          <H2 className="mb-4 text-3xl font-semibold text-gray-900">🛠️ Conseils d'utilisation</H2>
+          <ul className="ml-6 list-disc space-y-2 text-gray-700">
             <li>
-              <strong>Avantages :</strong> Organisation visuelle impeccable, lavable et compactable
+              Si tu grince des dents en période de stress, prends un{' '}
+              <a href="#protege-dent-bruxisme" className="text-blue-600 underline">
+                protège-dents
+              </a>{' '}
+              moulable.
             </li>
             <li>
-              <strong>Inconvénients :</strong> Prend un peu de place dans les valises cabine
+              Charge tout la veille; garde la{' '}
+              <a href="#powerbank-20000" className="text-blue-600 underline">
+                power bank
+              </a>{' '}
+              au chaud.
+            </li>
+            <li>Demande un étage élevé, loin de l’ascenseur/la machine à glace.</li>
+            <li>
+              Accroche la{' '}
+              <a href="#trousse-toilette-hook" className="text-blue-600 underline">
+                trousse
+              </a>{' '}
+              au dos de la porte pour libérer le comptoir.
             </li>
             <li>
-              <strong>Conseils :</strong> Utilisez la plus grande pour les vêtements roulés et la
-              plus petite pour les câbles
+              Place l’
+              <a href="#adaptateur-vylee" className="text-blue-600 underline">
+                adaptateur
+              </a>{' '}
+              côté bureau et des{' '}
+              <a href="#cables-2m-100w" className="text-blue-600 underline">
+                câbles 2 m
+              </a>{' '}
+              côté lit.
             </li>
             <li>
-              <strong>Scénario idéal :</strong> Voyageur qui aime retrouver rapidement ses affaires
-              dans une chambre d’hôtel
+              Utilise le coffre et/ou un{' '}
+              <a href="#cadenas-tsa-fosmon" className="text-blue-600 underline">
+                cadenas TSA
+              </a>{' '}
+              pour tes effets de valeur.
             </li>
           </ul>
         </section>
 
-        <section>
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            GONGSHI – Le compresseur de bagage intelligent
-          </h3>
-          <Image
-            src="/images/produits/sac-compression-habits.avif"
-            alt="GONGSHI Compresseur de bagage"
-            width={400}
-            height={300}
-            className="rounded-lg mb-4"
-          />
-          <p className="text-gray-700 mb-2">
-            Rangez les vêtements dans votre valise n'aura jamais été aussi facile gràce à ce kit de
-            sacs sous vide,les oreillers et plus encore à une réduction de taille.
-          </p>
-          <p className="text-gray-700 mb-2 font-semibold">Prix : 26 CAD</p>
-          <a
-            href="https://amzn.to/4euLP0T"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 underline"
-          >
-            Voir sur Amazon.ca →
-          </a>
-          <ul className="mt-4 text-gray-700 list-disc list-inside">
-            <li>
-              <strong>Avantages :</strong> Gain de place considérable, léger et facile à transporter
-            </li>
-            <li>
-              <strong>Inconvénients :</strong> Fonctionne uniquement via USB (nécessite une batterie
-              externe)
-            </li>
-            <li>
-              <strong>Conseils :</strong> Idéal avec des sacs compressibles fournis par la même
-              marque
-            </li>
-            <li>
-              <strong>Scénario idéal :</strong> Voyage multi-hôtels où l’on veut tout faire tenir
-              dans une seule valise
-            </li>
-          </ul>
-        </section>
+        {/* Checklist 2 colonnes */}
+        <Checklist2Col
+          title="📋 Checklist de voyage à l'hôtel"
+          left={[
+            'Adaptateur universel',
+            'Câbles USB-C 100W (2 m)',
+            'Power bank 20 000 mAh',
+            'Cubes de rangement',
+            'Sacs sous vide',
+          ]}
+          right={[
+            'Trousse à crochet (100 ml)',
+            'Masque + bouchons',
+            'Sandales / pantoufles',
+            'Lingettes / petit gel',
+            'Petit sac à linge',
+          ]}
+        />
 
-        {/* Cadenas TSA Forge */}
-        <section>
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Cadenas TSA FOSMON – La sécurité sans compromis
-          </h3>
-          <Image
-            src="/images/produits/cadenas-bagages.avif"
-            alt="Cadenas TSA Forge"
-            width={400}
-            height={300}
-            className="rounded-lg mb-4"
-          />
-          <p className="text-gray-700 mb-2">
-            Ce cadenas approuvé TSA est fabriqué en alliage de zinc avec un câble flexible et
-            résistant. Il permet de sécuriser efficacement valises, casiers ou portes de chambre si
-            besoin.
-          </p>
-          <p className="text-gray-700 mb-2 font-semibold">Prix : 27 CAD</p>
-          <a
-            href="https://amzn.to/3TgpWZr"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 underline"
-          >
-            Voir sur Amazon.ca →
-          </a>
-          <ul className="mt-4 text-gray-700 list-disc list-inside">
+        {/* Erreurs courantes */}
+        <section className="mb-12">
+          <H2 className="mb-4 text-3xl font-semibold text-gray-900">
+            🚫 Erreurs courantes (et solutions)
+          </H2>
+          <ul className="ml-6 list-disc space-y-2 text-gray-700">
             <li>
-              <strong>Avantages :</strong> approuvé par les douanes, câble flexible très pratique
+              Oublier l’adaptateur →{' '}
+              <a href="#adaptateur-vylee" className="text-blue-600 underline">
+                VYLEE
+              </a>{' '}
+              multi-ports.
             </li>
             <li>
-              <strong>Inconvénients :</strong> nécessite une petite clé (fournie) qu’il faut ne pas
-              perdre
-            </li>
-            <li>
-              <strong>Conseils :</strong> utilisez-le aussi sur les fermetures éclairs d’un sac à
-              dos
-            </li>
-            <li>
-              <strong>Scénario idéal :</strong> voyage avec étapes multiples ou objets précieux à
-              sécuriser à l’hôtel
-            </li>
-          </ul>
-        </section>
-
-        {/* Adaptateur Epicka Universel */}
-        <section>
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Adaptateur VYLEE Universel – Recharge partout sans stress
-          </h3>
-          <Image
-            src="/images/produits/adaptateur-universelle-prise.avif"
-            alt="Adaptateur Epicka Universel"
-            width={400}
-            height={300}
-            className="rounded-lg mb-4"
-          />
-          <p className="text-gray-700 mb-2">
-            Cet adaptateur fonctionne dans plus de 150 pays et possède 4 ports USB + 1 USB-C. Il
-            permet de charger jusqu’à 5 appareils simultanément en toute sécurité, même dans les
-            hôtels à l’international.
-          </p>
-          <p className="text-gray-700 mb-2 font-semibold">Prix : 20 CAD</p>
-          <a
-            href="https://amzn.to/3G7Gi3D"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 underline"
-          >
-            Voir sur Amazon.ca →
-          </a>
-          <ul className="mt-4 text-gray-700 list-disc list-inside">
-            <li>
-              <strong>Avantages :</strong> compatibilité mondiale, ports multiples, sécurité
-              intégrée
-            </li>
-            <li>
-              <strong>Inconvénients :</strong> un peu encombrant dans les prises murales anciennes
-            </li>
-            <li>
-              <strong>Conseils :</strong> prévoyez une pochette pour le transporter sans abîmer les
-              broches
-            </li>
-            <li>
-              <strong>Scénario idéal :</strong> séjour dans un hôtel à l’étranger ou avec plusieurs
-              appareils à charger
-            </li>
-          </ul>
-        </section>
-
-        {/* Guide d'achat */}
-        <section>
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            🛍️ Guide d’achat : comment choisir les bons accessoires pour l’hôtel ?
-          </h2>
-          <ul className="list-disc list-inside text-gray-700">
-            <li>
-              <strong>Compatibilité :</strong> privilégiez des accessoires universels (comme les
-              adaptateurs ou cadenas TSA) utilisables partout dans le monde.
-            </li>
-            <li>
-              <strong>Poids et encombrement :</strong> optez pour des produits légers, pliables ou
-              compacts pour faciliter le transport.
-            </li>
-            <li>
-              <strong>Utilité réelle :</strong> ne prenez que ce qui améliore vraiment votre confort
-              ou votre organisation sur place.
-            </li>
-            <li>
-              <strong>Budget :</strong> inutile de tout acheter en haut de gamme : certains produits
-              à 25-40 $ suffisent largement.
-            </li>
-          </ul>
-        </section>
-
-        {/* Checklist imprimable */}
-        <section>
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            🎒 Checklist de voyage à l’hôtel
-          </h2>
-          <ul className="list-disc list-inside text-gray-700">
-            <li>Organiseur de valise</li>
-            <li>Adaptateur de prise universel</li>
-            <li>Cadenas TSA</li>
-            <li>Chargeurs et câbles (USB, USB-C)</li>
-            <li>Compresseur de vêtements ou sacs sous vide</li>
-            <li>Trousse de toilette (format voyage)</li>
-            <li>Sandales ou pantoufles</li>
-            <li>Bouchons d’oreilles / masque de sommeil</li>
-            <li>Désinfectant / lingettes</li>
-            <li>Vêtements de rechange, pyjama, t-shirt confort</li>
-            <li>Petit sac de linge sale</li>
-          </ul>
-        </section>
-
-        {/* Conseils d'utilisation généraux */}
-        <section>
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            🔧 Conseils d’utilisation pour optimiser vos séjours à l’hôtel
-          </h2>
-          <ul className="list-disc list-inside text-gray-700">
-            <li>
-              Prenez quelques minutes avant le départ pour organiser vos accessoires dans votre
-              valise.
-            </li>
-            <li>
-              Rangez vos objets dans les mêmes pochettes à chaque voyage pour créer une routine
-              efficace.
-            </li>
-            <li>Chargez vos batteries (adaptateur, VAGO, etc.) la veille du départ.</li>
-            <li>Préparez une petite pochette d’accessoires essentiels dans votre bagage cabine.</li>
-          </ul>
-        </section>
-
-        {/* Erreurs à éviter */}
-        <section>
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            🚫 Erreurs courantes à éviter lors d’un séjour à l’hôtel
-          </h2>
-          <ul className="list-disc list-inside text-gray-700">
-            <li>
-              Oublier les adaptateurs ou chargeurs : vous pourriez perdre du temps à chercher des
-              solutions sur place.
-            </li>
-            <li>Surcharger sa valise avec des objets inutiles : pensez minimalisme efficace.</li>
-            <li>Ne pas sécuriser ses affaires dans la chambre (cadenas utile même à l’hôtel).</li>
-            <li>
-              Négliger l’hygiène des surfaces : une lingette peut éviter bien des désagréments.
-            </li>
-          </ul>
-        </section>
-
-        {/* FAQ SEO */}
-        <section>
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            ❓ FAQ – Tout savoir pour un séjour à l’hôtel réussi
-          </h2>
-          <div className="text-gray-700 space-y-4">
-            <div>
-              <strong>Quels sont les accessoires les plus utiles pour un séjour à l’hôtel ?</strong>
-              <p>
-                Les organiseurs de valise, adaptateurs, cadenas TSA, trousses de toilette et
-                accessoires de sommeil sont les plus recommandés.
-              </p>
-            </div>
-            <div>
-              <strong>Est-il utile d’apporter un compresseur de bagage à l’hôtel ?</strong>
-              <p>
-                Oui, surtout si vous prévoyez plusieurs arrêts ou si vous ramenez des souvenirs. Il
-                permet de gagner de la place au retour.
-              </p>
-            </div>
-            <div>
-              <strong>Faut-il sécuriser ses effets personnels à l’hôtel ?</strong>
-              <p>
-                Oui, même dans les établissements réputés. Utilisez un cadenas TSA sur votre valise
-                ou rangez vos objets dans un coffre.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Conclusion avec CTA */}
-        <section>
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            🧭 Conclusion : partez l’esprit léger, dormez l’esprit libre
-          </h2>
-          <p className="text-gray-700 mb-4">
-            Voyager à l’hôtel peut être un vrai plaisir… à condition d’être bien préparé. Grâce à
-            quelques accessoires bien choisis, vous améliorez votre confort, gagnez du temps et
-            réduisez votre stress. Alors, prêt à faire votre valise comme un pro ?
-          </p>
-          <p className="text-gray-700 mb-4">
-            Découvrez aussi nos articles liés pour préparer tous vos séjours&nbsp;:
-          </p>
-          <ul className="list-disc list-inside text-blue-700">
-            <li>
-              <a href="/vols" className="underline">
-                Nos meilleurs conseils pour trouver un vol pas cher
+              Portes trop loin des prises →{' '}
+              <a href="#cables-2m-65w" className="text-blue-600 underline">
+                câbles 2 m
               </a>
+              .
             </li>
             <li>
-              <a href="/sejours" className="underline">
-                Organiser un séjour tout compris
+              Valise chaos →{' '}
+              <a href="#cubes-bagsmart" className="text-blue-600 underline">
+                cubes
+              </a>{' '}
+              +{' '}
+              <a href="#sous-vide-gongshi" className="text-blue-600 underline">
+                compression
               </a>
+              .
             </li>
             <li>
-              <a href="/campings" className="underline">
-                Nos coups de cœur camping au Québec
+              Sommeil haché →{' '}
+              <a href="#kit-sommeil" className="text-blue-600 underline">
+                masque + bouchons
               </a>
+              .
             </li>
             <li>
-              <a href="/videos" className="underline">
-                Vidéos à voir absolument avant de partir
+              Oublier de sécuriser →{' '}
+              <a href="#cadenas-tsa-fosmon" className="text-blue-600 underline">
+                cadenas TSA
               </a>
+              .
             </li>
           </ul>
-          <p className="text-gray-700 mt-8">
-            Soutenez les producteurs locaux et découvrez les merveilles de notre province lors de
-            vos voyages !
-          </p>
         </section>
+
+        {/* FAQ */}
+        <FAQ
+          items={[
+            {
+              q: 'Faut-il un adaptateur à l’étranger ?',
+              a: (
+                <>
+                  Oui, prends un modèle universel (
+                  <a href="#adaptateur-vylee" className="text-blue-600 underline">
+                    VYLEE
+                  </a>
+                  ) et vérifie le bi-voltage 100–240 V de tes appareils.
+                </>
+              ),
+            },
+            {
+              q: 'Les batteries sont-elles autorisées en avion ?',
+              a: (
+                <>
+                  Oui, en <strong>cabine</strong> pour la plupart des compagnies (limite Wh).
+                  Protège les bornes et garde la{' '}
+                  <a href="#powerbank-20000" className="text-blue-600 underline">
+                    power bank
+                  </a>{' '}
+                  accessible.
+                </>
+              ),
+            },
+            {
+              q: 'Comment éviter le bazar dans la chambre ?',
+              a: (
+                <>
+                  Utilise des{' '}
+                  <a href="#cubes-bagsmart" className="text-blue-600 underline">
+                    cubes
+                  </a>
+                  , un sac linge et accroche la{' '}
+                  <a href="#trousse-toilette-hook" className="text-blue-600 underline">
+                    trousse
+                  </a>
+                  .
+                </>
+              ),
+            },
+          ]}
+        />
+
+        {/* Conclusion avec liens internes vers tes autres guides */}
+        <ConclusionLinks
+          items={[
+            { href: '/blog/voyage-camping', label: 'Voyage en camping' },
+            { href: '/blog/voyage-voiture', label: 'Voyage en voiture' },
+            { href: '/blog/voyage-avion', label: 'Voyage en avion' },
+          ]}
+          title="🎯 Conclusion"
+        />
       </article>
     </>
   );

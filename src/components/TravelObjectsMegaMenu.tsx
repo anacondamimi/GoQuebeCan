@@ -6,13 +6,13 @@ import { travelObjects } from '@/data/objectsData';
 
 export default function TravelObjectsMegaMenu() {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-xl w-[320px]">
+    <div className="w-[320px] rounded-xl bg-white p-6 shadow-xl">
       <ul className="space-y-3">
         {travelObjects.map((obj) => (
           <li key={obj.slug}>
             <Link
               href={`/blog/${obj.slug}`}
-              className="flex items-center gap-2 text-sm text-gray-700 hover:text-[#e11d48] transition"
+              className="flex items-center gap-2 text-sm text-gray-700 transition hover:text-[#e11d48]"
             >
               <span className="text-lg">{obj.icon}</span>
               {obj.title}

@@ -1,3 +1,4 @@
+#!/usr/bin/env tsx
 import { promises as fs } from 'fs';
 import path from 'path';
 
@@ -16,10 +17,11 @@ const slugs = [
   'bic',
   'forillon',
   'magog-orford',
+  'saguenay',
   'massif',
   'tadoussac',
   'baie-saint-paul',
-  'rivière-du-loup',
+  'riviere-du-loup',
   'sherbrooke',
   'quebec',
   'port-cartier',

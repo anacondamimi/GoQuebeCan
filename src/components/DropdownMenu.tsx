@@ -14,7 +14,7 @@ interface MenuItem {
 }
 
 interface DropdownMenuProps {
-  title: string;
+  title: React.ReactNode;
   icon?: React.ReactNode;
   items: MenuItem[];
 }
@@ -45,7 +45,7 @@ export default function DropdownMenu({ title, icon, items }: DropdownMenuProps) 
     <div className="relative" onMouseEnter={handleEnterMenu} onMouseLeave={handleLeaveMenu}>
       <button
         type="button"
-        className="flex items-center gap-2 text-gray-800 hover:text-[#e11d48] px-3 py-2 rounded-md text-base font-medium"
+        className="flex items-center gap-2 rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:text-[#e11d48]"
       >
         {icon}
         <span>{title}</span>
@@ -58,9 +58,9 @@ export default function DropdownMenu({ title, icon, items }: DropdownMenuProps) 
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.18 }}
-            className="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white shadow-xl rounded-xl p-4 z-[999] min-w-[260px]"
+            className="absolute left-1/2 top-full z-[999] mt-2 min-w-[260px] -translate-x-1/2 rounded-xl bg-white p-4 shadow-xl"
           >
-            <ul className="space-y-2 relative">
+            <ul className="relative space-y-2">
               {items.map((item, i) => {
                 const hasComponent = Boolean(item.component);
                 const isActive = activeIndex === i;
@@ -83,8 +83,8 @@ export default function DropdownMenu({ title, icon, items }: DropdownMenuProps) 
                       <span
                         className={`block text-sm ${
                           hasComponent
-                            ? 'text-gray-700 hover:text-[#e11d48] cursor-pointer'
-                            : 'text-gray-500 cursor-default'
+                            ? 'cursor-pointer text-gray-700 hover:text-[#e11d48]'
+                            : 'cursor-default text-gray-500'
                         }`}
                       >
                         {item.label}
@@ -99,7 +99,7 @@ export default function DropdownMenu({ title, icon, items }: DropdownMenuProps) 
                           animate={{ opacity: 1, x: 0 }}
                           exit={{ opacity: 0, x: 6 }}
                           transition={{ duration: 0.15 }}
-                          className="absolute top-0 left-full ml-4 z-[1000]"
+                          className="absolute left-full top-0 z-[1000] ml-4"
                         >
                           {item.component}
                         </motion.div>

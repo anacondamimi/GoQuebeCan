@@ -1,426 +1,570 @@
-import Image from 'next/image';
-import React from 'react';
+'use client';
 
-export const metadata = {
-  slug: 'kuururjuaq',
-  ville: 'Kuururjuaq',
-  resume: 'Découverte de Kuururjuaq et de ses attraits touristiques.',
-  activites: ['Mont D', 'Rivière Koroc', 'Randonnée Tundra'],
-  hebergements: ['Auberge Kuujjuaq', 'Camps de Base Kuururjuaq'],
-  publics: ['amateurs de culture', 'aventuriers'],
-};
-import {
-  Hotel,
-  Utensils,
-  Bus,
-  Calendar,
-  DollarSign,
-  Shield,
-  Star,
-  Sun,
-  Snowflake,
-} from 'lucide-react';
+import dynamic from 'next/dynamic';
+import Link from 'next/link';
+import H1 from '@/components/typography/H1';
+import H2 from '@/components/typography/H2';
+import H3 from '@/components/typography/H3';
+import BrandName from '@/components/brand/BrandName';
+import React, { Suspense, useEffect, useState } from 'react';
 
-// ✅ Imports déplacés automatiquement
+// ✅ Composant wrapper pour déclencher le chargement seulement quand visible
+export function NunavikMapLoader() {
+  // ✅ Lazy load avec Suspense + IntersectionObserver
+  const NunavikMap = dynamic(() => import('@/components/NunavikMap'), {
+    ssr: false,
+  });
+  const [isVisible, setIsVisible] = useState(false);
 
-const hotels = [
-  {
-    name: 'Auberge Kuujjuaq',
-    category: 'Confort',
-    description: 'Point de départ pour le parc',
-    price: 'À partir de 189$/nuit',
-    link: 'https://www.booking.com/hotel/ca/auberge-kuujjuaq.html',
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80',
-  },
-  {
-    name: 'Camps de Base Kuururjuaq',
-    category: 'Refuge',
-    description: 'Hébergement rustique dans le parc',
-    price: 'À partir de 89$/nuit',
-    link: 'https://www.nunavikparks.ca/fr/parcs/kuururjuaq',
-    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80',
-  },
-];
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // stoppe l’observation une fois visible
+        }
+      },
+      { threshold: 0.2 }, // déclenche quand 20% du bloc est visible
+    );
 
-const restaurants = [
-  {
-    name: 'Restaurant Kuujjuaq',
-    type: 'Cuisine du Nord',
-    speciality: 'Cuisine traditionnelle inuite',
-    price: '$$$',
-    mustTry: 'Omble chevalier et caribou',
-    schedule: "Toute l'année",
-  },
-  {
-    name: 'Café du Nord',
-    type: 'Café-Restaurant',
-    speciality: 'Cuisine réconfortante',
-    price: '$$',
-    mustTry: 'Soupe traditionnelle',
-    schedule: "Toute l'année",
-  },
-];
+    const el = document.getElementById('nunavik-map-trigger');
+    if (el) observer.observe(el);
 
-const activities = [
-  {
-    name: "Mont D'Iberville",
-    type: 'Alpinisme',
-    duration: '2-3 jours',
-    price: 'Guide obligatoire: 350$/jour',
-    description: 'Plus haut sommet du Québec (1652m)',
-  },
-  {
-    name: 'Rivière Koroc',
-    type: 'Kayak/Canot',
-    duration: '3-7 jours',
-    price: 'Guide obligatoire: 250$/jour',
-    description: 'Descente en eau vive dans un cadre spectaculaire',
-  },
-  {
-    name: 'Randonnée Tundra',
-    type: 'Randonnée',
-    duration: '1-5 jours',
-    price: 'Guide recommandé: 200$/jour',
-    description: 'Exploration de la toundra arctique',
-  },
-];
+    return () => observer.disconnect();
+  }, []);
 
-const summerActivities = [
-  {
-    name: 'Observation de la Faune',
-    type: 'Nature',
-    duration: 'Variable',
-    price: 'Guide recommandé: 200$/jour',
-    description: 'Caribous, loups arctiques et oiseaux migrateurs',
-  },
-  {
-    name: 'Photographie',
-    type: 'Art',
-    duration: 'Variable',
-    price: 'Guide photo: 250$/jour',
-    description: 'Paysages arctiques et aurores boréales',
-  },
-  {
-    name: 'Culture Inuite',
-    type: 'Culture',
-    duration: '1-2 jours',
-    price: '150$/jour',
-    description: 'Rencontres et traditions locales',
-  },
-];
-
-const winterActivities = [
-  {
-    name: 'Ski-Pulka',
-    type: 'Aventure',
-    duration: '3-7 jours',
-    price: 'Guide obligatoire: 300$/jour',
-    description: 'Expédition en ski avec pulka',
-  },
-  {
-    name: 'Motoneige',
-    type: 'Motorisé',
-    duration: '1-3 jours',
-    price: 'Guide obligatoire: 275$/jour',
-    description: 'Exploration des vastes étendues',
-  },
-  {
-    name: 'Aurores Boréales',
-    type: 'Observation',
-    duration: 'Soirée',
-    price: 'Guide: 150$/soirée',
-    description: 'Observation du phénomène naturel',
-  },
-];
+  return (
+    <div id="nunavik-map-trigger" className="w-full">
+      {isVisible ? (
+        <Suspense
+          fallback={
+            <div className="flex h-[60vh] w-full items-center justify-center rounded-xl bg-slate-100 text-sm text-slate-500 shadow-inner">
+              Chargement de la carte du Nunavik...
+            </div>
+          }
+        >
+          <NunavikMap />
+        </Suspense>
+      ) : (
+        <div className="flex h-[60vh] w-full items-center justify-center rounded-xl bg-slate-100 italic text-slate-400">
+          Carte en veille – visible au défilement
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function BlogArticleKuururjuaq() {
   return (
-    <article id="blog_article_kuururjuaq" className="max-w-4xl mx-auto px-4 py-12 bg-white">
-      <header className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Parc national Kuururjuaq - L'Ultime Aventure Arctique
-        </h1>
-        <p className="text-xl text-gray-600">
-          Découvrez l'un des parcs les plus septentrionaux du Québec, où toundra, montagnes et
-          culture inuite créent une expérience unique
-        </p>
-      </header>
+    <article className="prose prose-lg prose-slate max-w-none prose-headings:font-semibold prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:leading-relaxed prose-strong:text-slate-900 prose-li:marker:text-slate-500 prose-img:rounded-xl">
+      {/* ✅ Titre principal */}
+      <H1>
+        Vacances dans le Grand Nord québécois : Kuujjuaq, Nunavik et le rêve arctique accessible
+      </H1>
 
-      <section className="prose lg:prose-xl mb-12">
-        <p>
-          Le parc national Kuururjuaq, situé à l'extrême nord du Québec, offre une expérience
-          arctique authentique avec le mont D'Iberville, plus haut sommet du Québec, la majestueuse
-          rivière Koroc et des paysages de toundra à perte de vue. C'est un territoire où l'aventure
-          se mêle à la culture inuite millénaire.
-        </p>
-        <div className="my-8">
-          <Image
-            src="/images/destinations/kuururjuaq.avif"
-            alt="Parc Kuururjuaq"
-            className="w-full h-96 object-cover rounded-lg shadow-lg"
-            width={800}
-            height={600}
-          />
-        </div>
-      </section>
+      <p>
+        Le Nord du Québec, c’est un autre monde. Pas juste « un peu plus haut que le Saguenay »,
+        mais un territoire immense où la route s’arrête, où la culture inuite est bien vivante, où
+        le ciel prend toute la place. Quand on dit
+        <strong> Kuujjuaq</strong>, <strong>Nunavik</strong>, <strong>toundra</strong>,{' '}
+        <strong>aurores boréales</strong>… on parle d’endroits où l’on ressent quelque chose de très
+        simple et très puissant : le calme.
+      </p>
 
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Star className="h-8 w-8 text-indigo-600" />
-          Pourquoi Visiter Kuururjuaq ?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Paysages Arctiques</h3>
-            <p className="text-gray-600">
-              Toundra, montagnes et rivières sauvages dans un environnement préservé.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Culture Inuite</h3>
-            <p className="text-gray-600">
-              Immersion dans les traditions et le mode de vie du Grand Nord.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Aventure Extrême</h3>
-            <p className="text-gray-600">
-              Expéditions uniques dans l'un des derniers territoires sauvages.
-            </p>
-          </div>
-        </div>
-      </section>
+      <p>
+        Si vous cherchez un voyage qui sort complètement du cadre classique « Québec – Charlevoix –
+        Gaspésie », alors bienvenue. Ici, on part loin, mais pas n’importe comment : on part
+        intelligemment, on planifie, et on respecte les lieux.
+      </p>
 
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          Activités Principales
-        </h2>
-        <div className="space-y-8">
-          {activities.map((activity) => (
-            <div key={activity.name} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{activity.name}</h3>
-                <p className="text-gray-600 mb-4">{activity.description}</p>
-                <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-                  <span>Type: {activity.type}</span>
-                  <span>Durée: {activity.duration}</span>
-                  <span>Prix: {activity.price}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <p>Dans cet article, on va voir :</p>
 
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Sun className="h-8 w-8 text-indigo-600" />
-          Activités d'Été
-        </h2>
-        <div className="space-y-8">
-          {summerActivities.map((activity) => (
-            <div key={activity.name} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{activity.name}</h3>
-                <p className="text-gray-600 mb-4">{activity.description}</p>
-                <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-                  <span>Type: {activity.type}</span>
-                  <span>Durée: {activity.duration}</span>
-                  <span>Prix: {activity.price}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Snowflake className="h-8 w-8 text-indigo-600" />
-          Activités d'Hiver
-        </h2>
-        <div className="space-y-8">
-          {winterActivities.map((activity) => (
-            <div key={activity.name} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{activity.name}</h3>
-                <p className="text-gray-600 mb-4">{activity.description}</p>
-                <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-                  <span>Type: {activity.type}</span>
-                  <span>Durée: {activity.duration}</span>
-                  <span>Prix: {activity.price}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Hotel className="h-8 w-8 text-indigo-600" />
-          Où Dormir ?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {hotels.map((hotel) => (
-            <a
-              key={hotel.name}
-              href={hotel.link}
-              className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-            >
-              <div className="relative h-48">
-                <Image
-                  src={hotel.image}
-                  alt={hotel.name}
-                  className="w-full h-full object-cover"
-                  width={800}
-                  height={600}
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-semibold text-gray-900">{hotel.name}</h3>
-                  <span className="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-sm">
-                    {hotel.category}
-                  </span>
-                </div>
-                <p className="text-gray-600 mb-4">{hotel.description}</p>
-                <p className="text-indigo-600 font-semibold">{hotel.price}</p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Utensils className="h-8 w-8 text-indigo-600" />
-          Où Manger ?
-        </h2>
-        <div className="space-y-6">
-          {restaurants.map((restaurant) => (
-            <div key={restaurant.name} className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">{restaurant.name}</h3>
-                  <p className="text-gray-600">{restaurant.type}</p>
-                </div>
-                <span className="text-indigo-600 font-semibold">{restaurant.price}</span>
-              </div>
-              <p className="text-gray-700 mb-2">
-                <span className="font-medium">Spécialité:</span> {restaurant.speciality}
-              </p>
-              <p className="text-gray-700 mb-2">
-                <span className="font-medium">À essayer:</span> {restaurant.mustTry}
-              </p>
-              <p className="text-gray-700">
-                <span className="font-medium">Horaires:</span> {restaurant.schedule}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Bus className="h-8 w-8 text-indigo-600" />
-          Comment s'y Rendre ?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-4">Depuis les Grandes Villes</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
-                Vol vers Kuujjuaq (4h depuis Montréal)
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
-                Accès uniquement par avion
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
-                Vols réguliers avec Air Inuit
-              </li>
-            </ul>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-4">Dans le Parc</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
-                Transport en hydravion ou hélicoptère
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
-                Guide obligatoire pour certaines activités
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
-                Déplacements à pied ou en ski
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Calendar className="h-8 w-8 text-indigo-600" />
-          Conseils Pratiques
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <Calendar className="h-5 w-5 text-indigo-600" />
-              Meilleure Période
-            </h3>
-            <p className="text-gray-600">
-              Juillet-août pour l'été. Mars-avril pour les activités hivernales.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <DollarSign className="h-5 w-5 text-indigo-600" />
-              Budget
-            </h3>
-            <p className="text-gray-600">
-              Transport: 1000-2000$/personne Hébergement: 89-189$/nuit Activités: 150-350$/jour
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <Shield className="h-5 w-5 text-indigo-600" />À Noter
-            </h3>
-            <p className="text-gray-600">
-              Réservation obligatoire. Équipement spécialisé nécessaire. Guide obligatoire pour
-              certaines activités.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="text-center bg-gray-50 p-8 rounded-lg">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Prêt pour l'Aventure Arctique ?</h2>
-        <p className="text-gray-600 mb-6">
-          Réservez votre expédition maintenant et découvrez l'un des derniers territoires sauvages
-          du Québec
-        </p>
-        <div className="flex justify-center gap-4">
-          <a
-            href="https://www.nunavikparks.ca/fr/parcs/kuururjuaq"
-            className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+      <ul>
+        <li>Pourquoi le Nunavik et Kuujjuaq sont des destinations incroyables ;</li>
+        <li>Où dormir (avec des adresses concrètes) ;</li>
+        <li>Comment organiser le trajet ;</li>
+        <li>Quoi faire sur place ;</li>
+        <li>
+          Et comment tout préparer sans stress grâce à notre outil{' '}
+          <Link href="/planificateur" className="font-semibold text-indigo-600 hover:underline">
+            /planificateur
+          </Link>{' '}
+          et à notre guide{' '}
+          <Link
+            href="/blog/voyage-voiture"
+            className="font-semibold text-indigo-600 hover:underline"
           >
-            Planifier votre Voyage
-          </a>
-          <a
-            href="https://www.airinuit.com"
-            className="px-6 py-3 bg-white text-indigo-600 border border-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors"
+            /blog/voyage-voiture
+          </Link>
+          .
+        </li>
+      </ul>
+
+      <p>
+        Notre but est simple : que vous soyez déjà en train d’imaginer
+        <em> « OK, on le fait. On part. »</em>
+      </p>
+
+      {/* === Section Pourquoi aller === */}
+      <H2>Pourquoi aller jusqu’au Nunavik (et à Kuujjuaq)</H2>
+
+      <p>
+        Le <strong>Nunavik</strong> couvre tout le nord du Québec, au-delà du 55e parallèle. C’est
+        grandiose : immensité arctique, rivières larges comme des lacs, silence, neige qui craque
+        l’hiver, lumière quasi permanente l’été. On ne parle pas ici d’une « belle région
+        touristique ». On parle d’un
+        <strong> choc émotionnel</strong>.
+      </p>
+
+      <p>
+        Venir ici, ce n’est pas seulement « voir du paysage ». C’est rencontrer les communautés
+        inuites, comprendre leur lien au territoire et ressentir ce que veut dire{' '}
+        <em>vivre au Nord</em>.
+      </p>
+
+      <p>
+        Si vous rêvez de <strong>nature brute</strong>, d’<strong>authenticité</strong> et d’un
+        voyage qui a du sens, vous êtes au bon endroit.
+      </p>
+
+      {/* === Section trajet === */}
+      <H2>Comment s’y rendre (et ce que personne ne vous dit)</H2>
+
+      <p>
+        L’accès au Nunavik se fait principalement par avion, mais un voyage « route + nord » reste
+        possible. Beaucoup de familles font un road trip vers la Côte-Nord, Tadoussac, le
+        Bas-Saint-Laurent, puis prennent un vol régional vers Kuujjuaq. C’est une manière plus douce
+        d’arriver dans le Nord.
+      </p>
+
+      <p>Pour que le trajet reste agréable, découvrez :</p>
+
+      <ul>
+        <li>
+          Notre guide spécial longues distances{' '}
+          <Link
+            href="/blog/voyage-voiture"
+            className="font-semibold text-indigo-600 hover:underline"
           >
-            Réserver votre Vol
-          </a>
+            /blog/voyage-voiture
+          </Link>{' '}
+          (pauses, repas, musique, astuces enfants).
+        </li>
+        <li>
+          Notre outil de planification{' '}
+          <Link href="/planificateur" className="font-semibold text-indigo-600 hover:underline">
+            /planificateur
+          </Link>{' '}
+          pour équilibrer vos étapes et vos nuitées.
+        </li>
+      </ul>
+
+      {/* === Section hébergements === */}
+      <H2>Où dormir dans le Nord du Québec</H2>
+
+      <H3>Kuujjuaq Inn – Kuujjuaq, Nunavik</H3>
+      <p>
+        Le <strong>Kuujjuaq Inn</strong> est l’adresse incontournable à Kuujjuaq : chambres
+        confortables, <strong>restaurant sur place</strong>, navette aéroport, Wi-Fi. Un vrai point
+        d’ancrage humain dans le Nunavik.
+      </p>
+      <ul>
+        <li>🏔️ En plein Nunavik</li>
+        <li>🍽️ Repas sur place</li>
+        <li>🚌 Navette aéroport</li>
+        <li>🌐 Wi-Fi</li>
+      </ul>
+      <p className="text-sm text-slate-600">Tarif indicatif : ≈ 245 $/nuit.</p>
+
+      <H3>Réseau des hôtels coopératifs du Nunavik</H3>
+      <p>
+        La <strong>Fédération des coopératives du Nouveau-Québec</strong> gère 14 hôtels répartis
+        dans les communautés du Nunavik. Ce n’est pas une chaîne, mais un réseau local : accueil
+        simple, repas sur place, immersion culturelle.
+      </p>
+      <ul>
+        <li>❄️ Expérience nordique</li>
+        <li>🤝 Modèle coopératif</li>
+        <li>🍽️ Restauration</li>
+        <li>✈️ Accès par avion</li>
+      </ul>
+      <p className="text-sm text-slate-600">Tarif indicatif : ≈ 220 $/nuit.</p>
+
+      {/* === Section expériences === */}
+      <H2>Quoi faire sur place : vivre le Nord, pas juste le regarder</H2>
+
+      <ul>
+        <li>
+          Observer les <strong>aurores boréales</strong>.
+        </li>
+        <li>
+          Découvrir la <strong>culture inuite vivante</strong>.
+        </li>
+        <li>
+          Partager un <strong>repas local</strong> et écouter des histoires.
+        </li>
+        <li>Sentir l’immensité, marcher, respirer le silence.</li>
+      </ul>
+
+      <p>
+        Et si vous aimez encourager les artisans du Québec, explorez notre carte des{' '}
+        <Link href="/producteurs" className="font-semibold text-indigo-600 hover:underline">
+          producteurs locaux
+        </Link>
+        .
+      </p>
+
+      {/* === Module carte (UX + SEO) === */}
+      <section aria-label="Carte interactive du Nunavik" className="my-10">
+        <H2 className="flex flex-wrap items-center gap-2 text-xl font-semibold text-slate-900">
+          <span>Carte interactive du Nunavik</span>
+          <span className="text-[11px] font-normal text-white">
+            <BrandName as="span" size="sm" />
+          </span>
+        </H2>
+
+        <p className="mt-2 max-w-3xl text-sm text-slate-600">
+          Cette carte vous permet d’explorer les communautés inuites du Nunavik, au nord du 55e
+          parallèle. Chaque point représente un village nordique, un service essentiel ou un lieu
+          d’hébergement possible pour les voyageurs. Cliquez pour voir le nom du lieu et préparez
+          votre itinéraire.
+        </p>
+
+        {/* carte responsive, lazy-loadée */}
+        <div className="mt-4">
+          <NunavikMapLoader />
+        </div>
+
+        {/* bloc texte SEO sous la carte */}
+        <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-4 text-xs leading-relaxed text-slate-600">
+          <p className="mb-2">
+            Le Nunavik est une région nordique du Québec composée de 14 villages inuits, accessible
+            principalement par avion. Kuujjuaq est la porte d’entrée principale du territoire, mais
+            chaque communauté a sa culture, ses paysages et ses réalités logistiques (hébergement,
+            approvisionnement, transport). Cette carte interactive aide les familles, randonneurs,
+            passionnés d’espace nordique et photographes d’aurores boréales à comprendre le terrain
+            avant le départ.
+          </p>
+          <p>
+            Astuce voyage : utilisez notre{' '}
+            <Link href="/planificateur" className="font-semibold text-indigo-600 hover:underline">
+              planificateur
+            </Link>{' '}
+            pour tracer vos étapes, et regardez les{' '}
+            <Link href="/videos" className="font-semibold text-indigo-600 hover:underline">
+              vidéos du Nord
+            </Link>{' '}
+            pour visualiser l’ambiance réelle avant d’arriver sur place.
+          </p>
         </div>
       </section>
+
+      {/* === FAQ === */}
+      <H2>Conseils pratiques &amp; questions fréquentes</H2>
+
+      <H3>Quelle est la meilleure période pour visiter ?</H3>
+      <p>
+        L’été (juin à septembre) est plus doux, parfait pour explorer. L’hiver (décembre à mars)
+        offre les aurores boréales et la magie de la neige.
+      </p>
+
+      <H3>Peut-on venir avec des enfants ?</H3>
+      <p>
+        Oui. Ce n’est pas un voyage « tout inclus », mais une expérience qui les marquera : grands
+        espaces, animaux, rencontres. Prévoyez du confort le soir.
+      </p>
+
+      <H3>Y a-t-il des bornes pour véhicules électriques ?</H3>
+      <p>
+        Dans le Nord, elles sont rares. Planifiez vos arrêts avec notre guide{' '}
+        <Link href="/blog/voyage-voiture" className="font-semibold text-indigo-600 hover:underline">
+          /blog/voyage-voiture
+        </Link>
+        .
+      </p>
+
+      <H3>Faut-il réserver à l’avance ?</H3>
+      <p>
+        Oui, impérativement. Les hébergements sont peu nombreux : réservez dès que vos dates de vol
+        ou de route sont fixées.
+      </p>
+
+      {/* === Conclusion === */}
+      <H2>Prêt à vivre le Nord du Québec ?</H2>
+
+      <p>
+        Aller au Nunavik, dormir à Kuujjuaq, parler avec les gens, regarder le ciel la nuit… ce
+        n’est pas juste un voyage, c’est une rencontre. Une aventure qui change la perception du
+        Québec.
+      </p>
+
+      <p>
+        Planifiez dès maintenant avec notre{' '}
+        <Link href="/planificateur" className="font-semibold text-indigo-600 hover:underline">
+          planificateur
+        </Link>
+        , découvrez nos{' '}
+        <Link href="/videos" className="font-semibold text-indigo-600 hover:underline">
+          vidéos
+        </Link>{' '}
+        pour vous inspirer, et laissez-vous guider par la beauté du Nord.
+      </p>
+
+      <p>Le Québec nordique vous attend. Et il ne ressemble à rien d’autre.</p>
+      {/* === Données structurées SEO (JSON-LD) === */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline:
+              'Vacances dans le Grand Nord québécois : Kuujjuaq, Nunavik et le rêve arctique accessible',
+            author: {
+              '@type': 'Organization',
+              name: 'GoQuébeCAN',
+              url: 'https://goquebecan.com',
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'GoQuébeCAN',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://goquebecan.com/images/logo.png',
+              },
+            },
+            datePublished: '2025-10-25',
+            dateModified: '2025-10-25',
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': 'https://goquebecan.com/blog/kuururjuaq',
+            },
+            image: ['https://goquebecan.com/images/blog/kuururjuaq-nunavik.avif'],
+            description:
+              'Découvrez le Nunavik et Kuujjuaq : nature arctique, culture inuite, hôtels coopératifs, itinéraires et carte interactive du Grand Nord. Planifiez votre voyage vers le Nord du Québec avec GoQuébeCAN.',
+            keywords: [
+              'Kuujjuaq',
+              'Nunavik',
+              'Nord du Québec',
+              'voyage nordique',
+              'GoQuébeCAN',
+              'planificateur de voyage Québec',
+            ],
+            hasPart: [
+              {
+                '@type': 'FAQPage',
+                mainEntity: [
+                  {
+                    '@type': 'Question',
+                    name: 'Quelle est la meilleure période pour visiter le Nunavik ?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'L’été (juin à septembre) est plus doux, l’hiver (décembre à mars) offre les aurores boréales et la magie du Nord.',
+                    },
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Peut-on venir avec des enfants ?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Oui. Ce n’est pas un voyage tout inclus, mais une expérience qui marque les enfants grâce aux grands espaces et à la culture locale.',
+                    },
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Y a-t-il des bornes de recharge électrique ?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Elles sont rares dans le Nord. Planifiez vos arrêts avec le guide GoQuébeCAN pour les longs trajets.',
+                    },
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Faut-il réserver les hébergements à l’avance ?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Oui, les hébergements du Nunavik sont peu nombreux et doivent être réservés plusieurs semaines à l’avance.',
+                    },
+                  },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
+      {/* === Données structurées des lieux (LocalBusiness / Place) === */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'Hotel',
+              name: 'Kuujjuaq Inn',
+              image:
+                'https://www.kuujjuaqinn.com/wp-content/uploads/2020/08/kuujjuaqinn-front-entrance.jpg',
+              url: 'https://www.kuujjuaqinn.com/',
+              telephone: '+1-819-964-2960',
+              priceRange: '$$$',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: '245 Avenue Allen',
+                addressLocality: 'Kuujjuaq',
+                addressRegion: 'Québec',
+                postalCode: 'J0M 1C0',
+                addressCountry: 'CA',
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 58.099,
+                longitude: -68.418,
+              },
+              amenityFeature: [
+                { '@type': 'LocationFeatureSpecification', name: 'Wi-Fi', value: true },
+                { '@type': 'LocationFeatureSpecification', name: 'Navette aéroport', value: true },
+                {
+                  '@type': 'LocationFeatureSpecification',
+                  name: 'Restaurant sur place',
+                  value: true,
+                },
+              ],
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: '4.3',
+                reviewCount: '120',
+              },
+              description:
+                'Hôtel Kuujjuaq Inn : hébergement confortable, restaurant et navette aéroport pour les voyageurs du Grand Nord québécois.',
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'Hotel',
+              name: 'Hôtels coopératifs du Nunavik',
+              image:
+                'https://nunavikhotels.ca/wp-content/uploads/2020/09/nunavik-hotels-network.jpg',
+              url: 'https://nunavikhotels.ca/fr/',
+              priceRange: '$$',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Nunavik',
+                addressRegion: 'Québec',
+                addressCountry: 'CA',
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 59.55,
+                longitude: -68.52,
+              },
+              amenityFeature: [
+                { '@type': 'LocationFeatureSpecification', name: 'Restaurant', value: true },
+                {
+                  '@type': 'LocationFeatureSpecification',
+                  name: 'Accueil coopératif',
+                  value: true,
+                },
+              ],
+              description:
+                'Réseau d’hôtels gérés par la Fédération des coopératives du Nouveau-Québec : hébergements authentiques dans 14 communautés nordiques.',
+            },
+          ]),
+        }}
+      />
+      {/* === Données structurées Destination Touristique (SEO 2025) === */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'TouristDestination',
+            name: 'Kuujjuaq et le Nunavik – Grand Nord du Québec',
+            description:
+              'Découvrez Kuujjuaq et le Nunavik, destination unique du nord du Québec : culture inuite, hébergements coopératifs, nature arctique et aurores boréales. Planifiez votre itinéraire avec GoQuébeCAN.',
+            url: 'https://goquebecan.com/blog/kuururjuaq',
+            image: [
+              'https://goquebecan.com/images/blog/kuururjuaq-nunavik.avif',
+              'https://www.kuujjuaqinn.com/wp-content/uploads/2020/08/kuujjuaqinn-front-entrance.jpg',
+              'https://nunavikhotels.ca/wp-content/uploads/2020/09/nunavik-hotels-network.jpg',
+            ],
+            touristType: ['Voyage aventure', 'Famille', 'Culture inuite', 'Expédition arctique'],
+            geo: {
+              '@type': 'GeoCoordinates',
+              latitude: 58.099,
+              longitude: -68.418,
+            },
+            hasPart: [
+              {
+                '@type': 'TouristAttraction',
+                name: 'Kuujjuaq Inn',
+                url: 'https://www.kuujjuaqinn.com/',
+                description: 'Hôtel accueillant et restaurant dans le Grand Nord québécois.',
+                image:
+                  'https://www.kuujjuaqinn.com/wp-content/uploads/2020/08/kuujjuaqinn-front-entrance.jpg',
+              },
+              {
+                '@type': 'TouristAttraction',
+                name: 'Hôtels coopératifs du Nunavik',
+                url: 'https://nunavikhotels.ca/fr/',
+                description: 'Réseau d’hôtels coopératifs dans 14 communautés du Nunavik.',
+                image:
+                  'https://nunavikhotels.ca/wp-content/uploads/2020/09/nunavik-hotels-network.jpg',
+              },
+              {
+                '@type': 'TouristInformationCenter',
+                name: 'GoQuébeCAN Planificateur de voyage',
+                url: 'https://goquebecan.com/planificateur',
+                description:
+                  'Outil de planification d’itinéraire intelligent pour découvrir le Québec et le Nunavik.',
+              },
+            ],
+            containedInPlace: {
+              '@type': 'AdministrativeArea',
+              name: 'Nunavik, Québec, Canada',
+            },
+            additionalProperty: [
+              {
+                '@type': 'PropertyValue',
+                name: 'Langue parlée',
+                value: 'Français, Anglais, Inuktitut',
+              },
+              {
+                '@type': 'PropertyValue',
+                name: 'Saisons recommandées',
+                value: 'Été pour la lumière, hiver pour les aurores boréales',
+              },
+            ],
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': 'https://goquebecan.com/blog/kuururjuaq',
+            },
+            sameAs: [
+              'https://nunavikhotels.ca/',
+              'https://www.kuujjuaqinn.com/',
+              'https://www.quebecoriginal.com/',
+              'https://maps.google.com/?q=Kuujjuaq',
+            ],
+          }),
+        }}
+      />
+
+      {/* === Données structurées : Carte interactive === */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Map',
+            name: 'Carte interactive du Nunavik',
+            description:
+              'Carte des communautés du Nunavik (Kuujjuaq, Kangiqsualujjuaq, etc.) pour aider les voyageurs à planifier un itinéraire dans le nord du Québec.',
+            hasMap: 'https://goquebecan.com/blog/kuururjuaq',
+            creator: {
+              '@type': 'Organization',
+              name: 'GoQuébeCAN',
+              url: 'https://goquebecan.com',
+            },
+          }),
+        }}
+      />
     </article>
   );
 }

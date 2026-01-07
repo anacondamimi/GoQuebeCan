@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import PopularVideos from '@/components/PopularVideos';
+import H1 from '@/components/typography/H1';
 
 export const metadata: Metadata = {
   title: 'Vidéos Populaires sur le Québec et le Canada | GoQuebecan',
@@ -25,9 +26,9 @@ export default function VideosPage() {
   return (
     <main className="min-h-screen pt-8">
       {/* ✅ H1 invisible pour SEO */}
-      <h1 className="sr-only">Vidéos Populaires sur le Québec et le Canada</h1>
+      <H1 className="sr-only">Vidéos Populaires sur le Québec et le Canada</H1>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <PopularVideos />
       </div>
     </main>

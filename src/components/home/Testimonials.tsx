@@ -9,12 +9,12 @@ const testimonials: Testimonial[] = [
   {
     name: 'Sophie L.',
     quote:
-      'Grâce à GoQuébeCan, notre road trip en famille a été magique. Le planificateur a sauvé notre temps et les adresses locales étaient au top !',
+      'Grâce à GoQuebeCan, notre road trip en famille a été magique. Le planificateur a sauvé notre temps et les adresses locales étaient au top !',
   },
   {
     name: 'Marc D.',
     quote:
-      'Les vidéos m’ont vraiment aidé à choisir mes étapes. Je recommande vivement GoQuébeCan !',
+      'Les vidéos m’ont vraiment aidé à choisir mes étapes. Je recommande vivement GoQuebeCan !',
   },
   {
     name: 'Amélie R.',
@@ -27,8 +27,8 @@ export default function Testimonials() {
   return (
     <div className="grid gap-8 md:grid-cols-3">
       {testimonials.map((t, i) => (
-        <div key={i} className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition">
-          <p className="text-gray-800 italic mb-4">“{t.quote}”</p>
+        <div key={i} className="rounded-lg bg-white p-6 shadow-md transition hover:shadow-lg">
+          <p className="mb-4 italic text-gray-800">“{t.quote}”</p>
           <p className="text-right font-semibold">— {t.name}</p>
         </div>
       ))}

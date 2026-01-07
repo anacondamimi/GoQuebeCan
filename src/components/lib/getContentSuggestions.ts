@@ -144,10 +144,10 @@ const contentMap: Record<string, Suggestion> = {
     objectsUrl: baseUrls.objects,
     plannerUrl: baseUrls.planner,
   },
-  'rivieredu-loup': {
+  'riviere-du-loup': {
     destination: 'Rivière-du-Loup',
-    blogUrl: `${baseUrls.blog}rivieredu-loup`,
-    videoUrl: `${baseUrls.videos}#rivieredu-loup`,
+    blogUrl: `${baseUrls.blog}riviere-du-loup`,
+    videoUrl: `${baseUrls.videos}#riviere-du-loup`,
     objectsUrl: baseUrls.objects,
     plannerUrl: baseUrls.planner,
   },
@@ -226,7 +226,7 @@ const contentMap: Record<string, Suggestion> = {
     plannerUrl: baseUrls.planner,
   },
 
-  // Autres destinations
+  // Destinations Authentiques
   'eeyou-istchee': {
     destination: 'Eeyou Istchee',
     blogUrl: `${baseUrls.blog}eeyou-istchee`,

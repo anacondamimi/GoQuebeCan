@@ -1,18 +1,18 @@
 import { Metadata } from 'next';
-import TravelEssentials from '@/components/TravelEssentials';
+import H1 from '@/components/typography/H1';
 
 import BlogArticleVoyageHotel from '@/components/blogpost/BlogArticleVoyageHotel';
 import BlogArticleVoyageCamping from '@/components/blogpost/BlogArticleVoyageCamping';
 import BlogArticleVoyageAvion from '@/components/blogpost/BlogArticleVoyageAvion';
-import BlogArticleVoyageVoitureElectrique from '@/components/blogpost/BlogArticleVoyageVoitureElectrique';
+import BlogArticleVoyageVoiture from '@/components/blogpost/BlogArticleVoyageVoiture';
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
-  title: 'Objets Indispensables pour Voyager au Québec et au Canada | GoQuebecan',
+  title: { absolute: 'Produits de voyage — Guide 2025 Québec & Canada' },
   description:
     "Découvrez notre sélection d'équipements essentiels pour voyager au Québec et au Canada. Camping, hôtel, avion ou voiture électrique, trouvez tout ce dont vous avez besoin.",
   openGraph: {
-    title: 'Objets Indispensables pour Voyager au Québec et au Canada | GoQuebecan',
+    title: 'Produits de voyage — Guide 2025 Québec & Canada',
     description: 'Équipements essentiels pour réussir votre voyage au Canada',
     images: [
       'https://images.unsplash.com/photo-1525638164172-b31ea4222ef7?auto=format&fit=crop&q=80',
@@ -20,9 +20,7 @@ export const metadata: Metadata = {
     url: 'https://goquebecan.com/objets',
     type: 'website',
   },
-  alternates: {
-    canonical: 'https://goquebecan.com/objets',
-  },
+  alternates: { canonical: 'https://goquebecan.com/objets' },
 };
 
 export const dynamic = 'force-static';
@@ -31,17 +29,16 @@ export default function ObjetsPage() {
   return (
     <main className="min-h-screen pt-8">
       {/* ✅ Titre pour le SEO, invisible pour l'utilisateur */}
-      <h1 className="sr-only">Objets Indispensables pour Voyager au Québec et au Canada</h1>
+      <H1 className="sr-only">Objets Indispensables pour Voyager au Québec et au Canada</H1>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+      <div className="mx-auto max-w-7xl space-y-20 px-4 py-12 sm:px-6 lg:px-8">
         {/* Section planification rapide */}
-        <TravelEssentials />
 
         {/* Articles objets utiles */}
         <BlogArticleVoyageHotel />
         <BlogArticleVoyageCamping />
         <BlogArticleVoyageAvion />
-        <BlogArticleVoyageVoitureElectrique />
+        <BlogArticleVoyageVoiture />
       </div>
     </main>
   );

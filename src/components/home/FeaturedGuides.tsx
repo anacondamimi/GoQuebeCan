@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import H3 from '@/components/typography/H3';
 
 const guides = [
   {
@@ -33,7 +34,7 @@ const guides = [
   {
     title: 'Assistant IA de réservation',
     description: 'Gagnez du temps avec notre IA pour planifier et réserver sans stress.',
-    href: '/chat',
+    href: 'api/chat/route.ts',
     image: '/images/carte.avif',
   },
   {
@@ -45,7 +46,7 @@ const guides = [
   {
     title: 'Communauté & partages',
     description: 'Partagez vos itinéraires et découvrez ceux des autres voyageurs.',
-    href: '/communaute',
+    href: '/itineraires-communaute',
     image: '/images/communaute.avif',
   },
 ];
@@ -57,20 +58,20 @@ export default function FeaturedGuides() {
         <Link
           key={guide.href}
           href={guide.href}
-          className="block rounded-2xl overflow-hidden border border-gray-200 bg-gray-50 hover:bg-white hover:shadow-md transition-colors duration-300"
+          className="block overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 transition-colors duration-300 hover:bg-white hover:shadow-md"
         >
-          <div className="relative w-full h-40">
+          <div className="relative h-40 w-full">
             <Image
               src={guide.image}
               alt={guide.title}
               fill
-              className="object-cover border-b border-gray-200"
+              className="border-b border-gray-200 object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             />
           </div>
-          <div className="p-4 bg-gray-50 hover:bg-white transition-colors duration-300">
-            <h3 className="text-lg font-semibold mb-2 text-gray-900">{guide.title}</h3>
-            <p className="text-gray-700 text-sm leading-relaxed">{guide.description}</p>
+          <div className="bg-gray-50 p-4 transition-colors duration-300 hover:bg-white">
+            <H3 className="mb-2 text-lg font-semibold text-gray-900">{guide.title}</H3>
+            <p className="text-sm leading-relaxed text-gray-700">{guide.description}</p>
           </div>
         </Link>
       ))}

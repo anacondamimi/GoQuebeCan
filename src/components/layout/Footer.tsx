@@ -1,16 +1,30 @@
-'use client';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import H2 from '@/components/typography/H2';
+import H3 from '@/components/typography/H3';
 import { Mail, FileText, Scale, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import BrandName from '@/components/brand/BrandName';
+import ResetCookieConsentButton from './ResetCookieConsentButton';
 
-const footerLinks = [
+type FooterLinkItem = {
+  label: string;
+  href: string;
+};
+
+type FooterLinkGroup = {
+  title: string;
+  links: FooterLinkItem[];
+};
+
+const footerLinks: FooterLinkGroup[] = [
   {
     title: 'Découvrir',
     links: [
       { label: 'Destinations', href: '/destinations' },
       { label: 'Camping', href: '/camping' },
       { label: 'Expériences', href: '/experiences' },
+      { label: 'Producteurs locaux', href: '/producteurs' },
       { label: 'Vidéos', href: '/videos' },
       { label: 'Blog', href: '/blog' },
     ],
@@ -18,19 +32,21 @@ const footerLinks = [
   {
     title: 'Planifier',
     links: [
-      { label: 'Carte Interactive', href: '/carte' },
-      { label: 'Comparateur de Vols', href: '/vols' },
-      { label: 'Équipements', href: '/objets' },
+      { label: 'Carte interactive', href: '/planificateur' },
+      { label: 'Comparateur de vols', href: '/vols' },
+      { label: 'Équipements de voyage', href: '/objets' },
+      { label: 'Offres spéciales', href: '/offres' },
       { label: 'Le Canada en VR', href: '/vr' },
     ],
   },
   {
-    title: 'À Propos',
+    title: 'À propos',
     links: [
-      { label: 'Notre Mission', href: '/notre-mission' },
+      { label: 'Notre mission', href: '/notre-mission' },
+      { label: 'Producteurs partenaires', href: '/producteurs' },
       { label: 'Contactez-nous', href: '/contact' },
-      { label: 'Politique de Confidentialité', href: '/confidentialite' },
-      { label: 'Mentions Légales', href: '/mentions-legales' },
+      { label: 'Politique de confidentialité', href: '/confidentialite' },
+      { label: 'Mentions légales', href: '/mentions-legales' },
     ],
   },
 ];
@@ -45,91 +61,131 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand Column */}
-          <div className="space-y-6 text-center md:text-left">
-            <Link href="/" aria-label="Accueil" className="inline-block">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Haut du footer */}
+        <div className="grid grid-cols-1 gap-8 py-8 md:grid-cols-2 lg:grid-cols-4">
+          {/* Colonne marque */}
+          <section
+            aria-labelledby="footer-brand-heading"
+            className="space-y-4 text-center md:text-left"
+          >
+            <H2 id="footer-brand-heading" className="sr-only">
+              À propos de GoQuébeCan
+            </H2>
+
+            <Link href="/" aria-label="Accueil GoQuébeCan" className="inline-block">
               <Image
                 src="/images/logo.avif"
-                alt="Logo GoQuebeCan"
-                width={120}
-                height={120}
-                className="rounded-lg shadow-md mx-auto md:mx-0"
+                alt="Logo GoQuébeCan"
+                width={130}
+                height={130}
+                className="mx-auto rounded-lg shadow-md md:mx-0"
               />
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Votre guide complet pour explorer le Québec et le Canada avec des conseils d'experts
-              et des offres exclusives.
+
+            <p className="text-sm leading-relaxed text-gray-400">
+              Le guide indépendant pour préparer vos road trips au Québec et au Canada.
             </p>
-            <div className="flex justify-center md:justify-start space-x-4">
+
+            <p className="text-xs text-gray-500">
+              Certains liens sont affiliés, sans frais supplémentaires pour vous.
+            </p>
+
+            <div className="flex justify-center space-x-4 md:justify-start">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="rounded-full text-gray-400 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
                   aria-label={social.label}
                 >
-                  <social.icon className="h-5 w-5" />
+                  <social.icon className="size-5" />
+                  <span className="sr-only">Suivez-nous sur {social.label}</span>
                 </a>
               ))}
             </div>
-          </div>
+          </section>
 
-          {/* Links Columns */}
-          {footerLinks.map((column) => (
-            <div key={column.title}>
-              <h3 className="text-lg font-semibold mb-4 text-white">{column.title}</h3>
-              <ul className="space-y-3">
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors"
-                      aria-label={link.label}
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Colonnes de liens */}
+          <nav
+            aria-label="Liens de navigation du pied de page"
+            className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:col-span-1 lg:col-span-3 lg:grid-cols-3"
+          >
+            {footerLinks.map((group) => {
+              const headingId = `footer-section-${group.title.toLowerCase().replace(/\s+/g, '-')}`;
+
+              return (
+                <section key={group.title} aria-labelledby={headingId}>
+                  <H3 id={headingId} className="mb-4 text-lg font-semibold text-white">
+                    {group.title}
+                  </H3>
+                  <ul className="space-y-3">
+                    {group.links.map((link) => (
+                      <li key={link.label}>
+                        <Link
+                          href={link.href}
+                          className="inline-flex items-center rounded-sm text-sm text-gray-400 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                          aria-label={link.label}
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              );
+            })}
+          </nav>
         </div>
 
-        <div className="py-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <div className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} GoQuebeCan. Tous droits réservés.
+        {/* Bas du footer */}
+        <div className="flex flex-col items-center justify-between space-y-3 border-t border-gray-800 py-4 md:flex-row md:space-y-0">
+          <div className="text-center text-sm text-gray-400 md:text-left">
+            © {new Date().getFullYear()} <BrandName />. Tous droits réservés.
           </div>
-          <div className="flex flex-wrap gap-4 items-center justify-center">
-            <Link href="/contact" className="footer-link">
-              <Mail className="h-4 w-4 mr-1" /> Contact
+
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center rounded-sm text-sm text-gray-400 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+            >
+              <Mail className="mr-1 size-4" />
+              Contact
             </Link>
-            <Link href="/confidentialite" className="footer-link">
-              <FileText className="h-4 w-4 mr-1" /> Confidentialité
+
+            <Link
+              href="/confidentialite"
+              className="inline-flex items-center rounded-sm text-sm text-gray-400 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+            >
+              <FileText className="mr-1 size-4" />
+              Confidentialité
             </Link>
-            <Link href="/conditions-utilisation" className="footer-link">
+
+            <Link
+              href="/conditions-utilisation"
+              className="inline-flex items-center rounded-sm text-sm text-gray-400 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+            >
               Conditions d’utilisation
             </Link>
-            <Link href="/accessibilite" className="footer-link">
+
+            <Link
+              href="/accessibilite"
+              className="inline-flex items-center rounded-sm text-sm text-gray-400 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+            >
               Accessibilité
             </Link>
-            <Link href="/mentions-legales" className="footer-link">
-              <Scale className="h-4 w-4 mr-1" /> Mentions Légales
-            </Link>
-            <button
-              onClick={() => {
-                if (typeof window !== 'undefined') {
-                  localStorage.removeItem('cookie_consent');
-                  window.location.reload();
-                }
-              }}
-              className="text-gray-400 hover:text-white transition-colors text-sm"
+
+            <Link
+              href="/mentions-legales"
+              className="inline-flex items-center rounded-sm text-sm text-gray-400 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
             >
-              🎛 Cookies
-            </button>
+              <Scale className="mr-1 size-4" />
+              Mentions légales
+            </Link>
+
+            <ResetCookieConsentButton />
           </div>
         </div>
       </div>

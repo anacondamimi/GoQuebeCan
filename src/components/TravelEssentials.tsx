@@ -1,34 +1,37 @@
 'use client';
 import React from 'react';
 import { Tent, Briefcase as Suitcase, Plane, Car } from 'lucide-react';
+import H1 from '@/components/typography/H1';
+import H2 from '@/components/typography/H2';
+import H3 from '@/components/typography/H3';
 
 export default function TravelEssentials() {
   return (
-    <article className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold text-gray-900 mb-6">
+    <article className="mx-auto max-w-4xl px-4 py-12">
+      <H1 className="mb-6 text-4xl font-bold text-gray-900">
         Guide Complet des Objets Indispensables pour Voyager au Québec et au Canada en 2025
-      </h1>
+      </H1>
 
-      <p className="text-xl text-gray-600 mb-12">
+      <p className="mb-12 text-xl text-gray-600">
         Que vous partiez en camping dans les parcs nationaux, séjourniez dans les hôtels urbains ou
         exploriez le pays en voiture électrique, voici la liste ultime des équipements essentiels
         pour réussir votre voyage au Canada.
       </p>
 
       <section className="mb-16">
-        <div className="flex items-center gap-3 mb-8">
-          <Tent className="h-8 w-8 text-indigo-600" />
-          <h2 className="text-3xl font-bold text-gray-900">Équipement de Camping</h2>
+        <div className="mb-8 flex items-center gap-3">
+          <Tent className="size-8 text-indigo-600" />
+          <H2 className="text-3xl font-bold text-gray-900">Équipement de Camping</H2>
         </div>
 
-        <p className="text-gray-600 mb-8">
+        <p className="mb-8 text-gray-600">
           Le camping au Québec nécessite un équipement adapté aux conditions climatiques changeantes
           et à la faune locale. Voici les essentiels pour une expérience confortable et sécuritaire.
         </p>
 
         <div className="space-y-8">
-          <div className="bg-white rounded-xl p-6 shadow-md">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Abri et Couchage</h3>
+          <div className="rounded-xl bg-white p-6 shadow-md">
+            <H3 className="mb-4 text-xl font-semibold text-gray-900">Abri et Couchage</H3>
             <ul className="space-y-4">
               <li>
                 <strong className="text-gray-900">Tente 2-4 personnes</strong>
@@ -48,8 +51,8 @@ export default function TravelEssentials() {
             </ul>
           </div>
 
-          <div className="bg-white rounded-xl p-6 shadow-md">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Cuisine et Alimentation</h3>
+          <div className="rounded-xl bg-white p-6 shadow-md">
+            <H3 className="mb-4 text-xl font-semibold text-gray-900">Cuisine et Alimentation</H3>
             <ul className="space-y-4">
               <li>
                 <strong className="text-gray-900">Réchaud et ustensiles</strong>
@@ -71,17 +74,17 @@ export default function TravelEssentials() {
       </section>
 
       <section className="mb-16">
-        <div className="flex items-center gap-3 mb-8">
-          <Suitcase className="h-8 w-8 text-indigo-600" />
-          <h2 className="text-3xl font-bold text-gray-900">Séjour en Hôtel</h2>
+        <div className="mb-8 flex items-center gap-3">
+          <Suitcase className="size-8 text-indigo-600" />
+          <H2 className="text-3xl font-bold text-gray-900">Séjour en Hôtel</H2>
         </div>
 
-        <p className="text-gray-600 mb-8">
+        <p className="mb-8 text-gray-600">
           Pour un séjour confortable en hôtel, certains objets peuvent grandement améliorer votre
           expérience, particulièrement lors de longs séjours.
         </p>
 
-        <div className="bg-white rounded-xl p-6 shadow-md">
+        <div className="rounded-xl bg-white p-6 shadow-md">
           <ul className="space-y-4">
             <li>
               <strong className="text-gray-900">Valise cabine intelligente</strong>
@@ -102,17 +105,17 @@ export default function TravelEssentials() {
       </section>
 
       <section className="mb-16">
-        <div className="flex items-center gap-3 mb-8">
-          <Plane className="h-8 w-8 text-indigo-600" />
-          <h2 className="text-3xl font-bold text-gray-900">Voyager en Avion</h2>
+        <div className="mb-8 flex items-center gap-3">
+          <Plane className="size-8 text-indigo-600" />
+          <H2 className="text-3xl font-bold text-gray-900">Voyager en Avion</H2>
         </div>
 
-        <p className="text-gray-600 mb-8">
+        <p className="mb-8 text-gray-600">
           Le confort en vol est essentiel, surtout pour les longs trajets intérieurs au Canada.
           Voici les accessoires qui feront la différence.
         </p>
 
-        <div className="bg-white rounded-xl p-6 shadow-md">
+        <div className="rounded-xl bg-white p-6 shadow-md">
           <ul className="space-y-4">
             <li>
               <strong className="text-gray-900">Kit de confort</strong>
@@ -133,19 +136,19 @@ export default function TravelEssentials() {
       </section>
 
       <section className="mb-16">
-        <div className="flex items-center gap-3 mb-8">
-          <Car className="h-8 w-8 text-indigo-600" />
-          <h2 className="text-3xl font-bold text-gray-900">Voyager en Voiture Électrique</h2>
+        <div className="mb-8 flex items-center gap-3">
+          <Car className="size-8 text-indigo-600" />
+          <H2 className="text-3xl font-bold text-gray-900">Voyager en Voiture Électrique</H2>
         </div>
 
-        <p className="text-gray-600 mb-8">
+        <p className="mb-8 text-gray-600">
           L'aventure en VE au Canada nécessite une préparation spécifique. Voici les équipements
           essentiels pour voyager sereinement.
         </p>
 
         <div className="space-y-8">
-          <div className="bg-white rounded-xl p-6 shadow-md">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Équipement de Recharge</h3>
+          <div className="rounded-xl bg-white p-6 shadow-md">
+            <H3 className="mb-4 text-xl font-semibold text-gray-900">Équipement de Recharge</H3>
             <ul className="space-y-4">
               <li>
                 <strong className="text-gray-900">Chargeur portable multistandard</strong>
@@ -164,8 +167,8 @@ export default function TravelEssentials() {
             </ul>
           </div>
 
-          <div className="bg-white rounded-xl p-6 shadow-md">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Applications Essentielles</h3>
+          <div className="rounded-xl bg-white p-6 shadow-md">
+            <H3 className="mb-4 text-xl font-semibold text-gray-900">Applications Essentielles</H3>
             <ul className="space-y-4">
               <li>
                 <strong className="text-gray-900">ChargeHub</strong>
@@ -186,41 +189,41 @@ export default function TravelEssentials() {
         </div>
       </section>
 
-      <section className="bg-gray-50 rounded-xl p-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">
+      <section className="rounded-xl bg-gray-50 p-8">
+        <H2 className="mb-6 text-2xl font-bold text-gray-900">
           Conseils d'Entretien et d'Utilisation
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        </H2>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Maintenance</h3>
+            <H3 className="mb-4 font-semibold text-gray-900">Maintenance</H3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Vérifiez et imperméabilisez régulièrement votre équipement de camping
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Nettoyez et séchez complètement le matériel après chaque utilisation
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Inspectez les équipements électroniques avant chaque voyage
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Optimisation</h3>
+            <H3 className="mb-4 font-semibold text-gray-900">Optimisation</H3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Utilisez des sacs de compression pour optimiser l'espace
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Privilégiez les équipements multifonctions
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Gardez une liste à jour de votre équipement
               </li>
             </ul>
@@ -229,22 +232,22 @@ export default function TravelEssentials() {
       </section>
 
       <section className="mt-12 text-center">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">
+        <H2 className="mb-4 text-2xl font-bold text-gray-900">
           Prêt à Équiper Votre Prochaine Aventure ?
-        </h2>
-        <p className="text-gray-600 mb-8">
+        </H2>
+        <p className="mb-8 text-gray-600">
           Découvrez notre sélection d'équipements testés et approuvés pour chaque style de voyage.
         </p>
         <div className="flex justify-center gap-4">
           <a
             href="#objets_utiles"
-            className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+            className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
           >
             Voir les Produits Recommandés
           </a>
           <a
             href="#camping_guide"
-            className="px-6 py-3 bg-white text-indigo-600 border border-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors"
+            className="rounded-lg border border-indigo-600 bg-white px-6 py-3 text-indigo-600 transition-colors hover:bg-indigo-50"
           >
             Consulter le Guide Camping
           </a>

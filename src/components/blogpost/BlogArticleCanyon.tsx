@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
+import H1 from '@/components/typography/H1';
+import H2 from '@/components/typography/H2';
+import H3 from '@/components/typography/H3';
 
 export const metadata = {
   slug: 'canyon',
@@ -25,28 +28,31 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Compass } fro
 
 const hotels = [
   {
+    name: 'Appartement de vacances modernes sur le fleuve',
+    category: '4 étoiles',
+    description:
+      'Appartements design et calmes avec vue directe sur le fleuve, idéals pour se ressourcer.',
+    price: 'À partir de 209 $/nuit',
+    link: 'https://www.booking.com/hotel/ca/appartement-de-vacances-modernes-calmes-et-ressourcants-sur-le-fleuve.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=1135216401_392217861_2_0_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=-572272&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=23&highlighted_blocks=1135216401_392217861_2_0_0&hpos=23&matching_block_id=1135216401_392217861_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1135216401_392217861_2_0_0__20700&srepoch=1761338092&srpvid=5aba90921f2801fa&type=total&ucfs=1&',
+    image: '/images/destinations/hotels/hotel-appat-canyon.avif',
+  },
+  {
     name: 'Hôtel Rimouski',
-    category: 'Centre-ville',
-    description: 'À proximité du canyon',
-    price: 'À partir de 159$/nuit',
-    link: 'https://www.booking.com/hotel/ca/rimouski.html',
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80',
+    category: '4 étoiles',
+    description:
+      'Hôtel avec spa, piscine intérieure et restaurant offrant une vue splendide sur le fleuve.',
+    price: 'À partir de 179 $/nuit',
+    link: 'https://www.booking.com/hotel/ca/rimouski.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=2468602_392936399_2_0_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=-572272&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=2468602_392936399_2_0_0&hpos=1&matching_block_id=2468602_392936399_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=2468602_392936399_2_0_0__35800&srepoch=1761338410&srpvid=e6829148cf0109aa&type=total&ucfs=1&',
+    image: '/images/destinations/hotels/hotel-rimouski-canyon.avif',
   },
   {
-    name: 'Auberge du Portage',
-    category: 'Charme',
-    description: 'Vue sur le fleuve',
-    price: 'À partir de 139$/nuit',
-    link: 'https://www.booking.com/hotel/ca/auberge-du-portage.html',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
-  },
-  {
-    name: 'Motel de la Montagne',
-    category: 'Nature',
-    description: 'Proche des sentiers',
-    price: 'À partir de 119$/nuit',
-    link: 'https://www.booking.com/hotel/ca/motel-montagne.html',
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80',
+    name: 'La Maison du Photographe',
+    category: '3 étoiles',
+    description:
+      'Charmant gîte au bord du fleuve avec jardin et ambiance artistique unique, parfait pour les couples.',
+    price: 'À partir de 169 $/nuit',
+    link: 'https://www.booking.com/hotel/ca/maison-du-photograph.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=44581501_206267159_2_0_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=445815&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=44581501_206267159_2_0_0&hpos=1&matching_block_id=44581501_206267159_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=44581501_206267159_2_0_0__34200&srepoch=1761338503&srpvid=56a0918223a60160&type=total&ucfs=1&',
+    image: '/images/destinations/hotels/hotel-maisonphotographe-canyon.avif',
   },
 ];
 
@@ -142,18 +148,18 @@ const teenActivities = [
 
 export default function BlogArticleCanyon() {
   return (
-    <article id="blog_article_canyon" className="max-w-4xl mx-auto px-4 py-12 bg-white">
-      <header className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+    <article id="blog_article_canyon" className="mx-auto max-w-4xl bg-white px-4 py-12">
+      <header className="mb-12 text-center">
+        <H1 className="mb-4">
           Canyon des Portes de l'Enfer - Aventure Vertigineuse au Bas-Saint-Laurent
-        </h1>
+        </H1>
         <p className="text-xl text-gray-600">
           Découvrez ce site naturel spectaculaire avec sa passerelle suspendue et ses sentiers
           d'aventure
         </p>
       </header>
 
-      <section className="prose lg:prose-xl mb-12">
+      <section className="prose mb-12 lg:prose-xl">
         <p>
           Le Canyon des Portes de l'Enfer, situé près de Rimouski, offre une expérience unique avec
           sa passerelle suspendue à 63 mètres de hauteur - la plus haute au Québec. Ce site naturel
@@ -163,7 +169,7 @@ export default function BlogArticleCanyon() {
           <Image
             src="/images/destinations/canyon.avif"
             alt="Canyon des Portes de l'Enfer"
-            className="w-full h-96 object-cover rounded-lg shadow-lg"
+            className="h-96 w-full rounded-lg object-cover shadow-lg"
             width={800}
             height={600}
           />
@@ -171,25 +177,25 @@ export default function BlogArticleCanyon() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Star className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Star className="size-8 text-indigo-600" />
           Pourquoi Visiter le Canyon ?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Passerelle Unique</h3>
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 text-xl font-semibold">Passerelle Unique</H3>
             <p className="text-gray-600">
               La plus haute passerelle suspendue au Québec avec vue imprenable.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Aventure Nature</h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 text-xl font-semibold">Aventure Nature</H3>
             <p className="text-gray-600">
               Via ferrata, randonnée et activités d'aventure pour tous.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Site Naturel</h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 text-xl font-semibold">Site Naturel</H3>
             <p className="text-gray-600">
               Formation géologique unique et biodiversité remarquable.
             </p>
@@ -198,15 +204,15 @@ export default function BlogArticleCanyon() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
           Activités et Attractions
-        </h2>
+        </H2>
         <div className="space-y-8">
           {activities.map((activity) => (
-            <div key={activity.name} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div key={activity.name} className="overflow-hidden rounded-lg bg-white shadow-md">
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{activity.name}</h3>
-                <p className="text-gray-600 mb-4">{activity.description}</p>
+                <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.name}</H3>
+                <p className="mb-4 text-gray-600">{activity.description}</p>
                 <div className="flex flex-wrap gap-4 text-sm text-gray-600">
                   <span>Type: {activity.type}</span>
                   <span>Durée: {activity.duration}</span>
@@ -219,33 +225,33 @@ export default function BlogArticleCanyon() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Star className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Star className="size-8 text-indigo-600" />
           Activités pour Enfants
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {familyActivities.map((activity) => (
-            <div key={activity.title} className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{activity.title}</h3>
-              <p className="text-gray-600 mb-2">{activity.description}</p>
-              <p className="text-indigo-600 font-medium">{activity.price}</p>
+            <div key={activity.title} className="rounded-lg bg-white p-6 shadow-md">
+              <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.title}</H3>
+              <p className="mb-2 text-gray-600">{activity.description}</p>
+              <p className="font-medium text-indigo-600">{activity.price}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Compass className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Compass className="size-8 text-indigo-600" />
           Activités pour Adolescents
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {teenActivities.map((activity) => (
-            <div key={activity.title} className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{activity.title}</h3>
-              <p className="text-gray-600 mb-2">{activity.description}</p>
-              <div className="flex flex-col gap-1 mt-4">
-                <p className="text-indigo-600 font-medium">{activity.price}</p>
+            <div key={activity.title} className="rounded-lg bg-white p-6 shadow-md">
+              <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.title}</H3>
+              <p className="mb-2 text-gray-600">{activity.description}</p>
+              <div className="mt-4 flex flex-col gap-1">
+                <p className="font-medium text-indigo-600">{activity.price}</p>
                 <p className="text-sm text-gray-500">Durée: {activity.duration}</p>
               </div>
             </div>
@@ -254,35 +260,35 @@ export default function BlogArticleCanyon() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Hotel className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Hotel className="size-8 text-indigo-600" />
           Où Dormir ?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {hotels.map((hotel) => (
             <a
               key={hotel.name}
               href={hotel.link}
-              className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+              className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
             >
               <div className="relative h-48">
                 <Image
                   src={hotel.image}
                   alt={hotel.name}
-                  className="w-full h-full object-cover"
+                  className="size-full object-cover"
                   width={800}
                   height={600}
                 />
               </div>
               <div className="p-6">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-semibold text-gray-900">{hotel.name}</h3>
-                  <span className="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-sm">
+                <div className="mb-2 flex items-start justify-between">
+                  <H3 className="text-xl font-semibold text-gray-900">{hotel.name}</H3>
+                  <span className="rounded bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
                     {hotel.category}
                   </span>
                 </div>
-                <p className="text-gray-600 mb-4">{hotel.description}</p>
-                <p className="text-indigo-600 font-semibold">{hotel.price}</p>
+                <p className="mb-4 text-gray-600">{hotel.description}</p>
+                <p className="font-semibold text-indigo-600">{hotel.price}</p>
               </div>
             </a>
           ))}
@@ -290,24 +296,24 @@ export default function BlogArticleCanyon() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Utensils className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Utensils className="size-8 text-indigo-600" />
           Où Manger ?
-        </h2>
+        </H2>
         <div className="space-y-6">
           {restaurants.map((restaurant) => (
-            <div key={restaurant.name} className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex justify-between items-start mb-4">
+            <div key={restaurant.name} className="rounded-lg bg-white p-6 shadow-md">
+              <div className="mb-4 flex items-start justify-between">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">{restaurant.name}</h3>
+                  <H3 className="mb-1 text-xl font-semibold text-gray-900">{restaurant.name}</H3>
                   <p className="text-gray-600">{restaurant.type}</p>
                 </div>
-                <span className="text-indigo-600 font-semibold">{restaurant.price}</span>
+                <span className="font-semibold text-indigo-600">{restaurant.price}</span>
               </div>
-              <p className="text-gray-700 mb-2">
+              <p className="mb-2 text-gray-700">
                 <span className="font-medium">Spécialité:</span> {restaurant.speciality}
               </p>
-              <p className="text-gray-700 mb-2">
+              <p className="mb-2 text-gray-700">
                 <span className="font-medium">À essayer:</span> {restaurant.mustTry}
               </p>
               <p className="text-gray-700">
@@ -319,41 +325,41 @@ export default function BlogArticleCanyon() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Bus className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Bus className="size-8 text-indigo-600" />
           Comment s'y Rendre ?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-4">Depuis les Grandes Villes</h3>
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-4 text-xl font-semibold">Depuis les Grandes Villes</H3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 5h en voiture depuis Montréal
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 3h en voiture depuis Québec
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Bus Orléans Express jusqu'à Rimouski
               </li>
             </ul>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-4">Sur Place</h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-4 text-xl font-semibold">Sur Place</H3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Voiture nécessaire pour accéder au site
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Navette disponible depuis Rimouski
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Location de vélos possible
               </li>
             </ul>
@@ -362,33 +368,33 @@ export default function BlogArticleCanyon() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Calendar className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Calendar className="size-8 text-indigo-600" />
           Conseils Pratiques
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <Calendar className="h-5 w-5 text-indigo-600" />
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
+              <Calendar className="size-5 text-indigo-600" />
               Meilleure Période
-            </h3>
+            </H3>
             <p className="text-gray-600">
               De juin à septembre pour le temps doux. Couleurs spectaculaires en automne.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <DollarSign className="h-5 w-5 text-indigo-600" />
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
+              <DollarSign className="size-5 text-indigo-600" />
               Budget
-            </h3>
+            </H3>
             <p className="text-gray-600">
               Entrée: 25$/adulte Activités: 45-89$/personne Hébergement: 119-159$/nuit
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <Shield className="h-5 w-5 text-indigo-600" />À Noter
-            </h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
+              <Shield className="size-5 text-indigo-600" />À Noter
+            </H3>
             <p className="text-gray-600">
               Réservation conseillée en haute saison. Bonnes chaussures de marche requises.
             </p>
@@ -396,21 +402,21 @@ export default function BlogArticleCanyon() {
         </div>
       </section>
 
-      <section className="text-center bg-gray-50 p-8 rounded-lg">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Prêt pour l'Aventure ?</h2>
-        <p className="text-gray-600 mb-6">
+      <section className="rounded-lg bg-gray-50 p-8 text-center">
+        <H2 className="mb-4 text-2xl font-bold text-gray-900">Prêt pour l'Aventure ?</H2>
+        <p className="mb-6 text-gray-600">
           Réservez votre visite maintenant et découvrez ce site naturel spectaculaire
         </p>
         <div className="flex justify-center gap-4">
           <a
             href="https://www.booking.com/city/ca/rimouski.html"
-            className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+            className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
           >
             Réserver un Hébergement
           </a>
           <a
             href="https://www.canyonportesenfer.qc.ca"
-            className="px-6 py-3 bg-white text-indigo-600 border border-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors"
+            className="rounded-lg border border-indigo-600 bg-white px-6 py-3 text-indigo-600 transition-colors hover:bg-indigo-50"
           >
             Réserver une Activité
           </a>

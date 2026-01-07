@@ -3,15 +3,18 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import H1 from '@/components/typography/H1';
+import H2 from '@/components/typography/H2';
 import destinations from '@/data/destinationsWorld.json' assert { type: 'json' };
+import BrandName from '@/components/brand/BrandName';
 
 export default function DestinationsMonde() {
   return (
-    <main className="max-w-4xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">🌍 Destinations Monde pour Canadiens (Test)</h1>
+    <main className="mx-auto max-w-4xl p-6">
+      <H1 className="mb-4 text-3xl font-bold">🌍 Destinations Monde pour Canadiens (Test)</H1>
       <p className="mb-6">
         Découvrez nos premières destinations soleil, Europe et Asie en phase de test avant lancement
-        officiel GoQuébeCan international.
+        officiel <BrandName /> international.
       </p>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {destinations.map((dest, index) => (
@@ -19,18 +22,18 @@ export default function DestinationsMonde() {
             key={dest.slug}
             href={`/expansion/destinations-monde/${dest.slug}`}
             aria-label={`Découvrir ${dest.title}`}
-            className="border rounded-xl shadow hover:shadow-lg transition bg-white p-4 text-center"
+            className="rounded-xl border bg-white p-4 text-center shadow transition hover:shadow-lg"
           >
             <Image
               src={dest.image}
               alt={dest.title}
               width={400}
               height={300}
-              className="rounded-lg object-cover mb-2 w-full h-48"
+              className="mb-2 h-48 w-full rounded-lg object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority={index === 0}
             />
-            <h2 className="font-semibold text-lg mb-1">{dest.title}</h2>
+            <H2 className="mb-1 text-lg font-semibold">{dest.title}</H2>
             <p className="text-sm text-gray-600">{dest.description}</p>
           </Link>
         ))}

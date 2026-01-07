@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
+import H3 from '@/components/typography/H3';
 
 interface CardProps {
   title: string;
@@ -33,21 +34,21 @@ export function Card({
 }: CardProps) {
   const CardContent = () => (
     <div
-      className={`bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 ${className}`}
+      className={`overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-lg ${className}`}
     >
       {image && (
         <div className="relative h-48 overflow-hidden">
           <Image
             src={image}
             alt={title}
-            className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${imageClassName}`}
+            className={`size-full object-cover transition-transform duration-500 group-hover:scale-105 ${imageClassName}`}
             loading="lazy"
             width={800}
             height={600}
           />
           {badge && (
-            <div className="absolute top-3 right-3">
-              <span className="px-2 py-1 text-xs font-semibold bg-indigo-600 text-white rounded-full">
+            <div className="absolute right-3 top-3">
+              <span className="rounded-full bg-indigo-600 px-2 py-1 text-xs font-semibold text-white">
                 {badge}
               </span>
             </div>
@@ -55,14 +56,14 @@ export function Card({
         </div>
       )}
       <div className="p-5">
-        <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">
+        <H3 className="mb-2 text-xl font-semibold text-gray-900 transition-colors group-hover:text-indigo-600">
           {title}
-          {isExternal && <ExternalLink className="inline-block ml-1 h-4 w-4" />}
-        </h3>
-        {description && <p className="text-gray-600 mb-4">{description}</p>}
+          {isExternal && <ExternalLink className="ml-1 inline-block size-4" />}
+        </H3>
+        {description && <p className="mb-4 text-gray-600">{description}</p>}
         {children}
       </div>
-      {footer && <div className="px-5 py-3 bg-gray-50 border-t">{footer}</div>}
+      {footer && <div className="border-t bg-gray-50 px-5 py-3">{footer}</div>}
     </div>
   );
 
@@ -87,7 +88,7 @@ export function Card({
   }
 
   return (
-    <div onClick={onClick} className={onClick ? 'cursor-pointer group' : 'group'}>
+    <div onClick={onClick} className={onClick ? 'group cursor-pointer' : 'group'}>
       <CardContent />
     </div>
   );

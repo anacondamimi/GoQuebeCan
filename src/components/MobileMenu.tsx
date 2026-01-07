@@ -12,12 +12,12 @@ function Section({ title, children }: { title: string; children: React.ReactNode
     <div>
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center px-4 py-2 text-left font-medium text-gray-700 hover:text-[#e11d48] hover:bg-[#e11d48]/10 rounded-md"
+        className="flex w-full items-center justify-between rounded-md px-4 py-2 text-left font-medium text-gray-700 hover:bg-[#e11d48]/10 hover:text-[#e11d48]"
       >
         {title}
         {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
       </button>
-      {open && <div className="pl-4 mt-1 space-y-1">{children}</div>}
+      {open && <div className="mt-1 space-y-1 pl-4">{children}</div>}
     </div>
   );
 }
@@ -31,6 +31,9 @@ export default function MobileMenu() {
         </Link>
         <Link href="/experiences" className="block text-sm text-gray-700 hover:text-[#e11d48]">
           🌿 Vivre une expérience
+        </Link>
+        <Link href="/vr" className="block text-sm text-gray-700 hover:text-[#e11d48]">
+          🚐 Le Canada en VR
         </Link>
         <Link href="/producteurs" className="block text-sm text-gray-700 hover:text-[#e11d48]">
           🥖 Producteurs du Québec
@@ -50,9 +53,6 @@ export default function MobileMenu() {
         </Link>
         <Link href="/vols" className="block text-sm text-gray-700 hover:text-[#e11d48]">
           ✈️ Vols
-        </Link>
-        <Link href="/vr" className="block text-sm text-gray-700 hover:text-[#e11d48]">
-          🚐 Le Canada en VR
         </Link>
       </Section>
 

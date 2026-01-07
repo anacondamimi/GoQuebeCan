@@ -3,6 +3,8 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import H1 from '@/components/typography/H1';
+import H2 from '@/components/typography/H2';
 import destinations from '@/data/destinationsWorld.json';
 import AffiliateCarousel from '@/components/AffiliateCarousel';
 import { CTABanner } from '@/components/CTAComponents';
@@ -27,9 +29,9 @@ export default function DestinationPage({ params }: PageProps) {
   if (!destination) return notFound();
 
   return (
-    <main className="max-w-3xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">{destination.title}</h1>
-      <div className="relative w-full h-64 mb-4">
+    <main className="mx-auto max-w-3xl p-6">
+      <H1 className="mb-4 text-3xl font-bold">{destination.title}</H1>
+      <div className="relative mb-4 h-64 w-full">
         <Image
           src={destination.image}
           alt={destination.title}
@@ -44,9 +46,9 @@ export default function DestinationPage({ params }: PageProps) {
       <AffiliateCarousel />
 
       <section className="mt-8">
-        <h2 className="text-2xl font-semibold mb-4">
+        <H2 className="mb-4 text-2xl font-semibold">
           💳 Financer votre voyage avec des cartes de crédit
-        </h2>
+        </H2>
         <p className="mb-4">
           Découvrez comment les primes de bienvenue des cartes de crédit peuvent financer vos vols
           et séjours.

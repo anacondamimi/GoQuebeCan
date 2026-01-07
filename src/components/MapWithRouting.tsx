@@ -1,231 +1,280 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import * as L from 'leaflet'; // ✅ Utiliser * as L pour TypeScript
-import 'leaflet/dist/leaflet.css';
+import React, { useEffect, useMemo, useRef } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from 'react-leaflet';
+import L, { Icon } from 'leaflet';
 import 'leaflet-routing-machine';
-import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
-import 'lrm-mapbox'; // ✅ Extension Leaflet Routing Machine pour Mapbox
-import Link from 'next/link';
-import destinations from '@/data/destinationsWithCoords.json';
+import type { Producer } from '@/types/Producer';
 
-interface Producer {
-  id: string;
-  name: string;
+// 🧩 Types
+export interface StepData {
   lat: number;
   lng: number;
-  type?: string;
-  website?: string | null;
+  title?: string;
+  distanceKm?: number;
+  durationMin?: number;
 }
 
-interface Props {
-  points: [number, number][];
-  onAddDestinationStep?: (name: string, coords: [number, number]) => void;
-  producers?: Producer[]; // ✅ Ajouté pour accepter les producteurs dynamiques
+interface MapWithRoutingProps {
+  itinerary?: StepData[];
+  /** Points [lat, lng] pour centrer / fallback polyline */
+  routePoints?: [number, number][];
+  producersOnRoute?: Producer[];
+  addAfterNearest?: (p: Producer) => void;
+  addAtEnd?: (p: Producer) => void;
+  addToNearestNotes?: (p: Producer) => void;
+  setSelectedIndex?: (i: number) => void;
+  setIsModalOpen?: (b: boolean) => void;
 }
 
-export default function MapWithRouting({ points, onAddDestinationStep, producers = [] }: Props) {
-  const mapRef = useRef<L.Map | null>(null);
-  const routingRef = useRef<L.Routing.RoutingControl | null>(null);
-
-  const [distanceKm, setDistanceKm] = useState<number | null>(null);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([
-    'apple',
-    'grape',
-    'cheese',
-    'berry',
-    'beer',
-  ]);
-  const [showProducers, setShowProducers] = useState(true);
-
-  const categoryIcons: Record<string, L.Icon> = {
-    apple: new L.Icon({ iconUrl: '/icons/apple.png', iconSize: [28, 28] }),
-    grape: new L.Icon({ iconUrl: '/icons/grapes.png', iconSize: [28, 28] }),
-    cheese: new L.Icon({ iconUrl: '/icons/cheese.png', iconSize: [28, 28] }),
-    berry: new L.Icon({ iconUrl: '/icons/berry.png', iconSize: [28, 28] }),
-    beer: new L.Icon({ iconUrl: '/icons/beer.png', iconSize: [28, 28] }),
-    farm: new L.Icon({ iconUrl: '/icons/farm.png', iconSize: [28, 28] }),
-    default: new L.Icon({ iconUrl: '/icons/farm.png', iconSize: [28, 28] }),
-  };
-
-  function detectCategory(prod: Producer): string {
-    const name = prod.name?.toLowerCase() || '';
-    const type = prod.type?.toLowerCase() || '';
-
-    if (name.includes('cidre') || name.includes('pom') || type.includes('cidrerie')) return 'apple';
-    if (name.includes('vignoble') || name.includes('raisin') || type.includes('winery'))
-      return 'grape';
-    if (name.includes('fromage') || type.includes('cheese')) return 'cheese';
-    if (name.includes('bleuet') || name.includes('camerise') || name.includes('fruit'))
-      return 'berry';
-    if (name.includes('bière') || name.includes('microbrasserie') || type.includes('brewery'))
-      return 'beer';
-    if (type.includes('farm') || name.includes('ferme') || name.includes('boucherie'))
-      return 'farm';
-    return 'default';
+// 🔧 Patch de sécurité pour éviter l'erreur "Cannot read properties of null (reading 'removeLayer')"
+if (typeof window !== 'undefined' && (L as any).Routing && (L as any).Routing.Control) {
+  const proto = (L as any).Routing.Control.prototype as any;
+  if (!proto.__clearLinesPatched) {
+    const originalClearLines = proto._clearLines;
+    proto._clearLines = function patchedClearLines() {
+      if (!this._map) return;
+      return originalClearLines.call(this);
+    };
+    proto.__clearLinesPatched = true;
   }
+}
 
-  const questionIcon = new L.DivIcon({
-    html: '<div style="background:#facc15;color:black;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold">?</div>',
-    className: 'custom-question-icon',
-    iconSize: [24, 24],
-    iconAnchor: [12, 12],
-    popupAnchor: [0, -12],
-  });
-
+// 🗺️ Recalage de la taille de la carte
+function InvalidateMapSizeOnLoad() {
+  const map = useMap();
   useEffect(() => {
-    if (!mapRef.current || points.length < 2 || !L.Routing) return;
+    setTimeout(() => {
+      map.invalidateSize();
+    }, 300);
+  }, [map]);
+  return null;
+}
 
-    if (routingRef.current) {
-      mapRef.current.removeControl(routingRef.current);
+// 🧭 Composant RoutingMachine pour tracer la route
+function RoutingMachine({ sig }: { sig?: L.LatLng[] | null }) {
+  const map = useMap();
+  const controlRef = useRef<any | null>(null);
+
+  // Création / destruction du contrôle une seule fois (par instance de map)
+  useEffect(() => {
+    if (!map) return;
+
+    if (!controlRef.current) {
+      controlRef.current = L.Routing.control({
+        waypoints: [], // ✅ on laisse le 2e effet gérer les waypoints
+        lineOptions: {
+          styles: [{ color: '#2563eb', weight: 5, opacity: 0.9 }],
+        },
+        addWaypoints: false,
+        fitSelectedRoutes: true,
+        showAlternatives: false,
+        draggableWaypoints: false,
+      } as unknown as L.Routing.RoutingOptions).addTo(map);
     }
 
-    const waypoints = points.map((p) => L.latLng(p[0], p[1]));
-    console.log('Waypoints:', waypoints);
-
-    const routingControl: L.Routing.RoutingControl = L.Routing.control({
-      waypoints,
-      router: L.Routing.mapbox(process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string),
-      routeWhileDragging: false,
-      show: false,
-      createMarker: () => null,
-    });
-
-    routingControl.on(
-      'routesfound',
-      (e: { routes: Array<{ summary: { totalDistance: number; totalTime: number } }> }) => {
-        const route = e.routes[0];
-        const distanceMeters = route.summary.totalDistance;
-        setDistanceKm(parseFloat((distanceMeters / 1000).toFixed(1)));
+    return () => {
+      if (controlRef.current) {
+        try {
+          map.removeControl(controlRef.current);
+        } catch (e) {
+          console.warn('Erreur lors du retrait du routing control', e);
+        }
+        controlRef.current = null;
       }
-    );
+    };
+  }, [map]);
 
-    routingControl.addTo(mapRef.current);
-    routingRef.current = routingControl;
-  }, [points]);
+  // Mise à jour des waypoints quand sig change
+  useEffect(() => {
+    if (!controlRef.current) return;
 
-  const toggleCategory = (cat: string) => {
-    setSelectedCategories((prev) =>
-      prev.includes(cat) ? prev.filter((c) => c !== cat) : [...prev, cat]
-    );
-  };
+    if (!sig || sig.length < 2) {
+      controlRef.current.setWaypoints([]);
+      return;
+    }
+
+    controlRef.current.setWaypoints(sig);
+  }, [sig]);
+
+  return null;
+}
+
+// 🧠 Helpers
+const minutesToHhmm = (min: number) => {
+  const h = Math.floor(min / 60);
+  const m = Math.round(min % 60);
+  return `${h}h${m.toString().padStart(2, '0')}`;
+};
+
+const roleLabel = (i: number, len: number) => {
+  if (i === 0) return 'Départ';
+  if (i === len - 1) return 'Arrivée';
+  return `Étape ${i}`;
+};
+
+// 🐝 Icônes producteurs (mêmes que sur /producteurs)
+const icons: Record<string, Icon> = {
+  cidrerie: new Icon({ iconUrl: '/icons/apple.png', iconSize: [28, 28] }),
+  vignoble: new Icon({ iconUrl: '/icons/grapes.png', iconSize: [28, 28] }),
+  fromage: new Icon({ iconUrl: '/icons/fromage.png', iconSize: [28, 28] }),
+  petitfruit: new Icon({ iconUrl: '/icons/berry.png', iconSize: [28, 28] }),
+  microbrasserie: new Icon({ iconUrl: '/icons/microbrasserie.png', iconSize: [28, 28] }),
+  miel: new Icon({ iconUrl: '/icons/miel.png', iconSize: [28, 28] }),
+  ferme: new Icon({ iconUrl: '/icons/ferme.png', iconSize: [28, 28] }),
+  default: new Icon({ iconUrl: '/icons/ferme.png', iconSize: [28, 28] }),
+};
+
+function getProducerIcon(type?: string | null) {
+  if (!type) return icons.default;
+  return icons[type] || icons.default;
+}
+
+const MapWithRouting: React.FC<MapWithRoutingProps> = ({
+  itinerary = [],
+  routePoints = [],
+  producersOnRoute = [],
+  addAfterNearest,
+  addAtEnd,
+  addToNearestNotes,
+  setSelectedIndex,
+  setIsModalOpen,
+}) => {
+  const center: [number, number] =
+    routePoints.length > 0 ? routePoints[0] : ([48.8566, -71.0] as [number, number]);
+
+  // Waypoints pour le routing (vraie route)
+  const routingWaypoints = useMemo(() => {
+    if (!itinerary || itinerary.length < 2) return null;
+    return itinerary.map((step) => L.latLng(step.lat, step.lng));
+  }, [itinerary]);
 
   return (
-    <div className="my-6">
-      <div className="mb-4 flex flex-wrap gap-2">
-        {['apple', 'grape', 'cheese', 'berry', 'beer', 'farm'].map((cat) => (
-          <button
-            key={cat}
-            onClick={() => toggleCategory(cat)}
-            className={`px-3 py-1.5 rounded-full text-sm font-medium transition ${selectedCategories.includes(cat) ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+    <MapContainer center={center} zoom={6} scrollWheelZoom className="z-0 h-[600px] w-full">
+      <>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+        />
+
+        <InvalidateMapSizeOnLoad />
+
+        {/* Étapes de l’itinéraire */}
+        {itinerary.map((step, index) => (
+          <Marker
+            key={`${index}-${step.lat}-${step.lng}`}
+            position={[step.lat, step.lng]}
+            // On met les étapes au-dessus pour que le clic passe bien
+            zIndexOffset={1000}
+            eventHandlers={
+              setSelectedIndex && setIsModalOpen
+                ? {
+                    click: () => {
+                      setSelectedIndex(index);
+                      setIsModalOpen(true);
+                    },
+                  }
+                : undefined
+            }
           >
-            {cat === 'apple'
-              ? '🍎 Pomme'
-              : cat === 'grape'
-                ? '🍇 Raisin'
-                : cat === 'cheese'
-                  ? '🧀 Fromage'
-                  : cat === 'berry'
-                    ? '🫐 Fruits'
-                    : cat === 'beer'
-                      ? '🍺 Bière'
-                      : '🥩 Ferme'}
-          </button>
+            <Popup>
+              <div className="space-y-1 text-sm">
+                <div className="font-semibold text-gray-800">
+                  {roleLabel(index, itinerary.length)}
+                </div>
+                {step.title && <div className="text-gray-700">{step.title}</div>}
+                {typeof step.distanceKm === 'number' &&
+                  typeof step.durationMin === 'number' &&
+                  (step.distanceKm > 0 || step.durationMin > 0) && (
+                    <div className="text-gray-600">
+                      Vers l’étape suivante : <strong>{step.distanceKm.toFixed(1)} km</strong> •{' '}
+                      <strong>{minutesToHhmm(step.durationMin)}</strong>
+                    </div>
+                  )}
+              </div>
+            </Popup>
+          </Marker>
         ))}
-        <button
-          onClick={() => setShowProducers((prev) => !prev)}
-          className="px-3 py-1.5 rounded-full text-sm font-medium bg-yellow-200 text-gray-800 hover:bg-yellow-300"
-        >
-          {showProducers ? '👁️ Masquer producteurs' : '👁️ Afficher producteurs'}
-        </button>
-      </div>
 
-      <div style={{ height: '500px', width: '100%' }} id="map-section">
-        <MapContainer
-          center={points[0] || [46.8139, -71.208]}
-          zoom={6}
-          style={{ height: '100%', width: '100%' }}
-          ref={(map) => {
-            if (map) mapRef.current = map;
-          }}
-        >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution="&copy; OpenStreetMap contributors"
+        {/* Tracé / Routing */}
+        {routingWaypoints && <RoutingMachine sig={routingWaypoints} />}
+        {!routingWaypoints && routePoints.length >= 2 && (
+          <Polyline
+            positions={routePoints}
+            pathOptions={{ color: '#2563eb', weight: 5, opacity: 0.9 }}
           />
+        )}
 
-          {points.map((pos, idx) => (
-            <Marker key={`step-${idx}`} position={pos}>
+        {/* Producteurs avec icônes custom */}
+        {producersOnRoute.map((p, i) => {
+          const href =
+            p.website && typeof p.website === 'string'
+              ? p.website.startsWith('http')
+                ? p.website
+                : `https://${p.website}`
+              : null;
+
+          return (
+            <Marker
+              key={`prod-${i}-${p.name ?? i}`}
+              position={[p.lat, p.lng]}
+              icon={getProducerIcon(p.type)}
+              zIndexOffset={500}
+            >
               <Popup>
-                {idx === 0 ? 'Départ' : idx === points.length - 1 ? 'Arrivée' : `Étape ${idx}`}
+                <div className="w-64 space-y-2 text-sm">
+                  <div className="font-semibold text-gray-800">{p.name ?? 'Producteur'}</div>
+                  {p.type && <div className="text-gray-600">{p.type}</div>}
+                  {href ? (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="break-all text-blue-600 underline"
+                    >
+                      Voir le site web
+                    </a>
+                  ) : (
+                    <p className="text-gray-500">Aucun site web disponible</p>
+                  )}
+
+                  <div className="mt-2 flex flex-col gap-1">
+                    {addAfterNearest && (
+                      <button
+                        type="button"
+                        onClick={() => addAfterNearest(p)}
+                        className="rounded bg-blue-600 px-3 py-1 text-xs font-semibold text-white hover:bg-blue-700"
+                      >
+                        ➕ Ajouter comme étape après la plus proche
+                      </button>
+                    )}
+                    {addAtEnd && (
+                      <button
+                        type="button"
+                        onClick={() => addAtEnd(p)}
+                        className="rounded bg-indigo-600 px-3 py-1 text-xs font-semibold text-white hover:bg-indigo-700"
+                      >
+                        ➕ Ajouter en fin d’itinéraire
+                      </button>
+                    )}
+                    {addToNearestNotes && (
+                      <button
+                        type="button"
+                        onClick={() => addToNearestNotes(p)}
+                        className="rounded bg-emerald-600 px-3 py-1 text-xs font-semibold text-white hover:bg-emerald-700"
+                      >
+                        ➕ Ajouter aux notes
+                      </button>
+                    )}
+                  </div>
+                </div>
               </Popup>
             </Marker>
-          ))}
-
-          {showProducers &&
-            producers
-              .filter((p) => selectedCategories.includes(detectCategory(p)))
-              .map((p, idx) => (
-                <Marker
-                  key={`prod-${idx}`}
-                  position={[p.lat, p.lng]}
-                  icon={categoryIcons[detectCategory(p)] || categoryIcons.default}
-                >
-                  <Popup>
-                    <strong>{p.name}</strong>
-                    <br />
-                    {p.type || 'Producteur'}
-                    <br />
-                    {p.website && (
-                      <a
-                        href={p.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 underline"
-                      >
-                        site web
-                      </a>
-                    )}
-                  </Popup>
-                </Marker>
-              ))}
-
-          {destinations
-            .filter((d) => typeof d.lat === 'number' && typeof d.lng === 'number')
-            .map((d, idx) => (
-              <Marker key={`dest-${idx}`} position={[d.lat, d.lng]} icon={questionIcon}>
-                <Popup>
-                  <div className="text-sm space-y-2">
-                    <div>
-                      <strong>{d.ville}</strong>
-                      <br />
-                      <Link href={`/blog/${d.slug}`} className="text-blue-600 underline">
-                        Lire l'article
-                      </Link>
-                    </div>
-                    <div>
-                      <button
-                        onClick={() => {
-                          const coords: [number, number] = [d.lat, d.lng];
-                          if (mapRef.current) mapRef.current.setView(coords, 8);
-                          onAddDestinationStep?.(d.ville, coords);
-                        }}
-                        className="text-sm bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700"
-                      >
-                        ✅ Ajouter à l’itinéraire
-                      </button>
-                    </div>
-                  </div>
-                </Popup>
-              </Marker>
-            ))}
-        </MapContainer>
-      </div>
-
-      {distanceKm && (
-        <p className="text-center mt-4 text-lg font-medium">Distance totale : {distanceKm} km</p>
-      )}
-    </div>
+          );
+        })}
+      </>
+    </MapContainer>
   );
-}
+};
+
+export default MapWithRouting;

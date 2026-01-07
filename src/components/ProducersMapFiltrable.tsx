@@ -1,182 +1,121 @@
 'use client';
-import React, { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { Icon } from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-import producers from '@/data/producers.json';
+
+import React, { useMemo, useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet';
+import { Icon, LatLngExpression } from 'leaflet';
+// ❌ plus de `import 'leaflet/dist/leaflet.css';` ici
+
+import producersJson from '@/data/producers.json';
 import ProducerTypeFilter from './ProducerTypeFilter';
-import { Producer } from '@/types/Producer';
-interface ProducersMapProps {
-  points: [number, number][];
-}
+import {
+  filterProducers,
+  detectCategory,
+  ALL_CATEGORIES,
+  type Coord,
+  type Producer,
+  type ProducerCategory,
+} from '@/utils/producersFilters';
 
-type Coord = [number, number];
-
-function haversineDistance(coord1: Coord, coord2: Coord): number {
-  const [lat1, lon1] = coord1;
-  const [lat2, lon2] = coord2;
-  const R = 6371;
-  const dLat = ((lat2 - lat1) * Math.PI) / 180;
-  const dLon = ((lon2 - lon1) * Math.PI) / 180;
-  const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos((lat1 * Math.PI) / 180) *
-      Math.cos((lat2 * Math.PI) / 180) *
-      Math.sin(dLon / 2) *
-      Math.sin(dLon / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c;
-}
-
-function detectCategory(prod: Producer): string {
-  const name = prod.name?.toLowerCase() || '';
-  const type = prod.type?.toLowerCase() || '';
-
-  if (name.includes('cidre') || name.includes('pom') || type.includes('cidrerie')) return 'apple';
-  if (name.includes('vignoble') || name.includes('raisin') || type.includes('winery'))
-    return 'grape';
-  if (name.includes('fromage') || type.includes('cheese')) return 'cheese';
-  if (name.includes('bleuet') || name.includes('camerise') || name.includes('fruit'))
-    return 'berry';
-  if (name.includes('bière') || name.includes('microbrasserie') || type.includes('brewery'))
-    return 'beer';
-
-  if (
-    type.includes('farm') ||
-    type.includes('agriculture') ||
-    name.includes('ferme') ||
-    name.includes('boucherie') ||
-    name.includes('verger') ||
-    name.includes('fromagerie') ||
-    name.includes('maraîcher') ||
-    name.includes('élevage')
-  ) {
-    return 'farm';
-  }
-
-  return 'default';
-}
-
-const icons: Record<string, Icon> = {
-  apple: new Icon({ iconUrl: '/icons/apple.png', iconSize: [28, 28] }),
-  grape: new Icon({ iconUrl: '/icons/grapes.png', iconSize: [28, 28] }),
-  cheese: new Icon({ iconUrl: '/icons/cheese.png', iconSize: [28, 28] }),
-  berry: new Icon({ iconUrl: '/icons/berry.png', iconSize: [28, 28] }),
-  beer: new Icon({ iconUrl: '/icons/beer.png', iconSize: [28, 28] }),
-  farm: new Icon({ iconUrl: '/icons/farm.png', iconSize: [28, 28] }),
-  default: new Icon({ iconUrl: '/icons/farm.png', iconSize: [28, 28] }),
+type Props = {
+  points?: Coord[];
+  defaultNearby?: boolean;
+  height?: number;
 };
 
-export default function ProducersMap({ points }: ProducersMapProps) {
-  const [filtered, setFiltered] = useState(false);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([
-    'apple',
-    'grape',
-    'cheese',
-    'berry',
-    'beer',
-    'farm',
-  ]);
-  const [filteredProducers, setFilteredProducers] = useState(producers);
+const icons: Record<ProducerCategory | 'default', Icon> = {
+  cidrerie: new Icon({ iconUrl: '/icons/apple.png', iconSize: [28, 28] }),
+  vignoble: new Icon({ iconUrl: '/icons/grapes.png', iconSize: [28, 28] }),
+  fromage: new Icon({ iconUrl: '/icons/fromage.png', iconSize: [28, 28] }),
+  petitfruit: new Icon({ iconUrl: '/icons/berry.png', iconSize: [28, 28] }),
+  microbrasserie: new Icon({ iconUrl: '/icons/microbrasserie.png', iconSize: [28, 28] }),
+  miel: new Icon({ iconUrl: '/icons/miel.png', iconSize: [28, 28] }),
+  ferme: new Icon({ iconUrl: '/icons/ferme.png', iconSize: [28, 28] }),
+  default: new Icon({ iconUrl: '/icons/ferme.png', iconSize: [28, 28] }),
+};
 
-  useEffect(() => {
-    let result = producers;
+export default function ProducersMapFiltrable({
+  points = [],
+  defaultNearby = false,
+  height = 420,
+}: Props) {
+  // ✅ state typé correctement
+  const [selectedCategories, setSelectedCategories] = useState<ProducerCategory[]>(ALL_CATEGORIES);
+  const [onlyNearby, setOnlyNearby] = useState<boolean>(points.length >= 2 ? defaultNearby : false);
 
-    if (filtered && points.length > 0) {
-      result = producers.filter((prod) =>
-        points.some((pt) => haversineDistance(pt, [prod.lat, prod.lng]) < 30)
-      );
-    }
+  const producers = useMemo(() => producersJson as unknown as Producer[], []);
 
-    result = result.filter((prod) => selectedCategories.includes(detectCategory(prod)));
+  const list = useMemo(
+    () =>
+      filterProducers({
+        producers,
+        selectedCategories,
+        onlyNearby,
+        routePoints: points,
+        thresholdKm: 30,
+      }),
+    [producers, selectedCategories, onlyNearby, points],
+  );
 
-    // 🔎 Log des données invalides
-    result.forEach((prod) => {
-      if (
-        typeof prod.lat !== 'number' ||
-        typeof prod.lng !== 'number' ||
-        isNaN(prod.lat) ||
-        isNaN(prod.lng) ||
-        !prod.id
-      ) {
-        console.warn('❌ Producteur exclu (données invalides)', prod);
-      }
-    });
+  // ✅ plus de "as any" : on tape center en LatLngExpression
+  const center: LatLngExpression = useMemo(() => {
+    if (points.length >= 1) return points[0];
+    if (list.length >= 1) return [list[0].lat, list[0].lng];
+    return [46.829, -71.254]; // Québec
+  }, [points, list]);
 
-    setFilteredProducers(result);
-  }, [filtered, points, selectedCategories]);
-
-  const center: Coord =
-    points.length > 0
-      ? points[0]
-      : producers.find((p) => typeof p.lat === 'number' && typeof p.lng === 'number')
-        ? [
-            producers.find((p) => typeof p.lat === 'number' && typeof p.lng === 'number')!.lat,
-            producers.find((p) => typeof p.lat === 'number' && typeof p.lng === 'number')!.lng,
-          ]
-        : [46.8, -71.2];
-
-  const handleToggleCategory = (cat: string) => {
+  const toggleCategory = (cat: ProducerCategory) =>
     setSelectedCategories((prev) =>
-      prev.includes(cat) ? prev.filter((c) => c !== cat) : [...prev, cat]
+      prev.includes(cat) ? prev.filter((c) => c !== cat) : [...prev, cat],
     );
-  };
 
   return (
     <div className="space-y-4">
-      <ProducerTypeFilter selected={selectedCategories} onToggle={handleToggleCategory} />
+      <ProducerTypeFilter selected={selectedCategories} onToggle={toggleCategory} />
 
-      <button
-        onClick={() => setFiltered((prev) => !prev)}
-        className="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition"
-      >
-        {filtered ? '🔄 Afficher tous les producteurs' : '📍 Producteurs proches de l’itinéraire'}
-      </button>
+      {points.length >= 2 && (
+        <button
+          onClick={() => setOnlyNearby((v) => !v)}
+          className="rounded bg-indigo-600 px-4 py-2 text-white transition hover:bg-indigo-700"
+          type="button"
+        >
+          {onlyNearby ? '🔄 Tous les producteurs' : '📍 Proches de l’itinéraire'}
+        </button>
+      )}
 
-      <MapContainer
-        center={center}
-        zoom={7}
-        scrollWheelZoom
-        style={{ height: '400px', width: '100%' }}
-      >
+      <MapContainer center={center} zoom={7} scrollWheelZoom style={{ height, width: '100%' }}>
         <TileLayer
           attribution="&copy; OpenStreetMap contributors"
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        {filteredProducers
-          .filter(
-            (prod) =>
-              typeof prod.lat === 'number' &&
-              typeof prod.lng === 'number' &&
-              !isNaN(prod.lat) &&
-              !isNaN(prod.lng) &&
-              prod.id
-          )
-          .map((prod) => (
-            <Marker
-              key={prod.id}
-              position={[prod.lat, prod.lng]}
-              icon={icons[detectCategory(prod)] || icons.default}
-            >
+        {points.length >= 2 && <Polyline positions={points} />}
+
+        {list.map((p) => {
+          const cat = detectCategory(p);
+          const icon = icons[cat] || icons.default;
+          return (
+            <Marker key={p.id} position={[p.lat, p.lng]} icon={icon}>
               <Popup>
-                <strong>{prod.name}</strong>
-                <br />
-                {prod.website ? (
-                  <a
-                    href={prod.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 underline"
-                  >
-                    site web
-                  </a>
-                ) : (
-                  <span className="text-gray-500 italic">Aucun site web</span>
-                )}
+                <div className="w-64 space-y-2 text-sm">
+                  <div className="font-semibold">{p.name}</div>
+                  {p.type && <div className="text-gray-600">{p.type}</div>}
+                  {p.website ? (
+                    <a
+                      href={p.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 underline"
+                    >
+                      site web
+                    </a>
+                  ) : (
+                    <span className="italic text-gray-500">Aucun site web</span>
+                  )}
+                </div>
               </Popup>
             </Marker>
-          ))}
+          );
+        })}
       </MapContainer>
     </div>
   );

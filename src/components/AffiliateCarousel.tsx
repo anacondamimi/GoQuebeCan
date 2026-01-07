@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import products from '@/data/comfort.json';
+import H3 from '@/components/typography/H3';
 
 interface Product {
   asin: string;
@@ -17,33 +18,33 @@ export default function AffiliateCarousel() {
   const productsData = products as Product[];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {productsData.map((product) => (
         <div
           key={product.asin}
-          className="border p-4 rounded-xl shadow hover:shadow-lg transition bg-white flex flex-col justify-between"
+          className="flex flex-col justify-between rounded-xl border bg-white p-4 shadow transition hover:shadow-lg"
         >
           <div>
-            <div className="relative w-full h-48 mb-2">
+            <div className="relative mb-2 h-48 w-full">
               <Image
                 src={product.image}
                 alt={product.title}
                 fill
-                className="object-cover rounded"
+                className="rounded object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
-            <h3 className="font-semibold text-lg mb-1">{product.title}</h3>
-            <p className="text-blue-700 font-bold mb-1">{product.price}</p>
+            <H3 className="mb-1 text-lg font-semibold">{product.title}</H3>
+            <p className="mb-1 font-bold text-blue-700">{product.price}</p>
             <p className="text-sm text-gray-600">{product.description}</p>
           </div>
           <a
             href={product.link}
             target="_blank"
             rel="noopener sponsored noreferrer"
-            className="mt-3 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition text-center"
+            className="mt-3 inline-block rounded bg-blue-600 px-4 py-2 text-center text-white transition hover:bg-blue-700"
           >
-            Voir sur Amazon
+            Voir l’offre — livraison rapide
           </a>
         </div>
       ))}

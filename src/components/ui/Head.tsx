@@ -47,7 +47,7 @@ export function Head({
 
       {/* Favicon + thème couleur (optionnel mais conseillé) */}
       <meta name="theme-color" content="#ffffff" />
-      <link rel="icon" href="/favicon.avif" />
+      <link rel="icon" href="/favicon.png" />
     </Helmet>
   );
 }

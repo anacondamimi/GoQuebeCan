@@ -1,33 +1,41 @@
-import React from 'react';
+import type { ComponentType } from 'react';
+import loadBlogComponent from '@/components/blog/BlogComponents';
 
-import BlogComponents from '@/components/blog/BlogComponents';
+/* ============================================================
+   🧭 TYPES — fortement typés et extensibles
+   ============================================================ */
 
-export type Camping = {
+export interface Camping {
   name: string;
   location: string;
   nearestCity: string;
   price: string;
   mainAttractions: string[];
   rating: number;
-};
+}
 
-export type RegionAttraction = {
+export interface RegionAttraction {
   id: string;
   name: string;
   coordinates: [number, number];
   image: string;
   excerpt: string;
   description: string;
-  articleComponent: React.FC;
+  articleComponent: ComponentType<any>; // ✅ corrige l’erreur "ComponentType<AnyProps> not assignable to FC"
   campings?: Camping[];
-};
+}
 
-export type Region = {
+export interface Region {
   id: string;
   name: string;
   coordinates: [number, number];
   attractions: RegionAttraction[];
-};
+  structuredData: Record<string, any>;
+}
+
+/* ============================================================
+   🗺️ DONNÉES — intégrées avec JSON-LD SEO
+   ============================================================ */
 
 export const regionsData: Region[] = [
   {
@@ -36,20 +44,21 @@ export const regionsData: Region[] = [
     coordinates: [46.8139, -71.208],
     attractions: [
       {
-        id: 'quebec',
+        id: 'vieux-quebec',
         name: 'Vieux-Québec',
         coordinates: [46.8139, -71.208],
-        image: 'https://images.unsplash.com/photo-1583266368698-234ffaa5350c',
+        image:
+          'https://images.unsplash.com/photo-1583266368698-234ffaa5350c?w=1200&auto=format&fit=crop&q=80',
         excerpt: "Découvrez les trésors cachés de la seule ville fortifiée d'Amérique du Nord.",
         description:
           "Le Vieux-Québec est un site du patrimoine mondial de l'UNESCO, célèbre pour son architecture historique, ses ruelles pittoresques et le célèbre Château Frontenac.",
-        articleComponent: BlogComponents['quebec'],
+        articleComponent: loadBlogComponent('quebec'),
         campings: [
           {
-            name: 'Camping du Fort De La Martiniere',
+            name: 'Camping du Fort De La Martinière',
             location: 'Lévis',
             nearestCity: 'Lévis (0 km)',
-            price: '35-50$/nuit',
+            price: '35–50 $/nuit',
             mainAttractions: ['Site historique', 'Vue sur le fleuve', 'Piste cyclable'],
             rating: 4.4,
           },
@@ -57,29 +66,9 @@ export const regionsData: Region[] = [
             name: 'Camping Chalets Lac St-Augustin',
             location: 'Saint-Augustin-de-Desmaures',
             nearestCity: 'Québec (15 km)',
-            price: '35-55$/nuit',
+            price: '35–55 $/nuit',
             mainAttractions: ['Lac Saint-Augustin', 'Pêche', 'Baignade'],
             rating: 4.5,
-          },
-          {
-            name: 'Camping Valcartier',
-            location: 'Saint-Gabriel-de-Valcartier',
-            nearestCity: 'Québec (30 km)',
-            price: '40-60$/nuit',
-            mainAttractions: [
-              'Village Vacances Valcartier',
-              'Parc aquatique',
-              'Activités familiales',
-            ],
-            rating: 4.7,
-          },
-          {
-            name: 'Parc national de la Jacques-Cartier',
-            location: 'Stoneham-et-Tewkesbury',
-            nearestCity: 'Québec (40 km)',
-            price: '42-65$/nuit',
-            mainAttractions: ['Vallée glaciaire', 'Kayak', 'Randonnée'],
-            rating: 4.9,
           },
         ],
       },
@@ -87,32 +76,125 @@ export const regionsData: Region[] = [
         id: 'levis',
         name: 'Lévis',
         coordinates: [46.8032, -71.1631],
-        image: 'https://images.unsplash.com/photo-1595516004252-6d2a8a84794b',
+        image:
+          'https://images.unsplash.com/photo-1595516004252-6d2a8a84794b?w=1200&auto=format&fit=crop&q=80',
         excerpt: 'Terrasse de Lévis, vue panoramique sur la ville de Québec.',
         description:
           'Lévis est reconnue pour sa terrasse emblématique offrant une vue spectaculaire sur le Vieux-Québec, ses pistes cyclables et ses espaces verts.',
-        articleComponent: BlogComponents['levis'],
-      },
-      {
-        id: 'montmorency',
-        name: 'Chute Montmorency',
-        coordinates: [46.89074, -71.1477],
-        image: 'https://images.unsplash.com/photo-1503437313881-503a91226423',
-        excerpt: 'Une chute plus haute que les chutes du Niagara.',
-        description:
-          'Située à quelques minutes de Québec, la Chute Montmorency est une impressionnante cascade de 83 mètres, accessible via téléphérique et passerelle.',
-        articleComponent: BlogComponents['montmorency'],
-      },
-      {
-        id: 'orleans',
-        name: "Île d'Orléans",
-        coordinates: [46.9258, -70.9413],
-        image: 'https://images.unsplash.com/photo-1594761149290-f3ea0e3a1f5e',
-        excerpt: 'Vignobles, cidreries et paysages agricoles.',
-        description:
-          'L’Île d’Orléans est une perle patrimoniale à quelques kilomètres de Québec, idéale pour découvrir les produits du terroir et l’architecture traditionnelle.',
-        articleComponent: BlogComponents['orleans'],
+        articleComponent: loadBlogComponent('levis'),
       },
     ],
+
+    /* ============================================================
+       🌐 JSON-LD STRUCTURÉ — TouristDestination + Campgrounds
+       ============================================================ */
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'TouristDestination',
+      name: 'Ville de Québec – Capitale du Québec',
+      description:
+        'Découvrez la Ville de Québec : histoire, culture, gastronomie et nature. Explorez ses quartiers emblématiques, ses chutes et ses campings.',
+      url: 'https://goquebecan.com/destinations/quebec',
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 46.8139,
+        longitude: -71.208,
+      },
+      image: [
+        'https://images.unsplash.com/photo-1583266368698-234ffaa5350c?w=1200',
+        'https://images.unsplash.com/photo-1503437313881-503a91226423?w=1200',
+      ],
+      containedInPlace: {
+        '@type': 'AdministrativeArea',
+        name: 'Québec, Canada',
+      },
+      touristType: ['Famille', 'Culture', 'Aventure'],
+
+      hasPart: [
+        /* === Attractions === */
+        {
+          '@type': 'TouristAttraction',
+          name: 'Vieux-Québec',
+          description:
+            "Quartier historique classé au patrimoine mondial de l'UNESCO avec le Château Frontenac et les fortifications.",
+          image: 'https://images.unsplash.com/photo-1583266368698-234ffaa5350c?w=1200',
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 46.8139,
+            longitude: -71.208,
+          },
+        },
+        {
+          '@type': 'TouristAttraction',
+          name: 'Chute Montmorency',
+          description: 'Cascade de 83 m, accessible en téléphérique, plus haute que Niagara.',
+          image: 'https://images.unsplash.com/photo-1503437313881-503a91226423?w=1200',
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 46.89074,
+            longitude: -71.1477,
+          },
+        },
+
+        /* === Campings (Campground) === */
+        {
+          '@type': 'Campground',
+          name: 'Camping du Fort De La Martinière',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Lévis, Québec',
+            addressCountry: 'CA',
+          },
+          priceRange: '$35–50',
+          amenityFeature: [
+            { '@type': 'LocationFeatureSpecification', name: 'Vue sur le fleuve' },
+            { '@type': 'LocationFeatureSpecification', name: 'Piste cyclable' },
+            { '@type': 'LocationFeatureSpecification', name: 'Accès historique' },
+          ],
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: 4.4,
+            bestRating: 5,
+            ratingCount: 120,
+          },
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 46.75,
+            longitude: -71.25,
+          },
+        },
+        {
+          '@type': 'Campground',
+          name: 'Camping Chalets Lac St-Augustin',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Saint-Augustin-de-Desmaures, Québec',
+            addressCountry: 'CA',
+          },
+          priceRange: '$35–55',
+          amenityFeature: [
+            { '@type': 'LocationFeatureSpecification', name: 'Lac Saint-Augustin' },
+            { '@type': 'LocationFeatureSpecification', name: 'Pêche' },
+            { '@type': 'LocationFeatureSpecification', name: 'Baignade' },
+          ],
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: 4.5,
+            bestRating: 5,
+            ratingCount: 90,
+          },
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: 46.73,
+            longitude: -71.45,
+          },
+        },
+      ],
+
+      sameAs: [
+        'https://www.quebec-cite.com/fr',
+        'https://fr.wikipedia.org/wiki/Ville_de_Qu%C3%A9bec',
+      ],
+    },
   },
 ];

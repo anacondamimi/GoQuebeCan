@@ -6,11 +6,11 @@ import { destinations } from '@/data/destinationsData';
 
 export default function DestinationsMegaMenu() {
   return (
-    <div className="grid grid-cols-2 gap-6 bg-white p-6 rounded-xl shadow-xl w-[650px] max-h-[450px] overflow-y-auto">
+    <div className="grid max-h-[450px] w-[650px] grid-cols-2 gap-6 overflow-y-auto rounded-xl bg-white p-6 shadow-xl">
       {destinations.map((region) => (
         <div key={region.slug}>
           {/* Titre de la région avec couleur + effet */}
-          <h4 className="text-sm font-semibold text-[#e11d48] mb-2 tracking-wide">
+          <h4 className="mb-2 text-sm font-semibold tracking-wide text-[#e11d48]">
             {region.title}
           </h4>
 
@@ -22,7 +22,7 @@ export default function DestinationsMegaMenu() {
                 <li key={article.slug}>
                   <Link
                     href={`/blog/${article.slug}`}
-                    className="text-sm text-gray-700 hover:text-[#e11d48] transition"
+                    className="text-sm text-gray-700 transition hover:text-[#e11d48]"
                     aria-label={`Voir l'article sur ${article.title}`}
                   >
                     {article.title}

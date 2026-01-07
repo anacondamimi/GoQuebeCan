@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
+import H1 from '@/components/typography/H1';
 
 interface HeroBannerProps {
   image: string;
@@ -17,7 +18,7 @@ export default function HeroBanner({
   badge = 'Destination en vedette',
 }: HeroBannerProps) {
   return (
-    <header className="relative h-[450px] w-full rounded-xl overflow-hidden shadow-md mb-16">
+    <header className="relative mb-16 h-[450px] w-full overflow-hidden rounded-xl shadow-md">
       {/* 🌅 Image de fond */}
       <Image
         src={image}
@@ -32,13 +33,13 @@ export default function HeroBanner({
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40 backdrop-blur-sm" />
 
       {/* ✨ Texte centré */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-4 text-white">
-        <div className="flex items-center gap-2 mb-3 bg-white/20 px-4 py-1 rounded-full text-sm font-semibold backdrop-blur-sm shadow-sm">
-          <MapPin className="h-5 w-5 text-yellow-300" />
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center text-white">
+        <div className="mb-3 flex items-center gap-2 rounded-full bg-white/20 px-4 py-1 text-sm font-semibold shadow-sm backdrop-blur-sm">
+          <MapPin className="size-5 text-yellow-300" />
           {badge}
         </div>
-        <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-4">{title}</h1>
-        <p className="text-lg sm:text-xl max-w-2xl text-white/90">{subtitle}</p>
+        <H1 className="mb-4 text-4xl font-extrabold leading-tight sm:text-5xl">{title}</H1>
+        <p className="max-w-2xl text-lg text-white/90 sm:text-xl">{subtitle}</p>
       </div>
     </header>
   );

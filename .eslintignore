@@ -1,0 +1,58 @@
+# =======================================
+#  🧹 ESLint Ignore — GoQuébeCan 2025
+#  Next.js 14+ • TailwindCSS 4 • Node 20+
+# =======================================
+
+# ⚙️ Fichiers de configuration Node / outils
+next.config.*js
+postcss.config.*js
+tailwind.config.*js
+eslint.config.*js
+babel.config.*js
+vitest.config.*js
+jest.config.*js
+
+# 🧰 Scripts / générateurs (CLI)
+scripts/**
+tools/**
+*.mjs
+*.cjs
+
+# 🗂️ Build & caches
+.next/
+out/
+dist/
+node_modules/
+coverage/
+*.log
+.cache/
+.env*
+*.local
+
+# 💅 Assets / Styles / Données statiques
+public/**
+**/*.css
+**/*.scss
+**/*.sass
+**/*.avif
+**/*.webp
+**/*.jpg
+**/*.jpeg
+**/*.png
+**/*.svg
+**/*.gif
+**/*.ico
+
+# 🧱 Types automatiques & fichiers système
+next-env.d.ts
+tsconfig.tsbuildinfo
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 🧩 Dossiers spéciaux
+playground/
+tests/e2e/
+tests/unit/
+

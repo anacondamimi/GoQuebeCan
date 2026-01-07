@@ -8,6 +8,13 @@ export const destinationMap = {
     objectsUrl: '/objets',
     plannerUrl: '/planificateur',
   },
+  saguenay: {
+    label: 'Saguenay',
+    blogUrl: '/blog/saguenay',
+    videoUrl: '/videos#saguenay',
+    objectsUrl: '/objets',
+    plannerUrl: '/planificateur',
+  },
   'baie-saint-paul': {
     label: 'Baie Saint Paul',
     blogUrl: '/blog/baie-saint-paul',
@@ -183,10 +190,10 @@ export const destinationMap = {
     objectsUrl: '/objets',
     plannerUrl: '/planificateur',
   },
-  'rivieredu-loup': {
-    label: 'Rivieredu Loup',
-    blogUrl: '/blog/rivieredu-loup',
-    videoUrl: '/videos#rivieredu-loup',
+  'riviere-du-loup': {
+    label: 'Riviere du Loup',
+    blogUrl: '/blog/riviere-du-loup',
+    videoUrl: '/videos#riviere-du-loup',
     objectsUrl: '/objets',
     plannerUrl: '/planificateur',
   },

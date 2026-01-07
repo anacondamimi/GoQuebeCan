@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { Tent, Hotel, Car } from 'lucide-react';
+import H3 from '@/components/typography/H3';
+import H2 from '@/components/typography/H2';
 
 const features = [
   {
@@ -29,13 +31,13 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="planification" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+    <section id="planification" className="bg-white py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <H2 className="mb-16 text-center text-4xl font-bold text-gray-900">
           Planifiez votre Aventure
-        </h2>
+        </H2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3">
           {features.map((feature) => (
             <a
               key={feature.title}
@@ -44,14 +46,14 @@ export default function Features() {
               rel="noopener noreferrer"
               title={feature.title}
               aria-label={`En savoir plus sur ${feature.title}`}
-              className="group p-8 bg-gray-50 rounded-xl transition-all hover:bg-gray-100 hover:shadow-lg"
+              className="group rounded-xl bg-gray-50 p-8 transition-all hover:bg-gray-100 hover:shadow-lg"
             >
-              <feature.icon className="h-10 w-10 sm:h-12 sm:w-12 text-indigo-600 mb-4 sm:mb-6" />
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
+              <feature.icon className="mb-4 size-10 text-indigo-600 sm:mb-6 sm:size-12" />
+              <H3 className="mb-3 text-lg font-semibold text-gray-900 sm:mb-4 sm:text-xl">
                 {feature.title}
-              </h3>
-              <p className="text-gray-600 mb-2">{feature.description}</p>
-              <span className="inline-block mt-2 text-indigo-600 font-medium group-hover:underline">
+              </H3>
+              <p className="mb-2 text-gray-600">{feature.description}</p>
+              <span className="mt-2 inline-block font-medium text-indigo-600 group-hover:underline">
                 {feature.cta}
               </span>
             </a>

@@ -3,13 +3,15 @@
 /* ------------------------------------------------------------------ */
 
 import Link from 'next/link';
+import BrandName from '@/components/brand/BrandName';
+import H1 from '@/components/typography/H1';
 
 export default function StaticPage() {
   return (
-    <main className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8 text-center text-blue-600">
-        Pages clés du site GoQuébeCan
-      </h1>
+    <main className="mx-auto max-w-4xl px-4 py-12">
+      <H1 className="mb-8 text-center text-4xl font-bold text-blue-600">
+        Pages clés du site <BrandName />
+      </H1>
       <ul className="space-y-4 text-lg">
         <li>
           <Link href="/">Accueil</Link>

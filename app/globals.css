@@ -10,6 +10,21 @@
   --color-background: 247 247 245; /* rgb(247,247,245) Fond clair */
   --color-neutral: 90 90 90; /* rgb(90,90,90) Ton neutre */
 }
+
+/* Cache le panneau d'instructions de Leaflet Routing Machine */
+.leaflet-routing-container {
+  display: none !important;
+  /* La carte ne doit jamais dépasser la modale */
+  .leaflet-container {
+    z-index: 0 !important;
+  }
+
+  /* Si besoin, renforce l’overlay de ton Dialog (Radix/Shadcn) */
+  body > div[style*='pointer-events'] .fixed.inset-0 {
+    z-index: 9998 !important;
+  }
+}
+
 /* Styles de base personnalisés */
 @layer base {
   html {
@@ -37,6 +52,7 @@
     @apply font-body;
     color: rgb(var(--color-neutral));
   }
+
   /* Smooth scrolling pour les ancres */
   html {
     scroll-behavior: smooth;
@@ -52,6 +68,7 @@
   .destination-card {
     @apply bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden;
   }
+
   .destination-card img {
     @apply transition-transform duration-300 hover:scale-105;
   }
@@ -59,22 +76,27 @@
   .btn {
     @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
   }
+
   .btn-primary {
     background-color: rgb(var(--color-primary));
     color: white;
   }
+
   .btn-primary:hover {
     background-color: rgb(var(--color-accent));
   }
+
   .btn-secondary {
     background-color: rgb(var(--color-secondary));
     color: white;
   }
+
   .btn-outline {
     @apply btn border-2;
     border-color: rgb(var(--color-primary));
     color: rgb(var(--color-primary));
   }
+
   .btn-outline:hover {
     background-color: rgb(var(--color-primary));
     color: white;
@@ -92,7 +114,8 @@
 
 /* Styles pour les boutons */
 .btn {
-  @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-200
+ focus:outline-none focus:ring-2 focus:ring-offset-2;
 }
 
 .btn-primary {
@@ -115,15 +138,14 @@
 }
 
 .btn-secondary:hover {
-  background-color: rgb(
-    var(--color-accent)
-  ); /* ou une variante plus foncée de ta couleur secondaire */
+  background-color: rgb(var(--color-accent)); /* ou une variante plus foncée de la secondaire */
 }
 
 .btn-secondary:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(var(--color-primary), 0.5);
 }
+
 .btn-outline {
   @apply btn border-2 text-white;
   border-color: rgb(var(--color-primary));
@@ -162,12 +184,24 @@
 
 /* Styles pour les overlays de texte sur images */
 .image-overlay {
-  @apply absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 transition-opacity duration-300;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 300ms;
 }
 
-.image-overlay:hover,
-.group:hover .image-overlay {
-  opacity: 1;
+/* Carte/galerie : overlay noir doux au survol */
+.image-card {
+  position: relative;
+  overflow: hidden;
 }
 
 /* Styles pour les inputs de formulaire */
@@ -226,6 +260,43 @@
 
 /* Utilitaires personnalisés */
 @layer utilities {
+  /* 🎨 Couleurs basées sur tes variables CSS */
+  .bg-background {
+    background-color: rgb(var(--color-background));
+  }
+
+  .bg-surface {
+    background-color: #ffffff;
+  }
+
+  .bg-primary {
+    background-color: rgb(var(--color-primary));
+  }
+
+  .bg-secondary {
+    background-color: rgb(var(--color-secondary));
+  }
+
+  .bg-accent {
+    background-color: rgb(var(--color-accent));
+  }
+
+  .text-primary {
+    color: rgb(var(--color-primary));
+  }
+
+  .text-secondary {
+    color: rgb(var(--color-secondary));
+  }
+
+  .text-neutral {
+    color: rgb(var(--color-neutral));
+  }
+
+  .border-primary {
+    border-color: rgb(var(--color-primary));
+  }
+
   /* Masquage du scrollbar */
   .scrollbar-hide {
     -ms-overflow-style: none;

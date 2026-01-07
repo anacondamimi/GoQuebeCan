@@ -1,75 +1,125 @@
 'use client';
-import React, { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { Icon } from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-import producers from '@/data/producers.json';
 
-// Icônes par type
-const icons: Record<string, Icon> = {
-  farm: new Icon({
-    iconUrl: 'https://cdn-icons-png.flaticon.com/512/415/415733.png',
-    iconSize: [25, 25],
-  }),
-  winery: new Icon({
-    iconUrl: 'https://cdn-icons-png.flaticon.com/512/3468/3468350.png',
-    iconSize: [25, 25],
-  }),
-  cheese: new Icon({
-    iconUrl: 'https://cdn-icons-png.flaticon.com/512/135/135620.png',
-    iconSize: [25, 25],
-  }),
-  default: new Icon({
-    iconUrl: 'https://cdn-icons-png.flaticon.com/512/854/854878.png',
-    iconSize: [25, 25],
-  }),
+import React, { useMemo } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet';
+import { Icon } from 'leaflet';
+// ❌ plus de `import 'leaflet/dist/leaflet.css';` ici
+
+import producersJson from '@/data/producers.json';
+import {
+  filterProducers,
+  detectCategory,
+  ALL_CATEGORIES,
+  type Producer,
+  type Coord,
+  type ProducerCategory,
+} from '@/utils/producersFilters';
+
+type Props = {
+  points?: Coord[];
+  selectedCategories?: ProducerCategory[];
+  onlyNearby?: boolean;
+  thresholdKm?: number;
+  height?: number;
 };
 
-export default function ProducersMap() {
-  const [center, setCenter] = useState<[number, number]>([46.8, -71.2]);
+const icons: Record<ProducerCategory | 'default', Icon> = {
+  cidrerie: new Icon({ iconUrl: '/icons/apple.png', iconSize: [28, 28] }),
+  vignoble: new Icon({ iconUrl: '/icons/grapes.png', iconSize: [28, 28] }),
+  fromage: new Icon({ iconUrl: '/icons/fromage.png', iconSize: [28, 28] }),
+  petitfruit: new Icon({ iconUrl: '/icons/berry.png', iconSize: [28, 28] }),
+  microbrasserie: new Icon({ iconUrl: '/icons/microbrasserie.png', iconSize: [28, 28] }),
+  miel: new Icon({ iconUrl: '/icons/miel.png', iconSize: [28, 28] }),
+  ferme: new Icon({ iconUrl: '/icons/ferme.png', iconSize: [28, 28] }),
+  default: new Icon({ iconUrl: '/icons/ferme.png', iconSize: [28, 28] }),
+};
 
-  useEffect(() => {
-    if (producers.length > 0) {
-      setCenter([producers[0].lat, producers[0].lng]);
-    }
-  }, []);
+export default function ProducersMap(props: Props) {
+  const {
+    points = [],
+    selectedCategories = ALL_CATEGORIES,
+    onlyNearby = false,
+    thresholdKm = 30,
+    height = 420,
+  } = props;
+
+  const producers = useMemo(() => producersJson as unknown as Producer[], []);
+
+  const list = useMemo(
+    () =>
+      filterProducers({
+        producers,
+        selectedCategories,
+        onlyNearby,
+        routePoints: points,
+        thresholdKm,
+      }),
+    [producers, selectedCategories, onlyNearby, points, thresholdKm],
+  );
+
+  const center: [number, number] = useMemo(() => {
+    if (points.length >= 1) return points[0];
+    if (list.length >= 1) return [list[0].lat, list[0].lng];
+    return [46.829, -71.254];
+  }, [points, list]);
 
   return (
-    <MapContainer
-      center={center}
-      zoom={7}
-      scrollWheelZoom={true}
-      style={{ height: '400px', width: '100%' }}
-    >
+    <MapContainer center={center} zoom={7} scrollWheelZoom style={{ height, width: '100%' }}>
       <TileLayer
         attribution="&copy; OpenStreetMap contributors"
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
-      {producers.map((prod) => (
-        <Marker
-          key={prod.id}
-          position={[prod.lat, prod.lng]}
-          icon={icons[prod.type] || icons.default}
-        >
-          <Popup>
-            <strong>{prod.name}</strong>
-            <br />
-            {prod.website ? (
-              <a
-                href={prod.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 underline"
-              >
-                site web
-              </a>
-            ) : (
-              <span className="text-gray-500 italic">Aucun site web</span>
-            )}
-          </Popup>
-        </Marker>
-      ))}
+      {points.length >= 2 && <Polyline positions={points} />}
+
+      {list.map((prod) => {
+        const cat = detectCategory(prod);
+        const icon = icons[cat] || icons.default;
+        return (
+          <Marker key={prod.id} position={[prod.lat, prod.lng]} icon={icon}>
+            <Popup>
+              <div className="space-y-2 text-sm">
+                <div>
+                  <strong>{prod.name}</strong>
+                  <br />
+                  {prod.website ? (
+                    <a
+                      href={prod.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 underline"
+                    >
+                      Site web
+                    </a>
+                  ) : (
+                    <span className="italic text-gray-500">Aucun site web</span>
+                  )}
+                </div>
+
+                {prod.relatedArticles && prod.relatedArticles.length > 0 && (
+                  <div>
+                    <strong>Articles liés :</strong>
+                    <ul className="list-inside list-disc">
+                      {prod.relatedArticles.map((slug, i) => (
+                        <li key={i}>
+                          <a
+                            href={`/blog/${slug}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 underline"
+                          >
+                            {slug}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </Popup>
+          </Marker>
+        );
+      })}
     </MapContainer>
   );
 }

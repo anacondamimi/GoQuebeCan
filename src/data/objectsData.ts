@@ -15,8 +15,8 @@ export const travelObjects = [
     icon: '✈️',
   },
   {
-    title: 'Voiture électrique',
-    slug: 'voiture-electrique',
+    title: 'Voiture',
+    slug: 'voiture',
     icon: '🔌',
   },
 ];

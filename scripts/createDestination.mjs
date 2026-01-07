@@ -24,7 +24,7 @@ const ask = (q) => new Promise((res) => rl.question(q, (ans) => res(ans.trim()))
 // géocodage OpenCage
 async function geocode(city) {
   const url = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(
-    city + ', Québec, Canada'
+    city + ', Québec, Canada',
   )}&key=${OPENCAGE_KEY}&language=fr&limit=1`;
   const res = await fetch(url);
   const data = await res.json();
@@ -62,7 +62,7 @@ function updateBlogComponents(slug, componentName) {
     (_, p1, body, p3) => {
       if (body.includes(entry)) return `${p1}${body}${p3}`;
       return `${p1}${body}\n${entry}\n${p3}`;
-    }
+    },
   );
 
   fs.writeFileSync(bcPath, content, 'utf-8');

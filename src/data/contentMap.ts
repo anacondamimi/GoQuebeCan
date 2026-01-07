@@ -104,7 +104,7 @@ export const contentMap = {
     planner: '/planificateur',
   },
   'rivière-du-loup': {
-    blog: '/blog/rivieredu-loup',
+    blog: '/blog/riviere-du-loup',
     video: '/videos',
     objects: '/objets',
     planner: '/planificateur',
@@ -189,6 +189,18 @@ export const contentMap = {
   },
   canyon: {
     blog: '/blog/canyon',
+    video: '/videos',
+    objects: '/objets',
+    planner: '/planificateur',
+  },
+  montreal: {
+    blog: '/blog/montreal',
+    video: '/videos',
+    objects: '/objets',
+    planner: '/planificateur',
+  },
+  saguenay: {
+    blog: '/blog/saguenay',
     video: '/videos',
     objects: '/objets',
     planner: '/planificateur',

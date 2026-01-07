@@ -1,5 +1,8 @@
 'use client';
 import Image from 'next/image';
+import H1 from '@/components/typography/H1';
+import H2 from '@/components/typography/H2';
+import H3 from '@/components/typography/H3';
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -60,37 +63,37 @@ export default function BlogPage() {
       acc[post.category].push(post);
       return acc;
     },
-    {} as Record<string, typeof blogPosts>
+    {} as Record<string, typeof blogPosts>,
   );
 
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <main className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <section className="mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Blog Voyage GoQuebecan</h1>
-        <p className="text-xl text-gray-600 max-w-3xl">
+        <H1 className="mb-4 text-4xl font-bold text-gray-900">Blog Voyage GoQuebecan</H1>
+        <p className="max-w-3xl text-xl text-gray-600">
           Découvrez nos guides détaillés, conseils d'experts et récits de voyage pour explorer le
           Québec et le Canada comme un local.
         </p>
       </section>
 
-      <div className="flex flex-col md:flex-row gap-4 mb-10">
+      <div className="mb-10 flex flex-col gap-4 md:flex-row">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+          <Search className="absolute left-3 top-1/2 size-5 -translate-y-1/2 text-gray-400" />
           <input
             type="text"
             placeholder="Rechercher un article..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            className="w-full rounded-lg border py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-indigo-600"
           />
         </div>
 
         <div className="relative">
-          <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+          <Filter className="absolute left-3 top-1/2 size-5 -translate-y-1/2 text-gray-400" />
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="pl-10 pr-8 py-2 border rounded-lg appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            className="appearance-none rounded-lg border bg-white py-2 pl-10 pr-8 focus:outline-none focus:ring-2 focus:ring-indigo-600"
           >
             <option value="Toutes">Toutes les catégories</option>
             {allCategories.map((category) => (
@@ -104,29 +107,29 @@ export default function BlogPage() {
 
       {Object.entries(groupedPosts).map(([category, posts]) => (
         <section key={category} className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-            <MapPin className="h-6 w-6 text-indigo-600" />
+          <H2 className="mb-8 flex items-center gap-2 text-2xl font-bold text-gray-900">
+            <MapPin className="size-6 text-indigo-600" />
             {category}
-          </h2>
+          </H2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                className="group overflow-hidden rounded-xl bg-white shadow-md transition-shadow hover:shadow-lg"
               >
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                    className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
                     width={800}
                     height={600}
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{post.title}</h3>
+                  <H3 className="mb-2 text-xl font-semibold text-gray-900">{post.title}</H3>
                   <p className="text-gray-600">{post.description}</p>
                 </div>
               </Link>
@@ -136,14 +139,14 @@ export default function BlogPage() {
       ))}
 
       {filteredPosts.length === 0 && (
-        <div className="text-center py-12">
-          <p className="text-gray-600 mb-4">Aucun article ne correspond à votre recherche.</p>
+        <div className="py-12 text-center">
+          <p className="mb-4 text-gray-600">Aucun article ne correspond à votre recherche.</p>
           <button
             onClick={() => {
               setSearchTerm('');
               setSelectedCategory('Toutes');
             }}
-            className="text-indigo-600 hover:text-indigo-700 font-medium"
+            className="font-medium text-indigo-600 hover:text-indigo-700"
           >
             Réinitialiser les filtres
           </button>

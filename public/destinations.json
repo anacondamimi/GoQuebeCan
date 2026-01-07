@@ -19,6 +19,25 @@
     "publics": ["familles", "ados", "aventuriers"]
   },
   {
+    "slug": "saguenay",
+    "ville": "Saguenay",
+    "resume": "Explorez les trois visages du Saguenay — Chicoutimi, Jonquière et La Baie — entre fjord, culture, gastronomie et nature spectaculaire.",
+    "activites": [
+      "Croisière sur le Fjord du Saguenay",
+      "Observation des baleines",
+      "Randonnée aux belvédères de La Baie",
+      "Visite de la Pulperie de Chicoutimi",
+      "Kayak ou paddle sur le fjord",
+      "Vélo et cyclotourisme",
+      "Visite des producteurs locaux et marchés gourmands",
+      "Spa et détente à l’OTL Gouverneur",
+      "Sortie photo au coucher du soleil",
+      "Centre aquatique et musées interactifs pour enfants"
+    ],
+    "hebergements": ["OTL Gouverneur Saguenay", "Hôtel Le Montagnais", "Auberge des Battures"],
+    "publics": ["familles", "couples", "aventuriers", "amoureux de la nature"]
+  },
+  {
     "slug": "baie-saint-paul",
     "ville": "Baie Saint Paul",
     "resume": "Découverte de Baie Saint Paul et de ses attraits touristiques.",
@@ -434,8 +453,8 @@
     "publics": ["familles", "amateurs de culture"]
   },
   {
-    "slug": "rivieredu-loup",
-    "ville": "Rivieredu Loup",
+    "slug": "riviere-du-loup",
+    "ville": "Riviere-du Loup",
     "resume": "Découverte de Rivieredu Loup et de ses attraits touristiques.",
     "activites": [
       "Croisière aux Baleines",

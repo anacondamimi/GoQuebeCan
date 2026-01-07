@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
-
+import H3 from '@/components/typography/H3';
+import H2 from '@/components/typography/H2';
 import { UtensilsCrossed, Search } from 'lucide-react';
 
 const foodStops = [
@@ -69,39 +70,39 @@ export function FoodStops() {
         (stop) =>
           stop.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
           stop.speciality.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          stop.location.toLowerCase().includes(searchTerm.toLowerCase())
+          stop.location.toLowerCase().includes(searchTerm.toLowerCase()),
       ),
     }))
     .filter((region) => region.stops.length > 0);
 
   return (
-    <section id="haltes_gourmandes" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <UtensilsCrossed className="h-8 w-8 text-indigo-600" />
-          <h2 className="text-4xl font-bold text-center text-gray-900">Haltes Gourmandes</h2>
+    <section id="haltes_gourmandes" className="bg-white py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-8 flex items-center justify-center gap-3">
+          <UtensilsCrossed className="size-8 text-indigo-600" />
+          <H2 className="text-center text-4xl font-bold text-gray-900">Haltes Gourmandes</H2>
         </div>
 
-        <p className="text-xl text-center text-gray-600 mb-12">
+        <p className="mb-12 text-center text-xl text-gray-600">
           Découvrez les meilleures adresses gastronomiques locales
         </p>
 
-        <div className="flex flex-col md:flex-row gap-4 mb-8">
+        <div className="mb-8 flex flex-col gap-4 md:flex-row">
           <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+            <Search className="absolute left-3 top-1/2 size-5 -translate-y-1/2 text-gray-400" />
             <input
               type="text"
               placeholder="Rechercher par nom, spécialité ou lieu..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
+              className="w-full rounded-lg border py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-indigo-600"
             />
           </div>
 
           <select
             value={selectedRegion}
             onChange={(e) => setSelectedRegion(e.target.value)}
-            className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            className="rounded-lg border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
           >
             <option value="all">Toutes les régions</option>
             {foodStops.map((region) => (
@@ -112,24 +113,24 @@ export function FoodStops() {
           </select>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {filteredStops.map((region) => (
             <div key={region.region}>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">{region.region}</h3>
+              <H3 className="mb-6 text-2xl font-bold text-gray-900">{region.region}</H3>
               <div className="space-y-6">
                 {region.stops.map((stop) => (
                   <div
                     key={stop.name}
-                    className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow"
+                    className="rounded-xl bg-gray-50 p-6 transition-shadow hover:shadow-lg"
                   >
-                    <div className="flex justify-between items-start mb-4">
+                    <div className="mb-4 flex items-start justify-between">
                       <h4 className="text-xl font-semibold text-gray-900">{stop.name}</h4>
-                      <span className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">
+                      <span className="rounded-full bg-indigo-100 px-3 py-1 text-sm font-medium text-indigo-700">
                         {stop.rating}/5
                       </span>
                     </div>
-                    <p className="text-gray-600 mb-2">{stop.location}</p>
-                    <p className="text-gray-700 font-medium">Spécialité: {stop.speciality}</p>
+                    <p className="mb-2 text-gray-600">{stop.location}</p>
+                    <p className="font-medium text-gray-700">Spécialité: {stop.speciality}</p>
                   </div>
                 ))}
               </div>

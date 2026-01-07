@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "streetsidesoftware.code-spell-checker" // optionnel, utile pour les fautes
+  ],
+  "unwantedRecommendations": [
+    "rvest.vs-code-prettier-eslint" // évite les conflits Prettier/ESLint
+  ]
+}

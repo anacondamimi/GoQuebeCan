@@ -1,277 +1,900 @@
-import React from 'react';
-import Image from 'next/image';
-import { Utensils, Calendar, DollarSign, Shield, Star } from 'lucide-react';
+'use client';
 
-export const metadata = {
-  slug: 'gaspesie',
-  ville: 'Gaspesie',
-  resume: 'Découverte de Gaspesie et de ses attraits touristiques.',
-  activites: [],
-  hebergements: [],
-  publics: ['aventuriers'],
+import Image from 'next/image';
+import Link from 'next/link';
+import H1 from '@/components/typography/H1';
+import H2 from '@/components/typography/H2';
+import H3 from '@/components/typography/H3';
+import { buildMetadata2025 } from '@/lib/seo/buildMetadata2025';
+import { buildDestinationLd } from '@/lib/seo/buildDestinationLd';
+import { buildBreadcrumbLd } from '@/lib/seo/buildBreadcrumbLd';
+import { buildHowToLd } from '@/lib/seo/buildHowToLd';
+import { buildFaqLd } from '@/lib/seo/buildFaqLd';
+import { JsonLd, HeadExtras } from '@/lib/seo/HeadExtras';
+
+export const dynamic = 'force-static';
+export const revalidate = 60 * 60 * 24; // 24 h
+
+// ======= CONSTANTES SEO =======
+
+const TITLE = 'Gaspésie – Road trip en famille (7 jours) | Guide 2025';
+const DESCRIPTION =
+  'Itinéraire 7 jours en Gaspésie avec enfants : Forillon, Percé, baleines, plages, campings, hôtels famille, cantines, producteurs locaux et conseils pratiques. Road trip clé en main avec liens vers le planificateur GoQuébeCAN.';
+const CANONICAL = 'https://goquebecan.com/blog/gaspesie';
+const OG_IMAGE = 'https://goquebecan.com/images/destinations/gaspesie-og-1200x630.jpg';
+
+const KEYWORDS = [
+  'Gaspésie',
+  'road trip Gaspésie',
+  'Gaspésie en famille',
+  'Forillon',
+  'Percé',
+  'baleines Gaspésie',
+  'camping Gaspésie',
+  'hôtels Gaspésie',
+  'road trip Québec',
+  'idées vacances Québec',
+];
+
+const PUBLISHED = '2025-07-01';
+const MODIFIED = '2025-11-18';
+
+// ======= METADATA SEO 2025 =======
+
+export const metadata = buildMetadata2025({
+  title: TITLE,
+  description: DESCRIPTION,
+  canonical: CANONICAL,
+  image: OG_IMAGE,
+  keywords: KEYWORDS,
+});
+
+// ======= TYPES =======
+
+type StayCardProps = {
+  name: string;
+  location: string;
+  type: string;
+  description: string;
+  link: string;
+  image: string;
+  extra?: string;
 };
 
-export function BlogArticleGaspesie() {
+type SimpleItem = {
+  title: string;
+  location?: string;
+  description: string;
+};
+
+// ======= DONNÉES HÉBERGEMENTS =======
+
+const hotelsVueMer: StayCardProps[] = [
+  {
+    name: 'Riôtel Percé',
+    location: 'Percé',
+    type: 'Hôtel vue mer',
+    description:
+      'Chambres modernes face au Rocher Percé, avec terrasse pour admirer le lever du soleil et finir la journée en douceur après les excursions en bateau.',
+    link: 'https://www.booking.com/hotel/ca/riotel-perce.fr.html',
+    image: '/images/destinations/hotels/riotelperce.avif',
+    extra:
+      'Idéal pour les familles qui veulent un peu de confort tout en restant au cœur de l’action.',
+  },
+  {
+    name: 'Hôtel des Commandants',
+    location: 'Gaspé',
+    type: 'Hôtel centre-ville',
+    description:
+      'Point de chute pratique pour explorer le parc Forillon, avec restaurants et services accessibles à pied. Parfait pour alterner journées “plein air” et moments plus urbains.',
+    link: 'https://www.booking.com/hotel/ca/hotel-des-commandants.fr.html',
+    image: '/images/destinations/hotels/commandants-gaspe.avif',
+    extra: 'Pratique si tu voyages avec des ados qui aiment flâner en ville le soir.',
+  },
+  {
+    name: 'Manoir Belle Plage',
+    location: 'Carleton-sur-Mer',
+    type: 'Hôtel bord de mer',
+    description:
+      'Atmosphère chaleureuse, vue sur la baie et accès facile à la plage pour les couchers de soleil. Une belle option pour finir le road trip sur une note relax.',
+    link: 'https://www.booking.com/hotel/ca/manoir-belle-plage.fr.html',
+    image: '/images/destinations/hotels/manoir-belle-plage.avif',
+    extra: 'Excellent pour recharger les batteries avant le retour vers la maison.',
+  },
+];
+
+const hotelsFamillePiscine: StayCardProps[] = [
+  {
+    name: 'Hôtel & Cie',
+    location: 'Sainte-Anne-des-Monts',
+    type: 'Hôtel famille',
+    description:
+      'Chambres confortables et accueil chaleureux, pratique comme base pour découvrir le parc national de la Gaspésie tout en gardant un bon niveau de confort.',
+    link: 'https://www.booking.com/hotel/ca/hotel-et-cie.fr.html',
+    image: '/images/destinations/hotels/hotel-et-cie.avif',
+    extra: 'Parfait pour les familles qui alternent randonnée et moments cocooning.',
+  },
+  {
+    name: 'Hostellerie Baie-Bleue',
+    location: 'Carleton-sur-Mer',
+    type: 'Hôtel avec piscine',
+    description:
+      'Grande piscine extérieure en saison, accès à la plage et vue sur la baie. Les enfants adorent se baigner pendant que les adultes profitent du paysage.',
+    link: 'https://www.booking.com/hotel/ca/hostellerie-baie-bleue.fr.html',
+    image: '/images/destinations/hotels/baie-bleue.avif',
+    extra: 'Solution idéale pour les journées de vent fort ou de météo incertaine.',
+  },
+  {
+    name: 'Auberge des Caps',
+    location: 'Cap-Chat',
+    type: 'Auberge familiale',
+    description:
+      'Ambiance simple et conviviale, avec chambres adaptées aux familles et proximité du fleuve. Un bon point de chute entre parc de la Gaspésie et mer.',
+    link: 'https://www.booking.com/hotel/ca/auberge-des-caps.fr.html',
+    image: '/images/destinations/hotels/auberge-des-caps.avif',
+    extra: 'Top si tu veux limiter les déplacements quotidiens en voiture.',
+  },
+];
+
+const campings: StayCardProps[] = [
+  {
+    name: 'Camping du Parc national Forillon',
+    location: 'Gaspé',
+    type: 'Camping en parc national',
+    description:
+      'Emplacements près des sentiers, de la mer et des belvédères. Tu te réveilles avec l’odeur du sel et le cri des fous de Bassan au loin.',
+    link: 'https://www.sepaq.com/pq/for/index.dot',
+    image: '/images/destinations/hotels/camping-forillon.avif',
+    extra: 'À réserver très tôt en haute saison, surtout si tu veux un emplacement avec vue.',
+  },
+  {
+    name: 'Camping du Parc national de la Gaspésie',
+    location: 'Sainte-Anne-des-Monts',
+    type: 'Camping montagne',
+    description:
+      'Pour vivre la Gaspésie côté sommets : rivières, sentiers et belvédères à proximité, avec un vrai sentiment d’évasion.',
+    link: 'https://www.sepaq.com/pq/gas/index.dot',
+    image: '/images/destinations/hotels/camping-gaspesie.avif',
+    extra:
+      'Idéal si tu veux initier les enfants à la randonnée sans faire des journées trop longues.',
+  },
+  {
+    name: 'Camping Carleton-sur-Mer',
+    location: 'Carleton-sur-Mer',
+    type: 'Camping bord de mer',
+    description:
+      'Emplacements en bord de baie, aire de jeux et accès facile aux services du village. L’endroit parfait pour une fin de séjour tout en douceur.',
+    link: 'https://campingcarletonsurmer.com',
+    image: '/images/destinations/hotels/camping-carleton.avif',
+    extra: 'Très apprécié des familles qui aiment combiner vélo, plage et cantine.',
+  },
+];
+
+// ======= DONNÉES ACTIVITÉS / RESTOS =======
+
+const restaurants: SimpleItem[] = [
+  {
+    title: 'Cantine à Percé',
+    location: 'Percé',
+    description:
+      'Fish & chips, guédilles au homard et poutine aux fruits de mer : la cantine gaspésienne parfaite après une journée sur l’eau.',
+  },
+  {
+    title: 'Microbrasserie Pit Caribou',
+    location: 'L’Anse-à-Beaufils / Percé',
+    description:
+      'Bière locale, terrasse animée et assiettes généreuses. Les parents se font plaisir pendant que les enfants picorent quelques bouchées.',
+  },
+  {
+    title: 'Boulangerie artisanale à Carleton',
+    location: 'Carleton-sur-Mer',
+    description:
+      'Pains, viennoiseries et cafés de spécialité : l’endroit idéal pour un déjeuner tranquille avant de reprendre la route.',
+  },
+  {
+    title: 'Poissonnerie locale',
+    location: 'Divers villages',
+    description:
+      'Poissons fumés, crabes, homards, tartinades : parfait pour un pique-nique face au fleuve ou un souper au camping.',
+  },
+];
+
+const mustDoActivities: SimpleItem[] = [
+  {
+    title: 'Parc national Forillon',
+    description:
+      'Falaises spectaculaires, sentiers pour petits et grands, et belvédères où l’on se sent au bout du monde. À combiner avec une sortie baleines.',
+  },
+  {
+    title: 'Rocher Percé & Île-Bonaventure',
+    description:
+      'Croisière autour du Rocher Percé, débarquement sur l’île et marche jusqu’à la colonie de fous de Bassan : un classique qui émerveille toute la famille.',
+  },
+  {
+    title: 'Parc national de la Gaspésie',
+    description:
+      'Montagnes, caribous (à respecter à distance) et multiples sentiers pour adapter les randos à ton niveau et à l’âge des enfants.',
+  },
+  {
+    title: 'Baie-des-Chaleurs',
+    description:
+      'Plages, pistes cyclables, activités nautiques et couchers de soleil doux. Un terrain de jeu parfait pour les familles et les couples.',
+  },
+];
+
+const familyIdeas: SimpleItem[] = [
+  {
+    title: 'Exploramer à Sainte-Anne-des-Monts',
+    description:
+      'Musée et activités sur le Saint-Laurent, idéal les jours de pluie ou pour les enfants curieux de la vie marine.',
+  },
+  {
+    title: 'Plages familiales',
+    description:
+      'Haldimand, Carleton-sur-Mer, Coin-du-Banc : de belles plages pour courir, faire des châteaux, ou simplement écouter les vagues.',
+  },
+  {
+    title: 'Haltes gourmandes chez les producteurs locaux',
+    description:
+      'Fromageries, fumoirs, microbrasseries, kiosques de légumes et petites pâtisseries : l’occasion de goûter à la Gaspésie côté terroir.',
+  },
+];
+
+const wildlife: SimpleItem[] = [
+  {
+    title: 'Baleines et phoques',
+    description:
+      'Selon la saison, tu peux observer baleines, marsouins et phoques en croisière ou depuis certains belvédères. Toujours garder ses distances et écouter les consignes.',
+  },
+  {
+    title: 'Oiseaux marins',
+    description:
+      'Les fous de Bassan de l’île Bonaventure sont impressionnants à observer, surtout pour les enfants. Une colonie à voir au moins une fois dans sa vie.',
+  },
+  {
+    title: 'Caribous du parc de la Gaspésie',
+    description:
+      'Ils sont fragiles et protégés : on les admire de loin, en respectant à la lettre les indications du parc. Une belle occasion d’enseigner le respect de la faune aux enfants.',
+  },
+];
+
+// ======= JSON-LD (Breadcrumb, Destination, HowTo, FAQ) =======
+
+const breadcrumbLd = buildBreadcrumbLd([
+  { name: 'Accueil', item: 'https://goquebecan.com' },
+  { name: 'Blog', item: 'https://goquebecan.com/blog' },
+  { name: 'Gaspésie', item: CANONICAL },
+]);
+
+const destinationLd = buildDestinationLd({
+  name: 'Gaspésie – road trip en famille',
+  description: DESCRIPTION,
+  url: CANONICAL,
+  image: OG_IMAGE,
+  latitude: 48.836, // approximatif, région Gaspé
+  longitude: -64.492,
+  containedPlaces: [
+    'Sainte-Anne-des-Monts',
+    'Parc national de la Gaspésie',
+    'Gaspé',
+    'Parc Forillon',
+    'Percé',
+    'Carleton-sur-Mer',
+    'Baie-des-Chaleurs',
+  ],
+  touristType: ['Famille', 'Road trip', 'Plein air', 'Mer'],
+  rating: { value: 4.9, count: 152 },
+});
+
+const howTo7DaysLd = buildHowToLd({
+  name: 'Comment organiser un road trip de 7 jours en Gaspésie en famille',
+  description:
+    'Itinéraire type pour une semaine en Gaspésie avec des enfants, en combinant parcs nationaux, villages côtiers, plages, baleines, cantines et producteurs locaux.',
+  url: CANONICAL,
+  totalTimeISO: 'P7D',
+  steps: [
+    {
+      name: 'Jour 1 – Montréal / Québec → Rimouski / Sainte-Flavie',
+      text: 'Mise en route, premières vues sur le fleuve, arrêts dans les parcs et cantines pour prendre le rythme de vacances.',
+    },
+    {
+      name: 'Jour 2 – Sainte-Anne-des-Monts & parc de la Gaspésie',
+      text: 'Découverte des montagnes, courtes randonnées et belvédères adaptés aux familles.',
+    },
+    {
+      name: 'Jour 3 – Gaspé & parc Forillon',
+      text: 'Falaises, belvédères spectaculaires et, si possible, sortie baleines pour émerveiller petits et grands.',
+    },
+    {
+      name: 'Jour 4 – Percé & île Bonaventure',
+      text: 'Croisière autour du Rocher Percé, visite de l’île et observation des fous de Bassan.',
+    },
+    {
+      name: 'Jour 5 – Baie-des-Chaleurs & Carleton-sur-Mer',
+      text: 'Plages, vélo, activités nautiques et découverte de producteurs locaux.',
+    },
+    {
+      name: 'Jour 6 – Vallée de la Matapédia',
+      text: 'Retour en douceur avec belvédères, villages et haltes gourmandes.',
+    },
+    {
+      name: 'Jour 7 – Jour tampon / météo / bonus',
+      text: 'Journée flexible pour gérer la météo, la fatigue ou un coup de cœur à prolonger.',
+    },
+  ],
+});
+
+const faqLd = buildFaqLd([
+  {
+    question: 'Quel est le meilleur moment pour faire un road trip en Gaspésie en famille ?',
+    answer:
+      'De la mi-juin à la mi-septembre, avec un pic d’achalandage en juillet et pendant les vacances de la construction. En mai et octobre, certaines activités sont réduites, mais les paysages restent magnifiques.',
+  },
+  {
+    question: 'Faut-il absolument réserver les campings et hébergements en Gaspésie ?',
+    answer:
+      'Oui, surtout l’été et pour les hébergements avec vue ou les campings dans les parcs nationaux. Il est recommandé de réserver plusieurs mois à l’avance et d’utiliser un planificateur de voyage pour tout noter.',
+  },
+  {
+    question: 'La Gaspésie est-elle adaptée aux jeunes enfants ?',
+    answer:
+      'Oui, à condition d’adapter les distances de route et la durée des randonnées. Il y a de nombreuses plages, cantines, petites activités intérieures et musées pour les jours de pluie.',
+  },
+  {
+    question: 'Peut-on voyager en Gaspésie avec une voiture électrique ?',
+    answer:
+      'Oui, de plus en plus de bornes sont disponibles dans les villages et près des hébergements. Il est simplement recommandé de planifier ses arrêts de recharge à l’avance.',
+  },
+  {
+    question: 'Combien de jours faut-il prévoir pour un road trip en Gaspésie ?',
+    answer:
+      'Une semaine est un bon minimum pour faire le tour sans courir, mais tu peux facilement étirer à 10 ou 14 jours en ajoutant des journées plages, randos ou visites chez les producteurs locaux.',
+  },
+]);
+
+// ======= COMPOSANTS D’AFFICHAGE =======
+
+function StayCard({ name, location, type, description, link, image, extra }: StayCardProps) {
   return (
-    <article className="max-w-4xl mx-auto px-4 py-12 bg-white">
-      <header className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Parc national de la Gaspésie : Guide Complet du Camping
-        </h1>
-        <p className="text-xl text-gray-600">
-          Découvrez ce joyau naturel au cœur des monts Chic-Chocs
-        </p>
-      </header>
-
-      <section className="prose lg:prose-xl mb-12">
-        <p>
-          Le Parc national de la Gaspésie offre une expérience de camping unique au cœur des monts
-          Chic-Chocs. Avec ses paysages spectaculaires et sa faune diversifiée, c'est un paradis
-          pour les amateurs de plein air.
-        </p>
-        <div className="my-8">
+    <article className="flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md">
+      <div className="relative h-52 w-full overflow-hidden">
+        <Link href={link} target="_blank" rel="sponsored noopener nofollow">
           <Image
-            src="/images/destinations/parc-gaspesie.avif"
-            alt="Côte rocheuse de la Gaspésie"
-            width={800}
-            height={500}
-            loading="lazy"
-            className="rounded-lg shadow-md object-cover w-full h-auto"
+            src={image}
+            alt={`${name} — hébergement recommandé en Gaspésie à ${location}`}
+            fill
+            className="object-cover transition-transform duration-300 hover:scale-[1.03]"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px"
           />
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Star className="h-8 w-8 text-indigo-600" />
-          Pourquoi Camper en Gaspésie ?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Paysages Uniques</h3>
-            <p className="text-gray-600">
-              Montagnes, forêts et lacs dans un environnement préservé.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Faune Exceptionnelle</h3>
-            <p className="text-gray-600">
-              Observation du caribou, de l'orignal et de nombreuses espèces d'oiseaux.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Randonnées Spectaculaires</h3>
-            <p className="text-gray-600">Plus de 100 km de sentiers pour tous les niveaux.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          Meilleurs Sites de Camping
-        </h2>
-        <div className="space-y-8">
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Camping du Mont-Albert</h3>
-              <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
-                <span>Type: Aménagé</span>
-                <span>Prix: 30-45$/nuit</span>
-                <span>Services: Électricité, douches, bloc sanitaire</span>
-              </div>
-              <p className="text-gray-700">
-                Situé au pied du mont Albert, ce camping offre un accès privilégié aux plus beaux
-                sentiers du parc. Réservation fortement recommandée en haute saison.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Camping du Lac-Cascapédia
-              </h3>
-              <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
-                <span>Type: Semi-aménagé</span>
-                <span>Prix: 25-35$/nuit</span>
-                <span>Services: Toilettes sèches, eau potable</span>
-              </div>
-              <p className="text-gray-700">
-                Ambiance plus sauvage au bord du lac, idéal pour les pêcheurs et les amateurs de
-                canot. Sites spacieux et plus intimes.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Camping Rustique Mont-Jacques-Cartier
-              </h3>
-              <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
-                <span>Type: Rustique</span>
-                <span>Prix: 20$/nuit</span>
-                <span>Services: Toilettes sèches</span>
-              </div>
-              <p className="text-gray-700">
-                Pour les vrais amateurs de plein air, ce camping offre une expérience authentique à
-                proximité du plus haut sommet des Chic-Chocs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          Activités Incontournables
-        </h2>
-        <div className="space-y-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">Randonnée Mont-Albert</h3>
-            <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-3">
-              <span>Difficulté: Difficile</span>
-              <span>Durée: 6-8 heures</span>
-              <span>Distance: 17.8 km</span>
-            </div>
-            <p className="text-gray-700">
-              Cette randonnée emblématique offre une vue panoramique sur le plateau alpin et une
-              chance d'observer le caribou de la Gaspésie.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">Mont-Jacques-Cartier</h3>
-            <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-3">
-              <span>Difficulté: Modérée</span>
-              <span>Durée: 4-5 heures</span>
-              <span>Distance: 8.2 km</span>
-            </div>
-            <p className="text-gray-700">
-              Le plus haut sommet des Chic-Chocs (1,268 m) offre une vue imprenable et la meilleure
-              chance d'observer le caribou.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">Lac aux Américains</h3>
-            <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-3">
-              <span>Difficulté: Facile</span>
-              <span>Durée: 1 heure</span>
-              <span>Distance: 2.8 km</span>
-            </div>
-            <p className="text-gray-700">
-              Une courte randonnée accessible à tous menant à un lac alpin entouré de montagnes.
-              Parfait pour les familles.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Calendar className="h-8 w-8 text-indigo-600" />
-          Conseils Pratiques
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <Calendar className="h-5 w-5 text-indigo-600" />
-              Meilleure Période
-            </h3>
-            <p className="text-gray-600">
-              Mi-juin à mi-septembre pour le camping. Septembre-octobre pour les couleurs d'automne.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <DollarSign className="h-5 w-5 text-indigo-600" />
-              Budget
-            </h3>
-            <p className="text-gray-600">
-              Entrée au parc: 9.25$/jour Camping: 20-45$/nuit Prévoir 50-75$/jour/personne
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <Shield className="h-5 w-5 text-indigo-600" />
-              Sécurité
-            </h3>
-            <p className="text-gray-600">
-              Prévoir des vêtements chauds même l'été. Apporter une trousse de premiers soins.
-              Informer quelqu'un de votre itinéraire.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Utensils className="h-8 w-8 text-indigo-600" />
-          Équipement Essentiel
-        </h2>
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <ul className="space-y-4">
-            <li className="flex items-start gap-3">
-              <span className="w-2 h-2 bg-indigo-600 rounded-full mt-2" />
-              <div>
-                <h4 className="font-medium text-gray-900">Tente 4 saisons</h4>
-                <p className="text-gray-600">Les nuits peuvent être fraîches même en été.</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-2 h-2 bg-indigo-600 rounded-full mt-2" />
-              <div>
-                <h4 className="font-medium text-gray-900">Sac de couchage chaud</h4>
-                <p className="text-gray-600">Confort 0°C recommandé même en été.</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-2 h-2 bg-indigo-600 rounded-full mt-2" />
-              <div>
-                <h4 className="font-medium text-gray-900">Vêtements imperméables</h4>
-                <p className="text-gray-600">La météo peut changer rapidement en montagne.</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-2 h-2 bg-indigo-600 rounded-full mt-2" />
-              <div>
-                <h4 className="font-medium text-gray-900">Chaussures de randonnée</h4>
-                <p className="text-gray-600">Indispensables pour les sentiers rocailleux.</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-2 h-2 bg-indigo-600 rounded-full mt-2" />
-              <div>
-                <h4 className="font-medium text-gray-900">Réchaud et ustensiles</h4>
-                <p className="text-gray-600">Pour préparer des repas chauds.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="text-center bg-gray-50 p-8 rounded-lg">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Prêt à Explorer la Gaspésie ?</h2>
-        <p className="text-gray-600 mb-6">
-          Réservez votre séjour maintenant et profitez de la nature préservée
-        </p>
-        <div className="flex justify-center gap-4">
-          <a
-            href="https://www.sepaq.com/pq/gas/"
-            className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+        </Link>
+      </div>
+      <div className="flex flex-1 flex-col p-4">
+        <header className="mb-2">
+          <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">{type}</p>
+          <H3 className="text-lg font-semibold text-gray-900">{name}</H3>
+          <p className="text-sm text-gray-600">{location}</p>
+        </header>
+        <p className="flex-1 text-sm text-gray-700">{description}</p>
+        {extra ? <p className="mt-2 text-sm text-gray-600">{extra}</p> : null}
+        <div className="mt-3">
+          <Link
+            href={link}
+            target="_blank"
+            rel="sponsored noopener nofollow"
+            className="inline-flex items-center text-sm font-semibold text-indigo-800 underline-offset-2 hover:underline"
           >
-            Réserver votre camping
-          </a>
-          <a
-            href="https://www.booking.com/region/ca/gaspesie.html"
-            className="px-6 py-3 bg-white text-indigo-600 border border-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors"
-          >
-            Trouver un Hébergement
-          </a>
+            Voir les disponibilités sur Booking
+          </Link>
         </div>
-      </section>
+      </div>
     </article>
   );
 }
-export default BlogArticleGaspesie;
+
+function BulletList({ items }: { items: SimpleItem[] }) {
+  return (
+    <ul className="mt-3 space-y-2 text-sm text-gray-700">
+      {items.map((item) => (
+        <li key={item.title} className="flex gap-2">
+          <span className="mt-[6px] size-1.5 flex-shrink-0 rounded-full bg-indigo-700" />
+          <div>
+            <span className="font-semibold text-gray-900">{item.title}</span>
+            {item.location ? <span className="text-gray-600">{` — ${item.location}`}</span> : null}
+            <span className="block text-gray-700">{item.description}</span>
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+// ======= PAGE PRINCIPALE =======
+
+export default function Page() {
+  return (
+    <>
+      {/* SEO TECHNIQUE */}
+      <HeadExtras
+        ogUpdatedTime={`${MODIFIED}T00:00:00-04:00`}
+        ogSeeAlso={[
+          'https://goquebecan.com/destinations/fjord-saguenay',
+          'https://goquebecan.com/blog/voyage-voiture',
+          'https://goquebecan.com/blog/voyage-camping',
+        ]}
+        articlePublishedTime={`${PUBLISHED}T00:00:00-04:00`}
+        articleModifiedTime={`${MODIFIED}T00:00:00-04:00`}
+      />
+      <JsonLd data={breadcrumbLd} />
+      <JsonLd data={destinationLd} />
+      <JsonLd data={howTo7DaysLd} />
+      <JsonLd data={faqLd} />
+
+      {/* HERO / INTRO */}
+      <main className="mx-auto max-w-5xl px-4 pb-12 pt-10 sm:px-6 lg:px-8">
+        <header className="mb-8 text-center">
+          <H1 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+            Gaspésie – le road trip en famille qui reste dans le cœur
+          </H1>
+          <p className="mt-3 text-lg text-gray-700">
+            Route 132, villages colorés, phares, baleines et couches-tard sur la plage : la
+            Gaspésie, c&apos;est plus qu&apos;un itinéraire, c&apos;est un voyage qui se vit en
+            famille. Que tu partes avec de jeunes enfants, des ados ou en duo, tu peux adapter le
+            rythme, les arrêts et le type d&apos;hébergement pour que tout le monde y trouve son
+            compte.
+          </p>
+          <p className="mt-3 text-sm text-gray-600">
+            Pour t&apos;aider à tout organiser sans stress, tu peux utiliser le{' '}
+            <Link
+              href="/planificateur"
+              className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
+            >
+              planificateur GoQuébeCAN
+            </Link>
+            , et jeter un œil à nos guides{' '}
+            <Link
+              href="/blog/voyage-voiture"
+              className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
+            >
+              objets indispensables pour voyager en voiture
+            </Link>{' '}
+            ainsi que{' '}
+            <Link
+              href="/blog/voyage-hotel"
+              className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
+            >
+              astuces pour séjourner à l’hôtel en famille
+            </Link>
+            .
+          </p>
+          <p className="mt-2 text-xs text-gray-500">
+            Dernière mise à jour : {new Date(MODIFIED).toLocaleDateString('fr-CA')}
+          </p>
+        </header>
+
+        <div className="relative mb-10 overflow-hidden rounded-2xl">
+          <Image
+            src="/images/destinations/parc-gaspesie.avif"
+            alt="Route de la Gaspésie en bord de mer, falaises, mer bleue et ciel dégagé"
+            width={1920}
+            height={1080}
+            priority
+            className="h-auto w-full object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+          />
+        </div>
+
+        {/* ITINÉRAIRE 7 JOURS */}
+        <section id="itineraire" className="mx-auto max-w-3xl space-y-4">
+          <H2 className="text-2xl font-semibold text-gray-900">
+            Itinéraire 7 jours en Gaspésie avec enfants (et parents heureux)
+          </H2>
+          <p className="text-gray-700">
+            Ici, pas question de cocher une liste de “must see” en courant. L&apos;idée, c&apos;est
+            de faire un vrai tour de Gaspésie qui laisse de la place aux imprévus, aux arrêts
+            cantine, aux producteurs locaux, aux discussions avec les Gaspésiens et aux journées où
+            on décide simplement d&apos;aller à la plage. Utilise cet itinéraire comme une base, et
+            ajuste-le dans ton{' '}
+            <Link
+              href="/planificateur"
+              className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
+            >
+              planificateur GoQuébeCAN
+            </Link>
+            .
+          </p>
+
+          <div className="mt-4 space-y-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
+            <H3 className="text-lg font-semibold text-gray-900">
+              Jour 1 – Montréal / Québec → Rimouski / Sainte-Flavie
+            </H3>
+            <p className="text-sm text-gray-700">
+              On quitte la ville tranquillement en direction de Rimouski ou Sainte-Flavie. On fait
+              quelques arrêts en chemin pour dégourdir les jambes : parc, aire de jeux, petite
+              fromagerie ou café de village. On commence déjà à sentir l&apos;air salin, et les
+              enfants voient le fleuve de plus en plus large. C&apos;est le moment idéal pour tester
+              ton organisation de voiture (collations, sacs de plage, jouets) abordée dans notre
+              guide sur les{' '}
+              <Link
+                href="/blog/voyage-voiture"
+                className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
+              >
+                objets indispensables pour voyager en voiture
+              </Link>
+              .
+            </p>
+          </div>
+
+          <div className="space-y-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
+            <H3 className="text-lg font-semibold text-gray-900">
+              Jour 2 – Sainte-Anne-des-Monts & parc national de la Gaspésie
+            </H3>
+            <p className="text-sm text-gray-700">
+              Direction les montagnes. On s&apos;installe du côté de Sainte-Anne-des-Monts ou
+              directement au{' '}
+              <Link
+                href="https://www.sepaq.com/pq/gas/index.dot"
+                target="_blank"
+                rel="noopener nofollow"
+                className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
+              >
+                parc national de la Gaspésie
+              </Link>
+              . On choisit une courte randonnée adaptée aux enfants, un belvédère accessible ou une
+              balade en bord de rivière. Les parents amoureux de plein air peuvent se promettre de
+              revenir une autre fois pour les grands sommets. En soirée, on profite d&apos;un bon
+              souper simple et on prend le temps de respirer : on est enfin en vacances.
+            </p>
+          </div>
+
+          <div className="space-y-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
+            <H3 className="text-lg font-semibold text-gray-900">
+              Jour 3 – Gaspé & parc national Forillon : falaises et baleines
+            </H3>
+            <p className="text-sm text-gray-700">
+              On longe la côte vers Gaspé et le parc national Forillon. Au programme : belvédères
+              impressionnants, marche facile jusqu&apos;à un phare, observation de la faune. Selon
+              la météo et la saison, on ajoute une sortie en bateau pour tenter de voir baleines et
+              phoques. Les enfants retiennent souvent ce jour-là comme l&apos;un des plus magiques
+              du voyage. On alterne glissades sur les roches, petites siestes en voiture et
+              collations à l&apos;ombre.
+            </p>
+          </div>
+
+          <div className="space-y-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
+            <H3 className="text-lg font-semibold text-gray-900">
+              Jour 4 – Percé & île Bonaventure : carte postale gaspésienne
+            </H3>
+            <p className="text-sm text-gray-700">
+              Percé, c&apos;est la carte postale qui devient réalité. On prend le bateau pour faire
+              le tour du Rocher Percé, puis on débarque sur l&apos;île Bonaventure pour une marche
+              en douceur jusqu&apos;à la colonie de fous de Bassan. En fin de journée, on mange dans
+              une cantine ou une microbrasserie, et on regarde les enfants raconter à leur façon ce
+              qu&apos;ils viennent de vivre. C&apos;est aussi un bon moment pour faire un tour chez
+              un producteur local ou dans une petite boutique d&apos;artisanat.
+            </p>
+          </div>
+
+          <div className="space-y-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
+            <H3 className="text-lg font-semibold text-gray-900">
+              Jour 5 – Baie-des-Chaleurs & Carleton-sur-Mer : douceur et coucher de soleil
+            </H3>
+            <p className="text-sm text-gray-700">
+              On descend vers la Baie-des-Chaleurs. On profite des plages, du vélo, des glaces et
+              des terrasses. À Carleton-sur-Mer, les enfants peuvent courir sur la grève pendant que
+              les parents admirent le coucher de soleil. C&apos;est le moment idéal pour planifier
+              une soirée calme, un jeu de société, ou une discussion tranquille sur ce que chacun a
+              préféré dans le voyage. On peut aussi visiter quelques producteurs locaux pour ramener
+              des saveurs de Gaspésie à la maison.
+            </p>
+          </div>
+
+          <div className="space-y-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
+            <H3 className="text-lg font-semibold text-gray-900">
+              Jour 6 – Vallée de la Matapédia : retour en douceur
+            </H3>
+            <p className="text-sm text-gray-700">
+              On remonte doucement par la vallée de la Matapédia, en s&apos;arrêtant dans quelques
+              villages, belvédères ou parcs. Au lieu de voir cette journée comme un simple “retour à
+              la maison”, on peut la vivre comme une transition : derniers pique-niques, dernière
+              cantine, dernière occasion de discuter avec des Gaspésiens. On note dans le{' '}
+              <Link
+                href="/planificateur"
+                className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
+              >
+                planificateur
+              </Link>{' '}
+              ce qu&apos;on veut refaire ou approfondir une prochaine fois.
+            </p>
+          </div>
+
+          <div className="space-y-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
+            <H3 className="text-lg font-semibold text-gray-900">
+              Jour 7 – Jour tampon : météo, fatigue, coups de cœur
+            </H3>
+            <p className="text-sm text-gray-700">
+              Ce jour “bonus” est précieux. Il permet de gérer une journée de pluie, une fatigue
+              générale, ou simplement un coup de cœur où on a envie de rester un peu plus longtemps.
+              Tu peux l’utiliser pour une activité aquatique dans un{' '}
+              <Link
+                href="/blog/parc-aquatique"
+                className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
+              >
+                parc aquatique
+              </Link>
+              , une journée à l’hôtel avec piscine ou un détour par le Saguenay si les fjords te
+              font rêver (notre guide complet sur le{' '}
+              <Link
+                href="/destinations/fjord-saguenay"
+                className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
+              >
+                Saguenay
+              </Link>
+              ).
+            </p>
+          </div>
+        </section>
+
+        {/* HÉBERGEMENTS */}
+        <section id="hebergements" className="mx-auto mt-10 max-w-5xl space-y-6">
+          <H2 className="text-2xl font-semibold text-gray-900">
+            Où dormir en Gaspésie : hôtels vue mer, options famille et campings
+          </H2>
+          <p className="max-w-3xl text-gray-700">
+            Choisir ses hébergements, c’est choisir le rythme de son voyage. Certains préfèrent la
+            tente au bord de l&apos;eau, d’autres aiment rentrer dans une chambre confortable après
+            une journée à marcher ou à naviguer. L&apos;idéal, c&apos;est souvent de combiner les
+            deux : quelques nuits en camping pour vivre la nature à fond, et deux ou trois nuits en
+            hôtel pour bien se reposer.
+          </p>
+
+          {/* Hôtels vue mer */}
+          <div className="space-y-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
+            <H3 className="text-xl font-semibold text-gray-900">Hôtels avec vue sur la mer</H3>
+            <p className="text-sm text-gray-700">
+              Ces adresses sont parfaites si tu veux des couchers de soleil sur l’eau, des déjeuners
+              face au paysage, et la possibilité de rentrer rapidement après une croisière ou une
+              grande journée de visite. Idéal pour les couples, mais aussi pour les familles qui
+              aiment un peu de confort.
+            </p>
+            <div className="mt-4 grid gap-5 md:grid-cols-3">
+              {hotelsVueMer.map((hotel) => (
+                <StayCard key={hotel.name} {...hotel} />
+              ))}
+            </div>
+          </div>
+
+          {/* Hôtels famille */}
+          <div className="space-y-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
+            <H3 className="text-xl font-semibold text-gray-900">
+              Hôtels famille & options confort
+            </H3>
+            <p className="text-sm text-gray-700">
+              Quand les enfants ont bien marché, qu&apos;il a venté toute la journée ou que la météo
+              joue avec tes nerfs, une chambre confortable, une piscine ou simplement un bon lit
+              deviennent des alliés précieux. Ces options sont pensées pour les familles qui veulent
+              garder un bon niveau de confort tout en explorant la région.
+            </p>
+            <div className="mt-4 grid gap-5 md:grid-cols-3">
+              {hotelsFamillePiscine.map((hotel) => (
+                <StayCard key={hotel.name} {...hotel} />
+              ))}
+            </div>
+          </div>
+
+          {/* Campings */}
+          <div className="space-y-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
+            <H3 className="text-xl font-semibold text-gray-900">Campings nature et bord de mer</H3>
+            <p className="text-sm text-gray-700">
+              La Gaspésie, c&apos;est aussi le plaisir de dormir sous la tente, d’entendre la mer le
+              soir et de faire déjeuner les enfants devant un paysage qui ressemble à une carte
+              postale. Si tu prévois un road trip en tente, en VR ou en van, pense aussi à jeter un
+              œil à notre article sur les{' '}
+              <Link
+                href="/blog/voyage-camping"
+                className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
+              >
+                produits indispensables pour le camping
+              </Link>
+              .
+            </p>
+            <div className="mt-4 grid gap-5 md:grid-cols-3">
+              {campings.map((camping) => (
+                <StayCard key={camping.name} {...camping} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* GASTRONOMIE & PRODUCTEURS */}
+        <section id="gastronomie" className="mx-auto mt-10 max-w-3xl space-y-4">
+          <H2 className="text-2xl font-semibold text-gray-900">
+            Manger en Gaspésie : cantines, bistros et producteurs locaux
+          </H2>
+          <p className="text-gray-700">
+            En Gaspésie, on mange bien. Très bien. Entre les cantines au bord de la route, les
+            bistros de village, les poissonneries, les microbrasseries et les petites boulangeries,
+            tu peux transformer chaque arrêt en découverte. C’est aussi une belle façon de
+            rencontrer les Gaspésiens, de discuter quelques minutes et d&apos;entendre leurs
+            histoires du quotidien.
+          </p>
+          <BulletList items={restaurants} />
+          <p className="text-sm text-gray-700">
+            N’hésite pas à planifier quelques haltes gourmandes dans ton{' '}
+            <Link
+              href="/planificateur"
+              className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
+            >
+              planificateur GoQuébeCAN
+            </Link>
+            , surtout si tu voyages avec des enfants curieux qui aiment découvrir de nouvelles
+            saveurs. Et si tu veux prolonger l&apos;expérience côté “eau”, pense à ajouter un{' '}
+            <Link
+              href="/blog/parc-aquatique"
+              className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
+            >
+              parc aquatique
+            </Link>{' '}
+            à ton itinéraire, avant ou après la Gaspésie.
+          </p>
+        </section>
+
+        {/* ACTIVITÉS */}
+        <section id="activites" className="mx-auto mt-10 max-w-3xl space-y-6">
+          <H2 className="text-2xl font-semibold text-gray-900">
+            Activités incontournables en Gaspésie avec ou sans enfants
+          </H2>
+
+          <div>
+            <H3 className="text-lg font-semibold text-gray-900">
+              Pour les amoureux de la mer et des grands paysages
+            </H3>
+            <BulletList items={mustDoActivities} />
+          </div>
+
+          <div>
+            <H3 className="text-lg font-semibold text-gray-900">
+              Idées spéciales familles : plages, musées, journées “douces”
+            </H3>
+            <BulletList items={familyIdeas} />
+          </div>
+
+          <div>
+            <H3 className="text-lg font-semibold text-gray-900">
+              Faune gaspésienne : baleines, oiseaux marins et caribous
+            </H3>
+            <BulletList items={wildlife} />
+          </div>
+
+          <p className="text-sm text-gray-700">
+            Si tu voyages avec une voiture électrique, tu peux organiser tes arrêts activités en
+            même temps que tes recharges. Plusieurs hébergements et villages disposent de bornes. Tu
+            trouveras des idées d&apos;organisation dans notre article sur les{' '}
+            <Link
+              href="/blog/voyage-voiture"
+              className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
+            >
+              produits indispensables pour voyager en voiture (et en voiture électrique)
+            </Link>
+            .
+          </p>
+        </section>
+
+        {/* CONSEILS PRATIQUES */}
+        <section id="conseils" className="mx-auto mt-10 max-w-3xl space-y-4">
+          <H2 className="text-2xl font-semibold text-gray-900">
+            Conseils pratiques 2025 pour un road trip Gaspésie serein
+          </H2>
+          <p className="text-gray-700">
+            La météo peut changer vite, les distances sont parfois sous-estimées, et l&apos;été, les
+            hébergements se réservent très rapidement. En 2025, planifier un minimum est devenu
+            presque indispensable, surtout si tu veux des campings ou hôtels bien situés.
+          </p>
+          <ul className="space-y-2 text-sm text-gray-700">
+            <li>
+              <span className="font-semibold text-gray-900">Météo :</span> prévois des couches
+              (t-shirt, laine, coupe-vent), même en juillet. Sur les falaises ou sur l&apos;eau, le
+              vent peut être frais.
+            </li>
+            <li>
+              <span className="font-semibold text-gray-900">Réservations :</span> pour les campings
+              en parcs nationaux et les hôtels vue mer, réserve plusieurs mois à l&apos;avance. Note
+              tout dans ton{' '}
+              <Link
+                href="/planificateur"
+                className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
+              >
+                planificateur GoQuébeCAN
+              </Link>
+              .
+            </li>
+            <li>
+              <span className="font-semibold text-gray-900">Budget :</span> alterne activités
+              payantes (croisières, musées) et gratuites (plages, belvédères, randos). Ça ménage ton
+              portefeuille et tes journées.
+            </li>
+            <li>
+              <span className="font-semibold text-gray-900">Bagages :</span> pour la partie
+              hébergement, notre article sur les{' '}
+              <Link
+                href="/blog/voyage-hotel"
+                className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
+              >
+                indispensables à l&apos;hôtel
+              </Link>{' '}
+              t&apos;aidera à ne rien oublier. Pour la tente et le VR, jette un œil à{' '}
+              <Link
+                href="/blog/voyage-camping"
+                className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
+              >
+                notre checklist camping
+              </Link>
+              .
+            </li>
+          </ul>
+        </section>
+
+        {/* FAQ (rendue pour l’utilisateur, en plus du JSON-LD) */}
+        <section id="faq" className="mx-auto mt-10 max-w-3xl space-y-4">
+          <H2 className="text-2xl font-semibold text-gray-900">
+            FAQ – Questions fréquentes sur un road trip en Gaspésie
+          </H2>
+          <div className="space-y-3 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
+            {faqLd.mainEntity.map((item: any) => (
+              <details key={item.name} className="group rounded-lg border border-gray-100 p-3">
+                <summary className="cursor-pointer text-sm font-semibold text-gray-900 group-open:text-indigo-800">
+                  {item.name}
+                </summary>
+                <p className="mt-2 text-sm text-gray-700">
+                  {typeof item.acceptedAnswer?.text === 'string' ? item.acceptedAnswer.text : ''}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        {/* CONCLUSION & CTA */}
+        <section id="conclusion" className="mx-auto mt-10 max-w-3xl space-y-4">
+          <H2 className="text-2xl font-semibold text-gray-900">
+            Laisser la Gaspésie te raconter son histoire
+          </H2>
+          <p className="text-gray-700">
+            La Gaspésie, ce n’est pas seulement une suite de paysages spectaculaires. C’est la
+            lumière sur le fleuve, la gentillesse des Gaspésiens, les odeurs de fumoir, les glaces
+            mangées trop vite, les enfants qui s’endorment dans la voiture en parlant des baleines
+            et des oiseaux. C’est un voyage qui continue longtemps dans les conversations, les
+            photos et les envies de “on y retourne quand ?”.
+          </p>
+          <p className="text-gray-700">
+            Si cet article t&apos;a aidé à y voir plus clair, tu peux maintenant :
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/planificateur"
+              className="rounded-full border border-gray-200 bg-indigo-50 px-4 py-2 text-sm font-semibold text-indigo-900 shadow-sm hover:bg-indigo-100"
+            >
+              Préparer ton itinéraire dans le planificateur
+            </Link>
+            <Link
+              href="/videos"
+              className="rounded-full border border-gray-200 px-4 py-2 text-sm font-semibold text-gray-800 hover:bg-gray-50"
+            >
+              Regarder des vidéos inspirantes
+            </Link>
+            <Link
+              href="/blog/voyage-voiture"
+              className="rounded-full border border-gray-200 px-4 py-2 text-sm font-semibold text-gray-800 hover:bg-gray-50"
+            >
+              Lire le guide voyage en voiture
+            </Link>
+            <Link
+              href="/blog/voyage-camping"
+              className="rounded-full border border-gray-200 px-4 py-2 text-sm font-semibold text-gray-800 hover:bg-gray-50"
+            >
+              Vérifier ta checklist camping
+            </Link>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}

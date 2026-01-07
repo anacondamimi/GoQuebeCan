@@ -19,7 +19,7 @@ const extractArrayNames = (content, variableName, nameField) => {
 };
 
 const extractTitle = (content) => {
-  const match = content.match(/<h1[^>]*>(.*?)<\/h1>/);
+  const match = content.match(/<H1[^>]*>(.*?)<\/h1>/);
   if (!match) return null;
 
   const raw = match[1].replace(/<[^>]*>/g, '').trim();
@@ -102,7 +102,7 @@ const run = () => {
       resume,
       activites,
       hebergements,
-      publics
+      publics,
     );
     const newContent = insertMetadataBlock(content, metadataBlock);
 

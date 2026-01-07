@@ -3,6 +3,8 @@ import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 import { Compass, Mountain, TreePine } from 'lucide-react';
+import H3 from '@/components/typography/H3';
+import H2 from '@/components/typography/H2';
 
 const experiences = [
   {
@@ -64,13 +66,14 @@ const experiences = [
 
 export function AuthenticExperiences() {
   return (
-    <section id="experiences_authentiques" className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-6">
+    <section id="experiences_authentiques" className="bg-gray-50 py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <H2 className="mb-4 text-center font-serif text-5xl font-bold text-primary sm:text-5xl">
           Expériences Québécoises Authentiques
-        </h2>
-        <p className="text-xl text-center text-gray-600 mb-16">
-          Découvrez des trésors cachés et vivez des moments uniques
+        </H2>
+        <p className="mb-16 text-center text-xl text-gray-600">
+          Découvrez des trésors cachés et vivez des moments uniques hors des sentiers battus.
+          Villages pittoresques, territoires sauvages et expériences inoubliables.
         </p>
 
         <div className="space-y-16">
@@ -78,31 +81,31 @@ export function AuthenticExperiences() {
             const Icon = category.icon; // ✅ Fix
             return (
               <div key={category.category}>
-                <div className="flex items-center gap-3 mb-8">
-                  <Icon className="h-6 w-6 sm:h-8 sm:w-8 text-indigo-600" />
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
+                <div className="mb-8 flex items-center gap-3">
+                  <Icon className="size-6 text-indigo-600 sm:size-8" />
+                  <H3 className="text-xl font-bold text-gray-900 sm:text-2xl">
                     {category.category}
-                  </h3>
+                  </H3>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
                   {category.destinations.map((destination) => (
                     <Link
                       key={destination.name}
                       href={`/blog/${destination.slug}`}
-                      className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow block"
+                      className="group block overflow-hidden rounded-xl bg-white shadow-lg transition-shadow hover:shadow-xl"
                     >
-                      <div className="relative h-40 sm:h-48 overflow-hidden">
+                      <div className="relative h-40 overflow-hidden sm:h-48">
                         <Image
                           src={destination.image}
                           alt={destination.name}
-                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                          className="size-full object-cover transition-transform duration-300 group-hover:scale-110"
                           width={800}
                           height={600}
                         />
                       </div>
                       <div className="p-4 sm:p-6">
-                        <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                        <h4 className="mb-2 text-lg font-semibold text-gray-900 sm:text-xl">
                           {destination.name}
                         </h4>
                         <p className="text-gray-600">{destination.description}</p>

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import PopularDestinations from '@/components/PopularDestinations';
+import H1 from '@/components/typography/H1';
 
 export const metadata: Metadata = {
   title: 'Destinations Populaires au Québec et au Canada en 2025 | GoQuebecan',
@@ -30,9 +31,9 @@ export default function DestinationsPage() {
   return (
     <main className="min-h-screen pt-8">
       {/* ✅ H1 invisible pour les moteurs de recherche */}
-      <h1 className="sr-only">Destinations Populaires au Québec et au Canada en 2025</h1>
+      <H1 className="sr-only">Destinations Populaires au Québec et au Canada en 2025</H1>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <PopularDestinations />
       </div>
     </main>

@@ -56,7 +56,7 @@ export function suggestNearbyProducers(
   producers: Producer[],
   waypoints: [number, number][],
   maxDistance: number = 30,
-  interpolationStepKm: number = 10
+  interpolationStepKm: number = 10,
 ): Suggestion[] {
   if (!waypoints || waypoints.length < 2) {
     console.warn('⚠️ Pas assez de points pour interpoler l’itinéraire.');

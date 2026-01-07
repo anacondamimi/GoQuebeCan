@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
+import H1 from '@/components/typography/H1';
+import H2 from '@/components/typography/H2';
+import H3 from '@/components/typography/H3';
 
 export const metadata = {
   slug: 'port-cartier',
@@ -145,18 +148,16 @@ const teenActivities = [
 
 export default function BlogArticlePortCartier() {
   return (
-    <article id="blog_article_port_cartier" className="max-w-4xl mx-auto px-4 py-12 bg-white">
-      <header className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Port-Cartier - Entre Mer et Forêt sur la Côte-Nord
-        </h1>
+    <article id="blog_article_port_cartier" className="mx-auto max-w-4xl bg-white px-4 py-12">
+      <header className="mb-12 text-center">
+        <H1 className="mb-4">Port-Cartier - Entre Mer et Forêt sur la Côte-Nord</H1>
         <p className="text-xl text-gray-600">
           Découvrez cette ville dynamique où activités maritimes et plein air se rencontrent dans un
           cadre naturel exceptionnel
         </p>
       </header>
 
-      <section className="prose lg:prose-xl mb-12">
+      <section className="prose mb-12 lg:prose-xl">
         <p>
           Port-Cartier, ville portuaire de la Côte-Nord, offre une expérience unique entre mer et
           forêt. Reconnue pour son port en eau profonde, sa rivière à saumon de classe mondiale et
@@ -167,7 +168,7 @@ export default function BlogArticlePortCartier() {
           <Image
             src="/images/destinations/port-cartier.avif"
             alt="Port-Cartier"
-            className="w-full h-96 object-cover rounded-lg shadow-lg"
+            className="h-96 w-full rounded-lg object-cover shadow-lg"
             width={800}
             height={600}
           />
@@ -175,40 +176,40 @@ export default function BlogArticlePortCartier() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Star className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Star className="size-8 text-indigo-600" />
           Pourquoi Visiter Port-Cartier ?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Pêche au Saumon</h3>
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 text-xl font-semibold">Pêche au Saumon</H3>
             <p className="text-gray-600">
               Rivière aux Rochers, l'une des meilleures rivières à saumon du Québec.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Nature Accessible</h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 text-xl font-semibold">Nature Accessible</H3>
             <p className="text-gray-600">
               Sentiers pédestres, plages et activités de plein air à proximité.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Patrimoine Maritime</h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 text-xl font-semibold">Patrimoine Maritime</H3>
             <p className="text-gray-600">Port industriel majeur et histoire maritime riche.</p>
           </div>
         </div>
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
           Activités et Attractions
-        </h2>
+        </H2>
         <div className="space-y-8">
           {activities.map((activity) => (
-            <div key={activity.name} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div key={activity.name} className="overflow-hidden rounded-lg bg-white shadow-md">
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{activity.name}</h3>
-                <p className="text-gray-600 mb-4">{activity.description}</p>
+                <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.name}</H3>
+                <p className="mb-4 text-gray-600">{activity.description}</p>
                 <div className="flex flex-wrap gap-4 text-sm text-gray-600">
                   <span>Type: {activity.type}</span>
                   <span>Durée: {activity.duration}</span>
@@ -221,32 +222,32 @@ export default function BlogArticlePortCartier() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Star className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Star className="size-8 text-indigo-600" />
           Activités pour Enfants
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {familyActivities.map((activity) => (
-            <div key={activity.title} className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{activity.title}</h3>
-              <p className="text-gray-600 mb-2">{activity.description}</p>
-              <p className="text-indigo-600 font-medium">{activity.price}</p>
+            <div key={activity.title} className="rounded-lg bg-white p-6 shadow-md">
+              <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.title}</H3>
+              <p className="mb-2 text-gray-600">{activity.description}</p>
+              <p className="font-medium text-indigo-600">{activity.price}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
           Activités pour Adolescents
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {teenActivities.map((activity) => (
-            <div key={activity.title} className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{activity.title}</h3>
-              <p className="text-gray-600 mb-2">{activity.description}</p>
-              <div className="flex flex-col gap-1 mt-4">
-                <p className="text-indigo-600 font-medium">{activity.price}</p>
+            <div key={activity.title} className="rounded-lg bg-white p-6 shadow-md">
+              <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.title}</H3>
+              <p className="mb-2 text-gray-600">{activity.description}</p>
+              <div className="mt-4 flex flex-col gap-1">
+                <p className="font-medium text-indigo-600">{activity.price}</p>
                 <p className="text-sm text-gray-500">Durée: {activity.duration}</p>
               </div>
             </div>
@@ -255,35 +256,35 @@ export default function BlogArticlePortCartier() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Hotel className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Hotel className="size-8 text-indigo-600" />
           Où Dormir ?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {hotels.map((hotel) => (
             <a
               key={hotel.name}
               href={hotel.link}
-              className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+              className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
             >
               <div className="relative h-48">
                 <Image
                   src={hotel.image}
                   alt={hotel.name}
-                  className="w-full h-full object-cover"
+                  className="size-full object-cover"
                   width={800}
                   height={600}
                 />
               </div>
               <div className="p-6">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-semibold text-gray-900">{hotel.name}</h3>
-                  <span className="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-sm">
+                <div className="mb-2 flex items-start justify-between">
+                  <H3 className="text-xl font-semibold text-gray-900">{hotel.name}</H3>
+                  <span className="rounded bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
                     {hotel.category}
                   </span>
                 </div>
-                <p className="text-gray-600 mb-4">{hotel.description}</p>
-                <p className="text-indigo-600 font-semibold">{hotel.price}</p>
+                <p className="mb-4 text-gray-600">{hotel.description}</p>
+                <p className="font-semibold text-indigo-600">{hotel.price}</p>
               </div>
             </a>
           ))}
@@ -291,24 +292,24 @@ export default function BlogArticlePortCartier() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Utensils className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Utensils className="size-8 text-indigo-600" />
           Où Manger ?
-        </h2>
+        </H2>
         <div className="space-y-6">
           {restaurants.map((restaurant) => (
-            <div key={restaurant.name} className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex justify-between items-start mb-4">
+            <div key={restaurant.name} className="rounded-lg bg-white p-6 shadow-md">
+              <div className="mb-4 flex items-start justify-between">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">{restaurant.name}</h3>
+                  <H3 className="mb-1 text-xl font-semibold text-gray-900">{restaurant.name}</H3>
                   <p className="text-gray-600">{restaurant.type}</p>
                 </div>
-                <span className="text-indigo-600 font-semibold">{restaurant.price}</span>
+                <span className="font-semibold text-indigo-600">{restaurant.price}</span>
               </div>
-              <p className="text-gray-700 mb-2">
+              <p className="mb-2 text-gray-700">
                 <span className="font-medium">Spécialité:</span> {restaurant.speciality}
               </p>
-              <p className="text-gray-700 mb-2">
+              <p className="mb-2 text-gray-700">
                 <span className="font-medium">À essayer:</span> {restaurant.mustTry}
               </p>
               <p className="text-gray-700">
@@ -320,41 +321,41 @@ export default function BlogArticlePortCartier() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Bus className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Bus className="size-8 text-indigo-600" />
           Comment s'y Rendre ?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-4">Depuis les Grandes Villes</h3>
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-4 text-xl font-semibold">Depuis les Grandes Villes</H3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 8h en voiture depuis Québec
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Vol vers Sept-Îles puis transport terrestre
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Bus Orléans Express quotidien
               </li>
             </ul>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-4">Sur Place</h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-4 text-xl font-semibold">Sur Place</H3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Location de voiture recommandée
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Taxi disponible
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Centre-ville accessible à pied
               </li>
             </ul>
@@ -363,33 +364,33 @@ export default function BlogArticlePortCartier() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Calendar className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Calendar className="size-8 text-indigo-600" />
           Conseils Pratiques
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <Calendar className="h-5 w-5 text-indigo-600" />
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
+              <Calendar className="size-5 text-indigo-600" />
               Meilleure Période
-            </h3>
+            </H3>
             <p className="text-gray-600">
               Juin à septembre pour les activités estivales. Juillet-août pour la pêche au saumon.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <DollarSign className="h-5 w-5 text-indigo-600" />
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
+              <DollarSign className="size-5 text-indigo-600" />
               Budget
-            </h3>
+            </H3>
             <p className="text-gray-600">
               Hébergement: 119-159$/nuit Activités: 15-85$/jour Repas: 15-45$/personne
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <Shield className="h-5 w-5 text-indigo-600" />À Noter
-            </h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
+              <Shield className="size-5 text-indigo-600" />À Noter
+            </H3>
             <p className="text-gray-600">
               Permis nécessaire pour la pêche. Réservation conseillée en haute saison.
             </p>
@@ -397,21 +398,21 @@ export default function BlogArticlePortCartier() {
         </div>
       </section>
 
-      <section className="text-center bg-gray-50 p-8 rounded-lg">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Prêt à Découvrir Port-Cartier ?</h2>
-        <p className="text-gray-600 mb-6">
+      <section className="rounded-lg bg-gray-50 p-8 text-center">
+        <H2 className="mb-4 text-2xl font-bold text-gray-900">Prêt à Découvrir Port-Cartier ?</H2>
+        <p className="mb-6 text-gray-600">
           Réservez votre séjour maintenant et explorez cette ville unique de la Côte-Nord
         </p>
         <div className="flex justify-center gap-4">
           <a
             href="https://www.booking.com/city/ca/port-cartier.html"
-            className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+            className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
           >
             Réserver un Hébergement
           </a>
           <a
             href="https://villeport-cartier.com"
-            className="px-6 py-3 bg-white text-indigo-600 border border-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors"
+            className="rounded-lg border border-indigo-600 bg-white px-6 py-3 text-indigo-600 transition-colors hover:bg-indigo-50"
           >
             Explorer la Ville
           </a>

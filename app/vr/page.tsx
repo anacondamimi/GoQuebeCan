@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function LocationVRPage() {
   return (
-    <main className="max-w-4xl mx-auto p-6">
+    <main className="mx-auto max-w-4xl p-6">
       {/* Si tu veux afficher le composant Skyscanner avant l’article */}
       <Skyscanner />
 

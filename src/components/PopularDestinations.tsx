@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin, Compass, Waves } from 'lucide-react';
+import H3 from '@/components/typography/H3';
 
 interface Destination {
   name: string;
@@ -157,6 +158,24 @@ const regions: Region[] = [
     ],
   },
   {
+    title: 'Saguenay',
+    icon: 'pin',
+    destinations: [
+      {
+        name: 'Saguenay',
+        description: 'Observation des baleines et îles du Saint-Laurent',
+        image: '/images/destinations/fjord-saguenay.avif',
+        blogId: 'blog_article_saguenay',
+      },
+      {
+        name: 'Anse saint Jean',
+        description: 'Phoques, randonnée et paysages maritimes',
+        image: '/images/destinations/anse-saint-jean.avif',
+        blogId: 'blog_article_anse_saint_jean',
+      },
+    ],
+  },
+  {
     title: 'Côte-Nord',
     icon: 'pin',
     destinations: [
@@ -229,6 +248,18 @@ const regions: Region[] = [
     ],
   },
   {
+    title: 'Parcs Aquatiques',
+    icon: 'waves',
+    destinations: [
+      {
+        name: 'Parc Aquatique',
+        description: 'Amusement garanti',
+        image: '/images/destinations/carte.avif',
+        blogId: 'blog_article_parc_aquatique',
+      },
+    ],
+  },
+  {
     title: 'Territoires Sauvages',
     icon: 'compass',
     destinations: [
@@ -269,44 +300,44 @@ const regions: Region[] = [
 export default function PopularDestinations() {
   return (
     <section id="destinations" className="bg-warm-50 py-20">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="mx-auto max-w-6xl px-4">
         {regions.map((region) => (
           <div key={region.title} className="mb-16 last:mb-0">
             {/* Titre de région + icône */}
-            <div className="flex items-center gap-3 mb-8">
+            <div className="mb-8 flex items-center gap-3">
               {region.title === 'Gaspésie' ? (
-                <Compass className="h-8 w-8 text-indigo-600" />
+                <Compass className="size-8 text-indigo-600" />
               ) : region.title === 'Ville de Québec et sa région' ? (
-                <MapPin className="h-8 w-8 text-indigo-600" />
+                <MapPin className="size-8 text-indigo-600" />
               ) : (
-                <Waves className="h-8 w-8 text-indigo-600" />
+                <Waves className="size-8 text-indigo-600" />
               )}
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">{region.title}</h3>
+              <H3 className="text-2xl font-bold text-gray-900 sm:text-3xl">{region.title}</H3>
             </div>
 
             {/* Grille de destinations */}
-            <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2 md:gap-8 lg:grid-cols-3">
               {region.destinations.map((d) => (
                 <Link
                   key={d.name}
                   href={d.blogId ? `/blog/${d.blogId}` : '#'}
-                  className={`group bg-white rounded-xl shadow-card hover:shadow-card-hover overflow-hidden transition-shadow ${
+                  className={`group overflow-hidden rounded-xl bg-white shadow-card transition-shadow hover:shadow-card-hover ${
                     d.blogId ? 'cursor-pointer' : 'cursor-default'
                   }`}
                 >
-                  <div className="relative aspect-w-16 aspect-h-9">
+                  <div className="aspect-w-16 aspect-h-9 relative">
                     <Image
                       src={d.image}
                       alt={d.name}
                       fill
                       sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-300 rounded-xl"
+                      className="rounded-xl object-cover object-center transition-transform duration-300 group-hover:scale-105"
                       priority
                     />
                   </div>
 
                   <div className="p-5">
-                    <h4 className="text-lg font-display font-semibold text-gray-900 mb-1">
+                    <h4 className="mb-1 font-display text-lg font-semibold text-gray-900">
                       {d.name}
                     </h4>
                     <p className="text-sm text-gray-600">{d.description}</p>

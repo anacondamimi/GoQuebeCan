@@ -1,0 +1,191 @@
+<?xml version="1.0" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Exploration du Grand Nord avec GoQuébeCAN</name>
+    <description>Découvrez les villages, hôtels et points d’intérêt du Nunavik avec GoQuébeCAN — un voyage unique jusqu’à Kuujjuaq 🇨🇦</description>
+    <Style id="goquebecanIcon">
+      <IconStyle>
+        <Icon>
+          <href>https://goquebecan.com/favicon.avif</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+    <Folder>
+      <name>Villages du Nunavik</name>
+      <Placemark>
+        <name>Kuujjuaq</name>
+        <description>Découvrez Kuujjuaq sur GoQuébeCAN. &lt;a href='https://goquebecan.com/blog/kuujjuaq' target='_self'&gt;Voir la destination&lt;/a&gt;&lt;br&gt;&lt;br&gt;🌐 &lt;a href='https://goquebecan.com/planificateur'&gt;Planifier&lt;/a&gt; | 🍁 &lt;a href='https://goquebecan.com/producteurs'&gt;Producteurs&lt;/a&gt; | 🎥 &lt;a href='https://goquebecan.com/videos'&gt;Vidéos&lt;/a&gt; | 🚗 &lt;a href='https://goquebecan.com/blog/voyage-voiture'&gt;Voyage en voiture&lt;/a&gt;</description>
+        <styleUrl>#goquebecanIcon</styleUrl>
+        <Point>
+          <coordinates>-68.4,58.1,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Salluit</name>
+        <description>Découvrez Salluit sur GoQuébeCAN. &lt;a href='https://goquebecan.com/blog/salluit' target='_self'&gt;Voir la destination&lt;/a&gt;&lt;br&gt;&lt;br&gt;🌐 &lt;a href='https://goquebecan.com/planificateur'&gt;Planifier&lt;/a&gt; | 🍁 &lt;a href='https://goquebecan.com/producteurs'&gt;Producteurs&lt;/a&gt; | 🎥 &lt;a href='https://goquebecan.com/videos'&gt;Vidéos&lt;/a&gt; | 🚗 &lt;a href='https://goquebecan.com/blog/voyage-voiture'&gt;Voyage en voiture&lt;/a&gt;</description>
+        <styleUrl>#goquebecanIcon</styleUrl>
+        <Point>
+          <coordinates>-75.6,62.2,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Inukjuak</name>
+        <description>Découvrez Inukjuak sur GoQuébeCAN. &lt;a href='https://goquebecan.com/blog/inukjuak' target='_self'&gt;Voir la destination&lt;/a&gt;&lt;br&gt;&lt;br&gt;🌐 &lt;a href='https://goquebecan.com/planificateur'&gt;Planifier&lt;/a&gt; | 🍁 &lt;a href='https://goquebecan.com/producteurs'&gt;Producteurs&lt;/a&gt; | 🎥 &lt;a href='https://goquebecan.com/videos'&gt;Vidéos&lt;/a&gt; | 🚗 &lt;a href='https://goquebecan.com/blog/voyage-voiture'&gt;Voyage en voiture&lt;/a&gt;</description>
+        <styleUrl>#goquebecanIcon</styleUrl>
+        <Point>
+          <coordinates>-78.1,58.4,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Puvirnituq</name>
+        <description>Découvrez Puvirnituq sur GoQuébeCAN. &lt;a href='https://goquebecan.com/blog/puvirnituq' target='_self'&gt;Voir la destination&lt;/a&gt;&lt;br&gt;&lt;br&gt;🌐 &lt;a href='https://goquebecan.com/planificateur'&gt;Planifier&lt;/a&gt; | 🍁 &lt;a href='https://goquebecan.com/producteurs'&gt;Producteurs&lt;/a&gt; | 🎥 &lt;a href='https://goquebecan.com/videos'&gt;Vidéos&lt;/a&gt; | 🚗 &lt;a href='https://goquebecan.com/blog/voyage-voiture'&gt;Voyage en voiture&lt;/a&gt;</description>
+        <styleUrl>#goquebecanIcon</styleUrl>
+        <Point>
+          <coordinates>-77.28,60.05,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kangiqsujuaq</name>
+        <description>Découvrez Kangiqsujuaq sur GoQuébeCAN. &lt;a href='https://goquebecan.com/blog/kangiqsujuaq' target='_self'&gt;Voir la destination&lt;/a&gt;&lt;br&gt;&lt;br&gt;🌐 &lt;a href='https://goquebecan.com/planificateur'&gt;Planifier&lt;/a&gt; | 🍁 &lt;a href='https://goquebecan.com/producteurs'&gt;Producteurs&lt;/a&gt; | 🎥 &lt;a href='https://goquebecan.com/videos'&gt;Vidéos&lt;/a&gt; | 🚗 &lt;a href='https://goquebecan.com/blog/voyage-voiture'&gt;Voyage en voiture&lt;/a&gt;</description>
+        <styleUrl>#goquebecanIcon</styleUrl>
+        <Point>
+          <coordinates>-71.9,61.6,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kangirsuk</name>
+        <description>Découvrez Kangirsuk sur GoQuébeCAN. &lt;a href='https://goquebecan.com/blog/kangirsuk' target='_self'&gt;Voir la destination&lt;/a&gt;&lt;br&gt;&lt;br&gt;🌐 &lt;a href='https://goquebecan.com/planificateur'&gt;Planifier&lt;/a&gt; | 🍁 &lt;a href='https://goquebecan.com/producteurs'&gt;Producteurs&lt;/a&gt; | 🎥 &lt;a href='https://goquebecan.com/videos'&gt;Vidéos&lt;/a&gt; | 🚗 &lt;a href='https://goquebecan.com/blog/voyage-voiture'&gt;Voyage en voiture&lt;/a&gt;</description>
+        <styleUrl>#goquebecanIcon</styleUrl>
+        <Point>
+          <coordinates>-70.0,60.0,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tasiujaq</name>
+        <description>Découvrez Tasiujaq sur GoQuébeCAN. &lt;a href='https://goquebecan.com/blog/tasiujaq' target='_self'&gt;Voir la destination&lt;/a&gt;&lt;br&gt;&lt;br&gt;🌐 &lt;a href='https://goquebecan.com/planificateur'&gt;Planifier&lt;/a&gt; | 🍁 &lt;a href='https://goquebecan.com/producteurs'&gt;Producteurs&lt;/a&gt; | 🎥 &lt;a href='https://goquebecan.com/videos'&gt;Vidéos&lt;/a&gt; | 🚗 &lt;a href='https://goquebecan.com/blog/voyage-voiture'&gt;Voyage en voiture&lt;/a&gt;</description>
+        <styleUrl>#goquebecanIcon</styleUrl>
+        <Point>
+          <coordinates>-69.9,58.7,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Aupaluk</name>
+        <description>Découvrez Aupaluk sur GoQuébeCAN. &lt;a href='https://goquebecan.com/blog/aupaluk' target='_self'&gt;Voir la destination&lt;/a&gt;&lt;br&gt;&lt;br&gt;🌐 &lt;a href='https://goquebecan.com/planificateur'&gt;Planifier&lt;/a&gt; | 🍁 &lt;a href='https://goquebecan.com/producteurs'&gt;Producteurs&lt;/a&gt; | 🎥 &lt;a href='https://goquebecan.com/videos'&gt;Vidéos&lt;/a&gt; | 🚗 &lt;a href='https://goquebecan.com/blog/voyage-voiture'&gt;Voyage en voiture&lt;/a&gt;</description>
+        <styleUrl>#goquebecanIcon</styleUrl>
+        <Point>
+          <coordinates>-69.6,59.3,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Quaqtaq</name>
+        <description>Découvrez Quaqtaq sur GoQuébeCAN. &lt;a href='https://goquebecan.com/blog/quaqtaq' target='_self'&gt;Voir la destination&lt;/a&gt;&lt;br&gt;&lt;br&gt;🌐 &lt;a href='https://goquebecan.com/planificateur'&gt;Planifier&lt;/a&gt; | 🍁 &lt;a href='https://goquebecan.com/producteurs'&gt;Producteurs&lt;/a&gt; | 🎥 &lt;a href='https://goquebecan.com/videos'&gt;Vidéos&lt;/a&gt; | 🚗 &lt;a href='https://goquebecan.com/blog/voyage-voiture'&gt;Voyage en voiture&lt;/a&gt;</description>
+        <styleUrl>#goquebecanIcon</styleUrl>
+        <Point>
+          <coordinates>-69.6,61.0,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ivujivik</name>
+        <description>Découvrez Ivujivik sur GoQuébeCAN. &lt;a href='https://goquebecan.com/blog/ivujivik' target='_self'&gt;Voir la destination&lt;/a&gt;&lt;br&gt;&lt;br&gt;🌐 &lt;a href='https://goquebecan.com/planificateur'&gt;Planifier&lt;/a&gt; | 🍁 &lt;a href='https://goquebecan.com/producteurs'&gt;Producteurs&lt;/a&gt; | 🎥 &lt;a href='https://goquebecan.com/videos'&gt;Vidéos&lt;/a&gt; | 🚗 &lt;a href='https://goquebecan.com/blog/voyage-voiture'&gt;Voyage en voiture&lt;/a&gt;</description>
+        <styleUrl>#goquebecanIcon</styleUrl>
+        <Point>
+          <coordinates>-77.9,62.4,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Akulivik</name>
+        <description>Découvrez Akulivik sur GoQuébeCAN. &lt;a href='https://goquebecan.com/blog/akulivik' target='_self'&gt;Voir la destination&lt;/a&gt;&lt;br&gt;&lt;br&gt;🌐 &lt;a href='https://goquebecan.com/planificateur'&gt;Planifier&lt;/a&gt; | 🍁 &lt;a href='https://goquebecan.com/producteurs'&gt;Producteurs&lt;/a&gt; | 🎥 &lt;a href='https://goquebecan.com/videos'&gt;Vidéos&lt;/a&gt; | 🚗 &lt;a href='https://goquebecan.com/blog/voyage-voiture'&gt;Voyage en voiture&lt;/a&gt;</description>
+        <styleUrl>#goquebecanIcon</styleUrl>
+        <Point>
+          <coordinates>-78.2,60.8,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Umiujaq</name>
+        <description>Découvrez Umiujaq sur GoQuébeCAN. &lt;a href='https://goquebecan.com/blog/umiujaq' target='_self'&gt;Voir la destination&lt;/a&gt;&lt;br&gt;&lt;br&gt;🌐 &lt;a href='https://goquebecan.com/planificateur'&gt;Planifier&lt;/a&gt; | 🍁 &lt;a href='https://goquebecan.com/producteurs'&gt;Producteurs&lt;/a&gt; | 🎥 &lt;a href='https://goquebecan.com/videos'&gt;Vidéos&lt;/a&gt; | 🚗 &lt;a href='https://goquebecan.com/blog/voyage-voiture'&gt;Voyage en voiture&lt;/a&gt;</description>
+        <styleUrl>#goquebecanIcon</styleUrl>
+        <Point>
+          <coordinates>-76.55,56.55,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kangiqsualujjuaq</name>
+        <description>Découvrez Kangiqsualujjuaq sur GoQuébeCAN. &lt;a href='https://goquebecan.com/blog/kangiqsualujjuaq' target='_self'&gt;Voir la destination&lt;/a&gt;&lt;br&gt;&lt;br&gt;🌐 &lt;a href='https://goquebecan.com/planificateur'&gt;Planifier&lt;/a&gt; | 🍁 &lt;a href='https://goquebecan.com/producteurs'&gt;Producteurs&lt;/a&gt; | 🎥 &lt;a href='https://goquebecan.com/videos'&gt;Vidéos&lt;/a&gt; | 🚗 &lt;a href='https://goquebecan.com/blog/voyage-voiture'&gt;Voyage en voiture&lt;/a&gt;</description>
+        <styleUrl>#goquebecanIcon</styleUrl>
+        <Point>
+          <coordinates>-65.95,58.7,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kuujjuarapik</name>
+        <description>Découvrez Kuujjuarapik sur GoQuébeCAN. &lt;a href='https://goquebecan.com/blog/kuujjuarapik' target='_self'&gt;Voir la destination&lt;/a&gt;&lt;br&gt;&lt;br&gt;🌐 &lt;a href='https://goquebecan.com/planificateur'&gt;Planifier&lt;/a&gt; | 🍁 &lt;a href='https://goquebecan.com/producteurs'&gt;Producteurs&lt;/a&gt; | 🎥 &lt;a href='https://goquebecan.com/videos'&gt;Vidéos&lt;/a&gt; | 🚗 &lt;a href='https://goquebecan.com/blog/voyage-voiture'&gt;Voyage en voiture&lt;/a&gt;</description>
+        <styleUrl>#goquebecanIcon</styleUrl>
+        <Point>
+          <coordinates>-77.8,55.3,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Hôtels et hébergements</name>
+      <Placemark>
+        <name>Kuujjuaq Inn</name>
+        <description>Hébergement recommandé au Nunavik.&lt;br&gt;&lt;a href='https://www.kuujjuaqinn.com/' target='_self'&gt;Réserver sur Booking&lt;/a&gt;</description>
+        <Point>
+          <coordinates>-68.4039,58.1042,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kuujjuaq Suites &amp; Appartements</name>
+        <description>Hébergement recommandé au Nunavik.&lt;br&gt;&lt;a href='https://nunavikhotels.ca/fr/' target='_self'&gt;Réserver sur Booking&lt;/a&gt;</description>
+        <Point>
+          <coordinates>-68.4045,58.105,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Coopérative Hôtels du Nunavik</name>
+        <description>Hébergement recommandé au Nunavik.&lt;br&gt;&lt;a href='https://nunavikhotels.ca/fr/' target='_self'&gt;Réserver sur Booking&lt;/a&gt;</description>
+        <Point>
+          <coordinates>-68.405,58.107,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Points d’intérêt</name>
+      <Placemark>
+        <name>Aéroport de Kuujjuaq</name>
+        <description>-68.426&lt;br&gt;&lt;a href='https://goquebecan.com/planificateur' target='_self'&gt;Planifier votre visite&lt;/a&gt;</description>
+        <Point>
+          <coordinates>-68.426,58.097,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Parc Nunavik</name>
+        <description>-68.3&lt;br&gt;&lt;a href='https://goquebecan.com/planificateur' target='_self'&gt;Planifier votre visite&lt;/a&gt;</description>
+        <Point>
+          <coordinates>-68.3,58.2,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Centre culturel de Kuujjuaq</name>
+        <description>-68.405&lt;br&gt;&lt;a href='https://goquebecan.com/planificateur' target='_self'&gt;Planifier votre visite&lt;/a&gt;</description>
+        <Point>
+          <coordinates>-68.405,58.103,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Coop Nunavik</name>
+        <description>-68.406&lt;br&gt;&lt;a href='https://goquebecan.com/planificateur' target='_self'&gt;Planifier votre visite&lt;/a&gt;</description>
+        <Point>
+          <coordinates>-68.406,58.108,0</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Observation des aurores boréales</name>
+        <description>-68.42&lt;br&gt;&lt;a href='https://goquebecan.com/planificateur' target='_self'&gt;Planifier votre visite&lt;/a&gt;</description>
+        <Point>
+          <coordinates>-68.42,58.115,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

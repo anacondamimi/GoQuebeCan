@@ -1,6 +1,8 @@
 'use client';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import H2 from '@/components/typography/H2';
+import H3 from '@/components/typography/H3';
 import {
   Compass,
   Map,
@@ -165,25 +167,25 @@ export function TravelGuide() {
       : destinations.filter((d) => d.region === selectedRegion);
 
   return (
-    <section id="guide_voyage" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <Compass className="h-8 w-8 text-indigo-600" />
-          <h2 className="text-4xl font-bold text-center text-gray-900">
+    <section id="guide_voyage" className="bg-white py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-4 flex items-center justify-center gap-3">
+          <Compass className="size-8 text-indigo-600" />
+          <H2 className="text-center text-4xl font-bold text-gray-900">
             Guide Complet du Voyageur Malin
-          </h2>
+          </H2>
         </div>
 
-        <p className="text-xl text-center text-gray-600 mb-12">
+        <p className="mb-12 text-center text-xl text-gray-600">
           Découvrez nos conseils d'experts pour planifier votre prochain voyage
         </p>
 
         {/* Filtres */}
-        <div className="flex flex-col md:flex-row gap-4 mb-12">
+        <div className="mb-12 flex flex-col gap-4 md:flex-row">
           <select
             value={selectedRegion}
             onChange={(e) => setSelectedRegion(e.target.value)}
-            className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            className="rounded-lg border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
           >
             <option value="all">Toutes les régions</option>
             {destinations.map((d) => (
@@ -196,7 +198,7 @@ export function TravelGuide() {
           <select
             value={selectedStyle}
             onChange={(e) => setSelectedStyle(e.target.value as TravelStyle)}
-            className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            className="rounded-lg border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
           >
             <option value="all">Tous les styles de voyage</option>
             {travelStyles.map((style) => (
@@ -209,16 +211,16 @@ export function TravelGuide() {
 
         {/* Styles de voyage */}
         {selectedStyle !== 'all' && (
-          <div className="bg-gray-50 rounded-xl p-6 mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+          <div className="mb-12 rounded-xl bg-gray-50 p-6">
+            <H3 className="mb-6 text-2xl font-bold text-gray-900">
               Conseils pour les {travelStyles.find((s) => s.id === selectedStyle)?.title}
-            </h3>
+            </H3>
             <ul className="space-y-4">
               {travelStyles
                 .find((s) => s.id === selectedStyle)
                 ?.tips.map((tip, index) => (
                   <li key={index} className="flex items-center gap-3">
-                    <PlaneLanding className="h-5 w-5 text-indigo-600 flex-shrink-0" />
+                    <PlaneLanding className="size-5 shrink-0 text-indigo-600" />
                     <span>{tip}</span>
                   </li>
                 ))}
@@ -229,44 +231,44 @@ export function TravelGuide() {
         {/* Destinations */}
         {filteredDestinations.map((region) => (
           <div key={region.region} className="mb-16 last:mb-0">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
-              <Map className="h-6 w-6 text-indigo-600" />
+            <H3 className="mb-8 flex items-center gap-3 text-2xl font-bold text-gray-900">
+              <Map className="size-6 text-indigo-600" />
               {region.region}
-            </h3>
+            </H3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               {region.places.map((place) => (
-                <div key={place.name} className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div key={place.name} className="overflow-hidden rounded-xl bg-white shadow-lg">
                   <div className="aspect-w-16 aspect-h-9">
                     <Image
                       src={place.image}
                       alt={place.name}
-                      className="w-full h-64 object-cover"
+                      className="h-64 w-full object-cover"
                       width={800}
                       height={600}
                     />
                   </div>
                   <div className="p-6">
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">{place.name}</h4>
-                    <p className="text-gray-600 mb-4">{place.description}</p>
+                    <h4 className="mb-2 text-xl font-bold text-gray-900">{place.name}</h4>
+                    <p className="mb-4 text-gray-600">{place.description}</p>
 
                     <div className="space-y-4">
                       <div className="flex items-center gap-2">
-                        <Calendar className="h-5 w-5 text-indigo-600" />
+                        <Calendar className="size-5 text-indigo-600" />
                         <span className="text-sm">Meilleure période: {place.bestTime}</span>
                       </div>
 
                       <div className="flex items-center gap-2">
-                        <PlaneLanding className="h-5 w-5 text-indigo-600" />
+                        <PlaneLanding className="size-5 text-indigo-600" />
                         <span className="text-sm">{place.flightTips}</span>
                       </div>
 
                       <div>
-                        <div className="flex items-center gap-2 mb-2">
-                          <Utensils className="h-5 w-5 text-indigo-600" />
+                        <div className="mb-2 flex items-center gap-2">
+                          <Utensils className="size-5 text-indigo-600" />
                           <span className="font-medium">À ne pas manquer:</span>
                         </div>
-                        <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
+                        <ul className="list-inside list-disc space-y-1 text-sm text-gray-600">
                           {place.activities.map((activity, index) => (
                             <li key={index}>{activity}</li>
                           ))}
@@ -281,49 +283,49 @@ export function TravelGuide() {
         ))}
 
         {/* Conseils généraux */}
-        <div className="mt-16 bg-gray-50 rounded-xl p-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">
+        <div className="mt-16 rounded-xl bg-gray-50 p-8">
+          <H3 className="mb-6 text-2xl font-bold text-gray-900">
             Conseils pour Utiliser Skyscanner Efficacement
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          </H3>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div>
-              <h4 className="font-semibold text-gray-900 mb-4">Recherche de Vols</h4>
+              <h4 className="mb-4 font-semibold text-gray-900">Recherche de Vols</h4>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                  <span className="size-2 rounded-full bg-indigo-600" />
                   Utilisez "Mois entier" pour voir les meilleurs prix
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                  <span className="size-2 rounded-full bg-indigo-600" />
                   Activez les alertes de prix pour suivre les tarifs
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                  <span className="size-2 rounded-full bg-indigo-600" />
                   Comparez les aéroports voisins
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                  <span className="size-2 rounded-full bg-indigo-600" />
                   Vérifiez les options "Multi-cities"
                 </li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-gray-900 mb-4">Astuces de Réservation</h4>
+              <h4 className="mb-4 font-semibold text-gray-900">Astuces de Réservation</h4>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                  <span className="size-2 rounded-full bg-indigo-600" />
                   Réservez 3-6 mois à l'avance pour les long-courriers
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                  <span className="size-2 rounded-full bg-indigo-600" />
                   Préférez les vols en milieu de semaine
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                  <span className="size-2 rounded-full bg-indigo-600" />
                   Vérifiez les conditions d'annulation
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                  <span className="size-2 rounded-full bg-indigo-600" />
                   Comparez les options de bagages inclus
                 </li>
               </ul>

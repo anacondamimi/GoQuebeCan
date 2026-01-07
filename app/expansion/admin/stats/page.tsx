@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import H1 from '@/components/typography/H1';
 
 export default function StatsPage() {
   type Stat = { asin: string; category: string; clicks: number };
@@ -16,9 +17,9 @@ export default function StatsPage() {
   }, []);
 
   return (
-    <main className="max-w-2xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-4 text-center">📈 Statistiques Clics Affiliés (Test)</h1>
-      <table className="w-full border border-gray-300 rounded shadow">
+    <main className="mx-auto max-w-2xl p-6">
+      <H1 className="mb-4 text-center text-2xl font-bold">📈 Statistiques Clics Affiliés (Test)</H1>
+      <table className="w-full rounded border border-gray-300 shadow">
         <thead className="bg-gray-100">
           <tr>
             <th className="p-2 text-left">ASIN</th>

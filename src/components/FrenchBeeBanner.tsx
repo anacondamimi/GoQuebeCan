@@ -17,7 +17,7 @@ export default function FrenchBeeBanner() {
           alt="Vol Montréal-Paris à prix de rêve - French Bee"
           width={250}
           height={250}
-          className="mx-auto rounded-lg shadow-lg hover:scale-105 transition-transform"
+          className="mx-auto rounded-lg shadow-lg transition-transform hover:scale-105"
           priority
         />
       </a>
@@ -31,7 +31,7 @@ export default function FrenchBeeBanner() {
         style={{ position: 'absolute', visibility: 'hidden' }}
       />
 
-      <p className="mt-2 text-sm text-gray-500 max-w-xs mx-auto">
+      <p className="mx-auto mt-2 max-w-xs text-sm text-gray-500">
         Découvrez les capitales Europeen avec French Bee — Cliquez sur la bannière pour réserver.
       </p>
     </div>

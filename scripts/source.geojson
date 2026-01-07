@@ -14,7 +14,7 @@
         "addr:street": "Chemin Lamartine Est",
         "contact:phone": "+1 418 247 5478",
         "name": "Fruits et Légumes RG",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -33,7 +33,7 @@
         "contact:phone": "+1 418 882 2929",
         "contact:website": "https://lesomnambule.com/",
         "name": "Cidrerie Le Somnambule",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -48,7 +48,7 @@
         "addr:housenumber": "1257",
         "addr:postcode": "J1X 3W5",
         "addr:street": "Chemin de la Rivière",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Le Cep d'Argent",
         "website": "https://www.cepdargent.com/"
       },
@@ -67,8 +67,8 @@
         "addr:street": "Rue Principale",
         "name": "La Fruiteraie des Gadbois",
         "phone": "+1-450-469-3842",
-        "place": "farm",
-        "shop": "farm",
+        "place": "ferme",
+        "shop": "ferme",
         "source": "NRCan-CanVec-7.0",
         "website": "https://lafruiteraie.com/"
       },
@@ -90,7 +90,7 @@
         "name:fr": "Le magasin",
         "opening_hours": "Th-Sa 12:00-17:00",
         "phone": "+1 418 608 8005",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -111,7 +111,7 @@
         "contact:website": "http://www.bleuetorbleu.com/",
         "name": "Bleuetière l’Or Bleu",
         "note": "U-pick",
-        "shop": "farm",
+        "shop": "ferme",
         "source": "Bing"
       },
       "geometry": {
@@ -126,7 +126,7 @@
         "@id": "node/1816150081",
         "name": "M Blé D'inde",
         "produce": "corn",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -138,7 +138,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/2018091043",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble Clos St-Ignace"
       },
       "geometry": {
@@ -151,7 +151,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/2400999716",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Le Barbocheux"
       },
       "geometry": {
@@ -166,7 +166,7 @@
         "@id": "node/2584459098",
         "landuse": "orchard",
         "name": "Petch's Orchard",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -182,7 +182,7 @@
         "addr:postcode": "J0B 1L0",
         "addr:street": "Chemin de la Station",
         "name": "Cidrerie Verger Ferland",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -199,7 +199,7 @@
         "addr:postcode": "J0T 2C0",
         "addr:street": "Rue Principale",
         "name": "Fruiterie St-Donat",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -216,7 +216,7 @@
         "name": "Ferme Bourdages Tradition",
         "opening_hours": "08:00-18:00",
         "phone": "+14185342700",
-        "shop": "farm",
+        "shop": "ferme",
         "shop_1": "alcohol",
         "website": "http://fermebourdages.com/"
       },
@@ -234,7 +234,7 @@
         "addr:housenumber": "1130",
         "addr:street": "La Petite-Caroline",
         "check_date": "2023-10-01",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Cidrerie Michel Jodoin"
       },
       "geometry": {
@@ -249,7 +249,7 @@
         "@id": "node/4565218500",
         "addr:housenumber": "150",
         "addr:street": "Chemin de Richford",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Domaine Pinnacle"
       },
       "geometry": {
@@ -263,7 +263,7 @@
       "properties": {
         "@id": "node/4565218503",
         "name": "Verger Au Coeur De La Pomme",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -278,7 +278,7 @@
         "addr:city": "Dunham",
         "addr:housenumber": "1086",
         "addr:street": "Rue Bruce",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble de l'Orpailleur"
       },
       "geometry": {
@@ -294,7 +294,7 @@
         "addr:city": "Dunham",
         "addr:housenumber": "1046",
         "addr:street": "Rue Bruce",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble Gagliano"
       },
       "geometry": {
@@ -310,7 +310,7 @@
         "addr:city": "Dunham",
         "addr:housenumber": "1047",
         "addr:street": "Rue Bruce",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "UNION LIBRE cidre & vin"
       },
       "geometry": {
@@ -325,7 +325,7 @@
         "@id": "node/4565219215",
         "addr:housenumber": "341",
         "addr:street": "Rue Bruce",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble les Trois Clochers Enr."
       },
       "geometry": {
@@ -341,7 +341,7 @@
         "addr:housenumber": "3848",
         "addr:street": "Rue Principale",
         "check_date": "2023-10-01",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble Centaure"
       },
       "geometry": {
@@ -354,7 +354,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/4565744956",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vergers et Cidrerie Denis Charbonneau"
       },
       "geometry": {
@@ -370,7 +370,7 @@
         "addr:city": "Saint-Armand",
         "addr:housenumber": "395",
         "addr:street": "Chemin des Érables",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble Pigeon Hill"
       },
       "geometry": {
@@ -384,7 +384,7 @@
       "properties": {
         "@id": "node/4574021090",
         "name": "Marché Fermier du comté de Huntingdon",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -397,7 +397,7 @@
       "properties": {
         "@id": "node/4596330520",
         "name": "Kiosque du Coin",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -409,7 +409,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/4618645648",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble du Vent Maudit"
       },
       "geometry": {
@@ -423,7 +423,7 @@
       "properties": {
         "@id": "node/4661616878",
         "name": "Marché champêtre de North Hatley",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -442,7 +442,7 @@
         "name:en": "Cidrerie Milton",
         "name:fr": "Cidrerie Milton",
         "opening_hours": "Sa-We 08:00-18:00; Th-Fr 08:00-20:00",
-        "shop": "farm",
+        "shop": "ferme",
         "website": "https://cidreriemilton.com/"
       },
       "geometry": {
@@ -455,7 +455,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/4685699295",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Le Domaine Perdu"
       },
       "geometry": {
@@ -476,7 +476,7 @@
         "email": "info@jardinsdelaterre.org",
         "name": "Les Jardins de la Terre",
         "organic": "yes",
-        "shop": "farm",
+        "shop": "ferme",
         "website": "https://jardinsdelaterre.org"
       },
       "geometry": {
@@ -492,7 +492,7 @@
         "amenity": "marketplace",
         "name": "Marché public de Saint-Jérôme",
         "seasonal": "summer",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -506,7 +506,7 @@
         "@id": "node/4756216521",
         "addr:housenumber": "617",
         "addr:street": "Route 202 Est",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Domaine Neige"
       },
       "geometry": {
@@ -521,7 +521,7 @@
         "@id": "node/4756216522",
         "addr:housenumber": "633",
         "addr:street": "Route 202 Est",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble Le Chat Botté"
       },
       "geometry": {
@@ -534,7 +534,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/4783356570",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble Rivière du Chêne"
       },
       "geometry": {
@@ -549,7 +549,7 @@
         "@id": "node/4847467588",
         "addr:housenumber": "239",
         "addr:street": "Chemin de Fulford",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "La Belle Alliance"
       },
       "geometry": {
@@ -563,7 +563,7 @@
       "properties": {
         "@id": "node/4916823842",
         "name": "La Magie de la Pomme",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -575,7 +575,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/4964897022",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Les Vallons de Wadleigh"
       },
       "geometry": {
@@ -588,7 +588,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/5058147796",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble Lano d’Or"
       },
       "geometry": {
@@ -601,7 +601,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/5315676706",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble Domaine du Clos de L'Isle"
       },
       "geometry": {
@@ -617,7 +617,7 @@
         "addr:housenumber": "285",
         "addr:postcode": "J0E 1S0",
         "addr:street": "Chemin de Brome",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Domaine les Brome Léon Courville",
         "payment:cash": "yes",
         "payment:credit_cards": "yes",
@@ -636,7 +636,7 @@
         "@id": "node/5507881314",
         "addr:housenumber": "155",
         "addr:street": "Chemin des Érables",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble de la Bauge"
       },
       "geometry": {
@@ -650,7 +650,7 @@
       "properties": {
         "@id": "node/5975908749",
         "name": "Lavender Ridge",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -679,7 +679,7 @@
         "addr:housenumber": "348",
         "addr:street": "Rue Principale",
         "name": "Cooperative La Mauve",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -691,7 +691,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/6195149181",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Cidrerie Vergers Pedneault"
       },
       "geometry": {
@@ -705,7 +705,7 @@
       "properties": {
         "@id": "node/6264988298",
         "name": "Ferme la Chouette Lapone",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -719,8 +719,8 @@
         "@id": "node/6501154828",
         "addr:housenumber": "165",
         "addr:street": "Chemin de Calumet Ouest",
-        "craft": "winery",
-        "name": "Little Red Wagon Winery",
+        "craft": "vignoble",
+        "name": "Little Red Wagon vignoble",
         "name:fr": "Vignoble Petit Chariot Rouge",
         "opening_hours": "Fr-Su 13:00-17:00",
         "phone": "+1-819-744-0842"
@@ -738,7 +738,7 @@
         "addr:housenumber": "662",
         "addr:street": "Rang des Chalets",
         "name": "Les Herbes aux Soins",
-        "shop": "farm",
+        "shop": "ferme",
         "website": "https://lesherbesauxsoins.ca/"
       },
       "geometry": {
@@ -760,7 +760,7 @@
         "name": "Ferme Avicole Bio-grain",
         "phone": "+1-450-542-9026",
         "produce": "product",
-        "shop": "farm",
+        "shop": "ferme",
         "website": "http://fermeavicolebio-grain.ca/"
       },
       "geometry": {
@@ -774,7 +774,7 @@
       "properties": {
         "@id": "node/7495520340",
         "name": "Kiosque chez Forget",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -792,7 +792,7 @@
         "addr:province": "Québec",
         "addr:street": "Avenue du pont Nord",
         "name": "Les jardins Mistook",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -805,7 +805,7 @@
       "properties": {
         "@id": "node/7671731820",
         "seasonal": "yes",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -817,7 +817,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/7680185066",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -830,7 +830,7 @@
       "properties": {
         "@id": "node/7773526714",
         "seasonal": "yes",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -844,10 +844,10 @@
         "@id": "node/7777892755",
         "addr:housenumber": "2635",
         "addr:street": "Route 202",
-        "description": "Farm offering self-picking of fruits such as blueberries, raspberries, strawberries and apples.",
+        "description": "ferme offering self-picking of fruits such as blueberries, raspberries, strawberries and apples.",
         "name": "Ferme des Petits Cailloux",
         "phone": "+1-450-827-2456",
-        "shop": "farm",
+        "shop": "ferme",
         "website": "https://fermedespetitscailloux.com/"
       },
       "geometry": {
@@ -862,7 +862,7 @@
         "@id": "node/7920739322",
         "addr:housenumber": "1419",
         "addr:street": "Route 132",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble Leblanc"
       },
       "geometry": {
@@ -880,7 +880,7 @@
         "addr:street": "Chemin West Hill",
         "name": "Les Bleuets du Marquis",
         "organic": "only",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -910,7 +910,7 @@
         "organic": "yes",
         "payment:cash": "yes",
         "payment:credit_cards": "yes",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -954,7 +954,7 @@
         "@id": "node/8292085281",
         "description": "Produits d'argousier",
         "name": "Les jardins de Hatley",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -967,7 +967,7 @@
       "properties": {
         "@id": "node/8331717187",
         "name": "Kiosque Joli-Bois Fruit et Légume",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -980,7 +980,7 @@
       "properties": {
         "@id": "node/8532154130",
         "name": "Ferme Marineau",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1007,7 +1007,7 @@
         "payment:mastercard": "yes",
         "payment:visa": "yes",
         "phone": "+15142735456",
-        "shop": "farm",
+        "shop": "ferme",
         "website": "https://www.leopoldo.ca/"
       },
       "geometry": {
@@ -1026,7 +1026,7 @@
         "addr:province": "QC",
         "addr:street": "Rang Sainte-Sophie",
         "name": "Verger Coeur-de-Pomme",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1039,7 +1039,7 @@
       "properties": {
         "@id": "node/8668653021",
         "name": "Verger Saab",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1057,7 +1057,7 @@
         "addr:street": "Chemin d'Oka",
         "name": "Verger Yvan des Pommes",
         "produce": "apple",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1076,7 +1076,7 @@
         "name": "Cueillette 640",
         "produce": "apple",
         "self_service": "yes",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1095,7 +1095,7 @@
         "name": "Le Pomiculteur du Bûcheron",
         "produce": "apple",
         "self_service": "yes",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1113,7 +1113,7 @@
         "addr:street": "Chemin d'Oka",
         "name": "L'Érapom Lemaire",
         "produce": "apple;maple",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1130,7 +1130,7 @@
         "addr:province": "QC",
         "addr:street": "Chemin d'Oka",
         "name": "H et Y Gemme",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1149,7 +1149,7 @@
         "name": "Le Verger Trottier",
         "produce": "apple",
         "self_service": "yes",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1168,7 +1168,7 @@
         "name": "Verger Sylvain Lavallée",
         "produce": "apple",
         "self_service": "yes",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1187,7 +1187,7 @@
         "name": "Verger Lavallée",
         "produce": "apple",
         "self_service": "yes",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1206,7 +1206,7 @@
         "name": "Verger Richard Legault",
         "produce": "apple",
         "self_service": "yes",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1225,7 +1225,7 @@
         "name": "À la croisée des pommes - Verger Bio",
         "produce": "apple",
         "self_service": "yes",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1241,7 +1241,7 @@
         "addr:housenumber": "2525",
         "addr:street": "Rue Principale Ouest",
         "name": "Bleu Lavande",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1264,7 +1264,7 @@
         "organic": "only",
         "payment:cash": "yes",
         "phone": "+1 581-624-8194",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1287,7 +1287,7 @@
         "organic": "only",
         "phone": "+1-450-452-4271",
         "produce": "vegetables",
-        "shop": "farm",
+        "shop": "ferme",
         "website": "https://www.fermetournesol.qc.ca"
       },
       "geometry": {
@@ -1326,7 +1326,7 @@
         "addr:province": "QC",
         "addr:street": "Route Harwood",
         "seasonal": "yes",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1375,7 +1375,7 @@
       "properties": {
         "@id": "node/9450668522",
         "name": "Érablière Brunelle",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1391,7 +1391,7 @@
         "addr:housenumber": "1468",
         "addr:province": "QC",
         "addr:street": "Chemin Saint-Féréol",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble d'Ovila"
       },
       "geometry": {
@@ -1412,7 +1412,7 @@
         "name": "Verger Barry",
         "operator": "Verger Barry",
         "phone": "+1 (418) 325-2274",
-        "shop": "farm",
+        "shop": "ferme",
         "website": "https://www.vergerbarry.com/"
       },
       "geometry": {
@@ -1433,7 +1433,7 @@
         "name": "Verger Sauvageau",
         "operator": "Verger Sauvageau",
         "phone": "+1 (418) 325-2482",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1453,7 +1453,7 @@
         "name": "Verger Mayrand Kiosque De La Pomme",
         "operator": "Verger Mayrand Kiosque De La Pomme",
         "phone": "+1 (418) 325-2489",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1504,8 +1504,8 @@
         "name": "Terre-Mère, maraîcher biologique",
         "organic": "yes",
         "phone": "+1-438-763-3835",
-        "place": "farm",
-        "shop": "farm",
+        "place": "ferme",
+        "shop": "ferme",
         "website": "https://www.terre-mere.ca/"
       },
       "geometry": {
@@ -1521,8 +1521,8 @@
         "name": "Ferme Ammerlaan",
         "organic": "yes",
         "phone": "+1-450-291-5258",
-        "place": "farm",
-        "shop": "farm"
+        "place": "ferme",
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1538,8 +1538,8 @@
         "addr:housenumber": "133",
         "addr:street": "Chemin du Vide",
         "name": "Les Légumes Charbonneau",
-        "place": "farm",
-        "shop": "farm"
+        "place": "ferme",
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1557,8 +1557,8 @@
         "email": "cjvalton@gmail.com",
         "name": "Domaine Valton Osiris",
         "phone": "+1-450-658-7131",
-        "place": "farm",
-        "shop": "farm",
+        "place": "ferme",
+        "shop": "ferme",
         "website": "http://www.domainevaltonosiris.com/coordonnees.html"
       },
       "geometry": {
@@ -1576,8 +1576,8 @@
         "addr:street": "Chemin des Patriotes",
         "name": "Havre Vert",
         "organic": "yes",
-        "place": "farm",
-        "shop": "farm"
+        "place": "ferme",
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1594,7 +1594,7 @@
         "addr:province": "QC",
         "addr:street": "Avenue Phillips",
         "name": "Les Jardins Carya",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1609,7 +1609,7 @@
         "addr:city": "Bécancour",
         "addr:housenumber": "20280",
         "addr:street": "Boulevard des Acadiens",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble Le Fief de la Rivière"
       },
       "geometry": {
@@ -1622,7 +1622,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/9908328001",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble Domaine DesDuc"
       },
       "geometry": {
@@ -1640,7 +1640,7 @@
         "name": "La Maison de la prune",
         "opening_hours": "Aug 18-Oct 1 Fr-Su 10:00-17:00",
         "produce": "plum",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1653,7 +1653,7 @@
       "properties": {
         "@id": "node/10153637466",
         "name": "Dans la Musette",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1668,7 +1668,7 @@
         "addr:housenumber": "330",
         "addr:street": "Rang du Cordon",
         "name": "Vergers Arsène Poisson",
-        "shop": "farm",
+        "shop": "ferme",
         "website": "https://chemindessept.ca/"
       },
       "geometry": {
@@ -1681,7 +1681,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/10559226008",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble J.O. Montpetit & Fils"
       },
       "geometry": {
@@ -1694,7 +1694,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/10560584863",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble du Marathonien"
       },
       "geometry": {
@@ -1708,7 +1708,7 @@
       "properties": {
         "@id": "node/10682137753",
         "name": "Mielerie du cratère",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1723,7 +1723,7 @@
         "addr:city": "Dunham",
         "addr:housenumber": "3734",
         "addr:street": "Rue Principale",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble Clos Ste-Coix"
       },
       "geometry": {
@@ -1740,7 +1740,7 @@
         "addr:housenumber": "49",
         "addr:street": "Route 116 Est",
         "name": "Verger Canard Goûteux",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1769,7 +1769,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/10893068371",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble côte des limousins"
       },
       "geometry": {
@@ -1787,7 +1787,7 @@
         "addr:province": "QC",
         "addr:street": "Boulevard Curé-Labelle",
         "name": "Ferme Michel Lauzon",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1801,7 +1801,7 @@
         "@id": "node/11075001751",
         "check_date": "2023-07-28",
         "name": "Complexe touristique du bleuet",
-        "shop": "farm",
+        "shop": "ferme",
         "website": "https://complexetouristiquebleuet.com",
         "wheelchair": "no"
       },
@@ -1815,7 +1815,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/11078493301",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble Souffle de Vie"
       },
       "geometry": {
@@ -1829,7 +1829,7 @@
       "properties": {
         "@id": "node/11110230206",
         "name": "Terre Fruitière",
-        "shop": "farm",
+        "shop": "ferme",
         "website": "https://terrefruitiere.ca"
       },
       "geometry": {
@@ -1848,7 +1848,7 @@
         "name": "Ferme Hirondelle",
         "operator": "Daniel et François Brisson",
         "phone": "+1 418-249-4420",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1866,7 +1866,7 @@
         "name": "Érablière Camille Bilodeau",
         "operator": "Camille Bilodeau",
         "phone": "+1 418-249-4011",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1884,7 +1884,7 @@
         "addr:street": "Rang Sainte-Marie",
         "name": "151 Rang Sainte-Marie",
         "produce": "oeufs (eggs)",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1902,13 +1902,13 @@
         "description": "Ferme maraîchaire et florale bio à Ripon. Paniers biologiques, kiosque à la ferme, fruits et légumes d'une grande qualité sans compromis.",
         "email": "auxcolibris@gmail.com",
         "name": "Ferme aux Colibris",
-        "name:en": "Hummingird Farms",
+        "name:en": "Hummingird fermes",
         "name:fr": "Ferme aux Colibris",
         "opening_hours": "Fr 13:00-17:00; Sa 10:00-17:00",
         "payment:mastercard": "yes",
         "payment:visa": "yes",
         "phone": "+1 819-616-2872",
-        "shop": "farm",
+        "shop": "ferme",
         "website": "https://www.facebook.com/auxcolibris"
       },
       "geometry": {
@@ -1923,7 +1923,7 @@
         "@id": "node/11258192354",
         "name": "Verger Poméloi",
         "product": "apple",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1936,7 +1936,7 @@
       "properties": {
         "@id": "node/11268085105",
         "name": "Verger Fleuripom",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1949,7 +1949,7 @@
       "properties": {
         "@id": "node/11292120159",
         "name": "Verger Joannette",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -1961,7 +1961,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/11695082651",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Au Vignoble d'Orford"
       },
       "geometry": {
@@ -1984,7 +1984,7 @@
         "operator": "Au Pavillon de la Pomme",
         "organic": "no",
         "phone": "+1 450-464-2654",
-        "shop": "farm",
+        "shop": "ferme",
         "website": "https://www.pavillondelapomme.com/"
       },
       "geometry": {
@@ -2000,11 +2000,11 @@
         "addr:housenumber": "537",
         "addr:street": "5e Avenue",
         "contact:email": "kiosque@racinepetitsfruits.com",
-        "description": "Farmers Kiosque food store with fresh produce, pies, eggs, etc.",
+        "description": "fermeers Kiosque food store with fresh produce, pies, eggs, etc.",
         "name": "Le Kiosque Racíne",
         "opening_hours": "Mo-We 09:00-19:00; Th, Fr 09:00-20:00; Sa, Su 09:00-18:00",
         "phone": "+1 450-478-0457",
-        "shop": "farm",
+        "shop": "ferme",
         "website": "https://racinepetitsfruits.com/"
       },
       "geometry": {
@@ -2017,7 +2017,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/11986525930",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble Domaine Bresee"
       },
       "geometry": {
@@ -2031,7 +2031,7 @@
       "properties": {
         "@id": "node/11989002761",
         "name": "Bleuets du Massif Sutton",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -2043,7 +2043,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/12022658312",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble Bromont"
       },
       "geometry": {
@@ -2056,7 +2056,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/12022658379",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble du PicBois"
       },
       "geometry": {
@@ -2088,7 +2088,7 @@
         "addr:street": "Rue Ambroise-Fafard",
         "name": "Ferme l'oiseau bleu",
         "opening_hours": "Th-Sa 10:00-16:00",
-        "shop": "farm",
+        "shop": "ferme",
         "website": "https://www.fermeoiseaubleu.com/"
       },
       "geometry": {
@@ -2104,7 +2104,7 @@
         "addr:street": "Chemin du Lac-Lévesque",
         "contact:facebook": "lafermedelaube",
         "name": "La Ferme de l'Aube",
-        "shop": "farm",
+        "shop": "ferme",
         "website": "https://www.lafermedelaube.com/"
       },
       "geometry": {
@@ -2118,8 +2118,8 @@
       "properties": {
         "@id": "node/12420604601",
         "addr:street": "Rue du Domaine-des-Pins",
-        "name": "MacCuaig Family Farm",
-        "shop": "farm"
+        "name": "MacCuaig Family ferme",
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -2131,7 +2131,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/12489361345",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Vignoble La Manse"
       },
       "geometry": {
@@ -2148,7 +2148,7 @@
         "addr:housenumber": "1110",
         "addr:province": "QC",
         "addr:street": "La Petite-Caroline",
-        "craft": "winery"
+        "craft": "vignoble"
       },
       "geometry": {
         "type": "Point",
@@ -2161,7 +2161,7 @@
       "properties": {
         "@id": "node/12594406773",
         "name": "Les jardins d'Oka",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -2174,7 +2174,7 @@
       "properties": {
         "@id": "node/12605225019",
         "name": "Bleu sucré",
-        "shop": "farm"
+        "shop": "ferme"
       },
       "geometry": {
         "type": "Point",
@@ -2203,7 +2203,7 @@
       "type": "Feature",
       "properties": {
         "@id": "node/12811720250",
-        "craft": "winery",
+        "craft": "vignoble",
         "name": "Le Château Taillefer Lafon - Vignoble & Cidrerie"
       },
       "geometry": {

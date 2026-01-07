@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
+import H1 from '@/components/typography/H1';
+import H2 from '@/components/typography/H2';
+import H3 from '@/components/typography/H3';
 
 export const metadata = {
   slug: 'wasaga-beach',
@@ -25,28 +28,31 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun } from 'l
 
 const hotels = [
   {
-    name: 'Wasaga Riverdocks Hotel',
-    category: 'Vue sur Plage',
-    description: 'Vue imprenable sur la baie Georgienne',
-    price: 'À partir de 189$/nuit',
-    link: 'https://www.booking.com/hotel/ca/wasaga-riverdocks.html',
-    image: 'https://images.unsplash.com/photo-1595880238394-5b606a6ee1e8?auto=format&fit=crop&q=80',
+    name: 'Saga Resort',
+    category: 'Familial près de la plage',
+    description:
+      'Complexe avec chambres et petits appartements, piscine extérieure et aire de jeux, parfait pour profiter de Wasaga Beach à pied.',
+    price: 'À partir de 120 $/nuit',
+    link: 'https://www.expedia.ca/fr/Wasaga-Beach-Hotels-SAGA-RESORT.h17405117.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763713351541&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=181914&destination=Wasaga+Beach%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=44.520741%2C-80.016067&sort=REVIEW_RELEVANT&top_dp=120&top_cur=CAD&userIntent=&selectedRoomType=201838547&selectedRatePlan=400296313&searchId=527dc4aa-81cc-404f-a4c7-9516c75cd205',
+    image: '/images/destinations/hotels/wasaga-beach.avif',
   },
   {
-    name: 'Beach Front Resort',
-    category: 'Resort',
-    description: 'Accès direct à la plage',
-    price: 'À partir de 209$/nuit',
-    link: 'https://www.booking.com/hotel/ca/beach-front-resort.html',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
+    name: 'Hidden Gem',
+    category: 'Maison de vacances',
+    description:
+      'Grande maison entièrement équipée, idéale pour un séjour en famille ou entre amis à quelques minutes de la plage de Wasaga.',
+    price: 'À partir de 340 $/nuit',
+    link: 'https://www.expedia.ca/fr/Wasaga-Beach-Hotels-Hidden-Gem.h94741293.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763713561441&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=181914&destination=Wasaga+Beach%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=44.520741%2C-80.016067&sort=REVIEW_RELEVANT&top_dp=340&top_cur=CAD&userIntent=&selectedRoomType=94741293&selectedRatePlan=00009ac40984a33c4dc49c8c118db165efd7&searchId=adb0bdb1-4661-49b9-8edf-ea8f29e81d85',
+    image: '/images/destinations/hotels/hotelhidden-wasagabeach.avif',
   },
   {
-    name: 'Wasaga Motel',
-    category: 'Économique',
-    description: 'À quelques pas de la plage',
-    price: 'À partir de 129$/nuit',
-    link: 'https://www.booking.com/hotel/ca/wasaga-motel.html',
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80',
+    name: 'Sandpiper Beach Resort - Cottage 10',
+    category: 'Cottage en bord de plage',
+    description:
+      'Cottage confortable avec accès direct à la plage, parfait pour vivre l’expérience Wasaga Beach les pieds dans le sable.',
+    price: 'À partir de 375 $/nuit',
+    link: 'https://www.expedia.ca/fr/Barrie-Orillia-Hotels-SANDPIPER-BEACH-RESORT-Cottage-10.h38854991.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763713561429&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=181914&destination=Wasaga+Beach%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=44.520741%2C-80.016067&sort=REVIEW_RELEVANT&top_dp=375&top_cur=CAD&userIntent=&selectedRoomType=38854991&selectedRatePlan=0000b518e7a24aeb4c6d970c57cb3170df8c&searchId=adb0bdb1-4661-49b9-8edf-ea8f29e81d85',
+    image: '/images/destinations/hotels/cottage-wasagabeach.avif',
   },
 ];
 
@@ -142,18 +148,16 @@ const teenActivities = [
 
 export default function BlogArticleWasagaBeach() {
   return (
-    <article id="blog_article_wasaga_beach" className="max-w-4xl mx-auto px-4 py-12 bg-white">
-      <header className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Wasaga Beach - La Plus Longue Plage d'Eau Douce au Monde
-        </h1>
+    <article id="blog_article_wasaga_beach" className="mx-auto max-w-4xl bg-white px-4 py-12">
+      <header className="mb-12 text-center">
+        <H1 className="mb-4">Wasaga Beach - La Plus Longue Plage d'Eau Douce au Monde</H1>
         <p className="text-xl text-gray-600">
           Découvrez ce paradis balnéaire de l'Ontario, avec ses 14 kilomètres de sable fin et ses
           activités pour toute la famille
         </p>
       </header>
 
-      <section className="prose lg:prose-xl mb-12">
+      <section className="prose mb-12 lg:prose-xl">
         <p>
           Wasaga Beach, située sur les rives de la baie Georgienne, est réputée pour être la plus
           longue plage d'eau douce au monde. Cette destination estivale par excellence combine
@@ -164,7 +168,7 @@ export default function BlogArticleWasagaBeach() {
           <Image
             src="/images/destinations/wasaga-beach.avif"
             alt="Wasaga Beach"
-            className="w-full h-96 object-cover rounded-lg shadow-lg"
+            className="h-96 w-full rounded-lg object-cover shadow-lg"
             width={800}
             height={600}
           />
@@ -172,25 +176,25 @@ export default function BlogArticleWasagaBeach() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Star className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Star className="size-8 text-indigo-600" />
           Pourquoi Visiter Wasaga Beach ?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Plage Exceptionnelle</h3>
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 text-xl font-semibold">Plage Exceptionnelle</H3>
             <p className="text-gray-600">
               14 km de sable fin et d'eaux cristallines de la baie Georgienne.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Sports Nautiques</h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 text-xl font-semibold">Sports Nautiques</H3>
             <p className="text-gray-600">
               Large choix d'activités aquatiques pour tous les niveaux.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Ambiance Estivale</h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 text-xl font-semibold">Ambiance Estivale</H3>
             <p className="text-gray-600">
               Restaurants en bord de plage et divertissements pour toute la famille.
             </p>
@@ -199,15 +203,15 @@ export default function BlogArticleWasagaBeach() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
           Activités et Attractions
-        </h2>
+        </H2>
         <div className="space-y-8">
           {activities.map((activity) => (
-            <div key={activity.name} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div key={activity.name} className="overflow-hidden rounded-lg bg-white shadow-md">
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{activity.name}</h3>
-                <p className="text-gray-600 mb-4">{activity.description}</p>
+                <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.name}</H3>
+                <p className="mb-4 text-gray-600">{activity.description}</p>
                 <div className="flex flex-wrap gap-4 text-sm text-gray-600">
                   <span>Type: {activity.type}</span>
                   <span>Durée: {activity.duration}</span>
@@ -220,33 +224,33 @@ export default function BlogArticleWasagaBeach() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Star className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Star className="size-8 text-indigo-600" />
           Activités pour Enfants
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {familyActivities.map((activity) => (
-            <div key={activity.title} className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{activity.title}</h3>
-              <p className="text-gray-600 mb-2">{activity.description}</p>
-              <p className="text-indigo-600 font-medium">{activity.price}</p>
+            <div key={activity.title} className="rounded-lg bg-white p-6 shadow-md">
+              <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.title}</H3>
+              <p className="mb-2 text-gray-600">{activity.description}</p>
+              <p className="font-medium text-indigo-600">{activity.price}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Sun className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Sun className="size-8 text-indigo-600" />
           Activités pour Adolescents
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {teenActivities.map((activity) => (
-            <div key={activity.title} className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{activity.title}</h3>
-              <p className="text-gray-600 mb-2">{activity.description}</p>
-              <div className="flex flex-col gap-1 mt-4">
-                <p className="text-indigo-600 font-medium">{activity.price}</p>
+            <div key={activity.title} className="rounded-lg bg-white p-6 shadow-md">
+              <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.title}</H3>
+              <p className="mb-2 text-gray-600">{activity.description}</p>
+              <div className="mt-4 flex flex-col gap-1">
+                <p className="font-medium text-indigo-600">{activity.price}</p>
                 <p className="text-sm text-gray-500">Durée: {activity.duration}</p>
               </div>
             </div>
@@ -255,35 +259,35 @@ export default function BlogArticleWasagaBeach() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Hotel className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Hotel className="size-8 text-indigo-600" />
           Où Dormir ?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {hotels.map((hotel) => (
             <a
               key={hotel.name}
               href={hotel.link}
-              className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+              className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
             >
               <div className="relative h-48">
                 <Image
                   src={hotel.image}
                   alt={hotel.name}
-                  className="w-full h-full object-cover"
+                  className="size-full object-cover"
                   width={800}
                   height={600}
                 />
               </div>
               <div className="p-6">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-semibold text-gray-900">{hotel.name}</h3>
-                  <span className="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-sm">
+                <div className="mb-2 flex items-start justify-between">
+                  <H3 className="text-xl font-semibold text-gray-900">{hotel.name}</H3>
+                  <span className="rounded bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
                     {hotel.category}
                   </span>
                 </div>
-                <p className="text-gray-600 mb-4">{hotel.description}</p>
-                <p className="text-indigo-600 font-semibold">{hotel.price}</p>
+                <p className="mb-4 text-gray-600">{hotel.description}</p>
+                <p className="font-semibold text-indigo-600">{hotel.price}</p>
               </div>
             </a>
           ))}
@@ -291,24 +295,24 @@ export default function BlogArticleWasagaBeach() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Utensils className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Utensils className="size-8 text-indigo-600" />
           Où Manger ?
-        </h2>
+        </H2>
         <div className="space-y-6">
           {restaurants.map((restaurant) => (
-            <div key={restaurant.name} className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex justify-between items-start mb-4">
+            <div key={restaurant.name} className="rounded-lg bg-white p-6 shadow-md">
+              <div className="mb-4 flex items-start justify-between">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">{restaurant.name}</h3>
+                  <H3 className="mb-1 text-xl font-semibold text-gray-900">{restaurant.name}</H3>
                   <p className="text-gray-600">{restaurant.type}</p>
                 </div>
-                <span className="text-indigo-600 font-semibold">{restaurant.price}</span>
+                <span className="font-semibold text-indigo-600">{restaurant.price}</span>
               </div>
-              <p className="text-gray-700 mb-2">
+              <p className="mb-2 text-gray-700">
                 <span className="font-medium">Spécialité:</span> {restaurant.speciality}
               </p>
-              <p className="text-gray-700 mb-2">
+              <p className="mb-2 text-gray-700">
                 <span className="font-medium">À essayer:</span> {restaurant.mustTry}
               </p>
               <p className="text-gray-700">
@@ -320,41 +324,41 @@ export default function BlogArticleWasagaBeach() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Bus className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Bus className="size-8 text-indigo-600" />
           Comment s'y Rendre ?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-4">Depuis les Grandes Villes</h3>
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-4 text-xl font-semibold">Depuis les Grandes Villes</H3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 2h en voiture depuis Toronto
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 7h en voiture depuis Montréal
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Bus interurbain disponible
               </li>
             </ul>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-4">Sur Place</h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-4 text-xl font-semibold">Sur Place</H3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Navette de plage gratuite
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Location de vélos disponible
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Centre-ville accessible à pied
               </li>
             </ul>
@@ -363,33 +367,33 @@ export default function BlogArticleWasagaBeach() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Calendar className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Calendar className="size-8 text-indigo-600" />
           Conseils Pratiques
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <Calendar className="h-5 w-5 text-indigo-600" />
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
+              <Calendar className="size-5 text-indigo-600" />
               Meilleure Période
-            </h3>
+            </H3>
             <p className="text-gray-600">
               De juin à septembre pour la baignade. Juillet-août pour les meilleures conditions.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <DollarSign className="h-5 w-5 text-indigo-600" />
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
+              <DollarSign className="size-5 text-indigo-600" />
               Budget
-            </h3>
+            </H3>
             <p className="text-gray-600">
               Hébergement: 129-209$/nuit Activités: 15-75$/jour Repas: 20-50$/personne
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <Shield className="h-5 w-5 text-indigo-600" />À Noter
-            </h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
+              <Shield className="size-5 text-indigo-600" />À Noter
+            </H3>
             <p className="text-gray-600">
               Réservation essentielle en haute saison. Plage surveillée dans les zones principales.
             </p>
@@ -397,21 +401,21 @@ export default function BlogArticleWasagaBeach() {
         </div>
       </section>
 
-      <section className="text-center bg-gray-50 p-8 rounded-lg">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Prêt à Découvrir Wasaga Beach ?</h2>
-        <p className="text-gray-600 mb-6">
+      <section className="rounded-lg bg-gray-50 p-8 text-center">
+        <H2 className="mb-4 text-2xl font-bold text-gray-900">Prêt à Découvrir Wasaga Beach ?</H2>
+        <p className="mb-6 text-gray-600">
           Réservez votre séjour maintenant et profitez de la plus longue plage d'eau douce au monde
         </p>
         <div className="flex justify-center gap-4">
           <a
             href="https://www.booking.com/city/ca/wasaga-beach.html"
-            className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+            className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
           >
             Réserver un Hébergement
           </a>
           <a
             href="https://www.wasagabeach.com"
-            className="px-6 py-3 bg-white text-indigo-600 border border-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors"
+            className="rounded-lg border border-indigo-600 bg-white px-6 py-3 text-indigo-600 transition-colors hover:bg-indigo-50"
           >
             Explorer les Activités
           </a>

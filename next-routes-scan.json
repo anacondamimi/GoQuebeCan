@@ -1,0 +1,28 @@
+{
+  "mainPages": [
+    "/",
+    "/accessibilite",
+    "/blog",
+    "/camping",
+    "/conditions-utilisation",
+    "/confidentialite",
+    "/contact",
+    "/destinations",
+    "/expansion",
+    "/experiences",
+    "/ia-mathieu",
+    "/itineraires-communaute",
+    "/mentions-legales",
+    "/notre-mission",
+    "/objets",
+    "/offres",
+    "/planificateur",
+    "/producteurs",
+    "/static-page",
+    "/videos",
+    "/vols",
+    "/vr"
+  ],
+  "blogAppPages": ["[slug]"],
+  "blogContentFiles": []
+}

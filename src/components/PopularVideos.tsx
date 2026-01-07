@@ -3,6 +3,9 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Video, Search, X } from 'lucide-react';
+import H1 from '@/components/typography/H1';
+import H2 from '@/components/typography/H2';
+import H3 from '@/components/typography/H3';
 
 interface VideoItem {
   id: string;
@@ -251,34 +254,30 @@ export default function PopularVideos() {
   });
 
   return (
-    <section id="videos_populaires" className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center gap-3 mb-6">
-          <Video className="h-8 w-8 text-indigo-600" />
-          <h2 className="text-4xl font-bold text-center text-gray-900">Vidéos Populaires</h2>
+    <section id="videos_populaires" className="bg-gray-50 py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-6 flex items-center justify-center gap-3">
+          <Video className="size-8 text-indigo-600" />
+          <H1 className="text-center text-4xl font-bold text-gray-900">Vidéos Populaires</H1>
         </div>
 
-        <p className="text-xl text-center text-gray-600 mb-12">
-          Explorez nos destinations à travers des vidéos inspirantes
-        </p>
-
         {/* Search + Filter */}
-        <div className="flex flex-col md:flex-row gap-4 mb-8">
+        <div className="mb-8 flex flex-col gap-4 md:flex-row">
           <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+            <Search className="absolute left-3 top-1/2 size-5 -translate-y-1/2 text-gray-400" />
             <input
               type="text"
               placeholder="Rechercher une vidéo..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
+              className="w-full rounded-lg border py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-indigo-600"
             />
           </div>
 
           <select
             value={selectedDestination}
             onChange={(e) => setSelectedDestination(e.target.value)}
-            className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            className="rounded-lg border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
           >
             {destinations.map((destination) => (
               <option key={destination} value={destination}>
@@ -289,12 +288,12 @@ export default function PopularVideos() {
         </div>
 
         {/* Grid of Videos */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
           {filteredVideos.map((video) => (
             <div
               key={video.id}
               onClick={() => setSelectedVideo(video)}
-              className="bg-white rounded-xl shadow-lg overflow-hidden group cursor-pointer"
+              className="group cursor-pointer overflow-hidden rounded-xl bg-white shadow-lg"
               title={`Voir la vidéo : ${video.title}`}
             >
               <div className="relative h-40 sm:h-48">
@@ -305,14 +304,14 @@ export default function PopularVideos() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity flex items-center justify-center">
-                  <Video className="h-12 w-12 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 transition-opacity group-hover:bg-opacity-30">
+                  <Video className="size-12 text-white opacity-0 transition-opacity group-hover:opacity-100" />
                 </div>
               </div>
               <div className="p-4 sm:p-6">
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">
+                <H3 className="mb-2 text-base font-semibold text-gray-900 sm:text-lg">
                   {video.title}
-                </h3>
+                </H3>
                 <p className="text-sm text-gray-600">Destination: {video.destination}</p>
               </div>
             </div>
@@ -320,7 +319,7 @@ export default function PopularVideos() {
         </div>
 
         {filteredVideos.length === 0 && (
-          <div className="text-center py-12">
+          <div className="py-12 text-center">
             <p className="text-gray-600">Aucune vidéo ne correspond à votre recherche.</p>
           </div>
         )}
@@ -329,15 +328,15 @@ export default function PopularVideos() {
       {/* 🔥 MODAL */}
       {selectedVideo && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 p-4">
-          <div className="relative bg-white rounded-xl max-w-3xl w-full p-6">
+          <div className="relative w-full max-w-3xl rounded-xl bg-white p-6">
             <button
               onClick={() => setSelectedVideo(null)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
             >
-              <X className="h-6 w-6" />
+              <X className="size-6" />
             </button>
-            <h2 className="text-2xl font-bold mb-4">{selectedVideo.title}</h2>
-            <div className="relative w-full pb-[56.25%] mb-4">
+            <H2 className="mb-4 text-2xl font-bold">{selectedVideo.title}</H2>
+            <div className="relative mb-4 w-full pb-[56.25%]">
               <iframe
                 src={
                   selectedVideo.videoUrl?.includes('watch?v=')
@@ -345,7 +344,7 @@ export default function PopularVideos() {
                     : selectedVideo.videoUrl || 'https://www.youtube.com/embed/dQw4w9WgXcQ'
                 }
                 title={selectedVideo.title}
-                className="absolute top-0 left-0 w-full h-full rounded-lg"
+                className="absolute left-0 top-0 size-full rounded-lg"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

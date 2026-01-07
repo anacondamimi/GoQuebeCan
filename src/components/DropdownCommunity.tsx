@@ -50,7 +50,7 @@ export default function DropdownCommunity() {
       <button
         ref={buttonRef}
         onClick={() => setOpen((prev) => !prev)}
-        className="flex items-center gap-2 text-sm text-gray-700 hover:text-[#e11d48] hover:bg-[#e11d48]/10 px-2 py-2 rounded-md"
+        className="flex items-center gap-2 rounded-md p-2 text-sm text-gray-700 hover:bg-[#e11d48]/10 hover:text-[#e11d48]"
       >
         Communauté <ChevronDown size={18} />
       </button>
@@ -61,7 +61,7 @@ export default function DropdownCommunity() {
             ref={menuRef}
             role="menu"
             style={{ position: 'absolute', top: position.top, left: position.left, zIndex: 9999 }}
-            className="bg-white shadow-xl rounded-lg p-4 w-64"
+            className="w-64 rounded-lg bg-white p-4 shadow-xl"
           >
             <ul className="space-y-2">
               {items.map((item) => (

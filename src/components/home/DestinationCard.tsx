@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 import { MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import H3 from '@/components/typography/H3';
 
 interface DestinationCardProps {
   name: string;
@@ -31,35 +32,35 @@ export function DestinationCard({
   };
 
   const content = (
-    <div className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+    <div className="group overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-xl">
       <div className="relative h-48 overflow-hidden">
         <Image
           src={image}
           alt={name}
-          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+          className="size-full object-cover transition-transform duration-500 group-hover:scale-110"
           loading="lazy"
           width={800}
           height={600}
         />
         {location && (
-          <div className="absolute top-3 left-3">
-            <div className="flex items-center bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full text-xs font-medium text-gray-800">
-              <MapPin className="h-3 w-3 mr-1 text-indigo-600" />
+          <div className="absolute left-3 top-3">
+            <div className="flex items-center rounded-full bg-white/90 px-2 py-1 text-xs font-medium text-gray-800 backdrop-blur-sm">
+              <MapPin className="mr-1 size-3 text-indigo-600" />
               {location}
             </div>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
       </div>
       <div className="p-5">
-        <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">
+        <H3 className="mb-2 text-xl font-semibold text-gray-900 transition-colors group-hover:text-indigo-600">
           {name}
-        </h3>
-        <p className="text-gray-600 line-clamp-2">{description}</p>
+        </H3>
+        <p className="line-clamp-2 text-gray-600">{description}</p>
       </div>
       <div className="px-5 pb-5">
-        <div className="h-0 overflow-hidden group-hover:h-auto group-hover:mt-2 transition-all duration-300">
-          <span className="inline-block text-indigo-600 font-medium">
+        <div className="h-0 overflow-hidden transition-all duration-300 group-hover:mt-2 group-hover:h-auto">
+          <span className="inline-block font-medium text-indigo-600">
             {blogId ? "Lire l'article →" : 'Découvrir →'}
           </span>
         </div>

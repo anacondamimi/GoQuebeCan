@@ -1,12 +1,13 @@
 'use client';
 import React from 'react';
+import H1 from '@/components/typography/H1';
 import AffiliateCarousel from 'src/components/AffiliateCarousel';
 
 export default function AffiliateProductsPage() {
   return (
-    <main className="max-w-4xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4 text-center">🛍️ Voyagez dans le confort</h1>
-      <p className="text-center mb-6">
+    <main className="mx-auto max-w-4xl p-6">
+      <H1 className="mb-4 text-center text-3xl font-bold">🛍️ Voyagez dans le confort</H1>
+      <p className="mb-6 text-center">
         Découvrez notre sélection de produits de voyage recommandés aux Canadiens.
       </p>
       <AffiliateCarousel />

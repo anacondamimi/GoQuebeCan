@@ -4,15 +4,18 @@
 import React from 'react';
 import Chatbot from '@/components/ui/Chatbot';
 import Link from 'next/link';
+import H1 from '@/components/typography/H1';
+import H2 from '@/components/typography/H2';
+import BrandName from '@/components/brand/BrandName';
 
 export default function IAMathieuPage() {
   return (
-    <main className="min-h-screen bg-white text-gray-900 px-4 py-12 max-w-3xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6 text-center text-[#aa7fd5]">
+    <main className="mx-auto min-h-screen max-w-3xl bg-white px-4 py-12 text-gray-900">
+      <H1 className="mb-6 text-center text-4xl font-bold text-[#aa7fd5]">
         Bienvenue dans mon univers augmenté 🤖
-      </h1>
+      </H1>
 
-      <p className="mb-6 text-lg text-center">
+      <p className="mb-6 text-center text-lg">
         Je suis <strong>Mathieu Marciniak</strong>, entrepreneur passionné par l’<em>innovation</em>
         , la <em>qualité industrielle</em>, le <em>voyage authentique</em> et la{' '}
         <em>création assistée par IA</em>. Cette carte vous ouvre les portes de mes projets, de mes
@@ -24,11 +27,11 @@ export default function IAMathieuPage() {
       </div>
 
       <section className="mt-10 text-center">
-        <h2 className="text-2xl font-semibold mb-4 text-[#36b5ff]">Découvrir mes projets</h2>
+        <H2 className="mb-4 text-2xl font-semibold text-[#36b5ff]">Découvrir mes projets</H2>
         <ul className="space-y-2">
           <li>
             <Link href="https://www.goquebecan.com" className="text-blue-600 hover:underline">
-              🌍 GoQuébeCan – Explorer le Canada autrement
+              🌍 <BrandName /> – Explorer le Canada autrement
             </Link>
           </li>
           <li>

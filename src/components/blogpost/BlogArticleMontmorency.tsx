@@ -1,5 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
+import Link from 'next/link';
+import H1 from '@/components/typography/H1';
+import H2 from '@/components/typography/H2';
+import H3 from '@/components/typography/H3';
 
 export const metadata = {
   slug: 'montmorency',
@@ -22,30 +26,33 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide
 
 const hotels = [
   {
-    name: 'Manoir Montmorency',
-    category: 'Vue Panoramique',
-    description: 'Hôtel-boutique surplombant la chute',
-    price: 'À partir de 189$/nuit',
-    link: 'https://www.booking.com/hotel/ca/manoir-montmorency.html',
-    image: 'https://images.unsplash.com/photo-1595880375338-a78c3a07cef5?auto=format&fit=crop&q=80',
+    name: 'Royal Dalhousie',
+    category: 'Appartements vue fleuve',
+    description:
+      'Condos haut de gamme dans le Vieux-Port, avec grandes fenêtres, cuisines équipées et vue directe sur le fleuve et le mouvement des bateaux.',
+    price: 'À partir d’environ 300–400 $/nuit (selon la saison)',
+    link: 'https://www.booking.com/hotel/ca/royal-dalhousie.html',
+    image: '/images/destinations/hotels/royaldaousie-quebec.avif',
   },
   {
-    name: 'Auberge Baker',
-    category: 'Charme',
-    description: 'Auberge historique avec vue sur le fleuve',
-    price: 'À partir de 159$/nuit',
-    link: 'https://www.booking.com/hotel/ca/auberge-baker.html',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
+    name: 'Monsieur Jean – Hôtel Particulier',
+    category: 'Boutique & design',
+    description:
+      'Hôtel-boutique en Haute-Ville, au cœur du Vieux-Québec, avec déco contemporaine, mini-cuisines et certaines chambres offrant une vue superbe sur la ville.',
+    price: 'À partir d’environ 250–350 $/nuit (selon la saison)',
+    link: 'https://www.booking.com/hotel/ca/coeur-de-ville.fr.html',
+    image: '/images/destinations/hotels/monsieurjean-quebec.avif',
   },
   {
-    name: 'Comfort Inn Beauport',
-    category: 'Familial',
-    description: 'Hôtel moderne à proximité des attractions',
-    price: 'À partir de 129$/nuit',
-    link: 'https://www.booking.com/hotel/ca/comfort-inn-beauport.html',
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80',
+    name: 'Appartement Luxe – Sunset View, Pool, Parking, Near Old Québec',
+    category: 'Appartement avec piscine',
+    description:
+      'Appartement moderne avec vue sur le coucher de soleil, accès piscine (selon la saison) et stationnement, à distance de marche du Vieux-Québec.',
+    price: 'Tarifs variables selon les dates et la durée du séjour',
+    link: 'https://appartement-luxe-incredible-sunset-view-pool-parking.hotelsquebeccity.net/en/',
+    image: '/images/destinations/hotels/appartluxe-quebec.avif',
   },
-];
+] as const;
 
 const restaurants = [
   {
@@ -121,18 +128,16 @@ const familyActivities = [
 
 export default function BlogArticleMontmorency() {
   return (
-    <article id="blog_article_montmorency" className="max-w-4xl mx-auto px-4 py-12 bg-white">
-      <header className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Chute Montmorency et Chaudière-Appalaches
-        </h1>
+    <article id="blog_article_montmorency" className="mx-auto max-w-4xl bg-white px-4 py-12">
+      <header className="mb-12 text-center">
+        <H1 className="mb-4">Chute Montmorency et Chaudière-Appalaches</H1>
         <p className="text-xl text-gray-600">
           Découvrez la majestueuse chute de 83 mètres et explorez la région naturelle de
           Chaudière-Appalaches
         </p>
       </header>
 
-      <section className="prose lg:prose-xl mb-12">
+      <section className="prose mb-12 lg:prose-xl">
         <p>
           À seulement quelques minutes de Québec, la Chute Montmorency vous impressionnera par sa
           hauteur vertigineuse de 83 mètres (plus haute que les chutes Niagara!).
@@ -141,7 +146,7 @@ export default function BlogArticleMontmorency() {
           <Image
             src="/images/destinations/chute-montmorency.avif"
             alt="Chute Montmorency"
-            className="w-full h-96 object-cover rounded-lg shadow-lg"
+            className="h-96 w-full rounded-lg object-cover shadow-lg"
             width={800}
             height={600}
           />
@@ -154,26 +159,26 @@ export default function BlogArticleMontmorency() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Star className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Star className="size-8 text-indigo-600" />
           Pourquoi Visiter ?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Chute Spectaculaire</h3>
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 text-xl font-semibold">Chute Spectaculaire</H3>
             <p className="text-gray-600">
               Une des plus hautes chutes d'Amérique du Nord, offrant des vues à couper le souffle en
               toute saison.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Activités d'Aventure</h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 text-xl font-semibold">Activités d'Aventure</H3>
             <p className="text-gray-600">
               Via ferrata, tyrolienne et randonnées pour tous les niveaux.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3">Nature Préservée</h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 text-xl font-semibold">Nature Préservée</H3>
             <p className="text-gray-600">
               Parcs naturels et sentiers de la région Chaudière-Appalaches.
             </p>
@@ -182,15 +187,15 @@ export default function BlogArticleMontmorency() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
           Points de Vue Incontournables
-        </h2>
+        </H2>
         <div className="space-y-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Meilleurs Spots Photos</h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-4 text-xl font-semibold text-gray-900">Meilleurs Spots Photos</H3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full mt-2" />
+                <span className="mt-2 size-2 rounded-full bg-indigo-600" />
                 <div>
                   <h4 className="font-medium text-gray-900">Passerelle Suspendue</h4>
                   <p className="text-gray-600">
@@ -199,14 +204,14 @@ export default function BlogArticleMontmorency() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full mt-2" />
+                <span className="mt-2 size-2 rounded-full bg-indigo-600" />
                 <div>
                   <h4 className="font-medium text-gray-900">Escalier Panoramique</h4>
                   <p className="text-gray-600">300 marches offrant différents angles de vue.</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full mt-2" />
+                <span className="mt-2 size-2 rounded-full bg-indigo-600" />
                 <div>
                   <h4 className="font-medium text-gray-900">Manoir Montmorency</h4>
                   <p className="text-gray-600">
@@ -220,34 +225,34 @@ export default function BlogArticleMontmorency() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Star className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Star className="size-8 text-indigo-600" />
           Activités pour Enfants et Familles
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {familyActivities.map((activity) => (
-            <div key={activity.title} className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{activity.title}</h3>
-              <p className="text-gray-600 mb-2">{activity.description}</p>
-              <p className="text-indigo-600 font-medium">{activity.price}</p>
+            <div key={activity.title} className="rounded-lg bg-white p-6 shadow-md">
+              <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.title}</H3>
+              <p className="mb-2 text-gray-600">{activity.description}</p>
+              <p className="font-medium text-indigo-600">{activity.price}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
           Découvrir Chaudière-Appalaches
-        </h2>
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        </H2>
+        <div className="rounded-lg bg-white p-6 shadow-md">
           <Image
             src="/images/destinations/chaudiere-2.avif"
             alt="Chutes de la Chaudière"
-            className="w-full h-96 object-cover rounded-lg shadow-lg mb-4"
+            className="mb-4 h-96 w-full rounded-lg object-cover shadow-lg"
             width={800}
             height={600}
           />
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">Les Chutes de la Chaudière</h3>
+          <H3 className="mb-2 text-xl font-semibold text-gray-900">Les Chutes de la Chaudière</H3>
           <p className="text-gray-600">
             Une merveille naturelle impressionnante située dans la région de Chaudière-Appalaches,
             offrant des sentiers de randonnée et des points de vue spectaculaires sur les chutes.
@@ -256,19 +261,19 @@ export default function BlogArticleMontmorency() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
           Activités et Attractions
-        </h2>
+        </H2>
         <div className="space-y-8">
           {activities.map((activity) => (
             <a
               key={activity.name}
               href={activity.link}
-              className="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+              className="block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
             >
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{activity.name}</h3>
-                <p className="text-gray-600 mb-4">{activity.description}</p>
+                <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.name}</H3>
+                <p className="mb-4 text-gray-600">{activity.description}</p>
                 <div className="flex flex-wrap gap-4 text-sm text-gray-600">
                   <span>Type: {activity.type}</span>
                   <span>Durée: {activity.duration}</span>
@@ -281,60 +286,77 @@ export default function BlogArticleMontmorency() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Hotel className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Hotel className="size-8 text-indigo-600" />
           Où Dormir ?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        </H2>
+        <div className="not-prose mt-6 grid gap-6 md:grid-cols-3">
           {hotels.map((hotel) => (
-            <a
+            <article
               key={hotel.name}
-              href={hotel.link}
-              className="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+              className="flex flex-col overflow-hidden rounded-2xl border bg-white shadow-sm"
             >
-              <div className="relative h-48">
-                <Image
-                  src={hotel.image}
-                  alt={hotel.name}
-                  className="w-full h-full object-cover"
-                  width={800}
-                  height={600}
-                />
+              <div className="relative h-40 w-full">
+                <Image src={hotel.image} alt={hotel.name} fill className="object-cover" />
               </div>
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-semibold text-gray-900">{hotel.name}</h3>
-                  <span className="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-sm">
-                    {hotel.category}
-                  </span>
-                </div>
-                <p className="text-gray-600 mb-4">{hotel.description}</p>
-                <p className="text-indigo-600 font-semibold">{hotel.price}</p>
+
+              <div className="flex flex-1 flex-col p-4">
+                {/* Badge catégorie */}
+                <p className="mb-2 inline-flex rounded-md bg-indigo-50 px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-indigo-700">
+                  {hotel.category}
+                </p>
+
+                {/* Nom de l’hôtel = SEUL élément cliquable principal */}
+                <H3 className="text-base font-semibold leading-snug text-slate-900">
+                  <Link
+                    href={hotel.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4 hover:text-sky-700"
+                  >
+                    {hotel.name}
+                  </Link>
+                </H3>
+
+                {/* Description non cliquable */}
+                <p className="mt-2 text-sm text-slate-700">{hotel.description}</p>
+
+                {/* Prix : CTA discret vers Booking (optionnel) */}
+                <p className="mt-3 text-sm font-semibold">
+                  <Link
+                    href={hotel.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sky-700 underline underline-offset-2 hover:text-sky-800"
+                  >
+                    {hotel.price}
+                  </Link>
+                </p>
               </div>
-            </a>
+            </article>
           ))}
         </div>
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Utensils className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Utensils className="size-8 text-indigo-600" />
           Où Manger ?
-        </h2>
+        </H2>
         <div className="space-y-6">
           {restaurants.map((restaurant) => (
-            <div key={restaurant.name} className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex justify-between items-start mb-4">
+            <div key={restaurant.name} className="rounded-lg bg-white p-6 shadow-md">
+              <div className="mb-4 flex items-start justify-between">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">{restaurant.name}</h3>
+                  <H3 className="mb-1 text-xl font-semibold text-gray-900">{restaurant.name}</H3>
                   <p className="text-gray-600">{restaurant.type}</p>
                 </div>
-                <span className="text-indigo-600 font-semibold">{restaurant.price}</span>
+                <span className="font-semibold text-indigo-600">{restaurant.price}</span>
               </div>
-              <p className="text-gray-700 mb-2">
+              <p className="mb-2 text-gray-700">
                 <span className="font-medium">Spécialité:</span> {restaurant.speciality}
               </p>
-              <p className="text-gray-700 mb-2">
+              <p className="mb-2 text-gray-700">
                 <span className="font-medium">À essayer:</span> {restaurant.mustTry}
               </p>
               <p className="text-gray-700">
@@ -346,41 +368,41 @@ export default function BlogArticleMontmorency() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Bus className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Bus className="size-8 text-indigo-600" />
           Comment s'y Rendre ?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-4">Depuis Québec</h3>
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-4 text-xl font-semibold">Depuis Québec</H3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 15 minutes en voiture depuis le Vieux-Québec
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Bus RTC 800 (service régulier)
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Taxi (~30$ depuis le centre-ville)
               </li>
             </ul>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-4">Stationnement</h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-4 text-xl font-semibold">Stationnement</H3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Stationnement payant sur place
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Navette gratuite entre les stationnements
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-indigo-600 rounded-full" />
+                <span className="size-2 rounded-full bg-indigo-600" />
                 Places réservées pour les autobus
               </li>
             </ul>
@@ -389,33 +411,33 @@ export default function BlogArticleMontmorency() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-          <Calendar className="h-8 w-8 text-indigo-600" />
+        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+          <Calendar className="size-8 text-indigo-600" />
           Conseils Pratiques
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <Calendar className="h-5 w-5 text-indigo-600" />
+        </H2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
+              <Calendar className="size-5 text-indigo-600" />
               Meilleure Période
-            </h3>
+            </H3>
             <p className="text-gray-600">
               Toute l'année : été pour les activités, hiver pour le pain de glace.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <DollarSign className="h-5 w-5 text-indigo-600" />
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
+              <DollarSign className="size-5 text-indigo-600" />
               Budget
-            </h3>
+            </H3>
             <p className="text-gray-600">
               Prévoir 100-150$/jour incluant l'hébergement, les repas et les activités.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-              <Shield className="h-5 w-5 text-indigo-600" />À Noter
-            </h3>
+          <div className="rounded-lg bg-white p-6 shadow-md">
+            <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
+              <Shield className="size-5 text-indigo-600" />À Noter
+            </H3>
             <p className="text-gray-600">
               Réservation conseillée pour les activités d'aventure en haute saison.
             </p>
@@ -423,23 +445,23 @@ export default function BlogArticleMontmorency() {
         </div>
       </section>
 
-      <section className="text-center bg-gray-50 p-8 rounded-lg">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">
+      <section className="rounded-lg bg-gray-50 p-8 text-center">
+        <H2 className="mb-4 text-2xl font-bold text-gray-900">
           Prêt à Explorer la Chute Montmorency ?
-        </h2>
-        <p className="text-gray-600 mb-6">
+        </H2>
+        <p className="mb-6 text-gray-600">
           Réservez votre séjour maintenant et profitez de nos offres exclusives
         </p>
         <div className="flex justify-center gap-4">
           <a
             href="https://www.sepaq.com/ct/pcm/"
-            className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+            className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
           >
             Réserver les Activités
           </a>
           <a
             href="https://www.booking.com/landmark/ca/montmorency-falls.html"
-            className="px-6 py-3 bg-white text-indigo-600 border border-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors"
+            className="rounded-lg border border-indigo-600 bg-white px-6 py-3 text-indigo-600 transition-colors hover:bg-indigo-50"
           >
             Trouver un Hébergement
           </a>

@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import H3 from '@/components/typography/H3';
 import { destinations } from '@/data/destinationsData';
 import type { Region, DestinationArticle } from '@/data/destinationsData';
 
@@ -36,21 +37,17 @@ export default function GroupedDestinations() {
   const grouped = getGroupedDestinations();
 
   return (
-    <section className="py-12 bg-[#fffdf8]">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-[#b91c1c] text-center mb-10">
-          Destinations par région
-        </h2>
-
+    <section className="bg-[#fffdf8] py-12">
+      <div className="mx-auto max-w-6xl px-4">
         {Object.entries(grouped).map(([regionName, regionDestinations]) => (
           <div key={regionName} className="mb-12">
-            <h3 className="text-xl font-bold text-gray-800 mb-4">{regionName}</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <H3 className="mb-4 text-xl font-bold text-gray-800">{regionName}</H3>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
               {regionDestinations.map((dest, i) => (
                 <Link
                   key={`${regionName}-${i}`}
                   href={dest.slug}
-                  className="group block rounded-xl overflow-hidden shadow hover:shadow-lg transition bg-white"
+                  className="group block overflow-hidden rounded-xl bg-white shadow transition hover:shadow-lg"
                 >
                   <div className="relative h-44 w-full">
                     <Image
@@ -58,7 +55,7 @@ export default function GroupedDestinations() {
                       alt={dest.title}
                       fill
                       sizes="100vw"
-                      className="object-cover group-hover:scale-105 transition duration-300"
+                      className="object-cover transition duration-300 group-hover:scale-105"
                     />
                   </div>
                   <div className="p-4">

@@ -62,7 +62,7 @@ export default function DropdownDestinations() {
         onClick={() => setOpen((prev) => !prev)}
         aria-expanded={open}
         aria-haspopup="true"
-        className="flex items-center gap-2 text-sm text-gray-700 hover:text-[#e11d48] hover:bg-[#e11d48]/10 px-2 py-2 rounded-md"
+        className="flex items-center gap-2 rounded-md p-2 text-sm text-gray-700 hover:bg-[#e11d48]/10 hover:text-[#e11d48]"
       >
         <span>Destinations</span>
         <ChevronDown size={18} />
@@ -74,26 +74,26 @@ export default function DropdownDestinations() {
             ref={menuRef}
             role="menu"
             style={{ position: 'absolute', top: position.top, left: position.left, zIndex: 9999 }}
-            className="bg-white shadow-xl w-80 max-h-[80vh] overflow-y-auto rounded-lg p-4"
+            className="max-h-[80vh] w-80 overflow-y-auto rounded-lg bg-white p-4 shadow-xl"
           >
             {destinations.map((region: Region) => (
               <div key={region.slug} className="mb-4">
-                <p className="font-semibold text-indigo-600 mb-1">{region.title}</p>
-                <ul className="space-y-1 ml-4">
+                <p className="mb-1 font-semibold text-indigo-600">{region.title}</p>
+                <ul className="ml-4 space-y-1">
                   {region.articles.map((article: Article) => (
                     <li key={article.slug}>
                       {article.published === false ? (
                         <span
-                          className="text-sm text-gray-400 italic cursor-not-allowed"
+                          className="cursor-not-allowed text-sm italic text-gray-400"
                           title="Article en cours de rédaction"
+                          aria-disabled="true"
                         >
                           {article.title} (en cours)
                         </span>
                       ) : (
                         <Link
                           href={`/blog/${article.slug}`}
-                          className="hover:underline hover:text-indigo-500 text-sm"
-                          onClick={() => setOpen(false)}
+                          className="text-sm hover:text-indigo-500 hover:underline"
                         >
                           {article.title}
                         </Link>

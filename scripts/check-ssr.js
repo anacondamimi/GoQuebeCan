@@ -12,7 +12,7 @@ exec('npm run build', (error, stdout, stderr) => {
     if (stderr.includes('window is not defined')) {
       console.log('\n💡 Suggestions:');
       console.log(
-        '1. Vérifiez que tous les composants utilisant window sont wrappés avec dynamic()'
+        '1. Vérifiez que tous les composants utilisant window sont wrappés avec dynamic()',
       );
       console.log('2. Utilisez useEffect() pour les appels window/document/localStorage');
       console.log('3. Ajoutez des vérifications typeof window !== "undefined"');

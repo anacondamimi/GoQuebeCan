@@ -19,7 +19,7 @@ export async function POST(req: Request) {
       console.error('[API ERROR] Messages invalides :', messages);
       return NextResponse.json(
         { error: 'Messages manquants ou au mauvais format' },
-        { status: 400 }
+        { status: 400 },
       );
     }
 

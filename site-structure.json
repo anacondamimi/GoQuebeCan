@@ -1,309 +1,15 @@
 [
   {
-    "type": "folder",
-    "name": "app",
-    "children": [
-      {
-        "type": "folder",
-        "name": "accessibilite",
-        "children": [
-          {
-            "type": "file",
-            "name": "page.tsx"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "api",
-        "children": [
-          {
-            "type": "folder",
-            "name": "chat",
-            "children": [
-              {
-                "type": "file",
-                "name": "route.ts"
-              }
-            ]
-          },
-          {
-            "type": "folder",
-            "name": "send-pdf",
-            "children": [
-              {
-                "type": "file",
-                "name": "route.ts"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "file",
-        "name": "bannerTexts.ts"
-      },
-      {
-        "type": "folder",
-        "name": "blog",
-        "children": [
-          {
-            "type": "file",
-            "name": "componentMap.ts"
-          },
-          {
-            "type": "file",
-            "name": "not-found.tsx"
-          },
-          {
-            "type": "file",
-            "name": "page.tsx"
-          },
-          {
-            "type": "folder",
-            "name": "[slug]",
-            "children": [
-              {
-                "type": "file",
-                "name": "page.tsx"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "camping",
-        "children": [
-          {
-            "type": "file",
-            "name": "page.tsx"
-          }
-        ]
-      },
-      {
-        "type": "file",
-        "name": "ClientWrapper.tsx"
-      },
-      {
-        "type": "folder",
-        "name": "conditions-utilisation",
-        "children": [
-          {
-            "type": "file",
-            "name": "page.tsx"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "confidentialite",
-        "children": [
-          {
-            "type": "file",
-            "name": "page.tsx"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "contact",
-        "children": [
-          {
-            "type": "file",
-            "name": "page.tsx"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "destinations",
-        "children": [
-          {
-            "type": "file",
-            "name": "layoutold.tsx"
-          },
-          {
-            "type": "file",
-            "name": "page.tsx"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "experiences",
-        "children": [
-          {
-            "type": "file",
-            "name": "page.tsx"
-          }
-        ]
-      },
-      {
-        "type": "file",
-        "name": "globals.css"
-      },
-      {
-        "type": "folder",
-        "name": "ia-mathieu",
-        "children": [
-          {
-            "type": "file",
-            "name": "page.tsx"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "itineraires-communaute",
-        "children": [
-          {
-            "type": "file",
-            "name": "page.tsx"
-          }
-        ]
-      },
-      {
-        "type": "file",
-        "name": "layout.tsx"
-      },
-      {
-        "type": "file",
-        "name": "LayoutWithBanner.tsx"
-      },
-      {
-        "type": "folder",
-        "name": "lib",
-        "children": [
-          {
-            "type": "file",
-            "name": "destinationMap.ts"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "mentions-legales",
-        "children": [
-          {
-            "type": "file",
-            "name": "page.tsx"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "notre-mission",
-        "children": [
-          {
-            "type": "file",
-            "name": "page.tsx"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "objets",
-        "children": [
-          {
-            "type": "file",
-            "name": "page.tsx"
-          }
-        ]
-      },
-      {
-        "type": "file",
-        "name": "page.tsx"
-      },
-      {
-        "type": "folder",
-        "name": "partage",
-        "children": [
-          {
-            "type": "folder",
-            "name": "[slug]",
-            "children": [
-              {
-                "type": "file",
-                "name": "Page.tsx"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "planificateur",
-        "children": [
-          {
-            "type": "file",
-            "name": "page.tsx"
-          }
-        ]
-      },
-      {
-        "type": "file",
-        "name": "robots.ts"
-      },
-      {
-        "type": "folder",
-        "name": "robots.txt",
-        "children": [
-          {
-            "type": "file",
-            "name": "route.ts"
-          }
-        ]
-      },
-      {
-        "type": "file",
-        "name": "sitemap.ts"
-      },
-      {
-        "type": "folder",
-        "name": "static-page",
-        "children": [
-          {
-            "type": "file",
-            "name": "page.tsx"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "videos",
-        "children": [
-          {
-            "type": "file",
-            "name": "page.tsx"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "vols",
-        "children": [
-          {
-            "type": "file",
-            "name": "page.tsx"
-          },
-          {
-            "type": "file",
-            "name": "VolsClient.tsx"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "vr",
-        "children": [
-          {
-            "type": "file",
-            "name": "page.tsx"
-          }
-        ]
-      }
-    ]
+    "type": "file",
+    "name": "addDefaultExports.js"
+  },
+  {
+    "type": "file",
+    "name": "addLatLngToDestinations.js"
+  },
+  {
+    "type": "file",
+    "name": "addLatLngToMicrobreweries.js"
   },
   {
     "type": "file",
@@ -311,11 +17,39 @@
   },
   {
     "type": "file",
+    "name": "check-ssr.js"
+  },
+  {
+    "type": "file",
+    "name": "checkUseClientSmart.mjs"
+  },
+  {
+    "type": "file",
     "name": "cleanAndVerifyBlog.ts"
   },
   {
     "type": "file",
-    "name": "eslint.config.js"
+    "name": "convertCsvToJson.mjs"
+  },
+  {
+    "type": "file",
+    "name": "convertGeojson.mjs"
+  },
+  {
+    "type": "file",
+    "name": "createDestination.mjs"
+  },
+  {
+    "type": "file",
+    "name": "extractBrokenOnly.cjs"
+  },
+  {
+    "type": "file",
+    "name": "find-window.cjs"
+  },
+  {
+    "type": "file",
+    "name": "fix-ssr-issues.js"
   },
   {
     "type": "file",
@@ -327,11 +61,27 @@
   },
   {
     "type": "file",
+    "name": "fixYoutubeUrls.mjs"
+  },
+  {
+    "type": "file",
+    "name": "fullCleanupIcons.mjs"
+  },
+  {
+    "type": "file",
+    "name": "generateBlogMeta.mjs"
+  },
+  {
+    "type": "file",
     "name": "generateComponentMap.ts"
   },
   {
     "type": "file",
     "name": "generateComponentMap_with_then.ts"
+  },
+  {
+    "type": "file",
+    "name": "generateDestinationsJson.mjs"
   },
   {
     "type": "file",
@@ -343,7 +93,11 @@
   },
   {
     "type": "file",
-    "name": "migrate-to-src.ps1"
+    "name": "getDestinations.mjs"
+  },
+  {
+    "type": "file",
+    "name": "missing-image-dimensions-report.txt"
   },
   {
     "type": "file",
@@ -351,693 +105,34 @@
   },
   {
     "type": "file",
-    "name": "next-env.d.ts"
+    "name": "removeScroll.mjs"
   },
   {
     "type": "file",
-    "name": "next.config.mjs"
+    "name": "removeUnusedIcons.mjs"
   },
   {
     "type": "file",
-    "name": "nextjs_cleanup.sh"
+    "name": "renameProducers.js"
   },
   {
     "type": "file",
-    "name": "package-lock.json"
+    "name": "scan-browser-apis.js"
   },
   {
     "type": "file",
-    "name": "package.json"
+    "name": "scanLinks.cjs"
   },
   {
     "type": "file",
-    "name": "postcss.config.cjs"
+    "name": "seoTemplate.js"
   },
   {
     "type": "file",
-    "name": "prettier.config.js"
+    "name": "source.geojson"
   },
   {
     "type": "file",
-    "name": "project-dirs.txt"
-  },
-  {
-    "type": "file",
-    "name": "README.md"
-  },
-  {
-    "type": "file",
-    "name": "scanDuplicateTsx.js"
-  },
-  {
-    "type": "file",
-    "name": "scrapeCampingLinks-puppeteer.js"
-  },
-  {
-    "type": "folder",
-    "name": "scripts",
-    "children": [
-      {
-        "type": "file",
-        "name": "addDefaultExports.js"
-      },
-      {
-        "type": "file",
-        "name": "addLatLngToDestinations.js"
-      },
-      {
-        "type": "file",
-        "name": "addReactImport.js"
-      },
-      {
-        "type": "file",
-        "name": "auditNext15.ts"
-      },
-      {
-        "type": "file",
-        "name": "checkUseClientSmart.js"
-      },
-      {
-        "type": "file",
-        "name": "convertGeojson.js"
-      },
-      {
-        "type": "file",
-        "name": "createDestination.js"
-      },
-      {
-        "type": "folder",
-        "name": "data",
-        "children": []
-      },
-      {
-        "type": "file",
-        "name": "fixBlogMeta.js"
-      },
-      {
-        "type": "file",
-        "name": "fixImportsAndTypes.js"
-      },
-      {
-        "type": "file",
-        "name": "fixUseClient.js"
-      },
-      {
-        "type": "file",
-        "name": "fixYoutubeUrls.js"
-      },
-      {
-        "type": "file",
-        "name": "fullCleanupIcons.js"
-      },
-      {
-        "type": "file",
-        "name": "generateBlogMeta.js"
-      },
-      {
-        "type": "file",
-        "name": "generateCSPDirectives.js"
-      },
-      {
-        "type": "file",
-        "name": "generateDestinationsJson.js"
-      },
-      {
-        "type": "file",
-        "name": "getDestinations.js"
-      },
-      {
-        "type": "file",
-        "name": "producers.json"
-      },
-      {
-        "type": "file",
-        "name": "removeScroll.js"
-      },
-      {
-        "type": "file",
-        "name": "removeUnusedIcons.js"
-      },
-      {
-        "type": "file",
-        "name": "replaceDestinationImages.js"
-      },
-      {
-        "type": "file",
-        "name": "seoTemplate.js"
-      },
-      {
-        "type": "file",
-        "name": "source.geojson"
-      },
-      {
-        "type": "file",
-        "name": "structure.js"
-      }
-    ]
-  },
-  {
-    "type": "file",
-    "name": "simplifyStructure.cjs"
-  },
-  {
-    "type": "folder",
-    "name": "src",
-    "children": [
-      {
-        "type": "folder",
-        "name": "components",
-        "children": [
-          {
-            "type": "folder",
-            "name": "admin",
-            "children": [
-              {
-                "type": "file",
-                "name": "AddCommunityPDF.tsx"
-              },
-              {
-                "type": "file",
-                "name": "AddProducteur.tsx"
-              }
-            ]
-          },
-          {
-            "type": "file",
-            "name": "AffiliateCard.tsx"
-          },
-          {
-            "type": "file",
-            "name": "BannerCarousel.tsx"
-          },
-          {
-            "type": "folder",
-            "name": "blog",
-            "children": [
-              {
-                "type": "file",
-                "name": "BlogComponents.ts"
-              }
-            ]
-          },
-          {
-            "type": "file",
-            "name": "Blog.tsx"
-          },
-          {
-            "type": "folder",
-            "name": "blogpost",
-            "children": [
-              {
-                "type": "file",
-                "name": "BlogArticleAnseSaintJean.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleBaieSaintPaul.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleBic.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleBromontGranby.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleCanyon.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleCarleton.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleEeyouIstchee.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleForillon.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleGaspesie.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleGrandBend.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleHautesGorges.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleKamouraska.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleKuururjuaq.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleLevis.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleLocationVR.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleMagogOrford.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleMassif.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleMingan.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleMontmorency.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleMontreal.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleOrleans.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticlePerce.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticlePortAuPersil.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticlePortCartier.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticlePortDover.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleQuebec.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleRiviereduLoup.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleSabrevois.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleSandbanks.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleSaubleBeach.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleSeptIles.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleSherbrooke.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleSingingSands.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleTadoussac.tsx"
-              },
-              {
-                "type": "file",
-                "name": "BlogArticleWasagaBeach.tsx"
-              },
-              {
-                "type": "file",
-                "name": "index.ts"
-              }
-            ]
-          },
-          {
-            "type": "file",
-            "name": "BonsPlansSection.tsx"
-          },
-          {
-            "type": "file",
-            "name": "CampingBlog.tsx"
-          },
-          {
-            "type": "file",
-            "name": "CampingGuide.tsx"
-          },
-          {
-            "type": "file",
-            "name": "CampingList.tsx"
-          },
-
-          {
-            "type": "folder",
-            "name": "contexts",
-            "children": [
-              {
-                "type": "file",
-                "name": "SiteContext.tsx"
-              }
-            ]
-          },
-          {
-            "type": "file",
-            "name": "CookieBanner.tsx"
-          },
-          {
-            "type": "file",
-            "name": "DropdownDestinations.tsx"
-          },
-          {
-            "type": "file",
-            "name": "Features.tsx"
-          },
-          {
-            "type": "file",
-            "name": "FoodStops.tsx"
-          },
-          {
-            "type": "file",
-            "name": "Header.tsx"
-          },
-          {
-            "type": "folder",
-            "name": "home",
-            "children": [
-              {
-                "type": "file",
-                "name": "AuthenticExperiences.tsx"
-              },
-              {
-                "type": "file",
-                "name": "DestinationCard.tsx"
-              },
-              {
-                "type": "file",
-                "name": "FeatureCard.tsx"
-              }
-            ]
-          },
-          {
-            "type": "file",
-            "name": "ItineraryPlanner.tsx"
-          },
-          {
-            "type": "file",
-            "name": "ItinerarySummary.tsx"
-          },
-          {
-            "type": "folder",
-            "name": "layout",
-            "children": [
-              {
-                "type": "file",
-                "name": "Footer.tsx"
-              }
-            ]
-          },
-          {
-            "type": "folder",
-            "name": "lib",
-            "children": [
-              {
-                "type": "file",
-                "name": "cors.ts"
-              },
-              {
-                "type": "folder",
-                "name": "data",
-                "children": null
-              },
-              {
-                "type": "file",
-                "name": "getContentSuggestions.ts"
-              },
-              {
-                "type": "file",
-                "name": "saveContact.ts"
-              },
-              {
-                "type": "file",
-                "name": "saveFeedback.ts"
-              },
-              {
-                "type": "file",
-                "name": "saveItinerary.ts"
-              },
-              {
-                "type": "file",
-                "name": "supabase.ts"
-              },
-              {
-                "type": "folder",
-                "name": "types",
-                "children": null
-              }
-            ]
-          },
-          {
-            "type": "file",
-            "name": "MapboxAutocomplete.tsx"
-          },
-          {
-            "type": "file",
-            "name": "MapWithRouting.tsx"
-          },
-          {
-            "type": "file",
-            "name": "Navbar.tsx"
-          },
-          {
-            "type": "file",
-            "name": "Offers.tsx"
-          },
-          {
-            "type": "file",
-            "name": "PopularDestinations.tsx"
-          },
-          {
-            "type": "file",
-            "name": "PopularVideos.tsx"
-          },
-          {
-            "type": "file",
-            "name": "ProducersMap.tsx"
-          },
-          {
-            "type": "file",
-            "name": "ProducersMapFiltrable.tsx"
-          },
-          {
-            "type": "file",
-            "name": "ProducerTypeFilter.tsx"
-          },
-          {
-            "type": "file",
-            "name": "Products.tsx"
-          },
-          {
-            "type": "file",
-            "name": "SEO.tsx"
-          },
-          {
-            "type": "file",
-            "name": "Skyscanner.tsx"
-          },
-          {
-            "type": "file",
-            "name": "TravelEssentials.tsx"
-          },
-          {
-            "type": "file",
-            "name": "TravelGuide.tsx"
-          },
-          {
-            "type": "folder",
-            "name": "ui",
-            "children": [
-              {
-                "type": "file",
-                "name": "Button.tsx"
-              },
-              {
-                "type": "file",
-                "name": "Card.tsx"
-              },
-              {
-                "type": "file",
-                "name": "Chatbot.tsx"
-              },
-              {
-                "type": "file",
-                "name": "Container.tsx"
-              },
-              {
-                "type": "file",
-                "name": "DropdownPortal.tsx"
-              },
-              {
-                "type": "file",
-                "name": "Head.tsx"
-              },
-              {
-                "type": "file",
-                "name": "HeroBanner.tsx"
-              },
-              {
-                "type": "file",
-                "name": "Section.tsx"
-              },
-              {
-                "type": "file",
-                "name": "SectionTitle.tsx"
-              }
-            ]
-          },
-          {
-            "type": "file",
-            "name": "WaterParks.tsx"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "data",
-        "children": [
-          {
-            "type": "file",
-            "name": "affiliateLinks.ts"
-          },
-          {
-            "type": "file",
-            "name": "campings.json"
-          },
-          {
-            "type": "file",
-            "name": "campings_a_completer.json"
-          },
-          {
-            "type": "file",
-            "name": "contentMap.ts"
-          },
-          {
-            "type": "file",
-            "name": "destinations.json"
-          },
-          {
-            "type": "file",
-            "name": "destinationsData.ts"
-          },
-          {
-            "type": "file",
-            "name": "producers.json"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "old",
-        "children": []
-      },
-      {
-        "type": "folder",
-        "name": "types",
-        "children": [
-          {
-            "type": "file",
-            "name": "attraction.ts"
-          },
-          {
-            "type": "file",
-            "name": "CampingData.ts"
-          },
-          {
-            "type": "file",
-            "name": "leaflet-routing-machine.d.ts"
-          },
-          {
-            "type": "file",
-            "name": "waypoint.ts"
-          }
-        ]
-      },
-      {
-        "type": "folder",
-        "name": "utils",
-        "children": [
-          {
-            "type": "file",
-            "name": "itineraryStorage.client.ts"
-          },
-          {
-            "type": "file",
-            "name": "suggestNearbyProducers.ts"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "file",
-    "name": "structure.json"
-  },
-  {
-    "type": "file",
-    "name": "tailwind.config.cjs"
-  },
-  {
-    "type": "file",
-    "name": "test-openai.mjs"
-  },
-  {
-    "type": "file",
-    "name": "tsconfig.app.tsbuildinfo"
-  },
-  {
-    "type": "file",
-    "name": "tsconfig.json"
-  },
-  {
-    "type": "file",
-    "name": "tsconfig.node.json"
-  },
-  {
-    "type": "file",
-    "name": "tsconfig.tsbuildinfo"
-  },
-  {
-    "type": "folder",
-    "name": "types",
-    "children": [
-      {
-        "type": "file",
-        "name": "html2pdf.d.ts"
-      }
-    ]
-  },
-  {
-    "type": "file",
-    "name": "verify-default-exports.js"
+    "name": "structure.mjs"
   }
 ]

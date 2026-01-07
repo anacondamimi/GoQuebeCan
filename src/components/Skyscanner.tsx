@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import H2 from '@/components/typography/H2';
+
 export function Skyscanner() {
   useEffect(() => {
     const script = document.createElement('script');
@@ -14,9 +16,9 @@ export function Skyscanner() {
   }, []);
 
   return (
-    <section className="py-16 bg-gray-100">
-      <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Comparateur de Vols</h2>
+    <section className="bg-gray-100 py-16">
+      <div className="mx-auto max-w-4xl px-4">
+        <H2 className="mb-8 text-center text-3xl font-bold text-gray-900">Comparateur de Vols</H2>
         <div
           className="skyscanner-widget"
           data-skyscanner-widget="SearchWidget"

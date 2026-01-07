@@ -1,61 +1,95 @@
 'use client';
-import React from 'react';
 
-import { createContext, useContext, useState, ReactNode } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  type ReactNode,
+  type Dispatch,
+  type SetStateAction,
+} from 'react';
 
 // ✅ Type du message utilisé dans le chatbot
 export interface Message {
   text: string;
   isUser: boolean;
-  timestamp: Date;
+  timestamp: string; // format ISO (compatible SSR/JSON)
 }
 
-// ✅ Interface du contexte partagé à toute l'app
+// ✅ Interface du contexte global
 interface SiteContextType {
   chatOpen: boolean;
-  setChatOpen: (open: boolean) => void;
+  setChatOpen: Dispatch<SetStateAction<boolean>>;
 
   messages: Message[];
-  setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
+  setMessages: Dispatch<SetStateAction<Message[]>>;
 
   isTyping: boolean;
-  setIsTyping: (typing: boolean) => void;
+  setIsTyping: Dispatch<SetStateAction<boolean>>;
 }
 
 // ✅ Création du contexte
 const SiteContext = createContext<SiteContextType | undefined>(undefined);
 
-// ✅ Fournisseur du contexte
+// ✅ Fournisseur global du contexte
 export function SiteProvider({ children }: { children: ReactNode }) {
   const [chatOpen, setChatOpen] = useState(false);
-
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      text: '👋 Bonjour ! Je suis votre assistant voyage au Québec. Posez-moi vos questions : destinations, camping, hôtels, budget, famille…',
-      isUser: false,
-      timestamp: new Date(),
-    },
-  ]);
-
+  const [messages, setMessages] = useState<Message[]>([]);
   const [isTyping, setIsTyping] = useState(false);
 
-  return (
-    <SiteContext.Provider
-      value={{
-        chatOpen,
-        setChatOpen,
-        messages,
-        setMessages,
-        isTyping,
-        setIsTyping,
-      }}
-    >
-      {children}
-    </SiteContext.Provider>
-  );
+  // ✅ 1. Charger les messages depuis localStorage (ou afficher message de bienvenue)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const stored = localStorage.getItem('goquebecan_messages');
+    if (stored) {
+      try {
+        const parsed: Message[] = JSON.parse(stored);
+        setMessages(parsed);
+        return;
+      } catch {
+        console.warn('Impossible de lire les messages du localStorage.');
+      }
+    }
+
+    // Aucun message → message de bienvenue
+    setMessages([
+      {
+        text: '👋 Bonjour ! Je suis votre assistant voyage au Québec. Posez-moi vos questions : destinations, camping, hôtels, budget, famille…',
+        isUser: false,
+        timestamp: new Date().toISOString(),
+      },
+    ]);
+  }, []);
+
+  // ✅ 2. Sauvegarder automatiquement les 50 derniers messages
+  useEffect(() => {
+    if (typeof window !== 'undefined' && messages.length > 0) {
+      // Ne garder que les 50 plus récents
+      const limited = messages.slice(-50);
+      localStorage.setItem('goquebecan_messages', JSON.stringify(limited));
+
+      // Si le tableau dépasse 50, on met à jour l’état pour purger les anciens
+      if (limited.length !== messages.length) {
+        setMessages(limited);
+      }
+    }
+  }, [messages]);
+
+  const value: SiteContextType = {
+    chatOpen,
+    setChatOpen,
+    messages,
+    setMessages,
+    isTyping,
+    setIsTyping,
+  };
+
+  return <SiteContext.Provider value={value}>{children}</SiteContext.Provider>;
 }
 
-// ✅ Hook pour utiliser le contexte
+// ✅ Hook d'accès au contexte
 export function useSite(): SiteContextType {
   const context = useContext(SiteContext);
   if (!context) {
