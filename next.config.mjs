@@ -98,16 +98,16 @@ const nextConfig = {
   },
 
   // 🔁 Redirection canonique (www → sans www)
-  async redirects() {
-    return [
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.goquebecan.com' }],
-        destination: 'https://goquebecan.com/:path*',
-        permanent: true,
-      },
-    ];
-  },
+  // async redirects() {
+  // return [
+  //   {
+  //     source: '/:path*',
+  //    has: [{ type: 'host', value: 'www.goquebecan.com' }],
+  //    destination: 'https://goquebecan.com/:path*',
+  //    permanent: true,
+  //  },
+  // ];
+  // },
 
   // 🔒 Headers de sécurité
   async headers() {
