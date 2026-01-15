@@ -37,7 +37,7 @@ const KEYWORDS = [
 ];
 
 const PUBLISHED = '2025-07-01';
-const MODIFIED = '2025-11-18';
+const MODIFIED = '2026-01-14';
 
 // ======= METADATA SEO 2025 =======
 
@@ -77,7 +77,7 @@ const hotelsVueMer: StayCardProps[] = [
     description:
       'Chambres modernes face au Rocher Percé, avec terrasse pour admirer le lever du soleil et finir la journée en douceur après les excursions en bateau.',
     link: 'https://www.booking.com/hotel/ca/riotel-perce.fr.html',
-    image: '/images/destinations/hotels/riotelperce.avif',
+    image: '/images/destinations/hotels/riohotel-perce.avif',
     extra:
       'Idéal pour les familles qui veulent un peu de confort tout en restant au cœur de l’action.',
   },
@@ -87,8 +87,8 @@ const hotelsVueMer: StayCardProps[] = [
     type: 'Hôtel centre-ville',
     description:
       'Point de chute pratique pour explorer le parc Forillon, avec restaurants et services accessibles à pied. Parfait pour alterner journées “plein air” et moments plus urbains.',
-    link: 'https://www.booking.com/hotel/ca/hotel-des-commandants.fr.html',
-    image: '/images/destinations/hotels/commandants-gaspe.avif',
+    link: 'https://www.booking.com/hotel/ca/motel-plante.fr.html?aid=304142&label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&sid=9d202b892b581cafd0019c7f0748e2a5&age=0&all_sr_blocks=31445511_421538538_2_0_0&checkin=2026-01-28&checkout=2026-01-29&dest_id=-565124&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=31445511_421538538_2_0_0&hpos=2&matching_block_id=31445511_421538538_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=31445511_421538538_2_0_0__14995&srepoch=1768430475&srpvid=4fe59f52eb1f0444&type=total&ucfs=1&',
+    image: '/images/destinations/hotels/hotelplante.avif',
     extra: 'Pratique si tu voyages avec des ados qui aiment flâner en ville le soir.',
   },
   {
@@ -98,7 +98,7 @@ const hotelsVueMer: StayCardProps[] = [
     description:
       'Atmosphère chaleureuse, vue sur la baie et accès facile à la plage pour les couchers de soleil. Une belle option pour finir le road trip sur une note relax.',
     link: 'https://www.booking.com/hotel/ca/manoir-belle-plage.fr.html',
-    image: '/images/destinations/hotels/manoir-belle-plage.avif',
+    image: '/images/destinations/hotels/manoirbelleplage.avif',
     extra: 'Excellent pour recharger les batteries avant le retour vers la maison.',
   },
 ];
@@ -110,8 +110,8 @@ const hotelsFamillePiscine: StayCardProps[] = [
     type: 'Hôtel famille',
     description:
       'Chambres confortables et accueil chaleureux, pratique comme base pour découvrir le parc national de la Gaspésie tout en gardant un bon niveau de confort.',
-    link: 'https://www.booking.com/hotel/ca/hotel-et-cie.fr.html',
-    image: '/images/destinations/hotels/hotel-et-cie.avif',
+    link: 'https://www.booking.com/hotel/ca/auberge-seigneurie-des-monts.fr.html?label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&aid=304142&ucfs=1&checkin=2026-04-06&checkout=2026-04-10&dest_id=3602&dest_type=region&group_adults=2&no_rooms=1&group_children=0&srpvid=087ea0c971000196&srepoch=1768431159&matching_block_id=40613001_203767764_2_0_0&atlas_src=sr_iw_title',
+    image: '/images/destinations/hotels/auberge-seigneurie-des-monts.avif',
     extra: 'Parfait pour les familles qui alternent randonnée et moments cocooning.',
   },
   {
@@ -121,7 +121,7 @@ const hotelsFamillePiscine: StayCardProps[] = [
     description:
       'Grande piscine extérieure en saison, accès à la plage et vue sur la baie. Les enfants adorent se baigner pendant que les adultes profitent du paysage.',
     link: 'https://www.booking.com/hotel/ca/hostellerie-baie-bleue.fr.html',
-    image: '/images/destinations/hotels/baie-bleue.avif',
+    image: '/images/destinations/hotels/riotel carleton.avif',
     extra: 'Solution idéale pour les journées de vent fort ou de météo incertaine.',
   },
   {
@@ -130,8 +130,8 @@ const hotelsFamillePiscine: StayCardProps[] = [
     type: 'Auberge familiale',
     description:
       'Ambiance simple et conviviale, avec chambres adaptées aux familles et proximité du fleuve. Un bon point de chute entre parc de la Gaspésie et mer.',
-    link: 'https://www.booking.com/hotel/ca/auberge-des-caps.fr.html',
-    image: '/images/destinations/hotels/auberge-des-caps.avif',
+    link: 'https://www.booking.com/hotel/ca/chalets-valmont-plein-air.fr.html?label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&aid=304142&ucfs=1&checkin=2026-04-06&checkout=2026-04-10&dest_id=900040525&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=92cea16b831b0590&srepoch=1768431535&matching_block_id=381179907_121141165_2_0_0&atlas_src=sr_iw_title',
+    image: '/images/destinations/hotels/chalets-valmont.avif',
     extra: 'Top si tu veux limiter les déplacements quotidiens en voiture.',
   },
 ];
@@ -143,8 +143,8 @@ const campings: StayCardProps[] = [
     type: 'Camping en parc national',
     description:
       'Emplacements près des sentiers, de la mer et des belvédères. Tu te réveilles avec l’odeur du sel et le cri des fous de Bassan au loin.',
-    link: 'https://www.sepaq.com/pq/for/index.dot',
-    image: '/images/destinations/hotels/camping-forillon.avif',
+    link: 'https://parcs.canada.ca/pn-np/qc/forillon/activ/camping',
+    image: '/images/destinations/forillon.avif',
     extra: 'À réserver très tôt en haute saison, surtout si tu veux un emplacement avec vue.',
   },
   {
@@ -153,7 +153,7 @@ const campings: StayCardProps[] = [
     type: 'Camping montagne',
     description:
       'Pour vivre la Gaspésie côté sommets : rivières, sentiers et belvédères à proximité, avec un vrai sentiment d’évasion.',
-    link: 'https://www.sepaq.com/pq/gas/index.dot',
+    link: 'https://www.sepaq.com/fr/reservation/camping/parc-national-de-la-gaspesie',
     image: '/images/destinations/hotels/camping-gaspesie.avif',
     extra:
       'Idéal si tu veux initier les enfants à la randonnée sans faire des journées trop longues.',
@@ -165,7 +165,7 @@ const campings: StayCardProps[] = [
     description:
       'Emplacements en bord de baie, aire de jeux et accès facile aux services du village. L’endroit parfait pour une fin de séjour tout en douceur.',
     link: 'https://campingcarletonsurmer.com',
-    image: '/images/destinations/hotels/camping-carleton.avif',
+    image: '/images/destinations/carleton.avif',
     extra: 'Très apprécié des familles qui aiment combiner vélo, plage et cantine.',
   },
 ];

@@ -1,4 +1,4 @@
-// 📂 app/api/chat/route.ts
+// 📂 app/api/chat/
 import { NextResponse } from 'next/server';
 
 // Optionnel: exécuter sur l’Edge si tu veux un démarrage plus vif

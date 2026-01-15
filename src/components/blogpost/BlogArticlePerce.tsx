@@ -33,8 +33,8 @@ const hotels = [
     category: 'Vue sur Mer',
     description: 'Vue imprenable sur le Rocher Percé',
     price: 'À partir de 199$/nuit',
-    link: 'https://www.booking.com/hotel/ca/riotel-perce.html',
-    image: '/images/destinations/hotels/perce.avif',
+    link: 'https://www.booking.com/hotel/ca/riotel-perce.fr.html?aid=304142&label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSDNYA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4Au3FoMsGwAIB0gIkNDQyNjMyZGEtYTA3NC00NGVhLWFiYmEtODQ2Mjg3NzAzZDk02AIB4AIB&sid=9d202b892b581cafd0019c7f0748e2a5&checkin=2026-04-06&checkout=2026-04-10&dest_id=900040525&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&soh=1&sr_order=popularity&srepoch=1768432374&srpvid=2deea3377e57004d&type=total&ucfs=1&#no_availability_msg',
+    image: '/images/destinations/hotels/riohotel-perce.avif',
   },
   {
     name: 'Hôtel La Normandie',

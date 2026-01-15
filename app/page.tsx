@@ -87,7 +87,7 @@ export default function Home() {
             <GroupedDestinations /> {/* ← ton nouveau composant dynamique */}
           </div>
         </section>
-        {/* Vidéos */}
+        {/* Videos */}
         <section id="videos" className="bg-background py-16 text-center">
           <H2 className="mb-4 font-serif text-4xl font-bold text-primary sm:text-5xl">
             Vos destinations en images
