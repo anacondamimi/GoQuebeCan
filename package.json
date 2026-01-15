@@ -20,7 +20,7 @@
     "generate:sitemap": "tsx scripts/generate-sitemap-xml.ts",
     "fix:all": "pnpm format && pnpm lint:fix",
     "clean": "pnpm lint:fix && pnpm format",
-    "check:links": "node scan-links.cjs",
+    "check:links": "node scripts/check-links.cjs",
     "check-ssr": "node scripts/check-ssr.js",
     "find-window": "grep -r 'window\\.' --include='*.tsx' --include='*.ts' src/ | grep -v node_modules",
     "gen:blogmeta": "node scripts/generateBlogMeta.mjs",
@@ -66,7 +66,6 @@
     "lrm-mapbox": "^1.0.4",
     "lucide-react": "^0.552.0",
     "next": "14.2.30",
-    "node-fetch": "^3.3.2",
     "node-mailjet": "^6.0.11",
     "openai": "^6.7.0",
     "p-limit": "^7.2.0",
@@ -99,6 +98,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "8.46.3",
     "@typescript-eslint/parser": "8.46.3",
+    "@vscode/ripgrep": "1.17.0",
     "autoprefixer": "10.4.21",
     "chalk": "^5.3.0",
     "eslint": "8.57.0",
@@ -113,6 +113,7 @@
     "husky": "9.1.7",
     "linkinator": "^7.4.1",
     "lint-staged": "16.2.6",
+    "node-fetch": "3",
     "pidtree": "0.6.0",
     "postcss": "8.5.6",
     "prettier": "3.6.2",
@@ -130,6 +131,6 @@
   },
   "engines": {
     "node": "20.x",
-    "packageManager": "pnpm@10"
+    "packageManager": "pnpm@10.0.0"
   }
 }
