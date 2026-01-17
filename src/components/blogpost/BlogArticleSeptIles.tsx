@@ -41,7 +41,7 @@ const hotels = [
     description: 'Chambre double avec 2 lits. Idéal pour famille. Note 8,3/10.',
     price: 'À partir de 174$/nuit',
     link: 'https://www.booking.com/hotel/ca/le-voyageur-sept-iles.fr.html',
-    image: '/images/destinations/hotels/le voyageur.avif',
+    image: '/images/destinations/hotels/le-voyageur.avif',
   },
   {
     name: 'Auberge Internationale Le Tangon',
@@ -49,7 +49,7 @@ const hotels = [
     description: 'Dortoir de 6 lits superposés, ambiance conviviale. Note 8,3/10.',
     price: 'À partir de 74$/nuit',
     link: 'https://www.booking.com/hotel/ca/auberge-internationale-le-tangon.fr.html',
-    image: '/images/destinations/hotels/auberge tangon.avif',
+    image: '/images/destinations/hotels/auberge-tangon.avif',
   },
 ];
 

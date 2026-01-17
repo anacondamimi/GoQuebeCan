@@ -53,7 +53,7 @@ const hotels = [
       'Hôtel boutique élégant au cœur de Rimouski. Chambres spacieuses, parfait pour un séjour raffiné.',
     price: 'Tarif selon la saison et le type de chambre',
     link: 'https://www.booking.com/hotel/ca/le-saint-germain.fr.html',
-    image: '/images/destinations/hotels/saint germain rimouski.avif',
+    image: '/images/destinations/hotels/saint-germain-rimouski.avif',
   },
   {
     name: 'Camping du Bic',
@@ -61,7 +61,7 @@ const hotels = [
     description: 'Sites de camping avec vue sur mer',
     price: 'À partir de 30$/nuit',
     link: 'https://www.sepaq.com/pq/bic/',
-    image: '/images/destinations/hotels/camping bic.avif',
+    image: '/images/destinations/hotels/camping-bic.avif',
   },
 ];
 

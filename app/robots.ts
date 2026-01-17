@@ -44,13 +44,12 @@ export default function robots(): MetadataRoute.Robots {
           '/planificateur/test/',
           '/test-youtube/',
           '/expansion/',
-          '/en/', // ❌ on bloque /en/ tant qu’il ne contient pas de vrai contenu
         ],
       },
       // Bots IA (facultatif)
-      { userAgent: 'GPTBot', disallow: '/' },
-      { userAgent: 'CCBot', disallow: '/' },
-      { userAgent: 'Google-Extended', disallow: '/' },
+      { userAgent: 'GPTBot', allow: '/' },
+      { userAgent: 'CCBot', allow: '/' },
+      { userAgent: 'Google-Extended', allow: '/' },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: new URL(SITE_URL).hostname,

@@ -22,7 +22,7 @@ const hotels: HotelInfo[] = [
     distance: 'À proximité du Parc provincial Sandbanks',
     price: 'Dès ~272 $ + taxes/nuit',
     poi: 'Suite privée avec très grand lit, note “Fabuleux” (≈170 avis) et situation géographique 9,7. Idéal pour se faire plaisir tout en restant près de la plage.',
-    image: '/images/destinations/hotels/newsroomsandbank.avif', // 👉 mets ici le nom réel du fichier
+    image: '/images/destinations/hotels/news-room-sandbank.avif', // 👉 mets ici le nom réel du fichier
   },
   {
     name: 'The Village Suites',
@@ -30,7 +30,7 @@ const hotels: HotelInfo[] = [
     distance: 'Environ 8,8 km du Parc provincial Sandbanks',
     price: 'Dès ~148 $ + taxes/nuit',
     poi: 'Studios et appartements confortables à Wellington, note globale 9,1 avec situation géographique 9,6. Parfait pour une base tranquille après une journée de plage.',
-    image: '/images/destinations/hotels/thevillagesandbank.avif',
+    image: '/images/destinations/hotels/the-village-sandbank.avif',
   },
   {
     name: 'The Birch',
@@ -38,7 +38,7 @@ const hotels: HotelInfo[] = [
     distance: 'Environ 8,1 km du Parc provincial Sandbanks',
     price: 'Dès ~270 $ + taxes/nuit',
     poi: 'Bungalow complet en bord de l’eau, note 9,1 “Fabuleux” avec situation 9,7. Idéal pour une ambiance chalet, avec un vrai sentiment de vacances.',
-    image: '/images/destinations/hotels/thebirchsandbank.avif',
+    image: '/images/destinations/hotels/the-birch-sandbank.avif',
   },
 ];
 

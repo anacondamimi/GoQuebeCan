@@ -43,7 +43,7 @@ const hotels = [
       'Grande maison entièrement équipée, idéale pour un séjour en famille ou entre amis à quelques minutes de la plage de Wasaga.',
     price: 'À partir de 340 $/nuit',
     link: 'https://www.expedia.ca/fr/Wasaga-Beach-Hotels-Hidden-Gem.h94741293.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763713561441&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=181914&destination=Wasaga+Beach%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=44.520741%2C-80.016067&sort=REVIEW_RELEVANT&top_dp=340&top_cur=CAD&userIntent=&selectedRoomType=94741293&selectedRatePlan=00009ac40984a33c4dc49c8c118db165efd7&searchId=adb0bdb1-4661-49b9-8edf-ea8f29e81d85',
-    image: '/images/destinations/hotels/hotelhidden-wasagabeach.avif',
+    image: '/images/destinations/hotels/hotel-hidden-wasagabeach.avif',
   },
   {
     name: 'Sandpiper Beach Resort - Cottage 10',

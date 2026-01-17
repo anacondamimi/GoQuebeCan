@@ -61,7 +61,7 @@ const hotels = [
       'Située à Baie-Sainte-Catherine, à seulement 4 km de Tadoussac. Note de 8,3/10 par plus de 500 voyageurs.',
     price: 'Tarif variable selon la saison',
     link: 'https://www.booking.com/hotel/ca/auberge-du-cafe-chez-sam.fr.html',
-    image: '/images/destinations/hotels/auberge chez sam.avif',
+    image: '/images/destinations/hotels/auberge-chez-sam.avif',
   },
 ];
 

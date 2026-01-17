@@ -33,7 +33,7 @@ const hotels = [
     description: 'Chambre double avec salle de bain privée et vue. Note 9,2/10.',
     price: 'À partir de 159$/nuit avec petit-déjeuner',
     link: 'https://www.booking.com/hotel/ca/horizon-777.fr.html',
-    image: '/images/destinations/hotels/horizon 777.avif',
+    image: '/images/destinations/hotels/horizon-777.avif',
   },
   {
     name: 'La Gentilhommière',
@@ -49,7 +49,7 @@ const hotels = [
     description: 'Chambre lit Queen, annulation gratuite, situé à 4 km du centre.',
     price: 'À partir de 139$/nuit',
     link: 'https://www.booking.com/hotel/ca/motel-cofotel.fr.html',
-    image: '/images/destinations/hotels/motel cofotel.avif',
+    image: '/images/destinations/hotels/motel-cofotel.avif',
   },
 ];
 

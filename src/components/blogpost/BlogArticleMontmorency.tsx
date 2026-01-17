@@ -32,7 +32,7 @@ const hotels = [
       'Condos haut de gamme dans le Vieux-Port, avec grandes fenêtres, cuisines équipées et vue directe sur le fleuve et le mouvement des bateaux.',
     price: 'À partir d’environ 300–400 $/nuit (selon la saison)',
     link: 'https://www.booking.com/hotel/ca/royal-dalhousie.html',
-    image: '/images/destinations/hotels/royaldaousie-quebec.avif',
+    image: '/images/destinations/hotels/royal-daousie-quebec.avif',
   },
   {
     name: 'Monsieur Jean – Hôtel Particulier',
@@ -41,7 +41,7 @@ const hotels = [
       'Hôtel-boutique en Haute-Ville, au cœur du Vieux-Québec, avec déco contemporaine, mini-cuisines et certaines chambres offrant une vue superbe sur la ville.',
     price: 'À partir d’environ 250–350 $/nuit (selon la saison)',
     link: 'https://www.booking.com/hotel/ca/coeur-de-ville.fr.html',
-    image: '/images/destinations/hotels/monsieurjean-quebec.avif',
+    image: '/images/destinations/hotels/monsieur-jean-quebec.avif',
   },
   {
     name: 'Appartement Luxe – Sunset View, Pool, Parking, Near Old Québec',
@@ -246,7 +246,7 @@ export default function BlogArticleMontmorency() {
         </H2>
         <div className="rounded-lg bg-white p-6 shadow-md">
           <Image
-            src="/images/destinations/chaudiere-2.avif"
+            src="/images/destinations/chaudiere-deux.avif"
             alt="Chutes de la Chaudière"
             className="mb-4 h-96 w-full rounded-lg object-cover shadow-lg"
             width={800}

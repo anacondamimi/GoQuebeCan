@@ -33,7 +33,7 @@ const hotels = [
     description: 'Chalets confortables au cœur de la nature. Note 9/10.',
     price: 'Tarifs variables selon la saison',
     link: 'https://www.booking.com/hotel/ca/chalets-didoche-havre-saint-pierre.fr.html',
-    image: '/images/destinations/hotels/chalets didoche.avif',
+    image: '/images/destinations/hotels/chalets-didoche.avif',
   },
   {
     name: 'L’Escale Lam-Air',
@@ -41,7 +41,7 @@ const hotels = [
     description: 'Hébergement chaleureux avec vue sur l’eau. Note 9,5/10.',
     price: 'Tarif variable selon la saison',
     link: 'https://www.booking.com/hotel/ca/escale-lam-air.fr.html',
-    image: '/images/destinations/hotels/escale lam-air.avif',
+    image: '/images/destinations/hotels/escale-lam-air.avif',
   },
   {
     name: 'Hôtels Gouverneur Sept-Îles',

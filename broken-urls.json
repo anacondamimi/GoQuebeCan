@@ -1,347 +1,289 @@
 [
   {
-    "url": "http://localhost:3000/icons/icon.svg",
+    "url": "http://localhost:3000/api/chat/route.ts",
     "status": 404,
-    "parent": "http://localhost:3000/"
+    "parents": [
+      "http://localhost:3000/"
+    ]
   },
   {
-    "url": "http://localhost:3000/icons/apple-touch-icon.png",
+    "url": "http://localhost:3000/images/locationvr-cover.avif",
     "status": 404,
-    "parent": "http://localhost:3000/"
+    "parents": [
+      "http://localhost:3000/vr"
+    ]
   },
   {
-    "url": "http://localhost:3000/chat",
+    "url": "http://localhost:3000/objets-indispensables",
     "status": 404,
-    "parent": "http://localhost:3000/"
+    "parents": [
+      "http://localhost:3000/vr"
+    ]
   },
   {
-    "url": "http://localhost:3000/communaute",
+    "url": "http://localhost:3000/carte-interactive",
     "status": 404,
-    "parent": "http://localhost:3000/"
-  },
-  {
-    "url": "http://localhost:3000/blog/rivieredu-loup",
-    "status": 404,
-    "parent": "http://localhost:3000/"
-  },
-  {
-    "url": "http://localhost:3000/images/parc-gaspesie.avif",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_montreal",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_orleans",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_montmorency",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_levis",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_perce",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_forillon",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_carleton",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_baie_saint_paul",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_massif",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_hautes_gorges",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_magog_orford",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_sherbrooke",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_bromont_granby",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_riviere_du_loup",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_bic",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_kamouraska",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_saguenay",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_anse_saint_jean",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_tadoussac",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_sept_iles",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_mingan",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_port_cartier",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_wasaga_beach",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_sauble_beach",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_grand_bend",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_port_dover",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_sandbanks",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_singingsands",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_parc_aquatique",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_eeyou_istchee",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_kuururjuaq",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/blog/blog_article_port_au_persil",
-    "status": 404,
-    "parent": "http://localhost:3000/destinations"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1559599101-b558fc68026c%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1280&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/gaspesie"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1559599101-b558fc68026c%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=360&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/gaspesie"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1559599101-b558fc68026c%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=414&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/gaspesie"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1559599101-b558fc68026c%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=640&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/gaspesie"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1559599101-b558fc68026c%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=768&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/gaspesie"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1559599101-b558fc68026c%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1024&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/gaspesie"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1504280390368-3971f6600b4d%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1280&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/gaspesie"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1504280390368-3971f6600b4d%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=414&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/gaspesie"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1504280390368-3971f6600b4d%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=360&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/gaspesie"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1504280390368-3971f6600b4d%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=768&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/gaspesie"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1504280390368-3971f6600b4d%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=640&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/gaspesie"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1504280390368-3971f6600b4d%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1024&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/gaspesie"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1595880375338-a78c3a07cef5%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1280&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/montmorency"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1595880375338-a78c3a07cef5%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1024&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/montmorency"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1572463459372-70c9cf5cb795%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1280&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/anse-saint-jean"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1572463459372-70c9cf5cb795%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1024&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/anse-saint-jean"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1583245117386-341b4e73ca88%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1024&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/anse-saint-jean"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1583245117386-341b4e73ca88%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1280&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/anse-saint-jean"
-  },
-  {
-    "url": "http://localhost:3000/https://www.booking.com/hotel/ca/hotels-gouverneur-saguenay.fr.html?aid=357028&label=bin859jc-10CAsoJ0ISY2hhdGVhdS1jcmFuLWNoYXVkSDNYA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKHwOTHBsACAdICJGVmMGVkNDRmLTUzMWItNDY5OS1iNzFhLWY4ZDUxNzQ1NmEwZtgCAeACAQ&sid=ffee84a559428f9598cffdc6c4b758d6&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=distance_from_search&srepoch=1761157312&srpvid=fa2b811c3f6f0189&type=total&ucfs=1&",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/saguenay"
-  },
-  {
-    "url": "http://localhost:3000/https://www.booking.com/hotel/ca/le-montagnais-and-convention-center.fr.html?aid=357028&label=bin859jc-10CAsoJ0ISY2hhdGVhdS1jcmFuLWNoYXVkSDNYA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKHwOTHBsACAdICJGVmMGVkNDRmLTUzMWItNDY5OS1iNzFhLWY4ZDUxNzQ1NmEwZtgCAeACAQ&sid=ffee84a559428f9598cffdc6c4b758d6&dest_id=900049261&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=4&hpos=4&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1761157386&srpvid=96f381416637035e&type=total&ucfs=1&",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/saguenay"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1595880238394-5b606a6ee1e8%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1024&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/wasaga-beach"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1595880238394-5b606a6ee1e8%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1280&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/wasaga-beach"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1596238686005-38e08058f08f%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1280&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/port-dover"
-  },
-  {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1596238686005-38e08058f08f%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1024&q=75",
-    "status": 404,
-    "parent": "http://localhost:3000/blog/port-dover"
+    "parents": [
+      "http://localhost:3000/vr"
+    ]
   },
   {
     "url": "http://localhost:3000/blog/Quebec",
     "status": 404,
-    "parent": "http://localhost:3000/blog"
+    "parents": [
+      "http://localhost:3000/blog"
+    ]
   },
   {
     "url": "http://localhost:3000/blog/charlevoix",
     "status": 404,
-    "parent": "http://localhost:3000/blog"
+    "parents": [
+      "http://localhost:3000/blog"
+    ]
   },
   {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1583266368698-234ffaa5350c%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1280&q=75",
+    "url": "http://localhost:3000/images/parc-gaspesie.avif",
     "status": 404,
-    "parent": "http://localhost:3000/blog"
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
   },
   {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1583266368698-234ffaa5350c%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1024&q=75",
+    "url": "http://localhost:3000/blog/blog_article_montreal",
     "status": 404,
-    "parent": "http://localhost:3000/blog"
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
   },
   {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1578607974203-0e5657088821%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1280&q=75",
+    "url": "http://localhost:3000/blog/blog_article",
     "status": 404,
-    "parent": "http://localhost:3000/blog"
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
   },
   {
-    "url": "http://localhost:3000/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1578607974203-0e5657088821%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80&w=1024&q=75",
+    "url": "http://localhost:3000/blog/blog_article_orleans",
     "status": 404,
-    "parent": "http://localhost:3000/blog"
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_montmorency",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_levis",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_perce",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_forillon",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_carleton",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_baie_saint_paul",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_massif",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_hautes_gorges",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_magog_orford",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_sherbrooke",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_bromont_granby",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_riviere_du_loup",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_bic",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_kamouraska",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_saguenay",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_anse_saint_jean",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_tadoussac",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_sept_iles",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_mingan",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_port_cartier",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_wasaga_beach",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_sauble_beach",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_grand_bend",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_port_dover",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_sandbanks",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_singingsands",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_eeyou_istchee",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_parc_aquatique",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_kuururjuaq",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/blog/blog_article_port_au_persil",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/destinations"
+    ]
+  },
+  {
+    "url": "http://localhost:3000/voyage-hotel",
+    "status": 404,
+    "parents": [
+      "http://localhost:3000/planificateur"
+    ]
   }
 ]

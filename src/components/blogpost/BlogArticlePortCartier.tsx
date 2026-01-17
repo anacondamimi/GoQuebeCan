@@ -34,7 +34,7 @@ const hotels = [
       'Séjour dans la réserve faunique : pêche, canot et randonnées. Idéal pour se ressourcer.',
     price: 'Tarifs via Sépaq',
     link: 'https://www.sepaq.com/pq/rpc/hebergement/chalet.dot',
-    image: '/images/destinations/hotels/reserve faunique port cartier.avif',
+    image: '/images/destinations/hotels/reserve-faunique-port-cartier.avif',
   },
   {
     name: 'Camping municipal Le Paradis',
@@ -43,7 +43,7 @@ const hotels = [
       '39 emplacements bien situés, en bordure du boulevard du Portage-des-Mousses. Parfait pour VR ou tente.',
     price: 'À partir de ~25$/nuit (info à confirmer)',
     link: 'https://www.villeport-cartier.com/tourisme/camping-municipal',
-    image: '/images/destinations/hotels/camping 2 port cartier.avif',
+    image: '/images/destinations/hotels/camping-deux-port-cartier.avif',
   },
   {
     name: 'Camping municipal Patterson',
@@ -52,7 +52,7 @@ const hotels = [
       '17 emplacements rustiques en pleine nature sur l’Île Patterson Sud. Déconnexion garantie.',
     price: 'Tarif accessible (info locale)',
     link: 'https://www.villeport-cartier.com/tourisme/camping-municipal',
-    image: '/images/destinations/hotels/camping 1 port cartier.avif',
+    image: '/images/destinations/hotels/camping-un-port-cartier.avif',
   },
 ];
 

@@ -25,7 +25,7 @@ const hotels = [
       'B&B haut de gamme à Saint-Jean, connu pour son déjeuner gastronomique à l’aveugle – parfait pour un séjour en couple sur l’île d’Orléans.',
     price: 'À partir de 233 $/nuit (petit-déjeuner inclus)',
     link: 'https://www.booking.com/hotel/ca/la-maison-de-l-39-ile.fr.html?label=msn-FQZ8IgHEiaVN31poKb5DbQ-80608103155809%3Atikwd-80608256542845%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsh%C3%A9bergement+%C3%AEle+orl%C3%A9ans&sid=dd41b6917ba1eb791f5db659a3e15674&aid=1856194&ucfs=1&arphpl=1&checkin=2026-06-03&checkout=2026-06-04&dest_id=5087&dest_type=region&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=score&srpvid=accc3cc25a4b00f2&srepoch=1763714580&all_sr_blocks=705794903_309162090_2_1_0&highlighted_blocks=705794903_309162090_2_1_0&matching_block_id=705794903_309162090_2_1_0&sr_pri_blocks=705794903_309162090_2_1_0__23300&from=searchresults' /* à remplacer par ton lien affilié La maison de l’île d’Orléans */,
-    image: '/images/destinations/hotels/maisongastro-ileorleans.avif',
+    image: '/images/destinations/hotels/maison-gastro-ileorleans.avif',
   },
   {
     name: 'Auberge Les Blancs Moutons',
@@ -34,7 +34,7 @@ const hotels = [
       'Auberge pleine de charme à Saint-Laurent-de-l’île d’Orléans, avec vue exceptionnelle et petit-déjeuner inclus, idéale pour explorer l’île en douceur.',
     price: 'À partir de 134 $/nuit (petit-déjeuner inclus)',
     link: 'https://www.booking.com/hotel/ca/auberge-les-blancs-moutons.fr.html?label=msn-FQZ8IgHEiaVN31poKb5DbQ-80608103155809%3Atikwd-80608256542845%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsh%C3%A9bergement+%C3%AEle+orl%C3%A9ans&sid=dd41b6917ba1eb791f5db659a3e15674&aid=1856194&ucfs=1&arphpl=1&checkin=2026-06-03&checkout=2026-06-04&dest_id=5087&dest_type=region&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=score&srpvid=accc3cc25a4b00f2&srepoch=1763714790&all_sr_blocks=193561502_414095988_2_1_0&highlighted_blocks=193561502_414095988_2_1_0&matching_block_id=193561502_414095988_2_1_0&sr_pri_blocks=193561502_414095988_2_1_0__13400&from=searchresults' /* à remplacer par ton lien affilié Auberge Les Blancs Moutons */,
-    image: '/images/destinations/hotels/aubergeblancsmoutons-ileorleans.avif',
+    image: '/images/destinations/hotels/auberge-blancsmoutons-ileorleans.avif',
   },
   {
     name: "Auberge Le P'tit Bonheur",
@@ -43,7 +43,7 @@ const hotels = [
       'Auberge simple et conviviale à Saint-Laurent-de-l’île d’Orléans, avec chambres familiales et annulation gratuite – pratique pour un séjour flexible.',
     price: 'Tarif variable selon la saison',
     link: 'https://www.booking.com/hotel/ca/auberge-le-p-39-tit-bonheur.fr.html?label=msn-FQZ8IgHEiaVN31poKb5DbQ-80608103155809%3Atikwd-80608256542845%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsh%C3%A9bergement+%C3%AEle+orl%C3%A9ans&sid=dd41b6917ba1eb791f5db659a3e15674&aid=1856194&ucfs=1&arphpl=1&checkin=2026-06-03&checkout=2026-06-04&dest_id=900051336&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=popularity&srpvid=80463d756f7503de&srepoch=1763714699&all_sr_blocks=104993711_184406356_2_0_0&highlighted_blocks=104993711_184406356_2_0_0&matching_block_id=104993711_184406356_2_0_0&sr_pri_blocks=104993711_184406356_2_0_0__10100&from=searchresults' /* à remplacer par ton lien affilié Auberge Le P’tit Bonheur */,
-    image: '/images/destinations/hotels/aubergepetitbonheur-ileorleans.avif',
+    image: '/images/destinations/hotels/auberge-petit-bonheur-ileorleans.avif',
   },
 ];
 

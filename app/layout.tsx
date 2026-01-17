@@ -1,13 +1,16 @@
 // app/layout.tsx
 import './globals.css';
 import { Inter, Playfair_Display } from 'next/font/google';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import React from 'react';
 import dynamic from 'next/dynamic';
 
 import ClientWrapper from './ClientWrapper';
 import LayoutWithBanner from './LayoutWithBanner';
 import Footer from '@/components/layout/Footer';
+
+// ✅ Ajout : tes favicons centralisés
+import { FAVICON_METADATA } from '@/components/seo/Favicons';
 
 const CookieBanner = dynamic(() => import('@/components/CookieBanner'), { ssr: false });
 
@@ -34,10 +37,17 @@ export const metadata: Metadata = {
     description: 'Découvrez le Québec et le Canada autrement.',
     creator: '@goquebecan',
   },
-  icons: { icon: '/favicon.avif' },
   robots: { index: true, follow: true },
   keywords: ['Québec', 'Canada', 'Itinéraires', 'Voyage', 'Producteurs locaux', 'Tourisme'],
   category: 'travel',
+
+  // ✅ Important : on remplace le favicon AVIF par une déclaration complète et standard
+  ...FAVICON_METADATA,
+};
+
+// ✅ Next aime que viewport soit exporté à part
+export const viewport: Viewport = {
+  themeColor: '#38b6ff',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -49,7 +59,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="antialiased">
         <ClientWrapper>
-          {/* Structure globale : contenu + footer */}
           <div className="flex min-h-screen flex-col">
             <LayoutWithBanner>{children}</LayoutWithBanner>
             <Footer />

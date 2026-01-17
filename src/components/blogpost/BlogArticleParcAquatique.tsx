@@ -318,7 +318,7 @@ const parks: WaterPark[] = [
         distance: '2 km',
         price: 'Dès 199 $/nuit',
         poi: 'Piscine, spa et vue sur la montagne ; parfait pour relâcher la pression en famille',
-        image: '/images/destinations/hotels/valleabromont.avif',
+        image: '/images/destinations/hotels/vallea-bromont.avif',
         rating: '4★',
       },
       {
@@ -327,7 +327,7 @@ const parks: WaterPark[] = [
         distance: '2,3 km',
         price: 'Dès 170 $/nuit',
         poi: 'Cuisine équipée, idéal pour 3–5 personnes et les familles qui aiment être autonomes',
-        image: '/images/destinations/hotels/appartementbromont.avif',
+        image: '/images/destinations/hotels/appartement-bromont.avif',
       },
       {
         name: 'Le 204 Champlain',

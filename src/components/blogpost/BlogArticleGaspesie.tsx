@@ -88,7 +88,7 @@ const hotelsVueMer: StayCardProps[] = [
     description:
       'Point de chute pratique pour explorer le parc Forillon, avec restaurants et services accessibles à pied. Parfait pour alterner journées “plein air” et moments plus urbains.',
     link: 'https://www.booking.com/hotel/ca/motel-plante.fr.html?aid=304142&label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&sid=9d202b892b581cafd0019c7f0748e2a5&age=0&all_sr_blocks=31445511_421538538_2_0_0&checkin=2026-01-28&checkout=2026-01-29&dest_id=-565124&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=31445511_421538538_2_0_0&hpos=2&matching_block_id=31445511_421538538_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=31445511_421538538_2_0_0__14995&srepoch=1768430475&srpvid=4fe59f52eb1f0444&type=total&ucfs=1&',
-    image: '/images/destinations/hotels/hotelplante.avif',
+    image: '/images/destinations/hotels/hotel-plante.avif',
     extra: 'Pratique si tu voyages avec des ados qui aiment flâner en ville le soir.',
   },
   {
@@ -98,7 +98,7 @@ const hotelsVueMer: StayCardProps[] = [
     description:
       'Atmosphère chaleureuse, vue sur la baie et accès facile à la plage pour les couchers de soleil. Une belle option pour finir le road trip sur une note relax.',
     link: 'https://www.booking.com/hotel/ca/manoir-belle-plage.fr.html',
-    image: '/images/destinations/hotels/manoirbelleplage.avif',
+    image: '/images/destinations/hotels/manoir-belle-plage.avif',
     extra: 'Excellent pour recharger les batteries avant le retour vers la maison.',
   },
 ];
@@ -121,7 +121,7 @@ const hotelsFamillePiscine: StayCardProps[] = [
     description:
       'Grande piscine extérieure en saison, accès à la plage et vue sur la baie. Les enfants adorent se baigner pendant que les adultes profitent du paysage.',
     link: 'https://www.booking.com/hotel/ca/hostellerie-baie-bleue.fr.html',
-    image: '/images/destinations/hotels/riotel carleton.avif',
+    image: '/images/destinations/hotels/riotel-carleton.avif',
     extra: 'Solution idéale pour les journées de vent fort ou de météo incertaine.',
   },
   {

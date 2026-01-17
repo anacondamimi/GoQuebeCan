@@ -249,7 +249,7 @@ export default function BlogArticleVoyageVoiture() {
           href="https://amzn.to/4nxlF0J"
           priceText="≈ 22 $ CAD"
           image={{
-            src: '/images/produits/chargeur-batterie2.avif',
+            src: '/images/produits/chargeur-batterie-deux.avif',
             alt: 'Chargeur/mainteneur de batterie 12 V pour entretien',
             width: 1200,
             height: 900,

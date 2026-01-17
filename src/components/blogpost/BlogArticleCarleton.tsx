@@ -33,7 +33,7 @@ const hotels = [
     description: 'Vue panoramique sur la baie des Chaleurs',
     price: 'À partir de 159$/nuit',
     link: 'https://www.booking.com/hotel/ca/hostellerie-baie-bleue.html',
-    image: '/images/destinations/hotels/riotel carleton.avif',
+    image: '/images/destinations/hotels/riotel-carleton.avif',
   },
   {
     name: 'Manoir Belle Plage',
@@ -49,7 +49,7 @@ const hotels = [
     description: 'Option abordable à proximité du centre-ville et de la plage',
     price: 'À partir de 139$/nuit',
     link: 'https://www.booking.com/hotel/ca/motel-l-abri.html',
-    image: '/images/destinations/hotels/hotel abri Carleton.avif',
+    image: '/images/destinations/hotels/hotel-abri-Carleton.avif',
   },
 ];
 

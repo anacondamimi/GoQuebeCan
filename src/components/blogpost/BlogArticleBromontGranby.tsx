@@ -31,7 +31,7 @@ const hotels = [
       'Condo moderne avec vue sur la montagne, piscine, BBQ et Wi-Fi rapide. Parfait pour le ski, vélo, golf ou télétravail.',
     price: 'Tarif selon la saison et disponibilités',
     link: 'https://www.booking.com/hotel/ca/splendid-mountain-view-condo-with-pool-amp-bbq-ski-mtb-cycling-golf-telework.fr.html',
-    image: '/images/destinations/hotels/appartement bromont.avif',
+    image: '/images/destinations/hotels/appartement-bromont.avif',
   },
   {
     name: 'Château-Bromont',
@@ -39,7 +39,7 @@ const hotels = [
     description: 'Au pied des pistes avec golf',
     price: 'À partir de 189$/nuit',
     link: 'https://www.booking.com/hotel/ca/chateau-bromont.html',
-    image: '/images/destinations/hotels/vallea bromont.avif',
+    image: '/images/destinations/hotels/vallea-bromont.avif',
   },
   {
     name: 'Hôtel Castel & Spa Confort',
@@ -47,7 +47,7 @@ const hotels = [
     description: 'À proximité du Zoo de Granby',
     price: 'À partir de 159$/nuit',
     link: 'https://www.booking.com/hotel/ca/castel-granby.html',
-    image: '/images/destinations/hotels/hotel castel granby.avif',
+    image: '/images/destinations/hotels/hotel-castel-granby.avif',
   },
 ];
 

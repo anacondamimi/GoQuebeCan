@@ -34,7 +34,7 @@ export default function BlogArticleBaieSaintPaul() {
       description: 'Hôtel design avec spa et vue panoramique',
       price: 'À partir de 259$/nuit',
       link: 'https://www.booking.com/hotel/ca/la-ferme.html',
-      image: '/images/destinations/hotels/le germain Charlevoix.avif',
+      image: '/images/destinations/hotels/le-germain-Charlevoix.avif',
     },
     {
       name: 'Auberge La Grande Maison',
@@ -42,7 +42,7 @@ export default function BlogArticleBaieSaintPaul() {
       description: 'Maison historique au cœur du village',
       price: 'À partir de 169$/nuit',
       link: 'https://www.booking.com/hotel/ca/auberge-la-grande-maison.html',
-      image: '/images/destinations/hotels/auberge la grande maison.avif',
+      image: '/images/destinations/hotels/auberge-la-grande-maison.avif',
     },
     {
       name: 'La Pignoronde',
@@ -50,7 +50,7 @@ export default function BlogArticleBaieSaintPaul() {
       description: 'Appartement 3 chambres avec terrasse et vue panoramique sur Baie-Saint-Paul.',
       price: 'À partir de 880$ pour 4 nuits',
       link: 'https://www.booking.com/hotel/ca/la-pignoronde.html', // à valider si différent
-      image: '/images/destinations/hotels/la pignoronde.avif',
+      image: '/images/destinations/hotels/la-pignoronde.avif',
     },
   ];
 

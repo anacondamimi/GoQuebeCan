@@ -29,7 +29,7 @@ const hotels = [
     description: 'Relais & Châteaux au bord du lac',
     price: 'À partir de 399$/nuit',
     link: 'https://www.booking.com/hotel/ca/manoir-hovey.html',
-    image: '/images/destinations/hotels/manoir hovey.avif',
+    image: '/images/destinations/hotels/manoir-hovey.avif',
   },
   {
     name: 'Estrimont Suites & Spa',
@@ -46,7 +46,7 @@ const hotels = [
       'Chalet très bien noté (9.3/10) à Magog-Orford, à proximité du lac Memphrémagog, des plages et du Mont-Orford.',
     price: 'Tarif variable selon la saison',
     link: 'https://www.booking.com/hotel/ca/nouveaute-foyer-au-bois-plage-montagne-et-plus.fr.html',
-    image: '/images/destinations/hotels/appartement orford.avif',
+    image: '/images/destinations/hotels/appartement-orford.avif',
   },
 ];
 

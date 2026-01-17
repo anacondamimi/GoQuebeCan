@@ -2,197 +2,224 @@
 import type { MetadataRoute } from 'next';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import destinations from '@/data/destinations.json';
 
 /**
- * 🗺️ Sitemap 2025 — Bilingue (FR/EN)
- * Inclut : pages principales, destinations, articles de blog
- * Génère les URLs FR et EN avec alternates hreflang
+ * Sitemap FR uniquement.
+ * Objectif: fournir a Google une liste canonique (sans redirections, sans /en, sans hreflang).
  */
 
-const SITE_URL_FR =
-  process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://goquebecan.com';
+// IMPORTANT: met ici le domaine CANONIQUE (celui qui sert les pages sans rediriger).
+// D'apres tes traces (308 vers www), on privilegie www.
+const SITE_URL = (() => {
+  const raw =
+    process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://www.goquebecan.com';
 
-const SITE_URL_EN = SITE_URL_FR.endsWith('/') ? `${SITE_URL_FR}en` : `${SITE_URL_FR}/en`;
+  return raw.replace(/\/+$/, '');
+})();
 
-const BLOG_COMPONENTS_DIR = path.join(process.cwd(), 'src', 'components', 'blogpost');
+function abs(pathname: string): string {
+  const clean = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  // encodeURI garde les / mais encode les espaces et caracteres speciaux si jamais.
+  return encodeURI(`${SITE_URL}${clean}`);
+}
 
-/* ========================================
-   ⚙️ Helpers
-   ======================================== */
+type DestinationsJsonItem = {
+  slug?: string;
+  href?: string;
+  url?: string;
+  path?: string;
+};
 
-async function safeStat(p: string) {
+function normalizeSlug(input: string): string {
+  // Retire le domaine si jamais on a une URL complete.
+  const noHost = input.replace(/^https?:\/\/[^/]+/i, '');
+
+  // Retire query/hash
+  const noQuery = noHost.split('?')[0]?.split('#')[0] ?? '';
+
+  // Cas: /destinations/xyz
+  const m = noQuery.match(/\/destinations\/(.+)$/i);
+  const candidate = (m?.[1] ?? noQuery).trim();
+
+  return candidate.replace(/^\/+/, '').replace(/\/+$/, '');
+}
+
+async function readDestinationsSlugs(): Promise<string[]> {
+  // Lecture depuis /public pour eviter les soucis d'alias TS/Next.
+  const filePath = path.join(process.cwd(), 'public', 'destinations.json');
+
   try {
-    return await fs.stat(p);
-  } catch {
-    return null;
-  }
-}
+    const raw = await fs.readFile(filePath, 'utf8');
+    const data = JSON.parse(raw) as unknown;
 
-function fileNameToSlug(fileName: string): string | null {
-  const base = fileName.replace(/\.(tsx?|mdx|jsx|md)$/i, '');
-  if (!base.startsWith('BlogArticle')) return null;
-  const core = base.replace(/^BlogArticle/, '');
-  if (!core) return null;
-  return core
-    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
-    .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2')
-    .toLowerCase();
-}
+    if (!Array.isArray(data)) return [];
 
-function dedupe(items: MetadataRoute.Sitemap): MetadataRoute.Sitemap {
-  const seen = new Set<string>();
-  return items.filter((i) => {
-    if (seen.has(i.url)) return false;
-    seen.add(i.url);
-    return true;
-  });
-}
+    const slugs = new Set<string>();
 
-function byLastModifiedDesc(a: MetadataRoute.Sitemap[number], b: MetadataRoute.Sitemap[number]) {
-  return new Date(b.lastModified ?? 0).getTime() - new Date(a.lastModified ?? 0).getTime();
-}
+    for (const item of data as DestinationsJsonItem[]) {
+      const candidates = [item.slug, item.href, item.url, item.path].filter(Boolean) as string[];
 
-/* ========================================
-   🧭 Générateurs de routes
-   ======================================== */
+      for (const c of candidates) {
+        const s = normalizeSlug(c);
+        if (!s) continue;
 
-function getMainRoutes(): MetadataRoute.Sitemap {
-  const now = new Date().toISOString();
-  const MAIN_PAGES = [
-    '/',
-    '/blog',
-    '/destinations',
-    '/producteurs',
-    '/planificateur',
-    '/objets',
-    '/offres',
-    '/videos',
-    '/vols',
-    '/vr',
-    '/camping',
-    '/experiences',
-    '/itineraires-communaute',
-    '/contact',
-    '/notre-mission',
-    '/conditions-utilisation',
-    '/mentions-legales',
-    '/confidentialite',
-    '/accessibilite',
-  ];
+        // Protection: pas de /en, pas de chemins hors destinations
+        if (s.toLowerCase().startsWith('en/')) continue;
+        if (s.toLowerCase().startsWith('destinations/')) {
+          slugs.add(s.slice('destinations/'.length));
+          continue;
+        }
 
-  const routes: MetadataRoute.Sitemap = [];
+        // Slug simple (ex: "tadoussac")
+        if (!s.includes('/')) {
+          slugs.add(s);
+          continue;
+        }
 
-  for (const path of MAIN_PAGES) {
-    routes.push({
-      url: `${SITE_URL_FR}${path}`,
-      lastModified: now,
-      changeFrequency: path === '/' ? 'daily' : 'weekly',
-      priority: path === '/' ? 1.0 : 0.8,
-      alternates: {
-        languages: {
-          'fr-CA': `${SITE_URL_FR}${path}`,
-          'en-CA': `${SITE_URL_EN}${path}`,
-        },
-      },
-    });
+        // Si on a autre chose que "xxx/yyy" on ignore (pour ne pas polluer le sitemap).
+      }
+    }
 
-    routes.push({
-      url: `${SITE_URL_EN}${path}`,
-      lastModified: now,
-      changeFrequency: path === '/' ? 'daily' : 'weekly',
-      priority: path === '/' ? 1.0 : 0.8,
-      alternates: {
-        languages: {
-          'fr-CA': `${SITE_URL_FR}${path}`,
-          'en-CA': `${SITE_URL_EN}${path}`,
-        },
-      },
-    });
-  }
-
-  return routes;
-}
-
-function getDestinationRoutes(): MetadataRoute.Sitemap {
-  const now = new Date().toISOString();
-  return (destinations as Array<{ slug: string; updatedAt?: string }>).flatMap((d) => {
-    const fr = `${SITE_URL_FR}/destinations/${d.slug}`;
-    const en = `${SITE_URL_EN}/destinations/${d.slug}`;
-    return [
-      {
-        url: fr,
-        lastModified: d.updatedAt ?? now,
-        changeFrequency: 'weekly',
-        priority: 0.7,
-        alternates: { languages: { 'fr-CA': fr, 'en-CA': en } },
-      },
-      {
-        url: en,
-        lastModified: d.updatedAt ?? now,
-        changeFrequency: 'weekly',
-        priority: 0.7,
-        alternates: { languages: { 'fr-CA': fr, 'en-CA': en } },
-      },
-    ];
-  });
-}
-
-async function getBlogRoutes(): Promise<MetadataRoute.Sitemap> {
-  let files: string[] = [];
-  try {
-    files = await fs.readdir(BLOG_COMPONENTS_DIR);
+    return [...slugs]
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b, 'fr'));
   } catch {
     return [];
   }
+}
 
-  const now = new Date().toISOString();
-  const routes: MetadataRoute.Sitemap = [];
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // Astuce SEO: pour les sitemaps, une date cohérente est suffisante.
+  // Mettre "now" sur tout chaque build peut donner l'impression que tout change tout le temps.
+  // Ici on met la date du build, mais tu peux aussi calculer par page si tu veux plus fin.
+  const buildDate = new Date();
 
-  for (const file of files) {
-    if (!/\.(tsx?|mdx|jsx|md)$/i.test(file)) continue;
-    const slug = fileNameToSlug(file);
-    if (!slug) continue;
+  const staticPaths: Array<{
+    path: string;
+    changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'];
+    priority: number;
+  }> = [
+    { path: '/', changeFrequency: 'daily', priority: 1 },
 
-    const fullPath = path.join(BLOG_COMPONENTS_DIR, file);
-    const stat = await safeStat(fullPath);
-    const lastModified = stat?.mtime?.toISOString() ?? now;
+    // Hub pages
+    { path: '/destinations', changeFrequency: 'weekly', priority: 0.85 },
+    { path: '/blog', changeFrequency: 'weekly', priority: 0.85 },
+    { path: '/planificateur', changeFrequency: 'weekly', priority: 0.85 },
 
-    const fr = `${SITE_URL_FR}/blog/${slug}`;
-    const en = `${SITE_URL_EN}/blog/${slug}`;
+    // Pages business / navigation
+    { path: '/producteurs', changeFrequency: 'weekly', priority: 0.8 },
+    { path: '/objets', changeFrequency: 'weekly', priority: 0.8 },
+    { path: '/offres', changeFrequency: 'weekly', priority: 0.8 },
+    { path: '/videos', changeFrequency: 'weekly', priority: 0.8 },
+    { path: '/vols', changeFrequency: 'weekly', priority: 0.8 },
+    { path: '/vr', changeFrequency: 'weekly', priority: 0.8 },
+    { path: '/camping', changeFrequency: 'weekly', priority: 0.8 },
+    { path: '/experiences', changeFrequency: 'weekly', priority: 0.8 },
+    { path: '/itineraires-communaute', changeFrequency: 'weekly', priority: 0.8 },
+    { path: '/contact', changeFrequency: 'monthly', priority: 0.6 },
+    { path: '/notre-mission', changeFrequency: 'monthly', priority: 0.6 },
 
-    routes.push({
-      url: fr,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-      alternates: { languages: { 'fr-CA': fr, 'en-CA': en } },
-    });
-    routes.push({
-      url: en,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-      alternates: { languages: { 'fr-CA': fr, 'en-CA': en } },
+    // Pages legales (crawl ok, mais priorite plus faible)
+    { path: '/conditions-utilisation', changeFrequency: 'yearly', priority: 0.3 },
+    { path: '/mentions-legales', changeFrequency: 'yearly', priority: 0.3 },
+    { path: '/confidentialite', changeFrequency: 'yearly', priority: 0.3 },
+    { path: '/accessibilite', changeFrequency: 'yearly', priority: 0.3 },
+  ];
+
+  // Blog slugs (si tu peux, idealement automatise via une source de verite)
+  const blogSlugs = [
+    'accessibilite',
+    'anse-saint-jean',
+    'baie-saint-paul',
+    'bic',
+    'bromont-granby',
+    'canyon',
+    'carleton',
+    'eeyou-istchee',
+    'forillon',
+    'gaspesie',
+    'grand-bend',
+    'hautes-gorges',
+    'kamouraska',
+    'kuururjuaq',
+    'levis',
+    'location-vr',
+    'location-vr-comparatif',
+    'magog-orford',
+    'massif',
+    'mingan',
+    'montmorency',
+    'montreal',
+    'orleans',
+    'parc-aquatique',
+    'perce',
+    'port-au-persil',
+    'port-cartier',
+    'port-dover',
+    'quebec',
+    'rivieredu-loup',
+    'road-trip-quebec',
+    'sabrevois',
+    'saguenay',
+    'sandbanks',
+    'sauble-beach',
+    'sept-iles',
+    'sherbrooke',
+    'singing-sands',
+    'tadoussac',
+    'voyage-avion',
+    'voyage-camping',
+    'voyage-hotel',
+    'voyage-voiture',
+    'wasaga-beach',
+  ]
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b, 'fr'));
+
+  const destinationSlugs = await readDestinationsSlugs();
+
+  const entries: MetadataRoute.Sitemap = [];
+
+  // 1) Pages statiques
+  for (const p of staticPaths) {
+    entries.push({
+      url: abs(p.path),
+      lastModified: buildDate,
+      changeFrequency: p.changeFrequency,
+      priority: p.priority,
     });
   }
 
-  return routes;
-}
+  // 2) Pages Destinations
+  for (const slug of destinationSlugs) {
+    // securite: on n'ajoute jamais /en/
+    if (slug.toLowerCase().startsWith('en/')) continue;
 
-/* ========================================
-   🗺️ Sitemap principal
-   ======================================== */
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [mainRoutes, destinationRoutes, blogRoutes] = await Promise.all([
-    Promise.resolve(getMainRoutes()),
-    Promise.resolve(getDestinationRoutes()),
-    getBlogRoutes(),
-  ]);
+    entries.push({
+      url: abs(`/destinations/${slug}`),
+      lastModified: buildDate,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    });
+  }
 
-  const allRoutes = dedupe([...mainRoutes, ...destinationRoutes, ...blogRoutes]).sort(
-    byLastModifiedDesc,
-  );
+  // 3) Pages Blog
+  for (const slug of blogSlugs) {
+    entries.push({
+      url: abs(`/blog/${slug}`),
+      lastModified: buildDate,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    });
+  }
 
-  return allRoutes;
+  // Dedupe finale (au cas ou)
+  const seen = new Set<string>();
+  return entries.filter((e) => {
+    if (seen.has(e.url)) return false;
+    seen.add(e.url);
+    return true;
+  });
 }

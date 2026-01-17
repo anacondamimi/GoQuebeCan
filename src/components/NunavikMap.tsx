@@ -7,7 +7,7 @@ import L from 'leaflet';
 const KML_PATH = '/kml/nunavik_exploration.kml';
 
 const goquebecanIcon = L.icon({
-  iconUrl: '/favicon.avif',
+  iconUrl: '/favicon.ico',
   iconSize: [36, 36],
   iconAnchor: [18, 36],
   popupAnchor: [0, -30],

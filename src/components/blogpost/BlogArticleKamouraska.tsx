@@ -50,7 +50,7 @@ const hotels = [
     description: 'Chambre double avec vue sur la piscine, à 18 km de Kamouraska. Note 8,8/10.',
     price: 'Tarif selon la saison',
     link: 'https://www.booking.com/hotel/ca/auberge-comme-au-premier-jour.fr.html',
-    image: '/images/destinations/hotels/auberge saint pacome.avif',
+    image: '/images/destinations/hotels/auberge-saint-pacome.avif',
   },
 ];
 

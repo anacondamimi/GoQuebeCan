@@ -112,7 +112,7 @@ export default function BlogArticleLevisMiniRoadTrip() {
             <div className="relative h-40 w-full">
               {/* ➜ Remplace cette image par une photo du Four Points by Sheraton Lévis */}
               <Image
-                src="/images/destinations/hotels/fourpoint-levis.avif"
+                src="/images/destinations/hotels/four-point-levis.avif"
                 alt="Piscine extérieure chauffée du Four Points by Sheraton Lévis"
                 fill
                 className="object-cover"
@@ -156,7 +156,7 @@ export default function BlogArticleLevisMiniRoadTrip() {
             <div className="relative h-40 w-full">
               {/* ➜ Remplace cette image par une photo du Quality Inn & Suites Lévis */}
               <Image
-                src="/images/destinations/hotels/oie-desneiges-levis.avif"
+                src="/images/destinations/hotels/oie-des-neiges-levis.avif"
                 alt="Piscine intérieure du Quality Inn & Suites Lévis"
                 fill
                 className="object-cover"

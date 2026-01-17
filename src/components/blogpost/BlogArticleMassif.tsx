@@ -31,7 +31,7 @@ const hotels = [
       'Chalet 4 chambres avec vue, 3 salles de bain, grande cuisine et espace familial chaleureux.',
     price: 'À partir de 465$/nuit',
     link: 'https://www.booking.com/hotel/ca/au-grand-merisier.html', // ou le lien exact selon URL finale
-    image: '/images/destinations/hotels/chalet alpin.avif',
+    image: '/images/destinations/hotels/chalet-alpin.avif',
   },
   {
     name: 'Cottage Québec - Olivine',
@@ -40,7 +40,7 @@ const hotels = [
       'Chalet tout équipé avec 3 chambres, cuisine, terrasse et spa, parfait pour familles ou amis.',
     price: 'À partir de 227$/nuit',
     link: 'https://www.booking.com/hotel/ca/cottage-quebec-olivine.fr.html',
-    image: '/images/destinations/hotels/cottage olivine.avif',
+    image: '/images/destinations/hotels/cottage-olivine.avif',
   },
   {
     name: 'Cottage Québec - La Zéolite',
@@ -49,7 +49,7 @@ const hotels = [
       'Appartement 4 chambres avec grande cuisine et vue panoramique, parfait pour groupes ou familles.',
     price: 'À partir de 313$/nuit',
     link: 'https://www.booking.com/hotel/ca/cottage-quebec-la-zeolite.fr.html',
-    image: '/images/destinations/hotels/cottage zeolite.avif',
+    image: '/images/destinations/hotels/cottage-zeolite.avif',
   },
 ];
 

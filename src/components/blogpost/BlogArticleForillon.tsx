@@ -35,7 +35,7 @@ const hotels = [
     description: 'Chalet pour 5 pers. avec salon et vue sur la mer, idéal pour les aventuriers.',
     price: 'À partir de 946$ pour 4 nuits',
     link: 'https://www.booking.com/hotel/ca/griffon-aventure.html', // lien à valider
-    image: '/images/destinations/hotels/auberge griffon.avif',
+    image: '/images/destinations/hotels/auberge-griffon.avif',
   },
   {
     name: 'Motel du Haut Phare',
@@ -43,7 +43,7 @@ const hotels = [
     description: 'Chalet avec 2 lits superposés, proche du Cap-des-Rosiers et du phare.',
     price: 'À partir de 713$ pour 4 nuits',
     link: 'https://www.booking.com/hotel/ca/motel-du-haut-phare.html', // lien à valider
-    image: '/images/destinations/hotels/motel haut phare.avif',
+    image: '/images/destinations/hotels/motel-haut-phare.avif',
   },
   {
     name: 'Auberge La Petite École',
@@ -51,7 +51,7 @@ const hotels = [
     description: 'Auberge familiale bien notée à Gaspé, parfaite pour explorer Forillon.',
     price: 'Note : 8,7/10 sur 300+ avis',
     link: 'https://www.booking.com/hotel/ca/auberge-la-petite-ecole.html', // lien à valider
-    image: '/images/destinations/hotels/auberge petite ecole.avif',
+    image: '/images/destinations/hotels/auberge-petite-ecole.avif',
   },
 ];
 

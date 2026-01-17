@@ -30,7 +30,7 @@ const hotels = [
     description: 'Au cœur du centre-ville avec vue panoramique',
     price: 'À partir de 189$/nuit',
     link: 'https://www.booking.com/hotel/ca/gouverneur-sherbrooke.html',
-    image: '/images/destinations/hotels/gouverneur sherbrooke.avif',
+    image: '/images/destinations/hotels/gouverneur-sherbrooke.avif',
   },
   {
     name: 'Grand Times Hotel',
@@ -38,7 +38,7 @@ const hotels = [
     description: 'Design contemporain et confort',
     price: 'À partir de 159$/nuit',
     link: 'https://www.booking.com/hotel/ca/grand-times-sherbrooke.html',
-    image: '/images/destinations/hotels/time sherbrooke.avif',
+    image: '/images/destinations/hotels/time-sherbrooke.avif',
   },
   {
     name: 'Motel Le Refuge',
@@ -47,7 +47,7 @@ const hotels = [
       'Situé à Sherbrooke, ce motel offre un excellent rapport qualité-prix et une localisation pratique à proximité des services.',
     price: 'Tarif abordable selon la période',
     link: 'https://www.booking.com/hotel/ca/motel-le-refuge-sherbrooke.fr.html',
-    image: '/images/destinations/hotels/motel refuge.avif',
+    image: '/images/destinations/hotels/motel-refuge.avif',
   },
 ];
 

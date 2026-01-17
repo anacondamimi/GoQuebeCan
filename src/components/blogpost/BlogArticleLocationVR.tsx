@@ -21,7 +21,7 @@ const DESCRIPTION =
 const CANONICAL =
   'https://goquebecan.com/blog/pourquoi-louer-un-vr-au-quebec-avec-authentik-canada';
 
-const IMAGE = '/images/destinations/vr2.avif';
+const IMAGE = '/images/destinations/vr-suite.avif';
 const PUBLISHED = '2025-12-01';
 const MODIFIED = '2025-12-07';
 const KEYWORDS = [

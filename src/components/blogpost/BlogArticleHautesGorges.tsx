@@ -33,7 +33,7 @@ const hotels = [
     description: 'Chambre double avec salle de bain privée, petit-déjeuner inclus. Note 9,5/10.',
     price: 'À partir de 156$/nuit',
     link: 'https://www.booking.com/hotel/ca/auberge-la-chatelaine.fr.html',
-    image: '/images/destinations/hotels/auberge chatelaine.avif',
+    image: '/images/destinations/hotels/auberge-chatelaine.avif',
   },
   {
     name: 'Auberge Les Sources',
@@ -41,7 +41,7 @@ const hotels = [
     description: 'Petite chambre double au charme rustique, avec annulation gratuite.',
     price: 'À partir de 115$/nuit',
     link: 'https://www.booking.com/hotel/ca/auberge-les-sources.fr.html',
-    image: '/images/destinations/hotels/auberge les sources.avif',
+    image: '/images/destinations/hotels/auberge-les-sources.avif',
   },
   {
     name: 'Auberge La Marmite',
@@ -49,7 +49,7 @@ const hotels = [
     description: 'Chambre double standard avec petit-déjeuner inclus. Note 8,6/10.',
     price: 'À partir de 155$/nuit',
     link: 'https://www.booking.com/hotel/ca/auberge-la-marmite.fr.html',
-    image: '/images/destinations/hotels/auberge la marmite.avif',
+    image: '/images/destinations/hotels/auberge-la-marmite.avif',
   },
 ];
 
