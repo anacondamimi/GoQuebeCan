@@ -49,7 +49,7 @@ const hotels = [
     description: 'Option abordable à proximité du centre-ville et de la plage',
     price: 'À partir de 139$/nuit',
     link: 'https://www.booking.com/hotel/ca/motel-l-abri.html',
-    image: '/images/destinations/hotels/hotel-abri-Carleton.avif',
+    image: '/images/destinations/hotels/hotel-abri-carleton.avif',
   },
 ];
 

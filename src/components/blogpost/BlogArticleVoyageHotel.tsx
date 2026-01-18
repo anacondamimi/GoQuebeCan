@@ -241,7 +241,7 @@ export default function BlogArticleVoyageHotel() {
           href="https://amzn.to/4gixyVG" // TODO ton lien
           priceText="~13.99 CAD"
           image={{
-            src: '/images/produits/masque-sommeil+bouchons.avif',
+            src: '/images/produits/masque-sommeil-bouchons.avif',
             alt: 'Masque de nuit et bouchons — dormir malgré les couloirs bruyants et l’ascenseur',
             width: 1200,
             height: 900,
