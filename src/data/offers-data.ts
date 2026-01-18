@@ -41,21 +41,32 @@ const RAW_OFFERS: OfferInput[] = [
     utm: { source: 'goquebecan', medium: 'referral', campaign: 'offres' },
   },
   {
-    id: 'tuango-tajmahal-tr-shawi',
-    title: 'Restaurant Taj Mahal — Festin indien pour 2 (Tuango)',
-    slug: 'restaurant-taj-mahal-trois-rivieres-shawinigan-tuango',
-    description: 'Festin indien pour deux personnes à Trois-Rivières/Shawinigan.',
+    id: 'anamimizen-offre-bienvenue-accompagnement',
+    title: 'Besoin de souffler, de retrouver de la clarté et un meilleur équilibre intérieur ?',
+    slug: 'anamimizen-offre-bienvenue-accompagnement-bien-etre',
+    description:
+      'AnamimiZen vous offre un cadre attentif pour apaiser le mental, relâcher les tensions émotionnelles et retrouver plus de sérénité au quotidien.',
     image: {
-      // Image Contentful (ta ressource existante) — garde-la pour la perf + stabilité
-      src: 'https://images.ctfassets.net/60cwygank9pk/5K7k8kCNGhcVJtB8QW9dwX/0e04cfbcb09c7a3929e20ac3e2096e76/LG-TakMahal-03.jpg?w=1700&fm=webp&q=80',
-      alt: 'Festin indien pour deux au Restaurant Taj Mahal (Trois-Rivières & Shawinigan)',
-      provider: 'contentful',
+      // 👉 image locale recommandée
+      src: '/images/offers/anamimizen.avif',
+      alt: 'Moment de calme et de recentrage — accompagnement bien-être AnamimiZen',
+      provider: 'local',
     },
-    priceFrom: 59,
-    categories: ['autre'], // ou ['activite'] si tu préfères
-    vendor: 'Tuango',
-    url: 'https://www.tuango.ca/fr/deal/degustez-plats-indiens-restaurant-taj-mahal-trois-rivieres-shawinigan?utm_source=Direct&utm_campaign=Direct&utm_medium=Tuango+Site',
-    utm: { source: 'goquebecan', medium: 'referral', campaign: 'offres' },
+    priceFrom: 80,
+    categories: ['autre'],
+    vendor: 'AnamimiZen',
+    url: 'https://anamimizen.com',
+    utm: {
+      source: 'goquebecan',
+      medium: 'referral',
+      campaign: 'offres-bienvenue',
+    },
+    promo: {
+      type: 'percent',
+      value: 15,
+      code: 'GOQUEBECAN15',
+      label: 'Offre de bienvenue – première séance',
+    },
   },
 
   {
