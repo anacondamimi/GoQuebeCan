@@ -123,6 +123,7 @@ export default function Navbar() {
                 { label: '⛺ Camping', href: '/camping' },
               ]}
             />
+
             {/* Préparer son voyage */}
             <DropdownMenu
               title={
@@ -148,6 +149,15 @@ export default function Navbar() {
                 { href: '/contact', label: '📧 Contact' },
               ]}
             />
+            {/* coups de coeur du mois (CTA) */}
+            <Link
+              href="/coups-de-coeur"
+              className="inline-flex items-center gap-2 whitespace-nowrap rounded-xl px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100"
+              aria-label="Voir le coup de cœur du mois GoQuébeCan"
+            >
+              <span aria-hidden>❤️</span>
+              <span className="whitespace-nowrap">Coup de cœur</span>
+            </Link>
             {/* Économiser (CTA) */}
             <Link
               href="/offres"
@@ -207,6 +217,16 @@ export default function Navbar() {
             ]}
             onClose={() => setIsMenuOpen(false)}
           />
+          {/* ✅ Coup de cœur (top-level, au-dessus des accordéons) */}
+          <Link
+            href="/coups-de-coeur"
+            onClick={() => setIsMenuOpen(false)}
+            className="inline-flex w-full items-center gap-2 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100"
+            aria-label="Voir le coup de cœur du mois GoQuébeCan"
+          >
+            <span aria-hidden>❤️</span>
+            <span className="whitespace-nowrap">Coup de cœur</span>
+          </Link>
 
           <AccordionSection
             title="Préparer son voyage"
