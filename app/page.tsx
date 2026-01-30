@@ -8,10 +8,7 @@ import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
 import Testimonials from '@/components/home/Testimonials';
 import dynamic from 'next/dynamic';
-const ItineraryPlanner = dynamic(() => import('@/components/ItineraryPlanner'), { ssr: false });
 
-import AddProducteur from '@/components/admin/AddProducteur';
-import AddCommunityPDF from '@/components/admin/AddCommunityPDF';
 import BrandName from '@/components/brand/BrandName';
 
 const PopularVideos = dynamic(() => import('@/components/PopularVideos'), { ssr: false });
@@ -184,16 +181,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* Planificateur */}
-        <section id="planification" className="bg-background py-16 text-center">
-          <H2 className="mb-4 font-serif text-4xl font-bold text-primary">
-            Planifiez votre voyage
-          </H2>
-          <p className="mb-6 text-lg text-secondary">
-            Créez votre itinéraire sur mesure avec notre outil interactif.
-          </p>
-          <ItineraryPlanner />
-        </section>
+
         {/* Témoignages */}
         <section id="testimonials" className="bg-surface py-16 text-center">
           <H2 className="mb-4 font-serif text-4xl font-bold text-primary">
@@ -215,8 +203,6 @@ export default function Home() {
           </Link>
         </section>
         {/* Producteurs & Chatbot */}
-        <AddProducteur />
-        <AddCommunityPDF />
         <Chatbot />
       </main>
     </>

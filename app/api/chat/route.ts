@@ -1,121 +1,123 @@
-// 📂 app/api/chat/
+// 📂 app/api/chat/route.ts
 import { NextResponse } from 'next/server';
-
-// Optionnel: exécuter sur l’Edge si tu veux un démarrage plus vif
+import { BLOG_SLUGS } from '@/data/blog-slugs';
 
 // ---------- Types côté client ----------
 type ChatMessage = {
-  text: string; // contenu du message
-  isUser: boolean; // true si l’utilisateur, false si l’assistant
-  timestamp: string; // ISO string
+  text: string;
+  isUser: boolean;
+  timestamp: string;
 };
+
 type ChatRequestBody = {
   messages: ChatMessage[];
 };
 
-// ---------- Types minimalistes pour OpenAI ----------
-type OpenAIChatMessage = { content?: string };
-type OpenAIChoice = { message?: OpenAIChatMessage };
-type OpenAIResponse = { choices?: OpenAIChoice[] };
-
-// ---------- Type guards et utils sûrs ----------
-function isRecord(u: unknown): u is Record<string, unknown> {
-  return typeof u === 'object' && u !== null;
-}
-function isChatMessage(u: unknown): u is ChatMessage {
-  return (
-    isRecord(u) &&
-    typeof u.text === 'string' &&
-    typeof u.isUser === 'boolean' &&
-    typeof u.timestamp === 'string'
-  );
-}
-function isChatRequestBody(u: unknown): u is ChatRequestBody {
-  return isRecord(u) && Array.isArray(u.messages) && u.messages.every(isChatMessage);
-}
-function isOpenAIResponse(u: unknown): u is OpenAIResponse {
-  return isRecord(u) && Array.isArray(u.choices);
-}
-function extractOpenAIReply(u: OpenAIResponse): string | null {
-  const first = u.choices?.[0];
-  if (!first || !isRecord(first)) return null;
-  const msg = first.message;
-  return isRecord(msg) && typeof msg.content === 'string' ? msg.content : null;
-}
-
 // ---------- Paramétrage ----------
-const MODEL = process.env.OPENAI_MODEL ?? 'gpt-3.5-turbo'; // mets ici un modèle récent si dispo
+const MODEL = process.env.OPENAI_MODEL ?? 'gpt-4o-mini';
 const PROJECT = process.env.OPENAI_PROJECT_ID ?? '';
 const API_KEY = process.env.OPENAI_API_KEY ?? '';
 const TEMPERATURE = Number.isFinite(Number(process.env.OPENAI_TEMPERATURE))
   ? Number(process.env.OPENAI_TEMPERATURE)
-  : 0.7;
+  : 0.6;
 
-// Limites raisonnables pour éviter les abus / surprises de coûts
-const MAX_HISTORY = 10; // derniers messages conservés
-const MAX_TOTAL_INPUT_CHARS = 8000; // garde-fou rapide
+const MAX_MESSAGES = 20;
+
+function isRecord(v: unknown): v is Record<string, unknown> {
+  return typeof v === 'object' && v !== null;
+}
+
+// Schéma minimal attendu (chat.completions)
+type OpenAIResponse = {
+  choices?: Array<{
+    message?: { content?: string };
+  }>;
+};
+
+function isOpenAIResponse(v: unknown): v is OpenAIResponse {
+  return isRecord(v) && Array.isArray(v.choices);
+}
+
+function extractOpenAIReply(v: OpenAIResponse): string | null {
+  const content = v.choices?.[0]?.message?.content;
+  return typeof content === 'string' ? content.trim() : null;
+}
+
+const SAFE_INTERNAL_ROUTES = [
+  '/destinations',
+  '/blog', // page index si tu l'as; sinon le bot ne l'utilisera pas comme priorité
+  '/planificateur',
+  '/producteurs',
+  '/objets',
+  '/offres',
+  '/videos',
+  '/vols',
+  '/vr',
+  '/camping',
+  '/experiences',
+] as const;
 
 export async function POST(req: Request) {
   try {
-    // 1) Parse & validation
-    const raw: unknown = await req.json();
-    if (!isChatRequestBody(raw)) {
+    if (!API_KEY) {
       return NextResponse.json(
-        { error: 'Requête invalide : messages manquants ou mal formés.' },
-        { status: 400 },
-      );
-    }
-    if (!API_KEY || !PROJECT) {
-      console.error('[API ERROR] OPENAI_API_KEY / OPENAI_PROJECT_ID manquant(s).');
-      return NextResponse.json({ error: 'Configuration serveur incomplète.' }, { status: 500 });
-    }
-
-    // 2) Normalisation & limitations
-    const limited = raw.messages.slice(-MAX_HISTORY).map((m) => ({
-      ...m,
-      text: m.text.trim(),
-    }));
-
-    const totalChars = limited.reduce((n, m) => n + m.text.length, 0);
-    if (totalChars > MAX_TOTAL_INPUT_CHARS) {
-      return NextResponse.json(
-        { error: 'Entrée trop volumineuse. Réduis un peu le contexte 🫣' },
-        { status: 400 },
+        { error: 'OPENAI_API_KEY manquant dans les variables d’environnement.' },
+        { status: 500 },
       );
     }
 
-    // 3) Construction du prompt pour OpenAI
+    const bodyU: unknown = await req.json();
+    if (!isRecord(bodyU) || !Array.isArray(bodyU.messages)) {
+      return NextResponse.json({ error: 'Body invalide (messages requis).' }, { status: 400 });
+    }
+
+    const body = bodyU as ChatRequestBody;
+
+    // 1) Limiter l’historique
+    const limited = body.messages.slice(-MAX_MESSAGES);
+
+    // 2) Prompt système (guidage + choix + liens valides)
+    const slugsList = BLOG_SLUGS.join(', ');
+    const routesList = SAFE_INTERNAL_ROUTES.join(', ');
+
     const systemMessage = {
       role: 'system' as const,
       content: `
-Tu es un assistant voyage expert et chaleureux, spécialisé au Québec et au Canada.
+Tu es l’assistant officiel du site GoQuébeCAN (Québec/Canada), orienté aide et inspiration.
 
-🎯 Ta mission :
-- Aider familles / campeurs / amoureux de nature & bouffe locale à organiser leur voyage.
-- Proposer destinations, itinéraires, activités, bons plans.
-- Mettre en avant les contenus du site : blog, vidéos, objets, planificateur.
-- Si la destination correspond à un article connu (ex. "tadoussac", "banff", "gaspésie"), ajoute des liens **valables** en Markdown :
-  📘 Article : [Voir l’article](/blog/NOM-DESTINATION)
-  🎥 Vidéos : [Regarder les vidéos](/videos#NOM-DESTINATION)
-  🧳 Objets utiles : [Voir la liste](/objets)
-  🗺️ Planificateur : [Planifier mon voyage](/planificateur)
-  🏨 Hôtels : [Hôtels à NOM](https://www.booking.com/searchresults.html?city=xxx.fr.html)
+OBJECTIF
+- Aider rapidement (débutants) et rester utile aux voyageurs expérimentés.
+- Toujours proposer des options (laisser le choix), sans forcer une redirection.
 
-🗣️ Ton :
-- Simple, amical, pro.
-- Termine par une question utile :
-  → “Tu préfères une étape plus sauvage ou plutôt gourmande ?”
-  → “Tu as une région ou un budget en tête ?”
+RÈGLES DE RÉPONSE (obligatoires)
+1) Donne d’abord une réponse utile et courte (4 à 8 lignes).
+2) Propose ensuite 2 à 4 options sous forme de liens internes Markdown (liste à puces).
+3) Termine par 1 question maximum pour personnaliser (ex: ville de départ + période, ou style du voyage).
 
-🛑 Ne donne jamais de lien qui ne mène à rien.
-🗨️ Réponds uniquement en français. Émojis OK avec modération.
-      `.trim(),
+LIENS INTERNES AUTORISÉS
+- Tu ne dois utiliser QUE ces routes: ${routesList}
+- Pour le blog, tu as le droit d’écrire /blog/<slug> UNIQUEMENT si <slug> est dans la liste autorisée ci-dessous.
+- Sinon, propose /destinations ou demande la destination.
+
+SLUGS BLOG AUTORISÉS (/blog/<slug>)
+${slugsList}
+
+BONNES PRATIQUES DE CONTENU
+- Itinéraire: si l’utilisateur demande X jours + destination claire, propose une version par défaut (jour 1 à jour X) puis pose 1 question pour affiner.
+- Producteurs: ne cite pas de noms inventés. Oriente vers /producteurs et demande le départ/période si nécessaire.
+- Style: chaleureux, simple, rassurant, concret. Pas de blabla.
+
+EXEMPLES D’OPTIONS (à adapter)
+- [🗺️ Planifier l’itinéraire](/planificateur)
+- [📘 Lire l’article](/blog/<slug-valide>)
+- [🎥 Voir les vidéos](/videos)
+- [📍 Explorer les destinations](/destinations)
+- [🧺 Producteurs locaux](/producteurs)
+- [🎒 Objets utiles](/objets)
+`.trim(),
     };
 
-    const openAiMessages: ReadonlyArray<{
-      role: 'system' | 'user' | 'assistant';
-      content: string;
-    }> = [
+    const openAiMessages = [
       systemMessage,
       ...limited.map((m) => ({
         role: m.isUser ? ('user' as const) : ('assistant' as const),
@@ -123,24 +125,25 @@ Tu es un assistant voyage expert et chaleureux, spécialisé au Québec et au Ca
       })),
     ];
 
-    const body = {
+    const payload = {
       model: MODEL,
       temperature: TEMPERATURE,
-      max_tokens: 800,
+      max_tokens: 900,
       messages: openAiMessages,
     } as const;
 
-    // 4) Appel OpenAI avec timeout (AbortController)
+    // 3) Appel OpenAI avec timeout
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 25_000); // 25s max
+    const timeout = setTimeout(() => controller.abort(), 25_000);
+
     const res = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${API_KEY}`,
         'Content-Type': 'application/json',
-        'OpenAI-Project': PROJECT,
+        ...(PROJECT ? { 'OpenAI-Project': PROJECT } : {}),
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify(payload),
       signal: controller.signal,
     }).finally(() => clearTimeout(timeout));
 
@@ -161,10 +164,9 @@ Tu es un assistant voyage expert et chaleureux, spécialisé au Québec et au Ca
     return NextResponse.json({ message: reply });
   } catch (err: unknown) {
     const msg = err instanceof Error ? err.message : 'Erreur inconnue';
-    // AbortError (timeout) → message plus clair
     if (msg.includes('The operation was aborted')) {
       return NextResponse.json(
-        { error: 'Timeout OpenAI — réessaie dans un instant 🙏' },
+        { error: 'Timeout OpenAI — réessaie dans un instant.' },
         { status: 504 },
       );
     }

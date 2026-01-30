@@ -215,7 +215,7 @@ export default function BlogArticleLocationVR() {
       {/* ====== CTA FIN D’ARTICLE ====== */}
       <div className="mt-10 flex flex-wrap justify-center gap-4">
         <Link
-          href="/#destinations-populaires"
+          href="/destinations"
           className="rounded-full border px-5 py-3 font-medium hover:bg-gray-50"
         >
           Retourner aux destinations populaires

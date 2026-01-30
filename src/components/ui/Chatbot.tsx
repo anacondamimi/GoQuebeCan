@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useRef, useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import ChatbotCTAButtons from '@/components/ChatbotCTAButtons';
@@ -12,15 +11,99 @@ import { suggestNearbyProducers } from '@/utils/suggestNearbyProducers';
 import type { Suggestion } from '@/utils/suggestNearbyProducers';
 import type { Producer } from '@/types/Producer';
 
-import producersData from '@/data/producers.json'; // ✅ AJOUTÉ
-const producersList: Producer[] = producersData as Producer[]; // ✅ AJOUTÉ
+import producersData from '@/data/producers.json';
+const producersList: Producer[] = producersData as Producer[];
 
 import { BLOG_SLUGS } from '@/data/blog-slugs';
 
-const MapWithRouting = dynamic(() => import('@/components/MapWithRouting'), {
-  ssr: false,
-  loading: () => <p>Chargement de la carte...</p>,
-});
+/** -----------------------
+ * Helpers
+ * ----------------------*/
+
+function normalizeText(input: string) {
+  return input
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
+function isNeedIdeaIntent(normText: string) {
+  // L'utilisateur ne sait pas où partir / cherche des idées
+  return (
+    normText.includes('ou partir') ||
+    normText.includes('où partir') ||
+    normText.includes('idee') ||
+    normText.includes('idée') ||
+    normText.includes('inspiration') ||
+    normText.includes('je ne sais pas') ||
+    normText.includes('pas sur') ||
+    normText.includes('pas sûr') ||
+    normText.includes('suggestion') ||
+    normText.includes('recommande') ||
+    normText.includes('recommandes')
+  );
+}
+
+function isItineraryIntent(normText: string) {
+  return (
+    /\b(itineraire|itinéraire|planifier|parcours|road\s?trip|boucle|trajet)\b/.test(normText) ||
+    /\b(\d+)\s?(j|jours)\b/.test(normText)
+  );
+}
+
+function hasInternalLinksMarkdown(text: string) {
+  // détecte au moins un lien interne type: ](/planificateur)
+  return /\]\(\/[a-z0-9#/-]+/i.test(text);
+}
+
+function detectTravelTypeSlug(normText: string): string {
+  const has = (re: RegExp) => re.test(normText);
+
+  // camping
+  if (has(/\bcamping\b/) || has(/\btente\b/) || has(/\bcaravane\b/) || has(/\bvanlife\b/)) {
+    return 'voyage-camping';
+  }
+
+  // avion
+  if (has(/\bavion\b/) || has(/\baeroport\b/) || has(/\bvols?\b/) || has(/\bvalise\b/)) {
+    return 'voyage-avion';
+  }
+
+  // voiture / itinéraire
+  if (has(/\bvoiture\b/) || has(/\broad\s?trip\b/) || has(/\bitineraire\b/) || has(/\broute\b/)) {
+    return 'voyage-voiture';
+  }
+
+  // hôtel
+  if (has(/\bh[ôo]tel\b/) || has(/\bhebergement\b/) || has(/\bchambre\b/)) {
+    return 'voyage-hotel';
+  }
+
+  return '';
+}
+
+function extractSlugFromText(input: string): string {
+  const norm = normalizeText(input);
+
+  // Prioriser les slugs longs pour éviter les faux positifs
+  const sorted = [...BLOG_SLUGS].sort((a, b) => b.length - a.length);
+
+  for (const slug of sorted) {
+    const slugNorm = normalizeText(slug);
+    // autoriser " " ou "-" à la place des "-"
+    const pattern = slugNorm.replace(/-/g, '[-\\s]?');
+    const re = new RegExp(`(?:^|[^a-z0-9])${pattern}(?:[^a-z0-9]|$)`);
+    if (re.test(norm)) return slug;
+  }
+
+  return '';
+}
+
+function getLastMessages(all: Message[], userMessage: Message, limit = 8) {
+  // Envoie seulement les derniers messages pour éviter payload énorme
+  const merged = [...all, userMessage];
+  return merged.slice(Math.max(0, merged.length - limit));
+}
 
 export default function Chatbot() {
   const {
@@ -33,94 +116,61 @@ export default function Chatbot() {
   } = useSite();
 
   const [input, setInput] = useState('');
-  const [start, setStart] = useState<[number, number] | null>(null);
-  const [end, setEnd] = useState<[number, number] | null>(null);
-  const [autoOpened, setAutoOpened] = useState(false);
   const [nearbyProducers, setNearbyProducers] = useState<Suggestion[]>([]);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Scroll auto vers le dernier message
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  const lastBotMessage = [...messages].reverse().find((m) => !m.isUser);
+  const showStaticCtas = !lastBotMessage || !hasInternalLinksMarkdown(lastBotMessage.text);
+
+  /** Auto-scroll en bas quand chat ouvert */
   useEffect(() => {
+    if (!isOpen) return;
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+  }, [messages, isOpen]);
 
-  // Ouvre le chat automatiquement au premier appel
+  /** ✅ Ouvrir le chat via un event global (depuis ton bouton banner) */
   useEffect(() => {
-    if (typeof window === 'undefined') return; // ✅ Corrige l'erreur SSR
-
-    const handleOpenChat = () => {
+    const onOpenChat = () => {
       setIsOpen(true);
-      if (!autoOpened) {
-        setMessages((prev: Message[]) => [
-          ...prev,
-          {
-            text: `💬 Bonjour 👋, je peux vous aider à :
-
-✅ Tracer votre itinéraire (camping, hôtels, vanlife)
-✅ Découvrir des producteurs locaux sur votre trajet
-✅ Voir nos articles et vidéos selon votre destination
-✅ Préparer votre voyage avec les objets indispensables
-
-Posez-moi une question pour commencer !`,
-            isUser: false,
-            timestamp: new Date().toISOString(),
-          },
-        ]);
-        setAutoOpened(true);
-      }
+      // focus doux pour que l'utilisateur puisse écrire direct
+      setTimeout(() => inputRef.current?.focus(), 50);
     };
 
-    window.addEventListener('openChat', handleOpenChat);
-    return () => window.removeEventListener('openChat', handleOpenChat);
-  }, [autoOpened, setIsOpen, setMessages]);
+    window.addEventListener('openChat', onOpenChat);
+    return () => window.removeEventListener('openChat', onOpenChat);
+  }, [setIsOpen]);
 
-  // Normalisation: minuscules, sans accents
-  const normalize = (s: string) =>
-    s
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '');
-
-  // Fonction pour extraire le slug de destination
-  const extractDestinationSlug = (text: string): string => {
-    const normText = normalize(text);
-
-    // On préfère les slugs les plus longs (évite les faux positifs partiels)
-    const byLengthDesc = [...BLOG_SLUGS].sort((a, b) => b.length - a.length);
-
-    for (const slug of byLengthDesc) {
-      // On tolère espace/tiret dans le texte utilisateur
-      const slugPattern = normalize(slug).replace(/-/g, '[-\\s]?');
-      const re = new RegExp(`(?:^|[^a-z0-9])${slugPattern}(?:[^a-z0-9]|$)`);
-      if (re.test(normText)) return slug;
-    }
-    return '';
-  };
+  /** Focus quand on ouvre le chat via le bouton flottant */
+  useEffect(() => {
+    if (!isOpen) return;
+    setTimeout(() => inputRef.current?.focus(), 50);
+  }, [isOpen]);
 
   const handleSend = async (e?: React.FormEvent) => {
     e?.preventDefault();
     if (!input.trim()) return;
 
+    const currentInput = input;
+    setInput('');
+    setNearbyProducers([]); // reset suggestions quand nouvel échange
+
     const userMessage: Message = {
-      text: input,
+      text: currentInput,
       isUser: true,
       timestamp: new Date().toISOString(),
     };
 
     setMessages((prev: Message[]) => [...prev, userMessage]);
-    const currentInput = input; // Sauvegarder l'input avant de le réinitialiser
-    setInput('');
     setIsTyping(true);
 
-    const userText = currentInput.toLowerCase();
-    // 🎯 Activation de la carte et des producteurs si l'utilisateur mentionne "tadoussac"
-    if (userText.includes('tadoussac')) {
-      // Montréal
-      setStart([45.5017, -73.5673]);
-      // Tadoussac
-      setEnd([48.1446, -69.7174]);
+    const normText = normalizeText(currentInput);
 
+    // 🎯 Démo "Tadoussac" (sans carte dans le chatbot — on reste léger)
+    if (normText.includes('tadoussac')) {
       try {
+        // waypoint format attendu par ton helper
         const waypoint: [number, number][] = [[48.1446, -69.7174]];
         const suggested = suggestNearbyProducers(producersList, waypoint);
         setNearbyProducers(suggested);
@@ -131,75 +181,134 @@ Posez-moi une question pour commencer !`,
       setMessages((prev: Message[]) => [
         ...prev,
         {
-          text: `🗺️ Voici l'itinéraire tracé vers Tadoussac avec les producteurs locaux affichés ci-dessous.
+          text: `🧭 Tadoussac, excellent choix — ça sent déjà l’air salin et les paysages grandioses.
 
-Vous pouvez visualiser l'itinéraire et explorer les producteurs locaux recommandés directement ci-dessous.`,
+**Vous choisissez la suite :**
+- [🗺️ Ouvrir le planificateur](/planificateur)
+- [📘 Lire l'article Tadoussac](/blog/tadoussac)
+- [🎥 Voir les vidéos](/videos)
+- [🧺 Voir les producteurs](/producteurs)
+
+Petite question pour personnaliser : vous partez d’où et à quelle période ?`,
           isUser: false,
           timestamp: new Date().toISOString(),
         },
       ]);
+
       setIsTyping(false);
       return;
     }
 
     try {
-      // 📍 1️⃣ Détection d'intention de voyage
-      if (
-        userText.includes('tadoussac') ||
-        userText.includes('gaspésie') ||
-        userText.includes('québec') ||
-        userText.includes('destination') ||
-        userText.includes('voyage') ||
-        userText.includes('itinéraire')
-      ) {
+      // ✅ 1) Destination (slug blog) détectée → suggestions / choix
+      const detectedSlug = extractSlugFromText(currentInput);
+      if (detectedSlug) {
+        const suggestion = getContentSuggestions(detectedSlug);
+
+        // IMPORTANT: ton helper renvoie blogUrl (pas articleUrl)
+        const blogUrl = suggestion?.blogUrl ?? `/blog/${detectedSlug}`;
+        const videoUrl = suggestion?.videoUrl ?? '/videos';
+        const objectsUrl = suggestion?.objectsUrl ?? '/objets';
+        const plannerUrl = suggestion?.plannerUrl ?? '/planificateur';
+        const destinationLabel = suggestion?.destination ?? detectedSlug;
+
         setMessages((prev: Message[]) => [
           ...prev,
           {
-            text: `🗺️ Vous souhaitez planifier un itinéraire vers cette destination avec notre carte interactive ?
+            text: `Parfait. Pour **${destinationLabel}**, je vous propose plusieurs chemins — à vous de choisir.
 
-Notre planificateur affichera automatiquement le tracé, les étapes, **et les producteurs locaux à proximité** pour vous permettre de découvrir des produits québécois pendant votre voyage.
+**Vous choisissez :**
+- [🗺️ Ouvrir le planificateur](${plannerUrl})
+- [📘 Lire l'article](${blogUrl})
+- [🎥 Voir les vidéos](${videoUrl})
+- [🧺 Producteurs locaux](/producteurs)
+- [🎒 Objets utiles](${objectsUrl})
 
-🚗 **Voyagez-vous en voiture ?** Nous avons également une liste d'objets indispensables pour optimiser vos trajets.
-
-👉 **Cliquez ci-dessous pour commencer à planifier votre itinéraire :**
-
-- [🗺️ Planifier l'itinéraire](/planificateur)
-- [⚡ Objets pour voyage en voiture](/objets)
-- [🎒 Découvrir les objets utiles](/objets-utiles)`,
+Pour affiner sans compliquer : vous partez d’où, et vous visez quelle période (mois/saison) ?`,
             isUser: false,
             timestamp: new Date().toISOString(),
           },
         ]);
+
         setIsTyping(false);
         return;
       }
 
-      // 📘 2️⃣ Suggestions basées sur le slug d'article
-      const slug = extractDestinationSlug(userText);
-      const suggestion = getContentSuggestions(slug);
-      if (suggestion) {
+      // ✅ 2) Type de voyage détecté (voyage-*) → guide + objets
+      const travelTypeSlug = detectTravelTypeSlug(normText);
+      if (travelTypeSlug && BLOG_SLUGS.includes(travelTypeSlug as any)) {
         setMessages((prev: Message[]) => [
           ...prev,
           {
-            text: `✨ Voici des suggestions pour **${suggestion.destination}** :
+            text: `Très bon angle. Je peux vous aider à préparer ce type de voyage de façon simple et efficace.
 
-📘 [Lire l'article](${suggestion.blogUrl})
-🎥 [Voir les vidéos](${suggestion.videoUrl})
-🎒 [Objets utiles](${suggestion.objectsUrl})
-🗺️ [Planifier l'itinéraire](${suggestion.plannerUrl})`,
+**Vous choisissez :**
+- [📘 Guide complet](/blog/${travelTypeSlug})
+- [🎒 Objets utiles](/objets)
+- [🎥 Vidéos](/videos)
+- [🗺️ Ouvrir le planificateur](/planificateur)
+
+Vous cherchez plutôt un voyage **relax** ou **bien rempli** (beaucoup d’activités) ?`,
             isUser: false,
             timestamp: new Date().toISOString(),
           },
         ]);
+
         setIsTyping(false);
         return;
       }
 
-      // 🧠 3️⃣ Sinon, fallback vers l'API de chat
+      // ✅ 3) “Je ne sais pas où partir” → inspirations d’abord
+      if (isNeedIdeaIntent(normText)) {
+        setMessages((prev: Message[]) => [
+          ...prev,
+          {
+            text: `Je vous comprends — choisir, c’est souvent le plus difficile… mais on va rendre ça agréable.
+
+**Vous choisissez un point de départ :**
+- [📍 Explorer les destinations](/destinations)
+- [✨ Expériences à vivre](/experiences)
+- [🎥 Vidéos pour s’inspirer](/videos)
+- [💰 Offres spéciales](/offres)
+
+Dites-moi juste : vous cherchez plutôt **nature**, **route panoramique**, **famille**, ou **gourmand/local** ?`,
+            isUser: false,
+            timestamp: new Date().toISOString(),
+          },
+        ]);
+
+        setIsTyping(false);
+        return;
+      }
+
+      // ✅ 4) Itinéraire demandé mais destination pas claire
+      if (isItineraryIntent(normText)) {
+        setMessages((prev: Message[]) => [
+          ...prev,
+          {
+            text: `Je peux vous proposer un itinéraire même si la destination n’est pas encore 100% fixée.
+
+**Vous choisissez :**
+- [🗺️ Ouvrir le planificateur](/planificateur)
+- [📍 Destinations](/destinations)
+- [🎥 Vidéos](/videos)
+- [📘 Blog](/blog)
+
+Pour que je vise juste : vous partez d’où (ex: Montréal) et vous avez combien de jours ?`,
+            isUser: false,
+            timestamp: new Date().toISOString(),
+          },
+        ]);
+
+        setIsTyping(false);
+        return;
+      }
+
+      // ✅ 5) Sinon → fallback vers l'API de chat (avec historique limité)
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: [...messages, userMessage] }),
+        body: JSON.stringify({ messages: getLastMessages(messages, userMessage, 8) }),
       });
 
       if (!res.ok) throw new Error(`Erreur API: ${res.status}`);
@@ -208,183 +317,149 @@ Notre planificateur affichera automatiquement le tracé, les étapes, **et les p
       setMessages((prev: Message[]) => [
         ...prev,
         {
-          text: data.message || "Je n'ai pas compris, pouvez-vous reformuler ?",
+          text: data.message || "Je n'ai pas compris, peux-tu reformuler ?",
           isUser: false,
           timestamp: new Date().toISOString(),
         },
       ]);
-    } catch (error) {
-      console.error('Erreur requête API:', error);
+      setIsTyping(false);
+    } catch (err) {
+      console.error('Erreur chatbot:', err);
       setMessages((prev: Message[]) => [
         ...prev,
         {
-          text: '❌ Erreur réseau. Réessayez plus tard.',
+          text: 'Je sens un petit accroc technique. Réessayez, ou dites-moi : **destination + nombre de jours** (ex: "Gaspésie 7 jours").',
           isUser: false,
           timestamp: new Date().toISOString(),
         },
       ]);
-    } finally {
       setIsTyping(false);
     }
   };
 
+  // UI minimisée (bouton flottant)
+  if (!isOpen) {
+    return (
+      <button
+        aria-label="Ouvrir le chatbot"
+        onClick={() => setIsOpen(true)}
+        className="fixed bottom-6 right-6 z-50 rounded-full bg-blue-600 p-4 text-white shadow-lg"
+      >
+        <MessageSquare className="size-6" />
+      </button>
+    );
+  }
+
   return (
-    <>
-      {!isOpen && (
+    <div className="fixed bottom-6 right-6 z-50 flex h-[520px] w-[360px] flex-col overflow-hidden rounded-2xl border bg-white shadow-2xl">
+      <div className="flex items-center justify-between border-b bg-white p-3">
+        <div className="font-semibold">Assistant GoQuébeCAN</div>
         <button
-          onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 rounded-full bg-indigo-600 p-4 text-white shadow-lg transition hover:bg-indigo-700"
-          aria-label="Ouvrir le chat"
+          aria-label="Fermer"
+          onClick={() => setIsOpen(false)}
+          className="rounded p-2 hover:bg-gray-100"
         >
-          <MessageSquare className="size-6" />
+          <X className="size-5" />
         </button>
-      )}
+      </div>
 
-      {isOpen && (
-        <div className="fixed bottom-0 right-0 z-50 flex w-full animate-slide-up flex-col rounded-t-xl bg-white shadow-2xl sm:bottom-6 sm:right-6 sm:w-96 sm:rounded-xl">
-          {/* Header */}
-          <div className="flex items-center justify-between rounded-t-xl bg-indigo-600 p-4 text-white">
-            <div className="flex items-center gap-2">
-              <MessageSquare className="size-5" />
-              <span className="font-semibold">Assistant Voyage</span>
-            </div>
-            <button onClick={() => setIsOpen(false)} aria-label="Fermer le chat">
-              <X className="size-5" />
-            </button>
-          </div>
-
-          {/* Messages */}
-          <div className="h-96 grow overflow-y-auto bg-gray-50 p-4">
-            {messages.map((msg, i) => (
-              <div key={i} className={`flex ${msg.isUser ? 'justify-end' : 'justify-start'} mb-2`}>
-                <div
-                  className={`max-w-[85%] rounded-2xl p-3 ${
-                    msg.isUser
-                      ? 'rounded-br-none bg-indigo-600 text-white'
-                      : 'rounded-bl-none bg-white text-gray-800 shadow'
-                  }`}
-                >
-                  {msg.isUser ? (
-                    <p className="mb-1 whitespace-pre-wrap">{msg.text}</p>
-                  ) : (
-                    <>
-                      <ReactMarkdown
-                        remarkPlugins={[remarkGfm]}
-                        components={{
-                          p: ({ children }) => (
-                            <p className="mb-1 whitespace-pre-wrap">{children}</p>
-                          ),
-                          a: ({ href, children }) => (
-                            <a
-                              href={href || '#'}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-blue-600 underline"
-                            >
-                              {children}
-                            </a>
-                          ),
-                        }}
-                      >
-                        {msg.text}
-                      </ReactMarkdown>
-
-                      {/* ✅ CTA visuel après le dernier message bot */}
-                      {i === messages.length - 1 && (
-                        <>
-                          <ChatbotCTAButtons />
-                          <p className="text-right text-xs text-gray-400">
-                            {new Date(msg.timestamp).toLocaleTimeString([], {
-                              hour: '2-digit',
-                              minute: '2-digit',
-                            })}
-                          </p>
-                        </>
-                      )}
-                    </>
-                  )}
-                </div>
-              </div>
-            ))}
-
-            {isTyping && (
-              <div className="flex justify-start">
-                <div className="max-w-[85%] rounded-2xl bg-white p-3 text-gray-800 shadow">
-                  <div className="flex animate-pulse gap-1">
-                    <div className="size-2 rounded-full bg-gray-400"></div>
-                    <div className="size-2 rounded-full bg-gray-400"></div>
-                    <div className="size-2 rounded-full bg-gray-400"></div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            <div ref={messagesEndRef} />
-          </div>
-
-          {/* 🗺️ Carte interactive */}
-          {start && end && (
-            <div className="border-t bg-white p-4">
-              <MapWithRouting
-                itinerary={[]}
-                routePoints={[start, end].filter(Boolean) as [number, number][]}
-                producersOnRoute={producersList}
-                addAfterNearest={() => {}}
-                addAtEnd={() => {}}
-                addToNearestNotes={() => {}}
-                setSelectedIndex={() => {}}
-                setIsModalOpen={() => {}}
-              />
-            </div>
-          )}
-
-          {/* 🥬 Liste des producteurs */}
-          {nearbyProducers.length > 0 && (
-            <div className="max-h-48 overflow-y-auto border-t bg-white p-4">
-              <p className="mb-2 text-sm font-medium">🥬 Producteurs à proximité :</p>
-              <ul className="list-disc space-y-1 pl-5 text-sm">
-                {nearbyProducers.map(({ producer, distance }, i) => (
-                  <li key={i}>
-                    {producer.name} ({producer.type || 'Producteur'}) – {distance.toFixed(1)} km
-                    {producer.website && (
-                      <>
-                        {' — '}
-                        <a
-                          href={producer.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-blue-600 underline"
-                        >
-                          Site
-                        </a>
-                      </>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* ✏️ Input utilisateur */}
-          <form onSubmit={handleSend} className="flex items-center gap-2 border-t bg-white p-4">
-            <input
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Posez une question..."
-              className="flex-1 rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              disabled={isTyping}
-            />
-            <button
-              type="submit"
-              className="rounded-lg bg-indigo-600 p-2 text-white transition-colors hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
-              disabled={isTyping || !input.trim()}
-              aria-label="Envoyer le message"
+      <div className="flex-1 overflow-auto p-3">
+        {messages.map((msg: Message, i: number) => (
+          <div
+            key={`${msg.timestamp}-${i}`}
+            className={`mb-3 flex ${msg.isUser ? 'justify-end' : 'justify-start'}`}
+          >
+            <div
+              className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm ${
+                msg.isUser ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-900'
+              }`}
             >
-              <Send className="size-5" />
-            </button>
-          </form>
+              {msg.isUser ? (
+                <p className="whitespace-pre-wrap">{msg.text}</p>
+              ) : (
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.text}</ReactMarkdown>
+              )}
+            </div>
+          </div>
+        ))}
+
+        {isTyping && (
+          <div className="mb-3 flex justify-start">
+            <div className="rounded-2xl bg-gray-100 px-3 py-2 text-sm text-gray-700">
+              Je réfléchis…
+            </div>
+          </div>
+        )}
+
+        <div ref={messagesEndRef} />
+        <ChatbotCTAButtons visible={showStaticCtas} />
+
+        {/* 🥬 Liste des producteurs (optionnel, léger) */}
+        {nearbyProducers.length > 0 && (
+          <div className="mt-3 max-h-48 overflow-y-auto rounded-xl border bg-white p-4">
+            <p className="mb-2 font-semibold">Producteurs recommandés</p>
+            <ul className="list-disc pl-5 text-sm">
+              {nearbyProducers.map((p, idx) => {
+                const anyP = p as unknown as Record<string, unknown>;
+
+                const label =
+                  (typeof anyP.name === 'string' && anyP.name) ||
+                  (typeof anyP.title === 'string' && anyP.title) ||
+                  (typeof anyP.label === 'string' && anyP.label) ||
+                  (typeof anyP.company === 'string' && anyP.company) ||
+                  'Producteur';
+
+                const kind =
+                  (typeof anyP.type === 'string' && anyP.type) ||
+                  (typeof anyP.category === 'string' && anyP.category) ||
+                  (typeof anyP.kind === 'string' && anyP.kind) ||
+                  '';
+
+                const distance =
+                  typeof anyP.distanceKm === 'number'
+                    ? `${anyP.distanceKm.toFixed(1)} km`
+                    : typeof anyP.distance === 'number'
+                      ? `${anyP.distance.toFixed(1)} km`
+                      : '';
+
+                return (
+                  <li key={`${label}-${idx}`}>
+                    {label}
+                    {kind ? ` — ${kind}` : ''}
+                    {distance ? ` (${distance})` : ''}
+                  </li>
+                );
+              })}
+            </ul>
+            <div className="mt-3 text-sm">
+              <a className="underline" href="/producteurs">
+                Voir tous les producteurs
+              </a>
+            </div>
+          </div>
+        )}
+
+        <div className="mt-3">
+          <ChatbotCTAButtons />
         </div>
-      )}
-    </>
+      </div>
+
+      <form onSubmit={handleSend} className="flex items-center gap-2 border-t p-3">
+        <input
+          ref={inputRef}
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          className="flex-1 rounded-xl border px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-300"
+          placeholder="Ex: Itinéraire 7 jours Gaspésie, avec producteurs…"
+        />
+        <button
+          type="submit"
+          className="rounded-xl bg-blue-600 p-2 text-white shadow hover:bg-blue-700"
+          aria-label="Envoyer"
+        >
+          <Send className="size-5" />
+        </button>
+      </form>
+    </div>
   );
 }

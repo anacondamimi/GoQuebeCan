@@ -69,7 +69,7 @@ const regions: Region[] = [
         name: 'Percé',
         description: "Célèbre pour son rocher et l'île Bonaventure",
         image: '/images/destinations/perce.avif',
-        blogId: 'blog_article_perce',
+        blogId: 'blog/perce',
       },
       {
         name: 'Parc national Forillon',
@@ -254,7 +254,7 @@ const regions: Region[] = [
       {
         name: 'Parc Aquatique',
         description: 'Amusement garanti',
-        image: '/images/destinations/carte.avif',
+        image: '/images/destinations/glissades-bromont.avif',
         blogId: 'blog_article_parc_aquatique',
       },
     ],
