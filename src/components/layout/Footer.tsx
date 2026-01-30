@@ -26,7 +26,6 @@ const footerLinks: FooterLinkGroup[] = [
       { label: 'Expériences', href: '/experiences' },
       { label: 'Producteurs locaux', href: '/producteurs' },
       { label: 'Vidéos', href: '/videos' },
-      { label: 'Blog', href: '/blog' },
     ],
   },
   {
