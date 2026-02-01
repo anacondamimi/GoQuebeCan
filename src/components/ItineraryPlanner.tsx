@@ -80,7 +80,7 @@ function typeLabel(type: string): string {
 }
 
 export default function ItineraryPlanner() {
-  const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN ?? '';
+  const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? '';
 
   // Champs de saisie texte (pour affichage)
   const [startInput, setStartInput] = useState('');
