@@ -62,16 +62,29 @@ export default function MapboxAutocomplete({
     if (abortRef.current) abortRef.current.abort();
 
     timeoutRef.current = setTimeout(async () => {
+      const controller = new AbortController();
+      abortRef.current = controller;
+
       try {
-        const controller = new AbortController();
-        abortRef.current = controller;
+        // ✅ anti "403 from disk cache" + évite les réponses réutilisées trop longtemps
+        const url =
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(input)}.json` +
+          `?access_token=${encodeURIComponent(token)}` +
+          '&autocomplete=true&language=fr&limit=5' +
+          `&_cb=${Date.now()}`;
 
-        const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
-          input,
-        )}.json?access_token=${token}&autocomplete=true&language=fr&limit=5`;
+        const res = await fetch(url, {
+          signal: controller.signal,
+          cache: 'no-store',
+        });
 
-        const res = await fetch(url, { signal: controller.signal });
-        if (!res.ok) throw new Error(`Mapbox ${res.status}`);
+        if (!res.ok) {
+          // On ne throw pas pour éviter une "cascade" d'erreurs en prod
+          console.warn(`[MapboxAutocomplete] Mapbox HTTP ${res.status}`);
+          setSuggestions((prev) => (prev.length ? [] : prev));
+          setHasSearched(true);
+          return;
+        }
 
         const data = (await res.json()) as MapboxResponse;
         const feats = Array.isArray(data.features) ? data.features : [];
@@ -89,7 +102,7 @@ export default function MapboxAutocomplete({
         });
       } catch (err) {
         if ((err as Error)?.name !== 'AbortError') {
-          console.error('Erreur Mapbox:', err);
+          console.warn('[MapboxAutocomplete] Erreur Mapbox (fetch):', err);
           setSuggestions((prev) => (prev.length ? [] : prev));
           setHasSearched(true);
         }
