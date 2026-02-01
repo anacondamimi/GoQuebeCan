@@ -113,7 +113,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: '/offres', changeFrequency: 'weekly', priority: 0.8 },
     { path: '/videos', changeFrequency: 'weekly', priority: 0.8 },
     { path: '/vols', changeFrequency: 'weekly', priority: 0.8 },
-    { path: '/vr', changeFrequency: 'weekly', priority: 0.8 },
+    { path: '/blog/location-vr', changeFrequency: 'weekly', priority: 0.8 },
     { path: '/camping', changeFrequency: 'weekly', priority: 0.8 },
     { path: '/experiences', changeFrequency: 'weekly', priority: 0.8 },
     { path: '/itineraires-communaute', changeFrequency: 'weekly', priority: 0.8 },

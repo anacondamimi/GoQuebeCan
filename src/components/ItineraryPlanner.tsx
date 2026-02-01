@@ -541,7 +541,7 @@ export default function ItineraryPlanner() {
                     }}
                     className="rounded-md border px-2 py-1 text-xs hover:bg-gray-50"
                   >
-                    📝 Ouvrir le modal
+                    📝 Ouvrir la description de l'étape
                   </button>
                 </li>
               );

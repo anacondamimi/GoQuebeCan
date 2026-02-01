@@ -73,7 +73,7 @@ export default function Home() {
           </div>
         </section>
         {/* Destinations */}
-        <section id="destinations" className="bg-surface py-16">
+        <section id="destinations-populaires" className="bg-surface scroll-mt-24 py-16">
           <div className="mx-auto max-w-4xl px-4 text-center">
             <H2 className="mb-4 font-serif text-4xl font-bold text-primary sm:text-5xl">
               Destinations Populaires
@@ -173,7 +173,7 @@ export default function Home() {
 
             <div className="mt-8 text-center">
               <Link
-                href="/objets"
+                href="/#objets"
                 className="inline-flex items-center rounded-lg border px-5 py-2.5 text-sm hover:bg-primary/5"
               >
                 Voir tous les produits de voyage →
@@ -195,11 +195,8 @@ export default function Home() {
         </section>
         {/* CTA Blog */}
         <section id="blog" className="bg-surface py-16 text-center">
-          <Link
-            href="/blog"
-            className="inline-block rounded-full bg-accent px-6 py-3 font-semibold text-white transition hover:bg-primary"
-          >
-            Voir tous les articles
+          <Link href="/#destinations-populaires" className="font-semibold underline">
+            Voir tous nos articles sur les plus belles régions du Québec
           </Link>
         </section>
         {/* Producteurs & Chatbot */}

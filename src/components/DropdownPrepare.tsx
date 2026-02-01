@@ -45,7 +45,7 @@ export default function DropdownPrepare() {
     { label: 'Objets utiles', href: '/objets' },
     { label: 'Vidéos inspirantes', href: '/videos' },
     { label: 'Vols', href: '/vols' },
-    { label: 'Le Canada en VR', href: '/vr' },
+    { label: 'Le Canada en VR', href: '/blog/location-vr' },
   ];
 
   return (

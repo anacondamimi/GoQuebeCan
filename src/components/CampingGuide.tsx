@@ -379,7 +379,7 @@ export function CampingGuide() {
 
         <div className="mt-6 flex flex-wrap justify-center gap-4">
           <Link
-            href="/objets"
+            href="#objets"
             className="rounded-full border px-5 py-3 font-medium hover:bg-gray-50"
           >
             Objets indispensables

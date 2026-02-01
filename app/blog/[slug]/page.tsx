@@ -125,8 +125,9 @@ export default async function BlogArticlePage({ params }: PageParams) {
                   url: `${SITE_URL}/logo.png`,
                 },
               },
-              datePublished: meta?.publishedTime ?? new Date().toISOString(),
-              dateModified: meta?.modifiedTime ?? new Date().toISOString(),
+              ...(meta?.publishedTime ? { datePublished: meta.publishedTime } : {}),
+              ...(meta?.modifiedTime ? { dateModified: meta.modifiedTime } : {}),
+
               mainEntityOfPage: pageUrl,
               inLanguage: meta?.locale ?? 'fr-CA',
               articleSection: 'Voyage au Québec',
@@ -144,7 +145,7 @@ export default async function BlogArticlePage({ params }: PageParams) {
       {/* navigation interne = bon pour SEO interne + rétention */}
       <div className="mt-12 border-t border-gray-200 pt-8 text-center dark:border-gray-700">
         <a
-          href="/blog"
+          href="/#destinations-populaires"
           className="inline-block px-6 py-3 font-semibold text-blue-600 transition-colors hover:text-blue-700"
         >
           ← Retourner aux articles

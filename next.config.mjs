@@ -108,6 +108,9 @@ const nextConfig = {
   //  },
   // ];
   // },
+  async redirects() {
+    return [{ source: '/vr', destination: '/blog/location-vr', permanent: true }];
+  },
 
   // 🔒 Headers de sécurité
   async headers() {

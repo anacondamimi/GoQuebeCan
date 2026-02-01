@@ -616,7 +616,7 @@ export default function BlogArticleVilleDeQuebec() {
           </ul>
           <p>
             Envie de continuer à rêver ton prochain voyage ?{' '}
-            <Link href="/blog" className="font-semibold underline">
+            <Link href="/#destinations-populaires" className="font-semibold underline">
               Voir tous nos articles sur les plus belles régions du Québec
             </Link>
             .

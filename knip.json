@@ -1,0 +1,18 @@
+{
+  "entry": ["app/**/*.{ts,tsx,js,jsx}", "src/**/*.{ts,tsx,js,jsx}"],
+  "project": [
+    "app/**/*.{ts,tsx,js,jsx}",
+    "src/**/*.{ts,tsx,js,jsx}",
+    "*.{js,cjs,mjs}",
+    "scripts/**/*.{js,cjs,mjs,ts}"
+  ],
+  "ignore": [
+    "**/.next/**",
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/out/**",
+    "**/coverage/**",
+    "scripts/_archive/**",
+    "**/*.d.ts"
+  ]
+}

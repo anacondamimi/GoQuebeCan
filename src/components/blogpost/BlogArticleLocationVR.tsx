@@ -194,7 +194,7 @@ export default function BlogArticleLocationVR() {
       </p>
       <p>
         Enfin, profitez-en pour découvrir nos{' '}
-        <Link href="/objets-indispensables" className="text-blue-600 underline">
+        <Link href="/#objets" className="text-blue-600 underline">
           produits indispensables pour le voyage
         </Link>{' '}
         — de quoi rendre votre expérience encore plus agréable et pratique.
@@ -206,7 +206,7 @@ export default function BlogArticleLocationVR() {
         Voyager en VR au Québec, c’est vivre une expérience de liberté totale. Que vous partiez pour
         3 jours ou 3 semaines, chaque route est une aventure. Pour compléter votre préparation,
         explorez nos{' '}
-        <Link href="/carte-interactive" className="text-blue-600 underline">
+        <Link href="/planificateur" className="text-blue-600 underline">
           cartes interactives
         </Link>{' '}
         et découvrez les meilleurs arrêts nature et producteurs locaux sur votre itinéraire.
@@ -215,11 +215,12 @@ export default function BlogArticleLocationVR() {
       {/* ====== CTA FIN D’ARTICLE ====== */}
       <div className="mt-10 flex flex-wrap justify-center gap-4">
         <Link
-          href="/destinations"
+          href="/#destinations-populaires"
           className="rounded-full border px-5 py-3 font-medium hover:bg-gray-50"
         >
           Retourner aux destinations populaires
         </Link>
+
         <Link href="/videos" className="rounded-full border px-5 py-3 font-medium hover:bg-gray-50">
           Vidéos populaires
         </Link>

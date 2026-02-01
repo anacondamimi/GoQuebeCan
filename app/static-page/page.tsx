@@ -17,7 +17,7 @@ export default function StaticPage() {
           <Link href="/">Accueil</Link>
         </li>
         <li>
-          <Link href="/destinations">Destinations</Link>
+          <Link href="/#destinations-populaires">Destinations</Link>
         </li>
         <li>
           <Link href="/planificateur">Planificateur d'itinéraire</Link>
@@ -32,7 +32,7 @@ export default function StaticPage() {
           <Link href="/camping">Camping au Québec</Link>
         </li>
         <li>
-          <Link href="/vr">Voyager en VR</Link>
+          <Link href="/blog/location-vr">Voyager en VR</Link>
         </li>
         <li>
           <Link href="/videos">Vidéos populaires</Link>

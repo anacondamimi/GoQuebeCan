@@ -32,7 +32,7 @@ export default function MobileMenu() {
         <Link href="/experiences" className="block text-sm text-gray-700 hover:text-[#e11d48]">
           🌿 Vivre une expérience
         </Link>
-        <Link href="/vr" className="block text-sm text-gray-700 hover:text-[#e11d48]">
+        <Link href="/blog/location-vr" className="block text-sm text-gray-700 hover:text-[#e11d48]">
           🚐 Le Canada en VR
         </Link>
         <Link href="/producteurs" className="block text-sm text-gray-700 hover:text-[#e11d48]">

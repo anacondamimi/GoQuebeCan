@@ -44,15 +44,15 @@ function extractOpenAIReply(v: OpenAIResponse): string | null {
 }
 
 const SAFE_INTERNAL_ROUTES = [
-  '/destinations',
+  '/#destinations-populaires',
   '/blog', // page index si tu l'as; sinon le bot ne l'utilisera pas comme priorité
   '/planificateur',
   '/producteurs',
-  '/objets',
+  '/#objets',
   '/offres',
   '/videos',
   '/vols',
-  '/vr',
+  '/blog/location-vr',
   '/camping',
   '/experiences',
 ] as const;

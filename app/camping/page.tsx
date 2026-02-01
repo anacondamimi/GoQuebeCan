@@ -83,14 +83,14 @@ export default function CampingPage() {
         className="mt-12 flex flex-wrap justify-center gap-4"
       >
         <a
-          href="/destinations"
+          href="/#destinations-populaires"
           aria-label="Voir toutes les destinations populaires"
           className="rounded-full border border-gray-300 px-5 py-3 text-sm font-medium transition hover:bg-gray-50"
         >
           ← Retourner aux destinations populaires
         </a>
         <a
-          href="/objets"
+          href="/#objets"
           aria-label="Découvrir les objets utiles pour le camping"
           className="rounded-full border border-gray-300 px-5 py-3 text-sm font-medium transition hover:bg-gray-50"
         >

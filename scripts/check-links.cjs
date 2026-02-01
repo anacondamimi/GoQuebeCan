@@ -7,6 +7,11 @@ const { spawn } = require('child_process');
 
 const BASE_URL = process.env.LINKCHECK_BASE_URL || 'http://localhost:3000';
 const OUT_FILE = path.join(process.cwd(), 'broken-urls.json');
+const PORT = 3000;
+
+/* =========================
+   Utils
+========================= */
 
 function waitForServer(url, timeoutMs = 60_000) {
   const start = Date.now();
@@ -15,93 +20,109 @@ function waitForServer(url, timeoutMs = 60_000) {
     const tryRequest = () => {
       const req = http.get(url, (res) => {
         res.resume();
-        resolve();
+        if (res.statusCode && res.statusCode < 500) {
+          resolve();
+        } else {
+          retry();
+        }
       });
-      req.on('error', () => {
+
+      req.on('error', retry);
+
+      function retry() {
         if (Date.now() - start > timeoutMs) {
           reject(new Error(`Server not reachable at ${url}`));
         } else {
           setTimeout(tryRequest, 500);
         }
-      });
+      }
     };
+
     tryRequest();
   });
 }
 
-(async () => {
-  console.log('🚀 Starting Next.js server for link check...');
+function isInternal(url) {
+  return url === BASE_URL || url.startsWith(`${BASE_URL}/`);
+}
 
-  const server = spawn('pnpm', ['start', '-p', '3000'], {
+function isIgnored(url) {
+  return /\/_next\//i.test(url) || /\/api\//i.test(url) || /\/favicon/i.test(url);
+}
+
+/* =========================
+   Main
+========================= */
+
+(async () => {
+  console.log('🚀 Starting Next.js (prod build) for link check...');
+
+  const server = spawn('pnpm', ['start'], {
     stdio: 'inherit',
     shell: true,
-    env: { ...process.env, PORT: '3000' },
+    env: { ...process.env, PORT: String(PORT) },
   });
 
   try {
     await waitForServer(BASE_URL);
 
-    console.log('🔍 Crawling internal links...');
+    console.log('🔍 Crawling site for broken links...');
 
     const result = await check({
       path: BASE_URL,
       recurse: true,
       silent: true,
-      linksToSkip: [
-        /^mailto:/i,
-        /^tel:/i,
-        /^javascript:/i,
-        /^#/,
-        /^http:\/\/localhost:3000\/_next\//i, // ignore Next internals
-      ],
-
       concurrency: 25,
       timeout: 15_000,
+      linksToSkip: [/^mailto:/i, /^tel:/i, /^javascript:/i, /^#/],
     });
 
     const links = Array.isArray(result.links) ? result.links : [];
-
-    const isInternal = (url) => url === BASE_URL || url.startsWith(`${BASE_URL}/`);
 
     const broken = links
       .filter((link) => {
         if (!link?.url) return false;
         if (!isInternal(link.url)) return false;
-        if (link.url.includes('#')) return false;
-        if (link.state !== 'BROKEN') return false;
-        return link.status === 404;
+        if (isIgnored(link.url)) return false;
+
+        return link.state === 'BROKEN' || [403, 404, 500].includes(link.status);
       })
       .map((link) => ({
         url: link.url,
         status: link.status,
-        parent: link.parent,
+        state: link.state,
+        source: link.parent || 'unknown',
       }));
 
     // Group by URL
     const grouped = new Map();
+
     for (const item of broken) {
       const entry = grouped.get(item.url) || {
         url: item.url,
         status: item.status,
-        parents: [],
+        sources: [],
       };
-      entry.parents.push(item.parent);
+      entry.sources.push(item.source);
       grouped.set(item.url, entry);
     }
 
     const report = Array.from(grouped.values()).map((x) => ({
       ...x,
-      parents: Array.from(new Set(x.parents)).sort(),
+      sources: Array.from(new Set(x.sources)).sort(),
     }));
 
     fs.writeFileSync(OUT_FILE, JSON.stringify(report, null, 2), 'utf8');
 
-    console.log(`\n📄 Rapport écrit dans ${OUT_FILE}`);
-    console.log(`❌ ${report.length} URL(s) internes en 404 détectées\n`);
+    console.log('\n📄 Rapport généré : broken-urls.json');
+    console.log(`❌ ${report.length} problème(s) détecté(s)\n`);
 
     if (report.length > 0) {
-      console.log('Exemple :', report[0]);
-      process.exitCode = 1; // bloque CI / predeploy
+      console.log('🔎 Exemple :');
+      console.log(report[0]);
+      process.exitCode = 1;
+    } else {
+      console.log('✅ Aucun lien cassé détecté');
     }
   } catch (err) {
     console.error('❌ Link check failed:', err.message);

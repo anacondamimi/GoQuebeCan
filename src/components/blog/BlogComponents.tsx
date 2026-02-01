@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import type { ComponentType, FC } from 'react';
-import componentMap from 'app/blog/componentMap';
+import componentMap from '@/lib/blog/componentMap';
 import H1 from '@/components/typography/H1';
 
 /* ───────────────────────────────────────────────

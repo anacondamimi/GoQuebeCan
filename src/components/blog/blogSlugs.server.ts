@@ -1,5 +1,5 @@
 // src/components/blog/blogSlugs.server.ts
-import componentMap from 'app/blog/componentMap';
+import componentMap from '@/lib/blog/componentMap';
 
 /**
  * 💡 Liste statique des slugs disponibles (server-safe)
