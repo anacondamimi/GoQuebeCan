@@ -80,8 +80,6 @@ function typeLabel(type: string): string {
 }
 
 export default function ItineraryPlanner() {
-  const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? '';
-
   // Champs de saisie texte (pour affichage)
   const [startInput, setStartInput] = useState('');
   const [endInput, setEndInput] = useState('');
@@ -107,7 +105,6 @@ export default function ItineraryPlanner() {
   // 🔗 Réception des événements envoyés par MapboxAutocomplete
   useEffect(() => {
     // IMPORTANT : on empêche juste l'effet de tourner si token absent
-    if (!MAPBOX_TOKEN) return;
     if (typeof window === 'undefined') return;
 
     const handleStart = (evt: Event) => {
@@ -171,7 +168,7 @@ export default function ItineraryPlanner() {
       window.removeEventListener('select:end', handleEnd as EventListener);
       window.removeEventListener('select:step', handleStep as EventListener);
     };
-  }, [MAPBOX_TOKEN]);
+  }, []);
 
   // ✅ Lire le store Zustand au top-level (TOUJOURS avant tout return conditionnel)
   const prevItinerary = useItineraryStore((s) => s.itinerary) as any[];
@@ -414,7 +411,7 @@ export default function ItineraryPlanner() {
         <MapboxAutocomplete
           label="📍 Départ"
           placeholder="Ex : Montréal"
-          token={MAPBOX_TOKEN}
+          token=""
           eventChannel="select:start"
         />
         {start && <p className="mt-1 text-sm text-green-600">✅ {startInput} sélectionné</p>}
@@ -423,7 +420,7 @@ export default function ItineraryPlanner() {
         <MapboxAutocomplete
           label="🏁 Arrivée"
           placeholder="Ex : Québec"
-          token={MAPBOX_TOKEN}
+          token=""
           eventChannel="select:end"
         />
         {end && <p className="mt-1 text-sm text-green-600">✅ {endInput} sélectionné</p>}
@@ -439,7 +436,7 @@ export default function ItineraryPlanner() {
           <MapboxAutocomplete
             label="🚏 Étape intermédiaire"
             placeholder="Ex : Trois-Rivières"
-            token={MAPBOX_TOKEN}
+            token=""
             eventChannel="select:step"
           />
 

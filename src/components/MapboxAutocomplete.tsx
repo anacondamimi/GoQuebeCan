@@ -35,7 +35,6 @@ export default function MapboxAutocomplete({
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const abortRef = useRef<AbortController | null>(null);
 
-  // id unique pour éviter les conflits entre plusieurs instances
   const autoId = useId();
   const inputId = `mapbox-autocomplete-${autoId}`;
   const listboxId = `mapbox-listbox-${autoId}`;
@@ -47,7 +46,6 @@ export default function MapboxAutocomplete({
       console.warn(
         '[MapboxAutocomplete] Token Mapbox manquant. Le champ sera affiché mais aucune suggestion ne sera chargée.',
       );
-      return;
     }
 
     if (input.length < MIN_LEN) {
@@ -66,12 +64,7 @@ export default function MapboxAutocomplete({
       abortRef.current = controller;
 
       try {
-        // ✅ anti "403 from disk cache" + évite les réponses réutilisées trop longtemps
-        const url =
-          `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(input)}.json` +
-          `?access_token=${encodeURIComponent(token)}` +
-          '&autocomplete=true&language=fr&limit=5' +
-          `&_cb=${Date.now()}`;
+        const url = `/api/geocode?q=${encodeURIComponent(input)}&_cb=${Date.now()}`;
 
         const res = await fetch(url, {
           signal: controller.signal,
@@ -79,8 +72,7 @@ export default function MapboxAutocomplete({
         });
 
         if (!res.ok) {
-          // On ne throw pas pour éviter une "cascade" d'erreurs en prod
-          console.warn(`[MapboxAutocomplete] Mapbox HTTP ${res.status}`);
+          console.warn(`[MapboxAutocomplete] Geocode HTTP ${res.status}`);
           setSuggestions((prev) => (prev.length ? [] : prev));
           setHasSearched(true);
           return;
@@ -102,7 +94,7 @@ export default function MapboxAutocomplete({
         });
       } catch (err) {
         if ((err as Error)?.name !== 'AbortError') {
-          console.warn('[MapboxAutocomplete] Erreur Mapbox (fetch):', err);
+          console.warn('[MapboxAutocomplete] Erreur geocode (fetch):', err);
           setSuggestions((prev) => (prev.length ? [] : prev));
           setHasSearched(true);
         }
@@ -120,11 +112,22 @@ export default function MapboxAutocomplete({
   const showNoResultsMessage =
     input.length >= 3 && hasSearched && suggestions.length === 0 && !selected;
 
+  // ✅ Compteur (uniquement quand l’utilisateur a tapé ≥ 3 caractères et qu’on a “cherché”)
+  const showCount = input.length >= 3 && hasSearched && !selected;
+
   return (
     <div className={`relative mb-4 ${className}`}>
-      <label htmlFor={inputId} className="mb-1 block font-semibold">
-        {label}
-      </label>
+      <div className="mb-1 flex items-center justify-between gap-3">
+        <label htmlFor={inputId} className="block font-semibold">
+          {label}
+        </label>
+
+        {showCount && (
+          <span className="text-xs text-gray-500">
+            {suggestions.length} suggestion{suggestions.length > 1 ? 's' : ''}
+          </span>
+        )}
+      </div>
 
       <input
         id={inputId}
