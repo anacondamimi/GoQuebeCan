@@ -109,7 +109,7 @@ declare module 'leaflet' {
 
     /**
      * Routeur Mapbox : fournit un routeur utilisable dans `RoutingOptions.router`.
-     * @param accessToken Token public Mapbox (NEXT_PUBLIC_MAPBOX_TOKEN)
+     * @param accessToken Token public Mapbox
      * @param options Options Mapbox (profil, langue, etc.)
      */
     function mapbox(accessToken: string, options?: MapboxRouterOptions): unknown;

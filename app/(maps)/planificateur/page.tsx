@@ -82,14 +82,14 @@ export default function PlanificateurPage() {
       {/* ✅ Liens internes SEO-friendly */}
       <div className="mt-12 flex flex-wrap justify-center gap-4">
         <a
-          href="/#videos"
+          href="/videos"
           className="rounded-full border border-gray-300 px-5 py-3 text-sm font-medium transition hover:bg-gray-50"
           aria-label="Découvrir les meilleurs campings du Québec"
         >
           🏕️ Regarder les vidéos des destinations
         </a>
         <a
-          href="/objets"
+          href="/voyage-hotel"
           className="rounded-full border border-gray-300 px-5 py-3 text-sm font-medium transition hover:bg-gray-50"
           aria-label="Découvrire les objets indispensables pour un séjour à l'hotel"
         >
