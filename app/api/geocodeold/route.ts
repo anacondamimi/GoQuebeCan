@@ -20,7 +20,7 @@ export async function GET(req: Request) {
   const url =
     `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(q)}.json` +
     `?access_token=${encodeURIComponent(token)}` +
-    `&autocomplete=true&language=fr&limit=5` +
+    '&autocomplete=true&language=fr&limit=5' +
     `&_cb=${Date.now()}`;
 
   try {

@@ -9,6 +9,7 @@ import producersData from '@/data/producers.json';
 import type { Producer } from '@/types/Producer';
 import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
+
 import { extractCoords, extractLabel, haversineKm } from '@/utils/geocodeHelpers';
 
 import StepModal from '@/components/StepModal';
@@ -103,6 +104,53 @@ export default function ItineraryPlanner() {
   // Modal d’édition d’étape
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  // 📍 Géolocalisation -> remplit automatiquement le départ (adresse lisible si possible)
+  const handleGeoFillStart = () => {
+    if (typeof window === 'undefined') return;
+
+    if (!('geolocation' in navigator)) {
+      alert("La géolocalisation n'est pas disponible sur ce navigateur.");
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      async (pos) => {
+        try {
+          const lat = pos.coords.latitude;
+          const lng = pos.coords.longitude;
+
+          // Reverse geocode -> adresse lisible (Canada only)
+          const url =
+            `https://api.mapbox.com/geocoding/v5/mapbox.places/${lng},${lat}.json` +
+            `?access_token=${MAPBOX_TOKEN}` +
+            `&country=CA` +
+            `&language=fr` +
+            `&types=address` +
+            `&limit=1`;
+
+          const res = await fetch(url, { cache: 'no-store' });
+          const data = await res.json();
+
+          const feature = data?.features?.[0];
+          const label = feature?.place_name ?? 'Ma position';
+          const coords: [number, number] = [lng, lat]; // [lng, lat]
+
+          // ✅ Remplit comme si sélection autocomplete
+          setStart(coords);
+          setStartInput(label);
+          setFormError('');
+        } catch (e) {
+          console.error(e);
+          alert('Impossible de convertir ta position en adresse. Réessaie.');
+        }
+      },
+      (err) => {
+        console.error(err);
+        alert("Impossible d'obtenir la position. Vérifie les permissions navigateur.");
+      },
+      { enableHighAccuracy: true, timeout: 10000 },
+    );
+  };
 
   // 🔗 Réception des événements envoyés par MapboxAutocomplete
   useEffect(() => {
@@ -416,6 +464,7 @@ export default function ItineraryPlanner() {
           placeholder="Ex : Montréal"
           token={MAPBOX_TOKEN}
           eventChannel="select:start"
+          onGeoClick={handleGeoFillStart}
         />
         {start && <p className="mt-1 text-sm text-green-600">✅ {startInput} sélectionné</p>}
 

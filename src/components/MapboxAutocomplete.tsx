@@ -6,9 +6,9 @@ export interface MapboxAutocompleteProps {
   label: string;
   placeholder: string;
   token: string;
-  /** Identifiant de l'évènement à émettre, ex: "select:start" */
   eventChannel: string;
   className?: string;
+  onGeoClick?: () => void; // ✅ ajouté
 }
 
 type MapboxFeature = {
@@ -26,6 +26,7 @@ export default function MapboxAutocomplete({
   token,
   eventChannel,
   className = '',
+  onGeoClick,
 }: MapboxAutocompleteProps) {
   const [input, setInput] = useState('');
   const [suggestions, setSuggestions] = useState<MapboxFeature[]>([]);
@@ -66,9 +67,14 @@ export default function MapboxAutocomplete({
         const controller = new AbortController();
         abortRef.current = controller;
 
-        const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
-          input,
-        )}.json?access_token=${token}&autocomplete=true&language=fr&limit=5`;
+        const url =
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(input)}.json` +
+          `?access_token=${token}` +
+          `&autocomplete=true` +
+          `&country=CA` +
+          `&language=fr` +
+          `&types=address,place,locality,postcode` +
+          `&limit=5`;
 
         const res = await fetch(url, { signal: controller.signal });
         if (!res.ok) throw new Error(`Mapbox ${res.status}`);
@@ -113,23 +119,37 @@ export default function MapboxAutocomplete({
         {label}
       </label>
 
-      <input
-        id={inputId}
-        type="text"
-        value={input}
-        onChange={(e) => {
-          setInput(e.target.value);
-          setSelected(false);
-        }}
-        className={`w-full rounded border px-3 py-2 ${
-          showChooseMessage || showNoResultsMessage ? 'border-red-500' : ''
-        }`}
-        placeholder={placeholder}
-        autoComplete="off"
-        aria-autocomplete="list"
-        aria-controls={listboxId}
-        aria-activedescendant={undefined}
-      />
+      <div className="relative">
+        <input
+          id={inputId}
+          type="text"
+          value={input}
+          onChange={(e) => {
+            setInput(e.target.value);
+            setSelected(false);
+          }}
+          className={`w-full rounded border px-3 py-2 pr-12 ${
+            showChooseMessage || showNoResultsMessage ? 'border-red-500' : ''
+          }`}
+          placeholder={placeholder}
+          autoComplete="off"
+          aria-autocomplete="list"
+          aria-controls={listboxId}
+          aria-activedescendant={undefined}
+        />
+
+        {onGeoClick && (
+          <button
+            type="button"
+            onClick={onGeoClick}
+            className="absolute right-2 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-md border bg-white text-lg hover:bg-gray-50"
+            title="Utiliser ma position"
+            aria-label="Utiliser ma position"
+          >
+            🎯
+          </button>
+        )}
+      </div>
 
       {showChooseMessage && (
         <p className="mt-1 text-sm text-red-500">Veuillez choisir une ville dans la liste.</p>
