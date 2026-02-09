@@ -70,11 +70,11 @@ export default function MapboxAutocomplete({
         const url =
           `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(input)}.json` +
           `?access_token=${token}` +
-          `&autocomplete=true` +
-          `&country=CA` +
-          `&language=fr` +
-          `&types=address,place,locality,postcode` +
-          `&limit=5`;
+          '&autocomplete=true' +
+          '&country=CA' +
+          '&language=fr' +
+          '&types=address,place,locality,postcode' +
+          '&limit=5';
 
         const res = await fetch(url, { signal: controller.signal });
         if (!res.ok) throw new Error(`Mapbox ${res.status}`);
@@ -142,7 +142,7 @@ export default function MapboxAutocomplete({
           <button
             type="button"
             onClick={onGeoClick}
-            className="absolute right-2 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-md border bg-white text-lg hover:bg-gray-50"
+            className="absolute right-2 top-1/2 flex size-9 -translate-y-1/2 items-center justify-center rounded-md border bg-white text-lg hover:bg-gray-50"
             title="Utiliser ma position"
             aria-label="Utiliser ma position"
           >
