@@ -58,10 +58,6 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr-CA" className={`${inter.variable} ${playfair.variable}`}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
       <body className="antialiased">
         <ClientWrapper>
           <div className="flex min-h-screen flex-col">
