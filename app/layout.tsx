@@ -40,6 +40,11 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   keywords: ['Québec', 'Canada', 'Itinéraires', 'Voyage', 'Producteurs locaux', 'Tourisme'],
   category: 'travel',
+  verification: {
+    other: {
+      'impact-site-verification': 'b3e59d2b-b9c5-4a0d-bcf3-cacc26c52a4',
+    },
+  },
 
   // ✅ Important : on remplace le favicon AVIF par une déclaration complète et standard
   ...FAVICON_METADATA,
