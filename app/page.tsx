@@ -18,6 +18,10 @@ const Chatbot = dynamic(() => import('@/components/ui/Chatbot'), { ssr: false })
 export default function Home() {
   return (
     <>
+      {/* Impact verification – NE PAS MODIFIER */}
+      <div style={{ display: 'none' }}>
+        Impact-Site-Verification: b3e59d2b-b9c5-4a0d-bcf3-cacca26c52a4
+      </div>
       <Navbar />
       <main className="min-h-screen bg-background pt-8 text-neutral">
         {/* Hero */}
