@@ -4,48 +4,194 @@ import Image from 'next/image';
 import Link from 'next/link';
 import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
+import Script from 'next/script';
+import { useEffect } from 'react';
 
 export default function VolsClient() {
+  /**
+   * ✅ Expedia flights link
+   * - Mets ton lien affilié dans NEXT_PUBLIC_EXPEDIA_FLIGHTS_URL (recommandé)
+   * - Sinon, fallback sur Expedia public
+   */
+  const EXPEDIA_FLIGHTS_URL =
+    (process.env.NEXT_PUBLIC_EXPEDIA_FLIGHTS_URL ?? '').trim() || 'https://www.expedia.ca/Flights';
+
   const openChat = () => {
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new Event('openChat'));
     }
   };
-
+  useEffect(() => {
+    // Re-trigger Expedia banner init after hydration (important in Next.js)
+    const w = window as any;
+    if (w?.EgAffiliateBanners?.init) {
+      w.EgAffiliateBanners.init();
+    }
+  }, []);
   return (
     <div className="mx-auto max-w-6xl space-y-14">
       {/* ─────────────────────────────
-         0) BANNIÈRE PARTENAIRE (French Bee)
+         0) PARTENAIRES VOLS (UX friendly)
          ───────────────────────────── */}
-      <div className="text-center">
-        <a
-          rel="sponsored noreferrer"
-          href="https://frenchbeefr.pxf.io/c/6175749/2240413/25450"
-          target="_blank"
-          id="2240413"
-        >
-          <Image
-            src="/images/frenchbee.avif"
-            alt="Vol Montréal–Paris à prix compétitif — French Bee"
-            width={280}
-            height={280}
-            className="mx-auto rounded-xl shadow-md transition-transform hover:scale-105"
-            priority
+      <div className="grid gap-6 md:grid-cols-2">
+        {/* French Bee */}
+        <div className="rounded-2xl border bg-white p-6 shadow-sm">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-gray-900">Compagnie aérienne</p>
+              <Image
+                src="/images/french-bee-logo.png"
+                alt="French Bee – compagnie aérienne"
+                width={140}
+                height={40}
+                className="size-auto"
+                priority
+              />
+              <p className="mt-2 text-sm text-gray-600">
+                Bon plan pour comparer et réserver (lien sponsorisé).
+              </p>
+            </div>
+
+            <span className="shrink-0 rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
+              Direct & simple
+            </span>
+          </div>
+
+          <a
+            rel="sponsored noreferrer"
+            href="https://frenchbeefr.pxf.io/c/6175749/2240413/25450"
+            target="_blank"
+            id="2240413"
+            className="mt-4 block overflow-hidden rounded-xl border"
+          >
+            <Image
+              src="/images/french-bee-vols-montreal-europe-destinations-soleil.avif"
+              alt="Vols French Bee au départ de Montréal vers l’Europe et des destinations soleil"
+              width={1600}
+              height={900}
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="h-72 w-full object-cover object-bottom md:h-80"
+            />
+          </a>
+
+          {/* Pixel tracking partenaire */}
+          <img
+            src="https://imp.pxf.io/i/6175749/2240413/25450"
+            alt=""
+            width="1"
+            height="1"
+            style={{ position: 'absolute', visibility: 'hidden' }}
           />
-        </a>
 
-        {/* Pixel tracking partenaire */}
-        <img
-          src="https://imp.pxf.io/i/6175749/2240413/25450"
-          alt=""
-          width="1"
-          height="1"
-          style={{ position: 'absolute', visibility: 'hidden' }}
-        />
+          {/* Destinations French Bee */}
+          <div className="mt-4">
+            <p className="text-sm font-semibold text-gray-900">Destinations desservies</p>
 
-        <p className="mx-auto mt-3 max-w-xl text-sm text-gray-600">
-          Offres partenaires : clique pour voir les tarifs actuels (lien sponsorisé).
-        </p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {[
+                { label: 'France', to: 'France' },
+                { label: 'Espagne', to: 'Spain' },
+                { label: 'Algérie', to: 'Algeria' },
+                { label: 'Maroc', to: 'Morocco' },
+                { label: 'Italie', to: 'Italy' },
+                { label: 'Portugal', to: 'Portugal' },
+                { label: 'Angleterre', to: 'United Kingdom' },
+                { label: 'La Réunion', to: 'Reunion Island' },
+              ].map((d) => (
+                <a
+                  key={d.label}
+                  href="https://frenchbeefr.pxf.io/c/6175749/2240413/25450"
+                  target="_blank"
+                  rel="sponsored noreferrer"
+                  className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-semibold text-gray-700 transition hover:bg-blue-50 hover:text-blue-700"
+                >
+                  {d.label}
+                </a>
+              ))}
+            </div>
+
+            <p className="mt-2 text-xs text-gray-500">
+              Destinations et itinéraires variables selon la saison et l’aéroport de départ.
+            </p>
+          </div>
+
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+            <a
+              rel="sponsored noreferrer"
+              href="https://frenchbeefr.pxf.io/c/6175749/2240413/25450"
+              target="_blank"
+              className="w-full rounded-lg bg-gray-900 px-5 py-3 text-center text-white shadow transition hover:bg-black sm:w-auto"
+            >
+              Voir les vols French Bee →
+            </a>
+
+            <a
+              href="#conseils"
+              className="w-full rounded-lg border border-gray-200 px-5 py-3 text-center text-gray-900 transition hover:bg-gray-50 sm:w-auto"
+            >
+              Conseils avant de réserver
+            </a>
+          </div>
+        </div>
+
+        {/* Expedia */}
+        <div className="rounded-2xl border bg-white p-6 shadow-sm">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-gray-900">Partenaire vols</p>
+              {/* Expedia Affiliate Banner */}
+              <p className="mt-2 text-sm text-gray-600">
+                Recherche rapide, filtres pratiques, et options flexibles selon tes dates.
+              </p>
+
+              <div className="mt-4 overflow-hidden rounded-xl border bg-gray-50 p-4">
+                <div
+                  className="eg-affiliate-banners"
+                  data-program="ca-expedia"
+                  data-network="pz"
+                  data-layout="leaderboard"
+                  data-image="sailing"
+                  data-message="ready-takeoff-find-perfect-flight"
+                  data-camref="1110lkQdC"
+                  data-pubref=""
+                  data-link="flights"
+                />
+              </div>
+
+              <p className="mt-3 text-xs text-gray-500">
+                Lien sponsorisé — les prix et conditions dépendent des disponibilités.
+              </p>
+
+              <Script
+                src="https://creator.expediagroup.com/products/banners/assets/eg-affiliate-banners.js"
+                strategy="afterInteractive"
+                onLoad={() => {
+                  console.log('[Expedia] script loaded ✅', (window as any).EgAffiliateBanners);
+                  const w = window as any;
+                  if (w?.EgAffiliateBanners?.init) w.EgAffiliateBanners.init();
+                }}
+                onError={() => {
+                  console.log('[Expedia] script load FAILED ❌');
+                }}
+              />
+            </div>
+
+            <span className="shrink-0 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+              Comparateur
+            </span>
+          </div>
+
+          <div className="mt-4 rounded-xl border p-5">
+            <ul className="space-y-2 text-sm text-gray-700">
+              <li>• Compare facilement plusieurs dates</li>
+              <li>• Filtre par horaires, escales, prix</li>
+              <li>• Options flexibles selon les disponibilités</li>
+            </ul>
+          </div>
+
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row"></div>
+        </div>
       </div>
 
       {/* ─────────────────────────────
@@ -64,11 +210,20 @@ export default function VolsClient() {
         <div className="flex flex-col gap-3 sm:flex-row">
           <a
             rel="sponsored noreferrer"
-            href="https://www.skyscanner.ca"
+            href={EXPEDIA_FLIGHTS_URL}
             target="_blank"
             className="w-full rounded-lg bg-blue-600 px-5 py-3 text-center text-white shadow transition hover:bg-blue-700 sm:w-auto"
           >
-            Comparer les vols maintenant
+            Comparer les vols sur Expedia
+          </a>
+
+          <a
+            rel="noreferrer"
+            href="https://www.skyscanner.ca"
+            target="_blank"
+            className="w-full rounded-lg border border-gray-200 px-5 py-3 text-center text-gray-900 transition hover:bg-gray-50 sm:w-auto"
+          >
+            Voir aussi sur Skyscanner
           </a>
 
           <a
@@ -197,7 +352,7 @@ export default function VolsClient() {
       </section>
 
       {/* ─────────────────────────────
-         5) SECTION 6 — POINTS + ASSURANCES (développée)
+         5) POINTS + ASSURANCES
          ───────────────────────────── */}
       <section className="space-y-4">
         <H2 className="text-xl font-semibold text-gray-900">
@@ -244,6 +399,7 @@ export default function VolsClient() {
             </p>
           </div>
         </div>
+
         <p className="mt-4 text-gray-700">
           Si tu veux comprendre concrètement comment transformer tes dépenses du quotidien
           (épicerie, restaurants, achats courants) en billets d’avion moins chers, j’ai préparé un
@@ -257,7 +413,6 @@ export default function VolsClient() {
           Lire le guide : accumuler des points et voyager moins cher →
         </Link>
 
-        {/* CTA affiliation / parrainage (à remplacer par ton lien) */}
         <div className="rounded-2xl bg-blue-50 p-6">
           <p className="font-semibold text-gray-900">
             Tu veux apprendre à accumuler plus vite et voyager moins cher avec les points ?

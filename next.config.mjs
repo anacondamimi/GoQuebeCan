@@ -7,11 +7,11 @@
 // 🛡️ Content Security Policy
 const CONTENT_SECURITY_POLICY = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com;
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://creator.expediagroup.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-  img-src * blob: data:;
+  img-src * blob: data:https://creator.expediagroup.com https://*.expediagroup.com https://*.expedia.com;
   font-src 'self' https://fonts.gstatic.com;
-  connect-src *;
+  connect-src 'self' https://creator.expediagroup.com https://*.expediagroup.com https://*.expedia.com;
   frame-src https://www.youtube.com https://player.vimeo.com;
   media-src *;
   object-src 'none';
