@@ -4,8 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
-import Script from 'next/script';
-import { useEffect } from 'react';
 
 export default function VolsClient() {
   /**
@@ -16,18 +14,6 @@ export default function VolsClient() {
   const EXPEDIA_FLIGHTS_URL =
     (process.env.NEXT_PUBLIC_EXPEDIA_FLIGHTS_URL ?? '').trim() || 'https://www.expedia.ca/Flights';
 
-  const openChat = () => {
-    if (typeof window !== 'undefined') {
-      window.dispatchEvent(new Event('openChat'));
-    }
-  };
-  useEffect(() => {
-    // Re-trigger Expedia banner init after hydration (important in Next.js)
-    const w = window as any;
-    if (w?.EgAffiliateBanners?.init) {
-      w.EgAffiliateBanners.init();
-    }
-  }, []);
   return (
     <div className="mx-auto max-w-6xl space-y-14">
       {/* ─────────────────────────────
@@ -58,7 +44,7 @@ export default function VolsClient() {
           </div>
 
           <a
-            rel="sponsored noreferrer"
+            rel="sponsored noopener noreferrer"
             href="https://frenchbeefr.pxf.io/c/6175749/2240413/25450"
             target="_blank"
             id="2240413"
@@ -75,35 +61,26 @@ export default function VolsClient() {
             />
           </a>
 
-          {/* Pixel tracking partenaire */}
-          <img
-            src="https://imp.pxf.io/i/6175749/2240413/25450"
-            alt=""
-            width="1"
-            height="1"
-            style={{ position: 'absolute', visibility: 'hidden' }}
-          />
-
           {/* Destinations French Bee */}
           <div className="mt-4">
             <p className="text-sm font-semibold text-gray-900">Destinations desservies</p>
 
             <div className="mt-2 flex flex-wrap gap-2">
               {[
-                { label: 'France', to: 'France' },
-                { label: 'Espagne', to: 'Spain' },
-                { label: 'Algérie', to: 'Algeria' },
-                { label: 'Maroc', to: 'Morocco' },
-                { label: 'Italie', to: 'Italy' },
-                { label: 'Portugal', to: 'Portugal' },
-                { label: 'Angleterre', to: 'United Kingdom' },
-                { label: 'La Réunion', to: 'Reunion Island' },
+                { label: 'France' },
+                { label: 'Espagne' },
+                { label: 'Algérie' },
+                { label: 'Maroc' },
+                { label: 'Italie' },
+                { label: 'Portugal' },
+                { label: 'Angleterre' },
+                { label: 'La Réunion' },
               ].map((d) => (
                 <a
                   key={d.label}
                   href="https://frenchbeefr.pxf.io/c/6175749/2240413/25450"
                   target="_blank"
-                  rel="sponsored noreferrer"
+                  rel="sponsored noopener noreferrer"
                   className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-semibold text-gray-700 transition hover:bg-blue-50 hover:text-blue-700"
                 >
                   {d.label}
@@ -118,7 +95,7 @@ export default function VolsClient() {
 
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <a
-              rel="sponsored noreferrer"
+              rel="sponsored noopener noreferrer"
               href="https://frenchbeefr.pxf.io/c/6175749/2240413/25450"
               target="_blank"
               className="w-full rounded-lg bg-gray-900 px-5 py-3 text-center text-white shadow transition hover:bg-black sm:w-auto"
@@ -140,105 +117,164 @@ export default function VolsClient() {
           <div className="flex items-start justify-between gap-3">
             <div>
               <p className="text-sm font-semibold text-gray-900">Partenaire vols</p>
-              {/* Expedia Affiliate Banner */}
-              <p className="mt-2 text-sm text-gray-600">
-                Recherche rapide, filtres pratiques, et options flexibles selon tes dates.
-              </p>
 
-              <div className="mt-4 overflow-hidden rounded-xl border bg-gray-50 p-4">
-                <div
-                  className="eg-affiliate-banners"
-                  data-program="ca-expedia"
-                  data-network="pz"
-                  data-layout="leaderboard"
-                  data-image="sailing"
-                  data-message="ready-takeoff-find-perfect-flight"
-                  data-camref="1110lkQdC"
-                  data-pubref=""
-                  data-link="flights"
-                />
+              <div className="mt-2 flex flex-wrap items-center gap-2">
+                <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+                  Comparateur
+                </span>
+                <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
+                  Lien sponsorisé
+                </span>
               </div>
 
-              <p className="mt-3 text-xs text-gray-500">
-                Lien sponsorisé — les prix et conditions dépendent des disponibilités.
+              <p className="mt-3 text-sm text-gray-700">
+                Trouve le vol qui colle à ton voyage : horaires, escales, budget… sans te prendre la
+                tête.
               </p>
+            </div>
+          </div>
 
-              <Script
-                src="https://creator.expediagroup.com/products/banners/assets/eg-affiliate-banners.js"
-                strategy="afterInteractive"
-                onLoad={() => {
-                  console.log('[Expedia] script loaded ✅', (window as any).EgAffiliateBanners);
-                  const w = window as any;
-                  if (w?.EgAffiliateBanners?.init) w.EgAffiliateBanners.init();
-                }}
-                onError={() => {
-                  console.log('[Expedia] script load FAILED ❌');
-                }}
+          {/* Bannière Expedia — affichée en entier (pas de zoom / pas de crop) */}
+          <a
+            href={EXPEDIA_FLIGHTS_URL}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+            className="mt-4 block rounded-2xl border bg-gray-50 p-4 sm:p-6 transition hover:bg-gray-100"
+            aria-label="Comparer les vols sur Expedia (lien sponsorisé)"
+          >
+            <div className="flex justify-center">
+              <Image
+                src="/images/expedia-banner-travel.avif"
+                alt="Expedia — comparer les vols"
+                width={1200}
+                height={300}
+                className="h-auto w-full max-w-4xl object-contain"
+                priority={false}
               />
             </div>
 
-            <span className="shrink-0 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
-              Comparateur
-            </span>
-          </div>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-sm text-gray-600">
+                Compare prix, horaires et escales — selon disponibilités.
+              </p>
 
+              <span className="inline-flex items-center justify-center rounded-full bg-yellow-400 px-6 py-3 text-sm font-extrabold text-black shadow">
+                Je prépare mon voyage →
+              </span>
+            </div>
+          </a>
+
+          {/* Arguments rapides (lisibles, “voyage-friendly”) */}
           <div className="mt-4 rounded-xl border p-5">
             <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Compare facilement plusieurs dates</li>
-              <li>• Filtre par horaires, escales, prix</li>
-              <li>• Options flexibles selon les disponibilités</li>
+              <li>• Dates flexibles : compare en 1 minute</li>
+              <li>• Filtre par escales, horaires, budget</li>
+              <li>• Choisis l’option la plus confortable pour toi</li>
             </ul>
           </div>
 
-          <div className="mt-5 flex flex-col gap-3 sm:flex-row"></div>
+          {/* CTA clair */}
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <a
+              href={EXPEDIA_FLIGHTS_URL}
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+              className="w-full rounded-xl bg-blue-600 px-5 py-3 text-center text-white font-semibold shadow transition hover:bg-blue-700"
+            >
+              Je compare les vols ✈️
+            </a>
+
+            <a
+              href="#conseils"
+              className="w-full rounded-xl border border-gray-200 px-5 py-3 text-center font-semibold text-gray-900 transition hover:bg-gray-50"
+            >
+              Conseils avant de réserver 🧳
+            </a>
+          </div>
+
+          <p className="mt-3 text-center text-[11px] text-gray-500 sm:text-xs">
+            Lien sponsorisé — les prix et conditions dépendent des disponibilités.
+          </p>
         </div>
       </div>
 
       {/* ─────────────────────────────
          1) HERO
          ───────────────────────────── */}
-      <section className="rounded-2xl border bg-white p-6 shadow-sm sm:p-8">
-        <H1 className="mb-3 text-2xl font-bold text-gray-900">
+      <section className="rounded-2xl border bg-white p-5 shadow-sm sm:p-8">
+        <H1 className="mb-2 text-xl font-extrabold leading-tight text-gray-900 sm:mb-3 sm:text-2xl">
           ✈️ Vols pas chers & conseils pour voyager en avion
         </H1>
 
-        <p className="mb-6 text-gray-700">
+        <p className="mb-5 text-sm leading-relaxed text-gray-700 sm:mb-6 sm:text-base">
           Comparer les vols, réserver au bon moment et voyager plus sereinement — même si tu prends
           l’avion rarement.
         </p>
 
-        <div className="flex flex-col gap-3 sm:flex-row">
+        {/* CTA principal – bannière Expedia (mobile-first) */}
+        <div className="overflow-hidden rounded-2xl border bg-gray-50">
           <a
-            rel="sponsored noreferrer"
             href={EXPEDIA_FLIGHTS_URL}
             target="_blank"
-            className="w-full rounded-lg bg-blue-600 px-5 py-3 text-center text-white shadow transition hover:bg-blue-700 sm:w-auto"
+            rel="sponsored noopener noreferrer"
+            className="block p-4 sm:p-6 transition hover:bg-gray-100"
+            aria-label="Comparer les vols sur Expedia (lien sponsorisé)"
           >
-            Comparer les vols sur Expedia
+            <div className="flex justify-center">
+              <Image
+                src="/images/expedia-banner-travel.avif"
+                alt="Comparer les vols et planifier un voyage"
+                width={1400}
+                height={350}
+                className="h-auto w-full max-w-5xl object-contain"
+                sizes="100vw"
+                priority
+              />
+            </div>
           </a>
+        </div>
+
+        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold text-gray-900">
+              Ton prochain voyage commence ici ✈️
+            </p>
+            <p className="mt-1 text-sm text-gray-600">
+              Compare prix, horaires et escales — selon disponibilités.
+            </p>
+          </div>
 
           <a
-            rel="noreferrer"
+            href={EXPEDIA_FLIGHTS_URL}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-yellow-400 px-6 py-3 text-sm sm:text-base font-extrabold text-black shadow transition hover:bg-yellow-300"
+          >
+            Je prépare mon voyage →
+          </a>
+        </div>
+
+        <p className="mt-2 text-center text-[11px] text-gray-500 sm:mt-3 sm:text-xs">
+          Lien sponsorisé — les prix et conditions dépendent des disponibilités.
+        </p>
+
+        {/* CTA secondaires (meilleurs sur mobile) */}
+        <div className="mt-4 grid gap-3 sm:mt-5 sm:flex sm:flex-row">
+          <a
+            rel="noopener noreferrer"
             href="https://www.skyscanner.ca"
             target="_blank"
-            className="w-full rounded-lg border border-gray-200 px-5 py-3 text-center text-gray-900 transition hover:bg-gray-50 sm:w-auto"
+            className="w-full rounded-xl border border-gray-200 px-5 py-3 text-center text-sm font-semibold text-gray-900 transition hover:bg-gray-50 sm:w-auto"
           >
             Voir aussi sur Skyscanner
           </a>
 
           <a
             href="#conseils"
-            className="w-full rounded-lg border border-gray-200 px-5 py-3 text-center text-gray-900 transition hover:bg-gray-50 sm:w-auto"
+            className="w-full rounded-xl border border-gray-200 px-5 py-3 text-center text-sm font-semibold text-gray-900 transition hover:bg-gray-50 sm:w-auto"
           >
             Je voyage rarement — les conseils
           </a>
-
-          <button
-            onClick={openChat}
-            className="w-full rounded-lg bg-indigo-600 px-5 py-3 text-center text-white shadow transition hover:bg-indigo-700 sm:w-auto"
-          >
-            Lancer l’assistant GoQuébeCan
-          </button>
         </div>
       </section>
 
