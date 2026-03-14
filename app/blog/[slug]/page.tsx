@@ -87,11 +87,7 @@ export default async function BlogArticlePage({ params }: PageParams) {
       : `${SITE_URL}${meta?.image ?? '/og/carte.avif'}`;
 
   return (
-    <main
-      className="prose prose-lg mx-auto max-w-5xl px-6 py-12 dark:prose-invert"
-      itemScope
-      itemType="https://schema.org/Article"
-    >
+    <main className="mx-auto max-w-7xl px-6 py-12" itemScope itemType="https://schema.org/Article">
       {/* microdata minimal SEO */}
       <meta itemProp="url" content={pageUrl} />
       <meta itemProp="author" content="GoQuébeCAN" />

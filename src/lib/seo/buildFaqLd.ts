@@ -1,15 +1,15 @@
-// src/lib/seo/buildFaqLd.ts
-
 /**
  * 🧠 buildFaqLd()
- * Génère un objet JSON-LD au format "FAQPage" conforme à Google.
+ * Génère un objet JSON-LD "FAQPage" conforme aux recommandations Schema.org / Google.
  *
- * Exemple d’utilisation :
- * const faq = buildFaqLd([
- *   { question: 'Quel est le meilleur moment pour camper ?', answer: 'Entre juin et septembre.' },
- *   { question: 'Faut-il réserver ?', answer: 'Oui, surtout en haute saison.' },
- * ]);
- * <JsonLd data={faq} />
+ * Utilisation :
+ *
+ * const faqLd = buildFaqLd([
+ *   { question: 'Quel est le meilleur moment pour visiter ?', answer: 'Entre juin et septembre.' },
+ *   { question: 'Faut-il réserver ?', answer: 'Oui, surtout en haute saison.' }
+ * ])
+ *
+ * <JsonLd data={faqLd} />
  */
 
 export type FaqEntry = {
@@ -17,17 +17,35 @@ export type FaqEntry = {
   answer: string;
 };
 
-export function buildFaqLd(faqItems: FaqEntry[]) {
+/**
+ * Nettoie les réponses pour éviter les balises non souhaitées
+ */
+function sanitize(text: string) {
+  return text.replace(/\s+/g, ' ').trim();
+}
+
+export function buildFaqLd(faqItems: FaqEntry[] = []) {
+  if (!faqItems.length) return null;
+
+  const MAX_FAQ = 10;
+
+  const items = faqItems
+    .slice(0, MAX_FAQ)
+    .filter((f) => f.question && f.answer)
+    .map((item) => ({
+      '@type': 'Question',
+      name: sanitize(item.question),
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: sanitize(item.answer),
+      },
+    }));
+
+  if (!items.length) return null;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqItems.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
+    mainEntity: items,
   };
 }

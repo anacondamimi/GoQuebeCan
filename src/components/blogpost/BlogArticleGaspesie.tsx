@@ -11,6 +11,7 @@ import { buildBreadcrumbLd } from '@/lib/seo/buildBreadcrumbLd';
 import { buildHowToLd } from '@/lib/seo/buildHowToLd';
 import { buildFaqLd } from '@/lib/seo/buildFaqLd';
 import { JsonLd, HeadExtras } from '@/lib/seo/HeadExtras';
+import { bookingAwin } from '@/lib/awin';
 
 export const dynamic = 'force-static';
 export const revalidate = 60 * 60 * 24; // 24 h
@@ -355,10 +356,15 @@ const faqLd = buildFaqLd([
 // ======= COMPOSANTS D’AFFICHAGE =======
 
 function StayCard({ name, location, type, description, link, image, extra }: StayCardProps) {
+  const isBooking = /(^|\.)booking\.com$/i.test(new URL(link, 'https://example.com').hostname);
+
+  // Lien final : affilié si Booking, sinon normal
+  const finalHref = isBooking ? bookingAwin(link) : link;
+
   return (
     <article className="flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md">
       <div className="relative h-52 w-full overflow-hidden">
-        <Link href={link} target="_blank" rel="sponsored noopener nofollow">
+        <a href={finalHref} target="_blank" rel="sponsored noopener nofollow">
           <Image
             src={image}
             alt={`${name} — hébergement recommandé en Gaspésie à ${location}`}
@@ -366,25 +372,33 @@ function StayCard({ name, location, type, description, link, image, extra }: Sta
             className="object-cover transition-transform duration-300 hover:scale-[1.03]"
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px"
           />
-        </Link>
+        </a>
       </div>
+
       <div className="flex flex-1 flex-col p-4">
         <header className="mb-2">
           <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">{type}</p>
           <H3 className="text-lg font-semibold text-gray-900">{name}</H3>
           <p className="text-sm text-gray-600">{location}</p>
         </header>
+
         <p className="flex-1 text-sm text-gray-700">{description}</p>
         {extra ? <p className="mt-2 text-sm text-gray-600">{extra}</p> : null}
+
         <div className="mt-3">
-          <Link
-            href={link}
+          <a
+            href={finalHref}
             target="_blank"
             rel="sponsored noopener nofollow"
             className="inline-flex items-center text-sm font-semibold text-indigo-800 underline-offset-2 hover:underline"
           >
-            Voir les disponibilités sur Booking
-          </Link>
+            {isBooking ? 'Voir les disponibilités sur Booking' : 'Voir les infos / réserver'}
+          </a>
+          {isBooking ? (
+            <p className="mt-1 text-[11px] text-gray-500">
+              Lien affilié — ça soutient GoQuébeCAN sans coût pour toi.
+            </p>
+          ) : null}
         </div>
       </div>
     </article>
@@ -427,7 +441,7 @@ export default function Page() {
       <JsonLd data={breadcrumbLd} />
       <JsonLd data={destinationLd} />
       <JsonLd data={howTo7DaysLd} />
-      <JsonLd data={faqLd} />
+      {faqLd ? <JsonLd data={faqLd} /> : null}
 
       {/* HERO / INTRO */}
       <main className="mx-auto max-w-5xl px-4 pb-12 pt-10 sm:px-6 lg:px-8">
@@ -839,7 +853,7 @@ export default function Page() {
             FAQ – Questions fréquentes sur un road trip en Gaspésie
           </H2>
           <div className="space-y-3 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
-            {faqLd.mainEntity.map((item: any) => (
+            {faqLd?.mainEntity?.map((item: any) => (
               <details key={item.name} className="group rounded-lg border border-gray-100 p-3">
                 <summary className="cursor-pointer text-sm font-semibold text-gray-900 group-open:text-indigo-800">
                   {item.name}

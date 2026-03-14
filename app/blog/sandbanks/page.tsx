@@ -185,10 +185,10 @@ export default function SandbanksPage() {
 
       {/* JSON-LD structurés – un script par bloc pour rester propre */}
       <JsonLd data={breadcrumbLd} />
-      <JsonLd data={destinationLd} />
-      <JsonLd data={howToLd} />
-      <JsonLd data={faqLd} />
-      <JsonLd data={collectionPageLd} />
+      {destinationLd ? <JsonLd data={destinationLd} /> : null}
+      {howToLd ? <JsonLd data={howToLd} /> : null}
+      {faqLd ? <JsonLd data={faqLd} /> : null}
+      {collectionPageLd ? <JsonLd data={collectionPageLd} /> : null}
 
       {/* Contenu principal (composant client) */}
       <BlogArticleSandbanks />

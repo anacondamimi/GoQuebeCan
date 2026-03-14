@@ -1,0 +1,121 @@
+{
+  "generatedAt": "2026-03-09T21:08:30.995Z",
+  "blogDir": "C:\\Users\\anaco\\Documents\\project-bolt-sb1-sxoxb1mv\\project\\src\\components\\blogpost",
+  "outDataDir": "C:\\Users\\anaco\\Documents\\project-bolt-sb1-sxoxb1mv\\project\\src\\data\\hotels",
+  "filesProcessed": 44,
+  "articlesWithHotels": 27,
+  "hotelCount": 81,
+  "duplicateNames": [
+    {
+      "name": "hôtels gouverneur sept-îles",
+      "count": 2
+    },
+    {
+      "name": "royal dalhousie",
+      "count": 2
+    },
+    {
+      "name": "monsieur jean – hôtel particulier",
+      "count": 2
+    },
+    {
+      "name": "appartement luxe – sunset view, pool, parking, near old québec",
+      "count": 2
+    },
+    {
+      "name": "the sands",
+      "count": 2
+    }
+  ],
+  "warnings": [
+    {
+      "file": "BlogArticleAnseSaintJean.tsx",
+      "reason": "hotels_declaration_not_found"
+    },
+    {
+      "file": "BlogArticleBaieSaintPaul.tsx",
+      "reason": "hotels_declaration_not_found"
+    },
+    {
+      "file": "BlogArticleBic.tsx",
+      "reason": "hotels_declaration_not_found"
+    },
+    {
+      "file": "BlogArticleEeyouIstchee.tsx",
+      "reason": "hotels_declaration_not_found"
+    },
+    {
+      "file": "BlogArticleGaspesie.tsx",
+      "reason": "hotels_declaration_not_found"
+    },
+    {
+      "file": "BlogArticleKuururjuaq.tsx",
+      "reason": "hotels_declaration_not_found"
+    },
+    {
+      "file": "BlogArticleLevis.tsx",
+      "reason": "hotels_declaration_not_found"
+    },
+    {
+      "file": "BlogArticleLocationVR.tsx",
+      "reason": "hotels_declaration_not_found"
+    },
+    {
+      "file": "BlogArticleLocationVRComparatif.tsx",
+      "reason": "hotels_declaration_not_found"
+    },
+    {
+      "file": "BlogArticleParcAquatique.tsx",
+      "reason": "hotels_declaration_not_found"
+    },
+    {
+      "file": "BlogArticleRoadTripQuebec.tsx",
+      "reason": "hotels_declaration_not_found"
+    },
+    {
+      "file": "BlogArticleSaguenay.tsx",
+      "reason": "hotels_declaration_not_found"
+    },
+    {
+      "file": "BlogArticleVoyageAvion.tsx",
+      "reason": "hotels_declaration_not_found"
+    },
+    {
+      "file": "BlogArticleVoyageCamping.tsx",
+      "reason": "hotels_declaration_not_found"
+    },
+    {
+      "file": "BlogArticleVoyageHotel.tsx",
+      "reason": "hotels_declaration_not_found"
+    },
+    {
+      "file": "BlogArticleVoyageVoiture.tsx",
+      "reason": "hotels_declaration_not_found"
+    }
+  ],
+  "failures": [
+    {
+      "file": "BlogArticleChambly.tsx",
+      "reason": "hotels_not_array_literal",
+      "snippet": "pickHotels(HOTEL_IDS_CHAMBLY)"
+    },
+    {
+      "file": "BlogArticleSandbanks.tsx",
+      "articleKey": "sandbanks",
+      "hotel": "Newsroom Suites",
+      "reason": "missing_description"
+    },
+    {
+      "file": "BlogArticleSandbanks.tsx",
+      "articleKey": "sandbanks",
+      "hotel": "The Village Suites",
+      "reason": "missing_description"
+    },
+    {
+      "file": "BlogArticleSandbanks.tsx",
+      "articleKey": "sandbanks",
+      "hotel": "The Birch",
+      "reason": "missing_description"
+    }
+  ]
+}

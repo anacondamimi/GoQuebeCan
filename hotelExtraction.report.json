@@ -1,0 +1,1982 @@
+{
+  "generatedAt": "2026-03-09T22:41:38.877Z",
+  "scannedFiles": 45,
+  "standardizedHotels": [
+    {
+      "name": "Château-Bromont",
+      "description": "Au pied des pistes avec golf",
+      "price": "À partir de 189$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/chateau-bromont.html",
+      "image": "/images/destinations/hotels/vallea-bromont.avif",
+      "category": "Resort",
+      "sourceFile": "src/components/blogpost/BlogArticleBromontGranby.tsx",
+      "sourceSlug": "bromont-granby"
+    },
+    {
+      "name": "Hôtel Castel & Spa Confort",
+      "description": "À proximité du Zoo de Granby",
+      "price": "À partir de 159$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/castel-granby.html",
+      "image": "/images/destinations/hotels/hotel-castel-granby.avif",
+      "category": "Spa",
+      "sourceFile": "src/components/blogpost/BlogArticleBromontGranby.tsx",
+      "sourceSlug": "bromont-granby"
+    },
+    {
+      "name": "Residence Inn by Marriott Bromont",
+      "description": "Hôtel moderne situé au pied de la montagne de Bromont. Suites spacieuses avec cuisine complète, piscine, spa avec vue sur la montagne et petit-déjeuner inclus. Idéal pour un séjour ski, vélo, glissade ou une escapade relax en Estrie.",
+      "price": "Tarif selon la saison et disponibilités",
+      "bookingUrl": "https://www.booking.com/hotel/ca/residence-inn-by-marriott-bromont.fr.html?aid=304142&label=gen173rf-10CAsoJ0IPY2hhdGVhdS1icm9tb250SDNYA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4Aoacts0GwAIB0gIkMDVkZDk1YjQtMjA0Ny00OTM2LTg5YzQtOGJlYjg1NDc2NzFi2AIB4AIB&sid=61b67a7e8a8af63fb2b3826a3f4feec9&age=0&all_sr_blocks=1521604303_423826263_0_1_0&checkin=2026-07-08&checkout=2026-07-09&dest_id=900048497&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1521604303_423826263_0_1_0&hpos=1&matching_block_id=1521604303_423826263_0_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1521604303_423826263_0_1_0__23900&srepoch=1772981827&srpvid=bd4069035089048a&type=total&ucfs=1&",
+      "image": "/images/destinations/hotels/residence-inn-marriott-bromont.avif",
+      "category": "Confort & séjour prolongé",
+      "sourceFile": "src/components/blogpost/BlogArticleBromontGranby.tsx",
+      "sourceSlug": "bromont-granby"
+    },
+    {
+      "name": "Appartement de vacances modernes sur le fleuve",
+      "description": "Appartements design et calmes avec vue directe sur le fleuve, idéals pour se ressourcer.",
+      "price": "À partir de 209 $/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/appartement-de-vacances-modernes-calmes-et-ressourcants-sur-le-fleuve.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=1135216401_392217861_2_0_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=-572272&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=23&highlighted_blocks=1135216401_392217861_2_0_0&hpos=23&matching_block_id=1135216401_392217861_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1135216401_392217861_2_0_0__20700&srepoch=1761338092&srpvid=5aba90921f2801fa&type=total&ucfs=1&",
+      "image": "/images/destinations/hotels/hotel-appat-canyon.avif",
+      "category": "4 étoiles",
+      "sourceFile": "src/components/blogpost/BlogArticleCanyon.tsx",
+      "sourceSlug": "canyon"
+    },
+    {
+      "name": "Hôtel Rimouski",
+      "description": "Hôtel avec spa, piscine intérieure et restaurant offrant une vue splendide sur le fleuve.",
+      "price": "À partir de 179 $/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/rimouski.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=2468602_392936399_2_0_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=-572272&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=2468602_392936399_2_0_0&hpos=1&matching_block_id=2468602_392936399_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=2468602_392936399_2_0_0__35800&srepoch=1761338410&srpvid=e6829148cf0109aa&type=total&ucfs=1&",
+      "image": "/images/destinations/hotels/hotel-rimouski-canyon.avif",
+      "category": "4 étoiles",
+      "sourceFile": "src/components/blogpost/BlogArticleCanyon.tsx",
+      "sourceSlug": "canyon"
+    },
+    {
+      "name": "La Maison du Photographe",
+      "description": "Charmant gîte au bord du fleuve avec jardin et ambiance artistique unique, parfait pour les couples.",
+      "price": "À partir de 169 $/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/maison-du-photograph.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=44581501_206267159_2_0_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=445815&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=44581501_206267159_2_0_0&hpos=1&matching_block_id=44581501_206267159_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=44581501_206267159_2_0_0__34200&srepoch=1761338503&srpvid=56a0918223a60160&type=total&ucfs=1&",
+      "image": "/images/destinations/hotels/hotel-maisonphotographe-canyon.avif",
+      "category": "3 étoiles",
+      "sourceFile": "src/components/blogpost/BlogArticleCanyon.tsx",
+      "sourceSlug": "canyon"
+    },
+    {
+      "name": "Manoir Belle Plage",
+      "description": "Établissement historique rénové",
+      "price": "À partir de 149$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/manoir-belle-plage.html",
+      "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80",
+      "category": "Charme",
+      "sourceFile": "src/components/blogpost/BlogArticleCarleton.tsx",
+      "sourceSlug": "carleton"
+    },
+    {
+      "name": "Motel l’Abri",
+      "description": "Option abordable à proximité du centre-ville et de la plage",
+      "price": "À partir de 139$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/motel-l-abri.html",
+      "image": "/images/destinations/hotels/hotel-abri-carleton.avif",
+      "category": "Économique",
+      "sourceFile": "src/components/blogpost/BlogArticleCarleton.tsx",
+      "sourceSlug": "carleton"
+    },
+    {
+      "name": "Riotel Carleton-sur-Mer",
+      "description": "Vue panoramique sur la baie des Chaleurs",
+      "price": "À partir de 159$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/hostellerie-baie-bleue.html",
+      "image": "/images/destinations/hotels/riotel-carleton.avif",
+      "category": "Vue sur Mer",
+      "sourceFile": "src/components/blogpost/BlogArticleCarleton.tsx",
+      "sourceSlug": "carleton"
+    },
+    {
+      "name": "Auberge La Petite École",
+      "description": "Auberge familiale bien notée à Gaspé, parfaite pour explorer Forillon.",
+      "price": "Note : 8,7/10 sur 300+ avis",
+      "bookingUrl": "https://www.booking.com/hotel/ca/auberge-la-petite-ecole.html",
+      "image": "/images/destinations/hotels/auberge-petite-ecole.avif",
+      "category": "Confort abordable",
+      "sourceFile": "src/components/blogpost/BlogArticleForillon.tsx",
+      "sourceSlug": "forillon"
+    },
+    {
+      "name": "Griffon Aventure",
+      "description": "Chalet pour 5 pers. avec salon et vue sur la mer, idéal pour les aventuriers.",
+      "price": "À partir de 946$ pour 4 nuits",
+      "bookingUrl": "https://www.booking.com/hotel/ca/griffon-aventure.html",
+      "image": "/images/destinations/hotels/auberge-griffon.avif",
+      "category": "Chalet nature",
+      "sourceFile": "src/components/blogpost/BlogArticleForillon.tsx",
+      "sourceSlug": "forillon"
+    },
+    {
+      "name": "Motel du Haut Phare",
+      "description": "Chalet avec 2 lits superposés, proche du Cap-des-Rosiers et du phare.",
+      "price": "À partir de 713$ pour 4 nuits",
+      "bookingUrl": "https://www.booking.com/hotel/ca/motel-du-haut-phare.html",
+      "image": "/images/destinations/hotels/motel-haut-phare.avif",
+      "category": "Vue exceptionnelle",
+      "sourceFile": "src/components/blogpost/BlogArticleForillon.tsx",
+      "sourceSlug": "forillon"
+    },
+    {
+      "name": "Auberge des Caps",
+      "description": "Ambiance simple et conviviale, avec chambres adaptées aux familles et proximité du fleuve. Un bon point de chute entre parc de la Gaspésie et mer.",
+      "price": "Voir tarif selon les dates",
+      "bookingUrl": "https://www.booking.com/hotel/ca/chalets-valmont-plein-air.fr.html?label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&aid=304142&ucfs=1&checkin=2026-04-06&checkout=2026-04-10&dest_id=900040525&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=92cea16b831b0590&srepoch=1768431535&matching_block_id=381179907_121141165_2_0_0&atlas_src=sr_iw_title",
+      "image": "/images/destinations/hotels/chalets-valmont.avif",
+      "category": "Auberge familiale",
+      "sourceFile": "src/components/blogpost/BlogArticleGaspesie.tsx",
+      "sourceSlug": "gaspesie"
+    },
+    {
+      "name": "Hostellerie Baie-Bleue",
+      "description": "Grande piscine extérieure en saison, accès à la plage et vue sur la baie. Les enfants adorent se baigner pendant que les adultes profitent du paysage.",
+      "price": "Voir tarif selon les dates",
+      "bookingUrl": "https://www.booking.com/hotel/ca/hostellerie-baie-bleue.fr.html",
+      "image": "/images/destinations/hotels/riotel-carleton.avif",
+      "category": "Hôtel avec piscine",
+      "sourceFile": "src/components/blogpost/BlogArticleGaspesie.tsx",
+      "sourceSlug": "gaspesie"
+    },
+    {
+      "name": "Hôtel & Cie",
+      "description": "Chambres confortables et accueil chaleureux, pratique comme base pour découvrir le parc national de la Gaspésie tout en gardant un bon niveau de confort.",
+      "price": "Voir tarif selon les dates",
+      "bookingUrl": "https://www.booking.com/hotel/ca/auberge-seigneurie-des-monts.fr.html?label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&aid=304142&ucfs=1&checkin=2026-04-06&checkout=2026-04-10&dest_id=3602&dest_type=region&group_adults=2&no_rooms=1&group_children=0&srpvid=087ea0c971000196&srepoch=1768431159&matching_block_id=40613001_203767764_2_0_0&atlas_src=sr_iw_title",
+      "image": "/images/destinations/hotels/auberge-seigneurie-des-monts.avif",
+      "category": "Hôtel famille",
+      "sourceFile": "src/components/blogpost/BlogArticleGaspesie.tsx",
+      "sourceSlug": "gaspesie"
+    },
+    {
+      "name": "Hôtel des Commandants",
+      "description": "Point de chute pratique pour explorer le parc Forillon, avec restaurants et services accessibles à pied. Parfait pour alterner journées “plein air” et moments plus urbains.",
+      "price": "Voir tarif selon les dates",
+      "bookingUrl": "https://www.booking.com/hotel/ca/motel-plante.fr.html?aid=304142&label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&sid=9d202b892b581cafd0019c7f0748e2a5&age=0&all_sr_blocks=31445511_421538538_2_0_0&checkin=2026-01-28&checkout=2026-01-29&dest_id=-565124&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=31445511_421538538_2_0_0&hpos=2&matching_block_id=31445511_421538538_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=31445511_421538538_2_0_0__14995&srepoch=1768430475&srpvid=4fe59f52eb1f0444&type=total&ucfs=1&",
+      "image": "/images/destinations/hotels/hotel-plante.avif",
+      "category": "Hôtel centre-ville",
+      "sourceFile": "src/components/blogpost/BlogArticleGaspesie.tsx",
+      "sourceSlug": "gaspesie"
+    },
+    {
+      "name": "Manoir Belle Plage",
+      "description": "Atmosphère chaleureuse, vue sur la baie et accès facile à la plage pour les couchers de soleil. Une belle option pour finir le road trip sur une note relax.",
+      "price": "Voir tarif selon les dates",
+      "bookingUrl": "https://www.booking.com/hotel/ca/manoir-belle-plage.fr.html",
+      "image": "/images/destinations/hotels/manoir-belle-plage.avif",
+      "category": "Hôtel bord de mer",
+      "sourceFile": "src/components/blogpost/BlogArticleGaspesie.tsx",
+      "sourceSlug": "gaspesie"
+    },
+    {
+      "name": "Riôtel Percé",
+      "description": "Chambres modernes face au Rocher Percé, avec terrasse pour admirer le lever du soleil et finir la journée en douceur après les excursions en bateau.",
+      "price": "Voir tarif selon les dates",
+      "bookingUrl": "https://www.booking.com/hotel/ca/riotel-perce.fr.html",
+      "image": "/images/destinations/hotels/riohotel-perce.avif",
+      "category": "Hôtel vue mer",
+      "sourceFile": "src/components/blogpost/BlogArticleGaspesie.tsx",
+      "sourceSlug": "gaspesie"
+    },
+    {
+      "name": "Colonial Hotel & Suites",
+      "description": "Hôtel simple et bien situé à Lambton Shores, pratique pour profiter des plages du lac Huron sans exploser le budget.",
+      "price": "À partir de 149 $/nuit",
+      "bookingUrl": "https://www.expedia.ca/fr/Lambton-Shores-Hotels-Colonial-Hotel-Suites.h71648848.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918347&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=149&top_cur=CAD&userIntent=&selectedRoomType=324828646&selectedRatePlan=395949071&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366",
+      "image": "/images/destinations/hotels/colonial-hotel-granbendavif.avif",
+      "category": "Centre-ville & plage",
+      "sourceFile": "src/components/blogpost/BlogArticleGrandBend.tsx",
+      "sourceSlug": "grand-bend"
+    },
+    {
+      "name": "Dreamz Inn",
+      "description": "Motel-inn moderne avec piscine et espace extérieur, idéal comme base pour explorer la côte du lac Huron en famille ou en couple.",
+      "price": "À partir de 167 $/nuit",
+      "bookingUrl": "https://www.expedia.ca/fr/Central-Huron-Hotels-Dreamz-Inn.h8274788.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918267&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=167&top_cur=CAD&userIntent=&selectedRoomType=200693312&selectedRatePlan=203441088&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366",
+      "image": "/images/destinations/hotels/central-huron-granbend.avif",
+      "category": "Moderne & familial",
+      "sourceFile": "src/components/blogpost/BlogArticleGrandBend.tsx",
+      "sourceSlug": "grand-bend"
+    },
+    {
+      "name": "Samuels Boutique Hotel",
+      "description": "Petit hôtel-boutique de caractère, avec vue sur la rivière et ambiance cosy, parfait pour une escapade plus chic au bord du lac Huron.",
+      "price": "À partir de 215 $/nuit",
+      "bookingUrl": "https://www.expedia.ca/fr/Ashfield-Colborne-Wawanosh-Hotels-Samuels-Boutique-Hotel.h10218772.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918227&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=215&top_cur=CAD&userIntent=&selectedRoomType=200932920&selectedRatePlan=274388838&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366",
+      "image": "/images/destinations/hotels/samuel-hotel-granbend.avif",
+      "category": "Boutique & charme",
+      "sourceFile": "src/components/blogpost/BlogArticleGrandBend.tsx",
+      "sourceSlug": "grand-bend"
+    },
+    {
+      "name": "Auberge La Châtelaine",
+      "description": "Chambre double avec salle de bain privée, petit-déjeuner inclus. Note 9,5/10.",
+      "price": "À partir de 156$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/auberge-la-chatelaine.fr.html",
+      "image": "/images/destinations/hotels/auberge-chatelaine.avif",
+      "category": "Vue exceptionnelle",
+      "sourceFile": "src/components/blogpost/BlogArticleHautesGorges.tsx",
+      "sourceSlug": "hautes-gorges"
+    },
+    {
+      "name": "Auberge La Marmite",
+      "description": "Chambre double standard avec petit-déjeuner inclus. Note 8,6/10.",
+      "price": "À partir de 155$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/auberge-la-marmite.fr.html",
+      "image": "/images/destinations/hotels/auberge-la-marmite.avif",
+      "category": "Confort & Cuisine",
+      "sourceFile": "src/components/blogpost/BlogArticleHautesGorges.tsx",
+      "sourceSlug": "hautes-gorges"
+    },
+    {
+      "name": "Auberge Les Sources",
+      "description": "Petite chambre double au charme rustique, avec annulation gratuite.",
+      "price": "À partir de 115$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/auberge-les-sources.fr.html",
+      "image": "/images/destinations/hotels/auberge-les-sources.avif",
+      "category": "Tranquillité",
+      "sourceFile": "src/components/blogpost/BlogArticleHautesGorges.tsx",
+      "sourceSlug": "hautes-gorges"
+    },
+    {
+      "name": "Auberge Akamaraska",
+      "description": "Chambre avec lit Queen et balcon, à 100 m du centre du village. Note 7,8/10.",
+      "price": "Tarif selon la saison",
+      "bookingUrl": "https://www.booking.com/hotel/ca/akamaraska.fr.html",
+      "image": "/images/destinations/hotels/akamaraska.avif",
+      "category": "Simplicité & authenticité",
+      "sourceFile": "src/components/blogpost/BlogArticleKamouraska.tsx",
+      "sourceSlug": "kamouraska"
+    },
+    {
+      "name": "Auberge Comme au premier jour",
+      "description": "Chambre double avec vue sur la piscine, à 18 km de Kamouraska. Note 8,8/10.",
+      "price": "Tarif selon la saison",
+      "bookingUrl": "https://www.booking.com/hotel/ca/auberge-comme-au-premier-jour.fr.html",
+      "image": "/images/destinations/hotels/auberge-saint-pacome.avif",
+      "category": "Charme & piscine",
+      "sourceFile": "src/components/blogpost/BlogArticleKamouraska.tsx",
+      "sourceSlug": "kamouraska"
+    },
+    {
+      "name": "Motel des Mariniers",
+      "description": "Au cœur du village historique",
+      "price": "À partir de 129$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/motel-des-mariniers.html",
+      "image": "/images/destinations/hotels/mariniers.avif",
+      "category": "Charme",
+      "sourceFile": "src/components/blogpost/BlogArticleKamouraska.tsx",
+      "sourceSlug": "kamouraska"
+    },
+    {
+      "name": "Appartement",
+      "description": "Chalet très bien noté (9.3/10) à Magog-Orford, à proximité du lac Memphrémagog, des plages et du Mont-Orford.",
+      "price": "Tarif variable selon la saison",
+      "bookingUrl": "https://www.booking.com/hotel/ca/nouveaute-foyer-au-bois-plage-montagne-et-plus.fr.html",
+      "image": "/images/destinations/hotels/appartement-orford.avif",
+      "category": "Nature & confort",
+      "sourceFile": "src/components/blogpost/BlogArticleMagogOrford.tsx",
+      "sourceSlug": "magog-orford"
+    },
+    {
+      "name": "Estrimont Suites & Spa",
+      "description": "Vue sur le Mont Orford",
+      "price": "À partir de 229$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/estrimont-suites-spa.html",
+      "image": "/images/destinations/hotels/estrimont.avif",
+      "category": "Spa",
+      "sourceFile": "src/components/blogpost/BlogArticleMagogOrford.tsx",
+      "sourceSlug": "magog-orford"
+    },
+    {
+      "name": "Manoir Hovey",
+      "description": "Relais & Châteaux au bord du lac",
+      "price": "À partir de 399$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/manoir-hovey.html",
+      "image": "/images/destinations/hotels/manoir-hovey.avif",
+      "category": "Luxe",
+      "sourceFile": "src/components/blogpost/BlogArticleMagogOrford.tsx",
+      "sourceSlug": "magog-orford"
+    },
+    {
+      "name": "Au Grand Merisier",
+      "description": "Chalet 4 chambres avec vue, 3 salles de bain, grande cuisine et espace familial chaleureux.",
+      "price": "À partir de 465$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/au-grand-merisier.html",
+      "image": "/images/destinations/hotels/chalet-alpin.avif",
+      "category": "Chalet alpin",
+      "sourceFile": "src/components/blogpost/BlogArticleMassif.tsx",
+      "sourceSlug": "massif"
+    },
+    {
+      "name": "Cottage Québec - La Zéolite",
+      "description": "Appartement 4 chambres avec grande cuisine et vue panoramique, parfait pour groupes ou familles.",
+      "price": "À partir de 313$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/cottage-quebec-la-zeolite.fr.html",
+      "image": "/images/destinations/hotels/cottage-zeolite.avif",
+      "category": "Appartement spacieux",
+      "sourceFile": "src/components/blogpost/BlogArticleMassif.tsx",
+      "sourceSlug": "massif"
+    },
+    {
+      "name": "Cottage Québec - Olivine",
+      "description": "Chalet tout équipé avec 3 chambres, cuisine, terrasse et spa, parfait pour familles ou amis.",
+      "price": "À partir de 227$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/cottage-quebec-olivine.fr.html",
+      "image": "/images/destinations/hotels/cottage-olivine.avif",
+      "category": "Chalet nature",
+      "sourceFile": "src/components/blogpost/BlogArticleMassif.tsx",
+      "sourceSlug": "massif"
+    },
+    {
+      "name": "Chalets Didoche",
+      "description": "Chalets confortables au cœur de la nature. Note 9/10.",
+      "price": "Tarifs variables selon la saison",
+      "bookingUrl": "https://www.booking.com/hotel/ca/chalets-didoche-havre-saint-pierre.fr.html",
+      "image": "/images/destinations/hotels/chalets-didoche.avif",
+      "category": "Chalet en bord de mer",
+      "sourceFile": "src/components/blogpost/BlogArticleMingan.tsx",
+      "sourceSlug": "mingan"
+    },
+    {
+      "name": "Hôtels Gouverneur Sept-Îles",
+      "description": "Chambre double avec 2 lits, séjour gratuit pour les enfants. Note 8/10.",
+      "price": "À partir de 194$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/gouverneur-sept-iles.fr.html",
+      "image": "/images/destinations/hotels/gouverneur.avif",
+      "category": "Familial",
+      "sourceFile": "src/components/blogpost/BlogArticleMingan.tsx",
+      "sourceSlug": "mingan"
+    },
+    {
+      "name": "L’Escale Lam-Air",
+      "description": "Hébergement chaleureux avec vue sur l’eau. Note 9,5/10.",
+      "price": "Tarif variable selon la saison",
+      "bookingUrl": "https://www.booking.com/hotel/ca/escale-lam-air.fr.html",
+      "image": "/images/destinations/hotels/escale-lam-air.avif",
+      "category": "Vue mer & plage",
+      "sourceFile": "src/components/blogpost/BlogArticleMingan.tsx",
+      "sourceSlug": "mingan"
+    },
+    {
+      "name": "Appartement Luxe – Sunset View, Pool, Parking, Near Old Québec",
+      "description": "Appartement moderne avec vue sur le coucher de soleil, accès piscine (selon la saison) et stationnement, à distance de marche du Vieux-Québec.",
+      "price": "Tarifs variables selon les dates et la durée du séjour",
+      "bookingUrl": "https://appartement-luxe-incredible-sunset-view-pool-parking.hotelsquebeccity.net/en/",
+      "image": "/images/destinations/hotels/appartluxe-quebec.avif",
+      "category": "Appartement avec piscine",
+      "sourceFile": "src/components/blogpost/BlogArticleMontmorency.tsx",
+      "sourceSlug": "montmorency"
+    },
+    {
+      "name": "Monsieur Jean – Hôtel Particulier",
+      "description": "Hôtel-boutique en Haute-Ville, au cœur du Vieux-Québec, avec déco contemporaine, mini-cuisines et certaines chambres offrant une vue superbe sur la ville.",
+      "price": "À partir d’environ 250–350 $/nuit (selon la saison)",
+      "bookingUrl": "https://www.booking.com/hotel/ca/coeur-de-ville.fr.html",
+      "image": "/images/destinations/hotels/monsieur-jean-quebec.avif",
+      "category": "Boutique & design",
+      "sourceFile": "src/components/blogpost/BlogArticleMontmorency.tsx",
+      "sourceSlug": "montmorency"
+    },
+    {
+      "name": "Royal Dalhousie",
+      "description": "Condos haut de gamme dans le Vieux-Port, avec grandes fenêtres, cuisines équipées et vue directe sur le fleuve et le mouvement des bateaux.",
+      "price": "À partir d’environ 300–400 $/nuit (selon la saison)",
+      "bookingUrl": "https://www.booking.com/hotel/ca/royal-dalhousie.html",
+      "image": "/images/destinations/hotels/royal-daousie-quebec.avif",
+      "category": "Appartements vue fleuve",
+      "sourceFile": "src/components/blogpost/BlogArticleMontmorency.tsx",
+      "sourceSlug": "montmorency"
+    },
+    {
+      "name": "AC Hotel Montréal Centre-Ville",
+      "description": "Hôtel élégant avec piscine intérieure et vue sur la ville",
+      "price": "À partir de 399$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/ac-by-marriott-montreal-downtown.fr.html",
+      "image": "/images/destinations/hotels/ac-montreal.avif",
+      "category": "Moderne",
+      "sourceFile": "src/components/blogpost/BlogArticleMontreal.tsx",
+      "sourceSlug": "montreal"
+    },
+    {
+      "name": "Best Western Plus Montréal",
+      "description": "Hôtel moderne proche du métro avec un excellent rapport qualité-prix",
+      "price": "À partir de 179$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/best-western-europa-downtown.fr.html",
+      "image": "/images/destinations/hotels/best-western-plus.avif",
+      "category": "Confort",
+      "sourceFile": "src/components/blogpost/BlogArticleMontreal.tsx",
+      "sourceSlug": "montreal"
+    },
+    {
+      "name": "Fairmont Le Reine Elizabeth",
+      "description": "Hôtel historique au cœur du centre-ville",
+      "price": "À partir de 299$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/fairmont-the-queen-elizabeth.html",
+      "image": "/images/destinations/hotels/fairmont-montreal.avif",
+      "category": "Luxe",
+      "sourceFile": "src/components/blogpost/BlogArticleMontreal.tsx",
+      "sourceSlug": "montreal"
+    },
+    {
+      "name": "Auberge Le P'tit Bonheur",
+      "description": "Auberge simple et conviviale à Saint-Laurent-de-l’île d’Orléans, avec chambres familiales et annulation gratuite – pratique pour un séjour flexible.",
+      "price": "Tarif variable selon la saison",
+      "bookingUrl": "https://www.booking.com/hotel/ca/auberge-le-p-39-tit-bonheur.fr.html?label=msn-FQZ8IgHEiaVN31poKb5DbQ-80608103155809%3Atikwd-80608256542845%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsh%C3%A9bergement+%C3%AEle+orl%C3%A9ans&sid=dd41b6917ba1eb791f5db659a3e15674&aid=1856194&ucfs=1&arphpl=1&checkin=2026-06-03&checkout=2026-06-04&dest_id=900051336&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=popularity&srpvid=80463d756f7503de&srepoch=1763714699&all_sr_blocks=104993711_184406356_2_0_0&highlighted_blocks=104993711_184406356_2_0_0&matching_block_id=104993711_184406356_2_0_0&sr_pri_blocks=104993711_184406356_2_0_0__10100&from=searchresults",
+      "image": "/images/destinations/hotels/auberge-petit-bonheur-ileorleans.avif",
+      "category": "Familial & abordable",
+      "sourceFile": "src/components/blogpost/BlogArticleOrleans.tsx",
+      "sourceSlug": "ile-d'orleans"
+    },
+    {
+      "name": "Auberge Les Blancs Moutons",
+      "description": "Auberge pleine de charme à Saint-Laurent-de-l’île d’Orléans, avec vue exceptionnelle et petit-déjeuner inclus, idéale pour explorer l’île en douceur.",
+      "price": "À partir de 134 $/nuit (petit-déjeuner inclus)",
+      "bookingUrl": "https://www.booking.com/hotel/ca/auberge-les-blancs-moutons.fr.html?label=msn-FQZ8IgHEiaVN31poKb5DbQ-80608103155809%3Atikwd-80608256542845%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsh%C3%A9bergement+%C3%AEle+orl%C3%A9ans&sid=dd41b6917ba1eb791f5db659a3e15674&aid=1856194&ucfs=1&arphpl=1&checkin=2026-06-03&checkout=2026-06-04&dest_id=5087&dest_type=region&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=score&srpvid=accc3cc25a4b00f2&srepoch=1763714790&all_sr_blocks=193561502_414095988_2_1_0&highlighted_blocks=193561502_414095988_2_1_0&matching_block_id=193561502_414095988_2_1_0&sr_pri_blocks=193561502_414095988_2_1_0__13400&from=searchresults",
+      "image": "/images/destinations/hotels/auberge-blancsmoutons-ileorleans.avif",
+      "category": "Charme & vue sur le fleuve",
+      "sourceFile": "src/components/blogpost/BlogArticleOrleans.tsx",
+      "sourceSlug": "orleans"
+    },
+    {
+      "name": "La maison de l'île d'Orléans",
+      "description": "B&B haut de gamme à Saint-Jean, connu pour son déjeuner gastronomique à l’aveugle – parfait pour un séjour en couple sur l’île d’Orléans.",
+      "price": "À partir de 233 $/nuit (petit-déjeuner inclus)",
+      "bookingUrl": "https://www.booking.com/hotel/ca/la-maison-de-l-39-ile.fr.html?label=msn-FQZ8IgHEiaVN31poKb5DbQ-80608103155809%3Atikwd-80608256542845%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsh%C3%A9bergement+%C3%AEle+orl%C3%A9ans&sid=dd41b6917ba1eb791f5db659a3e15674&aid=1856194&ucfs=1&arphpl=1&checkin=2026-06-03&checkout=2026-06-04&dest_id=5087&dest_type=region&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=score&srpvid=accc3cc25a4b00f2&srepoch=1763714580&all_sr_blocks=705794903_309162090_2_1_0&highlighted_blocks=705794903_309162090_2_1_0&matching_block_id=705794903_309162090_2_1_0&sr_pri_blocks=705794903_309162090_2_1_0__23300&from=searchresults",
+      "image": "/images/destinations/hotels/maison-gastro-ileorleans.avif",
+      "category": "Gastronomique & romantique",
+      "sourceFile": "src/components/blogpost/BlogArticleOrleans.tsx",
+      "sourceSlug": "orleans"
+    },
+    {
+      "name": "AC Hotel by Marriott Ottawa Downtown",
+      "description": "Hôtel moderne avec piscine intérieure et vue urbaine, parfait si vous combinez parc aquatique et visite d’Ottawa",
+      "price": "Confort dès 220 $/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/ac-by-marriott-ottawa-downtown.fr.html?aid=304142&label=gen173nr-10CAsoJ0IMbW90ZWwtYmlkZWF1SDNYBGgniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKLwsPIBsACAdICJDI5MGQ0MTEwLWUyMTctNDMxOC05ODA3LTI0YWFiODQzMWE5Y9gCAeACAQ&sid=25da503d934a1bfc72a56a0219f8fa90&all_sr_blocks=1359334202_408254657_0_0_0&checkin=2026-04-08&checkout=2026-04-09&dest_id=-570760&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=3&highlighted_blocks=1359334202_408254657_0_0_0&hpos=3&matching_block_id=1359334202_408254657_0_0_0&nflt=swimming_pool_options%3D433&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=bayesian_review_score&sr_pri_blocks=1359334202_408254657_0_0_0__35100&srepoch=1762714456&srpvid=e8bfd62a3792e42fa8ed14ef648bf7f7&type=total&ucfs=1&",
+      "image": "/images/destinations/hotels/ac-ottawa.avif",
+      "distance": "Centre-ville d’Ottawa",
+      "sourceFile": "src/components/blogpost/BlogArticleParcAquatique.tsx",
+      "sourceSlug": "parc-aquatique"
+    },
+    {
+      "name": "Auberge Valcartier",
+      "description": "Option économique pratique pour familles qui veulent surtout profiter du parc aquatique",
+      "price": "Dès 95 $/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/auberge-valcartier.fr.html?aid=2276422&label=msn-iB3esQzOQBCB%2AbWBrLN7Cg-79989606763414%3Atikwd-79989858727355%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqsauberge%20valcartier%20booking&sid=8871fcaf95f2b4031bb564118f7b26e1&dest_id=-575242&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759180752&srpvid=539695e014a0003a&type=total&ucfs=1&",
+      "image": "/images/destinations/hotels/auberge-valcartier.avif",
+      "distance": "À proximité",
+      "sourceFile": "src/components/blogpost/BlogArticleParcAquatique.tsx",
+      "sourceSlug": "parc-aquatique"
+    },
+    {
+      "name": "Condos Château-Bromont",
+      "description": "Cuisine équipée, idéal pour 3–5 personnes et les familles qui aiment être autonomes",
+      "price": "Dès 170 $/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/condos-chateau-bromont.fr.html?aid=2276422&label=msn-QQLmMKuP3Viw7ZGzqQkj4g-80058325963930%3Atikwd-80058585399512%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqscondo%20ch%C3%A2teau%20bromont&sid=8871fcaf95f2b4031bb564118f7b26e1&dest_id=900048497&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759181976&srpvid=ce3f984be2c1046a&type=total&ucfs=1&",
+      "image": "/images/destinations/hotels/appartement-bromont.avif",
+      "distance": "2,3 km",
+      "sourceFile": "src/components/blogpost/BlogArticleParcAquatique.tsx",
+      "sourceSlug": "parc-aquatique"
+    },
+    {
+      "name": "Holiday Inn Express Ottawa East – Orléans",
+      "description": "Piscine intérieure, déjeuner inclus, quartier familial d’Orléans",
+      "price": "Dès 169 $/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/holiday-inn-select-suites.fr.html?aid=304142&label=gen173nr-10CAsoJ0IMbW90ZWwtYmlkZWF1SDNYBGgniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKLwsPIBsACAdICJDI5MGQ0MTEwLWUyMTctNDMxOC05ODA3LTI0YWFiODQzMWE5Y9gCAeACAQ&sid=25da503d934a1bfc72a56a0219f8fa90&all_sr_blocks=2623619_95150008_2_42_0&checkin=2026-04-08&checkout=2026-04-09&dest_id=-570760&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=4&highlighted_blocks=2623619_95150008_2_42_0&hpos=4&matching_block_id=2623619_95150008_2_42_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=2623619_95150008_2_42_0__20300&srepoch=1762714199&srpvid=e8bfd62a3792e42fa8ed14ef648bf7f7&type=total&ucfs=1&",
+      "image": "/images/destinations/hotels/holidayinn-ottawa.avif",
+      "distance": "30 km",
+      "rating": "8.7/10",
+      "sourceFile": "src/components/blogpost/BlogArticleParcAquatique.tsx",
+      "sourceSlug": "parc-aquatique"
+    },
+    {
+      "name": "Hôtel Château-Bromont",
+      "description": "Piscine, spa et vue sur la montagne ; parfait pour relâcher la pression en famille",
+      "price": "Dès 199 $/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/chateau-bromont-bromont.fr.html?label=msn-QQLmMKuP3Viw7ZGzqQkj4g-80058325963930%3Atikwd-80058585399512%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqscondo+ch%C3%A2teau+bromont&sid=8871fcaf95f2b4031bb564118f7b26e1&aid=2276422&ucfs=1&arphpl=1&dest_id=900048497&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=popularity&srpvid=5396991d94460345&srepoch=1759182402&from_sustainable_property_sr=1&from=searchresults",
+      "image": "/images/destinations/hotels/vallea-bromont.avif",
+      "distance": "2 km",
+      "rating": "4★",
+      "sourceFile": "src/components/blogpost/BlogArticleParcAquatique.tsx",
+      "sourceSlug": "parc-aquatique"
+    },
+    {
+      "name": "Hôtel Valcartier (sur site)",
+      "description": "Accès direct au parc aquatique, chambres familiales communicantes",
+      "price": "Dès 159 $/nuit",
+      "bookingUrl": "https://www.valcartier.com/fr/boutique-en-ligne/hebergement/",
+      "image": "/images/destinations/hotels/valcartier.avif",
+      "distance": "Sur place",
+      "rating": "4★",
+      "sourceFile": "src/components/blogpost/BlogArticleParcAquatique.tsx",
+      "sourceSlug": "parc-aquatique"
+    },
+    {
+      "name": "Le 204 Champlain",
+      "description": "Appartement très bien noté, pratique pour un week-end actif dans les Cantons-de-l’Est",
+      "price": "Dès 160 $/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/le-204-champlain-bromont.html",
+      "image": "/images/destinations/hotels/204-champlain.avif",
+      "distance": "1,5 km",
+      "rating": "9.7/10",
+      "sourceFile": "src/components/blogpost/BlogArticleParcAquatique.tsx",
+      "sourceSlug": "parc-aquatique"
+    },
+    {
+      "name": "Le Manoir du Lac Delage",
+      "description": "Vue sur le lac, spa et ambiance très zen après une journée de glissades",
+      "price": "Dès 189 $/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/manoir-du-lac-de-lage-lac-delage-quebec.fr.html?aid=2276516&label=msn-rVoOgT_nB8tmabcidK571Q-80127049560063%3Atikwd-80127307805998%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqsmanoir%20du%20lac%20booking&sid=8871fcaf95f2b4031bb564118f7b26e1&dest_id=-574203&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759180943&srpvid=5f4c9645c9960078&type=total&ucfs=1&",
+      "image": "/images/destinations/hotels/manoir-delage.avif",
+      "distance": "10 km",
+      "rating": "4★",
+      "sourceFile": "src/components/blogpost/BlogArticleParcAquatique.tsx",
+      "sourceSlug": "parc-aquatique"
+    },
+    {
+      "name": "Microtel Inn & Suites Casselman",
+      "description": "Déjeuner inclus et accès pratique à l’autoroute 417",
+      "price": "Dès 159 $/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/microtel-casselman.fr.html?label=gen173nr-10CAsoJ0IMbW90ZWwtYmlkZWF1SDNYBGgniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKLwsPIBsACAdICJDI5MGQ0MTEwLWUyMTctNDMxOC05ODA3LTI0YWFiODQzMWE5Y9gCAeACAQ&sid=25da503d934a1bfc72a56a0219f8fa90&aid=304142&ucfs=1&checkin=2026-04-08&checkout=2026-04-09&dest_id=-570760&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=e8bfd62a3792e42fa8ed14ef648bf7f7&srepoch=1762713979&matching_block_id=150597905_94608288_2_1_0&atlas_src=sr_iw_title",
+      "image": "/images/destinations/hotels/microtel-casselman.avif",
+      "distance": "15 km",
+      "sourceFile": "src/components/blogpost/BlogArticleParcAquatique.tsx",
+      "sourceSlug": "parc-aquatique"
+    },
+    {
+      "name": "Au Pic de l'Aurore",
+      "description": "Surplombe la baie — tu te couches avec la lumière sur l’eau.",
+      "price": "À partir de 189$/nuit",
+      "bookingUrl": "https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Friotel-perce.fr.html",
+      "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80",
+      "category": "Vue panoramique",
+      "sourceFile": "src/components/blogpost/BlogArticlePerce.tsx",
+      "sourceSlug": "perce"
+    },
+    {
+      "name": "Hôtel La Normandie",
+      "description": "Au cœur du village — pratique pour vivre Percé le soir sans reprendre la voiture.",
+      "price": "À partir de 169$/nuit",
+      "bookingUrl": "https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Friotel-perce.fr.html",
+      "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80",
+      "category": "Charme",
+      "sourceFile": "src/components/blogpost/BlogArticlePerce.tsx",
+      "sourceSlug": "perce"
+    },
+    {
+      "name": "Riotel Percé",
+      "description": "Vue imprenable sur le Rocher Percé — parfait pour te réveiller “carte postale”.",
+      "price": "À partir de 199$/nuit",
+      "bookingUrl": "https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Friotel-perce.fr.html",
+      "image": "/images/destinations/hotels/riohotel-perce.avif",
+      "category": "Vue sur mer",
+      "sourceFile": "src/components/blogpost/BlogArticlePerce.tsx",
+      "sourceSlug": "perce"
+    },
+    {
+      "name": "Horizon 777",
+      "description": "Chambre double avec salle de bain privée et vue. Note 9,2/10.",
+      "price": "À partir de 159$/nuit avec petit-déjeuner",
+      "bookingUrl": "https://www.booking.com/hotel/ca/horizon-777.fr.html",
+      "image": "/images/destinations/hotels/horizon-777.avif",
+      "category": "Petit-déjeuner inclus",
+      "sourceFile": "src/components/blogpost/BlogArticlePortAuPersil.tsx",
+      "sourceSlug": "port-au-persil"
+    },
+    {
+      "name": "La Gentilhommière",
+      "description": "Chambre lit Queen avec vue, notée 9,5/10. Calme et confort assurés.",
+      "price": "À partir de 139$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/la-gentilhommiere.fr.html",
+      "image": "/images/destinations/hotels/gentilhommiere.avif",
+      "category": "Vue sur mer",
+      "sourceFile": "src/components/blogpost/BlogArticlePortAuPersil.tsx",
+      "sourceSlug": "port-au-persil"
+    },
+    {
+      "name": "Motel Cofotel",
+      "description": "Chambre lit Queen, annulation gratuite, situé à 4 km du centre.",
+      "price": "À partir de 139$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/motel-cofotel.fr.html",
+      "image": "/images/destinations/hotels/motel-cofotel.avif",
+      "category": "Rapport qualité-prix",
+      "sourceFile": "src/components/blogpost/BlogArticlePortAuPersil.tsx",
+      "sourceSlug": "port-au-persil"
+    },
+    {
+      "name": "Camping municipal Le Paradis",
+      "description": "39 emplacements bien situés, en bordure du boulevard du Portage-des-Mousses. Parfait pour VR ou tente.",
+      "price": "À partir de ~25$/nuit (info à confirmer)",
+      "bookingUrl": "https://www.villeport-cartier.com/tourisme/camping-municipal",
+      "image": "/images/destinations/hotels/camping-deux-port-cartier.avif",
+      "category": "Avec et sans services",
+      "sourceFile": "src/components/blogpost/BlogArticlePortCartier.tsx",
+      "sourceSlug": "port-cartier"
+    },
+    {
+      "name": "Camping municipal Patterson",
+      "description": "17 emplacements rustiques en pleine nature sur l’Île Patterson Sud. Déconnexion garantie.",
+      "price": "Tarif accessible (info locale)",
+      "bookingUrl": "https://www.villeport-cartier.com/tourisme/camping-municipal",
+      "image": "/images/destinations/hotels/camping-un-port-cartier.avif",
+      "category": "Sans service - Nature pure",
+      "sourceFile": "src/components/blogpost/BlogArticlePortCartier.tsx",
+      "sourceSlug": "port-cartier"
+    },
+    {
+      "name": "Chalets Lac Walker & Lac Arthur",
+      "description": "Séjour dans la réserve faunique : pêche, canot et randonnées. Idéal pour se ressourcer.",
+      "price": "Tarifs via Sépaq",
+      "bookingUrl": "https://www.sepaq.com/pq/rpc/hebergement/chalet.dot",
+      "image": "/images/destinations/hotels/reserve-faunique-port-cartier.avif",
+      "category": "Nature sauvage & tranquillité",
+      "sourceFile": "src/components/blogpost/BlogArticlePortCartier.tsx",
+      "sourceSlug": "port-cartier"
+    },
+    {
+      "name": "3 bed with large balcony and private beach",
+      "description": "Grande maison de location avec balcon et accès direct à une plage privée, idéale pour un séjour au bord du lac en famille ou entre amis.",
+      "price": "À partir de 164 $/nuit",
+      "bookingUrl": "https://www.expedia.ca/fr/Norfolk-County-Hotels-3-Bed-With-Large-Balcony-And-Private-Beach.h83723077.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763712608476&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=3963&destination=Hamilton+%28et+environs%29%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.25658%2C-79.871643&sort=REVIEW_RELEVANT&top_dp=164&top_cur=CAD&userIntent=&selectedRoomType=83723077&selectedRatePlan=000099a34ebd39224021b34362d73129b59f&searchId=46083969-eb9c-49a9-aa69-043fb15b4980",
+      "image": "/images/destinations/hotels/countyhotel-portdover.avif",
+      "category": "Maison avec plage privée",
+      "sourceFile": "src/components/blogpost/BlogArticlePortDover.tsx",
+      "sourceSlug": "port-dover"
+    },
+    {
+      "name": "Clonmel Castle",
+      "description": "Manoir de style château avec jardins et déco d’époque, parfait pour une escapade romantique à quelques kilomètres des plages du lac Érié.",
+      "price": "À partir de 256 $/nuit",
+      "bookingUrl": "https://www.expedia.ca/fr/Hamilton-Hotels-Clonmel-Castle.h16779270.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763712608571&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=3963&destination=Hamilton+%28et+environs%29%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.25658%2C-79.871643&sort=REVIEW_RELEVANT&top_dp=256&top_cur=CAD&userIntent=&selectedRoomType=320999539&selectedRatePlan=387763411&searchId=46083969-eb9c-49a9-aa69-043fb15b4980",
+      "image": "/images/destinations/hotels/hamilton-portdover.avif",
+      "category": "Château & charme historique",
+      "sourceFile": "src/components/blogpost/BlogArticlePortDover.tsx",
+      "sourceSlug": "port-dover"
+    },
+    {
+      "name": "Luxury Hayloft Retreat (près de Turkey Point et Port Dover)",
+      "description": "Retraite luxueuse dans une ancienne grange réaménagée, ambiance cocooning et campagne chic à proximité de Turkey Point et Port Dover.",
+      "price": "À partir de 250 $/nuit",
+      "bookingUrl": "https://www.expedia.ca/fr/London-Hotels-Luxury-Hayloft-Retreat-Close-To-Turkey-Point-And-Port-Dover.h114318594.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763712608492&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=3963&destination=Hamilton+%28et+environs%29%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.25658%2C-79.871643&sort=REVIEW_RELEVANT&top_dp=250&top_cur=CAD&userIntent=&selectedRoomType=114318594&selectedRatePlan=00007f5cec84d314467daefd4e180b230c9a&searchId=46083969-eb9c-49a9-aa69-043fb15b4980",
+      "image": "/images/destinations/hotels/londonhotel-portdover.avif",
+      "category": "Loft de campagne",
+      "sourceFile": "src/components/blogpost/BlogArticlePortDover.tsx",
+      "sourceSlug": "port-dover"
+    },
+    {
+      "name": "Appartement Luxe – Sunset View, Pool, Parking, Near Old Québec",
+      "description": "Appartement moderne avec vue sur le coucher de soleil, accès piscine (selon la saison) et stationnement, à distance de marche du Vieux-Québec.",
+      "price": "Tarifs variables selon les dates et la durée du séjour",
+      "bookingUrl": "https://appartement-luxe-incredible-sunset-view-pool-parking.hotelsquebeccity.net/en/",
+      "image": "/images/destinations/hotels/appartluxe-quebec.avif",
+      "category": "Appartement avec piscine",
+      "sourceFile": "src/components/blogpost/BlogArticleQuebec.tsx",
+      "sourceSlug": "quebec"
+    },
+    {
+      "name": "Monsieur Jean – Hôtel Particulier",
+      "description": "Hôtel-boutique en Haute-Ville, au cœur du Vieux-Québec, avec déco contemporaine, mini-cuisines et certaines chambres offrant une vue superbe sur la ville.",
+      "price": "À partir d’environ 250–350 $/nuit (selon la saison)",
+      "bookingUrl": "https://www.booking.com/hotel/ca/coeur-de-ville.fr.html",
+      "image": "/images/destinations/hotels/monsieurjean-quebec.avif",
+      "category": "Boutique & design",
+      "sourceFile": "src/components/blogpost/BlogArticleQuebec.tsx",
+      "sourceSlug": "quebec"
+    },
+    {
+      "name": "Royal Dalhousie",
+      "description": "Condos haut de gamme dans le Vieux-Port, avec grandes fenêtres, cuisines équipées et vue directe sur le fleuve et le mouvement des bateaux.",
+      "price": "À partir d’environ 300–400 $/nuit (selon la saison)",
+      "bookingUrl": "https://www.booking.com/hotel/ca/royal-dalhousie.html",
+      "image": "/images/destinations/hotels/royaldaousie-quebec.avif",
+      "category": "Appartements vue fleuve",
+      "sourceFile": "src/components/blogpost/BlogArticleQuebec.tsx",
+      "sourceSlug": "quebec"
+    },
+    {
+      "name": "Auberge de la Pointe",
+      "description": "Site exceptionnel sur le Saint-Laurent",
+      "price": "À partir de 169$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/auberge-de-la-pointe.html",
+      "image": "/images/destinations/hotels/hotel-pointe-riviereduloup.avif",
+      "category": "Vue sur Mer",
+      "sourceFile": "src/components/blogpost/BlogArticleRiviereduLoup.tsx",
+      "sourceSlug": "rivieredu-loup"
+    },
+    {
+      "name": "Comfort Inn Rivière-du-Loup",
+      "description": "Chambres confortables près du fleuve, petit-déjeuner inclus et accueil chaleureux.",
+      "price": "À partir de 149 $/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/comfort-inn-riviere-du-loup.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=24034208_91468373_2_1_0&checkin=2025-10-27&checkout=2025-10-29&dest_id=-572316&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=3&highlighted_blocks=24034208_91468373_2_1_0&hpos=3&matching_block_id=24034208_91468373_2_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=24034208_91468373_2_1_0__35614&srepoch=1761337234&srpvid=0ef28eef21e203af&type=total&ucfs=1&",
+      "image": "/images/destinations/hotels/hotel-confort-riviereduloup.avif",
+      "category": "3 étoiles",
+      "sourceFile": "src/components/blogpost/BlogArticleRiviereduLoup.tsx",
+      "sourceSlug": "rivieredu-loup"
+    },
+    {
+      "name": "Hôtel Universel",
+      "description": "Vue sur le fleuve et piscine intérieure",
+      "price": "À partir de 159$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/ha-tel-universel-centre-de-congra-s-rivia-re-du-loup.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=31994701_382796525_2_0_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=-572316&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=31994701_382796525_2_0_0&hpos=2&matching_block_id=31994701_382796525_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=31994701_382796525_2_0_0__34900&srepoch=1761337521&srpvid=df5e8f7bd26e006a&type=total&ucfs=1&",
+      "image": "/images/destinations/hotels/hotel-universel-riviereduloup.avif",
+      "category": "4 étoiles",
+      "sourceFile": "src/components/blogpost/BlogArticleRiviereduLoup.tsx",
+      "sourceSlug": "rivieredu-loup"
+    },
+    {
+      "name": "Grande maison moderne 4 chambres – Spa, Jardin & Parking gratuit",
+      "description": "Spacieuse maison tout équipée avec spa Jacuzzi, grand jardin et stationnement privé. Idéale pour les familles et groupes à Saint-Jean-sur-Richelieu, à deux pas du centre-ville.",
+      "price": "À partir de 282 $/nuit (≈ 563 $ pour 2 nuits)",
+      "bookingUrl": "https://www.booking.com/hotel/ca/kouaks.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=1405569501_412356963_0_0_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=900056369&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=6&highlighted_blocks=1405569501_412356963_0_0_0&hpos=6&matching_block_id=1405569501_412356963_0_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1405569501_412356963_0_0_0__56272&srepoch=1761338965&srpvid=56a09249244a03b9&type=total&ucfs=1&",
+      "image": "/images/destinations/hotels/hotel-grandemaison-sabrevois.avif",
+      "category": "Maison de vacances familiale",
+      "sourceFile": "src/components/blogpost/BlogArticleSabrevois.tsx",
+      "sourceSlug": "sabrevois"
+    },
+    {
+      "name": "Holiday Inn (Saint-Jean-sur-Richelieu)",
+      "description": "Hôtel confortable de style Holiday Inn à Saint-Jean-sur-Richelieu, avec chambres spacieuses, stationnement facile et accès autoroute pratique pour explorer la Montérégie.",
+      "price": "À partir de 189 $/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/gouverneur-quebec1.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=2675210_412424930_2_2_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=900040733&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=2675210_412424930_2_2_0&hpos=2&matching_block_id=2675210_412424930_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=2675210_412424930_2_2_0__37700&srepoch=1761339092&srpvid=accc92a644dc0180&type=total&ucfs=1&",
+      "image": "/images/destinations/hotels/hotel-holiday-sabrevois.avif",
+      "category": "Hotel chaîne, piscine intérieure",
+      "sourceFile": "src/components/blogpost/BlogArticleSabrevois.tsx",
+      "sourceSlug": "sabrevois"
+    },
+    {
+      "name": "La Cache du Lac Champlain",
+      "description": "Complexe hôtelier au bord du lac Champlain avec spa, golf et restaurant offrant une vue magnifique.",
+      "price": "À partir de 239 $/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/la-cache-du-lac-champlain.fr.html?label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&aid=2369661&ucfs=1&checkin=2025-12-08&checkout=2025-12-10&dest_id=900040733&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=3832934a7e5c043f&srepoch=1761339453&matching_block_id=221154004_372912007_4_0_0&atlas_src=sr_iw_title",
+      "image": "/images/destinations/hotels/hotel-cachelac-sabrevois.avif",
+      "category": "4 étoiles supérieur",
+      "sourceFile": "src/components/blogpost/BlogArticleSabrevois.tsx",
+      "sourceSlug": "sabrevois"
+    },
+    {
+      "name": "Gîte du Haut des Arbres",
+      "description": "Cabanes perchées au cœur de la forêt saguenéenne — ambiance chaleureuse, vue nature et déconnexion assurée.",
+      "price": "À partir de 124$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/gite-du-haut-des-arbres.fr.html?aid=357028",
+      "image": "/images/destinations/hotels/gite-haut-arbre-saguenay.avif",
+      "badge": "Charme",
+      "sourceFile": "src/components/blogpost/BlogArticleSaguenay.tsx",
+      "sourceSlug": "saguenay"
+    },
+    {
+      "name": "Hôtel Le Montagnais",
+      "description": "Piscine intérieure, aires ludiques et localisation pratique pour rayonner entre Chicoutimi & Jonquière.",
+      "price": "À partir de 169$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/le-montagnais-and-convention-center.fr.html?aid=357028",
+      "image": "/images/destinations/hotels/montagnais-saguenay.avif",
+      "badge": "Familial",
+      "sourceFile": "src/components/blogpost/BlogArticleSaguenay.tsx",
+      "sourceSlug": "saguenay"
+    },
+    {
+      "name": "OTL Gouverneur Saguenay",
+      "description": "Design moderne, spa PAÜS et restaurant Boefish — l’adresse chic pour un séjour tout confort.",
+      "price": "À partir de 199$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/hotels-gouverneur-saguenay.fr.html?aid=357028",
+      "image": "/images/destinations/hotels/hotel-gouverneur-saguenay.avif",
+      "badge": "Luxe",
+      "sourceFile": "src/components/blogpost/BlogArticleSaguenay.tsx",
+      "sourceSlug": "saguenay"
+    },
+    {
+      "name": "Newsroom Suites",
+      "description": "Suite privée avec très grand lit, note “Fabuleux” (≈170 avis) et situation géographique 9,7. Idéal pour se faire plaisir tout en restant près de la plage.",
+      "price": "Dès ~272 $ + taxes/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/newsroom-suites.fr.html?aid=304142",
+      "image": "/images/destinations/hotels/news-room-sandbank.avif",
+      "sourceFile": "src/components/blogpost/BlogArticleSandbanks.tsx",
+      "sourceSlug": "sandbanks"
+    },
+    {
+      "name": "The Birch",
+      "description": "Bungalow complet en bord de l’eau, note 9,1 “Fabuleux” avec situation 9,7. Idéal pour une ambiance chalet, avec un vrai sentiment de vacances.",
+      "price": "Dès ~270 $ + taxes/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/twin-birch-suites-b-amp-b-cottages.fr.html?aid=304142",
+      "image": "/images/destinations/hotels/the-birch-sandbank.avif",
+      "sourceFile": "src/components/blogpost/BlogArticleSandbanks.tsx",
+      "sourceSlug": "sandbanks"
+    },
+    {
+      "name": "The Village Suites",
+      "description": "Studios et appartements confortables à Wellington, note globale 9,1 avec situation géographique 9,6. Parfait pour une base tranquille après une journée de plage.",
+      "price": "Dès ~148 $ + taxes/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/the-village-suites.fr.html?aid=304142",
+      "image": "/images/destinations/hotels/the-village-sandbank.avif",
+      "sourceFile": "src/components/blogpost/BlogArticleSandbanks.tsx",
+      "sourceSlug": "sandbanks"
+    },
+    {
+      "name": "Holiday Inn Express & Suites Port Elgin, an IHG Hotel",
+      "description": "Hôtel récent avec piscine intérieure et déjeuner inclus, pratique pour rayonner autour des plages du lac Huron.",
+      "price": "À partir de 254 $/nuit",
+      "bookingUrl": "https://www.expedia.ca/fr/Owen-Sound-Hotels-Holiday-Inn-Express-Suites-Port-Elgin.h52866408.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918201&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=254&top_cur=CAD&userIntent=&selectedRoomType=233143560&selectedRatePlan=381089403&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366",
+      "image": "/images/destinations/hotels/Holidayinn-saublebeach.avif",
+      "category": "Confort moderne",
+      "sourceFile": "src/components/blogpost/BlogArticleSaubleBeach.tsx",
+      "sourceSlug": "sauble-beach"
+    },
+    {
+      "name": "Paradise Inn On The Beach",
+      "description": "Petite adresse directement en bord de plage, parfaite pour profiter des couchers de soleil et des balades pieds nus dans le sable.",
+      "price": "À partir de 260 $/nuit",
+      "bookingUrl": "https://www.expedia.ca/fr/Owen-Sound-Hotels-Paradise-Inn-On-The-Beach.h54295457.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918306&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=260&top_cur=CAD&userIntent=&selectedRoomType=314055824&selectedRatePlan=381539755&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366",
+      "image": "/images/destinations/hotels/hotel-paradise-saublebeach.avif",
+      "category": "Face à la plage",
+      "sourceFile": "src/components/blogpost/BlogArticleSaubleBeach.tsx",
+      "sourceSlug": "sauble-beach"
+    },
+    {
+      "name": "The Sands",
+      "description": "Hôtel moderne et confortable à South Bruce Peninsula, pratique pour profiter de Singing Beach et des environs.",
+      "price": "À partir de 241 $/nuit",
+      "bookingUrl": "https://www.expedia.ca/fr/South-Bruce-Peninsula-Hotels-The-Sands.h106853214.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763709635574&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=241&top_cur=CAD&userIntent=&selectedRoomType=326825590&selectedRatePlan=402936326&searchId=227769ba-4939-4a9e-90ba-897d97517b01",
+      "image": "/images/destinations/hotels/south-bruce-singingbeach.avif",
+      "category": "Près de la plage",
+      "sourceFile": "src/components/blogpost/BlogArticleSaubleBeach.tsx",
+      "sourceSlug": "sauble-beach"
+    },
+    {
+      "name": "Auberge Internationale Le Tangon",
+      "description": "Dortoir de 6 lits superposés, ambiance conviviale. Note 8,3/10.",
+      "price": "À partir de 74$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/auberge-internationale-le-tangon.fr.html",
+      "image": "/images/destinations/hotels/auberge-tangon.avif",
+      "category": "Auberge économique",
+      "sourceFile": "src/components/blogpost/BlogArticleSeptIles.tsx",
+      "sourceSlug": "sept-iles"
+    },
+    {
+      "name": "Hôtel Le Voyageur",
+      "description": "Chambre double avec 2 lits. Idéal pour famille. Note 8,3/10.",
+      "price": "À partir de 174$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/le-voyageur-sept-iles.fr.html",
+      "image": "/images/destinations/hotels/le-voyageur.avif",
+      "category": "Confort & Calme",
+      "sourceFile": "src/components/blogpost/BlogArticleSeptIles.tsx",
+      "sourceSlug": "sept-iles"
+    },
+    {
+      "name": "Hôtels Gouverneur Sept-Îles",
+      "description": "Chambre double avec 2 lits, séjour gratuit pour les enfants. Note 8/10.",
+      "price": "À partir de 194$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/gouverneur-sept-iles.fr.html",
+      "image": "/images/destinations/hotels/gouverneur.avif",
+      "category": "Familial",
+      "sourceFile": "src/components/blogpost/BlogArticleSeptIles.tsx",
+      "sourceSlug": "sept-iles"
+    },
+    {
+      "name": "Grand Times Hotel",
+      "description": "Design contemporain et confort",
+      "price": "À partir de 159$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/grand-times-sherbrooke.html",
+      "image": "/images/destinations/hotels/time-sherbrooke.avif",
+      "category": "Moderne",
+      "sourceFile": "src/components/blogpost/BlogArticleSherbrooke.tsx",
+      "sourceSlug": "sherbrooke"
+    },
+    {
+      "name": "Motel Le Refuge",
+      "description": "Situé à Sherbrooke, ce motel offre un excellent rapport qualité-prix et une localisation pratique à proximité des services.",
+      "price": "Tarif abordable selon la période",
+      "bookingUrl": "https://www.booking.com/hotel/ca/motel-le-refuge-sherbrooke.fr.html",
+      "image": "/images/destinations/hotels/motel-refuge.avif",
+      "category": "Économique",
+      "sourceFile": "src/components/blogpost/BlogArticleSherbrooke.tsx",
+      "sourceSlug": "sherbrooke"
+    },
+    {
+      "name": "OTL Gouverneur Sherbrooke",
+      "description": "Au cœur du centre-ville avec vue panoramique",
+      "price": "À partir de 189$/nuit",
+      "bookingUrl": "https://www.booking.com/hotel/ca/gouverneur-sherbrooke.html",
+      "image": "/images/destinations/hotels/gouverneur-sherbrooke.avif",
+      "category": "Luxe",
+      "sourceFile": "src/components/blogpost/BlogArticleSherbrooke.tsx",
+      "sourceSlug": "sherbrooke"
+    },
+    {
+      "name": "Stone Cove Waterfront Adults Only B&B",
+      "description": "B&B réservé aux adultes, directement au bord de l’eau, idéal pour un séjour calme à deux près de Singing Beach.",
+      "price": "À partir de 208 $/nuit",
+      "bookingUrl": "https://www.expedia.ca/fr/Northern-Bruce-Peninsula-Hotels-Stone-Cove-Waterfront-Adults-Only-BB.h69567566.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763709635564&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=208&top_cur=CAD&userIntent=&selectedRoomType=322355851&selectedRatePlan=390870828&searchId=227769ba-4939-4a9e-90ba-897d97517b01",
+      "image": "/images/destinations/hotels/northern-bruce-peninsula-singingbeach.avif",
+      "category": "Romantique • Bord de l’eau",
+      "sourceFile": "src/components/blogpost/BlogArticleSingingSands.tsx",
+      "sourceSlug": "singing-sands"
+    },
+    {
+      "name": "The Inn at Cobble Beach",
+      "description": "Auberge de charme au bord de l’eau avec terrain de golf, idéale pour une escapade plus chic après une journée à la plage.",
+      "price": "À partir de 269 $/nuit",
+      "bookingUrl": "https://www.expedia.ca/fr/Owen-Sound-Hotels-The-Inn-At-Cobble-Beach.h10988635.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763709635642&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=269&top_cur=CAD&userIntent=&selectedRoomType=201381901&selectedRatePlan=206817993&searchId=227769ba-4939-4a9e-90ba-897d97517b01",
+      "image": "/images/destinations/hotels/owen-soundhotel-singingbeach.avif",
+      "category": "Golf & vue sur la baie",
+      "sourceFile": "src/components/blogpost/BlogArticleSingingSands.tsx",
+      "sourceSlug": "singing-sands"
+    },
+    {
+      "name": "The Sands",
+      "description": "Hôtel moderne et confortable à South Bruce Peninsula, pratique pour profiter de Singing Beach et des environs.",
+      "price": "À partir de 241 $/nuit",
+      "bookingUrl": "https://www.expedia.ca/fr/South-Bruce-Peninsula-Hotels-The-Sands.h106853214.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763709635574&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=241&top_cur=CAD&userIntent=&selectedRoomType=326825590&selectedRatePlan=402936326&searchId=227769ba-4939-4a9e-90ba-897d97517b01",
+      "image": "/images/destinations/hotels/south-bruce-singingbeach.avif",
+      "category": "Près de la plage",
+      "sourceFile": "src/components/blogpost/BlogArticleSingingSands.tsx",
+      "sourceSlug": "singing-sands"
+    },
+    {
+      "name": "Auberge du Café chez Sam",
+      "description": "Située à Baie-Sainte-Catherine, à seulement 4 km de Tadoussac. Note de 8,3/10 par plus de 500 voyageurs.",
+      "price": "Tarif variable selon la saison",
+      "bookingUrl": "https://www.booking.com/hotel/ca/auberge-du-cafe-chez-sam.fr.html",
+      "image": "/images/destinations/hotels/auberge-chez-sam.avif",
+      "category": "Authentique & convivial",
+      "sourceFile": "src/components/blogpost/BlogArticleTadoussac.tsx",
+      "sourceSlug": "tadoussac"
+    },
+    {
+      "name": "Hôtel Motel Le Béluga",
+      "description": "À seulement 100 mètres du centre de Tadoussac. Idéal pour rejoindre les départs d'excursion aux baleines à pied.",
+      "price": "À partir de ~135$/nuit (selon la saison)",
+      "bookingUrl": "https://www.booking.com/hotel/ca/le-beluga.fr.html",
+      "image": "/images/destinations/hotels/motel-beluga.avif",
+      "category": "Emplacement central",
+      "sourceFile": "src/components/blogpost/BlogArticleTadoussac.tsx",
+      "sourceSlug": "tadoussac"
+    },
+    {
+      "name": "Hôtel Tadoussac",
+      "description": "Un hôtel emblématique face au fleuve Saint-Laurent avec une note exceptionnelle de 9.7/10. Certificat de durabilité.",
+      "price": "Tarifs variables selon la saison",
+      "bookingUrl": "https://www.booking.com/hotel/ca/tadoussac.fr.html",
+      "image": "/images/destinations/hotels/hotel tadoussac.avif",
+      "category": "En bord de plage – Éco-certifié",
+      "sourceFile": "src/components/blogpost/BlogArticleTadoussac.tsx",
+      "sourceSlug": "tadoussac"
+    },
+    {
+      "name": "Hidden Gem",
+      "description": "Grande maison entièrement équipée, idéale pour un séjour en famille ou entre amis à quelques minutes de la plage de Wasaga.",
+      "price": "À partir de 340 $/nuit",
+      "bookingUrl": "https://www.expedia.ca/fr/Wasaga-Beach-Hotels-Hidden-Gem.h94741293.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763713561441&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=181914&destination=Wasaga+Beach%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=44.520741%2C-80.016067&sort=REVIEW_RELEVANT&top_dp=340&top_cur=CAD&userIntent=&selectedRoomType=94741293&selectedRatePlan=00009ac40984a33c4dc49c8c118db165efd7&searchId=adb0bdb1-4661-49b9-8edf-ea8f29e81d85",
+      "image": "/images/destinations/hotels/hotel-hidden-wasagabeach.avif",
+      "category": "Maison de vacances",
+      "sourceFile": "src/components/blogpost/BlogArticleWasagaBeach.tsx",
+      "sourceSlug": "wasaga-beach"
+    },
+    {
+      "name": "Saga Resort",
+      "description": "Complexe avec chambres et petits appartements, piscine extérieure et aire de jeux, parfait pour profiter de Wasaga Beach à pied.",
+      "price": "À partir de 120 $/nuit",
+      "bookingUrl": "https://www.expedia.ca/fr/Wasaga-Beach-Hotels-SAGA-RESORT.h17405117.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763713351541&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=181914&destination=Wasaga+Beach%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=44.520741%2C-80.016067&sort=REVIEW_RELEVANT&top_dp=120&top_cur=CAD&userIntent=&selectedRoomType=201838547&selectedRatePlan=400296313&searchId=527dc4aa-81cc-404f-a4c7-9516c75cd205",
+      "image": "/images/destinations/hotels/wasaga-beach.avif",
+      "category": "Familial près de la plage",
+      "sourceFile": "src/components/blogpost/BlogArticleWasagaBeach.tsx",
+      "sourceSlug": "wasaga-beach"
+    },
+    {
+      "name": "Sandpiper Beach Resort - Cottage 10",
+      "description": "Cottage confortable avec accès direct à la plage, parfait pour vivre l’expérience Wasaga Beach les pieds dans le sable.",
+      "price": "À partir de 375 $/nuit",
+      "bookingUrl": "https://www.expedia.ca/fr/Barrie-Orillia-Hotels-SANDPIPER-BEACH-RESORT-Cottage-10.h38854991.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763713561429&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=181914&destination=Wasaga+Beach%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=44.520741%2C-80.016067&sort=REVIEW_RELEVANT&top_dp=375&top_cur=CAD&userIntent=&selectedRoomType=38854991&selectedRatePlan=0000b518e7a24aeb4c6d970c57cb3170df8c&searchId=adb0bdb1-4661-49b9-8edf-ea8f29e81d85",
+      "image": "/images/destinations/hotels/cottage-wasagabeach.avif",
+      "category": "Cottage en bord de plage",
+      "sourceFile": "src/components/blogpost/BlogArticleWasagaBeach.tsx",
+      "sourceSlug": "wasaga-beach"
+    }
+  ],
+  "fileSummaries": [
+    {
+      "file": "src/components/blogpost/BlogArticleBromontGranby.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleCanyon.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleCarleton.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleForillon.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleGaspesie.tsx",
+      "detections": [
+        {
+          "kind": "heuristic-variable",
+          "name": "hotelsVueMer",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotelsFamillePiscine",
+          "count": 3
+        }
+      ],
+      "count": 6
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleGrandBend.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleHautesGorges.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleKamouraska.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleMagogOrford.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleMassif.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleMingan.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleMontmorency.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleMontreal.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleOrleans.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleParcAquatique.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "parks.hotels",
+          "count": 3
+        },
+        {
+          "kind": "deep-object-property",
+          "name": "parks.hotels",
+          "count": 3
+        },
+        {
+          "kind": "deep-object-property",
+          "name": "parks.hotels",
+          "count": 3
+        }
+      ],
+      "count": 9
+    },
+    {
+      "file": "src/components/blogpost/BlogArticlePerce.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "hotelcard-map-pattern",
+          "name": "map(HotelCard)",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticlePortAuPersil.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticlePortCartier.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticlePortDover.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleQuebec.tsx",
+      "detections": [
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleRiviereduLoup.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleSabrevois.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleSaguenay.tsx",
+      "detections": [
+        {
+          "kind": "jsx-hotel-card",
+          "name": "HotelCard",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleSandbanks.tsx",
+      "detections": [
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleSaubleBeach.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleSeptIles.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleSherbrooke.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleSingingSands.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleTadoussac.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleWasagaBeach.tsx",
+      "detections": [
+        {
+          "kind": "deep-object-property",
+          "name": "metadata.hebergements",
+          "count": 0
+        },
+        {
+          "kind": "variable",
+          "name": "hotels",
+          "count": 3
+        },
+        {
+          "kind": "heuristic-variable",
+          "name": "hotels",
+          "count": 3
+        }
+      ],
+      "count": 3
+    }
+  ],
+  "errors": [
+    {
+      "file": "src/components/blogpost/BlogArticleAnseSaintJean.tsx",
+      "reason": "hotels_key_present_but_not_extracted",
+      "debug": {
+        "containsHotelsWord": true,
+        "containsHotelCard": false,
+        "containsWhereToStay": false,
+        "candidateObjectKeySamples": [
+          ["name", "category", "description", "price", "link", "image"],
+          ["name", "category", "description", "price", "link", "image"],
+          ["name", "category", "description", "price", "link", "image"],
+          ["name", "type", "speciality", "price", "mustTry", "schedule"],
+          ["name", "type", "speciality", "price", "mustTry", "schedule"]
+        ]
+      }
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleBaieSaintPaul.tsx",
+      "reason": "hotels_key_present_but_not_extracted",
+      "debug": {
+        "containsHotelsWord": true,
+        "containsHotelCard": false,
+        "containsWhereToStay": false,
+        "candidateObjectKeySamples": [
+          ["name", "category", "description", "price", "link", "image"],
+          ["name", "category", "description", "price", "link", "image"],
+          ["name", "category", "description", "price", "link", "image"],
+          ["name", "type", "speciality", "price", "mustTry", "schedule"],
+          ["name", "type", "speciality", "price", "mustTry", "schedule"]
+        ]
+      }
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleBic.tsx",
+      "reason": "hotels_key_present_but_not_extracted",
+      "debug": {
+        "containsHotelsWord": true,
+        "containsHotelCard": false,
+        "containsWhereToStay": false,
+        "candidateObjectKeySamples": [
+          [
+            "name",
+            "city",
+            "type",
+            "speciality",
+            "price",
+            "mustTry",
+            "schedule",
+            "image",
+            "reserveUrl",
+            "vibe",
+            "tip"
+          ],
+          [
+            "name",
+            "city",
+            "type",
+            "speciality",
+            "price",
+            "mustTry",
+            "schedule",
+            "image",
+            "vibe",
+            "tip"
+          ],
+          [
+            "name",
+            "city",
+            "type",
+            "speciality",
+            "price",
+            "mustTry",
+            "schedule",
+            "image",
+            "vibe",
+            "tip"
+          ],
+          [
+            "name",
+            "city",
+            "type",
+            "speciality",
+            "price",
+            "mustTry",
+            "schedule",
+            "image",
+            "vibe",
+            "tip"
+          ],
+          ["name", "type", "duration", "price", "description", "tip"]
+        ]
+      }
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleChambly.tsx",
+      "reason": "hotels_key_present_but_not_extracted",
+      "debug": {
+        "containsHotelsWord": true,
+        "containsHotelCard": false,
+        "containsWhereToStay": false,
+        "candidateObjectKeySamples": [
+          [
+            "name",
+            "city",
+            "type",
+            "speciality",
+            "price",
+            "mustTry",
+            "schedule",
+            "image",
+            "vibe",
+            "tip"
+          ],
+          [
+            "name",
+            "city",
+            "type",
+            "speciality",
+            "price",
+            "mustTry",
+            "schedule",
+            "image",
+            "vibe",
+            "tip"
+          ],
+          [
+            "name",
+            "city",
+            "type",
+            "speciality",
+            "price",
+            "mustTry",
+            "schedule",
+            "image",
+            "vibe",
+            "tip"
+          ],
+          [
+            "name",
+            "city",
+            "type",
+            "speciality",
+            "price",
+            "mustTry",
+            "schedule",
+            "image",
+            "vibe",
+            "tip"
+          ],
+          ["name", "type", "duration", "price", "description", "tip"]
+        ]
+      }
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleEeyouIstchee.tsx",
+      "reason": "hotels_key_present_but_not_extracted",
+      "debug": {
+        "containsHotelsWord": false,
+        "containsHotelCard": false,
+        "containsWhereToStay": false,
+        "candidateObjectKeySamples": [
+          ["@type", "name", "acceptedAnswer"],
+          ["@type", "text"],
+          ["@type", "name", "acceptedAnswer"],
+          ["@type", "text"],
+          ["@type", "name", "acceptedAnswer"]
+        ]
+      }
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleKuururjuaq.tsx",
+      "reason": "hotels_key_present_but_not_extracted",
+      "debug": {
+        "containsHotelsWord": true,
+        "containsHotelCard": false,
+        "containsWhereToStay": false,
+        "candidateObjectKeySamples": [
+          [
+            "@context",
+            "@type",
+            "headline",
+            "author",
+            "publisher",
+            "datePublished",
+            "dateModified",
+            "mainEntityOfPage",
+            "image",
+            "description",
+            "keywords",
+            "hasPart"
+          ],
+          ["@type", "name", "url"],
+          ["@type", "name", "logo"],
+          ["@type", "url"],
+          ["@type", "name", "acceptedAnswer"]
+        ]
+      }
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleLevis.tsx",
+      "reason": "hotels_key_present_but_not_extracted",
+      "debug": {
+        "containsHotelsWord": true,
+        "containsHotelCard": false,
+        "containsWhereToStay": false,
+        "candidateObjectKeySamples": []
+      }
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleLocationVR.tsx",
+      "reason": "no_structured_hotels_found",
+      "debug": {
+        "containsHotelsWord": false,
+        "containsHotelCard": false,
+        "containsWhereToStay": false,
+        "candidateObjectKeySamples": [
+          ["title", "description", "canonical", "image", "keywords", "type"],
+          ["name", "item"],
+          ["name", "item"],
+          ["name", "item"],
+          ["name", "description", "steps", "totalTimeISO", "image", "url"]
+        ]
+      }
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleLocationVRComparatif.tsx",
+      "reason": "no_structured_hotels_found",
+      "debug": {
+        "containsHotelsWord": false,
+        "containsHotelCard": false,
+        "containsWhereToStay": false,
+        "candidateObjectKeySamples": [
+          ["title", "description", "alternates", "openGraph", "robots"],
+          ["title", "description", "url", "siteName", "type"],
+          ["href", "label"],
+          ["href", "label"],
+          ["href", "label"]
+        ]
+      }
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleRoadTripQuebec.tsx",
+      "reason": "no_structured_hotels_found",
+      "debug": {
+        "containsHotelsWord": false,
+        "containsHotelCard": false,
+        "containsWhereToStay": false,
+        "candidateObjectKeySamples": [
+          ["title", "description", "keywords", "openGraph"],
+          ["title", "description", "url", "images"],
+          ["url", "width", "height", "alt"]
+        ]
+      }
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleVoyageAvion.tsx",
+      "reason": "no_structured_hotels_found",
+      "debug": {
+        "containsHotelsWord": false,
+        "containsHotelCard": false,
+        "containsWhereToStay": false,
+        "candidateObjectKeySamples": [
+          [
+            "@context",
+            "@type",
+            "mainEntityOfPage",
+            "headline",
+            "description",
+            "image",
+            "datePublished",
+            "dateModified",
+            "inLanguage",
+            "isAccessibleForFree",
+            "author",
+            "publisher"
+          ],
+          ["@type", "name"],
+          ["@type", "name", "logo"],
+          ["@type", "url"],
+          ["name", "url"]
+        ]
+      }
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleVoyageCamping.tsx",
+      "reason": "no_structured_hotels_found",
+      "debug": {
+        "containsHotelsWord": false,
+        "containsHotelCard": false,
+        "containsWhereToStay": false,
+        "candidateObjectKeySamples": [
+          [
+            "@context",
+            "@type",
+            "headline",
+            "description",
+            "datePublished",
+            "dateModified",
+            "publisher"
+          ],
+          ["@type", "name"],
+          ["id", "cat", "title", "url"],
+          ["id", "cat", "title", "url"],
+          ["id", "cat", "title", "url"]
+        ]
+      }
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleVoyageHotel.tsx",
+      "reason": "no_structured_hotels_found",
+      "debug": {
+        "containsHotelsWord": false,
+        "containsHotelCard": false,
+        "containsWhereToStay": false,
+        "candidateObjectKeySamples": [
+          [
+            "@context",
+            "@type",
+            "headline",
+            "description",
+            "datePublished",
+            "dateModified",
+            "publisher"
+          ],
+          ["@type", "name"],
+          ["name", "url"],
+          ["name", "url"],
+          ["name", "url"]
+        ]
+      }
+    },
+    {
+      "file": "src/components/blogpost/BlogArticleVoyageVoiture.tsx",
+      "reason": "no_structured_hotels_found",
+      "debug": {
+        "containsHotelsWord": false,
+        "containsHotelCard": false,
+        "containsWhereToStay": false,
+        "candidateObjectKeySamples": [
+          [
+            "@context",
+            "@type",
+            "mainEntityOfPage",
+            "headline",
+            "description",
+            "image",
+            "datePublished",
+            "dateModified",
+            "inLanguage",
+            "isAccessibleForFree",
+            "author",
+            "publisher"
+          ],
+          ["@type", "name"],
+          ["@type", "name", "logo"],
+          ["@type", "url"],
+          ["name", "url"]
+        ]
+      }
+    },
+    {
+      "file": "src/components/blogpost/index.ts",
+      "reason": "no_structured_hotels_found",
+      "debug": {
+        "containsHotelsWord": false,
+        "containsHotelCard": false,
+        "containsWhereToStay": false,
+        "candidateObjectKeySamples": []
+      }
+    }
+  ]
+}

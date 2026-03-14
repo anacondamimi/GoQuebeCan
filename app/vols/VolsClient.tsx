@@ -139,7 +139,7 @@ export default function VolsClient() {
             href={EXPEDIA_FLIGHTS_URL}
             target="_blank"
             rel="sponsored noopener noreferrer"
-            className="mt-4 block rounded-2xl border bg-gray-50 p-4 sm:p-6 transition hover:bg-gray-100"
+            className="mt-4 block rounded-2xl border bg-gray-50 p-4 transition hover:bg-gray-100 sm:p-6"
             aria-label="Comparer les vols sur Expedia (lien sponsorisé)"
           >
             <div className="flex justify-center">
@@ -179,7 +179,7 @@ export default function VolsClient() {
               href={EXPEDIA_FLIGHTS_URL}
               target="_blank"
               rel="sponsored noopener noreferrer"
-              className="w-full rounded-xl bg-blue-600 px-5 py-3 text-center text-white font-semibold shadow transition hover:bg-blue-700"
+              className="w-full rounded-xl bg-blue-600 px-5 py-3 text-center font-semibold text-white shadow transition hover:bg-blue-700"
             >
               Je compare les vols ✈️
             </a>
@@ -217,7 +217,7 @@ export default function VolsClient() {
             href={EXPEDIA_FLIGHTS_URL}
             target="_blank"
             rel="sponsored noopener noreferrer"
-            className="block p-4 sm:p-6 transition hover:bg-gray-100"
+            className="block p-4 transition hover:bg-gray-100 sm:p-6"
             aria-label="Comparer les vols sur Expedia (lien sponsorisé)"
           >
             <div className="flex justify-center">
@@ -248,7 +248,7 @@ export default function VolsClient() {
             href={EXPEDIA_FLIGHTS_URL}
             target="_blank"
             rel="sponsored noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-yellow-400 px-6 py-3 text-sm sm:text-base font-extrabold text-black shadow transition hover:bg-yellow-300"
+            className="inline-flex items-center justify-center rounded-full bg-yellow-400 px-6 py-3 text-sm font-extrabold text-black shadow transition hover:bg-yellow-300 sm:text-base"
           >
             Je prépare mon voyage →
           </a>

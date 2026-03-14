@@ -23,36 +23,63 @@ export const metadata = {
   hebergements: ['Riotel Percé', 'Hôtel La Normandie', 'Au Pic de l'],
   publics: ['familles', 'ados', 'aventuriers'],
 };
+
 import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Fish } from 'lucide-react';
 
-// ✅ Imports déplacés automatiquement
+// =========================
+// HÉBERGEMENTS (AMÉLIORÉS)
+// =========================
 
-const hotels = [
+type HotelCardProps = {
+  name: string;
+  category: string;
+  location?: string;
+  description: string;
+  price: string;
+  link: string;
+  image: string;
+  extra?: string;
+};
+
+const hotels: HotelCardProps[] = [
   {
     name: 'Riotel Percé',
-    category: 'Vue sur Mer',
-    description: 'Vue imprenable sur le Rocher Percé',
+    category: 'Vue sur mer',
+    location: 'Percé',
+    description: 'Vue imprenable sur le Rocher Percé — parfait pour te réveiller “carte postale”.',
     price: 'À partir de 199$/nuit',
-    link: 'https://www.booking.com/hotel/ca/riotel-perce.fr.html?aid=304142&label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSDNYA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4Au3FoMsGwAIB0gIkNDQyNjMyZGEtYTA3NC00NGVhLWFiYmEtODQ2Mjg3NzAzZDk02AIB4AIB&sid=9d202b892b581cafd0019c7f0748e2a5&checkin=2026-04-06&checkout=2026-04-10&dest_id=900040525&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&soh=1&sr_order=popularity&srepoch=1768432374&srpvid=2deea3377e57004d&type=total&ucfs=1&#no_availability_msg',
+    link: 'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Friotel-perce.fr.html',
     image: '/images/destinations/hotels/riohotel-perce.avif',
+    extra: 'Top si tu veux tout faire à pied (promenade, restos, coucher de soleil).',
   },
   {
     name: 'Hôtel La Normandie',
     category: 'Charme',
-    description: 'Au cœur du village historique',
+    location: 'Percé',
+    description:
+      'Au cœur du village — pratique pour vivre Percé le soir sans reprendre la voiture.',
     price: 'À partir de 169$/nuit',
-    link: 'https://www.booking.com/hotel/ca/la-normandie-perce.html',
+    link: 'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Friotel-perce.fr.html',
+    // ⚠️ Idéalement, remplace par une image locale (.avif) pour éviter les soucis de domaines Next/Image
     image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
+    extra: 'Parfait pour un séjour “petit café + balade + ambiance village”.',
   },
   {
     name: "Au Pic de l'Aurore",
-    category: 'Vue Panoramique',
-    description: 'Surplombant la baie de Percé',
+    category: 'Vue panoramique',
+    location: 'Percé',
+    description: 'Surplombe la baie — tu te couches avec la lumière sur l’eau.',
     price: 'À partir de 189$/nuit',
-    link: 'https://www.booking.com/hotel/ca/au-pic-de-l-aurore.html',
+    link: 'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Friotel-perce.fr.html',
+    // ⚠️ Idéalement, remplace par une image locale (.avif) pour éviter les soucis de domaines Next/Image
     image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80',
+    extra: 'Excellent si tu veux un spot calme + vues fortes sans effort.',
   },
 ];
+
+// =========================
+// RESTOS / ACTIVITÉS
+// =========================
 
 const restaurants = [
   {
@@ -146,6 +173,83 @@ const teenActivities = [
     duration: '2.5 heures',
   },
 ];
+
+// =========================
+// COMPOSANT HÔTEL (STYLE SAGUENAY/GASPÉSIE)
+// =========================
+
+function HotelCard({
+  name,
+  category,
+  location,
+  description,
+  price,
+  link,
+  image,
+  extra,
+}: HotelCardProps) {
+  return (
+    <article className="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md">
+      {/* Image 100% cliquable */}
+      <a href={link} target="_blank" rel="sponsored noopener nofollow" className="block">
+        <div className="relative aspect-[16/10] w-full overflow-hidden">
+          <Image
+            src={image}
+            alt={`${name} à ${location ?? 'Percé'} — hébergement recommandé`}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 420px"
+          />
+          {/* Badge */}
+          <div className="absolute right-3 top-3">
+            <span className="rounded-full bg-white/95 px-3 py-1 text-[11px] font-semibold tracking-wide text-indigo-800 shadow-sm ring-1 ring-gray-200">
+              {category}
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <div className="flex flex-col gap-3 p-5">
+        <header className="space-y-1">
+          <H3 className="text-xl font-semibold leading-tight text-gray-900">
+            <a
+              href={link}
+              target="_blank"
+              rel="sponsored noopener nofollow"
+              className="underline decoration-indigo-200 underline-offset-4 transition hover:decoration-indigo-400"
+            >
+              {name}
+            </a>
+          </H3>
+          <p className="text-sm text-gray-600">{location ?? 'Percé'}</p>
+        </header>
+
+        <p className="text-sm text-gray-700">{description}</p>
+
+        {extra ? <p className="text-sm text-gray-600">{extra}</p> : null}
+
+        <div className="pt-1">
+          <p className="text-sm font-semibold text-indigo-800">{price}</p>
+        </div>
+
+        <div className="pt-1">
+          <a
+            href={link}
+            target="_blank"
+            rel="sponsored noopener nofollow"
+            className="inline-flex w-full items-center justify-center rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700"
+          >
+            Voir les disponibilités
+          </a>
+          <p className="mt-2 text-xs text-gray-500">
+            Lien affilié — ça soutient GoQuébeCAN sans coût supplémentaire pour toi.
+          </p>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export default function BlogArticlePerce() {
   return (
     <article id="blog_article_perce" className="mx-auto max-w-4xl bg-white px-4 py-12">
@@ -299,38 +403,20 @@ export default function BlogArticlePerce() {
         </div>
       </section>
 
+      {/* ✅ HÔTELS (NOUVEAU BLOC USER-FRIENDLY) */}
       <section className="mb-16">
-        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+        <H2 className="mb-3 flex items-center gap-2 text-3xl font-bold text-gray-900">
           <Hotel className="size-8 text-indigo-600" />
-          Où Dormir ?
+          Où Dormir à Percé ?
         </H2>
+        <p className="mb-8 text-gray-600">
+          Trois styles, trois ambiances — choisis ton spot selon ton vibe (vue mer, charme,
+          panorama). Clique sur la photo pour vérifier les dispos et réserver.
+        </p>
+
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {hotels.map((hotel) => (
-            <a
-              key={hotel.name}
-              href={hotel.link}
-              className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
-            >
-              <div className="relative h-48">
-                <Image
-                  src={hotel.image}
-                  alt={hotel.name}
-                  className="size-full object-cover"
-                  width={800}
-                  height={600}
-                />
-              </div>
-              <div className="p-6">
-                <div className="mb-2 flex items-start justify-between">
-                  <H3 className="text-xl font-semibold text-gray-900">{hotel.name}</H3>
-                  <span className="rounded bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
-                    {hotel.category}
-                  </span>
-                </div>
-                <p className="mb-4 text-gray-600">{hotel.description}</p>
-                <p className="font-semibold text-indigo-600">{hotel.price}</p>
-              </div>
-            </a>
+            <HotelCard key={hotel.name} {...hotel} />
           ))}
         </div>
       </section>
@@ -439,7 +525,7 @@ export default function BlogArticlePerce() {
           </div>
         </div>
       </section>
-      {/* Liens internes produits voyages */}
+
       <ConclusionLinks
         items={[
           { href: '/blog/voyage-camping', label: 'Guide camping 2025' },

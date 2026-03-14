@@ -13,6 +13,7 @@ const guides = [
     href: '/producteurs',
     image: '/images/producteurs.avif',
   },
+
   {
     title: 'Paysages spectaculaires',
     description: 'Explorez les plus beaux panoramas : Gaspésie, Charlevoix, Saguenay et plus.',
@@ -51,6 +52,13 @@ const guides = [
     description: 'Partagez vos itinéraires et découvrez ceux des autres voyageurs.',
     href: '/itineraires-communaute',
     image: '/images/communaute.avif',
+  },
+  {
+    title: '❤️ Coups de cœur du moment',
+    description:
+      'Villages charmants, producteurs locaux, expériences bien-être et découvertes inspirantes au Québec.',
+    href: '/coups-de-coeur',
+    image: '/images/offers/anamimizen.avif',
   },
 ];
 

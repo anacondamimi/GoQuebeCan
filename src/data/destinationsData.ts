@@ -34,7 +34,7 @@ export const destinations: Region[] = [
       },
       {
         title: 'Carleton',
-        slug: 'carleton',
+        slug: 'carleton-sur-mer',
         published: true,
         image: '/images/destinations/carleton.avif',
         excerpt: 'Station balnéaire sur la baie',
@@ -157,8 +157,8 @@ export const destinations: Region[] = [
       {
         title: 'Chambly',
         slug: 'chambly',
-        published: false,
-        image: '/images/carte.avif',
+        published: true,
+        image: '/images/destinations/chambly.avif',
         excerpt: 'Fortifications et promenades au bord du bassin.',
       },
       {
@@ -231,7 +231,7 @@ export const destinations: Region[] = [
       },
       {
         title: 'Orléans',
-        slug: 'orleans',
+        slug: "ile-d'orleans",
         published: true,
         image: '/images/destinations/ile-dorleans.avif',
         excerpt: 'Île d’Orléans, terroir et traditions agricoles.',

@@ -25,13 +25,13 @@ import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide
 
 const hotels = [
   {
-    name: 'Splendid Mountain View Condo',
-    category: 'Sport & télétravail',
+    name: 'Residence Inn by Marriott Bromont',
+    category: 'Confort & séjour prolongé',
     description:
-      'Condo moderne avec vue sur la montagne, piscine, BBQ et Wi-Fi rapide. Parfait pour le ski, vélo, golf ou télétravail.',
+      'Hôtel moderne situé au pied de la montagne de Bromont. Suites spacieuses avec cuisine complète, piscine, spa avec vue sur la montagne et petit-déjeuner inclus. Idéal pour un séjour ski, vélo, glissade ou une escapade relax en Estrie.',
     price: 'Tarif selon la saison et disponibilités',
-    link: 'https://www.booking.com/hotel/ca/splendid-mountain-view-condo-with-pool-amp-bbq-ski-mtb-cycling-golf-telework.fr.html',
-    image: '/images/destinations/hotels/appartement-bromont.avif',
+    link: 'https://www.booking.com/hotel/ca/residence-inn-by-marriott-bromont.fr.html?aid=304142&label=gen173rf-10CAsoJ0IPY2hhdGVhdS1icm9tb250SDNYA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4Aoacts0GwAIB0gIkMDVkZDk1YjQtMjA0Ny00OTM2LTg5YzQtOGJlYjg1NDc2NzFi2AIB4AIB&sid=61b67a7e8a8af63fb2b3826a3f4feec9&age=0&all_sr_blocks=1521604303_423826263_0_1_0&checkin=2026-07-08&checkout=2026-07-09&dest_id=900048497&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1521604303_423826263_0_1_0&hpos=1&matching_block_id=1521604303_423826263_0_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1521604303_423826263_0_1_0__23900&srepoch=1772981827&srpvid=bd4069035089048a&type=total&ucfs=1&',
+    image: '/images/destinations/hotels/residence-inn-marriott-bromont.avif',
   },
   {
     name: 'Château-Bromont',

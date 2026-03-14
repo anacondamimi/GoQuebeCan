@@ -38,7 +38,7 @@ const KEYWORDS = [
 ];
 
 const PUBLISHED = '2025-06-15';
-const MODIFIED = '2025-10-31';
+const MODIFIED = '2026-03-09';
 
 // ======= LIENS EXTERNES / AFFILIÉS =======
 const isExternal = (url: string) => /^https?:\/\//.test(url) && !url.includes('goquebecan.com');

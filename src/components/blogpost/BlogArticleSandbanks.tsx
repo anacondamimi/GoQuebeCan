@@ -8,37 +8,37 @@ import H3 from '@/components/typography/H3';
 
 type HotelInfo = {
   name: string;
-  link: string;
-  distance: string;
+  description: string;
   price: string;
-  poi: string;
+  bookingUrl: string;
   image?: string;
 };
 
 const hotels: HotelInfo[] = [
   {
     name: 'Newsroom Suites',
-    link: 'https://www.booking.com/hotel/ca/newsroom-suites.fr.html?aid=304142&label=gen173nr-10CBkoggI46AdIDVgEaCeIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Atav3sgGwAIB0gIkMTk4NjNhNWYtMGVjMC00YmYxLWFiMGUtMjBkZjdkZGJjYTcy2AIB4AIB&sid=f06c26e00b3529f9cf2078a9ff5f2468&all_sr_blocks=34400202_343472047_0_0_0&checkin=2026-04-06&checkout=2026-04-07&dest_id=-575717&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=34400202_343472047_0_0_0&hpos=2&matching_block_id=34400202_343472047_0_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=34400202_343472047_0_0_0__23700&srepoch=1763154284&srpvid=2bf1942d7add008b&type=total&ucfs=1&', // 👉 remplace par ton vrai lien Booking
-    distance: 'À proximité du Parc provincial Sandbanks',
+    description:
+      'Suite privée avec très grand lit, note “Fabuleux” (≈170 avis) et situation géographique 9,7. Idéal pour se faire plaisir tout en restant près de la plage.',
     price: 'Dès ~272 $ + taxes/nuit',
-    poi: 'Suite privée avec très grand lit, note “Fabuleux” (≈170 avis) et situation géographique 9,7. Idéal pour se faire plaisir tout en restant près de la plage.',
-    image: '/images/destinations/hotels/news-room-sandbank.avif', // 👉 mets ici le nom réel du fichier
+    image: '/images/destinations/hotels/news-room-sandbank.avif',
+    bookingUrl: 'https://www.booking.com/hotel/ca/newsroom-suites.fr.html?aid=304142',
   },
   {
     name: 'The Village Suites',
-    link: 'https://www.booking.com/hotel/ca/the-village-suites.fr.html?aid=304142&label=gen173nr-10CBkoggI46AdIDVgEaCeIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Atav3sgGwAIB0gIkMTk4NjNhNWYtMGVjMC00YmYxLWFiMGUtMjBkZjdkZGJjYTcy2AIB4AIB&sid=f06c26e00b3529f9cf2078a9ff5f2468&all_sr_blocks=185601806_385774398_2_0_0&checkin=2026-04-06&checkout=2026-04-07&dest_id=-575717&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=185601806_385774398_2_0_0&hpos=2&matching_block_id=185601806_385774398_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=185601806_385774398_2_0_0__14835&srepoch=1763154445&srpvid=21419486d3c8057b&type=total&ucfs=1&', // à ajuster si ton lien affilié est différent
-    distance: 'Environ 8,8 km du Parc provincial Sandbanks',
+    description:
+      'Studios et appartements confortables à Wellington, note globale 9,1 avec situation géographique 9,6. Parfait pour une base tranquille après une journée de plage.',
     price: 'Dès ~148 $ + taxes/nuit',
-    poi: 'Studios et appartements confortables à Wellington, note globale 9,1 avec situation géographique 9,6. Parfait pour une base tranquille après une journée de plage.',
     image: '/images/destinations/hotels/the-village-sandbank.avif',
+    bookingUrl: 'https://www.booking.com/hotel/ca/the-village-suites.fr.html?aid=304142',
   },
   {
     name: 'The Birch',
-    link: 'https://www.booking.com/hotel/ca/twin-birch-suites-b-amp-b-cottages.fr.html?label=gen173nr-10CBkoggI46AdIDVgEaCeIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Atav3sgGwAIB0gIkMTk4NjNhNWYtMGVjMC00YmYxLWFiMGUtMjBkZjdkZGJjYTcy2AIB4AIB&sid=f06c26e00b3529f9cf2078a9ff5f2468&aid=304142&ucfs=1&arphpl=1&checkin=2026-04-06&checkout=2026-04-07&dest_id=-575717&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=3&hapos=3&sr_order=popularity&srpvid=773d94986f93092d&srepoch=1763154484&all_sr_blocks=102748504_204622384_2_0_0&highlighted_blocks=102748504_204622384_2_0_0&matching_block_id=102748504_204622384_2_0_0&sr_pri_blocks=102748504_204622384_2_0_0__22900&from=searchresults', // 👉 remplace par le vrai lien Booking de The Birch
-    distance: 'Environ 8,1 km du Parc provincial Sandbanks',
+    description:
+      'Bungalow complet en bord de l’eau, note 9,1 “Fabuleux” avec situation 9,7. Idéal pour une ambiance chalet, avec un vrai sentiment de vacances.',
     price: 'Dès ~270 $ + taxes/nuit',
-    poi: 'Bungalow complet en bord de l’eau, note 9,1 “Fabuleux” avec situation 9,7. Idéal pour une ambiance chalet, avec un vrai sentiment de vacances.',
     image: '/images/destinations/hotels/the-birch-sandbank.avif',
+    bookingUrl:
+      'https://www.booking.com/hotel/ca/twin-birch-suites-b-amp-b-cottages.fr.html?aid=304142',
   },
 ];
 
@@ -48,9 +48,9 @@ function HotelRow({ hotel }: { hotel: HotelInfo }) {
   return (
     <li className="group flex items-center gap-4 rounded-lg py-3 transition hover:bg-gray-50 hover:shadow-sm">
       <Link
-        href={hotel.link}
-        target={hotel.link.startsWith('http') ? '_blank' : undefined}
-        rel={hotel.link.startsWith('http') ? 'noopener noreferrer sponsored' : undefined}
+        href={hotel.bookingUrl}
+        target={hotel.bookingUrl.startsWith('http') ? '_blank' : undefined}
+        rel={hotel.bookingUrl.startsWith('http') ? 'noopener noreferrer sponsored' : undefined}
         className="flex w-full items-center gap-4"
       >
         <div className="relative h-20 w-28 shrink-0 overflow-hidden rounded-lg ring-1 ring-gray-200 md:h-24 md:w-32">
@@ -65,9 +65,7 @@ function HotelRow({ hotel }: { hotel: HotelInfo }) {
 
         <div className="min-w-0 flex-1">
           <p className="line-clamp-2 font-semibold leading-tight text-gray-900">{hotel.name}</p>
-          <p className="mt-0.5 text-sm text-gray-700">
-            {hotel.distance} • {hotel.poi}
-          </p>
+          <p className="mt-0.5 text-sm text-gray-700">{hotel.description}</p>
         </div>
 
         <div className="w-36 shrink-0 text-right">
