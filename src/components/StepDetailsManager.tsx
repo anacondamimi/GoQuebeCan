@@ -3,14 +3,12 @@
 import React, { useEffect, useRef } from 'react';
 import { useItineraryStore } from '@/store/useItineraryStore';
 import type { StepData, StepSections } from '@/store/useItineraryStore';
-
 import H2 from '@/components/typography/H2';
 
 interface Props {
   index: number;
 }
 
-// Clés canoniques (mêmes que StepSections)
 const fields: Array<{ key: keyof StepSections; label: string; placeholder: string }> = [
   {
     key: 'activites',
@@ -71,10 +69,9 @@ export default function StepDetailsManager({ index }: Props) {
     <div className="space-y-6">
       <H2 className="text-xl font-bold">Détails de l’étape {index + 1}</H2>
 
-      {/* Notes par catégorie */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {fields.map(({ key, label, placeholder }) => {
-          const id = `step-${index}-${key}`;
+          const id = `step-${index}-${String(key)}`;
           return (
             <div key={String(key)}>
               <label htmlFor={id} className="mb-1 block text-sm font-semibold">
@@ -94,7 +91,6 @@ export default function StepDetailsManager({ index }: Props) {
         })}
       </div>
 
-      {/* Photo */}
       <div>
         <label htmlFor={`photo-${index}`} className="mb-1 block font-semibold">
           Ajouter une photo (.avif recommandé)
@@ -110,7 +106,6 @@ export default function StepDetailsManager({ index }: Props) {
         )}
       </div>
 
-      {/* Notation */}
       <fieldset>
         <legend className="mb-1 block font-semibold">Notez cette étape :</legend>
 

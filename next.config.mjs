@@ -1,25 +1,29 @@
 // next.config.mjs
 // Configuration Next.js 14.2.30 — GoQuébeCan
-// ⚙️ Optimisée pour Windows + SEO + sécurité + performance 2025
+// Optimisée pour Windows + SEO + sécurité + performance
 
 /** @type {import('next').NextConfig} */
 
-// 🛡️ Content Security Policy
+// Content Security Policy
 const CONTENT_SECURITY_POLICY = `
   default-src 'self';
   script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://creator.expediagroup.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-  img-src * blob: data: https://creator.expediagroup.com https://*.expediagroup.com https://*.expedia.com;
- connect-src 'self' https://creator.expediagroup.com https://*.expediagroup.com https://*.expedia.com https://www.google-analytics.com https://www.googletagmanager.com;
-  frame-src https://www.youtube.com https://player.vimeo.com;
-  media-src *;
+  img-src 'self' data: blob: https: http: https://*.basemaps.cartocdn.com;
+  connect-src 'self' https://api.mapbox.com https://events.mapbox.com https://*.mapbox.com https://router.project-osrm.org https://*.basemaps.cartocdn.com https://creator.expediagroup.com https://*.expediagroup.com https://*.expedia.com https://www.google-analytics.com https://www.googletagmanager.com;
+  font-src 'self' data: https://fonts.gstatic.com https://fonts.googleapis.com;
+
+  frame-src 'self' https://www.youtube.com https://player.vimeo.com;
+  media-src 'self' data: blob: https: http:;
   object-src 'none';
   base-uri 'self';
+  form-action 'self';
+  frame-ancestors 'self';
 `
   .replace(/\s{2,}/g, ' ')
   .trim();
 
-// 🔐 Headers globaux de sécurité
+// Headers globaux de sécurité
 const securityHeaders = [
   { key: 'Content-Security-Policy', value: CONTENT_SECURITY_POLICY },
   { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
@@ -27,7 +31,7 @@ const securityHeaders = [
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
   {
     key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=(), fullscreen=(self)',
+    value: 'camera=(), microphone=(), geolocation=(self), fullscreen=(self)',
   },
   {
     key: 'Strict-Transport-Security',
@@ -40,28 +44,23 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
 
-  // 🖼️ Images externes autorisées (YouTube, Amazon, Booking, etc.)
   images: {
     formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 jours
+    minimumCacheTTL: 60 * 60 * 24 * 30,
     remotePatterns: [
-      // 🌐 GoQuébeCan & Cloudinary
       { protocol: 'https', hostname: 'goquebecan.com' },
       { protocol: 'https', hostname: 'www.goquebecan.com' },
       { protocol: 'https', hostname: 'res.cloudinary.com' },
 
-      // 🎥 YouTube
       { protocol: 'https', hostname: 'img.youtube.com' },
       { protocol: 'https', hostname: 'i.ytimg.com' },
 
-      // 🖼️ Banques d’images / Google
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'upload.wikimedia.org' },
       { protocol: 'https', hostname: 'cdn.pixabay.com' },
       { protocol: 'https', hostname: 'lh3.googleusercontent.com' },
       { protocol: 'https', hostname: 'maps.googleapis.com' },
 
-      // 🏨 Booking / Expedia / Viator / Outgo
       { protocol: 'https', hostname: 'booking.com' },
       { protocol: 'https', hostname: 'cf.bstatic.com' },
       { protocol: 'https', hostname: 'r-xx.bstatic.com' },
@@ -73,7 +72,6 @@ const nextConfig = {
       { protocol: 'https', hostname: 'rvezy.com' },
       { protocol: 'https', hostname: 'authentikcanada.com' },
 
-      // 🛍️ Amazon (Canada et global)
       { protocol: 'https', hostname: 'm.media-amazon.com' },
       { protocol: 'https', hostname: 'images-na.ssl-images-amazon.com' },
       { protocol: 'https', hostname: 'amazon.ca' },
@@ -82,12 +80,10 @@ const nextConfig = {
     ],
   },
 
-  // ⚙️ Optimisations internes
   experimental: {
     optimizeCss: true,
   },
 
-  // 🧹 Build propre
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -96,22 +92,10 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
 
-  // 🔁 Redirection canonique (www → sans www)
-  // async redirects() {
-  // return [
-  //   {
-  //     source: '/:path*',
-  //    has: [{ type: 'host', value: 'www.goquebecan.com' }],
-  //    destination: 'https://goquebecan.com/:path*',
-  //    permanent: true,
-  //  },
-  // ];
-  // },
   async redirects() {
     return [{ source: '/vr', destination: '/blog/location-vr', permanent: true }];
   },
 
-  // 🔒 Headers de sécurité
   async headers() {
     return [
       {

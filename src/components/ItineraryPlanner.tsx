@@ -9,15 +9,13 @@ import producersData from '@/data/producers.json';
 import type { Producer } from '@/types/Producer';
 import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
-
 import { extractCoords, extractLabel, haversineKm } from '@/utils/geocodeHelpers';
-
 import StepModal from '@/components/StepModal';
 
 // 🧩 Données producteurs
 const producersList: Producer[] = producersData as Producer[];
 
-// Types uniques de producteurs (cidrerie, miel, bière, etc.)
+// Types uniques de producteurs
 const ALL_PRODUCER_TYPES: string[] = Array.from(
   new Set(
     producersList
@@ -26,21 +24,18 @@ const ALL_PRODUCER_TYPES: string[] = Array.from(
   ),
 );
 
-// 🗺️ Carte (Leaflet + LRM)
+// 🗺️ Carte
 const MapWithRouting = dynamic(() => import('@/components/MapWithRouting'), {
   ssr: false,
 });
 
-// 📄 Résumé (render client)
+// 📄 Résumé
 const ItinerarySummary = dynamic(() => import('@/components/ItinerarySummary'), { ssr: false });
-
-// === Types internes ===
 
 type StepTuple = {
   id: string;
   name: string;
-  /** Coordonnées Mapbox: [lng, lat] */
-  coordinates: [number, number];
+  coordinates: [number, number]; // [lng, lat]
 };
 
 type GeocodingDetail = {
@@ -57,7 +52,6 @@ type GeocodingDetail = {
   latitude?: number;
 };
 
-// Libellé humain pour les filtres
 function typeLabel(type: string): string {
   switch (type) {
     case 'cidrerie':
@@ -80,38 +74,65 @@ function typeLabel(type: string): string {
   }
 }
 
+function sameCoords(a: [number, number] | null, b: [number, number] | null): boolean {
+  if (!a || !b) return false;
+  return a[0] === b[0] && a[1] === b[1];
+}
+
+function sameStepCoords(a: [number, number], b: [number, number]): boolean {
+  return a[0] === b[0] && a[1] === b[1];
+}
+
 export default function ItineraryPlanner() {
   const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? '';
-
-  // Champs de saisie texte (pour affichage)
+  console.log('MAPBOX TOKEN chargé ?', !!MAPBOX_TOKEN, MAPBOX_TOKEN?.slice(0, 10));
+  // Champs texte
   const [startInput, setStartInput] = useState('');
   const [endInput, setEndInput] = useState('');
 
-  // Coords sélectionnées via Mapbox ([lng, lat])
+  // Coordonnées sélectionnées
   const [start, setStart] = useState<[number, number] | null>(null);
   const [end, setEnd] = useState<[number, number] | null>(null);
   const [tempSteps, setTempSteps] = useState<StepTuple[]>([]);
-
-  // Itinéraire validé (étapes)
   const [steps, setSteps] = useState<StepTuple[]>([]);
 
-  // Erreur formulaire
+  // États UI
   const [formError, setFormError] = useState('');
+  const [geoError, setGeoError] = useState('');
+  const [geoLoading, setGeoLoading] = useState(false);
+  const [userProximity, setUserProximity] = useState<[number, number] | null>(null);
 
-  // Filtres producteurs (types sélectionnés)
+  // Filtres producteurs
   const [selectedTypes, setSelectedTypes] = useState<string[]>(ALL_PRODUCER_TYPES);
 
-  // Modal d’édition d’étape
+  // Modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  // 📍 Géolocalisation -> remplit automatiquement le départ (adresse lisible si possible)
+
+  // Store
+  const prevItinerary = useItineraryStore((s) => s.itinerary) as any[];
+  const setItinerary = useItineraryStore((s) => s.setItinerary);
+
+  const canTrace = !!start && !!end && !!startInput.trim() && !!endInput.trim();
+
+  // 📍 Géolocalisation -> remplit le départ
   const handleGeoFillStart = () => {
     if (typeof window === 'undefined') return;
 
-    if (!('geolocation' in navigator)) {
-      alert("La géolocalisation n'est pas disponible sur ce navigateur.");
+    setGeoError('');
+    setFormError('');
+
+    if (!MAPBOX_TOKEN) {
+      setGeoError('La détection automatique est indisponible pour le moment.');
       return;
     }
+
+    if (!('geolocation' in navigator)) {
+      setGeoError("La géolocalisation n'est pas disponible sur ce navigateur.");
+      return;
+    }
+
+    setGeoLoading(true);
 
     navigator.geolocation.getCurrentPosition(
       async (pos) => {
@@ -119,42 +140,84 @@ export default function ItineraryPlanner() {
           const lat = pos.coords.latitude;
           const lng = pos.coords.longitude;
 
-          // Reverse geocode -> adresse lisible (Canada only)
+          setUserProximity([lng, lat]);
+
           const url =
             `https://api.mapbox.com/geocoding/v5/mapbox.places/${lng},${lat}.json` +
             `?access_token=${MAPBOX_TOKEN}` +
             '&country=CA' +
             '&language=fr' +
-            '&types=address' +
+            '&types=address,place,locality,postcode,region,district' +
             '&limit=1';
 
           const res = await fetch(url, { cache: 'no-store' });
+
+          if (!res.ok) {
+            throw new Error(`Mapbox ${res.status}`);
+          }
+
           const data = await res.json();
-
           const feature = data?.features?.[0];
-          const label = feature?.place_name ?? 'Ma position';
-          const coords: [number, number] = [lng, lat]; // [lng, lat]
 
-          // ✅ Remplit comme si sélection autocomplete
+          const label = feature?.place_name || feature?.text || 'Ma position actuelle';
+
+          const coords: [number, number] = [lng, lat];
+
           setStart(coords);
           setStartInput(label);
           setFormError('');
-        } catch (e) {
-          console.error(e);
-          alert('Impossible de convertir ta position en adresse. Réessaie.');
+          setGeoError('');
+        } catch (error) {
+          console.error(error);
+
+          const lat = pos.coords.latitude;
+          const lng = pos.coords.longitude;
+
+          setUserProximity([lng, lat]);
+          setStart([lng, lat]);
+          setStartInput('Ma position actuelle');
+          setGeoError(
+            "Ta position a été détectée, mais l'adresse précise n'a pas pu être affichée.",
+          );
+        } finally {
+          setGeoLoading(false);
         }
       },
       (err) => {
         console.error(err);
-        alert("Impossible d'obtenir la position. Vérifie les permissions navigateur.");
+        setGeoLoading(false);
+
+        switch (err.code) {
+          case err.PERMISSION_DENIED:
+            setGeoError(
+              "L'accès à la position a été refusé. Autorise la localisation dans ton navigateur pour utiliser cette fonction.",
+            );
+            break;
+          case err.POSITION_UNAVAILABLE:
+            setGeoError(
+              "La position n'a pas pu être détectée. Essaie à nouveau ou entre ta ville manuellement.",
+            );
+            break;
+          case err.TIMEOUT:
+            setGeoError(
+              'La détection a pris trop de temps. Réessaie ou entre ta ville manuellement.',
+            );
+            break;
+          default:
+            setGeoError("Impossible d'obtenir la position. Vérifie les permissions du navigateur.");
+            break;
+        }
       },
-      { enableHighAccuracy: true, timeout: 10000 },
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 60000,
+      },
     );
   };
 
   // 🔗 Réception des événements envoyés par MapboxAutocomplete
   useEffect(() => {
-    // IMPORTANT : on empêche juste l'effet de tourner si token absent
     if (!MAPBOX_TOKEN) return;
     if (typeof window === 'undefined') return;
 
@@ -167,6 +230,7 @@ export default function ItineraryPlanner() {
       setStart(coords);
       setStartInput(extractLabel(detail, 'Départ'));
       setFormError('');
+      setGeoError('');
     };
 
     const handleEnd = (evt: Event) => {
@@ -178,6 +242,7 @@ export default function ItineraryPlanner() {
       setEnd(coords);
       setEndInput(extractLabel(detail, 'Arrivée'));
       setFormError('');
+      setGeoError('');
     };
 
     const handleStep = (evt: Event) => {
@@ -188,16 +253,28 @@ export default function ItineraryPlanner() {
 
       const name = extractLabel(detail, 'Étape intermédiaire');
 
+      if (sameCoords(start, coords)) {
+        setFormError('Cette étape correspond déjà au point de départ.');
+        return;
+      }
+
+      if (sameCoords(end, coords)) {
+        setFormError("Cette étape correspond déjà au point d'arrivée.");
+        return;
+      }
+
       setTempSteps((prev) => {
-        const last = prev[prev.length - 1];
-        if (
-          last &&
-          last.name === name &&
-          last.coordinates[0] === coords[0] &&
-          last.coordinates[1] === coords[1]
-        ) {
+        const alreadyExists = prev.some(
+          (step) => step.name === name && sameStepCoords(step.coordinates, coords),
+        );
+
+        if (alreadyExists) {
+          setFormError('Cette étape est déjà présente dans ton itinéraire.');
           return prev;
         }
+
+        setFormError('');
+        setGeoError('');
 
         return [
           ...prev,
@@ -219,13 +296,9 @@ export default function ItineraryPlanner() {
       window.removeEventListener('select:end', handleEnd as EventListener);
       window.removeEventListener('select:step', handleStep as EventListener);
     };
-  }, [MAPBOX_TOKEN]);
+  }, [MAPBOX_TOKEN, start, end]);
 
-  // ✅ Lire le store Zustand au top-level (TOUJOURS avant tout return conditionnel)
-  const prevItinerary = useItineraryStore((s) => s.itinerary) as any[];
-  const setItinerary = useItineraryStore((s) => s.setItinerary);
-
-  // Itinéraire au format Leaflet (lat/lng)
+  // Format Leaflet
   const leafletItinerary = useMemo(
     () =>
       steps.map((s) => ({
@@ -236,12 +309,10 @@ export default function ItineraryPlanner() {
     [steps],
   );
 
-  // Points pour centrer / fallback polyline [lat, lng]
   const routePoints = useMemo<[number, number][]>(() => {
     return steps.map((s) => [s.coordinates[1], s.coordinates[0]] as [number, number]);
   }, [steps]);
 
-  // Tous les producteurs encore disponibles (on retire ceux déjà choisis comme étapes)
   const producersOnRouteAll = useMemo<Producer[]>(() => {
     if (!steps.length) return producersList;
 
@@ -250,14 +321,11 @@ export default function ItineraryPlanner() {
     });
   }, [steps]);
 
-  // Producteurs filtrés par type sélectionné
   const producersOnRoute = useMemo<Producer[]>(() => {
     if (!selectedTypes.length) return [];
     return producersOnRouteAll.filter((p) => (p.type ? selectedTypes.includes(p.type) : false));
   }, [producersOnRouteAll, selectedTypes]);
 
-  // 💡 Appliquer un nouvel ensemble de steps
-  //    → conserve les notes / rating / photo des étapes déjà existantes
   const applyNewSteps = (newSteps: StepTuple[]) => {
     setSteps(newSteps);
 
@@ -286,61 +354,57 @@ export default function ItineraryPlanner() {
       return { lat, lng, title: s.name };
     });
 
-    // ✅ Mise à jour store global
     setItinerary(merged as any);
 
-    // Sauvegarde locale (pour recharger plus tard)
     saveItinerary(
       newSteps.map((s, i, arr) => ({
         id: i === 0 ? 'start' : i === arr.length - 1 ? 'end' : `step-${i}`,
         name: s.name ?? '',
-        coordinates: [s.coordinates[0], s.coordinates[1]] as [number, number], // [lng, lat]
+        coordinates: [s.coordinates[0], s.coordinates[1]] as [number, number],
       })),
     );
   };
 
-  // 🚀 Création de l’itinéraire initial
   const handleGeocodeAll = () => {
     if (!start || !end || !startInput.trim() || !endInput.trim()) {
       setFormError("Merci de remplir un point de départ et un point d'arrivée valides.");
       return;
     }
-    setFormError('');
 
-    const itinerary: StepTuple[] = [];
-
-    // Départ
-    itinerary.push({
-      id: 'start',
-      name: startInput || 'Départ',
-      coordinates: start, // [lng, lat]
-    });
-
-    // Étapes intermédiaires choisies
-    for (const step of tempSteps) {
-      itinerary.push(step);
+    if (sameCoords(start, end)) {
+      setFormError("Le point de départ et le point d'arrivée ne peuvent pas être identiques.");
+      return;
     }
 
-    // Arrivée
-    itinerary.push({
-      id: 'end',
-      name: endInput || 'Arrivée',
-      coordinates: end, // [lng, lat]
-    });
+    setFormError('');
+    setGeoError('');
+
+    const itinerary: StepTuple[] = [
+      {
+        id: 'start',
+        name: startInput || 'Départ',
+        coordinates: start,
+      },
+      ...tempSteps,
+      {
+        id: 'end',
+        name: endInput || 'Arrivée',
+        coordinates: end,
+      },
+    ];
 
     applyNewSteps(itinerary);
   };
 
-  // 🧹 Effacer l’itinéraire
   const handleClearItinerary = () => {
     if (typeof window !== 'undefined' && window.localStorage) {
       try {
         localStorage.removeItem('itinerary');
-        alert('🗑️ Ton itinéraire a été effacé.');
       } catch (error) {
         console.error('Erreur lors de la suppression:', error);
       }
     }
+
     setStart(null);
     setEnd(null);
     setStartInput('');
@@ -350,9 +414,15 @@ export default function ItineraryPlanner() {
     setItinerary([] as any);
     setIsModalOpen(false);
     setSelectedIndex(null);
+    setFormError('');
+    setGeoError('');
   };
 
-  // 🔄 Inverser départ / arrivée
+  const handleClearIntermediateSteps = () => {
+    setTempSteps([]);
+    setFormError('');
+  };
+
   const handleSwapPoints = () => {
     const tempCoords = start;
     const tempLabel = startInput;
@@ -361,19 +431,30 @@ export default function ItineraryPlanner() {
     setStartInput(endInput);
     setEnd(tempCoords);
     setEndInput(tempLabel);
+    setFormError('');
+    setGeoError('');
   };
 
-  // ➕ Ajouter un producteur comme étape après l’étape la plus proche
   const handleAddProducerAfterNearest = (producer: Producer) => {
     if (!steps.length) {
-      alert('Commence par créer un itinéraire avant d’y ajouter un producteur 🙂');
+      setFormError('Commence par créer un itinéraire avant d’ajouter un producteur.');
       return;
     }
 
-    const prodCoords: [number, number] = [producer.lng, producer.lat]; // [lng, lat]
+    const alreadyExists = steps.some(
+      (s) => s.coordinates[0] === producer.lng && s.coordinates[1] === producer.lat,
+    );
+
+    if (alreadyExists) {
+      setFormError('Ce producteur est déjà présent dans ton itinéraire.');
+      return;
+    }
+
+    const prodCoords: [number, number] = [producer.lng, producer.lat];
 
     let bestIndex = 0;
     let bestDist = Number.POSITIVE_INFINITY;
+
     steps.forEach((step, i) => {
       const d = haversineKm(step.coordinates, prodCoords);
       if (d < bestDist) {
@@ -389,13 +470,22 @@ export default function ItineraryPlanner() {
     };
 
     const newSteps = [...steps.slice(0, bestIndex + 1), newStep, ...steps.slice(bestIndex + 1)];
+    setFormError('');
     applyNewSteps(newSteps);
   };
 
-  // ➕ Ajouter un producteur en fin d’itinéraire (juste avant l’arrivée)
   const handleAddProducerAtEnd = (producer: Producer) => {
     if (!steps.length) {
-      alert('Commence par créer un itinéraire avant d’y ajouter un producteur 🙂');
+      setFormError('Commence par créer un itinéraire avant d’ajouter un producteur.');
+      return;
+    }
+
+    const alreadyExists = steps.some(
+      (s) => s.coordinates[0] === producer.lng && s.coordinates[1] === producer.lat,
+    );
+
+    if (alreadyExists) {
+      setFormError('Ce producteur est déjà présent dans ton itinéraire.');
       return;
     }
 
@@ -407,17 +497,16 @@ export default function ItineraryPlanner() {
       coordinates: prodCoords,
     };
 
-    let insertIndex = steps.length; // par défaut à la fin
+    let insertIndex = steps.length;
     if (steps.length >= 2) {
-      // on insère avant la dernière étape si on considère que c’est l’arrivée
       insertIndex = steps.length - 1;
     }
 
     const newSteps = [...steps.slice(0, insertIndex), newStep, ...steps.slice(insertIndex)];
+    setFormError('');
     applyNewSteps(newSteps);
   };
 
-  // ➖ Supprimer une étape (utile surtout pour les étapes producteurs)
   const handleDeleteStep = (index: number) => {
     if (index < 0 || index >= steps.length) return;
     const newSteps = steps.filter((_, i) => i !== index);
@@ -426,15 +515,13 @@ export default function ItineraryPlanner() {
     setSelectedIndex(null);
   };
 
-  // ➕ Ajouter un producteur dans les notes de l’étape la plus proche
   const handleAddProducerToNotes = (producer: Producer) => {
     console.log('TODO: ajouter aux notes', producer);
-    alert(
-      `Fonction “ajouter aux notes” à finaliser, mais le producteur ${producer.name} est bien détecté 👍`,
+    setFormError(
+      `Le producteur ${producer.name} a bien été détecté. La liaison avec les notes reste à finaliser.`,
     );
   };
 
-  // 🎛️ Gestion filtres producteurs
   const toggleType = (type: string) => {
     setSelectedTypes((prev) =>
       prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type],
@@ -450,30 +537,44 @@ export default function ItineraryPlanner() {
         🗺️ Planifie ton itinéraire et découvre les producteurs locaux
       </H1>
 
-      {/* ⚙️ Formulaire de création d’itinéraire */}
+      {!MAPBOX_TOKEN && (
+        <div className="rounded-md border border-yellow-300 bg-yellow-50 px-4 py-3 text-sm text-yellow-800">
+          La recherche de lieux est temporairement indisponible.
+        </div>
+      )}
+
       <div className="space-y-6 rounded-lg bg-white p-6 shadow">
-        {formError && (
-          <div className="animate-shake rounded-md border border-red-300 bg-red-100 px-4 py-2 text-red-800">
-            {formError}
+        {(formError || geoError) && (
+          <div className="space-y-2">
+            {formError && (
+              <div className="animate-shake rounded-md border border-red-300 bg-red-100 px-4 py-2 text-red-800">
+                {formError}
+              </div>
+            )}
+            {geoError && (
+              <div className="rounded-md border border-amber-300 bg-amber-50 px-4 py-2 text-amber-800">
+                {geoError}
+              </div>
+            )}
           </div>
         )}
 
-        {/* 📍 Départ */}
         <MapboxAutocomplete
           label="📍 Départ"
-          placeholder="Ex : Montréal"
+          placeholder={geoLoading ? 'Détection de votre position...' : 'Ex : Montréal'}
           token={MAPBOX_TOKEN}
           eventChannel="select:start"
           onGeoClick={handleGeoFillStart}
+          proximity={userProximity}
         />
         {start && <p className="mt-1 text-sm text-green-600">✅ {startInput} sélectionné</p>}
 
-        {/* 🏁 Arrivée */}
         <MapboxAutocomplete
           label="🏁 Arrivée"
           placeholder="Ex : Québec"
           token={MAPBOX_TOKEN}
           eventChannel="select:end"
+          proximity={userProximity}
         />
         {end && <p className="mt-1 text-sm text-green-600">✅ {endInput} sélectionné</p>}
 
@@ -483,33 +584,71 @@ export default function ItineraryPlanner() {
           </button>
         </div>
 
-        {/* 🚏 Étapes intermédiaires */}
         <div>
           <MapboxAutocomplete
             label="🚏 Étape intermédiaire"
             placeholder="Ex : Trois-Rivières"
             token={MAPBOX_TOKEN}
             eventChannel="select:step"
+            proximity={userProximity}
           />
 
           {tempSteps.length > 0 && (
-            <ul className="mt-2 list-inside list-disc text-sm text-gray-700">
-              {tempSteps.map((step) => (
-                <li key={step.id}>{step.name}</li>
-              ))}
-            </ul>
+            <div className="mt-3 space-y-3">
+              <ul className="space-y-2 text-sm text-gray-700">
+                {tempSteps.map((step) => (
+                  <li
+                    key={step.id}
+                    className="flex items-center justify-between gap-3 rounded border px-3 py-2"
+                  >
+                    <span>{step.name}</span>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setTempSteps((prev) => prev.filter((s) => s.id !== step.id));
+                        setFormError('');
+                      }}
+                      className="rounded-md border px-2 py-1 text-xs hover:bg-gray-50"
+                    >
+                      Retirer
+                    </button>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex justify-end">
+                <button
+                  type="button"
+                  onClick={handleClearIntermediateSteps}
+                  className="rounded border px-3 py-2 text-sm hover:bg-gray-50"
+                >
+                  Effacer les étapes intermédiaires
+                </button>
+              </div>
+            </div>
           )}
         </div>
 
+        {(startInput || endInput || tempSteps.length > 0) && (
+          <div className="rounded-md border bg-gray-50 px-4 py-3 text-sm text-gray-700">
+            <p className="font-semibold text-gray-900">Aperçu de ton trajet</p>
+            {startInput && <p>Départ : {startInput}</p>}
+            {tempSteps.length > 0 && <p>Étapes : {tempSteps.map((s) => s.name).join(' → ')}</p>}
+            {endInput && <p>Arrivée : {endInput}</p>}
+          </div>
+        )}
+
         <button
           onClick={handleGeocodeAll}
-          className="w-full rounded-lg bg-green-600 py-2 font-semibold text-white hover:bg-green-700"
+          disabled={!canTrace}
+          className={`w-full rounded-lg py-2 font-semibold text-white ${
+            canTrace ? 'bg-green-600 hover:bg-green-700' : 'cursor-not-allowed bg-gray-400'
+          }`}
         >
-          Tracer l&apos;itinéraire
+          {geoLoading ? 'Détection en cours...' : "Tracer l'itinéraire"}
         </button>
       </div>
 
-      {/* 🎛️ Filtres producteurs (comme /producteurs) */}
       <div className="space-y-2 rounded-lg bg-white p-4 shadow">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <span className="text-sm font-semibold text-gray-800">
@@ -532,6 +671,7 @@ export default function ItineraryPlanner() {
             </button>
           </div>
         </div>
+
         <div className="mt-2 flex flex-wrap gap-2">
           {ALL_PRODUCER_TYPES.map((type) => (
             <button
@@ -550,7 +690,6 @@ export default function ItineraryPlanner() {
         </div>
       </div>
 
-      {/* 🗺️ Carte avec route + producteurs */}
       <MapWithRouting
         itinerary={leafletItinerary}
         routePoints={routePoints}
@@ -562,7 +701,6 @@ export default function ItineraryPlanner() {
         setIsModalOpen={setIsModalOpen}
       />
 
-      {/* 📍 Liste des étapes avec accès direct au modal */}
       {steps.length > 0 && (
         <div className="mt-6 rounded-lg bg-white p-4 shadow">
           <H2 className="mb-3 text-lg font-semibold">📍 Étapes de ton itinéraire</H2>
@@ -590,7 +728,7 @@ export default function ItineraryPlanner() {
                     }}
                     className="rounded-md border px-2 py-1 text-xs hover:bg-gray-50"
                   >
-                    📝 Ouvrir le modal
+                    📝 Compléter l'étape
                   </button>
                 </li>
               );
@@ -599,7 +737,6 @@ export default function ItineraryPlanner() {
         </div>
       )}
 
-      {/* 📄 Résumé + bouton pour effacer */}
       {steps.length >= 2 && (
         <>
           <ItinerarySummary />
@@ -614,10 +751,9 @@ export default function ItineraryPlanner() {
         </>
       )}
 
-      {/* 🪟 Modal étape (ville ou producteur) */}
       <StepModal
-        isOpen={isModalOpen && selectedIndex !== null}
-        stepIndex={selectedIndex ?? 0}
+        isOpen={isModalOpen}
+        stepIndex={selectedIndex ?? -1}
         onClose={() => setIsModalOpen(false)}
         onDeleteStep={handleDeleteStep}
       />

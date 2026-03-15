@@ -1,10 +1,11 @@
 'use client';
+
 import dynamic from 'next/dynamic';
 
 /**
- * 🌍 Wrapper client pour le planificateur d'itinéraires
- * - Permet d'utiliser les hooks React côté navigateur
- * - Corrige l’erreur Next.js 16 : "ssr:false not allowed"
+ * Wrapper client pour le planificateur d’itinéraire.
+ * Permet de charger le composant uniquement côté navigateur,
+ * car il dépend d’APIs client comme window, localStorage et la géolocalisation.
  */
 const ItineraryPlanner = dynamic(() => import('@/components/ItineraryPlanner'), {
   ssr: false,
