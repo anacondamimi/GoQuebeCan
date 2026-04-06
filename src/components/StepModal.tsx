@@ -169,10 +169,11 @@ export default function StepModal({ isOpen, stepIndex, onClose, onDeleteStep }: 
 
   const step: StepData | undefined = hasValidIndex ? itinerary[stepIndex] : undefined;
 
-  const notesObj: ExtendedStepSections =
-    step && typeof step.notes === 'object' && step.notes
+  const notesObj = useMemo<ExtendedStepSections>(() => {
+    return step?.notes && typeof step.notes === 'object'
       ? (step.notes as ExtendedStepSections)
       : {};
+  }, [step?.notes]);
 
   useEffect(() => {
     if (isOpen) {
@@ -440,8 +441,14 @@ export default function StepModal({ isOpen, stepIndex, onClose, onDeleteStep }: 
                 <section className="space-y-5">
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     <div className="rounded-xl border bg-white p-4">
-                      <label className="mb-1 block text-sm font-medium">Statut</label>
+                      <label
+                        htmlFor={`step-${stepIndex}-statut`}
+                        className="mb-1 block text-sm font-medium"
+                      >
+                        Statut
+                      </label>
                       <select
+                        id={`step-${stepIndex}-statut`}
                         ref={firstSelectRef}
                         value={notesObj?.statut ?? ''}
                         onChange={(e) => setExtendedSection('statut', e.target.value)}
@@ -455,8 +462,14 @@ export default function StepModal({ isOpen, stepIndex, onClose, onDeleteStep }: 
                     </div>
 
                     <div className="rounded-xl border bg-white p-4">
-                      <label className="mb-1 block text-sm font-medium">Budget estimé</label>
+                      <label
+                        htmlFor={`step-${stepIndex}-budgetEstime`}
+                        className="mb-1 block text-sm font-medium"
+                      >
+                        Budget estimé
+                      </label>
                       <input
+                        id={`step-${stepIndex}-budgetEstime`}
                         type="text"
                         value={notesObj?.budgetEstime ?? ''}
                         onChange={(e) => setExtendedSection('budgetEstime', e.target.value)}
@@ -466,8 +479,14 @@ export default function StepModal({ isOpen, stepIndex, onClose, onDeleteStep }: 
                     </div>
 
                     <div className="rounded-xl border bg-white p-4">
-                      <label className="mb-1 block text-sm font-medium">Moment conseillé</label>
+                      <label
+                        htmlFor={`step-${stepIndex}-momentConseille`}
+                        className="mb-1 block text-sm font-medium"
+                      >
+                        Moment conseillé
+                      </label>
                       <input
+                        id={`step-${stepIndex}-momentConseille`}
                         type="text"
                         value={notesObj?.momentConseille ?? ''}
                         onChange={(e) => setExtendedSection('momentConseille', e.target.value)}
@@ -477,8 +496,14 @@ export default function StepModal({ isOpen, stepIndex, onClose, onDeleteStep }: 
                     </div>
 
                     <div className="rounded-xl border bg-white p-4">
-                      <label className="mb-1 block text-sm font-medium">Réservation</label>
+                      <label
+                        htmlFor={`step-${stepIndex}-reservation`}
+                        className="mb-1 block text-sm font-medium"
+                      >
+                        Réservation
+                      </label>
                       <input
+                        id={`step-${stepIndex}-reservation`}
                         type="text"
                         value={notesObj?.reservation ?? ''}
                         onChange={(e) => setExtendedSection('reservation', e.target.value)}
@@ -490,8 +515,14 @@ export default function StepModal({ isOpen, stepIndex, onClose, onDeleteStep }: 
 
                   <div className="grid grid-cols-1 gap-4">
                     <div className="rounded-xl border bg-white p-4">
-                      <label className="mb-1 block text-sm font-medium">Adresse</label>
+                      <label
+                        htmlFor={`step-${stepIndex}-adresse`}
+                        className="mb-1 block text-sm font-medium"
+                      >
+                        Adresse
+                      </label>
                       <textarea
+                        id={`step-${stepIndex}-adresse`}
                         ref={firstTextareaRef}
                         rows={2}
                         value={notesObj?.adresse ?? ''}
@@ -503,8 +534,14 @@ export default function StepModal({ isOpen, stepIndex, onClose, onDeleteStep }: 
 
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                       <div className="rounded-xl border bg-white p-4">
-                        <label className="mb-1 block text-sm font-medium">Téléphone</label>
+                        <label
+                          htmlFor={`step-${stepIndex}-telephone`}
+                          className="mb-1 block text-sm font-medium"
+                        >
+                          Téléphone
+                        </label>
                         <input
+                          id={`step-${stepIndex}-telephone`}
                           type="text"
                           value={notesObj?.telephone ?? ''}
                           onChange={(e) => setExtendedSection('telephone', e.target.value)}
@@ -514,8 +551,14 @@ export default function StepModal({ isOpen, stepIndex, onClose, onDeleteStep }: 
                       </div>
 
                       <div className="rounded-xl border bg-white p-4">
-                        <label className="mb-1 block text-sm font-medium">Lien utile</label>
+                        <label
+                          htmlFor={`step-${stepIndex}-lienUtile`}
+                          className="mb-1 block text-sm font-medium"
+                        >
+                          Lien utile
+                        </label>
                         <input
+                          id={`step-${stepIndex}-lienUtile`}
                           type="text"
                           value={notesObj?.lienUtile ?? ''}
                           onChange={(e) => setExtendedSection('lienUtile', e.target.value)}
@@ -565,8 +608,14 @@ export default function StepModal({ isOpen, stepIndex, onClose, onDeleteStep }: 
               {activeTab === 'memo' && (
                 <section className="space-y-4">
                   <div className="rounded-xl border bg-white p-4">
-                    <label className="mb-1 block text-sm font-medium">📝 Notes libres</label>
+                    <label
+                      htmlFor={`step-${stepIndex}-autresNotes`}
+                      className="mb-1 block text-sm font-medium"
+                    >
+                      📝 Notes libres
+                    </label>
                     <textarea
+                      id={`step-${stepIndex}-autresNotes`}
                       value={notesObj?.autresNotes ?? ''}
                       onChange={(e) => setExtendedSection('autresNotes', e.target.value)}
                       rows={5}
@@ -577,8 +626,14 @@ export default function StepModal({ isOpen, stepIndex, onClose, onDeleteStep }: 
 
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     <div className="rounded-xl border bg-white p-4">
-                      <label className="mb-1 block text-sm font-medium">🎒 À ne pas oublier</label>
+                      <label
+                        htmlFor={`step-${stepIndex}-aNePasOublier`}
+                        className="mb-1 block text-sm font-medium"
+                      >
+                        🎒 À ne pas oublier
+                      </label>
                       <textarea
+                        id={`step-${stepIndex}-aNePasOublier`}
                         value={notesObj?.aNePasOublier ?? ''}
                         onChange={(e) => setExtendedSection('aNePasOublier', e.target.value)}
                         rows={4}
@@ -588,10 +643,14 @@ export default function StepModal({ isOpen, stepIndex, onClose, onDeleteStep }: 
                     </div>
 
                     <div className="rounded-xl border bg-white p-4">
-                      <label className="mb-1 block text-sm font-medium">
+                      <label
+                        htmlFor={`step-${stepIndex}-souvenirPhoto`}
+                        className="mb-1 block text-sm font-medium"
+                      >
                         📸 Souvenir / photo à prendre
                       </label>
                       <textarea
+                        id={`step-${stepIndex}-souvenirPhoto`}
                         value={notesObj?.souvenirPhoto ?? ''}
                         onChange={(e) => setExtendedSection('souvenirPhoto', e.target.value)}
                         rows={4}
@@ -660,8 +719,14 @@ export default function StepModal({ isOpen, stepIndex, onClose, onDeleteStep }: 
                         />
 
                         <div className="mt-3">
-                          <label className="mb-1 block text-sm font-medium">Légende photo</label>
+                          <label
+                            htmlFor={`step-${stepIndex}-legendePhoto`}
+                            className="mb-1 block text-sm font-medium"
+                          >
+                            Légende photo
+                          </label>
                           <input
+                            id={`step-${stepIndex}-legendePhoto`}
                             type="text"
                             value={notesObj?.legendePhoto ?? ''}
                             onChange={(e) => setExtendedSection('legendePhoto', e.target.value)}

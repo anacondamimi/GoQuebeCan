@@ -250,8 +250,14 @@ export default function ShareItineraryButton() {
 
             <div className="space-y-4">
               <div>
-                <label className="mb-1 block text-sm font-medium text-gray-800">Titre *</label>
+                <label
+                  htmlFor="share-itinerary-title"
+                  className="mb-1 block text-sm font-medium text-gray-800"
+                >
+                  Titre *
+                </label>
                 <input
+                  id="share-itinerary-title"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   className="w-full rounded-xl border border-gray-300 px-3 py-2 outline-none focus:border-indigo-500"
@@ -260,10 +266,14 @@ export default function ShareItineraryButton() {
               </div>
 
               <div>
-                <label className="mb-1 block text-sm font-medium text-gray-800">
+                <label
+                  htmlFor="share-itinerary-summary"
+                  className="mb-1 block text-sm font-medium text-gray-800"
+                >
                   Description *
                 </label>
                 <textarea
+                  id="share-itinerary-summary"
                   value={summary}
                   onChange={(e) => setSummary(e.target.value)}
                   rows={4}
@@ -274,10 +284,14 @@ export default function ShareItineraryButton() {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-gray-800">
+                  <label
+                    htmlFor="share-itinerary-author-name"
+                    className="mb-1 block text-sm font-medium text-gray-800"
+                  >
                     Prénom ou pseudo
                   </label>
                   <input
+                    id="share-itinerary-author-name"
                     value={authorName}
                     onChange={(e) => setAuthorName(e.target.value)}
                     className="w-full rounded-xl border border-gray-300 px-3 py-2 outline-none focus:border-indigo-500"
@@ -286,8 +300,14 @@ export default function ShareItineraryButton() {
                 </div>
 
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-gray-800">Email</label>
+                  <label
+                    htmlFor="share-itinerary-author-email"
+                    className="mb-1 block text-sm font-medium text-gray-800"
+                  >
+                    Email
+                  </label>
                   <input
+                    id="share-itinerary-author-email"
                     type="email"
                     value={authorEmail}
                     onChange={(e) => setAuthorEmail(e.target.value)}
@@ -296,7 +316,6 @@ export default function ShareItineraryButton() {
                   />
                 </div>
               </div>
-
               <label className="flex items-start gap-3 rounded-xl border border-gray-200 p-3 text-sm text-gray-700">
                 <input
                   type="checkbox"

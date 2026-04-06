@@ -79,7 +79,7 @@ const jsonLdBase = buildGenericJsonLd({
   canonical: CANONICAL,
   image: OG_IMAGE,
   published: '2025-12-16',
-  modified: '2025-12-16',
+  modified: '2026-03-28',
   author: 'GoQuébeCAN',
   steps: [
     'Choisir une carte qui bonifie l’épicerie et les dépenses récurrentes',

@@ -39,7 +39,7 @@ const jsonLd = buildGenericJsonLd({
   canonical: 'https://goquebecan.com/camping',
   image: 'https://goquebecan.com/images/og/camping-quebec.jpg',
   published: '2025-05-01',
-  modified: '2025-11-05',
+  modified: '2026-04-05',
   author: 'GoQuébeCAN',
   faq: [
     {

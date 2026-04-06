@@ -275,7 +275,7 @@ function buildCampingJsonLd(camping: CampingPageData) {
     canonical: `https://goquebecan.com/camping/${camping.slug}`,
     image: `https://goquebecan.com${camping.heroImage}`,
     published: '2025-05-01', // à adapter par camping si besoin
-    modified: '2025-11-05',
+    modified: '2026-04-05',
     author: 'GoQuébeCAN',
     faq: camping.faq?.map((f) => ({
       question: f.question,
