@@ -58,7 +58,7 @@ export default function MobileMenu() {
 
       <Section title="Communauté">
         <Link
-          href="/itineraire-communaute"
+          href="/itineraires-communaute"
           className="block text-sm text-gray-700 hover:text-[#e11d48]"
         >
           🧭 Itinéraires de la communauté

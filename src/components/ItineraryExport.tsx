@@ -3,9 +3,8 @@
 import React, { useState } from 'react';
 import { useItineraryStore } from '@/store/useItineraryStore';
 import { exportToPDF } from '@/utils/itineraryPdf';
+import ShareItineraryButton from '@/components/ShareItineraryButton';
 
-// Ajoute une petite version pour forcer le rafraîchissement des assets et vérifier
-// que c'est bien cette version du code qui tourne.
 const PDF_VERSION = '2025-09-03-02';
 
 export default function ItineraryExport() {
@@ -19,15 +18,14 @@ export default function ItineraryExport() {
       setLoading(true);
       console.info('[ItineraryExport] PDF_VERSION =', PDF_VERSION);
 
-      // Infère le type exact du 3e argument depuis la signature d'exportToPDF
       const custom: Parameters<typeof exportToPDF>[2] = {
         brand: 'GoQuébeCAN',
-        logoUrl: `/images/logo.png?v=${PDF_VERSION}`, // évite un cache persistant
+        logoUrl: `/images/logo.png?v=${PDF_VERSION}`,
         cardUrl: `/images/carte.avif?v=${PDF_VERSION}`,
         greeting:
           'Bonnes vacances au Québec ! Profitez des paysages, des saveurs locales et de la chaleur de nos producteurs — GoQuébeCAN vous accompagne à chaque étape.',
         shareCtaText: 'Partager mon itinéraire',
-        shareCtaUrl: '/contact',
+        shareCtaUrl: '/itineraires-communaute',
         footerNote: 'GoQuébeCAN vous souhaite de très bonnes vacances.',
       };
 
@@ -47,15 +45,19 @@ export default function ItineraryExport() {
   };
 
   return (
-    <button
-      type="button"
-      onClick={handleClick}
-      disabled={loading}
-      aria-busy={loading}
-      className="inline-flex items-center gap-2 rounded-2xl bg-indigo-600 px-4 py-2 text-white shadow-sm hover:bg-indigo-700 disabled:opacity-60"
-      title="Exporter l’itinéraire en PDF"
-    >
-      {loading ? 'Génération…' : '⬇️ Télécharger le PDF'}
-    </button>
+    <div className="flex flex-wrap items-center gap-3">
+      <button
+        type="button"
+        onClick={handleClick}
+        disabled={loading}
+        aria-busy={loading}
+        className="inline-flex items-center gap-2 rounded-2xl bg-indigo-600 px-4 py-2 text-white shadow-sm hover:bg-indigo-700 disabled:opacity-60"
+        title="Exporter l’itinéraire en PDF"
+      >
+        {loading ? 'Génération…' : '⬇️ Télécharger le PDF'}
+      </button>
+
+      <ShareItineraryButton />
+    </div>
   );
 }

@@ -1,236 +1,306 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
-import { v4 as uuidv4 } from 'uuid';
+import React, { useEffect, useMemo, useState } from 'react';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import { supabaseBrowser as supabase } from '@/lib/supabase-browser';
-import { saveFeedback } from '@/components/lib/saveFeedback';
 import { exportToPDF } from '@/utils/itineraryPdf';
 import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
 
-// -----------------------------
-// Types dérivés & shape partagé
-// -----------------------------
+type CommunityStepRole = 'start' | 'via' | 'end';
 
-type ItineraryParam = Parameters<typeof exportToPDF>[1];
-type ItineraryItem = ItineraryParam extends Array<infer U> ? U : never;
-
-type SharedStep = {
-  id?: string | number;
-  name?: string;
-  title?: string;
-  coordinates?: readonly [number, number] | number[];
-  lat?: number;
-  lng?: number;
-  location?: { lat?: number; lng?: number } | null;
-  notes?: string | null;
+type StepNotesObject = {
+  hotel?: string;
+  restaurant?: string;
+  activites?: string;
+  producteurs?: string;
+  autres?: string;
 };
 
-// -----------------------------
-// Page composant
-// -----------------------------
+type CommunityStep = {
+  id: string;
+  name: string;
+  role: CommunityStepRole;
+  lat: number;
+  lng: number;
+  notes?: StepNotesObject | string | null;
+};
+
+type CommunityItinerary = {
+  id: string;
+  title: string;
+  summary: string;
+  author_name: string | null;
+  author_email: string | null;
+  status: 'pending' | 'approved' | 'rejected';
+  steps_json: CommunityStep[];
+  step_count: number | null;
+  region: string | null;
+  duration_days: number | null;
+  cover_image_url: string | null;
+  pdf_url: string | null;
+  slug: string | null;
+  created_at: string | null;
+};
+
+type PdfItineraryItem = {
+  id: string;
+  name: string;
+  lat: number;
+  lng: number;
+  role: 'start' | 'via' | 'end';
+  notes?: string;
+};
+
+function isNotesObject(value: unknown): value is StepNotesObject {
+  return !!value && typeof value === 'object' && !Array.isArray(value);
+}
 
 export default function Page() {
   const params = useParams<{ slug: string }>();
   const slug = params?.slug ?? '';
-  const router = useRouter();
 
-  const [loading, setLoading] = useState<boolean>(true);
-  const [title, setTitle] = useState<string>('');
-  const [steps, setSteps] = useState<SharedStep[] | null>(null);
-  const [feedback, setFeedback] = useState<string>('');
-  const [submitted, setSubmitted] = useState<boolean>(false);
+  const [loading, setLoading] = useState(true);
+  const [item, setItem] = useState<CommunityItinerary | null>(null);
+  const [errorText, setErrorText] = useState<string | null>(null);
 
-  // Charger l'itinéraire depuis Supabase
   useEffect(() => {
     let mounted = true;
+
     (async () => {
       try {
         setLoading(true);
+        setErrorText(null);
+
         const { data, error } = await supabase
-          .from('itineraries')
-          .select('title, data')
+          .from('community_itineraries')
+          .select(
+            'id, title, summary, author_name, author_email, status, steps_json, step_count, region, duration_days, cover_image_url, pdf_url, slug, created_at',
+          )
           .eq('slug', slug)
+          .eq('status', 'approved')
           .single();
 
         if (!mounted) return;
-        if (error) {
+
+        if (error || !data) {
           console.error('[partage] load error', error);
-          setTitle('');
-          setSteps([]);
-        } else {
-          const loadedTitle = (data as { title?: string } | null)?.title ?? '';
-          // data.data?.steps :
-          const loadedSteps = (data as { data?: unknown } | null)?.data as
-            | { steps?: SharedStep[] }
-            | undefined
-            | null;
-          setTitle(loadedTitle);
-          setSteps(Array.isArray(loadedSteps?.steps) ? loadedSteps!.steps : []);
+          setItem(null);
+          setErrorText(error?.message ?? 'Itinéraire introuvable.');
+          return;
         }
+
+        setItem(data as CommunityItinerary);
+      } catch (e) {
+        console.error('[partage] unexpected error', e);
+
+        if (!mounted) return;
+
+        setItem(null);
+        setErrorText(e instanceof Error ? e.message : 'Erreur inconnue.');
       } finally {
         if (mounted) setLoading(false);
       }
     })();
+
     return () => {
       mounted = false;
     };
   }, [slug]);
 
-  // Dupliquer l'itinéraire
-  async function handleDuplicate() {
-    const newSlug = uuidv4();
-    const { error } = await supabase.from('itineraries').insert([
-      {
-        slug: newSlug,
-        title: title ? `${title} (copie)` : 'Itinéraire (copie)',
-        data: { steps },
-      },
-    ]);
+  function notesToPdfString(notes: CommunityStep['notes']): string | undefined {
+    if (!notes) return undefined;
 
-    if (!error) router.push(`/partage/${newSlug}`);
-    else console.error('Erreur duplication:', error.message);
+    if (typeof notes === 'string') {
+      const trimmed = notes.trim();
+      return trimmed || undefined;
+    }
+
+    const parts: string[] = [];
+
+    if (notes.hotel?.trim()) parts.push(`Hôtel : ${notes.hotel.trim()}`);
+    if (notes.restaurant?.trim()) parts.push(`Restaurant : ${notes.restaurant.trim()}`);
+    if (notes.activites?.trim()) parts.push(`Activités : ${notes.activites.trim()}`);
+    if (notes.producteurs?.trim()) parts.push(`Producteurs : ${notes.producteurs.trim()}`);
+    if (notes.autres?.trim()) parts.push(`Autres : ${notes.autres.trim()}`);
+
+    return parts.length > 0 ? parts.join('\n') : undefined;
   }
 
-  // Export PDF (pipeline jsPDF partagé)
-  const handleExportPDF = async () => {
-    if (!steps || steps.length < 2) return;
+  const itineraryForPdf = useMemo<PdfItineraryItem[]>(() => {
+    if (!item?.steps_json?.length) return [];
 
-    const itinerary: ItineraryParam = (steps as SharedStep[]).map<ItineraryItem>((s, idx, arr) => {
-      // ✅ Calcul robuste des coordonnées (array -> lat/lng -> location)
-      const lat =
-        Array.isArray(s.coordinates) && typeof s.coordinates[0] === 'number'
-          ? s.coordinates[0]
-          : typeof s.lat === 'number'
-            ? s.lat
-            : typeof s.location?.lat === 'number'
-              ? s.location.lat
-              : NaN;
+    return item.steps_json.map((step, index, arr) => {
+      const pdfNotes = notesToPdfString(step.notes);
 
-      const lng =
-        Array.isArray(s.coordinates) && typeof s.coordinates[1] === 'number'
-          ? s.coordinates[1]
-          : typeof s.lng === 'number'
-            ? s.lng
-            : typeof s.location?.lng === 'number'
-              ? s.location.lng
-              : NaN;
+      const pdfStep: PdfItineraryItem = {
+        id: String(step.id ?? index),
+        name: step.name || `Étape ${index + 1}`,
+        lat: step.lat,
+        lng: step.lng,
+        role: index === 0 ? 'start' : index === arr.length - 1 ? 'end' : 'via',
+      };
 
-      if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
-        throw new Error(`Coordonnées manquantes pour l'étape ${idx}`);
+      if (pdfNotes) {
+        pdfStep.notes = pdfNotes;
       }
 
-      return {
-        ...(s.id != null ? { id: String(s.id) } : {}),
-        name: s.name ?? s.title ?? `Étape ${idx}`,
-        lat,
-        lng,
-        role: idx === 0 ? 'start' : idx === arr.length - 1 ? 'end' : 'via',
-        // ➕ on envoie aussi le contenu du modal pour la colonne « Notes »
-        ...(s.notes != null ? { notes: s.notes } : {}),
-      } as ItineraryItem;
+      return pdfStep;
     });
+  }, [item]);
 
-    await exportToPDF(`itineraire-${String(slug)}.pdf`, itinerary, {
+  const handleExportPDF = async () => {
+    if (!item || itineraryForPdf.length < 2) return;
+
+    await exportToPDF(`itineraire-${item.slug ?? 'communaute'}.pdf`, itineraryForPdf, {
       brand: 'GoQuébeCAN',
       logoUrl: '/images/logo.png',
       cardUrl: '/images/carte.avif',
       greeting:
         'Bonnes vacances au Québec ! Profitez des paysages, des saveurs locales et de la chaleur de nos producteurs — GoQuébeCAN vous accompagne à chaque étape.',
-      shareCtaText: 'Partager mon itinéraire',
-      shareCtaUrl: '/contact',
+      shareCtaText: 'Créer mon itinéraire',
+      shareCtaUrl: '/planificateur',
       footerNote: 'GoQuébeCAN vous souhaite de très bonnes vacances.',
     });
   };
 
-  // Feedback (optionnel)
-  const handleSendFeedback = async () => {
-    try {
-      await saveFeedback(slug as string, feedback);
-      setSubmitted(true);
-      setFeedback('');
-    } catch (e) {
-      console.error(e);
-      alert('Erreur lors de l’envoi');
-    }
-  };
-
   if (loading) {
     return (
-      <main className="mx-auto max-w-3xl px-4 py-10 text-center">
+      <main className="mx-auto max-w-4xl px-4 py-10 text-center">
         <p className="text-gray-600">Chargement de l’itinéraire...</p>
       </main>
     );
   }
 
-  if (!steps || steps.length === 0) {
+  if (!item) {
     return (
-      <main className="mx-auto max-w-3xl px-4 py-10 text-center">
+      <main className="mx-auto max-w-4xl px-4 py-10 text-center">
         <H1 className="mb-4 text-2xl font-bold text-red-600">Itinéraire introuvable</H1>
-        <p className="text-gray-600">Cet itinéraire n’existe pas ou a été supprimé.</p>
+        <p className="mb-3 text-gray-600">
+          Cet itinéraire n’existe pas, n’est pas encore approuvé ou a été supprimé.
+        </p>
+        {errorText ? <p className="text-sm text-gray-400">Détail : {errorText}</p> : null}
+
+        <div className="mt-6">
+          <Link
+            href="/itineraires-communaute"
+            className="inline-flex rounded-xl bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700"
+          >
+            Retour aux itinéraires de la communauté
+          </Link>
+        </div>
       </main>
     );
   }
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-8">
-      <header className="mb-6">
-        <H1 className="mb-2 text-2xl font-bold">{title || 'Mon itinéraire'}</H1>
-        <div className="flex items-center gap-2">
+    <main className="mx-auto max-w-4xl px-4 py-8">
+      <header className="mb-8">
+        <H1 className="mb-3 text-3xl font-bold">{item.title}</H1>
+
+        <p className="mb-4 text-gray-700">{item.summary}</p>
+
+        <div className="flex flex-wrap gap-3 text-sm text-gray-500">
+          {item.region ? <span>{item.region}</span> : null}
+          {item.step_count ? <span>{item.step_count} étapes</span> : null}
+          {item.duration_days ? <span>{item.duration_days} jours</span> : null}
+          <span>Partagé par {item.author_name || 'un voyageur GoQuébeCAN'}</span>
+        </div>
+
+        <div className="mt-5 flex flex-wrap gap-3">
           <button
             onClick={handleExportPDF}
-            className="rounded-lg bg-indigo-600 px-3 py-2 text-white hover:bg-indigo-700"
+            className="rounded-xl bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700"
           >
-            ⬇️ Télécharger le PDF
+            Télécharger le PDF
           </button>
-          <button
-            onClick={handleDuplicate}
-            className="rounded-lg border px-3 py-2 hover:bg-gray-50"
-            title="Dupliquer cet itinéraire"
+
+          <Link
+            href="/planificateur"
+            className="rounded-xl border border-gray-300 px-4 py-2 text-gray-700 hover:bg-gray-50"
           >
-            Dupliquer
-          </button>
+            Créer mon propre itinéraire
+          </Link>
+
+          {item.pdf_url ? (
+            <a
+              href={item.pdf_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl border border-gray-300 px-4 py-2 text-gray-700 hover:bg-gray-50"
+            >
+              Ouvrir le PDF partagé
+            </a>
+          ) : null}
         </div>
       </header>
 
-      <section className="mb-8 space-y-2">
-        {steps.map((s, idx) => (
-          <div key={(s.id ?? idx).toString()} className="rounded-md border p-3">
-            <div className="text-sm text-gray-600">
-              {idx === 0 ? 'Départ' : idx === steps.length - 1 ? 'Arrivée' : `Étape ${idx}`}
-            </div>
-            <div className="font-medium">{s.name ?? s.title ?? `Étape ${idx}`}</div>
-            {Array.isArray(s.coordinates) && (
-              <div className="text-xs text-gray-500">
-                ({s.coordinates[0]?.toFixed?.(4)}, {s.coordinates[1]?.toFixed?.(4)})
-              </div>
-            )}
-          </div>
-        ))}
-      </section>
+      <section>
+        <H2 className="mb-4 text-2xl font-bold">Étapes de l’itinéraire</H2>
 
-      <section className="border-t pt-6">
-        <H2 className="mb-2 text-lg font-semibold">Un avis ?</H2>
-        {submitted ? (
-          <p className="text-green-700">Merci pour votre retour !</p>
-        ) : (
-          <div className="flex items-start gap-2">
-            <textarea
-              value={feedback}
-              onChange={(e) => setFeedback(e.target.value)}
-              className="w-full rounded-md border p-2"
-              rows={3}
-              placeholder="Vos idées d’amélioration, suggestions…"
-            />
-            <button
-              onClick={handleSendFeedback}
-              className="rounded-lg bg-gray-800 px-3 py-2 text-white hover:bg-black"
-            >
-              Envoyer
-            </button>
-          </div>
-        )}
+        <div className="space-y-4">
+          {Array.isArray(item.steps_json) && item.steps_json.length > 0 ? (
+            item.steps_json.map((step, index) => (
+              <article
+                key={step.id ?? `${index}`}
+                className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm"
+              >
+                <div className="mb-1 text-sm text-gray-500">
+                  {index === 0
+                    ? 'Départ'
+                    : index === item.steps_json.length - 1
+                      ? 'Arrivée'
+                      : `Étape ${index}`}
+                </div>
+
+                <h3 className="mb-2 text-lg font-semibold text-gray-900">
+                  {step.name || `Étape ${index + 1}`}
+                </h3>
+
+                <p className="mb-3 text-xs text-gray-500">
+                  {step.lat}, {step.lng}
+                </p>
+
+                {typeof step.notes === 'string' && step.notes.trim() ? (
+                  <p className="text-sm leading-6 text-gray-700">{step.notes}</p>
+                ) : isNotesObject(step.notes) ? (
+                  <div className="space-y-2 text-sm text-gray-700">
+                    {step.notes.hotel ? (
+                      <p>
+                        <strong>Hôtel :</strong> {step.notes.hotel}
+                      </p>
+                    ) : null}
+                    {step.notes.restaurant ? (
+                      <p>
+                        <strong>Restaurant :</strong> {step.notes.restaurant}
+                      </p>
+                    ) : null}
+                    {step.notes.activites ? (
+                      <p>
+                        <strong>Activités :</strong> {step.notes.activites}
+                      </p>
+                    ) : null}
+                    {step.notes.producteurs ? (
+                      <p>
+                        <strong>Producteurs :</strong> {step.notes.producteurs}
+                      </p>
+                    ) : null}
+                    {step.notes.autres ? (
+                      <p>
+                        <strong>Autres :</strong> {step.notes.autres}
+                      </p>
+                    ) : null}
+                  </div>
+                ) : (
+                  <p className="text-sm text-gray-500">Aucune note ajoutée.</p>
+                )}
+              </article>
+            ))
+          ) : (
+            <p className="text-gray-500">Aucune étape disponible.</p>
+          )}
+        </div>
       </section>
     </main>
   );

@@ -1,5 +1,3 @@
-// 📂 src/components/lib/saveContact.ts
-
 export type ContactForm = {
   nom: string;
   email: string;
@@ -9,57 +7,110 @@ export type ContactForm = {
 
 export type SaveContactResult = { success: true } | { success: false; error: string };
 
-// ---- reCAPTCHA (client) helpers ----
 type Grecaptcha = {
   execute: (siteKey: string, opts: { action: string }) => Promise<string>;
   ready?: (cb: () => void) => void;
 };
 
+type ContactApiError = {
+  error?: string;
+};
+
 function getGrecaptcha(): Grecaptcha | null {
   if (typeof window === 'undefined') return null;
-  const w = window as unknown as { grecaptcha?: Grecaptcha };
+  const w = window as Window & { grecaptcha?: Grecaptcha };
   return w.grecaptcha ?? null;
+}
+
+function isNonEmptyString(value: unknown): value is string {
+  return typeof value === 'string' && value.trim().length > 0;
+}
+
+async function waitForGrecaptcha(maxWaitMs = 4000): Promise<Grecaptcha | null> {
+  const start = Date.now();
+
+  while (Date.now() - start < maxWaitMs) {
+    const gc = getGrecaptcha();
+    if (gc) return gc;
+    await new Promise((resolve) => setTimeout(resolve, 150));
+  }
+
+  return null;
 }
 
 async function maybeGetRecaptchaToken(action: string): Promise<string | undefined> {
   const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-  const gc = getGrecaptcha();
-  if (!siteKey || !gc) return undefined;
+
+  if (!isNonEmptyString(siteKey)) {
+    console.warn('[saveContact] NEXT_PUBLIC_RECAPTCHA_SITE_KEY manquante');
+    return undefined;
+  }
+
+  const gc = await waitForGrecaptcha();
+
+  if (!gc) {
+    console.warn('[saveContact] grecaptcha non chargé sur la page');
+    return undefined;
+  }
 
   try {
-    // `ready` n’est pas toujours nécessaire, mais on le gère si présent
     if (typeof gc.ready === 'function') {
-      await new Promise<void>((resolve) => gc.ready!(resolve));
+      await new Promise<void>((resolve) => gc.ready?.(resolve));
     }
+
     const token = await gc.execute(siteKey, { action });
-    return typeof token === 'string' && token.length > 0 ? token : undefined;
-  } catch {
+
+    if (!isNonEmptyString(token)) {
+      console.warn('[saveContact] token reCAPTCHA vide');
+      return undefined;
+    }
+
+    return token;
+  } catch (error) {
+    console.warn('[saveContact] échec génération token reCAPTCHA', error);
     return undefined;
   }
 }
 
-// ---- JSON parsing safe (aucun any) ----
-async function parseJsonSafe(res: Response): Promise<unknown> {
+async function parseJsonSafe<T = unknown>(res: Response): Promise<T | null> {
   try {
-    return await res.json();
+    return (await res.json()) as T;
   } catch {
     return null;
   }
 }
 
-// ---- Public API ----
 export async function saveContact(form: ContactForm): Promise<SaveContactResult> {
-  // Optionnel : token recaptcha (si configuré côté client)
+  const nom = form.nom.trim();
+  const email = form.email.trim();
+  const message = form.message.trim();
+  const type = form.type;
+
+  if (!nom) {
+    return { success: false, error: 'Veuillez indiquer votre nom.' };
+  }
+
+  if (!email) {
+    return { success: false, error: 'Veuillez indiquer votre email.' };
+  }
+
+  if (!message) {
+    return { success: false, error: 'Veuillez écrire un message.' };
+  }
+
   const token = await maybeGetRecaptchaToken('contact');
 
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 10_000); // 10s
+  const timeoutId = setTimeout(() => controller.abort(), 10000);
 
   try {
     const payload = {
-      ...form,
-      token, // peut être undefined : la route serveur gère le cas
-      honey: '', // honeypot vide par défaut (tu peux le remplir côté UI si besoin)
+      nom,
+      email,
+      message,
+      type,
+      token: token ?? null,
+      honey: '',
     };
 
     const res = await fetch('/api/contact', {
@@ -69,29 +120,39 @@ export async function saveContact(form: ContactForm): Promise<SaveContactResult>
       signal: controller.signal,
     });
 
-    clearTimeout(timeoutId);
+    const data = await parseJsonSafe<ContactApiError>(res);
 
     if (!res.ok) {
-      const dataU = await parseJsonSafe(res);
-      // Essaie d’extraire un message serveur si présent
-      const msg =
-        (typeof (dataU as { error?: unknown })?.error === 'string'
-          ? (dataU as { error: string }).error
-          : null) ?? `Erreur lors de l’envoi (code ${res.status})`;
-      return { success: false, error: msg };
+      const serverError =
+        data && typeof data.error === 'string' && data.error.trim()
+          ? data.error
+          : `Erreur lors de l’envoi (code ${res.status})`;
+
+      if (serverError.toLowerCase().includes('recaptcha')) {
+        return {
+          success: false,
+          error:
+            "La vérification anti-spam n'a pas pu être validée. Recharge la page puis réessaie.",
+        };
+      }
+
+      return { success: false, error: serverError };
     }
 
-    // OK
     return { success: true };
   } catch (err: unknown) {
-    clearTimeout(timeoutId);
-
-    // Timeout / Abort
     if (err instanceof DOMException && err.name === 'AbortError') {
-      return { success: false, error: '⏳ Le serveur a mis trop de temps à répondre.' };
+      return {
+        success: false,
+        error: 'Le serveur a mis trop de temps à répondre. Réessaie dans quelques secondes.',
+      };
     }
 
-    const message = err instanceof Error ? err.message : 'Erreur réseau inconnue';
+    const message =
+      err instanceof Error && err.message ? err.message : "Une erreur réseau s'est produite.";
+
     return { success: false, error: message };
+  } finally {
+    clearTimeout(timeoutId);
   }
 }

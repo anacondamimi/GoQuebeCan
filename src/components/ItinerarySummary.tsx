@@ -134,20 +134,49 @@ export default function ItinerarySummary() {
   }, [itinerary, producers]);
 
   // Envoi vers /contact
-  const handleSendToGoQuebeCan = useCallback(() => {
-    if (typeof window === 'undefined') return;
+  const handleShareToCommunity = useCallback(async () => {
+    if (!Array.isArray(itinerary) || itinerary.length < 2) return;
+
+    const title = prompt('Titre de votre itinéraire :');
+    if (!title) return;
+
+    const summary = prompt('Description de votre itinéraire :');
+    if (!summary) return;
+
     try {
-      const light = (Array.isArray(itinerary) ? itinerary : []).map((s, i, arr) => ({
+      const steps = itinerary.map((s, i, arr) => ({
         id: i === 0 ? 'start' : i === arr.length - 1 ? 'end' : `step-${i}`,
         name: displayStepTitle(s as StepData, i, arr.length),
-        coordinates: [(s as StepData).lat, (s as StepData).lng] as [number, number],
+        role: i === 0 ? 'start' : i === arr.length - 1 ? 'end' : 'via',
+        lat: (s as StepData).lat,
+        lng: (s as StepData).lng,
+        notes: (s as StepData).notes || null,
       }));
-      localStorage.setItem('itineraryToSend', JSON.stringify({ itinerary: light, producers }));
-      window.location.href = '/contact?type=itineraire';
-    } catch (e) {
-      console.warn('Impossible de préparer les données pour GoQuebeCan', e);
+
+      const res = await fetch('/api/community-itineraries/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title,
+          summary,
+          consent: true,
+          steps,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!data.ok) {
+        alert('Erreur : ' + data.error);
+        return;
+      }
+
+      alert('✅ Itinéraire envoyé à la communauté !');
+    } catch (err) {
+      console.error(err);
+      alert('Erreur lors de l’envoi.');
     }
-  }, [itinerary, producers]);
+  }, [itinerary]);
 
   if (!Array.isArray(itinerary) || itinerary.length < 2) return null;
 
@@ -215,10 +244,10 @@ export default function ItinerarySummary() {
         </button>
         <button
           type="button"
-          onClick={handleSendToGoQuebeCan}
-          className="rounded border px-4 py-2 hover:bg-gray-50"
+          onClick={handleShareToCommunity}
+          className="rounded border px-4 py-2 hover:bg-green-50"
         >
-          📤 Envoyer à GoQuebeCan
+          🤝 Partager mon itinéraire
         </button>
       </div>
     </div>

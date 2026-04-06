@@ -41,7 +41,7 @@ export default function DropdownCommunity() {
   }, []);
 
   const items = [
-    { label: 'Itinéraires de la communauté', href: '/itineraire-communaute' },
+    { label: 'Itinéraires de la communauté', href: '/itineraires-communaute' },
     { label: 'Contact', href: '/contact' },
   ];
 

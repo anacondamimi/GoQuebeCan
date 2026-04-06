@@ -23,7 +23,9 @@ export default function StaticPage() {
           <Link href="/planificateur">Planificateur d'itinéraire</Link>
         </li>
         <li>
-          <Link href="/itineraires-communaute">Itinéraires de la communauté</Link>
+          <Link href="/itineraires-communaute">
+            Itinéraires de road trip au Québec partagés par la communauté
+          </Link>
         </li>
         <li>
           <Link href="/blog">Blog</Link>

@@ -1,0 +1,534 @@
+C:\Users\anaco\Documents\project-bolt-sb1-sxoxb1mv\project
+├── _archive/
+│   ├── gen-tree-routes.mjs
+│   └── scan-Links.cjs
+├── .bolt/
+│   ├── config.json
+│   └── prompt
+├── .husky/
+│   ├── _/
+│   │   ├── .gitignore
+│   │   ├── applypatch-msg
+│   │   ├── commit-msg
+│   │   ├── h
+│   │   ├── husky.sh
+│   │   ├── post-applypatch
+│   │   ├── post-checkout
+│   │   ├── post-commit
+│   │   ├── post-merge
+│   │   ├── post-rewrite
+│   │   ├── pre-applypatch
+│   │   ├── pre-auto-gc
+│   │   ├── pre-commit
+│   │   ├── pre-merge-commit
+│   │   ├── pre-push
+│   │   ├── pre-rebase
+│   │   └── prepare-commit-msg
+│   ├── .husky/
+│   │   └── pre-commit
+│   └── pre-commit
+├── app/
+│   ├── (maps)/
+│   │   ├── planificateur/
+│   │   │   ├── ItineraryPlannerWrapper.tsx
+│   │   │   └── page.tsx
+│   │   ├── producteurs/
+│   │   │   └── page.tsx
+│   │   └── layout.tsx
+│   ├── accessibilite/
+│   │   └── page.tsx
+│   ├── admin/
+│   │   ├── community-pdf/
+│   │   │   ├── AddCommunityPDFClient.tsx
+│   │   │   └── page.tsx
+│   │   ├── offers/
+│   │   │   ├── AdminOffersClient.tsx
+│   │   │   └── page.tsx
+│   │   ├── producteurs/
+│   │   │   ├── AddProducteurClient.tsx
+│   │   │   └── page.tsx
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── api/
+│   │   ├── amazon-product/
+│   │   │   └── route.ts
+│   │   ├── chat/
+│   │   │   └── route.ts
+│   │   ├── contact/
+│   │   │   └── route.ts
+│   │   ├── feedback/
+│   │   │   └── route.ts
+│   │   ├── geocodeold/
+│   │   │   └── route.ts
+│   │   ├── itinerary/
+│   │   │   └── route.ts
+│   │   └── send-pdf/
+│   │       └── route.ts
+│   ├── blog/
+│   │   ├── [slug]/
+│   │   │   └── page.tsx
+│   │   ├── points-aeroplan-amex-cobalt/
+│   │   │   └── page.tsx
+│   │   ├── sandbanks/
+│   │   │   └── page.tsx
+│   │   ├── not-found.tsx
+│   │   └── page.tsx
+│   ├── camping/
+│   │   ├── [slug]/
+│   │   │   └── page.tsx
+│   │   ├── CampingGuideWrapper.tsx
+│   │   └── page.tsx
+│   ├── conditions-utilisation/
+│   │   └── page.tsx
+│   ├── confidentialite/
+│   │   └── page.tsx
+│   ├── contact/
+│   │   └── page.tsx
+│   ├── coups-de-coeur/
+│   │   ├── anamimizen/
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   ├── destinations/
+│   │   └── page.tsx
+│   ├── expansion/
+│   │   ├── admin/
+│   │   │   ├── dashboard/
+│   │   │   │   └── page.tsx
+│   │   │   └── stats/
+│   │   │       └── page.tsx
+│   │   ├── affiliate-products/
+│   │   │   └── page.tsx
+│   │   ├── destinations-monde/
+│   │   │   ├── slug/
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   ├── experiences/
+│   │   ├── page.tsx
+│   │   └── routeOptions.ts
+│   ├── ia-mathieu/
+│   │   └── page.tsx
+│   ├── itineraires-communaute/
+│   │   └── page.tsx
+│   ├── lib/
+│   │   └── destinationMap.ts
+│   ├── mentions-legales/
+│   │   └── page.tsx
+│   ├── notre-mission/
+│   │   └── page.tsx
+│   ├── objets/
+│   │   └── page.tsx
+│   ├── offres/
+│   │   └── page.tsx
+│   ├── partage/
+│   │   └── [slug]/
+│   │       └── Page.tsx
+│   ├── static-page/
+│   │   └── page.tsx
+│   ├── videos/
+│   │   └── page.tsx
+│   ├── vols/
+│   │   ├── page.tsx
+│   │   ├── VolsClient.tsx
+│   │   └── VolsWrapper.tsx
+│   ├── bannerTexts.ts
+│   ├── ClientWrapper.tsx
+│   ├── globals.css
+│   ├── head.tsx
+│   ├── layout.tsx
+│   ├── LayoutWithBanner.tsx
+│   ├── page.tsx
+│   ├── robots.ts
+│   ├── sitemap.ts
+│   └── test-youtube.tsx
+├── lib/
+│   └── seo/
+│       └── seoToMetadata.ts
+├── public/
+│   ├── .well-known/
+│   │   └── security.txt
+│   ├── icons/
+│   │   ├── icon.svg
+│   ├── images/
+│   │   ├── cartes/
+│   │   ├── destinations/
+│   │   │   ├── hotels/
+│   │   ├── offers/
+│   │   ├── photos-itineraire/
+│   │   ├── placeholder/
+│   │   ├── produits/
+│   │   ├── restos/
+│   │   │   ├── anse-saint-jean/
+│   │   │   ├── bic/
+│   │   │   └── chambly/
+│   ├── kml/
+│   │   └── nunavik_exploration.kml
+│   ├── leaflet/
+│   ├── og/
+│   ├── destinations.json
+│   ├── destinationsOriginal.json
+│   ├── microbreweriesOriginal.json
+│   ├── site.webmanifest
+│   └── sitemap.xml
+├── scripts/
+│   ├── _archive/
+│   │   ├── addDefaultExports.js
+│   │   ├── addLatLngToDestinations.js
+│   │   ├── addLatLngToMicrobreweries.js
+│   │   ├── addNewProducers.js
+│   │   ├── check-navbar-routes.cjs
+│   │   ├── checkUseClientSmart.mjs
+│   │   ├── convertCsvToJson.mjs
+│   │   ├── convertGeojson.mjs
+│   │   ├── createDestination.mjs
+│   │   ├── excelToProducersWithAI.js
+│   │   ├── extractBrokenOnly.cjs
+│   │   ├── find-window.cjs
+│   │   ├── fix-ssr-issues.js
+│   │   ├── fixImportOrder.js
+│   │   ├── fixMissingExports.js
+│   │   ├── fixProducersLatLng.js
+│   │   ├── fixYoutubeUrls.mjs
+│   │   ├── fullCleanupIcons.mjs
+│   │   ├── generateComponentMap_with_then.ts
+│   │   ├── generateComponentMap.ts
+│   │   ├── generateDestinationsJson.mjs
+│   │   ├── generateMetadataForArticles.js
+│   │   ├── generateSiteStructure.cjs
+│   │   ├── getDestinations.mjs
+│   │   ├── removeScroll.mjs
+│   │   ├── removeUnusedIcons.mjs
+│   │   ├── renameProducers.js
+│   │   ├── scan-browser-apis.js
+│   │   ├── seoTemplate.js
+│   │   └── testEnv.js
+│   ├── campings_avec_urls.json
+│   ├── check-errors.js
+│   ├── check-links.cjs
+│   ├── check-ssr.js
+│   ├── cleanAndVerifyBlog.ts
+│   ├── extract-hotels-standardized.mjs
+│   ├── extract-hotels.mjs
+│   ├── generate-sitemap-xml.ts
+│   ├── generateBlogMeta.mjs
+│   ├── missing-image-dimensions-report.txt
+│   ├── nano nextjs_cleanup.sh
+│   ├── source.geojson
+│   └── tree.js
+├── src/
+│   ├── components/
+│   │   ├── blog/
+│   │   │   ├── BlogArticleClient.tsx
+│   │   │   ├── BlogComponents.tsx
+│   │   │   ├── blogSlugs.server.ts
+│   │   │   ├── DestinationArticleTemplate.tsx
+│   │   │   ├── DestinationFaq.tsx
+│   │   │   ├── NearbyDestinations.tsx
+│   │   │   └── TableOfContents.tsx
+│   │   ├── blogpost/
+│   │   │   ├── BlogArticleAnseSaintJean.tsx
+│   │   │   ├── BlogArticleBaieSaintPaul.tsx
+│   │   │   ├── BlogArticleBic.tsx
+│   │   │   ├── BlogArticleBromontGranby.tsx
+│   │   │   ├── BlogArticleCanyon.tsx
+│   │   │   ├── BlogArticleCarleton.tsx
+│   │   │   ├── BlogArticleChambly.tsx
+│   │   │   ├── BlogArticleEeyouIstchee.tsx
+│   │   │   ├── BlogArticleForillon.tsx
+│   │   │   ├── BlogArticleGaspesie.tsx
+│   │   │   ├── BlogArticleGrandBend.tsx
+│   │   │   ├── BlogArticleHautesGorges.tsx
+│   │   │   ├── BlogArticleKamouraska.tsx
+│   │   │   ├── BlogArticleKuururjuaq.tsx
+│   │   │   ├── BlogArticleLevis.tsx
+│   │   │   ├── BlogArticleLocationVR.tsx
+│   │   │   ├── BlogArticleLocationVRComparatif.tsx
+│   │   │   ├── BlogArticleMagogOrford.tsx
+│   │   │   ├── BlogArticleMassif.tsx
+│   │   │   ├── BlogArticleMingan.tsx
+│   │   │   ├── BlogArticleMontmorency.tsx
+│   │   │   ├── BlogArticleMontreal.tsx
+│   │   │   ├── BlogArticleOrleans.tsx
+│   │   │   ├── BlogArticleParcAquatique.tsx
+│   │   │   ├── BlogArticlePerce.tsx
+│   │   │   ├── BlogArticlePortAuPersil.tsx
+│   │   │   ├── BlogArticlePortCartier.tsx
+│   │   │   ├── BlogArticlePortDover.tsx
+│   │   │   ├── BlogArticleQuebec.tsx
+│   │   │   ├── BlogArticleRiviereduLoup.tsx
+│   │   │   ├── BlogArticleRoadTripQuebec.tsx
+│   │   │   ├── BlogArticleSabrevois.tsx
+│   │   │   ├── BlogArticleSaguenay.tsx
+│   │   │   ├── BlogArticleSandbanks.tsx
+│   │   │   ├── BlogArticleSaubleBeach.tsx
+│   │   │   ├── BlogArticleSeptIles.tsx
+│   │   │   ├── BlogArticleSherbrooke.tsx
+│   │   │   ├── BlogArticleSingingSands.tsx
+│   │   │   ├── BlogArticleTadoussac.tsx
+│   │   │   ├── BlogArticleVoyageAvion.tsx
+│   │   │   ├── BlogArticleVoyageCamping.tsx
+│   │   │   ├── BlogArticleVoyageHotel.tsx
+│   │   │   ├── BlogArticleVoyageVoiture.tsx
+│   │   │   ├── BlogArticleWasagaBeach.tsx
+│   │   │   └── index.ts
+│   │   ├── brand/
+│   │   │   └── BrandName.tsx
+│   │   ├── contexts/
+│   │   │   └── SiteContext.tsx
+│   │   ├── food/
+│   │   │   └── RestaurantPremiumGrid.tsx
+│   │   ├── geo/
+│   │   │   └── SmartMapButton.tsx
+│   │   ├── home/
+│   │   │   ├── AuthenticExperiences.tsx
+│   │   │   ├── DestinationCard.tsx
+│   │   │   ├── FeatureCard.tsx
+│   │   │   ├── FeaturedGuides.tsx
+│   │   │   └── Testimonials.tsx
+│   │   ├── hotels/
+│   │   │   ├── HotelCard.tsx
+│   │   │   └── HotelGrid.tsx
+│   │   ├── layout/
+│   │   │   ├── Footer.tsx
+│   │   │   └── ResetCookieConsentButton.tsx
+│   │   ├── lib/
+│   │   │   ├── data/
+│   │   │   │   ├── blogMeta.extended.ts
+│   │   │   │   ├── blogMeta.seo.ts
+│   │   │   │   ├── blogMeta.ts
+│   │   │   │   └── regionsData.ts
+│   │   │   ├── types/
+│   │   │   │   ├── attractions.ts
+│   │   │   │   └── blog.ts
+│   │   │   ├── cors.ts
+│   │   │   ├── getContentSuggestions.ts
+│   │   │   ├── saveContact.ts
+│   │   │   ├── saveFeedback.ts
+│   │   │   ├── supabase.ts
+│   │   │   └── supabaseAdmin.ts
+│   │   ├── seo/
+│   │   │   ├── Favicons.tsx
+│   │   │   └── HeadExtrasGlobal.tsx
+│   │   ├── typography/
+│   │   │   ├── H1.tsx
+│   │   │   ├── H2.tsx
+│   │   │   └── H3.tsx
+│   │   ├── ui/
+│   │   │   ├── Button.tsx
+│   │   │   ├── Card.tsx
+│   │   │   ├── Chatbot.tsx
+│   │   │   ├── Container.tsx
+│   │   │   ├── dialog.tsx
+│   │   │   ├── DropdownPortal.tsx
+│   │   │   ├── Head.tsx
+│   │   │   ├── HeroBanner.tsx
+│   │   │   ├── Section.tsx
+│   │   │   └── SectionTitle.tsx
+│   │   ├── AdSlot.tsx
+│   │   ├── AffiliateCard.tsx
+│   │   ├── AffiliateCarousel.tsx
+│   │   ├── AmazonProductCard.tsx
+│   │   ├── BannerCarousel.tsx
+│   │   ├── Blog.tsx
+│   │   ├── BonsPlansSection.tsx
+│   │   ├── CampingGuide.tsx
+│   │   ├── CampingProductSection.tsx
+│   │   ├── ChatBannerButton.tsx
+│   │   ├── ChatbotCTAButtons.tsx
+│   │   ├── CookieBanner.tsx
+│   │   ├── CTAComponents.tsx
+│   │   ├── DestinationsCardPreview.tsx
+│   │   ├── DestinationsMegaMenu.tsx
+│   │   ├── DropdownCommunity.tsx
+│   │   ├── DropdownDestinations.tsx
+│   │   ├── DropdownMenu.tsx
+│   │   ├── DropdownObjets.tsx
+│   │   ├── DropdownObjetsMenu.tsx
+│   │   ├── DropdownObjetsMobile.tsx
+│   │   ├── DropdownPrepare.tsx
+│   │   ├── Features.tsx
+│   │   ├── FoodStops.tsx
+│   │   ├── FrenchBeeBanner.tsx
+│   │   ├── GroupedDestinations.tsx
+│   │   ├── Header.tsx
+│   │   ├── ItineraryExport.tsx
+│   │   ├── ItineraryPlanner.tsx
+│   │   ├── ItineraryStats.tsx
+│   │   ├── ItinerarySummary.tsx
+│   │   ├── MapboxAutocomplete.tsx
+│   │   ├── MapWithRouting.tsx
+│   │   ├── MobileMenu.tsx
+│   │   ├── Navbar.tsx
+│   │   ├── NunavikMap.tsx
+│   │   ├── OfferCard.tsx
+│   │   ├── Offers.tsx
+│   │   ├── PhotoUploader.tsx
+│   │   ├── PopularDestinations.tsx
+│   │   ├── PopularVideos.tsx
+│   │   ├── ProducerPopup.tsx
+│   │   ├── ProducersMap.tsx
+│   │   ├── ProducersMapFiltrable.tsx
+│   │   ├── ProducersMapGlobal.tsx
+│   │   ├── ProducersOnRouteLayer.tsx
+│   │   ├── ProducerTypeFilter.tsx
+│   │   ├── Skyscanner.tsx
+│   │   ├── StepDetailsManager.tsx
+│   │   ├── StepModal.tsx
+│   │   ├── TravelContentKit.tsx
+│   │   ├── TravelEssentials.tsx
+│   │   ├── TravelGuide.tsx
+│   │   └── TravelObjectsMegaMenu.tsx
+│   ├── data/
+│   │   ├── hotels/
+│   │   │   ├── byArticle/
+│   │   │   │   ├── anseSaintJean.ts
+│   │   │   │   ├── bic.ts
+│   │   │   │   ├── bromont-granby.ts
+│   │   │   │   ├── canyon.ts
+│   │   │   │   ├── carleton.ts
+│   │   │   │   ├── chambly.ts
+│   │   │   │   ├── forillon.ts
+│   │   │   │   ├── grand-bend.ts
+│   │   │   │   ├── hautes-gorges.ts
+│   │   │   │   ├── kamouraska.ts
+│   │   │   │   ├── magog-orford.ts
+│   │   │   │   ├── massif.ts
+│   │   │   │   ├── mingan.ts
+│   │   │   │   ├── montmorency.ts
+│   │   │   │   ├── montreal.ts
+│   │   │   │   ├── orleans.ts
+│   │   │   │   ├── perce.ts
+│   │   │   │   ├── port-au-persil.ts
+│   │   │   │   ├── port-cartier.ts
+│   │   │   │   ├── port-dover.ts
+│   │   │   │   ├── quebec.ts
+│   │   │   │   ├── rivieredu-loup.ts
+│   │   │   │   ├── sabrevois.ts
+│   │   │   │   ├── sandbanks.ts
+│   │   │   │   ├── sauble-beach.ts
+│   │   │   │   ├── sept-iles.ts
+│   │   │   │   ├── sherbrooke.ts
+│   │   │   │   ├── singing-sands.ts
+│   │   │   │   ├── tadoussac.ts
+│   │   │   │   └── wasaga-beach.ts
+│   │   │   ├── hotelCatalog.generated.ts
+│   │   │   ├── hotelCatalog.ts
+│   │   │   └── hotelExtraction.report.json
+│   │   ├── affiliateLinks.ts
+│   │   ├── baggage.json
+│   │   ├── bannerTitles.ts
+│   │   ├── blog-slugs.ts
+│   │   ├── campings_a_completer.json
+│   │   ├── campings.ts
+│   │   ├── comfort.json
+│   │   ├── contentMap.ts
+│   │   ├── destinations.json
+│   │   ├── destinationsData.ts
+│   │   ├── destinationsWithCoords.json
+│   │   ├── destinationsWorld.json
+│   │   ├── objectsData.ts
+│   │   ├── offers-data.ts
+│   │   ├── producers.json
+│   │   ├── producersWithCategories.json
+│   │   └── security.json
+│   ├── lib/
+│   │   ├── blog/
+│   │   │   └── componentMap.ts
+│   │   ├── seo/
+│   │   │   ├── buildBreadcrumbLd.ts
+│   │   │   ├── buildDestinationLd.ts
+│   │   │   ├── buildFaqLd.ts
+│   │   │   ├── buildGenericJsonLd.ts
+│   │   │   ├── buildHowToLd.ts
+│   │   │   ├── buildLocalBusinessLd.ts
+│   │   │   ├── buildMetadata2025.ts
+│   │   │   ├── HeadExtras.tsx
+│   │   │   ├── hotelsJsonLd.ts
+│   │   │   ├── index.ts
+│   │   │   └── seoConfig2025.ts
+│   │   ├── awin.ts
+│   │   ├── consent.ts
+│   │   ├── contentfulLoader.ts
+│   │   ├── expediaLoader.ts
+│   │   ├── geoLinks.ts
+│   │   ├── getAmazonProduct.ts
+│   │   ├── image.ts
+│   │   ├── pickImageLoader.ts
+│   │   ├── saveItinerary.ts
+│   │   ├── supabase-browser.ts
+│   │   ├── supabase-server.ts
+│   │   ├── utils.ts
+│   │   └── webhook.ts
+│   ├── store/
+│   │   └── useItineraryStore.ts
+│   ├── types/
+│   │   ├── articles.ts
+│   │   ├── attraction.ts
+│   │   ├── hotel.ts
+│   │   ├── itinerary.ts
+│   │   ├── leaflet-omnivore.d.ts
+│   │   ├── leaflet-routing-machine.d.ts
+│   │   ├── lrm-mapbox.d.ts
+│   │   ├── offer.ts
+│   │   ├── Producer.ts
+│   │   ├── Step.ts
+│   │   └── waypoint.ts
+│   └── utils/
+│       ├── seo/
+│       │   └── buildRegionStructuredData.ts
+│       ├── convertToAvif.ts
+│       ├── geocodeHelpers.ts
+│       ├── itineraryFormat.ts
+│       ├── itineraryPdf.ts
+│       ├── itineraryStorage.client.ts
+│       ├── producersFilters.ts
+│       └── suggestNearbyProducers.ts
+├── types/
+├── .editorconfig
+├── .env.local
+├── .eslintignore
+├── .eslintrc.json
+├── .gitattributes
+├── .gitignore
+├── .gitignore.bad
+├── .npmrc
+├── .prettierignore
+├── .prettierrc
+├── arborescence.txt
+├── broken-urls.json
+├── Clean-Nextjs.ps1
+├── h
+├── hotelExtraction.report.json
+├── image-dimension-fix-report.txt
+├── image-imports-report.txt
+├── image-scan-report.txt
+├── image-usage-missing-dimensions.txt
+├── knip.json
+├── middleware.ts
+├── migrate-to-src.ps1
+├── next-env.d.ts
+├── next-routes-scan.json
+├── next.config.mjs
+├── nextjs_cleanup.sh
+├── package.json
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
+├── postcss.config.cjs
+├── prettier.config.js
+├── project-dirs.txt
+├── README.md
+├── SEO
+├── site-structure.json
+├── standardizedHotels.json
+├── tailwind.config.cjs
+├── tree-itinerary.txt
+├── tsconfig.app.tsbuildinfo
+├── tsconfig.json
+├── tsconfig.node.json
+└── tsconfig.tsbuildinfo
+
+— Résumé —
+Dossiers listés : 104
+Fichiers listés : 423
+Ignorés : 245  |  20 MB
+  ↳ par extension : 245

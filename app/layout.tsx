@@ -4,6 +4,7 @@ import { Inter, Playfair_Display } from 'next/font/google';
 import type { Metadata, Viewport } from 'next';
 import React from 'react';
 import dynamic from 'next/dynamic';
+import Script from 'next/script';
 
 import ClientWrapper from './ClientWrapper';
 import LayoutWithBanner from './LayoutWithBanner';
@@ -56,6 +57,8 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
   return (
     <html lang="fr-CA" className={`${inter.variable} ${playfair.variable}`}>
       <body className="antialiased">
@@ -67,6 +70,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           <CookieBanner />
         </ClientWrapper>
+
+        {recaptchaSiteKey ? (
+          <Script
+            id="google-recaptcha-v3"
+            src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
+            strategy="afterInteractive"
+          />
+        ) : null}
       </body>
     </html>
   );
