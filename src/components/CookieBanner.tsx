@@ -27,7 +27,7 @@ const defaultPrefs = {
   statistics: false,
   marketing: false,
 };
-
+console.log('COOKIEBANNER VERSION AVRIL 2026');
 const translations = {
   fr: {
     title: 'Cookies & confidentialité',
@@ -252,7 +252,7 @@ export default function CookieBanner() {
       aria-labelledby="cookie-title"
       aria-describedby="cookie-desc"
       aria-modal="true"
-      className={`fixed inset-x-0 bottom-0 z-50 border-t-4 text-gray-800 transition-all duration-500 ease-out dark:text-gray-100 bg-white dark:bg-[#111111] shadow-[0_-3px_15px_rgba(0,0,0,0.25)] ${
+      className={`fixed inset-x-0 bottom-0 z-50 border-t-4 bg-white text-gray-800 shadow-[0_-3px_15px_rgba(0,0,0,0.25)] transition-all duration-500 ease-out dark:bg-[#111111] dark:text-gray-100 ${
         closing ? 'animate-slideDownFadeOut' : 'animate-slideUpFadeIn'
       }`}
       style={{ borderTopColor: BRAND.blue }}
@@ -331,7 +331,7 @@ export default function CookieBanner() {
         <div className="flex flex-wrap justify-end gap-2 md:flex-nowrap md:justify-start">
           <button
             onClick={() => setShowOptions((v) => !v)}
-            className="rounded border px-4 py-2 text-sm font-medium hover:bg-blue-50 dark:hover:bg-blue-900/30 focus:ring-2 focus:ring-blue-400"
+            className="rounded border px-4 py-2 text-sm font-medium hover:bg-blue-50 focus:ring-2 focus:ring-blue-400 dark:hover:bg-blue-900/30"
             style={{ borderColor: BRAND.blue, color: BRAND.blue }}
           >
             {t.customize}
