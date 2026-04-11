@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-11T16:37:15.806Z",
+  "generatedAt": "2026-04-11T16:45:40.717Z",
   "siteUrl": "https://www.goquebecan.com",
   "counts": {
     "static": 27,
@@ -11,655 +11,655 @@
   "entries": [
     {
       "route": "/",
-      "lastModified": "2026-04-11T16:37:15.805Z",
+      "lastModified": "2026-04-11T16:45:40.716Z",
       "changeFrequency": "daily",
       "priority": 1
     },
     {
       "route": "/accessibilite",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.716Z",
       "changeFrequency": "yearly",
       "priority": 0.3
     },
     {
       "route": "/affiliate-products",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.716Z",
       "changeFrequency": "monthly",
       "priority": 0.6
     },
     {
       "route": "/blog",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.716Z",
       "changeFrequency": "weekly",
       "priority": 0.85
     },
     {
       "route": "/blog/anse-saint-jean",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/baie-saint-paul",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/bic",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/bromont-granby",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/canyon",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/carleton-sur-mer",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/chambly",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/eeyou-istchee",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/forillon",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/gaspesie",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/grand-bend",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/hautes-gorges",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/ile-d",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/kamouraska",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/kuururjuaq",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/levis",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/location-vr",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/magog-orford",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/massif",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/mingan",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/montmorency",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/montreal",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/parc-aquatique",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/perce",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/points-aeroplan-amex-cobalt",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/port-au-persil",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/port-cartier",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/port-dover",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/quebec",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/riviere-du-loup",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/sabrevois",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/saguenay",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/sandbanks",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/sauble-beach",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/sept-iles",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/sherbrooke",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/singing-sands",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/tadoussac",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/voyage-avion",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/voyage-camping",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/voyage-hotel",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/voyage-voiture",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/blog/wasaga-beach",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
     },
     {
       "route": "/camping",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.8
     },
     {
       "route": "/community-itineraries",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.6
     },
     {
       "route": "/conditions-utilisation",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "yearly",
       "priority": 0.3
     },
     {
       "route": "/confidentialite",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "yearly",
       "priority": 0.3
     },
     {
       "route": "/contact",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.6
     },
     {
       "route": "/coups-de-coeur",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.8
     },
     {
       "route": "/coups-de-coeur/anamimizen",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.8
     },
     {
       "route": "/dashboard",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.6
     },
     {
       "route": "/destinations",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.85
     },
     {
       "route": "/destinations-monde",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.6
     },
     {
       "route": "/destinations-monde/slug",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.6
     },
     {
       "route": "/destinations/anse-saint-jean",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/baie-saint-paul",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/banff",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/bic",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/bromont-granby",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/canyon",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/carleton",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/eeyou-istchee",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/forillon",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/gaspesie",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/grand-bend",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/hautes-gorges",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/ile-d'orleans",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/kamouraska",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/kuururjuaq",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/levis",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/magog-orford",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/massif",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/matane",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/mingan",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/montmorency",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/montreal",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/parc-aquatique",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/perce",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/port-au-persil",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/port-cartier",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/port-dover",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/pourquoi-louer-un-vr-au-quebec-avec-authentik-canada",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/quebec",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/riviere-du-loup",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/sabrevois",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/saguenay",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/sandbanks",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/sauble-beach",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/sept-iles",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/sherbrooke",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/singing-sands",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/tadoussac",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/destinations/wasaga-beach",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7
     },
     {
       "route": "/experiences",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.8
     },
     {
       "route": "/itineraires-communaute",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.8
     },
     {
       "route": "/mentions-legales",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "yearly",
       "priority": 0.3
     },
     {
       "route": "/notre-mission",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.6
     },
     {
       "route": "/objets",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.8
     },
     {
       "route": "/offers",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.6
     },
     {
       "route": "/offres",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.8
     },
     {
       "route": "/planificateur",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.85
     },
     {
       "route": "/producteurs",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.8
     },
     {
       "route": "/stats",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.6
     },
     {
       "route": "/videos",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.8
     },
     {
       "route": "/vols",
-      "lastModified": "2026-04-11T16:37:15.806Z",
+      "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.8
     }

@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 // scripts/generateBlogMeta.mjs
-import fs from 'node:fs';
+
 import fsp from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { Project, Node, SyntaxKind } from 'ts-morph';
 
 // __dirname en ESM
 const __filename = fileURLToPath(import.meta.url);
@@ -13,109 +14,236 @@ const __dirname = path.dirname(__filename);
 const blogDir = path.resolve(__dirname, '../src/components/blogpost');
 const outputFile = path.resolve(__dirname, '../src/components/lib/data/blogMeta.ts');
 
-// 2) Helpers d’extraction
-const extractArrayNames = (content, variableName, nameField) => {
-  const regex = new RegExp(`const\\s+${variableName}\\s*=\\s*\\[([\\s\\S]*?)\\];`, 'm');
-  const match = content.match(regex);
-  if (!match) return [];
-  const items = [];
-  const itemRegex = new RegExp(`${nameField}\\s*:\\s*['"\`]([^'"\`]+)['"\`]`, 'g');
-  let m;
-  while ((m = itemRegex.exec(match[1])) !== null) {
-    items.push(m[1].trim());
-  }
-  return items;
-};
-
-const extractTitle = (content) => {
-  const h1 = content.match(/<H1[^>]*>(.*?)<\/h1>/i);
-  if (!h1) return null;
-  const text = h1[1].replace(/<[^>]*>/g, '').trim();
-  return text
-    .replace(/Guide\s*Complet[:\s–-]*/i, '')
-    .split(/–|-|:/)[0]
-    .trim();
-};
-
+// 2) Helpers
 const toSlug = (str) =>
-  str
+  String(str)
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
 
-const getPublicsFromContent = (content) => {
-  const publics = new Set();
-  if (content.includes('familyActivities')) publics.add('familles');
-  if (content.includes('teenActivities')) publics.add('ados');
-  if (content.includes('couples')) publics.add('couples');
-  if (/Culture|Galeries d'Art/i.test(content)) publics.add('amateurs de culture');
-  if (/rafting|Randonn[ée]e/i.test(content)) publics.add('aventuriers');
-  return Array.from(publics);
-};
-
 const uniqSort = (arr) =>
-  Array.from(new Set(arr.filter(Boolean).map((s) => s.trim()))).sort((a, b) =>
-    a.localeCompare(b, 'fr'),
-  );
+  Array.from(
+    new Set(
+      arr
+        .filter(Boolean)
+        .map((s) => String(s).trim())
+        .filter(Boolean),
+    ),
+  ).sort((a, b) => a.localeCompare(b, 'fr'));
 
-// 3) Lecture / collecte
-if (!fs.existsSync(blogDir)) {
-  console.error(`❌ Dossier introuvable: ${blogDir}`);
-  process.exit(1);
+const prettifyFileNameTitle = (fileName) =>
+  fileName
+    .replace(/^BlogArticle|\.tsx$/g, '')
+    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+    .replace(/([A-Z])([A-Z][a-z])/g, '$1 $2')
+    .trim();
+
+function unquote(text) {
+  if (!text) return text;
+  return text.replace(/^['"`]/, '').replace(/['"`]$/, '');
 }
 
-const files = fs
-  .readdirSync(blogDir)
-  .filter((f) => f.startsWith('BlogArticle') && f.endsWith('.tsx'))
-  .sort((a, b) => a.localeCompare(b, 'fr'));
+function getStringLiteralValue(node) {
+  if (!node) return null;
 
-const allMeta = {};
+  if (Node.isStringLiteral(node) || Node.isNoSubstitutionTemplateLiteral(node)) {
+    return node.getLiteralValue().trim();
+  }
 
-for (const file of files) {
-  try {
-    const filePath = path.join(blogDir, file);
-    const content = fs.readFileSync(filePath, 'utf-8');
+  if (Node.isTemplateExpression(node)) {
+    const head = node.getHead().getLiteralText();
+    const spans = node.getTemplateSpans();
+    const fullText =
+      head +
+      spans
+        .map((span) => `\${${span.getExpression().getText()}}${span.getLiteral().getLiteralText()}`)
+        .join('');
+    return fullText.trim();
+  }
 
-    const rawTitle =
-      extractTitle(content) ||
-      file
-        .replace(/^BlogArticle|\.tsx$/g, '')
-        .replace(/([A-Z])/g, ' $1')
+  return null;
+}
+
+function getObjectPropertyString(obj, propName) {
+  const prop = obj.getProperty(propName);
+  if (!prop || !Node.isPropertyAssignment(prop)) return null;
+  return getStringLiteralValue(prop.getInitializer());
+}
+
+function extractArrayObjectsStringField(sourceFile, variableName, fieldName) {
+  const decl = sourceFile.getVariableDeclaration(variableName);
+  if (!decl) return [];
+
+  const init = decl.getInitializer();
+  if (!init || !Node.isArrayLiteralExpression(init)) return [];
+
+  const values = [];
+
+  for (const element of init.getElements()) {
+    if (!Node.isObjectLiteralExpression(element)) continue;
+    const value = getObjectPropertyString(element, fieldName);
+    if (value) values.push(value);
+  }
+
+  return values;
+}
+
+function extractH1TextFromJsx(sourceFile) {
+  const descendants = sourceFile.getDescendants();
+
+  for (const node of descendants) {
+    if (Node.isJsxElement(node)) {
+      const opening = node.getOpeningElement();
+      const tagName = opening.getTagNameNode().getText();
+
+      if (tagName !== 'H1') continue;
+
+      const rawText = node.getText();
+
+      const cleaned = rawText
+        .replace(/^<H1\b[^>]*>/i, '')
+        .replace(/<\/H1>$/i, '')
+        .replace(/\{[^}]*\}/g, ' ')
+        .replace(/<[^>]*>/g, ' ')
+        .replace(/\s+/g, ' ')
         .trim();
 
-    const slug = toSlug(rawTitle);
-    const description = `Découverte de ${rawTitle} et de ses attraits touristiques.`;
+      if (!cleaned) return null;
 
-    const activites = uniqSort([
-      ...extractArrayNames(content, 'activities', 'name'),
-      ...extractArrayNames(content, 'familyActivities', 'title'),
-      ...extractArrayNames(content, 'teenActivities', 'title'),
-    ]);
+      return cleaned
+        .replace(/guide\s*complet[:\s–-]*/i, '')
+        .split(/\s[–-]\s|:| \| /)[0]
+        .trim();
+    }
 
-    const hebergements = uniqSort(extractArrayNames(content, 'hotels', 'name'));
-    const publics = uniqSort(getPublicsFromContent(content));
-    const defaultImage = `/images/destinations/${slug}.avif`;
-
-    allMeta[slug] = {
-      title: rawTitle,
-      description,
-      image: defaultImage,
-      activites,
-      hebergements,
-      publics,
-    };
-  } catch (err) {
-    console.warn(`⚠️ Impossible de parser ${file}: ${err.message}`);
+    if (Node.isJsxSelfClosingElement(node)) {
+      continue;
+    }
   }
+
+  return null;
 }
 
-// 4) Génération TS
-const sortedEntries = Object.entries(allMeta).sort(([a], [b]) => a.localeCompare(b, 'fr'));
-const sortedObject = Object.fromEntries(sortedEntries);
+function getPublicsFromSource(sourceFile, rawText) {
+  const publics = new Set();
 
-const header = `// AUTO-GÉNÉRÉ par scripts/generateBlogMeta.mjs — Ne pas modifier à la main
+  if (sourceFile.getVariableDeclaration('familyActivities')) publics.add('familles');
+  if (sourceFile.getVariableDeclaration('teenActivities')) publics.add('ados');
+
+  if (/\bcouples\b/i.test(rawText)) publics.add('couples');
+  if (/\b(Culture|Galeries d['’]Art|musée|patrimoine)\b/i.test(rawText)) {
+    publics.add('amateurs de culture');
+  }
+  if (/\b(rafting|randonnée|randonnee|kayak|via ferrata|plein air)\b/i.test(rawText)) {
+    publics.add('aventuriers');
+  }
+
+  return Array.from(publics);
+}
+
+function buildDescription(title, activites, publics) {
+  const firstActivities = activites.slice(0, 2);
+  const firstPublics = publics.slice(0, 2);
+
+  if (firstActivities.length && firstPublics.length) {
+    return `${title} : découvrez ${firstActivities.join(', ')}, avec des idées parfaites pour ${firstPublics.join(' et ')}.`;
+  }
+
+  if (firstActivities.length) {
+    return `${title} : découvrez les incontournables comme ${firstActivities.join(', ')}.`;
+  }
+
+  return `Découvrez ${title}, ses attraits touristiques, ses activités et ses hébergements incontournables.`;
+}
+
+// 3) Main
+async function main() {
+  let dirEntries;
+
+  try {
+    dirEntries = await fsp.readdir(blogDir, { withFileTypes: true });
+  } catch (err) {
+    console.error(`❌ Impossible de lire le dossier blog : ${blogDir}`);
+    console.error(err instanceof Error ? err.message : err);
+    process.exit(1);
+  }
+
+  const files = dirEntries
+    .filter((entry) => entry.isFile())
+    .map((entry) => entry.name)
+    .filter((name) => name.startsWith('BlogArticle') && name.endsWith('.tsx'))
+    .sort((a, b) => a.localeCompare(b, 'fr'));
+
+  const project = new Project({
+    skipAddingFilesFromTsConfig: true,
+    compilerOptions: {
+      allowJs: false,
+      jsx: 4, // React JSX
+    },
+  });
+
+  const allMeta = {};
+  const seenSlugs = new Map();
+
+  for (const file of files) {
+    try {
+      const filePath = path.join(blogDir, file);
+      const content = await fsp.readFile(filePath, 'utf-8');
+
+      const sourceFile = project.createSourceFile(filePath, content, {
+        overwrite: true,
+      });
+
+      const rawTitle = extractH1TextFromJsx(sourceFile) || prettifyFileNameTitle(file);
+      const slug = toSlug(rawTitle);
+
+      if (!slug) {
+        console.warn(`⚠️ Slug vide pour ${file}, fichier ignoré.`);
+        continue;
+      }
+
+      if (seenSlugs.has(slug)) {
+        console.warn(
+          `⚠️ Slug en doublon "${slug}" détecté : ${file} et ${seenSlugs.get(slug)}. Fichier ignoré.`,
+        );
+        continue;
+      }
+
+      seenSlugs.set(slug, file);
+
+      const activites = uniqSort([
+        ...extractArrayObjectsStringField(sourceFile, 'activities', 'name'),
+        ...extractArrayObjectsStringField(sourceFile, 'familyActivities', 'title'),
+        ...extractArrayObjectsStringField(sourceFile, 'teenActivities', 'title'),
+      ]);
+
+      const hebergements = uniqSort(extractArrayObjectsStringField(sourceFile, 'hotels', 'name'));
+
+      const publics = uniqSort(getPublicsFromSource(sourceFile, content));
+      const image = `/images/destinations/${slug}.avif`;
+      const description = buildDescription(rawTitle, activites, publics);
+
+      allMeta[slug] = {
+        title: rawTitle,
+        description,
+        image,
+        activites,
+        hebergements,
+        publics,
+      };
+    } catch (err) {
+      console.warn(
+        `⚠️ Impossible de parser ${file}: ${err instanceof Error ? err.message : String(err)}`,
+      );
+    }
+  }
+
+  const sortedEntries = Object.entries(allMeta).sort(([a], [b]) => a.localeCompare(b, 'fr'));
+  const sortedObject = Object.fromEntries(sortedEntries);
+
+  const header = `// AUTO-GÉNÉRÉ par scripts/generateBlogMeta.mjs — Ne pas modifier à la main
 
 export interface BlogMetaItem {
   title: string;
@@ -128,21 +256,20 @@ export interface BlogMetaItem {
 
 `;
 
-const body =
-  `export const blogMeta = ` +
-  `${JSON.stringify(sortedObject, null, 2)} ` +
-  `as const satisfies Record<string, BlogMetaItem>;
+  const body = `export const blogMeta = ${JSON.stringify(
+    sortedObject,
+    null,
+    2,
+  )} as const satisfies Record<string, BlogMetaItem>;
 `;
 
-// ... tout ton code au-dessus (header, body, sortedObject, etc.)
-
-async function main() {
   await fsp.mkdir(path.dirname(outputFile), { recursive: true });
   await fsp.writeFile(outputFile, header + body, 'utf-8');
+
   console.log(`✅ blogMeta.ts mis à jour avec ${sortedEntries.length} entrées (${outputFile}).`);
 }
 
 main().catch((err) => {
-  console.error('❌ Génération blogMeta échouée:', err);
+  console.error('❌ Génération blogMeta échouée :', err);
   process.exit(1);
 });

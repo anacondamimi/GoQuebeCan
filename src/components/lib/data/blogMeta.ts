@@ -12,45 +12,30 @@ export interface BlogMetaItem {
 export const blogMeta = {
   "anse-saint-jean": {
     "title": "Anse Saint Jean",
-    "description": "Découverte de Anse Saint Jean et de ses attraits touristiques.",
+    "description": "Découvrez Anse Saint Jean, ses attraits touristiques, ses activités et ses hébergements incontournables.",
     "image": "/images/destinations/anse-saint-jean.avif",
     "activites": [],
     "hebergements": [],
     "publics": [
+      "amateurs de culture",
       "aventuriers",
       "couples"
     ]
   },
-  "baie": {
-    "title": "Baie",
-    "description": "Découverte de Baie et de ses attraits touristiques.",
-    "image": "/images/destinations/baie.avif",
-    "activites": [
-      "Atelier de Peinture",
-      "Circuit des Galeries d",
-      "Cours de Photo",
-      "Ferme Basque",
-      "Location de Vélos",
-      "Parc du Boisé",
-      "Rafting sur la Rivière",
-      "Randonnée Le Gouffre",
-      "Train de Charlevoix"
-    ],
-    "hebergements": [
-      "Auberge La Grande Maison",
-      "La Pignoronde",
-      "Le Germain Charlevoix"
-    ],
+  "baie-saint-paul": {
+    "title": "Baie-Saint-Paul",
+    "description": "Découvrez Baie-Saint-Paul, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/destinations/baie-saint-paul.avif",
+    "activites": [],
+    "hebergements": [],
     "publics": [
-      "ados",
       "amateurs de culture",
-      "aventuriers",
-      "familles"
+      "aventuriers"
     ]
   },
   "bic": {
     "title": "Bic",
-    "description": "Découverte de Bic et de ses attraits touristiques.",
+    "description": "Bic : découvrez Centre de Découverte, Kayak Aventure, avec des idées parfaites pour ados et aventuriers.",
     "image": "/images/destinations/bic.avif",
     "activites": [
       "Centre de Découverte",
@@ -72,7 +57,7 @@ export const blogMeta = {
   },
   "bromont-et-granby": {
     "title": "Bromont et Granby",
-    "description": "Découverte de Bromont et Granby et de ses attraits touristiques.",
+    "description": "Bromont et Granby : découvrez Arbre en Arbre, Parc aquatique Bromont, avec des idées parfaites pour ados et aventuriers.",
     "image": "/images/destinations/bromont-et-granby.avif",
     "activites": [
       "Arbre en Arbre",
@@ -89,13 +74,14 @@ export const blogMeta = {
     ],
     "publics": [
       "ados",
+      "aventuriers",
       "familles"
     ]
   },
-  "canyon": {
-    "title": "Canyon",
-    "description": "Découverte de Canyon et de ses attraits touristiques.",
-    "image": "/images/destinations/canyon.avif",
+  "canyon-des-portes-de-l-enfer": {
+    "title": "Canyon des Portes de l'Enfer",
+    "description": "Canyon des Portes de l'Enfer : découvrez Mini-Passerelle, Passerelle Suspendue, avec des idées parfaites pour ados et aventuriers.",
+    "image": "/images/destinations/canyon-des-portes-de-l-enfer.avif",
     "activites": [
       "Mini-Passerelle",
       "Passerelle Suspendue",
@@ -119,10 +105,10 @@ export const blogMeta = {
       "familles"
     ]
   },
-  "carleton": {
-    "title": "Carleton",
-    "description": "Découverte de Carleton et de ses attraits touristiques.",
-    "image": "/images/destinations/carleton.avif",
+  "carleton-sur-mer": {
+    "title": "Carleton-sur-Mer",
+    "description": "Carleton-sur-Mer : découvrez Chasse aux Trésors, Club nautique, avec des idées parfaites pour ados et amateurs de culture.",
+    "image": "/images/destinations/carleton-sur-mer.avif",
     "activites": [
       "Chasse aux Trésors",
       "Club nautique",
@@ -148,7 +134,7 @@ export const blogMeta = {
   },
   "chambly": {
     "title": "Chambly",
-    "description": "Découverte de Chambly et de ses attraits touristiques.",
+    "description": "Chambly : découvrez Balade courte près des écluses, Découverte gourmande locale, avec des idées parfaites pour ados et amateurs de culture.",
     "image": "/images/destinations/chambly.avif",
     "activites": [
       "Balade courte près des écluses",
@@ -173,35 +159,39 @@ export const blogMeta = {
       "familles"
     ]
   },
-  "chute-montmorency-et-chaudiere": {
-    "title": "Chute Montmorency et Chaudière",
-    "description": "Découverte de Chute Montmorency et Chaudière et de ses attraits touristiques.",
-    "image": "/images/destinations/chute-montmorency-et-chaudiere.avif",
+  "chute-montmorency-et-chaudiere-appalaches": {
+    "title": "Chute Montmorency et Chaudière-Appalaches",
+    "description": "Chute Montmorency et Chaudière-Appalaches : découvrez Jeux d'eau, Rallye-découverte, avec des idées parfaites pour aventuriers et familles.",
+    "image": "/images/destinations/chute-montmorency-et-chaudiere-appalaches.avif",
     "activites": [
-      "Jeux d",
+      "Jeux d'eau",
       "Rallye-découverte",
       "Randonnée des Chutes",
       "Téléphérique Panoramique",
       "Tyrolienne Double",
       "Via Ferrata de la Chute"
     ],
-    "hebergements": [
-      "Appartement Luxe – Sunset View, Pool, Parking, Near Old Québec",
-      "Bistro La Chute",
-      "Café du Manoir",
-      "Monsieur Jean – Hôtel Particulier",
-      "Restaurant Le Montmorency",
-      "Royal Dalhousie"
-    ],
+    "hebergements": [],
     "publics": [
       "aventuriers",
       "familles"
     ]
   },
-  "eeyou-istchee-baie": {
-    "title": "Eeyou Istchee Baie",
-    "description": "Découverte de Eeyou Istchee Baie et de ses attraits touristiques.",
-    "image": "/images/destinations/eeyou-istchee-baie.avif",
+  "des-itineraires-au-quebec": {
+    "title": "des Itinéraires au Québec",
+    "description": "Découvrez des Itinéraires au Québec, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/destinations/des-itineraires-au-quebec.avif",
+    "activites": [],
+    "hebergements": [],
+    "publics": [
+      "amateurs de culture",
+      "aventuriers"
+    ]
+  },
+  "eeyou-istchee-baie-james": {
+    "title": "Eeyou Istchee Baie-James",
+    "description": "Découvrez Eeyou Istchee Baie-James, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/destinations/eeyou-istchee-baie-james.avif",
     "activites": [],
     "hebergements": [],
     "publics": [
@@ -211,19 +201,20 @@ export const blogMeta = {
     ]
   },
   "gaspesie": {
-    "title": "Gaspesie",
-    "description": "Découverte de Gaspesie et de ses attraits touristiques.",
+    "title": "Gaspésie",
+    "description": "Découvrez Gaspésie, ses attraits touristiques, ses activités et ses hébergements incontournables.",
     "image": "/images/destinations/gaspesie.avif",
     "activites": [],
     "hebergements": [],
     "publics": [
+      "amateurs de culture",
       "aventuriers",
       "couples"
     ]
   },
   "grand-bend": {
     "title": "Grand Bend",
-    "description": "Découverte de Grand Bend et de ses attraits touristiques.",
+    "description": "Grand Bend : découvrez École de Surf, Grand Bend Marina, avec des idées parfaites pour ados et familles.",
     "image": "/images/destinations/grand-bend.avif",
     "activites": [
       "École de Surf",
@@ -248,26 +239,34 @@ export const blogMeta = {
   },
   "guide-de-voyage-a-l-ile-d-orleans": {
     "title": "Guide de Voyage à l'Île d'Orléans",
-    "description": "Découverte de Guide de Voyage à l'Île d'Orléans et de ses attraits touristiques.",
+    "description": "Guide de Voyage à l'Île d'Orléans : découvrez Location de Vélos, Tour Gourmand de l'Île d'Orléans, avec des idées parfaites pour amateurs de culture et aventuriers.",
     "image": "/images/destinations/guide-de-voyage-a-l-ile-d-orleans.avif",
     "activites": [
       "Location de Vélos",
-      "Tour Gourmand de l",
+      "Tour Gourmand de l'Île d'Orléans",
       "Vignobles et Cidreries"
     ],
     "hebergements": [
-      "Auberge Le P",
+      "Auberge Le P'tit Bonheur",
       "Auberge Les Blancs Moutons",
-      "La maison de l"
+      "La maison de l'île d'Orléans"
     ],
     "publics": [
       "amateurs de culture",
       "aventuriers"
     ]
   },
+  "indispensables-pour-un-sejour-a-l-hotel-canada-international-2025": {
+    "title": "Indispensables pour un Séjour à l’Hôtel (Canada & International) — 2025",
+    "description": "Découvrez Indispensables pour un Séjour à l’Hôtel (Canada & International) — 2025, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/destinations/indispensables-pour-un-sejour-a-l-hotel-canada-international-2025.avif",
+    "activites": [],
+    "hebergements": [],
+    "publics": []
+  },
   "indispensables-pour-voyager-en-avion-en-2025": {
     "title": "Indispensables pour Voyager en Avion en 2025",
-    "description": "Découverte de Indispensables pour Voyager en Avion en 2025 et de ses attraits touristiques.",
+    "description": "Découvrez Indispensables pour Voyager en Avion en 2025, ses attraits touristiques, ses activités et ses hébergements incontournables.",
     "image": "/images/destinations/indispensables-pour-voyager-en-avion-en-2025.avif",
     "activites": [],
     "hebergements": [],
@@ -275,11 +274,11 @@ export const blogMeta = {
   },
   "kamouraska": {
     "title": "Kamouraska",
-    "description": "Découverte de Kamouraska et de ses attraits touristiques.",
+    "description": "Kamouraska : découvrez Atelier Photo, Centre d'Art de Kamouraska, avec des idées parfaites pour ados et amateurs de culture.",
     "image": "/images/destinations/kamouraska.avif",
     "activites": [
       "Atelier Photo",
-      "Centre d",
+      "Centre d'Art de Kamouraska",
       "Coucher de Soleil sur le Fleuve",
       "Ferme Gijamika",
       "Location de Kayak",
@@ -300,26 +299,16 @@ export const blogMeta = {
       "familles"
     ]
   },
-  "kuururjuaq": {
-    "title": "Kuururjuaq",
-    "description": "Découverte de Kuururjuaq et de ses attraits touristiques.",
-    "image": "/images/destinations/kuururjuaq.avif",
-    "activites": [],
-    "hebergements": [],
-    "publics": [
-      "amateurs de culture"
-    ]
-  },
   "le-massif-de-charlevoix": {
     "title": "Le Massif de Charlevoix",
-    "description": "Découverte de Le Massif de Charlevoix et de ses attraits touristiques.",
+    "description": "Le Massif de Charlevoix : découvrez Camp Ados Freeride, Chasse au Trésor, avec des idées parfaites pour ados et aventuriers.",
     "image": "/images/destinations/le-massif-de-charlevoix.avif",
     "activites": [
       "Camp Ados Freeride",
       "Chasse au Trésor",
       "Descente en Fat Bike",
       "École de Ski Junior",
-      "Parc d",
+      "Parc d'Aventure",
       "Snowpark"
     ],
     "hebergements": [
@@ -335,7 +324,7 @@ export const blogMeta = {
   },
   "les-meilleurs-accessoires-pour-le-camping-au-quebec-en-2025": {
     "title": "Les Meilleurs Accessoires pour le Camping au Québec en 2025",
-    "description": "Découverte de Les Meilleurs Accessoires pour le Camping au Québec en 2025 et de ses attraits touristiques.",
+    "description": "Découvrez Les Meilleurs Accessoires pour le Camping au Québec en 2025, ses attraits touristiques, ses activités et ses hébergements incontournables.",
     "image": "/images/destinations/les-meilleurs-accessoires-pour-le-camping-au-quebec-en-2025.avif",
     "activites": [],
     "hebergements": [],
@@ -343,38 +332,30 @@ export const blogMeta = {
       "aventuriers"
     ]
   },
-  "levis": {
-    "title": "Levis",
-    "description": "Découverte de Levis et de ses attraits touristiques.",
-    "image": "/images/destinations/levis.avif",
-    "activites": [],
-    "hebergements": [],
-    "publics": []
-  },
-  "location-v-r": {
-    "title": "Location V R",
-    "description": "Découverte de Location V R et de ses attraits touristiques.",
-    "image": "/images/destinations/location-v-r.avif",
+  "location-de-vr-au-canada-en-2025-le-comparatif-utile-outdoorsy-rvezy-authentik-fraserway-canadream": {
+    "title": "Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream)",
+    "description": "Découvrez Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream), ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/destinations/location-de-vr-au-canada-en-2025-le-comparatif-utile-outdoorsy-rvezy-authentik-fraserway-canadream.avif",
     "activites": [],
     "hebergements": [],
     "publics": [
       "couples"
     ]
   },
-  "location-v-r-comparatif": {
-    "title": "Location V R Comparatif",
-    "description": "Découverte de Location V R Comparatif et de ses attraits touristiques.",
-    "image": "/images/destinations/location-v-r-comparatif.avif",
+  "location-vr": {
+    "title": "Location VR",
+    "description": "Découvrez Location VR, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/destinations/location-vr.avif",
     "activites": [],
     "hebergements": [],
     "publics": [
       "couples"
     ]
   },
-  "magog": {
-    "title": "Magog",
-    "description": "Découverte de Magog et de ses attraits touristiques.",
-    "image": "/images/destinations/magog.avif",
+  "magog-orford": {
+    "title": "Magog-Orford",
+    "description": "Magog-Orford : découvrez École de Voile, Escalade, avec des idées parfaites pour ados et aventuriers.",
+    "image": "/images/destinations/magog-orford.avif",
     "activites": [
       "École de Voile",
       "Escalade",
@@ -396,10 +377,10 @@ export const blogMeta = {
   },
   "mingan": {
     "title": "Mingan",
-    "description": "Découverte de Mingan et de ses attraits touristiques.",
+    "description": "Mingan : découvrez Centre d'Interprétation, Découverte des Fossiles, avec des idées parfaites pour ados et aventuriers.",
     "image": "/images/destinations/mingan.avif",
     "activites": [
-      "Centre d",
+      "Centre d'Interprétation",
       "Découverte des Fossiles",
       "Excursion aux Monolithes",
       "Kayak de Mer",
@@ -420,9 +401,19 @@ export const blogMeta = {
       "familles"
     ]
   },
+  "mini-road-trip-a-levis-en-famille-2025": {
+    "title": "Mini road trip à Lévis en famille (2025)",
+    "description": "Découvrez Mini road trip à Lévis en famille (2025), ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/destinations/mini-road-trip-a-levis-en-famille-2025.avif",
+    "activites": [],
+    "hebergements": [],
+    "publics": [
+      "aventuriers"
+    ]
+  },
   "montreal": {
     "title": "Montréal",
-    "description": "Découverte de Montréal et de ses attraits touristiques.",
+    "description": "Montréal : découvrez Biodôme, Mont Royal, avec des idées parfaites pour amateurs de culture.",
     "image": "/images/destinations/montreal.avif",
     "activites": [
       "Biodôme",
@@ -438,18 +429,18 @@ export const blogMeta = {
       "amateurs de culture"
     ]
   },
-  "parc-national-des-hautes": {
-    "title": "Parc national des Hautes",
-    "description": "Découverte de Parc national des Hautes et de ses attraits touristiques.",
-    "image": "/images/destinations/parc-national-des-hautes.avif",
+  "parc-national-des-hautes-gorges-de-la-riviere-malbaie": {
+    "title": "Parc national des Hautes-Gorges-de-la-Rivière-Malbaie",
+    "description": "Parc national des Hautes-Gorges-de-la-Rivière-Malbaie : découvrez Atelier Junior Ranger, Croisière sur la Rivière Malbaie, avec des idées parfaites pour ados et aventuriers.",
+    "image": "/images/destinations/parc-national-des-hautes-gorges-de-la-riviere-malbaie.avif",
     "activites": [
       "Atelier Junior Ranger",
       "Croisière sur la Rivière Malbaie",
-      "Initiation à l",
+      "Initiation à l'Escalade",
       "Location de Kayak",
       "Mini-Croisière Découverte",
       "Rallye Nature",
-      "Randonnée L",
+      "Randonnée L'Acropole",
       "Sentier des Érables",
       "Via Ferrata de la Charlevoix"
     ],
@@ -466,7 +457,7 @@ export const blogMeta = {
   },
   "parc-national-forillon": {
     "title": "Parc national Forillon",
-    "description": "Découverte de Parc national Forillon et de ses attraits touristiques.",
+    "description": "Parc national Forillon : découvrez Découverte des Marées, Initiation à la Pêche, avec des idées parfaites pour ados et amateurs de culture.",
     "image": "/images/destinations/parc-national-forillon.avif",
     "activites": [
       "Découverte des Marées",
@@ -494,15 +485,17 @@ export const blogMeta = {
   },
   "parcs-aquatiques-preferes-des-familles-quebec-ontario": {
     "title": "Parcs aquatiques préférés des familles (Québec & Ontario)",
-    "description": "Découverte de Parcs aquatiques préférés des familles (Québec & Ontario) et de ses attraits touristiques.",
+    "description": "Découvrez Parcs aquatiques préférés des familles (Québec & Ontario), ses attraits touristiques, ses activités et ses hébergements incontournables.",
     "image": "/images/destinations/parcs-aquatiques-preferes-des-familles-quebec-ontario.avif",
     "activites": [],
     "hebergements": [],
-    "publics": []
+    "publics": [
+      "amateurs de culture"
+    ]
   },
   "perce-en-gaspesie": {
     "title": "Percé en Gaspésie",
-    "description": "Découverte de Percé en Gaspésie et de ses attraits touristiques.",
+    "description": "Percé en Gaspésie : découvrez Atelier Photo Nature, Croisière aux Baleines, avec des idées parfaites pour ados et aventuriers.",
     "image": "/images/destinations/perce-en-gaspesie.avif",
     "activites": [
       "Atelier Photo Nature",
@@ -511,23 +504,65 @@ export const blogMeta = {
       "Île Bonaventure",
       "Initiation au Kayak de Mer",
       "Mini-Croisière",
-      "Plage de l",
+      "Plage de l'Anse-à-Beaufils",
       "Rallye du Géoparc",
       "Randonnée Nocturne"
     ],
-    "hebergements": [],
+    "hebergements": [
+      "Au Pic de l'Aurore",
+      "Hôtel La Normandie",
+      "Riotel Percé"
+    ],
     "publics": [
       "ados",
       "aventuriers",
       "familles"
     ]
   },
-  "port": {
-    "title": "Port",
-    "description": "Découverte de Port et de ses attraits touristiques.",
-    "image": "/images/destinations/port.avif",
+  "plage-de-sandbanks": {
+    "title": "Plage de Sandbanks",
+    "description": "Découvrez Plage de Sandbanks, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/destinations/plage-de-sandbanks.avif",
+    "activites": [],
+    "hebergements": [
+      "Newsroom Suites",
+      "The Birch",
+      "The Village Suites"
+    ],
+    "publics": []
+  },
+  "port-au-persil": {
+    "title": "Port-au-Persil",
+    "description": "Port-au-Persil : découvrez Kayak Aventure, Kayak de Mer, avec des idées parfaites pour ados et aventuriers.",
+    "image": "/images/destinations/port-au-persil.avif",
     "activites": [
-      "Centre d",
+      "Kayak Aventure",
+      "Kayak de Mer",
+      "Mini-Croisière",
+      "Observation des Baleines",
+      "Pêche aux Coques",
+      "Plage de Port-au-Persil",
+      "Randonnée Photo",
+      "Sentier des Caps",
+      "Vélo de Montagne"
+    ],
+    "hebergements": [
+      "Horizon 777",
+      "La Gentilhommière",
+      "Motel Cofotel"
+    ],
+    "publics": [
+      "ados",
+      "aventuriers",
+      "familles"
+    ]
+  },
+  "port-cartier": {
+    "title": "Port-Cartier",
+    "description": "Port-Cartier : découvrez Centre d'Interprétation, Kayak de Mer, avec des idées parfaites pour ados et amateurs de culture.",
+    "image": "/images/destinations/port-cartier.avif",
+    "activites": [
+      "Centre d'Interprétation",
       "Kayak de Mer",
       "Parc de la Taïga",
       "Parc Récréotouristique",
@@ -551,7 +586,7 @@ export const blogMeta = {
   },
   "port-dover": {
     "title": "Port Dover",
-    "description": "Découverte de Port Dover et de ses attraits touristiques.",
+    "description": "Port Dover : découvrez Location de SUP, Long Point Eco-Adventures, avec des idées parfaites pour ados et amateurs de culture.",
     "image": "/images/destinations/port-dover.avif",
     "activites": [
       "Location de SUP",
@@ -576,18 +611,19 @@ export const blogMeta = {
   },
   "quebec-ete-comme-hiver": {
     "title": "Québec, été comme hiver",
-    "description": "Découverte de Québec, été comme hiver et de ses attraits touristiques.",
+    "description": "Découvrez Québec, été comme hiver, ses attraits touristiques, ses activités et ses hébergements incontournables.",
     "image": "/images/destinations/quebec-ete-comme-hiver.avif",
     "activites": [],
     "hebergements": [],
     "publics": [
+      "amateurs de culture",
       "aventuriers"
     ]
   },
-  "riviere": {
-    "title": "Rivière",
-    "description": "Découverte de Rivière et de ses attraits touristiques.",
-    "image": "/images/destinations/riviere.avif",
+  "riviere-du-loup": {
+    "title": "Rivière-du-Loup",
+    "description": "Rivière-du-Loup : découvrez Centre Premier Tech, Croisière aux Baleines, avec des idées parfaites pour ados et amateurs de culture.",
+    "image": "/images/destinations/riviere-du-loup.avif",
     "activites": [
       "Centre Premier Tech",
       "Croisière aux Baleines",
@@ -606,13 +642,14 @@ export const blogMeta = {
     "publics": [
       "ados",
       "amateurs de culture",
+      "aventuriers",
       "familles"
     ]
   },
-  "road-trip-quebec": {
-    "title": "Road Trip Quebec",
-    "description": "Découverte de Road Trip Quebec et de ses attraits touristiques.",
-    "image": "/images/destinations/road-trip-quebec.avif",
+  "saguenay-chicoutimi-jonquiere-la-baie-le-pour-des-vacances-inoubliables": {
+    "title": "Saguenay (Chicoutimi, Jonquière, La Baie) — le pour des vacances inoubliables",
+    "description": "Découvrez Saguenay (Chicoutimi, Jonquière, La Baie) — le pour des vacances inoubliables, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/destinations/saguenay-chicoutimi-jonquiere-la-baie-le-pour-des-vacances-inoubliables.avif",
     "activites": [],
     "hebergements": [],
     "publics": [
@@ -620,10 +657,10 @@ export const blogMeta = {
       "aventuriers"
     ]
   },
-  "sabrevois": {
-    "title": "Sabrevois",
-    "description": "Découverte de Sabrevois et de ses attraits touristiques.",
-    "image": "/images/destinations/sabrevois.avif",
+  "sainte-anne-de-sabrevois": {
+    "title": "Sainte-Anne-de-Sabrevois",
+    "description": "Sainte-Anne-de-Sabrevois : découvrez Cours de Voile, Ferme Pédagogique, avec des idées parfaites pour ados et aventuriers.",
+    "image": "/images/destinations/sainte-anne-de-sabrevois.avif",
     "activites": [
       "Cours de Voile",
       "Ferme Pédagogique",
@@ -642,31 +679,13 @@ export const blogMeta = {
     ],
     "publics": [
       "ados",
+      "aventuriers",
       "familles"
     ]
   },
-  "saguenay": {
-    "title": "Saguenay",
-    "description": "Découverte de Saguenay et de ses attraits touristiques.",
-    "image": "/images/destinations/saguenay.avif",
-    "activites": [],
-    "hebergements": [],
-    "publics": [
-      "amateurs de culture",
-      "aventuriers"
-    ]
-  },
-  "sandbanks": {
-    "title": "Sandbanks",
-    "description": "Découverte de Sandbanks et de ses attraits touristiques.",
-    "image": "/images/destinations/sandbanks.avif",
-    "activites": [],
-    "hebergements": [],
-    "publics": []
-  },
   "sauble-beach": {
     "title": "Sauble Beach",
-    "description": "Découverte de Sauble Beach et de ses attraits touristiques.",
+    "description": "Sauble Beach : découvrez Beach Volleyball, École de Surf, avec des idées parfaites pour ados et aventuriers.",
     "image": "/images/destinations/sauble-beach.avif",
     "activites": [
       "Beach Volleyball",
@@ -690,10 +709,10 @@ export const blogMeta = {
       "familles"
     ]
   },
-  "sept": {
-    "title": "Sept",
-    "description": "Découverte de Sept et de ses attraits touristiques.",
-    "image": "/images/destinations/sept.avif",
+  "sept-iles": {
+    "title": "Sept-Îles",
+    "description": "Sept-Îles : découvrez Archipel des Sept Îles, Centre des Sciences, avec des idées parfaites pour ados et amateurs de culture.",
+    "image": "/images/destinations/sept-iles.avif",
     "activites": [
       "Archipel des Sept Îles",
       "Centre des Sciences",
@@ -719,7 +738,7 @@ export const blogMeta = {
   },
   "sherbrooke": {
     "title": "Sherbrooke",
-    "description": "Découverte de Sherbrooke et de ses attraits touristiques.",
+    "description": "Sherbrooke : découvrez Centre de Sciences, Escalade Intérieure, avec des idées parfaites pour ados et amateurs de culture.",
     "image": "/images/destinations/sherbrooke.avif",
     "activites": [
       "Centre de Sciences",
@@ -743,7 +762,7 @@ export const blogMeta = {
   },
   "singing-sands-beach": {
     "title": "Singing Sands Beach",
-    "description": "Découverte de Singing Sands Beach et de ses attraits touristiques.",
+    "description": "Singing Sands Beach : découvrez Bruce Peninsula National Park, Centre des Visiteurs, avec des idées parfaites pour ados et aventuriers.",
     "image": "/images/destinations/singing-sands-beach.avif",
     "activites": [
       "Bruce Peninsula National Park",
@@ -769,17 +788,17 @@ export const blogMeta = {
   },
   "tadoussac": {
     "title": "Tadoussac",
-    "description": "Découverte de Tadoussac et de ses attraits touristiques.",
+    "description": "Tadoussac : découvrez Atelier Découverte des Baleines, Centre d'Interprétation des Mammifères Marins, avec des idées parfaites pour ados et amateurs de culture.",
     "image": "/images/destinations/tadoussac.avif",
     "activites": [
       "Atelier Découverte des Baleines",
-      "Centre d",
+      "Centre d'Interprétation des Mammifères Marins",
       "Croisière aux Baleines",
       "Kayak de Mer",
       "Mini-Croisière",
       "Plage de Tadoussac",
       "Randonnée du Fjord",
-      "Sentier de la Pointe-de-l",
+      "Sentier de la Pointe-de-l'Islet",
       "Zodiac Aventure"
     ],
     "hebergements": [
@@ -794,25 +813,27 @@ export const blogMeta = {
       "familles"
     ]
   },
-  "title": {
-    "title": "{title}",
-    "description": "Découverte de {title} et de ses attraits touristiques.",
-    "image": "/images/destinations/title.avif",
+  "vacances-dans-le-grand-nord-quebecois": {
+    "title": "Vacances dans le Grand Nord québécois",
+    "description": "Découvrez Vacances dans le Grand Nord québécois, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/destinations/vacances-dans-le-grand-nord-quebecois.avif",
     "activites": [],
     "hebergements": [],
-    "publics": []
+    "publics": [
+      "amateurs de culture"
+    ]
   },
-  "voyage-hotel": {
-    "title": "Voyage Hotel",
-    "description": "Découverte de Voyage Hotel et de ses attraits touristiques.",
-    "image": "/images/destinations/voyage-hotel.avif",
+  "voyage-voiture": {
+    "title": "Voyage Voiture",
+    "description": "Découvrez Voyage Voiture, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/destinations/voyage-voiture.avif",
     "activites": [],
     "hebergements": [],
     "publics": []
   },
   "wasaga-beach": {
     "title": "Wasaga Beach",
-    "description": "Découverte de Wasaga Beach et de ses attraits touristiques.",
+    "description": "Wasaga Beach : découvrez Beach Volleyball, Location de Pédalos, avec des idées parfaites pour ados et amateurs de culture.",
     "image": "/images/destinations/wasaga-beach.avif",
     "activites": [
       "Beach Volleyball",
