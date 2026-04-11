@@ -1,49 +1,48 @@
-// app/robots.ts
 import type { MetadataRoute } from 'next';
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://goquebecan.com';
-
-const IS_PREVIEW = process.env.VERCEL_ENV === 'preview';
-const IS_DEV = process.env.NODE_ENV !== 'production';
-
-// Par défaut : on bloque en dev + preview.
-// Si tu veux tester Lighthouse local sans pénalité : mets DISALLOW_ROBOTS=false dans .env.local
-const DISALLOW =
-  process.env.DISALLOW_ROBOTS === 'true'
-    ? true
-    : process.env.DISALLOW_ROBOTS === 'false'
-      ? false
-      : IS_DEV || IS_PREVIEW;
-
 export default function robots(): MetadataRoute.Robots {
-  if (DISALLOW) {
-    return {
-      rules: [{ userAgent: '*', disallow: '/' }],
-      sitemap: `${SITE_URL}/sitemap.xml`,
-      host: new URL(SITE_URL).hostname,
-    };
-  }
+  const siteUrl = (
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    process.env.SITE_URL ||
+    'https://www.goquebecan.com'
+  ).replace(/\/+$/, '');
+
+  const blocked = ['/admin/', '/api/', '/expansion/', '/ia-mathieu', '/static-page'];
 
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/admin/',
-          '/dashboard/',
-          '/login/',
-          '/private/',
-          '/drafts/',
-          '/planificateur/test/',
-          '/test-youtube/',
-          '/expansion/',
-        ],
+        disallow: blocked,
+      },
+      {
+        userAgent: 'OAI-SearchBot',
+        allow: '/',
+        disallow: blocked,
+      },
+      {
+        userAgent: 'GPTBot',
+        allow: '/',
+        disallow: blocked,
+      },
+      {
+        userAgent: 'ClaudeBot',
+        allow: '/',
+        disallow: blocked,
+      },
+      {
+        userAgent: 'PerplexityBot',
+        allow: '/',
+        disallow: blocked,
+      },
+      {
+        userAgent: 'CCBot',
+        allow: '/',
+        disallow: blocked,
       },
     ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
-    host: new URL(SITE_URL).hostname,
+    sitemap: `${siteUrl}/sitemap.xml`,
+    host: siteUrl,
   };
 }
