@@ -4,13 +4,13 @@ import React, { useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 import H2 from '@/components/typography/H2';
 
-// ✅ Correction TypeScript
 declare global {
   interface Window {
     dataLayer: any[];
+    gtag?: (...args: any[]) => void;
   }
 }
-// 🎨 Couleurs de marque GoQuébeCan
+
 const BRAND = {
   blue: '#36b5ff',
   violet: '#aa7fd5',
@@ -18,9 +18,15 @@ const BRAND = {
   dark: '#111111',
 };
 
-const CONSENT_VERSION = '2.0';
+const CONSENT_VERSION = '2.1';
 const EXPIRATION_DAYS = 365;
-const defaultPrefs = { functional: true, statistics: false, marketing: false };
+const GA_ID = 'G-GZP1YZLT2F';
+
+const defaultPrefs = {
+  functional: true,
+  statistics: false,
+  marketing: false,
+};
 
 const translations = {
   fr: {
@@ -51,8 +57,7 @@ const translations = {
   },
 };
 
-// === Fonctions utilitaires ===
-function setConsent(data: any) {
+function setConsent(data: typeof defaultPrefs) {
   const payload = { ...data, version: CONSENT_VERSION, date: Date.now() };
   localStorage.setItem('cookie_consent', JSON.stringify(payload));
   document.cookie = `cookie_consent=${btoa(JSON.stringify(payload))}; path=/; max-age=${
@@ -60,15 +65,93 @@ function setConsent(data: any) {
   }; SameSite=Strict; Secure`;
 }
 
-function getConsent() {
+function getConsent(): (typeof defaultPrefs & { version?: string; date?: number }) | null {
   if (typeof window === 'undefined') return null;
+
   const stored = localStorage.getItem('cookie_consent');
-  return stored ? JSON.parse(stored) : null;
+  if (!stored) return null;
+
+  try {
+    return JSON.parse(stored);
+  } catch {
+    return null;
+  }
 }
 
 export function manageCookies() {
   const event = new CustomEvent('openCookieBanner');
   window.dispatchEvent(event);
+}
+
+function ensureGtagBase() {
+  if (typeof window === 'undefined') return;
+
+  window.dataLayer = window.dataLayer || [];
+
+  if (!window.gtag) {
+    window.gtag = function (...args: any[]) {
+      window.dataLayer.push(args);
+    };
+  }
+}
+
+function updateGoogleConsent(prefs: typeof defaultPrefs) {
+  if (typeof window === 'undefined') return;
+
+  ensureGtagBase();
+
+  window.gtag?.('consent', 'update', {
+    ad_storage: prefs.marketing ? 'granted' : 'denied',
+    analytics_storage: prefs.statistics ? 'granted' : 'denied',
+    ad_user_data: prefs.marketing ? 'granted' : 'denied',
+    ad_personalization: prefs.marketing ? 'granted' : 'denied',
+  });
+}
+
+function setDefaultGoogleConsent() {
+  if (typeof window === 'undefined') return;
+
+  ensureGtagBase();
+
+  window.gtag?.('consent', 'default', {
+    ad_storage: 'denied',
+    analytics_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+  });
+}
+
+function loadGoogleAnalytics() {
+  if (typeof window === 'undefined') return;
+
+  ensureGtagBase();
+
+  const existing = document.querySelector(
+    `script[src*="googletagmanager.com/gtag/js?id=${GA_ID}"]`,
+  );
+  if (existing) return;
+
+  const s = document.createElement('script');
+  s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  s.async = true;
+  document.head.appendChild(s);
+
+  window.gtag?.('js', new Date());
+  window.gtag?.('config', GA_ID, {
+    page_path: window.location.pathname,
+  });
+}
+
+function loadFacebookPixel() {
+  if (typeof window === 'undefined') return;
+
+  const existing = document.querySelector('script[src*="connect.facebook.net"]');
+  if (existing) return;
+
+  const fb = document.createElement('script');
+  fb.src = 'https://connect.facebook.net/en_US/fbevents.js';
+  fb.async = true;
+  document.head.appendChild(fb);
 }
 
 export default function CookieBanner() {
@@ -84,46 +167,52 @@ export default function CookieBanner() {
 
   const loadConsentedScripts = useCallback((prefs: typeof defaultPrefs) => {
     if (typeof window === 'undefined') return;
-    window.dataLayer = window.dataLayer || [];
-    function gtag(...args: any[]) {
-      (window.dataLayer as any).push(args);
+
+    updateGoogleConsent(prefs);
+
+    if (prefs.statistics) {
+      loadGoogleAnalytics();
     }
 
-    // Google Consent Mode v2 (2025 ready)
-    gtag('consent', 'default', {
-      ad_storage: prefs.marketing ? 'granted' : 'denied',
-      analytics_storage: prefs.statistics ? 'granted' : 'denied',
-      ad_user_data: prefs.marketing ? 'granted' : 'denied',
-      ad_personalization: prefs.marketing ? 'granted' : 'denied',
-    });
-
-    if (prefs.statistics && !document.querySelector('script[src*="googletagmanager.com/gtag"]')) {
-      const s = document.createElement('script');
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-GZP1YZLT2F';
-      s.async = true;
-      document.head.appendChild(s);
-      gtag('js', new Date());
-      gtag('config', 'G-GZP1YZLT2F');
-    }
-
-    if (prefs.marketing && !document.querySelector('script[src*="connect.facebook.net"]')) {
-      const fb = document.createElement('script');
-      fb.src = 'https://connect.facebook.net/en_US/fbevents.js';
-      fb.async = true;
-      document.head.appendChild(fb);
+    if (prefs.marketing) {
+      loadFacebookPixel();
     }
   }, []);
 
   useEffect(() => {
+    setDefaultGoogleConsent();
+
     const stored = getConsent();
+
     if (!stored || stored.version !== CONSENT_VERSION) {
       setVisible(true);
+      setPreferences(defaultPrefs);
     } else {
-      loadConsentedScripts(stored);
+      const restoredPrefs = {
+        functional: true,
+        statistics: !!stored.statistics,
+        marketing: !!stored.marketing,
+      };
+
+      setPreferences(restoredPrefs);
+      loadConsentedScripts(restoredPrefs);
     }
+
     setReady(true);
 
-    const openHandler = () => setVisible(true);
+    const openHandler = () => {
+      const current = getConsent();
+      if (current) {
+        setPreferences({
+          functional: true,
+          statistics: !!current.statistics,
+          marketing: !!current.marketing,
+        });
+      }
+      setVisible(true);
+      setClosing(false);
+    };
+
     window.addEventListener('openCookieBanner', openHandler);
     return () => window.removeEventListener('openCookieBanner', openHandler);
   }, [loadConsentedScripts]);
@@ -136,6 +225,7 @@ export default function CookieBanner() {
   const acceptAll = () => {
     const all = { functional: true, statistics: true, marketing: true };
     setConsent(all);
+    setPreferences(all);
     loadConsentedScripts(all);
     closeBanner();
   };
@@ -143,6 +233,7 @@ export default function CookieBanner() {
   const rejectAll = () => {
     const none = { functional: true, statistics: false, marketing: false };
     setConsent(none);
+    setPreferences(none);
     loadConsentedScripts(none);
     closeBanner();
   };
@@ -161,13 +252,12 @@ export default function CookieBanner() {
       aria-labelledby="cookie-title"
       aria-describedby="cookie-desc"
       aria-modal="true"
-      className={`border-[ fixed inset-x-0 bottom-0 z-50 border-t-4 text-gray-800 transition-all
-        duration-500 ease-out dark:text-gray-100${BRAND.blue}] bg-[${BRAND.white}] dark:bg-[${BRAND.dark}]
-        shadow-[0_-3px_15px_rgba(0,0,0,0.25)]
-        ${closing ? 'animate-slideDownFadeOut' : 'animate-slideUpFadeIn'}`}
+      className={`fixed inset-x-0 bottom-0 z-50 border-t-4 text-gray-800 transition-all duration-500 ease-out dark:text-gray-100 bg-white dark:bg-[#111111] shadow-[0_-3px_15px_rgba(0,0,0,0.25)] ${
+        closing ? 'animate-slideDownFadeOut' : 'animate-slideUpFadeIn'
+      }`}
+      style={{ borderTopColor: BRAND.blue }}
     >
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-5 py-6 md:flex-row md:justify-between">
-        {/* Logo + Texte */}
         <div className="flex items-start gap-3 md:w-3/5">
           <Image
             src="/logo.png"
@@ -194,19 +284,21 @@ export default function CookieBanner() {
               </svg>
               {t.title}
             </H2>
+
             <p id="cookie-desc" className="mt-1 text-sm leading-snug">
               {t.intro}
             </p>
+
             <a
               href="/confidentialite"
-              className="text-xs text-[${BRAND.blue}] underline hover:text-blue-800 dark:hover:text-blue-300"
+              className="text-xs underline hover:text-blue-800 dark:hover:text-blue-300"
+              style={{ color: BRAND.blue }}
             >
               {t.policy}
             </a>
           </div>
         </div>
 
-        {/* Options */}
         {showOptions && (
           <div
             className="animate-fadeIn w-full space-y-2 rounded border border-gray-200 bg-gray-50 p-3 text-sm md:w-auto dark:border-gray-700 dark:bg-[#222]"
@@ -215,6 +307,7 @@ export default function CookieBanner() {
             <label className="flex items-center gap-2">
               <input type="checkbox" checked disabled /> {t.functional}
             </label>
+
             <label className="flex items-center gap-2">
               <input
                 type="checkbox"
@@ -223,6 +316,7 @@ export default function CookieBanner() {
               />
               {t.statistics}
             </label>
+
             <label className="flex items-center gap-2">
               <input
                 type="checkbox"
@@ -234,26 +328,29 @@ export default function CookieBanner() {
           </div>
         )}
 
-        {/* Boutons */}
         <div className="flex flex-wrap justify-end gap-2 md:flex-nowrap md:justify-start">
           <button
             onClick={() => setShowOptions((v) => !v)}
-            className="rounded border border-[${BRAND.blue}] px-4 py-2 text-sm font-medium text-[${BRAND.blue}] hover:bg-blue-50 dark:hover:bg-blue-900/30 focus:ring-2 focus:ring-blue-400"
+            className="rounded border px-4 py-2 text-sm font-medium hover:bg-blue-50 dark:hover:bg-blue-900/30 focus:ring-2 focus:ring-blue-400"
+            style={{ borderColor: BRAND.blue, color: BRAND.blue }}
           >
             {t.customize}
           </button>
+
           <button
             onClick={rejectAll}
             className="rounded border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:ring-2 focus:ring-gray-400 dark:hover:bg-gray-800"
           >
             {t.rejectAll}
           </button>
+
           <button
             onClick={saveConsent}
             className="rounded border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:ring-2 focus:ring-gray-400 dark:hover:bg-gray-800"
           >
             {t.save}
           </button>
+
           <button
             onClick={acceptAll}
             className="rounded border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:ring-2 focus:ring-gray-400 dark:hover:bg-gray-800"
@@ -263,7 +360,6 @@ export default function CookieBanner() {
         </div>
       </div>
 
-      {/* Animations */}
       <style jsx global>{`
         @keyframes slideUpFadeIn {
           from {
@@ -275,6 +371,7 @@ export default function CookieBanner() {
             opacity: 1;
           }
         }
+
         @keyframes slideDownFadeOut {
           from {
             transform: translateY(0);
@@ -285,12 +382,15 @@ export default function CookieBanner() {
             opacity: 0;
           }
         }
+
         .animate-slideUpFadeIn {
           animation: slideUpFadeIn 0.6s ease-out forwards;
         }
+
         .animate-slideDownFadeOut {
           animation: slideDownFadeOut 0.6s ease-in forwards;
         }
+
         @keyframes fadeIn {
           from {
             opacity: 0;
@@ -299,9 +399,11 @@ export default function CookieBanner() {
             opacity: 1;
           }
         }
+
         .animate-fadeIn {
           animation: fadeIn 0.4s ease-out forwards;
         }
+
         @keyframes spin-slow {
           from {
             transform: rotate(0deg);
@@ -310,6 +412,7 @@ export default function CookieBanner() {
             transform: rotate(360deg);
           }
         }
+
         .animate-spin-slow {
           animation: spin-slow 7s linear infinite;
         }

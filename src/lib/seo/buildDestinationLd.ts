@@ -22,15 +22,39 @@ export function buildDestinationLd({
   videoUrl?: string;
   rating?: { value: number; count: number };
 }) {
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://www.goquebecan.com';
+
+  const absoluteUrl = url.startsWith('http')
+    ? url
+    : `${baseUrl}${url.startsWith('/') ? '' : '/'}${url}`;
+
+  const absoluteImage = image.startsWith('http')
+    ? image
+    : `${baseUrl}${image.startsWith('/') ? '' : '/'}${image}`;
+
+  const absoluteVideoUrl = videoUrl
+    ? videoUrl.startsWith('http')
+      ? videoUrl
+      : `${baseUrl}${videoUrl.startsWith('/') ? '' : '/'}${videoUrl}`
+    : undefined;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'TouristDestination',
     name,
     description,
-    url,
-    image: [image],
-    geo: { '@type': 'GeoCoordinates', latitude, longitude },
-    containsPlace: containedPlaces.map((p) => ({ '@type': 'Place', name: p })),
+    url: absoluteUrl,
+    image: [absoluteImage],
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude,
+      longitude,
+    },
+    containsPlace: containedPlaces.map((p) => ({
+      '@type': 'Place',
+      name: p,
+    })),
     touristType,
     ...(rating && {
       aggregateRating: {
@@ -39,13 +63,13 @@ export function buildDestinationLd({
         ratingCount: rating.count,
       },
     }),
-    ...(videoUrl && {
+    ...(absoluteVideoUrl && {
       video: {
         '@type': 'VideoObject',
         name: `${name} – Vidéo découverte`,
         description,
-        thumbnailUrl: image,
-        contentUrl: videoUrl,
+        thumbnailUrl: [absoluteImage],
+        contentUrl: absoluteVideoUrl,
       },
     }),
   };

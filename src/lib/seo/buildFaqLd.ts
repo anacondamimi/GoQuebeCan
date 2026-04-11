@@ -17,11 +17,11 @@ export type FaqEntry = {
   answer: string;
 };
 
-/**
- * Nettoie les réponses pour éviter les balises non souhaitées
- */
 function sanitize(text: string) {
-  return text.replace(/\s+/g, ' ').trim();
+  return text
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 export function buildFaqLd(faqItems: FaqEntry[] = []) {
@@ -31,13 +31,17 @@ export function buildFaqLd(faqItems: FaqEntry[] = []) {
 
   const items = faqItems
     .slice(0, MAX_FAQ)
-    .filter((f) => f.question && f.answer)
+    .map((item) => ({
+      question: sanitize(item.question || ''),
+      answer: sanitize(item.answer || ''),
+    }))
+    .filter((item) => item.question && item.answer)
     .map((item) => ({
       '@type': 'Question',
-      name: sanitize(item.question),
+      name: item.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: sanitize(item.answer),
+        text: item.answer,
       },
     }));
 
