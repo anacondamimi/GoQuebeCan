@@ -15,8 +15,8 @@ import {
 } from '@/components/TravelContentKit';
 
 /** === Constantes SEO communes === */
-const PAGE_URL = 'https://goquebecan.com/voyage/avion';
-const OG_IMG = 'https://goquebecan.com/og/avion-essentiels-2025-logo.jpg';
+const PAGE_URL = 'https://www.goquebecan.com/blog/voyage-avion';
+const OG_IMG = 'https://www.goquebecan.com/og/avion-essentiels-2025-logo.jpg';
 
 const title = 'Accessoires indispensables avion 2025 (Québec & Canada)';
 const description =
@@ -38,7 +38,7 @@ const jsonLdArticle = {
   publisher: {
     '@type': 'Organization',
     name: 'GoQuébeCan',
-    logo: { '@type': 'ImageObject', url: 'https://goquebecan.com/logo.png' }, // ← remplace par ton logo public
+    logo: { '@type': 'ImageObject', url: 'https://www.goquebecan.com/logo.png' }, // ← remplace par ton logo public
   },
 };
 

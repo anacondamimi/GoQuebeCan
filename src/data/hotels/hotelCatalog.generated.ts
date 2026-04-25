@@ -16,7 +16,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: ['Terrasse', 'Jardin', 'Stationnement gratuit'],
     tags: ['Nature', 'Couples', 'Séjour paisible'],
     bookingUrl:
-      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fcity%2Fca%2Flanse-saint-jean.fr.html%3Faid%3D1856187%26pagename%3Dlanse-saint-jean%26label%3Dmsn-T%2AYlyf%2AIBj03LfCtkKMK5A-80539404264927%3Atikwd-80539560138492%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Acid578702480%3Aagid1288628264039290%26utm_campaign%3DCanada%26utm_medium%3Dcpc%26utm_source%3Dbing%26utm_term%3DT%2AYlyf%2AIBj03LfCtkKMK5A%26msclkid%3Ddc5af918dca7160b556e90b86682822f%26utm_content%3DL%2527Anse%2520Saint%2520Jean%2520-%2520UFI%253A-567710',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fcity%2Fca%2Flanse-saint-jean.fr.html',
     image: {
       src: '/images/destinations/hotels/chapella-anse-saint-jean.avif',
       alt: 'Chapella A Frame — hébergement recommandé à L’Anse-Saint-Jean',
@@ -39,7 +39,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: ['Sauna', 'Balcon', 'Wi-Fi'],
     tags: ['Vue', 'Montagne', 'Escapade premium'],
     bookingUrl:
-      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fcity%2Fca%2Flanse-saint-jean.fr.html%3Faid%3D1856187%26pagename%3Dlanse-saint-jean%26label%3Dmsn-T%2AYlyf%2AIBj03LfCtkKMK5A-80539404264927%3Atikwd-80539560138492%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Acid578702480%3Aagid1288628264039290%26utm_campaign%3DCanada%26utm_medium%3Dcpc%26utm_source%3Dbing%26utm_term%3DT%2AYlyf%2AIBj03LfCtkKMK5A%26msclkid%3Ddc5af918dca7160b556e90b86682822f%26utm_content%3DL%2527Anse%2520Saint%2520Jean%2520-%2520UFI%253A-567710',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fcity%2Fca%2Flanse-saint-jean.fr.html',
     image: {
       src: '/images/destinations/hotels/le-harfang-anse-saint-jean.avif',
       alt: 'Le Harfång — hébergement recommandé à L’Anse-Saint-Jean',
@@ -61,7 +61,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: ['Vue montagne', 'Jardin', 'Balcon'],
     tags: ['Nature', 'Calme', 'Couples'],
     bookingUrl:
-      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fcity%2Fca%2Flanse-saint-jean.fr.html%3Faid%3D1856187%26pagename%3Dlanse-saint-jean%26label%3Dmsn-T%2AYlyf%2AIBj03LfCtkKMK5A-80539404264927%3Atikwd-80539560138492%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Acid578702480%3Aagid1288628264039290%26utm_campaign%3DCanada%26utm_medium%3Dcpc%26utm_source%3Dbing%26utm_term%3DT%2AYlyf%2AIBj03LfCtkKMK5A%26msclkid%3Ddc5af918dca7160b556e90b86682822f%26utm_content%3DL%2527Anse%2520Saint%2520Jean%2520-%2520UFI%253A-567710',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fcity%2Fca%2Flanse-saint-jean.fr.html',
     image: {
       src: '/images/destinations/hotels/floral-anse-saint-jean.avif',
       alt: "Floral'Anse — hébergement recommandé à L’Anse-Saint-Jean",
@@ -81,8 +81,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl:
-      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fcity%2Fca%2Frimouski.fr.html',
+    bookingUrl: 'https://www.booking.com/hotel/ca/rimouski.fr.html',
     image: {
       src: '/images/destinations/hotels/rimouski.avif',
       alt: 'Hôtel Rimouski — hébergement recommandé près du Bic',
@@ -103,8 +102,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl:
-      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fcity%2Fca%2Frimouski.fr.html',
+    bookingUrl: 'https://www.booking.com/hotel/ca/le-saint-germain.fr.html',
     image: {
       src: '/images/destinations/hotels/saint-germain-rimouski.avif',
       alt: 'Hôtel Le Saint-Germain Rimouski — hébergement proche du Bic',
@@ -146,7 +144,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: [],
     tags: [],
     bookingUrl:
-      'https://www.booking.com/hotel/ca/residence-inn-by-marriott-bromont.fr.html?aid=304142&label=gen173rf-10CAsoJ0IPY2hhdGVhdS1icm9tb250SDNYA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4Aoacts0GwAIB0gIkMDVkZDk1YjQtMjA0Ny00OTM2LTg5YzQtOGJlYjg1NDc2NzFi2AIB4AIB&sid=61b67a7e8a8af63fb2b3826a3f4feec9&age=0&all_sr_blocks=1521604303_423826263_0_1_0&checkin=2026-07-08&checkout=2026-07-09&dest_id=900048497&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1521604303_423826263_0_1_0&hpos=1&matching_block_id=1521604303_423826263_0_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1521604303_423826263_0_1_0__23900&srepoch=1772981827&srpvid=bd4069035089048a&type=total&ucfs=1&',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fresidence-inn-by-marriott-bromont.fr.html%3Fdest_id%3D900048497%26dest_type%3Dcity',
     image: {
       src: '/images/destinations/hotels/residence-inn-marriott-bromont.avif',
       alt: 'Residence Inn by Marriott Bromont — hébergement recommandé',
@@ -164,7 +162,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/chateau-bromont.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fchateau-bromont.html',
     image: {
       src: '/images/destinations/hotels/vallea-bromont.avif',
       alt: 'Château-Bromont — hébergement recommandé',
@@ -182,7 +181,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/castel-granby.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fcastel-granby.html',
     image: {
       src: '/images/destinations/hotels/hotel-castel-granby.avif',
       alt: 'Hôtel Castel & Spa Confort — hébergement recommandé',
@@ -202,7 +202,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: [],
     tags: [],
     bookingUrl:
-      'https://www.booking.com/hotel/ca/appartement-de-vacances-modernes-calmes-et-ressourcants-sur-le-fleuve.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=1135216401_392217861_2_0_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=-572272&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=23&highlighted_blocks=1135216401_392217861_2_0_0&hpos=23&matching_block_id=1135216401_392217861_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1135216401_392217861_2_0_0__20700&srepoch=1761338092&srpvid=5aba90921f2801fa&type=total&ucfs=1&',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fappartement-de-vacances-modernes-calmes-et-ressourcants-sur-le-fleuve.fr.html%3Fdest_id%3D-572272%26dest_type%3Dcity',
     image: {
       src: '/images/destinations/hotels/hotel-appat-canyon.avif',
       alt: 'Appartement de vacances modernes sur le fleuve — hébergement recommandé',
@@ -222,7 +222,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: [],
     tags: [],
     bookingUrl:
-      'https://www.booking.com/hotel/ca/rimouski.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=2468602_392936399_2_0_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=-572272&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=2468602_392936399_2_0_0&hpos=1&matching_block_id=2468602_392936399_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=2468602_392936399_2_0_0__35800&srepoch=1761338410&srpvid=e6829148cf0109aa&type=total&ucfs=1&',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Frimouski.fr.html%3Fdest_id%3D-572272%26dest_type%3Dcity',
     image: {
       src: '/images/destinations/hotels/hotel-rimouski-canyon.avif',
       alt: 'Hôtel Rimouski — hébergement recommandé',
@@ -242,9 +242,9 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: [],
     tags: [],
     bookingUrl:
-      'https://www.booking.com/hotel/ca/maison-du-photograph.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=44581501_206267159_2_0_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=445815&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=44581501_206267159_2_0_0&hpos=1&matching_block_id=44581501_206267159_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=44581501_206267159_2_0_0__34200&srepoch=1761338503&srpvid=56a0918223a60160&type=total&ucfs=1&',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fmaison-du-photograph.fr.html%3Fdest_id%3D445815%26dest_type%3Dhotel',
     image: {
-      src: '/images/destinations/hotels/hotel-maisonphotographe-canyon.avif',
+      src: '/images/destinations/hotels/hotel-maison-photographe-canyon.avif',
       alt: 'La Maison du Photographe — hébergement recommandé',
     },
     variant: 'compact',
@@ -260,7 +260,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/hostellerie-baie-bleue.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fhostellerie-baie-bleue.html',
     image: {
       src: '/images/destinations/hotels/riotel-carleton.avif',
       alt: 'Riotel Carleton-sur-Mer — hébergement recommandé',
@@ -278,7 +279,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/manoir-belle-plage.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fmanoir-belle-plage.html',
     image: {
       src: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
       alt: 'Manoir Belle Plage — hébergement recommandé',
@@ -316,8 +318,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl:
-      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fcity%2Fca%2Fbrossard.fr.html',
+    bookingUrl: 'https://www.booking.com/hotel/ca/alt-quartier-dix30-brossard.fr.html',
     image: {
       src: '/images/destinations/hotels/escad-quartier-dix30-chambly.avif',
       alt: 'Hôtel Escad Quartier DIX30 — hébergement recommandé près de Chambly',
@@ -379,7 +380,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/griffon-aventure.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fauberge-griffon-aventure.fr.html',
     image: {
       src: '/images/destinations/hotels/auberge-griffon.avif',
       alt: 'Griffon Aventure — hébergement recommandé',
@@ -397,7 +399,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/motel-du-haut-phare.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fmotel-du-haut-phare.html',
     image: {
       src: '/images/destinations/hotels/motel-haut-phare.avif',
       alt: 'Motel du Haut Phare — hébergement recommandé',
@@ -415,7 +418,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/auberge-la-petite-ecole.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fauberge-la-petite-acole-de-forillon.fr.html',
     image: {
       src: '/images/destinations/hotels/auberge-petite-ecole.avif',
       alt: 'Auberge La Petite École — hébergement recommandé',
@@ -493,7 +497,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/auberge-la-chatelaine.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fauberge-la-chatelaine.fr.html',
     image: {
       src: '/images/destinations/hotels/auberge-chatelaine.avif',
       alt: 'Auberge La Châtelaine — hébergement recommandé',
@@ -511,7 +516,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/auberge-les-sources.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fauberge-les-sources.fr.html',
     image: {
       src: '/images/destinations/hotels/auberge-les-sources.avif',
       alt: 'Auberge Les Sources — hébergement recommandé',
@@ -529,7 +535,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/auberge-la-marmite.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fauberge-la-marmite.fr.html',
     image: {
       src: '/images/destinations/hotels/auberge-la-marmite.avif',
       alt: 'Auberge La Marmite — hébergement recommandé',
@@ -547,7 +554,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/akamaraska.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fakamaraska.fr.html',
     image: {
       src: '/images/destinations/hotels/akamaraska.avif',
       alt: 'Auberge Akamaraska — hébergement recommandé',
@@ -565,7 +573,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/motel-des-mariniers.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fmotel-des-mariniers.html',
     image: {
       src: '/images/destinations/hotels/mariniers.avif',
       alt: 'Motel des Mariniers — hébergement recommandé',
@@ -583,7 +592,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/auberge-comme-au-premier-jour.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fauberge-comme-au-premier-jour.fr.html',
     image: {
       src: '/images/destinations/hotels/auberge-saint-pacome.avif',
       alt: 'Auberge Comme au premier jour — hébergement recommandé',
@@ -601,7 +611,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/manoir-hovey.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fmanoir-hovey.html',
     image: {
       src: '/images/destinations/hotels/manoir-hovey.avif',
       alt: 'Manoir Hovey — hébergement recommandé',
@@ -619,7 +630,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/estrimont-suites-spa.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Festrimont-suites-spa.html',
     image: {
       src: '/images/destinations/hotels/estrimont.avif',
       alt: 'Estrimont Suites & Spa — hébergement recommandé',
@@ -639,7 +651,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: [],
     tags: [],
     bookingUrl:
-      'https://www.booking.com/hotel/ca/nouveaute-foyer-au-bois-plage-montagne-et-plus.fr.html',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fnouveaute-foyer-au-bois-plage-montagne-et-plus.fr.html',
     image: {
       src: '/images/destinations/hotels/appartement-orford.avif',
       alt: 'Appartement — hébergement recommandé',
@@ -658,7 +670,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/au-grand-merisier.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fau-grand-merisier.html',
     image: {
       src: '/images/destinations/hotels/chalet-alpin.avif',
       alt: 'Au Grand Merisier — hébergement recommandé',
@@ -677,7 +690,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/cottage-quebec-olivine.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fcottage-quebec-olivine.fr.html',
     image: {
       src: '/images/destinations/hotels/cottage-olivine.avif',
       alt: 'Cottage Québec - Olivine — hébergement recommandé',
@@ -696,7 +710,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/cottage-quebec-la-zeolite.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fcottage-quebec-la-zeolite.fr.html',
     image: {
       src: '/images/destinations/hotels/cottage-zeolite.avif',
       alt: 'Cottage Québec - La Zéolite — hébergement recommandé',
@@ -714,7 +729,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/chalets-didoche-havre-saint-pierre.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fchalets-didoche-havre-saint-pierre.fr.html',
     image: {
       src: '/images/destinations/hotels/chalets-didoche.avif',
       alt: 'Chalets Didoche — hébergement recommandé',
@@ -732,7 +748,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/escale-lam-air.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fescale-lam-air.fr.html',
     image: {
       src: '/images/destinations/hotels/escale-lam-air.avif',
       alt: 'L’Escale Lam-Air — hébergement recommandé',
@@ -750,7 +767,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/gouverneur-sept-iles.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fgouverneur-sept-iles.fr.html',
     image: {
       src: '/images/destinations/hotels/gouverneur.avif',
       alt: 'Hôtels Gouverneur Sept-Îles — hébergement recommandé',
@@ -769,7 +787,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/royal-dalhousie.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Froyal-dalhousie.html',
     image: {
       src: '/images/destinations/hotels/royal-daousie-quebec.avif',
       alt: 'Royal Dalhousie — hébergement recommandé',
@@ -788,30 +807,31 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/coeur-de-ville.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fcoeur-de-ville.fr.html',
     image: {
       src: '/images/destinations/hotels/monsieur-jean-quebec.avif',
       alt: 'Monsieur Jean – Hôtel Particulier — hébergement recommandé',
     },
     variant: 'compact',
   },
-  appartement_luxe_sunset_view_pool_parking_near_old_quebec_montmorency: {
-    id: 'appartement_luxe_sunset_view_pool_parking_near_old_quebec_montmorency',
-    name: 'Appartement Luxe – Sunset View, Pool, Parking, Near Old Québec',
-    category: 'Appartement avec piscine',
-    location: '',
+  initial_panorama_chutes_montmorency: {
+    id: 'initial_panorama_chutes_montmorency',
+    name: 'Initial / Panorama / Chutes Montmorency',
+    category: 'Appartement spacieux',
+    location: 'Boischâtel',
     description:
-      'Appartement moderne avec vue sur le coucher de soleil, accès piscine (selon la saison) et stationnement, à distance de marche du Vieux-Québec.',
-    extra: '',
+      'Grand appartement de 93 m² situé à Boischâtel, très pratique pour visiter la Chute Montmorency et rejoindre rapidement Québec.',
+    extra:
+      'Excellent choix pour un séjour confortable avec stationnement gratuit sur place, animaux admis et très bon emplacement près des attraits de la région.',
     price: 'Tarifs variables selon les dates et la durée du séjour',
-    ratingText: '',
-    perks: [],
-    tags: [],
-    bookingUrl:
-      'https://appartement-luxe-incredible-sunset-view-pool-parking.hotelsquebeccity.net/en/',
+    ratingText: 'Excellent emplacement — note de 9,5/10',
+    perks: ['93 m²', 'Parking gratuit sur place', 'Animaux domestiques admis'],
+    tags: ['Spacieux', 'Bien situé', 'Parking inclus'],
+    bookingUrl: 'https://www.booking.com/hotel/ca/initial-panorama-chutes-montmorency.fr.html',
     image: {
       src: '/images/destinations/hotels/appartluxe-quebec.avif',
-      alt: 'Appartement Luxe – Sunset View, Pool, Parking, Near Old Québec — hébergement recommandé',
+      alt: 'Initial / Panorama / Chutes Montmorency — hébergement recommandé près de la chute',
     },
     variant: 'compact',
   },
@@ -826,7 +846,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/fairmont-the-queen-elizabeth.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Ffairmont-the-queen-elizabeth.html',
     image: {
       src: '/images/destinations/hotels/fairmont-montreal.avif',
       alt: 'Fairmont Le Reine Elizabeth — hébergement recommandé',
@@ -844,7 +865,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/best-western-europa-downtown.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fbest-western-europa-downtown.fr.html',
     image: {
       src: '/images/destinations/hotels/best-western-plus.avif',
       alt: 'Best Western Plus Montréal — hébergement recommandé',
@@ -862,7 +884,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/ac-by-marriott-montreal-downtown.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fac-by-marriott-montreal-downtown.fr.html',
     image: {
       src: '/images/destinations/hotels/ac-montreal.avif',
       alt: 'AC Hotel Montréal Centre-Ville — hébergement recommandé',
@@ -882,7 +905,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: [],
     tags: [],
     bookingUrl:
-      'https://www.booking.com/hotel/ca/la-maison-de-l-39-ile.fr.html?label=msn-FQZ8IgHEiaVN31poKb5DbQ-80608103155809%3Atikwd-80608256542845%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsh%C3%A9bergement+%C3%AEle+orl%C3%A9ans&sid=dd41b6917ba1eb791f5db659a3e15674&aid=1856194&ucfs=1&arphpl=1&checkin=2026-06-03&checkout=2026-06-04&dest_id=5087&dest_type=region&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=score&srpvid=accc3cc25a4b00f2&srepoch=1763714580&all_sr_blocks=705794903_309162090_2_1_0&highlighted_blocks=705794903_309162090_2_1_0&matching_block_id=705794903_309162090_2_1_0&sr_pri_blocks=705794903_309162090_2_1_0__23300&from=searchresults',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fla-maison-de-l-39-ile.fr.html%3Fdest_id%3D5087%26dest_type%3Dregion',
     image: {
       src: '/images/destinations/hotels/maison-gastro-ileorleans.avif',
       alt: "La maison de l'île d'Orléans — hébergement recommandé",
@@ -902,7 +925,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: [],
     tags: [],
     bookingUrl:
-      'https://www.booking.com/hotel/ca/auberge-les-blancs-moutons.fr.html?label=msn-FQZ8IgHEiaVN31poKb5DbQ-80608103155809%3Atikwd-80608256542845%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsh%C3%A9bergement+%C3%AEle+orl%C3%A9ans&sid=dd41b6917ba1eb791f5db659a3e15674&aid=1856194&ucfs=1&arphpl=1&checkin=2026-06-03&checkout=2026-06-04&dest_id=5087&dest_type=region&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=score&srpvid=accc3cc25a4b00f2&srepoch=1763714790&all_sr_blocks=193561502_414095988_2_1_0&highlighted_blocks=193561502_414095988_2_1_0&matching_block_id=193561502_414095988_2_1_0&sr_pri_blocks=193561502_414095988_2_1_0__13400&from=searchresults',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fauberge-les-blancs-moutons.fr.html%3Fdest_id%3D5087%26dest_type%3Dregion',
     image: {
       src: '/images/destinations/hotels/auberge-blancsmoutons-ileorleans.avif',
       alt: 'Auberge Les Blancs Moutons — hébergement recommandé',
@@ -922,7 +945,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: [],
     tags: [],
     bookingUrl:
-      'https://www.booking.com/hotel/ca/auberge-le-p-39-tit-bonheur.fr.html?label=msn-FQZ8IgHEiaVN31poKb5DbQ-80608103155809%3Atikwd-80608256542845%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsh%C3%A9bergement+%C3%AEle+orl%C3%A9ans&sid=dd41b6917ba1eb791f5db659a3e15674&aid=1856194&ucfs=1&arphpl=1&checkin=2026-06-03&checkout=2026-06-04&dest_id=900051336&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=popularity&srpvid=80463d756f7503de&srepoch=1763714699&all_sr_blocks=104993711_184406356_2_0_0&highlighted_blocks=104993711_184406356_2_0_0&matching_block_id=104993711_184406356_2_0_0&sr_pri_blocks=104993711_184406356_2_0_0__10100&from=searchresults',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fauberge-le-p-39-tit-bonheur.fr.html%3Fdest_id%3D900051336%26dest_type%3Dcity',
     image: {
       src: '/images/destinations/hotels/auberge-petit-bonheur-ileorleans.avif',
       alt: "Auberge Le P'tit Bonheur — hébergement recommandé",
@@ -998,7 +1021,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/horizon-777.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fhorizon-777.fr.html',
     image: {
       src: '/images/destinations/hotels/horizon-777.avif',
       alt: 'Horizon 777 — hébergement recommandé',
@@ -1016,7 +1040,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/la-gentilhommiere.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fla-gentilhommiere.fr.html',
     image: {
       src: '/images/destinations/hotels/gentilhommiere.avif',
       alt: 'La Gentilhommière — hébergement recommandé',
@@ -1034,7 +1059,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/motel-cofotel.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fmotel-cofotel.fr.html',
     image: {
       src: '/images/destinations/hotels/motel-cofotel.avif',
       alt: 'Motel Cofotel — hébergement recommandé',
@@ -1053,7 +1079,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.sepaq.com/pq/rpc/hebergement/chalet.dot',
+    bookingUrl:
+      'https://www.sepaq.com/fr/reservation/chalet/reserve-faunique-de-port-cartier-sept-iles/lac-walker/',
     image: {
       src: '/images/destinations/hotels/reserve-faunique-port-cartier.avif',
       alt: 'Chalets Lac Walker & Lac Arthur — hébergement recommandé',
@@ -1091,7 +1118,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.villeport-cartier.com/tourisme/camping-municipal',
+    bookingUrl: 'https://villeport-cartier.com/tourisme/hebergement/',
     image: {
       src: '/images/destinations/hotels/camping-un-port-cartier.avif',
       alt: 'Camping municipal Patterson — hébergement recommandé',
@@ -1170,9 +1197,10 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/royal-dalhousie.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Froyal-dalhousie.html',
     image: {
-      src: '/images/destinations/hotels/royaldaousie-quebec.avif',
+      src: '/images/destinations/hotels/royal-daousie-quebec.avif',
       alt: 'Royal Dalhousie — hébergement recommandé',
     },
     variant: 'compact',
@@ -1189,9 +1217,10 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/coeur-de-ville.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fcoeur-de-ville.fr.html',
     image: {
-      src: '/images/destinations/hotels/monsieurjean-quebec.avif',
+      src: '/images/destinations/hotels/monsieur-jean-quebec.avif',
       alt: 'Monsieur Jean – Hôtel Particulier — hébergement recommandé',
     },
     variant: 'compact',
@@ -1228,7 +1257,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: [],
     tags: [],
     bookingUrl:
-      'https://www.booking.com/hotel/ca/ha-tel-universel-centre-de-congra-s-rivia-re-du-loup.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=31994701_382796525_2_0_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=-572316&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=31994701_382796525_2_0_0&hpos=2&matching_block_id=31994701_382796525_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=31994701_382796525_2_0_0__34900&srepoch=1761337521&srpvid=df5e8f7bd26e006a&type=total&ucfs=1&',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fha-tel-universel-centre-de-congra-s-rivia-re-du-loup.fr.html%3Fdest_id%3D-572316%26dest_type%3Dcity',
     image: {
       src: '/images/destinations/hotels/hotel-universel-riviereduloup.avif',
       alt: 'Hôtel Universel — hébergement recommandé',
@@ -1248,7 +1277,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: [],
     tags: [],
     bookingUrl:
-      'https://www.booking.com/hotel/ca/comfort-inn-riviere-du-loup.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=24034208_91468373_2_1_0&checkin=2025-10-27&checkout=2025-10-29&dest_id=-572316&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=3&highlighted_blocks=24034208_91468373_2_1_0&hpos=3&matching_block_id=24034208_91468373_2_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=24034208_91468373_2_1_0__35614&srepoch=1761337234&srpvid=0ef28eef21e203af&type=total&ucfs=1&',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fcomfort-inn-riviere-du-loup.fr.html%3Fdest_id%3D-572316%26dest_type%3Dcity',
     image: {
       src: '/images/destinations/hotels/hotel-confort-riviereduloup.avif',
       alt: 'Comfort Inn Rivière-du-Loup — hébergement recommandé',
@@ -1266,7 +1295,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/auberge-de-la-pointe.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fauberge-de-la-pointe.html',
     image: {
       src: '/images/destinations/hotels/hotel-pointe-riviereduloup.avif',
       alt: 'Auberge de la Pointe — hébergement recommandé',
@@ -1286,7 +1316,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: [],
     tags: [],
     bookingUrl:
-      'https://www.booking.com/hotel/ca/kouaks.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=1405569501_412356963_0_0_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=900056369&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=6&highlighted_blocks=1405569501_412356963_0_0_0&hpos=6&matching_block_id=1405569501_412356963_0_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1405569501_412356963_0_0_0__56272&srepoch=1761338965&srpvid=56a09249244a03b9&type=total&ucfs=1&',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fkouaks.fr.html%3Fdest_id%3D900056369%26dest_type%3Dcity',
     image: {
       src: '/images/destinations/hotels/hotel-grandemaison-sabrevois.avif',
       alt: 'Grande maison moderne 4 chambres – Spa, Jardin & Parking gratuit — hébergement recommandé',
@@ -1306,7 +1336,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: [],
     tags: [],
     bookingUrl:
-      'https://www.booking.com/hotel/ca/gouverneur-quebec1.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=2675210_412424930_2_2_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=900040733&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=2675210_412424930_2_2_0&hpos=2&matching_block_id=2675210_412424930_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=2675210_412424930_2_2_0__37700&srepoch=1761339092&srpvid=accc92a644dc0180&type=total&ucfs=1&',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fgouverneur-quebec1.fr.html%3Fdest_id%3D900040733%26dest_type%3Dcity',
     image: {
       src: '/images/destinations/hotels/hotel-holiday-sabrevois.avif',
       alt: 'Holiday Inn (Saint-Jean-sur-Richelieu) — hébergement recommandé',
@@ -1326,7 +1356,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: [],
     tags: [],
     bookingUrl:
-      'https://www.booking.com/hotel/ca/la-cache-du-lac-champlain.fr.html?label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&aid=2369661&ucfs=1&checkin=2025-12-08&checkout=2025-12-10&dest_id=900040733&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=3832934a7e5c043f&srepoch=1761339453&matching_block_id=221154004_372912007_4_0_0&atlas_src=sr_iw_title',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fla-cache-du-lac-champlain.fr.html%3Fdest_id%3D900040733%26dest_type%3Dcity',
     image: {
       src: '/images/destinations/hotels/hotel-cachelac-sabrevois.avif',
       alt: 'La Cache du Lac Champlain — hébergement recommandé',
@@ -1345,7 +1375,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: [],
     tags: [],
     bookingUrl:
-      'https://www.booking.com/hotel/ca/newsroom-suites.fr.html?aid=304142&label=gen173nr-10CBkoggI46AdIDVgEaCeIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Atav3sgGwAIB0gIkMTk4NjNhNWYtMGVjMC00YmYxLWFiMGUtMjBkZjdkZGJjYTcy2AIB4AIB&sid=f06c26e00b3529f9cf2078a9ff5f2468&all_sr_blocks=34400202_343472047_0_0_0&checkin=2026-04-06&checkout=2026-04-07&dest_id=-575717&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=34400202_343472047_0_0_0&hpos=2&matching_block_id=34400202_343472047_0_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=34400202_343472047_0_0_0__23700&srepoch=1763154284&srpvid=2bf1942d7add008b&type=total&ucfs=1&',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fnewsroom-suites.fr.html%3Fdest_id%3D-575717%26dest_type%3Dcity',
     image: {
       src: '/images/destinations/hotels/news-room-sandbank.avif',
       alt: 'Newsroom Suites — hébergement recommandé',
@@ -1364,7 +1394,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: [],
     tags: [],
     bookingUrl:
-      'https://www.booking.com/hotel/ca/the-village-suites.fr.html?aid=304142&label=gen173nr-10CBkoggI46AdIDVgEaCeIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Atav3sgGwAIB0gIkMTk4NjNhNWYtMGVjMC00YmYxLWFiMGUtMjBkZjdkZGJjYTcy2AIB4AIB&sid=f06c26e00b3529f9cf2078a9ff5f2468&all_sr_blocks=185601806_385774398_2_0_0&checkin=2026-04-06&checkout=2026-04-07&dest_id=-575717&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=185601806_385774398_2_0_0&hpos=2&matching_block_id=185601806_385774398_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=185601806_385774398_2_0_0__14835&srepoch=1763154445&srpvid=21419486d3c8057b&type=total&ucfs=1&',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fthe-village-suites.fr.html%3Fdest_id%3D-575717%26dest_type%3Dcity',
     image: {
       src: '/images/destinations/hotels/the-village-sandbank.avif',
       alt: 'The Village Suites — hébergement recommandé',
@@ -1383,7 +1413,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     perks: [],
     tags: [],
     bookingUrl:
-      'https://www.booking.com/hotel/ca/twin-birch-suites-b-amp-b-cottages.fr.html?label=gen173nr-10CBkoggI46AdIDVgEaCeIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Atav3sgGwAIB0gIkMTk4NjNhNWYtMGVjMC00YmYxLWFiMGUtMjBkZjdkZGJjYTcy2AIB4AIB&sid=f06c26e00b3529f9cf2078a9ff5f2468&aid=304142&ucfs=1&arphpl=1&checkin=2026-04-06&checkout=2026-04-07&dest_id=-575717&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=3&hapos=3&sr_order=popularity&srpvid=773d94986f93092d&srepoch=1763154484&all_sr_blocks=102748504_204622384_2_0_0&highlighted_blocks=102748504_204622384_2_0_0&matching_block_id=102748504_204622384_2_0_0&sr_pri_blocks=102748504_204622384_2_0_0__22900&from=searchresults',
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Ftwin-birch-suites-b-amp-b-cottages.fr.html%3Fdest_id%3D-575717%26dest_type%3Dcity',
     image: {
       src: '/images/destinations/hotels/the-birch-sandbank.avif',
       alt: 'The Birch — hébergement recommandé',
@@ -1461,7 +1491,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/gouverneur-sept-iles.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fgouverneur-sept-iles.fr.html',
     image: {
       src: '/images/destinations/hotels/gouverneur.avif',
       alt: 'Hôtels Gouverneur Sept-Îles — hébergement recommandé',
@@ -1479,7 +1510,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/le-voyageur-sept-iles.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fle-voyageur-sept-iles.fr.html',
     image: {
       src: '/images/destinations/hotels/le-voyageur.avif',
       alt: 'Hôtel Le Voyageur — hébergement recommandé',
@@ -1497,7 +1529,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/auberge-internationale-le-tangon.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fauberge-internationale-le-tangon.fr.html',
     image: {
       src: '/images/destinations/hotels/auberge-tangon.avif',
       alt: 'Auberge Internationale Le Tangon — hébergement recommandé',
@@ -1515,7 +1548,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/gouverneur-sherbrooke.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fgouverneur-sherbrooke.html',
     image: {
       src: '/images/destinations/hotels/gouverneur-sherbrooke.avif',
       alt: 'OTL Gouverneur Sherbrooke — hébergement recommandé',
@@ -1533,7 +1567,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/grand-times-sherbrooke.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fgrand-times-sherbrooke.html',
     image: {
       src: '/images/destinations/hotels/time-sherbrooke.avif',
       alt: 'Grand Times Hotel — hébergement recommandé',
@@ -1552,7 +1587,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/motel-le-refuge-sherbrooke.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fmotel-le-refuge-sherbrooke.fr.html',
     image: {
       src: '/images/destinations/hotels/motel-refuge.avif',
       alt: 'Motel Le Refuge — hébergement recommandé',
@@ -1631,7 +1667,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/tadoussac.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Ftadoussac.fr.html',
     image: {
       src: '/images/destinations/hotels/hotel tadoussac.avif',
       alt: 'Hôtel Tadoussac — hébergement recommandé',
@@ -1650,7 +1687,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/le-beluga.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fle-beluga.fr.html',
     image: {
       src: '/images/destinations/hotels/motel-beluga.avif',
       alt: 'Hôtel Motel Le Béluga — hébergement recommandé',
@@ -1669,7 +1707,8 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     ratingText: '',
     perks: [],
     tags: [],
-    bookingUrl: 'https://www.booking.com/hotel/ca/auberge-du-cafe-chez-sam.fr.html',
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fauberge-du-cafe-chez-sam.fr.html',
     image: {
       src: '/images/destinations/hotels/auberge-chez-sam.avif',
       alt: 'Auberge du Café chez Sam — hébergement recommandé',

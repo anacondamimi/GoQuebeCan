@@ -317,9 +317,9 @@ USAGE EXEMPLES (copie/colle dans tes pages)
 
 // Conclusion avec liens internes
 <ConclusionLinks items={[
-  { href: '/voyage/hotel', label: 'Voyage en hôtel' },
-  { href: '/voyage/voiture-electrique', label: 'Voyage en voiture électrique' },
-  { href: '/voyage/avion', label: 'Voyage en avion' },
+  { href: '/blog/voyage-hotel', label: 'Voyage en hôtel' },
+  { href: '/blog/voyage-voiture', label: 'Voyage en voiture électrique' },
+  { href: '/blog/voyage-avion', label: 'Voyage en avion' },
 ]} />
 
 // JSON-LD ItemList depuis une liste

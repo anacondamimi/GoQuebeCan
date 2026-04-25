@@ -6,23 +6,23 @@ import React from 'react';
 const destinations = [
   {
     name: 'Montréal',
-    image: '/images/montreal.avif',
-    link: '/destinations/montreal',
+    image: '/images/destinations/montreal.avif',
+    link: '/blog/montreal',
   },
   {
     name: 'Québec',
-    image: '/images/quebec.avif',
-    link: '/destinations/quebec',
+    image: '/images/destinations/quebec.avif',
+    link: '/blog/quebec',
   },
   {
     name: 'Charlevoix',
-    image: '/images/le-massif.avif',
-    link: '/destinations/charlevoix',
+    image: '/images/destinations/le-massif.avif',
+    link: '/blog/charlevoix',
   },
   {
     name: 'Gaspésie',
-    image: '/images/parc-gaspesie.avif',
-    link: '/destinations/gaspesie',
+    image: '/images/destinations/parc-gaspesie.avif',
+    link: '/blog/gaspesie',
   },
 ];
 

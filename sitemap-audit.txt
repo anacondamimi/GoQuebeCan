@@ -80,7 +80,7 @@ Projet : C:\Users\anaco\Documents\project-bolt-sb1-sxoxb1mv\project
 - /blog/bic
 - /blog/bromont-granby
 - /blog/canyon
-- /blog/carleton
+- blog/carleton-sur-mer
 - /blog/eeyou-istchee
 - /blog/forillon
 - /blog/gaspesie
@@ -191,7 +191,7 @@ Projet : C:\Users\anaco\Documents\project-bolt-sb1-sxoxb1mv\project
 - /blog/bic
 - /blog/bromont-granby
 - /blog/canyon
-- /blog/carleton
+- blog/carleton-sur-mer
 - /blog/eeyou-istchee
 - /blog/forillon
 - /blog/gaspesie

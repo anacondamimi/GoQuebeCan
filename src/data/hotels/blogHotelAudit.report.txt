@@ -1,0 +1,278 @@
+AUDIT HÔTELS DES ARTICLES
+============================================================
+
+DEJA_MIGRE (3)
+------------------------------------------------------------
+• BlogArticleAnseSaintJean.tsx
+  slug: anse-saint-jean
+  HotelGrid:oui | pickHotels:oui | HOTEL_IDS:oui
+  hotels[]:non | HotelCard:non | liens booking bruts:oui (1)
+  template:oui | bookingAwin:oui
+
+• BlogArticleBic.tsx
+  slug: bic
+  HotelGrid:oui | pickHotels:oui | HOTEL_IDS:oui
+  hotels[]:non | HotelCard:non | liens booking bruts:non
+  template:oui | bookingAwin:oui
+
+• BlogArticleChambly.tsx
+  slug: chambly
+  HotelGrid:oui | pickHotels:oui | HOTEL_IDS:oui
+  hotels[]:non | HotelCard:non | liens booking bruts:oui (1)
+  template:oui | bookingAwin:oui
+
+
+ANCIEN_MODELE (31)
+------------------------------------------------------------
+• BlogArticleBaieSaintPaul.tsx
+  slug: baie-saint-paul
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (4)
+  template:non | bookingAwin:non
+
+• BlogArticleBromontGranby.tsx
+  slug: bromont-granby
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (4)
+  template:non | bookingAwin:non
+
+• BlogArticleCanyon.tsx
+  slug: canyon
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (4)
+  template:non | bookingAwin:non
+
+• BlogArticleCarleton.tsx
+  slug: carleton
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (4)
+  template:non | bookingAwin:non
+
+• BlogArticleForillon.tsx
+  slug: forillon
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (3)
+  template:non | bookingAwin:non
+
+• BlogArticleGaspesie.tsx
+  slug: gaspesie
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:non | HotelCard:non | liens booking bruts:oui (6)
+  template:non | bookingAwin:oui
+
+• BlogArticleGrandBend.tsx
+  slug: grand-bend
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (1)
+  template:non | bookingAwin:non
+
+• BlogArticleHautesGorges.tsx
+  slug: hautes-gorges
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (3)
+  template:non | bookingAwin:non
+
+• BlogArticleKamouraska.tsx
+  slug: kamouraska
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (4)
+  template:non | bookingAwin:non
+
+• BlogArticleMagogOrford.tsx
+  slug: magog-orford
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (4)
+  template:non | bookingAwin:non
+
+• BlogArticleMassif.tsx
+  slug: massif
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (3)
+  template:non | bookingAwin:non
+
+• BlogArticleMingan.tsx
+  slug: mingan
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (3)
+  template:non | bookingAwin:non
+
+• BlogArticleMontmorency.tsx
+  slug: montmorency
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (2)
+  template:non | bookingAwin:non
+
+• BlogArticleMontreal.tsx
+  slug: montreal
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (4)
+  template:non | bookingAwin:non
+
+• BlogArticleOrleans.tsx
+  slug: orleans
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (3)
+  template:non | bookingAwin:non
+
+• BlogArticleParcAquatique.tsx
+  slug: parc-aquatique
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:non | HotelCard:non | liens booking bruts:oui (8)
+  template:non | bookingAwin:non
+
+• BlogArticlePerce.tsx
+  slug: perce
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:non | HotelCard:oui | liens booking bruts:oui (3)
+  template:non | bookingAwin:non
+
+• BlogArticlePortAuPersil.tsx
+  slug: port-au-persil
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (3)
+  template:non | bookingAwin:non
+
+• BlogArticlePortCartier.tsx
+  slug: port-cartier
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (1)
+  template:non | bookingAwin:non
+
+• BlogArticlePortDover.tsx
+  slug: port-dover
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (1)
+  template:non | bookingAwin:non
+
+• BlogArticleQuebec.tsx
+  slug: quebec
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (2)
+  template:non | bookingAwin:non
+
+• BlogArticleRiviereduLoup.tsx
+  slug: rivieredu-loup
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (4)
+  template:non | bookingAwin:non
+
+• BlogArticleSabrevois.tsx
+  slug: sabrevois
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (4)
+  template:non | bookingAwin:non
+
+• BlogArticleSaguenay.tsx
+  slug: saguenay
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:non | HotelCard:oui | liens booking bruts:oui (3)
+  template:non | bookingAwin:non
+
+• BlogArticleSandbanks.tsx
+  slug: sandbanks
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:non | HotelCard:non | liens booking bruts:oui (3)
+  template:non | bookingAwin:non
+
+• BlogArticleSaubleBeach.tsx
+  slug: sauble-beach
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (1)
+  template:non | bookingAwin:non
+
+• BlogArticleSeptIles.tsx
+  slug: sept-iles
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (4)
+  template:non | bookingAwin:non
+
+• BlogArticleSherbrooke.tsx
+  slug: sherbrooke
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (4)
+  template:non | bookingAwin:non
+
+• BlogArticleSingingSands.tsx
+  slug: singing-sands
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:non
+  template:non | bookingAwin:non
+
+• BlogArticleTadoussac.tsx
+  slug: tadoussac
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (4)
+  template:non | bookingAwin:non
+
+• BlogArticleWasagaBeach.tsx
+  slug: wasaga-beach
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:oui | HotelCard:non | liens booking bruts:oui (1)
+  template:non | bookingAwin:non
+
+
+A_VERIFIER (5)
+------------------------------------------------------------
+• BlogArticleEeyouIstchee.tsx
+  slug: eeyou-istchee
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:non | HotelCard:non | liens booking bruts:non
+  template:non | bookingAwin:non
+
+• BlogArticleKuururjuaq.tsx
+  slug: kuururjuaq
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:non | HotelCard:non | liens booking bruts:non
+  template:non | bookingAwin:non
+
+• BlogArticleLevis.tsx
+  slug: levis
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:non | HotelCard:non | liens booking bruts:non
+  template:non | bookingAwin:non
+
+• BlogArticleLocationVR.tsx
+  slug: location-v-r
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:non | HotelCard:non | liens booking bruts:non
+  template:non | bookingAwin:non
+
+• BlogArticleRoadTripQuebec.tsx
+  slug: road-trip-quebec
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:non | HotelCard:non | liens booking bruts:non
+  template:non | bookingAwin:non
+
+
+SANS_HOTELS_DETECTES (5)
+------------------------------------------------------------
+• BlogArticleLocationVRComparatif.tsx
+  slug: location-v-r-comparatif
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:non | HotelCard:non | liens booking bruts:non
+  template:non | bookingAwin:non
+
+• BlogArticleVoyageAvion.tsx
+  slug: voyage-avion
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:non | HotelCard:non | liens booking bruts:non
+  template:non | bookingAwin:non
+
+• BlogArticleVoyageCamping.tsx
+  slug: voyage-camping
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:non | HotelCard:non | liens booking bruts:non
+  template:non | bookingAwin:non
+
+• BlogArticleVoyageHotel.tsx
+  slug: voyage-hotel
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:non | HotelCard:non | liens booking bruts:non
+  template:non | bookingAwin:non
+
+• BlogArticleVoyageVoiture.tsx
+  slug: voyage-voiture
+  HotelGrid:non | pickHotels:non | HOTEL_IDS:non
+  hotels[]:non | HotelCard:non | liens booking bruts:non
+  template:non | bookingAwin:non
+

@@ -15,8 +15,8 @@ import {
 } from '@/components/TravelContentKit';
 
 /** === Constantes SEO communes === */
-const PAGE_URL = 'https://goquebecan.com/voyage-voiture';
-const OG_IMG = 'https://goquebecan.com/og/voiture-essentiels-2025-logo.jpg';
+const PAGE_URL = 'https://www.goquebecan.com/voyage-voiture';
+const OG_IMG = 'https://www.goquebecan.com/og/voiture-essentiels-2025-logo.jpg';
 
 const PUBLISHED_AT = '2025-09-14T00:00:00-04:00';
 const MODIFIED_AT = '2025-09-14T00:00:00-04:00';
@@ -41,7 +41,7 @@ const jsonLdArticle = {
   publisher: {
     '@type': 'Organization',
     name: 'GoQuébeCan',
-    logo: { '@type': 'ImageObject', url: 'https://goquebecan.com/logo.png' },
+    logo: { '@type': 'ImageObject', url: 'https://www.goquebecan.com/logo.png' },
   },
 };
 

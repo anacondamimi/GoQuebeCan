@@ -10,13 +10,14 @@ const SITE =
   process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://www.goquebecan.com';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = 'Offres spéciales | GoQuébeCan';
+  const title = 'Offres spéciales au Québec | GoQuébeCAN';
   const description =
-    'Promos et bons plans pour découvrir le Québec et le Canada : hébergements, activités, transports… Sélection vérifiée et mise à jour.';
+    'Découvrez les meilleures offres pour voyager au Québec et au Canada : hébergements, activités, transports, forfaits détente et bons plans sélectionnés.';
   const url = `${SITE}/offres`;
-  const ogImage = `${SITE}/og/offres.jpg`;
+  const ogImage = `${SITE}/og/carte.avif`;
 
   return {
+    metadataBase: new URL(SITE),
     title,
     description,
     alternates: { canonical: url },
@@ -25,14 +26,12 @@ export async function generateMetadata(): Promise<Metadata> {
       url,
       title,
       description,
-      siteName: 'GoQuébeCan',
+      siteName: 'GoQuébeCAN',
       locale: 'fr_CA',
-      images: [{ url: ogImage, width: 1200, height: 630, alt: 'Offres spéciales GoQuébeCan' }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: 'Offres spéciales GoQuébeCAN' }],
     },
     twitter: {
       card: 'summary_large_image',
-      site: '@goquebecan',
-      creator: '@goquebecan',
       title,
       description,
       images: [ogImage],
@@ -48,36 +47,46 @@ export async function generateMetadata(): Promise<Metadata> {
         'max-video-preview': -1,
       },
     },
-    metadataBase: new URL(SITE),
   };
 }
 
-// JSON-LD OfferCatalog (SEO)
-const offerCatalogLd = {
-  '@context': 'https://schema.org',
-  '@type': 'OfferCatalog',
-  name: 'Offres spéciales — GoQuébeCan',
-  url: `${SITE}/offres`,
-  itemListElement: OFFERS.map((o: any, i: number) => ({
-    '@type': 'Offer',
-    position: i + 1,
-    name: o.title,
-    url: o.cta?.href ?? o.url,
-    price: o.priceFrom,
-    priceCurrency: o.currency ?? 'CAD',
-  })),
-};
-
 export default function OffresPage() {
+  const offerCatalogLd = {
+    '@context': 'https://schema.org',
+    '@type': 'OfferCatalog',
+    name: 'Offres spéciales — GoQuébeCAN',
+    url: `${SITE}/offres`,
+    itemListElement: OFFERS.map((offer, index) => ({
+      '@type': 'Offer',
+      position: index + 1,
+      name: offer.title,
+      url: offer.cta?.href ?? offer.url,
+      price: offer.priceFrom,
+      priceCurrency: offer.currency ?? 'CAD',
+      availability: 'https://schema.org/InStock',
+      seller: {
+        '@type': 'Organization',
+        name: offer.vendor ?? 'GoQuébeCAN',
+      },
+    })),
+  };
+
   return (
     <main className="mx-auto max-w-7xl px-4 py-8">
-      <H1 className="mb-6 text-3xl font-bold sm:text-4xl">Offres spéciales</H1>
-
-      {/* SEO: données structurées */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(offerCatalogLd) }}
       />
+
+      <H1 className="mb-4 text-3xl font-bold sm:text-4xl">
+        Offres spéciales au Québec et au Canada
+      </H1>
+
+      <p className="mb-8 max-w-3xl text-lg leading-8 text-gray-700">
+        Retrouvez ici une sélection d’offres pour préparer vos escapades : hôtels, activités,
+        forfaits détente, expériences locales et bons plans utiles pour voyager mieux sans perdre de
+        temps à chercher partout.
+      </p>
 
       <Offers />
     </main>

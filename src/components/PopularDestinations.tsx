@@ -45,7 +45,7 @@ const regions: Region[] = [
         name: "Île d'Orléans",
         description: 'Terroir québécois, vignobles et patrimoine agricole',
         image: '/images/destinations/ile-dorleans.avif',
-        blogId: "/blog/ile-d'orleans",
+        blogId: '/blog/ile-orleans',
       },
       {
         name: 'Chute Montmorency',

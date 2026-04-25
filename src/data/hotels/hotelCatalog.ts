@@ -16,37 +16,40 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     extra: 'Top si tu veux tout faire à pied (promenade, restos, coucher de soleil).',
     tags: ['Vue', 'À pied', 'Coucher de soleil'],
   },
-  hotel_normandie_perce: {
-    id: 'hotel_normandie_perce',
-    name: 'Hôtel La Normandie',
-    category: 'Charme',
+  hotel_mirage_perce: {
+    id: 'hotel_mirage_perce',
+    name: 'Hôtel Le Mirage',
+    category: 'Vue sur le Rocher Percé',
     location: 'Percé',
     description:
-      'Au cœur du village — pratique pour vivre Percé le soir sans reprendre la voiture.',
-    price: 'À partir de 169$/nuit',
-    bookingUrl: 'booking_hotel_normandie_perce',
+      'Hôtel emblématique de Percé avec une vue spectaculaire sur le Rocher Percé et l’Île Bonaventure. Idéal pour un séjour mémorable en Gaspésie.',
+    price: 'À partir de 189$/nuit',
+    bookingUrl: 'https://www.booking.com/hotel/ca/ha-tel-le-mirage.fr.html',
     image: {
-      src: '/images/destinations/hotels/hotel-normandie.avif',
-      alt: 'Hôtel La Normandie à Percé — hébergement recommandé',
+      src: '/images/destinations/hotels/hotel-mirage.avif',
+      alt: 'Hôtel Le Mirage à Percé avec vue sur le Rocher Percé',
     },
-    extra: 'Parfait pour un séjour “petit café + balade + ambiance village”.',
-    tags: ['Village', 'Charme'],
+    extra:
+      'Un des meilleurs choix à Percé pour la vue. Parfait pour un séjour romantique ou pour profiter pleinement du paysage sans bouger.',
+    tags: ['Percé', 'Vue', 'Rocher Percé', 'Incontournable'],
   },
 
-  au_pic_de_l_aurore: {
-    id: 'au_pic_de_l_aurore',
-    name: "Au Pic de l'Aurore",
-    category: 'Vue panoramique',
+  hotel_les_trois_soeurs_perce: {
+    id: 'hotel_les_trois_soeurs_perce',
+    name: 'Hôtel Les Trois Sœurs',
+    category: 'Vue mer et Rocher Percé',
     location: 'Percé',
-    description: 'Surplombe la baie — tu te couches avec la lumière sur l’eau.',
-    price: 'À partir de 189$/nuit',
-    bookingUrl: 'booking_au_pic_de_l_aurore',
+    description:
+      'Hébergement bien situé à Percé, idéal pour profiter du village, de la mer et des vues sur le Rocher Percé sans multiplier les déplacements.',
+    price: 'À partir de 179$/nuit',
+    bookingUrl: 'https://www.booking.com/hotel/ca/les-trois-soeur.fr.html',
     image: {
-      src: '/images/destinations/hotels/au-pic-de-l-aurore.avif',
-      alt: "Au Pic de l'Aurore à Percé — hébergement recommandé",
+      src: '/images/destinations/hotels/hotel-trois-soeurs.avif',
+      alt: 'Hôtel Les Trois Sœurs à Percé avec vue sur la mer et le Rocher Percé',
     },
-    extra: 'Excellent si tu veux un spot calme + vues fortes sans effort.',
-    tags: ['Panorama', 'Calme'],
+    extra:
+      'Très bon choix pour un séjour à Percé si tu veux rester proche du cœur du village, des restaurants et des départs d’excursions.',
+    tags: ['Percé', 'Vue mer', 'Rocher Percé', 'Village'],
   },
 };
 

@@ -4,7 +4,7 @@ export const BLOG_SLUGS = [
   'montreal',
   'levis',
   'montmorency',
-  "ile-d'orleans",
+  'ile-orleans',
   'tadoussac',
   'perce',
   'magog-orford',

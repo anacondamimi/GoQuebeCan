@@ -1,0 +1,281 @@
+AUDIT RESTAURANTS DES ARTICLES
+======================================================================
+
+DEJA_MIGRE (3)
+----------------------------------------------------------------------
+• BlogArticleAnseSaintJean.tsx
+  slug: anse-saint-jean
+  array:oui | objets:3 | premium import:oui | premium usage:oui
+  restaurants.map:non | section détectée:oui | compatible premium:oui
+  clés: city, https, image, mapUrl, mustTry, name, price, reserveUrl, schedule, speciality, tip, type, vibe
+
+• BlogArticleBic.tsx
+  slug: bic
+  array:oui | objets:4 | premium import:oui | premium usage:oui
+  restaurants.map:non | section détectée:oui | compatible premium:oui
+  clés: city, https, image, mustTry, name, price, rando, reserveUrl, schedule, speciality, tip, type, vibe
+
+• BlogArticleChambly.tsx
+  slug: chambly
+  array:oui | objets:4 | premium import:oui | premium usage:oui
+  restaurants.map:non | section détectée:oui | compatible premium:oui
+  clés: city, image, mustTry, name, price, schedule, speciality, tip, type, vibe
+
+
+SECTION_SANS_ARRAY (8)
+----------------------------------------------------------------------
+• BlogArticleBaieSaintPaul.tsx
+  slug: baie-saint-paul
+  array:non | objets:0 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:non
+  clés: (aucune)
+
+• BlogArticleEeyouIstchee.tsx
+  slug: eeyou-istchee
+  array:non | objets:0 | premium import:non | premium usage:non
+  restaurants.map:non | section détectée:oui | compatible premium:non
+  clés: (aucune)
+
+• BlogArticleKuururjuaq.tsx
+  slug: kuururjuaq
+  array:non | objets:0 | premium import:non | premium usage:non
+  restaurants.map:non | section détectée:oui | compatible premium:non
+  clés: (aucune)
+
+• BlogArticleLevis.tsx
+  slug: levis
+  array:non | objets:0 | premium import:non | premium usage:non
+  restaurants.map:non | section détectée:oui | compatible premium:non
+  clés: (aucune)
+
+• BlogArticleLocationVRComparatif.tsx
+  slug: location-v-r-comparatif
+  array:non | objets:0 | premium import:non | premium usage:non
+  restaurants.map:non | section détectée:oui | compatible premium:non
+  clés: (aucune)
+
+• BlogArticleMontmorency.tsx
+  slug: montmorency
+  array:non | objets:0 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:non
+  clés: (aucune)
+
+• BlogArticleRoadTripQuebec.tsx
+  slug: road-trip-quebec
+  array:non | objets:0 | premium import:non | premium usage:non
+  restaurants.map:non | section détectée:oui | compatible premium:non
+  clés: (aucune)
+
+• BlogArticleSaguenay.tsx
+  slug: saguenay
+  array:non | objets:0 | premium import:non | premium usage:non
+  restaurants.map:non | section détectée:oui | compatible premium:non
+  clés: (aucune)
+
+
+COMPATIBLE_AUTO (24)
+----------------------------------------------------------------------
+• BlogArticleBromontGranby.tsx
+  slug: bromont-granby
+  array:oui | objets:9 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleCanyon.tsx
+  slug: canyon
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleCarleton.tsx
+  slug: carleton
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleForillon.tsx
+  slug: forillon
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleGrandBend.tsx
+  slug: grand-bend
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleHautesGorges.tsx
+  slug: hautes-gorges
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleKamouraska.tsx
+  slug: kamouraska
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleMagogOrford.tsx
+  slug: magog-orford
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleMassif.tsx
+  slug: massif
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleMingan.tsx
+  slug: mingan
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleMontreal.tsx
+  slug: montreal
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleOrleans.tsx
+  slug: orleans
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticlePerce.tsx
+  slug: perce
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticlePortAuPersil.tsx
+  slug: port-au-persil
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticlePortCartier.tsx
+  slug: port-cartier
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticlePortDover.tsx
+  slug: port-dover
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleRiviereduLoup.tsx
+  slug: rivieredu-loup
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleSabrevois.tsx
+  slug: sabrevois
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleSaubleBeach.tsx
+  slug: sauble-beach
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleSeptIles.tsx
+  slug: sept-iles
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleSherbrooke.tsx
+  slug: sherbrooke
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleSingingSands.tsx
+  slug: singing-sands
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleTadoussac.tsx
+  slug: tadoussac
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+• BlogArticleWasagaBeach.tsx
+  slug: wasaga-beach
+  array:oui | objets:3 | premium import:non | premium usage:non
+  restaurants.map:oui | section détectée:oui | compatible premium:oui
+  clés: mustTry, name, price, schedule, speciality, type
+
+
+ARRAY_A_ENRICHIR (1)
+----------------------------------------------------------------------
+• BlogArticleGaspesie.tsx
+  slug: gaspesie
+  array:oui | objets:4 | premium import:non | premium usage:non
+  restaurants.map:non | section détectée:oui | compatible premium:non
+  clés: description, location, mer, tartinades, title
+
+
+SANS_RESTAURANTS_DETECTES (8)
+----------------------------------------------------------------------
+• BlogArticleLocationVR.tsx
+  slug: location-v-r
+  array:non | objets:0 | premium import:non | premium usage:non
+  restaurants.map:non | section détectée:non | compatible premium:non
+  clés: (aucune)
+
+• BlogArticleParcAquatique.tsx
+  slug: parc-aquatique
+  array:non | objets:0 | premium import:non | premium usage:non
+  restaurants.map:non | section détectée:non | compatible premium:non
+  clés: (aucune)
+
+• BlogArticleQuebec.tsx
+  slug: quebec
+  array:non | objets:0 | premium import:non | premium usage:non
+  restaurants.map:non | section détectée:non | compatible premium:non
+  clés: (aucune)
+
+• BlogArticleSandbanks.tsx
+  slug: sandbanks
+  array:non | objets:0 | premium import:non | premium usage:non
+  restaurants.map:non | section détectée:non | compatible premium:non
+  clés: (aucune)
+
+• BlogArticleVoyageAvion.tsx
+  slug: voyage-avion
+  array:non | objets:0 | premium import:non | premium usage:non
+  restaurants.map:non | section détectée:non | compatible premium:non
+  clés: (aucune)
+
+• BlogArticleVoyageCamping.tsx
+  slug: voyage-camping
+  array:non | objets:0 | premium import:non | premium usage:non
+  restaurants.map:non | section détectée:non | compatible premium:non
+  clés: (aucune)
+
+• BlogArticleVoyageHotel.tsx
+  slug: voyage-hotel
+  array:non | objets:0 | premium import:non | premium usage:non
+  restaurants.map:non | section détectée:non | compatible premium:non
+  clés: (aucune)
+
+• BlogArticleVoyageVoiture.tsx
+  slug: voyage-voiture
+  array:non | objets:0 | premium import:non | premium usage:non
+  restaurants.map:non | section détectée:non | compatible premium:non
+  clés: (aucune)
+

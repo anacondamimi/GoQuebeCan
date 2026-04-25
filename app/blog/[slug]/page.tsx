@@ -12,7 +12,7 @@ export const revalidate = 21_600; // 6h
 export const dynamicParams = false; // slugs connus à build-time seulement
 
 const SITE_URL =
-  process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://goquebecan.com';
+  process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://www.goquebecan.com';
 
 /* ──────────────────────────────────────────────
    Types route

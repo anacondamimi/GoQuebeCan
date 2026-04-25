@@ -1,9 +1,18 @@
+
+
 import Image from 'next/image';
 import React from 'react';
 import { Sunset } from 'lucide-react';
-import H1 from '@/components/typography/H1';
+
 import H2 from '@/components/typography/H2';
 import H3 from '@/components/typography/H3';
+import { HotelGrid } from '@/components/hotels/HotelGrid';
+import { pickHotels } from '@/data/hotels/hotelCatalog.generated';
+import { HOTEL_IDS_KAMOURASKA } from '@/data/hotels/byArticle/kamouraska';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
+import { bookingAwin } from '@/lib/awin';
+import { RestaurantPremiumGrid } from '@/components/food/RestaurantPremiumGrid';
+import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
 
 export const metadata = {
   slug: 'kamouraska',
@@ -23,36 +32,10 @@ export const metadata = {
   hebergements: ['Auberge des Îles', 'Motel des Mariniers', 'Gîte des Coquillages'],
   publics: ['familles', 'ados', 'amateurs de culture', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
-const hotels = [
-  {
-    name: 'Auberge Akamaraska',
-    category: 'Simplicité & authenticité',
-    description: 'Chambre avec lit Queen et balcon, à 100 m du centre du village. Note 7,8/10.',
-    price: 'Tarif selon la saison',
-    link: 'https://www.booking.com/hotel/ca/akamaraska.fr.html',
-    image: '/images/destinations/hotels/akamaraska.avif',
-  },
-  {
-    name: 'Motel des Mariniers',
-    category: 'Charme',
-    description: 'Au cœur du village historique',
-    price: 'À partir de 129$/nuit',
-    link: 'https://www.booking.com/hotel/ca/motel-des-mariniers.html',
-    image: '/images/destinations/hotels/mariniers.avif',
-  },
-  {
-    name: 'Auberge Comme au premier jour',
-    category: 'Charme & piscine',
-    description: 'Chambre double avec vue sur la piscine, à 18 km de Kamouraska. Note 8,8/10.',
-    price: 'Tarif selon la saison',
-    link: 'https://www.booking.com/hotel/ca/auberge-comme-au-premier-jour.fr.html',
-    image: '/images/destinations/hotels/auberge-saint-pacome.avif',
-  },
-];
+const hotels = pickHotels(HOTEL_IDS_KAMOURASKA);
 
 const restaurants = [
   {
@@ -146,9 +129,12 @@ const teenActivities = [
 
 export function BlogArticleKamouraska() {
   return (
-    <article id="blog_article_kamouraska" className="mx-auto max-w-4xl bg-white px-4 py-12">
+    <DestinationArticleTemplate
+      slug="kamouraska"
+      title="Kamouraska - Le Village aux Plus Beaux Couchers de Soleil"
+    >
+      <article id="blog_article_kamouraska" className="mx-auto max-w-4xl bg-white px-4 py-12">
       <header className="mb-12 text-center">
-        <H1 className="mb-4">Kamouraska - Le Village aux Plus Beaux Couchers de Soleil</H1>
         <p className="text-xl text-gray-600">
           Découvrez ce joyau du Bas-Saint-Laurent, entre patrimoine historique et paysages
           spectaculaires
@@ -262,35 +248,8 @@ export function BlogArticleKamouraska() {
           <Hotel className="size-8 text-indigo-600" />
           Où Dormir ?
         </H2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {hotels.map((hotel) => (
-            <a
-              key={hotel.name}
-              href={hotel.link}
-              className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
-            >
-              <div className="relative h-48">
-                <Image
-                  src={hotel.image}
-                  alt={hotel.name}
-                  className="size-full object-cover"
-                  width={800}
-                  height={600}
-                />
-              </div>
-              <div className="p-6">
-                <div className="mb-2 flex items-start justify-between">
-                  <H3 className="text-xl font-semibold text-gray-900">{hotel.name}</H3>
-                  <span className="rounded bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
-                    {hotel.category}
-                  </span>
-                </div>
-                <p className="mb-4 text-gray-600">{hotel.description}</p>
-                <p className="font-semibold text-indigo-600">{hotel.price}</p>
-              </div>
-            </a>
-          ))}
-        </div>
+        {/* MIGRATED_HOTELS_GRID */}
+<HotelGrid items={hotels} />
       </section>
 
       <section className="mb-16">
@@ -298,28 +257,7 @@ export function BlogArticleKamouraska() {
           <Utensils className="size-8 text-indigo-600" />
           Où Manger ?
         </H2>
-        <div className="space-y-6">
-          {restaurants.map((restaurant) => (
-            <div key={restaurant.name} className="rounded-lg bg-white p-6 shadow-md">
-              <div className="mb-4 flex items-start justify-between">
-                <div>
-                  <H3 className="mb-1 text-xl font-semibold text-gray-900">{restaurant.name}</H3>
-                  <p className="text-gray-600">{restaurant.type}</p>
-                </div>
-                <span className="font-semibold text-indigo-600">{restaurant.price}</span>
-              </div>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">Spécialité:</span> {restaurant.speciality}
-              </p>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">À essayer:</span> {restaurant.mustTry}
-              </p>
-              <p className="text-gray-700">
-                <span className="font-medium">Horaires:</span> {restaurant.schedule}
-              </p>
-            </div>
-          ))}
-        </div>
+        <RestaurantPremiumGrid items={restaurants} />
       </section>
 
       <section className="mb-16">
@@ -409,7 +347,7 @@ export function BlogArticleKamouraska() {
         </p>
         <div className="flex justify-center gap-4">
           <a
-            href="https://www.booking.com/city/ca/kamouraska.html"
+            href={bookingAwin('https://www.booking.com/city/ca/kamouraska.html')}
             className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
           >
             Réserver un Hébergement
@@ -423,6 +361,7 @@ export function BlogArticleKamouraska() {
         </div>
       </section>
     </article>
+    </DestinationArticleTemplate>
   );
 }
 export default BlogArticleKamouraska;

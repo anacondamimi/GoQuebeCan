@@ -1,8 +1,16 @@
+
+
 import Image from 'next/image';
 import React from 'react';
-import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
 import H3 from '@/components/typography/H3';
+import { HotelGrid } from '@/components/hotels/HotelGrid';
+import { pickHotels } from '@/data/hotels/hotelCatalog.generated';
+import { HOTEL_IDS_WASAGA_BEACH } from '@/data/hotels/byArticle/wasaga-beach';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun } from 'lucide-react';
+import { bookingAwin } from '@/lib/awin';
+import { RestaurantPremiumGrid } from '@/components/food/RestaurantPremiumGrid';
+import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
 
 export const metadata = {
   slug: 'wasaga-beach',
@@ -22,39 +30,10 @@ export const metadata = {
   hebergements: ['Wasaga Riverdocks Hotel', 'Beach Front Resort', 'Wasaga Motel'],
   publics: ['familles', 'ados', 'amateurs de culture'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
-const hotels = [
-  {
-    name: 'Saga Resort',
-    category: 'Familial près de la plage',
-    description:
-      'Complexe avec chambres et petits appartements, piscine extérieure et aire de jeux, parfait pour profiter de Wasaga Beach à pied.',
-    price: 'À partir de 120 $/nuit',
-    link: 'https://www.expedia.ca/fr/Wasaga-Beach-Hotels-SAGA-RESORT.h17405117.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763713351541&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=181914&destination=Wasaga+Beach%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=44.520741%2C-80.016067&sort=REVIEW_RELEVANT&top_dp=120&top_cur=CAD&userIntent=&selectedRoomType=201838547&selectedRatePlan=400296313&searchId=527dc4aa-81cc-404f-a4c7-9516c75cd205',
-    image: '/images/destinations/hotels/wasaga-beach.avif',
-  },
-  {
-    name: 'Hidden Gem',
-    category: 'Maison de vacances',
-    description:
-      'Grande maison entièrement équipée, idéale pour un séjour en famille ou entre amis à quelques minutes de la plage de Wasaga.',
-    price: 'À partir de 340 $/nuit',
-    link: 'https://www.expedia.ca/fr/Wasaga-Beach-Hotels-Hidden-Gem.h94741293.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763713561441&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=181914&destination=Wasaga+Beach%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=44.520741%2C-80.016067&sort=REVIEW_RELEVANT&top_dp=340&top_cur=CAD&userIntent=&selectedRoomType=94741293&selectedRatePlan=00009ac40984a33c4dc49c8c118db165efd7&searchId=adb0bdb1-4661-49b9-8edf-ea8f29e81d85',
-    image: '/images/destinations/hotels/hotel-hidden-wasagabeach.avif',
-  },
-  {
-    name: 'Sandpiper Beach Resort - Cottage 10',
-    category: 'Cottage en bord de plage',
-    description:
-      'Cottage confortable avec accès direct à la plage, parfait pour vivre l’expérience Wasaga Beach les pieds dans le sable.',
-    price: 'À partir de 375 $/nuit',
-    link: 'https://www.expedia.ca/fr/Barrie-Orillia-Hotels-SANDPIPER-BEACH-RESORT-Cottage-10.h38854991.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763713561429&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=181914&destination=Wasaga+Beach%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=44.520741%2C-80.016067&sort=REVIEW_RELEVANT&top_dp=375&top_cur=CAD&userIntent=&selectedRoomType=38854991&selectedRatePlan=0000b518e7a24aeb4c6d970c57cb3170df8c&searchId=adb0bdb1-4661-49b9-8edf-ea8f29e81d85',
-    image: '/images/destinations/hotels/cottage-wasagabeach.avif',
-  },
-];
+const hotels = pickHotels(HOTEL_IDS_WASAGA_BEACH);
 
 const restaurants = [
   {
@@ -148,9 +127,12 @@ const teenActivities = [
 
 export default function BlogArticleWasagaBeach() {
   return (
-    <article id="blog_article_wasaga_beach" className="mx-auto max-w-4xl bg-white px-4 py-12">
+    <DestinationArticleTemplate
+      slug="wasaga-beach"
+      title="Wasaga Beach - La Plus Longue Plage d'Eau Douce au Monde"
+    >
+      <article id="blog_article_wasaga_beach" className="mx-auto max-w-4xl bg-white px-4 py-12">
       <header className="mb-12 text-center">
-        <H1 className="mb-4">Wasaga Beach - La Plus Longue Plage d'Eau Douce au Monde</H1>
         <p className="text-xl text-gray-600">
           Découvrez ce paradis balnéaire de l'Ontario, avec ses 14 kilomètres de sable fin et ses
           activités pour toute la famille
@@ -263,35 +245,8 @@ export default function BlogArticleWasagaBeach() {
           <Hotel className="size-8 text-indigo-600" />
           Où Dormir ?
         </H2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {hotels.map((hotel) => (
-            <a
-              key={hotel.name}
-              href={hotel.link}
-              className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
-            >
-              <div className="relative h-48">
-                <Image
-                  src={hotel.image}
-                  alt={hotel.name}
-                  className="size-full object-cover"
-                  width={800}
-                  height={600}
-                />
-              </div>
-              <div className="p-6">
-                <div className="mb-2 flex items-start justify-between">
-                  <H3 className="text-xl font-semibold text-gray-900">{hotel.name}</H3>
-                  <span className="rounded bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
-                    {hotel.category}
-                  </span>
-                </div>
-                <p className="mb-4 text-gray-600">{hotel.description}</p>
-                <p className="font-semibold text-indigo-600">{hotel.price}</p>
-              </div>
-            </a>
-          ))}
-        </div>
+        {/* MIGRATED_HOTELS_GRID */}
+<HotelGrid items={hotels} />
       </section>
 
       <section className="mb-16">
@@ -299,28 +254,7 @@ export default function BlogArticleWasagaBeach() {
           <Utensils className="size-8 text-indigo-600" />
           Où Manger ?
         </H2>
-        <div className="space-y-6">
-          {restaurants.map((restaurant) => (
-            <div key={restaurant.name} className="rounded-lg bg-white p-6 shadow-md">
-              <div className="mb-4 flex items-start justify-between">
-                <div>
-                  <H3 className="mb-1 text-xl font-semibold text-gray-900">{restaurant.name}</H3>
-                  <p className="text-gray-600">{restaurant.type}</p>
-                </div>
-                <span className="font-semibold text-indigo-600">{restaurant.price}</span>
-              </div>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">Spécialité:</span> {restaurant.speciality}
-              </p>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">À essayer:</span> {restaurant.mustTry}
-              </p>
-              <p className="text-gray-700">
-                <span className="font-medium">Horaires:</span> {restaurant.schedule}
-              </p>
-            </div>
-          ))}
-        </div>
+        <RestaurantPremiumGrid items={restaurants} />
       </section>
 
       <section className="mb-16">
@@ -408,7 +342,7 @@ export default function BlogArticleWasagaBeach() {
         </p>
         <div className="flex justify-center gap-4">
           <a
-            href="https://www.booking.com/city/ca/wasaga-beach.html"
+            href={bookingAwin('https://www.booking.com/city/ca/wasaga-beach.html')}
             className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
           >
             Réserver un Hébergement
@@ -422,5 +356,6 @@ export default function BlogArticleWasagaBeach() {
         </div>
       </section>
     </article>
+    </DestinationArticleTemplate>
   );
 }

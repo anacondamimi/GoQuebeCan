@@ -20,7 +20,7 @@ export default function ItineraryExport() {
 
       const custom: Parameters<typeof exportToPDF>[2] = {
         brand: 'GoQuébeCAN',
-        logoUrl: `/images/logo.png?v=${PDF_VERSION}`,
+        logoUrl: `/logo.png?v=${PDF_VERSION}`,
         cardUrl: `/images/carte.avif?v=${PDF_VERSION}`,
         greeting:
           'Bonnes vacances au Québec ! Profitez des paysages, des saveurs locales et de la chaleur de nos producteurs — GoQuébeCAN vous accompagne à chaque étape.',

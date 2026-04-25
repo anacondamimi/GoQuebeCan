@@ -1,0 +1,352 @@
+[
+  {
+    "file": "BlogArticleAnseSaintJean.tsx",
+    "status": "skipped",
+    "changedLinks": 0,
+    "steps": []
+  },
+  {
+    "file": "BlogArticleBaieSaintPaul.tsx",
+    "status": "written",
+    "changedLinks": 4,
+    "steps": [
+      "4 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleBic.tsx",
+    "status": "skipped",
+    "changedLinks": 0,
+    "steps": []
+  },
+  {
+    "file": "BlogArticleBromontGranby.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleCanyon.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleCarleton.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleChambly.tsx",
+    "status": "skipped",
+    "changedLinks": 0,
+    "steps": []
+  },
+  {
+    "file": "BlogArticleEeyouIstchee.tsx",
+    "status": "skipped",
+    "changedLinks": 0,
+    "steps": []
+  },
+  {
+    "file": "BlogArticleForillon.tsx",
+    "status": "skipped",
+    "changedLinks": 0,
+    "steps": []
+  },
+  {
+    "file": "BlogArticleGaspesie.tsx",
+    "status": "written",
+    "changedLinks": 6,
+    "steps": [
+      "6 lien(s) Booking remplacé(s)"
+    ]
+  },
+  {
+    "file": "BlogArticleGrandBend.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleHautesGorges.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleKamouraska.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleKuururjuaq.tsx",
+    "status": "skipped",
+    "changedLinks": 0,
+    "steps": []
+  },
+  {
+    "file": "BlogArticleLevis.tsx",
+    "status": "skipped",
+    "changedLinks": 0,
+    "steps": []
+  },
+  {
+    "file": "BlogArticleLocationVR.tsx",
+    "status": "skipped",
+    "changedLinks": 0,
+    "steps": []
+  },
+  {
+    "file": "BlogArticleLocationVRComparatif.tsx",
+    "status": "skipped",
+    "changedLinks": 0,
+    "steps": []
+  },
+  {
+    "file": "BlogArticleMagogOrford.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleMassif.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleMingan.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleMontmorency.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleMontreal.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleOrleans.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleParcAquatique.tsx",
+    "status": "written",
+    "changedLinks": 8,
+    "steps": [
+      "8 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticlePerce.tsx",
+    "status": "skipped",
+    "changedLinks": 0,
+    "steps": []
+  },
+  {
+    "file": "BlogArticlePortAuPersil.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticlePortCartier.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticlePortDover.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleQuebec.tsx",
+    "status": "written",
+    "changedLinks": 2,
+    "steps": [
+      "2 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleRiviereduLoup.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleRoadTripQuebec.tsx",
+    "status": "skipped",
+    "changedLinks": 0,
+    "steps": []
+  },
+  {
+    "file": "BlogArticleSabrevois.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleSaguenay.tsx",
+    "status": "written",
+    "changedLinks": 3,
+    "steps": [
+      "3 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleSandbanks.tsx",
+    "status": "written",
+    "changedLinks": 3,
+    "steps": [
+      "3 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleSaubleBeach.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleSeptIles.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleSherbrooke.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleSingingSands.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleTadoussac.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  },
+  {
+    "file": "BlogArticleVoyageAvion.tsx",
+    "status": "skipped",
+    "changedLinks": 0,
+    "steps": []
+  },
+  {
+    "file": "BlogArticleVoyageCamping.tsx",
+    "status": "skipped",
+    "changedLinks": 0,
+    "steps": []
+  },
+  {
+    "file": "BlogArticleVoyageHotel.tsx",
+    "status": "skipped",
+    "changedLinks": 0,
+    "steps": []
+  },
+  {
+    "file": "BlogArticleVoyageVoiture.tsx",
+    "status": "skipped",
+    "changedLinks": 0,
+    "steps": []
+  },
+  {
+    "file": "BlogArticleWasagaBeach.tsx",
+    "status": "written",
+    "changedLinks": 1,
+    "steps": [
+      "1 lien(s) Booking remplacé(s)",
+      "import bookingAwin ajouté"
+    ]
+  }
+]

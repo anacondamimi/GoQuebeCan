@@ -4,17 +4,14 @@
 import fsp from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { Project, Node, SyntaxKind } from 'ts-morph';
+import { Project, Node } from 'ts-morph';
 
-// __dirname en ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// 1) Répertoires et chemins
 const blogDir = path.resolve(__dirname, '../src/components/blogpost');
 const outputFile = path.resolve(__dirname, '../src/components/lib/data/blogMeta.ts');
 
-// 2) Helpers
 const toSlug = (str) =>
   String(str)
     .toLowerCase()
@@ -40,27 +37,11 @@ const prettifyFileNameTitle = (fileName) =>
     .replace(/([A-Z])([A-Z][a-z])/g, '$1 $2')
     .trim();
 
-function unquote(text) {
-  if (!text) return text;
-  return text.replace(/^['"`]/, '').replace(/['"`]$/, '');
-}
-
 function getStringLiteralValue(node) {
   if (!node) return null;
 
   if (Node.isStringLiteral(node) || Node.isNoSubstitutionTemplateLiteral(node)) {
     return node.getLiteralValue().trim();
-  }
-
-  if (Node.isTemplateExpression(node)) {
-    const head = node.getHead().getLiteralText();
-    const spans = node.getTemplateSpans();
-    const fullText =
-      head +
-      spans
-        .map((span) => `\${${span.getExpression().getText()}}${span.getLiteral().getLiteralText()}`)
-        .join('');
-    return fullText.trim();
   }
 
   return null;
@@ -91,36 +72,30 @@ function extractArrayObjectsStringField(sourceFile, variableName, fieldName) {
 }
 
 function extractH1TextFromJsx(sourceFile) {
-  const descendants = sourceFile.getDescendants();
+  for (const node of sourceFile.getDescendants()) {
+    if (!Node.isJsxElement(node)) continue;
 
-  for (const node of descendants) {
-    if (Node.isJsxElement(node)) {
-      const opening = node.getOpeningElement();
-      const tagName = opening.getTagNameNode().getText();
+    const opening = node.getOpeningElement();
+    const tagName = opening.getTagNameNode().getText();
 
-      if (tagName !== 'H1') continue;
+    if (tagName !== 'H1') continue;
 
-      const rawText = node.getText();
+    const rawText = node.getText();
 
-      const cleaned = rawText
-        .replace(/^<H1\b[^>]*>/i, '')
-        .replace(/<\/H1>$/i, '')
-        .replace(/\{[^}]*\}/g, ' ')
-        .replace(/<[^>]*>/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
+    const cleaned = rawText
+      .replace(/^<H1\b[^>]*>/i, '')
+      .replace(/<\/H1>$/i, '')
+      .replace(/\{[^}]*\}/g, ' ')
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
 
-      if (!cleaned) return null;
+    if (!cleaned) return null;
 
-      return cleaned
-        .replace(/guide\s*complet[:\s–-]*/i, '')
-        .split(/\s[–-]\s|:| \| /)[0]
-        .trim();
-    }
-
-    if (Node.isJsxSelfClosingElement(node)) {
-      continue;
-    }
+    return cleaned
+      .replace(/guide\s*complet[:\s–-]*/i, '')
+      .split(/\s[–-]\s|:| \| /)[0]
+      .trim();
   }
 
   return null;
@@ -158,7 +133,27 @@ function buildDescription(title, activites, publics) {
   return `Découvrez ${title}, ses attraits touristiques, ses activités et ses hébergements incontournables.`;
 }
 
-// 3) Main
+function detectRegion(slug) {
+  if (/perce|gasp|forillon|bonaventure/i.test(slug)) return 'Gaspésie';
+  if (/tadoussac|cote-nord/i.test(slug)) return 'Côte-Nord';
+  if (/quebec|montmorency/i.test(slug)) return 'Ville de Québec';
+  if (/anse-saint-jean|charlevoix|baie-saint-paul/i.test(slug)) return 'Charlevoix';
+  if (/montreal|chambly|brossard/i.test(slug)) return 'Montréal et sa région';
+
+  return 'Québec';
+}
+
+async function resolveImage(slug) {
+  const imagePath = path.resolve(__dirname, `../public/images/destinations/${slug}.avif`);
+
+  try {
+    await fsp.access(imagePath);
+    return `/images/destinations/${slug}.avif`;
+  } catch {
+    return `/images/default-destination.avif`;
+  }
+}
+
 async function main() {
   let dirEntries;
 
@@ -180,7 +175,7 @@ async function main() {
     skipAddingFilesFromTsConfig: true,
     compilerOptions: {
       allowJs: false,
-      jsx: 4, // React JSX
+      jsx: 4,
     },
   });
 
@@ -197,7 +192,10 @@ async function main() {
       });
 
       const rawTitle = extractH1TextFromJsx(sourceFile) || prettifyFileNameTitle(file);
-      const slug = toSlug(rawTitle);
+
+      // Slug stable basé sur le nom du fichier
+      const baseName = file.replace(/^BlogArticle|\.tsx$/g, '');
+      const slug = toSlug(baseName);
 
       if (!slug) {
         console.warn(`⚠️ Slug vide pour ${file}, fichier ignoré.`);
@@ -220,10 +218,17 @@ async function main() {
       ]);
 
       const hebergements = uniqSort(extractArrayObjectsStringField(sourceFile, 'hotels', 'name'));
-
       const publics = uniqSort(getPublicsFromSource(sourceFile, content));
-      const image = `/images/destinations/${slug}.avif`;
+      const image = await resolveImage(slug);
       const description = buildDescription(rawTitle, activites, publics);
+      const region = detectRegion(slug);
+
+      const keywords = uniqSort([
+        rawTitle,
+        region,
+        ...activites.slice(0, 3),
+        ...publics.slice(0, 2),
+      ]);
 
       allMeta[slug] = {
         title: rawTitle,
@@ -232,6 +237,8 @@ async function main() {
         activites,
         hebergements,
         publics,
+        region,
+        keywords,
       };
     } catch (err) {
       console.warn(
@@ -252,6 +259,8 @@ export interface BlogMetaItem {
   activites: string[];
   hebergements: string[];
   publics: string[];
+  region: string;
+  keywords: string[];
 }
 
 `;

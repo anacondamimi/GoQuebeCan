@@ -1,8 +1,16 @@
+
+
 import Image from 'next/image';
 import React from 'react';
-import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
 import H3 from '@/components/typography/H3';
+import { HotelGrid } from '@/components/hotels/HotelGrid';
+import { pickHotels } from '@/data/hotels/hotelCatalog.generated';
+import { HOTEL_IDS_PORT_CARTIER } from '@/data/hotels/byArticle/port-cartier';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
+import { bookingAwin } from '@/lib/awin';
+import { RestaurantPremiumGrid } from '@/components/food/RestaurantPremiumGrid';
+import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
 
 export const metadata = {
   slug: 'port-cartier',
@@ -22,39 +30,10 @@ export const metadata = {
   hebergements: ['Hôtel Port-Cartier', 'Motel du Havre', 'Auberge de la Rivière'],
   publics: ['familles', 'ados', 'amateurs de culture'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
-const hotels = [
-  {
-    name: 'Chalets Lac Walker & Lac Arthur',
-    category: 'Nature sauvage & tranquillité',
-    description:
-      'Séjour dans la réserve faunique : pêche, canot et randonnées. Idéal pour se ressourcer.',
-    price: 'Tarifs via Sépaq',
-    link: 'https://www.sepaq.com/pq/rpc/hebergement/chalet.dot',
-    image: '/images/destinations/hotels/reserve-faunique-port-cartier.avif',
-  },
-  {
-    name: 'Camping municipal Le Paradis',
-    category: 'Avec et sans services',
-    description:
-      '39 emplacements bien situés, en bordure du boulevard du Portage-des-Mousses. Parfait pour VR ou tente.',
-    price: 'À partir de ~25$/nuit (info à confirmer)',
-    link: 'https://www.villeport-cartier.com/tourisme/camping-municipal',
-    image: '/images/destinations/hotels/camping-deux-port-cartier.avif',
-  },
-  {
-    name: 'Camping municipal Patterson',
-    category: 'Sans service - Nature pure',
-    description:
-      '17 emplacements rustiques en pleine nature sur l’Île Patterson Sud. Déconnexion garantie.',
-    price: 'Tarif accessible (info locale)',
-    link: 'https://www.villeport-cartier.com/tourisme/camping-municipal',
-    image: '/images/destinations/hotels/camping-un-port-cartier.avif',
-  },
-];
+const hotels = pickHotels(HOTEL_IDS_PORT_CARTIER);
 
 const restaurants = [
   {
@@ -148,9 +127,12 @@ const teenActivities = [
 
 export default function BlogArticlePortCartier() {
   return (
-    <article id="blog_article_port_cartier" className="mx-auto max-w-4xl bg-white px-4 py-12">
+    <DestinationArticleTemplate
+      slug="port-cartier"
+      title="Port-Cartier - Entre Mer et Forêt sur la Côte-Nord"
+    >
+      <article id="blog_article_port_cartier" className="mx-auto max-w-4xl bg-white px-4 py-12">
       <header className="mb-12 text-center">
-        <H1 className="mb-4">Port-Cartier - Entre Mer et Forêt sur la Côte-Nord</H1>
         <p className="text-xl text-gray-600">
           Découvrez cette ville dynamique où activités maritimes et plein air se rencontrent dans un
           cadre naturel exceptionnel
@@ -260,35 +242,8 @@ export default function BlogArticlePortCartier() {
           <Hotel className="size-8 text-indigo-600" />
           Où Dormir ?
         </H2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {hotels.map((hotel) => (
-            <a
-              key={hotel.name}
-              href={hotel.link}
-              className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
-            >
-              <div className="relative h-48">
-                <Image
-                  src={hotel.image}
-                  alt={hotel.name}
-                  className="size-full object-cover"
-                  width={800}
-                  height={600}
-                />
-              </div>
-              <div className="p-6">
-                <div className="mb-2 flex items-start justify-between">
-                  <H3 className="text-xl font-semibold text-gray-900">{hotel.name}</H3>
-                  <span className="rounded bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
-                    {hotel.category}
-                  </span>
-                </div>
-                <p className="mb-4 text-gray-600">{hotel.description}</p>
-                <p className="font-semibold text-indigo-600">{hotel.price}</p>
-              </div>
-            </a>
-          ))}
-        </div>
+        {/* MIGRATED_HOTELS_GRID */}
+<HotelGrid items={hotels} />
       </section>
 
       <section className="mb-16">
@@ -296,28 +251,7 @@ export default function BlogArticlePortCartier() {
           <Utensils className="size-8 text-indigo-600" />
           Où Manger ?
         </H2>
-        <div className="space-y-6">
-          {restaurants.map((restaurant) => (
-            <div key={restaurant.name} className="rounded-lg bg-white p-6 shadow-md">
-              <div className="mb-4 flex items-start justify-between">
-                <div>
-                  <H3 className="mb-1 text-xl font-semibold text-gray-900">{restaurant.name}</H3>
-                  <p className="text-gray-600">{restaurant.type}</p>
-                </div>
-                <span className="font-semibold text-indigo-600">{restaurant.price}</span>
-              </div>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">Spécialité:</span> {restaurant.speciality}
-              </p>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">À essayer:</span> {restaurant.mustTry}
-              </p>
-              <p className="text-gray-700">
-                <span className="font-medium">Horaires:</span> {restaurant.schedule}
-              </p>
-            </div>
-          ))}
-        </div>
+        <RestaurantPremiumGrid items={restaurants} />
       </section>
 
       <section className="mb-16">
@@ -405,7 +339,7 @@ export default function BlogArticlePortCartier() {
         </p>
         <div className="flex justify-center gap-4">
           <a
-            href="https://www.booking.com/city/ca/port-cartier.html"
+            href={bookingAwin('https://www.booking.com/city/ca/port-cartier.html')}
             className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
           >
             Réserver un Hébergement
@@ -419,5 +353,6 @@ export default function BlogArticlePortCartier() {
         </div>
       </section>
     </article>
+    </DestinationArticleTemplate>
   );
 }

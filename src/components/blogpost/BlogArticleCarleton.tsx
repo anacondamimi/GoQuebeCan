@@ -1,8 +1,16 @@
+
+
 import Image from 'next/image';
 import React from 'react';
-import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
 import H3 from '@/components/typography/H3';
+import { HotelGrid } from '@/components/hotels/HotelGrid';
+import { pickHotels } from '@/data/hotels/hotelCatalog.generated';
+import { HOTEL_IDS_CARLETON } from '@/data/hotels/byArticle/carleton';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Wind } from 'lucide-react';
+import { bookingAwin } from '@/lib/awin';
+import { RestaurantPremiumGrid } from '@/components/food/RestaurantPremiumGrid';
+import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
 
 export const metadata = {
   slug: 'carleton',
@@ -22,36 +30,10 @@ export const metadata = {
   hebergements: ['Hostellerie Baie Bleue', 'Manoir Belle Plage', 'Auberge du Marchand'],
   publics: ['familles', 'ados', 'amateurs de culture', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Wind } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
-const hotels = [
-  {
-    name: 'Riotel Carleton-sur-Mer',
-    category: 'Vue sur Mer',
-    description: 'Vue panoramique sur la baie des Chaleurs',
-    price: 'À partir de 159$/nuit',
-    link: 'https://www.booking.com/hotel/ca/hostellerie-baie-bleue.html',
-    image: '/images/destinations/hotels/riotel-carleton.avif',
-  },
-  {
-    name: 'Manoir Belle Plage',
-    category: 'Charme',
-    description: 'Établissement historique rénové',
-    price: 'À partir de 149$/nuit',
-    link: 'https://www.booking.com/hotel/ca/manoir-belle-plage.html',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
-  },
-  {
-    name: 'Motel l’Abri',
-    category: 'Économique',
-    description: 'Option abordable à proximité du centre-ville et de la plage',
-    price: 'À partir de 139$/nuit',
-    link: 'https://www.booking.com/hotel/ca/motel-l-abri.html',
-    image: '/images/destinations/hotels/hotel-abri-carleton.avif',
-  },
-];
+const hotels = pickHotels(HOTEL_IDS_CARLETON);
 
 const restaurants = [
   {
@@ -145,9 +127,12 @@ const teenActivities = [
 
 export function BlogArticleCarleton() {
   return (
-    <article id="blog_article_carleton" className="mx-auto max-w-4xl bg-white px-4 py-12">
+    <DestinationArticleTemplate
+      slug="carleton"
+      title="Carleton-sur-Mer - Perle de la Baie des Chaleurs"
+    >
+      <article id="blog_article_carleton" className="mx-auto max-w-4xl bg-white px-4 py-12">
       <header className="mb-12 text-center">
-        <H1 className="mb-4">Carleton-sur-Mer - Perle de la Baie des Chaleurs</H1>
         <p className="text-xl text-gray-600">
           Découvrez un paradis balnéaire entre mer et montagnes au cœur de la Gaspésie
         </p>
@@ -254,35 +239,8 @@ export function BlogArticleCarleton() {
           <Hotel className="size-8 text-indigo-600" />
           Où Dormir ?
         </H2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {hotels.map((hotel) => (
-            <a
-              key={hotel.name}
-              href={hotel.link}
-              className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
-            >
-              <div className="relative h-48">
-                <Image
-                  src={hotel.image}
-                  alt={hotel.name}
-                  className="size-full object-cover"
-                  width={800}
-                  height={600}
-                />
-              </div>
-              <div className="p-6">
-                <div className="mb-2 flex items-start justify-between">
-                  <H3 className="text-xl font-semibold text-gray-900">{hotel.name}</H3>
-                  <span className="rounded bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
-                    {hotel.category}
-                  </span>
-                </div>
-                <p className="mb-4 text-gray-600">{hotel.description}</p>
-                <p className="font-semibold text-indigo-600">{hotel.price}</p>
-              </div>
-            </a>
-          ))}
-        </div>
+        {/* MIGRATED_HOTELS_GRID */}
+<HotelGrid items={hotels} />
       </section>
 
       <section className="mb-16">
@@ -290,28 +248,9 @@ export function BlogArticleCarleton() {
           <Utensils className="size-8 text-indigo-600" />
           Où Manger ?
         </H2>
-        <div className="space-y-6">
-          {restaurants.map((restaurant) => (
-            <div key={restaurant.name} className="rounded-lg bg-white p-6 shadow-md">
-              <div className="mb-4 flex items-start justify-between">
-                <div>
-                  <H3 className="mb-1 text-xl font-semibold text-gray-900">{restaurant.name}</H3>
-                  <p className="text-gray-600">{restaurant.type}</p>
-                </div>
-                <span className="font-semibold text-indigo-600">{restaurant.price}</span>
-              </div>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">Spécialité:</span> {restaurant.speciality}
-              </p>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">À essayer:</span> {restaurant.mustTry}
-              </p>
-              <p className="text-gray-700">
-                <span className="font-medium">Horaires:</span> {restaurant.schedule}
-              </p>
-            </div>
-          ))}
-        </div>
+
+          <RestaurantPremiumGrid items={restaurants} />
+
       </section>
 
       <section className="mb-16">
@@ -401,7 +340,7 @@ export function BlogArticleCarleton() {
         </p>
         <div className="flex justify-center gap-4">
           <a
-            href="https://www.booking.com/city/ca/carleton.html"
+            href={bookingAwin('https://www.booking.com/city/ca/carleton.html')}
             className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
           >
             Réserver un Hébergement
@@ -415,6 +354,7 @@ export function BlogArticleCarleton() {
         </div>
       </section>
     </article>
+    </DestinationArticleTemplate>
   );
 }
 

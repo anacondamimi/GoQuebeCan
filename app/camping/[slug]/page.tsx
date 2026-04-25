@@ -187,7 +187,7 @@ const CAMPINGS: CampingPageData[] = [
       },
       {
         label: 'Page GoQuébeCAN sur le Saguenay',
-        href: '/destinations/saguenay-lac-saint-jean', // À adapter à ton slug réel
+        href: '/blog/saguenay', // À adapter à ton slug réel
       },
     ],
     internalLinks: [
@@ -238,8 +238,8 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
       title: 'Camping au Québec | GoQuébeCAN',
       description:
         'Découvrez les meilleurs campings du Québec : emplacements nature, lacs, forêts et panoramas uniques.',
-      canonical: 'https://goquebecan.com/camping',
-      image: 'https://goquebecan.com/images/og/camping-quebec.jpg',
+      canonical: 'https://www.goquebecan.com/camping',
+      image: 'https://www.goquebecan.com/images/og/camping-quebec.jpg',
       keywords: ['camping québec', 'camping nature', 'camping famille', 'camping VR'],
       type: 'article',
     });
@@ -248,8 +248,8 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   return buildMetadata2025({
     title: `${camping.name} | Camping au Québec`,
     description: camping.shortDescription,
-    canonical: `https://goquebecan.com/camping/${camping.slug}`,
-    image: `https://goquebecan.com${camping.heroImage}`,
+    canonical: `https://www.goquebecan.com/camping/${camping.slug}`,
+    image: `https://www.goquebecan.com${camping.heroImage}`,
     keywords: camping.seoKeywords,
     type: 'article',
   });
@@ -272,8 +272,8 @@ function buildCampingJsonLd(camping: CampingPageData) {
     type: 'article', // On reste sur un article mais le contenu décrit un Campground
     title: camping.name,
     description: camping.shortDescription,
-    canonical: `https://goquebecan.com/camping/${camping.slug}`,
-    image: `https://goquebecan.com${camping.heroImage}`,
+    canonical: `https://www.goquebecan.com/camping/${camping.slug}`,
+    image: `https://www.goquebecan.com${camping.heroImage}`,
     published: '2025-05-01', // à adapter par camping si besoin
     modified: '2026-04-05',
     author: 'GoQuébeCAN',

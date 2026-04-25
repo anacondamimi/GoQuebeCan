@@ -29,7 +29,7 @@ export type StepLike = {
 
 export type Branding = {
   brand?: string; // ex: 'GoQuébeCAN'
-  logoUrl?: string; // ex: '/images/logo.png'
+  logoUrl?: string; // ex: '/logo.png'
   cardUrl?: string; // ex: '/images/carte.avif'
   greeting?: string; // phrase d'accroche sous le titre
   shareCtaText?: string; // texte lien
@@ -40,7 +40,7 @@ export type Branding = {
 function resolveBranding(b?: Branding): Required<Branding> {
   return {
     brand: b?.brand ?? 'GoQuébeCAN',
-    logoUrl: b?.logoUrl ?? '/images/logo.png',
+    logoUrl: b?.logoUrl ?? '/logo.png',
     cardUrl: b?.cardUrl ?? '/images/carte.avif',
     greeting:
       b?.greeting ??

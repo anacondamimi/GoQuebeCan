@@ -18,8 +18,8 @@ export const metadata: Metadata = buildMetadata2025({
   title: 'Planificateur d’itinéraire au Québec | GoQuébeCAN',
   description:
     'Créez votre itinéraire de voyage au Québec : sélectionnez vos étapes, calculez les distances, découvrez les producteurs locaux et préparez un road trip clair, pratique et inspirant.',
-  canonical: 'https://goquebecan.com/planificateur',
-  image: 'https://goquebecan.com/images/og/planificateur-quebec.jpg',
+  canonical: 'https://www.goquebecan.com/planificateur',
+  image: 'https://www.goquebecan.com/images/og/planificateur-quebec.jpg',
   keywords: [
     'planificateur itinéraire Québec',
     'road trip Québec',
@@ -40,8 +40,8 @@ const jsonLd = buildGenericJsonLd({
   title: 'Planificateur d’itinéraire au Québec',
   description:
     'Préparez un road trip au Québec avec un planificateur simple et visuel : ajoutez vos étapes, visualisez votre trajet, découvrez les régions et organisez un voyage plus fluide.',
-  canonical: 'https://goquebecan.com/planificateur',
-  image: 'https://goquebecan.com/images/og/planificateur-quebec.jpg',
+  canonical: 'https://www.goquebecan.com/planificateur',
+  image: 'https://www.goquebecan.com/images/og/planificateur-quebec.jpg',
   published: '2025-05-01',
   modified: '2026-03-15',
   author: 'GoQuébeCAN',

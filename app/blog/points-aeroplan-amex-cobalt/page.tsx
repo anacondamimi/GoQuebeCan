@@ -9,8 +9,8 @@ import { HeadExtras, JsonLd } from '@/lib/seo/HeadExtras';
 import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
 
-const CANONICAL = 'https://goquebecan.com/blog/points-aeroplan-amex-cobalt';
-const OG_IMAGE = 'https://goquebecan.com/images/og/points-aeroplan-cobalt.jpg';
+const CANONICAL = 'https://www.goquebecan.com/blog/points-aeroplan-amex-cobalt';
+const OG_IMAGE = 'https://www.goquebecan.com/images/og/points-aeroplan-cobalt.jpg';
 
 export const metadata: Metadata = buildMetadata2025({
   title: 'Voyager moins cher avec Aeroplan, Amex Cobalt et Visa Aventura | Guide complet',

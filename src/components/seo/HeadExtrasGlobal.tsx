@@ -15,7 +15,7 @@ export default function HeadExtrasGlobal() {
     <Head>
       {/* ✅ Préchargement critique */}
       <link rel="preload" as="image" href="/og/carte.avif" />
-      <link rel="dns-prefetch" href="https://goquebecan.com" />
+      <link rel="dns-prefetch" href="https://www.goquebecan.com" />
       <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       <link rel="dns-prefetch" href="https://maps.googleapis.com" />
 

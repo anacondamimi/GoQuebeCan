@@ -1,14 +1,3 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import H1 from '@/components/typography/H1';
-import H2 from '@/components/typography/H2';
-import H3 from '@/components/typography/H3';
-import { buildMetadata2025 } from '@/lib/seo/buildMetadata2025';
-import { buildDestinationLd } from '@/lib/seo/buildDestinationLd';
-import { buildBreadcrumbLd } from '@/lib/seo/buildBreadcrumbLd';
-import { buildHowToLd } from '@/lib/seo/buildHowToLd';
-import { JsonLd, HeadExtras } from '@/lib/seo/HeadExtras';
-
 /**
  * 👉 VERSION RÉFÉRENCE (SEO 2025) — Destinations / Saguenay
  * Next.js 14.2.30 – Static SSG + JSON-LD renforcé + accessibilité + liens affiliés durcis
@@ -21,8 +10,8 @@ export const revalidate = 60 * 60 * 24; // 24h
 const TITLE = 'Saguenay (Chicoutimi, Jonquière, La Baie) – Guide complet 2025';
 const DESCRIPTION =
   'Entre fjord majestueux, adresses gourmandes et activités pour tous les âges : notre guide complet pour réussir vos vacances à Saguenay (Chicoutimi, Jonquière, La Baie). Itinéraire, hôtels, restos, points de vue, baleines, producteurs locaux, bornes EV et liens utiles.';
-const CANONICAL = 'https://goquebecan.com/destinations/fjord-saguenay';
-const OG_IMAGE = 'https://goquebecan.com/images/saguenay/og-saguenay-1200x630.jpg';
+const CANONICAL = 'https://www.goquebecan.com/blog/saguenay';
+const OG_IMAGE = 'https://www.goquebecan.com/images/saguenay/og-saguenay-1200x630.jpg';
 const KEYWORDS = [
   'Saguenay',
   'Chicoutimi',
@@ -69,7 +58,12 @@ function HotelCard({
   const finalTarget = target ?? (external ? '_blank' : undefined);
 
   return (
-    <article className="group rounded-2xl border bg-white shadow-sm ring-1 ring-black/5 transition hover:shadow-md">
+    <DestinationArticleTemplate
+      slug="saguenay"
+      title="Saguenay (Chicoutimi, Jonquière, La Baie) — le guide complet pour des vacances
+            inoubliables"
+    >
+      <article className="group rounded-2xl border bg-white shadow-sm ring-1 ring-black/5 transition hover:shadow-md">
       <div className="relative overflow-hidden rounded-t-2xl">
         <Link href={href} aria-label={`Voir ${title}`} rel={finalRel} target={finalTarget}>
           <Image
@@ -108,10 +102,25 @@ function HotelCard({
         ) : null}
       </div>
     </article>
+    </DestinationArticleTemplate>
   );
 }
 
 // ======= METADATA SEO 2025 =======
+
+import Image from 'next/image';
+import Link from 'next/link';
+import H1 from '@/components/typography/H1';
+import H2 from '@/components/typography/H2';
+import H3 from '@/components/typography/H3';
+import { buildMetadata2025 } from '@/lib/seo/buildMetadata2025';
+import { buildDestinationLd } from '@/lib/seo/buildDestinationLd';
+import { buildBreadcrumbLd } from '@/lib/seo/buildBreadcrumbLd';
+import { buildHowToLd } from '@/lib/seo/buildHowToLd';
+import { JsonLd, HeadExtras } from '@/lib/seo/HeadExtras';
+import { bookingAwin } from '@/lib/awin';
+import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
+
 export const metadata = buildMetadata2025({
   title: TITLE,
   description: DESCRIPTION,
@@ -124,8 +133,8 @@ export const metadata = buildMetadata2025({
 export default function Page() {
   // ===== JSON-LD STRUCTURÉ =====
   const breadcrumb = buildBreadcrumbLd([
-    { name: 'Accueil', item: 'https://goquebecan.com' },
-    { name: 'Destinations', item: 'https://goquebecan.com/destinations' },
+    { name: 'Accueil', item: 'https://www.goquebecan.com' },
+    { name: 'Destinations', item: 'https://www.goquebecan.com/destinations' },
     { name: 'Saguenay', item: CANONICAL },
   ]);
 
@@ -165,8 +174,8 @@ export default function Page() {
       <HeadExtras
         ogUpdatedTime="2025-10-31T00:00:00-04:00"
         ogSeeAlso={[
-          'https://goquebecan.com/destinations/charlevoix',
-          'https://goquebecan.com/destinations/gaspesie',
+          'https://www.goquebecan.com/blog/charlevoix',
+          'https://www.goquebecan.com/blog/gaspesie',
         ]}
         articlePublishedTime={`${PUBLISHED}T00:00:00-04:00`}
         articleModifiedTime={`${MODIFIED}T00:00:00-04:00`}
@@ -290,7 +299,7 @@ export default function Page() {
 
         <div className="grid gap-6 md:grid-cols-3">
           <HotelCard
-            href="https://www.booking.com/hotel/ca/hotels-gouverneur-saguenay.fr.html?aid=357028"
+            href={bookingAwin('https://www.booking.com/hotel/ca/hotels-gouverneur-saguenay.fr.html?aid=357028')}
             image="/images/destinations/hotels/hotel-gouverneur-saguenay.avif"
             title="OTL Gouverneur Saguenay"
             badge="Luxe"
@@ -299,7 +308,7 @@ export default function Page() {
           />
 
           <HotelCard
-            href="https://www.booking.com/hotel/ca/le-montagnais-and-convention-center.fr.html?aid=357028"
+            href={bookingAwin('https://www.booking.com/hotel/ca/le-montagnais-and-convention-center.fr.html?aid=357028')}
             image="/images/destinations/hotels/montagnais-saguenay.avif"
             title="Hôtel Le Montagnais"
             badge="Familial"
@@ -308,7 +317,7 @@ export default function Page() {
           />
 
           <HotelCard
-            href="https://www.booking.com/hotel/ca/gite-du-haut-des-arbres.fr.html?aid=357028"
+            href={bookingAwin('https://www.booking.com/hotel/ca/gite-du-haut-des-arbres.fr.html?aid=357028')}
             image="/images/destinations/hotels/gite-haut-arbre-saguenay.avif"
             title="Gîte du Haut des Arbres"
             badge="Charme"

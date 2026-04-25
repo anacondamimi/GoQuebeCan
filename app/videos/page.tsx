@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     images: [
       'https://images.unsplash.com/photo-1525638164172-b31ea4222ef7?auto=format&fit=crop&q=80',
     ],
-    url: 'https://goquebecan.com/videos',
+    url: 'https://www.goquebecan.com/videos',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://goquebecan.com/videos',
+    canonical: 'https://www.goquebecan.com/videos',
   },
 };
 

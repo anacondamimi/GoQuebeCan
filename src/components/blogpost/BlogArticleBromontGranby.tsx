@@ -1,8 +1,16 @@
+
+
 import Image from 'next/image';
 import React from 'react';
-import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
 import H3 from '@/components/typography/H3';
+import { HotelGrid } from '@/components/hotels/HotelGrid';
+import { pickHotels } from '@/data/hotels/hotelCatalog.generated';
+import { HOTEL_IDS_BROMONT_GRANBY } from '@/data/hotels/byArticle/bromont-granby';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
+import { bookingAwin } from '@/lib/awin';
+import { RestaurantPremiumGrid } from '@/components/food/RestaurantPremiumGrid';
+import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
 
 export const metadata = {
   slug: 'bromont-granby',
@@ -19,37 +27,10 @@ export const metadata = {
   hebergements: ['St-Martin Bromont', 'Château-Bromont', 'Hôtel Castel & Spa Confort'],
   publics: ['familles', 'ados'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
-const hotels = [
-  {
-    name: 'Residence Inn by Marriott Bromont',
-    category: 'Confort & séjour prolongé',
-    description:
-      'Hôtel moderne situé au pied de la montagne de Bromont. Suites spacieuses avec cuisine complète, piscine, spa avec vue sur la montagne et petit-déjeuner inclus. Idéal pour un séjour ski, vélo, glissade ou une escapade relax en Estrie.',
-    price: 'Tarif selon la saison et disponibilités',
-    link: 'https://www.booking.com/hotel/ca/residence-inn-by-marriott-bromont.fr.html?aid=304142&label=gen173rf-10CAsoJ0IPY2hhdGVhdS1icm9tb250SDNYA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4Aoacts0GwAIB0gIkMDVkZDk1YjQtMjA0Ny00OTM2LTg5YzQtOGJlYjg1NDc2NzFi2AIB4AIB&sid=61b67a7e8a8af63fb2b3826a3f4feec9&age=0&all_sr_blocks=1521604303_423826263_0_1_0&checkin=2026-07-08&checkout=2026-07-09&dest_id=900048497&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1521604303_423826263_0_1_0&hpos=1&matching_block_id=1521604303_423826263_0_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1521604303_423826263_0_1_0__23900&srepoch=1772981827&srpvid=bd4069035089048a&type=total&ucfs=1&',
-    image: '/images/destinations/hotels/residence-inn-marriott-bromont.avif',
-  },
-  {
-    name: 'Château-Bromont',
-    category: 'Resort',
-    description: 'Au pied des pistes avec golf',
-    price: 'À partir de 189$/nuit',
-    link: 'https://www.booking.com/hotel/ca/chateau-bromont.html',
-    image: '/images/destinations/hotels/vallea-bromont.avif',
-  },
-  {
-    name: 'Hôtel Castel & Spa Confort',
-    category: 'Spa',
-    description: 'À proximité du Zoo de Granby',
-    price: 'À partir de 159$/nuit',
-    link: 'https://www.booking.com/hotel/ca/castel-granby.html',
-    image: '/images/destinations/hotels/hotel-castel-granby.avif',
-  },
-];
+const hotels = pickHotels(HOTEL_IDS_BROMONT_GRANBY);
 
 const restaurants = [
   {
@@ -215,9 +196,12 @@ const teenActivities = [
 
 export default function BlogArticleBromontGranby() {
   return (
-    <article id="blog_article_bromont_granby" className="mx-auto max-w-4xl bg-white px-4 py-12">
+    <DestinationArticleTemplate
+      slug="bromont-granby"
+      title="Bromont et Granby - Plaisirs Quatre Saisons"
+    >
+      <article id="blog_article_bromont_granby" className="mx-auto max-w-4xl bg-white px-4 py-12">
       <header className="mb-12 text-center">
-        <H1 className="mb-4">Bromont et Granby - Plaisirs Quatre Saisons</H1>
         <p className="text-xl text-gray-600">
           Découvrez deux villes complémentaires offrant sports de montagne, attractions familiales
           et plein air
@@ -349,35 +333,8 @@ export default function BlogArticleBromontGranby() {
           <Hotel className="size-8 text-indigo-600" />
           Où Dormir ?
         </H2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {hotels.map((hotel) => (
-            <a
-              key={hotel.name}
-              href={hotel.link}
-              className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
-            >
-              <div className="relative h-48">
-                <Image
-                  src={hotel.image}
-                  alt={hotel.name}
-                  className="size-full object-cover"
-                  width={800}
-                  height={600}
-                />
-              </div>
-              <div className="p-6">
-                <div className="mb-2 flex items-start justify-between">
-                  <H3 className="text-xl font-semibold text-gray-900">{hotel.name}</H3>
-                  <span className="rounded bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
-                    {hotel.category}
-                  </span>
-                </div>
-                <p className="mb-4 text-gray-600">{hotel.description}</p>
-                <p className="font-semibold text-indigo-600">{hotel.price}</p>
-              </div>
-            </a>
-          ))}
-        </div>
+        {/* MIGRATED_HOTELS_GRID */}
+<HotelGrid items={hotels} />
       </section>
 
       <section className="mb-16">
@@ -385,28 +342,9 @@ export default function BlogArticleBromontGranby() {
           <Utensils className="size-8 text-indigo-600" />
           Où Manger ?
         </H2>
-        <div className="space-y-6">
-          {restaurants.map((restaurant) => (
-            <div key={restaurant.name} className="rounded-lg bg-white p-6 shadow-md">
-              <div className="mb-4 flex items-start justify-between">
-                <div>
-                  <H3 className="mb-1 text-xl font-semibold text-gray-900">{restaurant.name}</H3>
-                  <p className="text-gray-600">{restaurant.type}</p>
-                </div>
-                <span className="font-semibold text-indigo-600">{restaurant.price}</span>
-              </div>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">Spécialité:</span> {restaurant.speciality}
-              </p>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">À essayer:</span> {restaurant.mustTry}
-              </p>
-              <p className="text-gray-700">
-                <span className="font-medium">Horaires:</span> {restaurant.schedule}
-              </p>
-            </div>
-          ))}
-        </div>
+
+          <RestaurantPremiumGrid items={restaurants} />
+
       </section>
 
       <section className="mb-16">
@@ -496,7 +434,7 @@ export default function BlogArticleBromontGranby() {
         </p>
         <div className="flex justify-center gap-4">
           <a
-            href="https://www.booking.com/city/ca/bromont.html"
+            href={bookingAwin('https://www.booking.com/city/ca/bromont.html')}
             className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
           >
             Réserver un Hébergement
@@ -510,5 +448,6 @@ export default function BlogArticleBromontGranby() {
         </div>
       </section>
     </article>
+    </DestinationArticleTemplate>
   );
 }

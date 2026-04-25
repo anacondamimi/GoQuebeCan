@@ -13,8 +13,8 @@ interface HeadProps {
 export function Head({
   title,
   description,
-  image = 'https://goquebecan.com/default.avif',
-  url = 'https://goquebecan.com',
+  image = 'https://www.goquebecan.com/default.avif',
+  url = 'https://www.goquebecan.com',
   type = 'website',
   canonicalUrl,
 }: HeadProps) {

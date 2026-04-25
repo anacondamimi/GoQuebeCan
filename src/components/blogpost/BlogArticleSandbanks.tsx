@@ -5,6 +5,8 @@ import { Waves, Info } from 'lucide-react';
 import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
 import H3 from '@/components/typography/H3';
+import { bookingAwin } from '@/lib/awin';
+import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
 
 type HotelInfo = {
   name: string;
@@ -21,7 +23,7 @@ const hotels: HotelInfo[] = [
       'Suite privée avec très grand lit, note “Fabuleux” (≈170 avis) et situation géographique 9,7. Idéal pour se faire plaisir tout en restant près de la plage.',
     price: 'Dès ~272 $ + taxes/nuit',
     image: '/images/destinations/hotels/news-room-sandbank.avif',
-    bookingUrl: 'https://www.booking.com/hotel/ca/newsroom-suites.fr.html?aid=304142',
+    bookingUrl: bookingAwin('https://www.booking.com/hotel/ca/newsroom-suites.fr.html?aid=304142'),
   },
   {
     name: 'The Village Suites',
@@ -29,7 +31,7 @@ const hotels: HotelInfo[] = [
       'Studios et appartements confortables à Wellington, note globale 9,1 avec situation géographique 9,6. Parfait pour une base tranquille après une journée de plage.',
     price: 'Dès ~148 $ + taxes/nuit',
     image: '/images/destinations/hotels/the-village-sandbank.avif',
-    bookingUrl: 'https://www.booking.com/hotel/ca/the-village-suites.fr.html?aid=304142',
+    bookingUrl: bookingAwin('https://www.booking.com/hotel/ca/the-village-suites.fr.html?aid=304142'),
   },
   {
     name: 'The Birch',
@@ -37,8 +39,7 @@ const hotels: HotelInfo[] = [
       'Bungalow complet en bord de l’eau, note 9,1 “Fabuleux” avec situation 9,7. Idéal pour une ambiance chalet, avec un vrai sentiment de vacances.',
     price: 'Dès ~270 $ + taxes/nuit',
     image: '/images/destinations/hotels/the-birch-sandbank.avif',
-    bookingUrl:
-      'https://www.booking.com/hotel/ca/twin-birch-suites-b-amp-b-cottages.fr.html?aid=304142',
+    bookingUrl: bookingAwin('https://www.booking.com/hotel/ca/twin-birch-suites-b-amp-b-cottages.fr.html?aid=304142'),
   },
 ];
 
@@ -46,7 +47,11 @@ function HotelRow({ hotel }: { hotel: HotelInfo }) {
   const src = hotel.image || '/images/placeholder/placeholder.avif';
 
   return (
-    <li className="group flex items-center gap-4 rounded-lg py-3 transition hover:bg-gray-50 hover:shadow-sm">
+    <DestinationArticleTemplate
+      slug="sandbanks"
+      title="Plage de Sandbanks : l&apos;évasion parfaite pour les familles québécoises"
+    >
+      <li className="group flex items-center gap-4 rounded-lg py-3 transition hover:bg-gray-50 hover:shadow-sm">
       <Link
         href={hotel.bookingUrl}
         target={hotel.bookingUrl.startsWith('http') ? '_blank' : undefined}
@@ -78,6 +83,7 @@ function HotelRow({ hotel }: { hotel: HotelInfo }) {
         </div>
       </Link>
     </li>
+    </DestinationArticleTemplate>
   );
 }
 

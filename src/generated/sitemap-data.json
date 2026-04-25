@@ -64,7 +64,7 @@
       "priority": 0.65
     },
     {
-      "route": "/blog/carleton-sur-mer",
+      "route": "blog/carleton-sur-mer-sur-mer",
       "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.65
@@ -430,7 +430,7 @@
       "priority": 0.7
     },
     {
-      "route": "/destinations/ile-d'orleans",
+      "route": "/destinations/ile-orleans",
       "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "weekly",
       "priority": 0.7

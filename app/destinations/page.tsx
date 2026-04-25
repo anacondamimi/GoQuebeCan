@@ -17,11 +17,11 @@ export const metadata: Metadata = {
         alt: 'Location de VR au Canada',
       },
     ],
-    url: 'https://goquebecan.com/destinations',
+    url: 'https://www.goquebecan.com/destinations',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://goquebecan.com/destinations',
+    canonical: 'https://www.goquebecan.com/destinations',
   },
 };
 

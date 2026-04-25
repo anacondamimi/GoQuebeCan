@@ -21,13 +21,13 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfa
 export const metadata: Metadata = {
   title: 'GoQuébeCan | Explorez le Québec et le Canada',
   description: 'Guide complet des itinéraires, hébergements et activités au Québec et au Canada.',
-  metadataBase: new URL('https://goquebecan.com'),
-  alternates: { canonical: 'https://goquebecan.com' },
+  metadataBase: new URL('https://www.goquebecan.com'),
+  alternates: { canonical: 'https://www.goquebecan.com' },
   openGraph: {
     title: 'GoQuébeCan | Explorez le Québec et le Canada',
     description:
       'Itinéraires, hébergements, producteurs locaux et expériences authentiques à découvrir.',
-    url: 'https://goquebecan.com',
+    url: 'https://www.goquebecan.com',
     siteName: 'GoQuébeCan',
     locale: 'fr_CA',
     type: 'website',

@@ -6,8 +6,8 @@ import { JsonLd, HeadExtras } from '@/lib/seo/HeadExtras';
 import H1 from '@/components/typography/H1';
 import type { Metadata } from 'next';
 
-const CANONICAL = 'https://goquebecan.com/vols';
-const OG_IMAGE = 'https://goquebecan.com/images/og/vols-montreal-france.jpg';
+const CANONICAL = 'https://www.goquebecan.com/vols';
+const OG_IMAGE = 'https://www.goquebecan.com/images/og/vols-montreal-france.jpg';
 
 // ─────────────────────────────
 // 🔍 MÉTADONNÉES SEO 2025/2026

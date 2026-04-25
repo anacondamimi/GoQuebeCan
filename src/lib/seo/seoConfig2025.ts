@@ -8,14 +8,14 @@ import type { Metadata } from 'next';
 /* ==========================
    CONSTANTES GLOBALES
    ========================== */
-export const SITE_URL = 'https://goquebecan.com';
+export const SITE_URL = 'https://www.goquebecan.com';
 export const SITE_NAME = 'GoQuébeCan';
 export const DEFAULT_LOCALE = 'fr_CA';
 
 export const PUBLISHER = {
   name: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/images/logo-og-512.png`,
+  logo: `${SITE_URL}/android-chrome-512x512.png`,
   sameAs: [
     'https://www.youtube.com/@GoQuebecan',
     'https://www.facebook.com/GoQuebecan',

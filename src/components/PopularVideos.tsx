@@ -73,7 +73,7 @@ const videos: VideoItem[] = [
       'Une vidéo pour ressentir l’ambiance de Carleton-sur-Mer entre mer, détente et paysages côtiers.',
     thumbnail: 'https://img.youtube.com/vi/XdCDPgbeQjw/hqdefault.jpg',
     videoUrl: 'https://www.youtube.com/embed/XdCDPgbeQjw',
-    articleUrl: '/blog/carleton-sur-mer',
+    articleUrl: 'blog/carleton-sur-mer-sur-mer',
   },
   {
     id: 'video103',
@@ -95,7 +95,7 @@ const videos: VideoItem[] = [
       'Découvre l’Île d’Orléans en vidéo avec ses paysages, ses routes tranquilles et ses bonnes adresses gourmandes.',
     thumbnail: 'https://img.youtube.com/vi/vVI1efp6hyE/hqdefault.jpg',
     videoUrl: 'https://www.youtube.com/embed/vVI1efp6hyE',
-    articleUrl: "/blog/ile-d'orleans",
+    articleUrl: '/blog/ile-orleans',
   },
   {
     id: 'video32',
@@ -405,8 +405,8 @@ export default function PopularVideos() {
       position: index + 1,
       name: video.title,
       url: video.articleUrl
-        ? `https://goquebecan.com${video.articleUrl}`
-        : 'https://goquebecan.com/videos',
+        ? `https://www.goquebecan.com${video.articleUrl}`
+        : 'https://www.goquebecan.com/videos',
     })),
   };
 

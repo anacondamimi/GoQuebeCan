@@ -1,9 +1,16 @@
+
+
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
 import H3 from '@/components/typography/H3';
+import { HotelGrid } from '@/components/hotels/HotelGrid';
+import { pickHotels } from '@/data/hotels/hotelCatalog.generated';
+import { HOTEL_IDS_ORLEANS } from '@/data/hotels/byArticle/orleans';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
+import { bookingAwin } from '@/lib/awin';
+import { RestaurantPremiumGrid } from '@/components/food/RestaurantPremiumGrid';
+import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
 
 export const metadata = {
   slug: 'orleans',
@@ -13,39 +20,10 @@ export const metadata = {
   hebergements: ['Auberge La Grange de l', 'Le Domaine Orléans', 'Les Chalets de l'],
   publics: ['aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
-const hotels = [
-  {
-    name: "La maison de l'île d'Orléans",
-    category: 'Gastronomique & romantique',
-    description:
-      'B&B haut de gamme à Saint-Jean, connu pour son déjeuner gastronomique à l’aveugle – parfait pour un séjour en couple sur l’île d’Orléans.',
-    price: 'À partir de 233 $/nuit (petit-déjeuner inclus)',
-    link: 'https://www.booking.com/hotel/ca/la-maison-de-l-39-ile.fr.html?label=msn-FQZ8IgHEiaVN31poKb5DbQ-80608103155809%3Atikwd-80608256542845%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsh%C3%A9bergement+%C3%AEle+orl%C3%A9ans&sid=dd41b6917ba1eb791f5db659a3e15674&aid=1856194&ucfs=1&arphpl=1&checkin=2026-06-03&checkout=2026-06-04&dest_id=5087&dest_type=region&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=score&srpvid=accc3cc25a4b00f2&srepoch=1763714580&all_sr_blocks=705794903_309162090_2_1_0&highlighted_blocks=705794903_309162090_2_1_0&matching_block_id=705794903_309162090_2_1_0&sr_pri_blocks=705794903_309162090_2_1_0__23300&from=searchresults' /* à remplacer par ton lien affilié La maison de l’île d’Orléans */,
-    image: '/images/destinations/hotels/maison-gastro-ileorleans.avif',
-  },
-  {
-    name: 'Auberge Les Blancs Moutons',
-    category: 'Charme & vue sur le fleuve',
-    description:
-      'Auberge pleine de charme à Saint-Laurent-de-l’île d’Orléans, avec vue exceptionnelle et petit-déjeuner inclus, idéale pour explorer l’île en douceur.',
-    price: 'À partir de 134 $/nuit (petit-déjeuner inclus)',
-    link: 'https://www.booking.com/hotel/ca/auberge-les-blancs-moutons.fr.html?label=msn-FQZ8IgHEiaVN31poKb5DbQ-80608103155809%3Atikwd-80608256542845%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsh%C3%A9bergement+%C3%AEle+orl%C3%A9ans&sid=dd41b6917ba1eb791f5db659a3e15674&aid=1856194&ucfs=1&arphpl=1&checkin=2026-06-03&checkout=2026-06-04&dest_id=5087&dest_type=region&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=score&srpvid=accc3cc25a4b00f2&srepoch=1763714790&all_sr_blocks=193561502_414095988_2_1_0&highlighted_blocks=193561502_414095988_2_1_0&matching_block_id=193561502_414095988_2_1_0&sr_pri_blocks=193561502_414095988_2_1_0__13400&from=searchresults' /* à remplacer par ton lien affilié Auberge Les Blancs Moutons */,
-    image: '/images/destinations/hotels/auberge-blancsmoutons-ileorleans.avif',
-  },
-  {
-    name: "Auberge Le P'tit Bonheur",
-    category: 'Familial & abordable',
-    description:
-      'Auberge simple et conviviale à Saint-Laurent-de-l’île d’Orléans, avec chambres familiales et annulation gratuite – pratique pour un séjour flexible.',
-    price: 'Tarif variable selon la saison',
-    link: 'https://www.booking.com/hotel/ca/auberge-le-p-39-tit-bonheur.fr.html?label=msn-FQZ8IgHEiaVN31poKb5DbQ-80608103155809%3Atikwd-80608256542845%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsh%C3%A9bergement+%C3%AEle+orl%C3%A9ans&sid=dd41b6917ba1eb791f5db659a3e15674&aid=1856194&ucfs=1&arphpl=1&checkin=2026-06-03&checkout=2026-06-04&dest_id=900051336&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=popularity&srpvid=80463d756f7503de&srepoch=1763714699&all_sr_blocks=104993711_184406356_2_0_0&highlighted_blocks=104993711_184406356_2_0_0&matching_block_id=104993711_184406356_2_0_0&sr_pri_blocks=104993711_184406356_2_0_0__10100&from=searchresults' /* à remplacer par ton lien affilié Auberge Le P’tit Bonheur */,
-    image: '/images/destinations/hotels/auberge-petit-bonheur-ileorleans.avif',
-  },
-];
+const hotels = pickHotels(HOTEL_IDS_ORLEANS);
 
 const restaurants = [
   {
@@ -139,9 +117,12 @@ const summerActivities = [
 
 export default function BlogArticleOrleans() {
   return (
-    <article id="blog_article_orleans" className="mx-auto max-w-4xl bg-white px-4 py-12">
+    <DestinationArticleTemplate
+      slug="orleans"
+      title="Guide de Voyage à l'Île d'Orléans : Le Joyau du Saint-Laurent"
+    >
+      <article id="blog_article_orleans" className="mx-auto max-w-4xl bg-white px-4 py-12">
       <header className="mb-12 text-center">
-        <H1 className="mb-4">Guide de Voyage à l'Île d'Orléans : Le Joyau du Saint-Laurent</H1>
         <p className="text-xl text-gray-600">
           Découvrez le berceau de la Nouvelle-France, entre patrimoine, gastronomie et paysages
           enchanteurs
@@ -264,59 +245,8 @@ export default function BlogArticleOrleans() {
           Où dormir ?
         </H2>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {hotels.map((hotel) => (
-            <article
-              key={hotel.name}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-lg"
-            >
-              {/* Image */}
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={hotel.image}
-                  alt={hotel.name}
-                  className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  width={800}
-                  height={600}
-                />
-              </div>
-
-              {/* Contenu */}
-              <div className="flex flex-1 flex-col gap-3 p-6">
-                <div className="flex items-start justify-between gap-2">
-                  {/* Nom = lien principal */}
-                  <Link
-                    href={hotel.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-lg font-semibold text-gray-900 no-underline hover:text-indigo-700 hover:underline"
-                  >
-                    {hotel.name}
-                  </Link>
-
-                  <span className="inline-flex rounded-full bg-indigo-50 px-2.5 py-1 text-xs font-medium text-indigo-700">
-                    {hotel.category}
-                  </span>
-                </div>
-
-                {/* Description non cliquable */}
-                <p className="text-sm text-gray-700">{hotel.description}</p>
-
-                {/* Prix + CTA */}
-                <div className="mt-auto pt-2">
-                  <Link
-                    href={hotel.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-sm font-semibold text-indigo-600 no-underline hover:text-indigo-800 hover:underline"
-                  >
-                    {hotel.price} – Voir les disponibilités
-                  </Link>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
+        {/* MIGRATED_HOTELS_GRID */}
+<HotelGrid items={hotels} />
       </section>
 
       <section className="mb-16">
@@ -324,28 +254,7 @@ export default function BlogArticleOrleans() {
           <Utensils className="size-8 text-indigo-600" />
           Où Manger ?
         </H2>
-        <div className="space-y-6">
-          {restaurants.map((restaurant) => (
-            <div key={restaurant.name} className="rounded-lg bg-white p-6 shadow-md">
-              <div className="mb-4 flex items-start justify-between">
-                <div>
-                  <H3 className="mb-1 text-xl font-semibold text-gray-900">{restaurant.name}</H3>
-                  <p className="text-gray-600">{restaurant.type}</p>
-                </div>
-                <span className="font-semibold text-indigo-600">{restaurant.price}</span>
-              </div>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">Spécialité:</span> {restaurant.speciality}
-              </p>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">À essayer:</span> {restaurant.mustTry}
-              </p>
-              <p className="text-gray-700">
-                <span className="font-medium">Horaires:</span> {restaurant.schedule}
-              </p>
-            </div>
-          ))}
-        </div>
+        <RestaurantPremiumGrid items={restaurants} />
       </section>
 
       <section className="mb-16">
@@ -478,7 +387,7 @@ export default function BlogArticleOrleans() {
         </p>
         <div className="flex justify-center gap-4">
           <a
-            href="https://www.booking.com/region/ca/ile-d-orleans.html"
+            href={bookingAwin('https://www.booking.com/region/ca/ile-d-orleans.html')}
             className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
           >
             Réserver un Hébergement
@@ -492,5 +401,6 @@ export default function BlogArticleOrleans() {
         </div>
       </section>
     </article>
+    </DestinationArticleTemplate>
   );
 }

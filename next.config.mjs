@@ -8,6 +8,7 @@ const CONTENT_SECURITY_POLICY = `
     https://www.google-analytics.com
     https://creator.expediagroup.com
     https://www.google.com
+    https://connect.facebook.net
     https://www.gstatic.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   img-src 'self' data: blob: https: http: https://*.basemaps.cartocdn.com;
@@ -25,6 +26,8 @@ const CONTENT_SECURITY_POLICY = `
     https://www.google.com
     https://www.gstatic.com
     https://recaptcha.google.com
+    https://www.facebook.com
+https://connect.facebook.net
     https://*.supabase.co
     https://hbjqefbnjpgfxxqifvcu.supabase.co;
   font-src 'self' data: https://fonts.gstatic.com https://fonts.googleapis.com;
@@ -110,9 +113,70 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
 
-  async redirects() {
-    return [{ source: '/vr', destination: '/blog/location-vr', permanent: true }];
-  },
+ async redirects() {
+  return [
+    // 🔹 Canonical domain (très important SEO)
+    {
+      source: '/:path*',
+      has: [{ type: 'host', value: 'goquebecan.com' }],
+      destination: 'https://www.goquebecan.com/:path*',
+      permanent: true,
+    },
+
+    // 🔹 Redirections SEO internes
+    {
+      source: '/vr',
+      destination: '/blog/location-vr',
+      permanent: true,
+    },
+    {
+      source: '/Planificateur',
+      destination: '/planificateur',
+      permanent: true,
+    },
+    {
+      source: '/carte-interactive',
+      destination: '/planificateur',
+      permanent: true,
+    },
+
+    // 🔹 Anciennes routes → nouvelles
+    {
+      source: '/voyage/hotel',
+      destination: '/blog/voyage-hotel',
+      permanent: true,
+    },
+    {
+      source: '/voyage/avion',
+      destination: '/blog/voyage-avion',
+      permanent: true,
+    },
+    {
+      source: '/voyage/voiture-electrique',
+      destination: '/blog/voyage-voiture',
+      permanent: true,
+    },
+
+    // 🔹 Contenu SEO
+    {
+      source: '/objets-indispensables/camping',
+      destination: '/blog/voyage-camping',
+      permanent: true,
+    },
+
+    // 🔹 Blog erreurs détectées
+    {
+      source: '/blog/gaspe',
+      destination: '/blog/gaspesie',
+      permanent: true,
+    },
+    {
+      source: '/blog/parc-national-forillon',
+      destination: '/blog/forillon',
+      permanent: true,
+    },
+  ];
+},
 
   async headers() {
     return [

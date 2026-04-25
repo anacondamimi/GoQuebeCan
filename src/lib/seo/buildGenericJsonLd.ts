@@ -51,13 +51,13 @@ export function buildGenericJsonLd({
         '@type': 'ListItem',
         position: 1,
         name: 'Accueil',
-        item: 'https://goquebecan.com/',
+        item: 'https://www.goquebecan.com/',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Blog',
-        item: 'https://goquebecan.com/blog',
+        item: 'https://www.goquebecan.com/blog',
       },
       {
         '@type': 'ListItem',
@@ -148,7 +148,7 @@ export function buildGenericJsonLd({
         ? {
             '@type': 'Organization',
             name: author,
-            url: 'https://goquebecan.com',
+            url: 'https://www.goquebecan.com',
           }
         : author,
     publisher: {
@@ -156,7 +156,7 @@ export function buildGenericJsonLd({
       name: 'GoQuébeCAN',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://goquebecan.com/images/logo-og-512.png',
+        url: 'https://www.goquebecan.com/android-chrome-512x512.png',
       },
     },
   });

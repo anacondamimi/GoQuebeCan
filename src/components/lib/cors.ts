@@ -4,7 +4,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:3001',
   'http://192.168.2.170:3008', // ← ton IP locale si besoin
-  'https://goquebecan.com', // ← ton domaine final
+  'https://www.goquebecan.com', // ← ton domaine final
 ];
 
 export function runCorsMiddleware(req: NextApiRequest, res: NextApiResponse) {

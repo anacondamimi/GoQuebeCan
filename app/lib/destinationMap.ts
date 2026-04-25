@@ -45,7 +45,7 @@ export const destinationMap = {
   },
   carleton: {
     label: 'Carleton',
-    blogUrl: '/blog/carleton-sur-mer',
+    blogUrl: 'blog/carleton-sur-mer-sur-mer',
     videoUrl: '/videos#carleton',
     objectsUrl: '/objets',
     plannerUrl: '/planificateur',
@@ -150,7 +150,7 @@ export const destinationMap = {
   },
   orleans: {
     label: 'Orleans',
-    blogUrl: "/blog/ile-d'orleans",
+    blogUrl: '/blog/ile-orleans',
     videoUrl: '/videos#orleans',
     objectsUrl: '/objets',
     plannerUrl: '/planificateur',

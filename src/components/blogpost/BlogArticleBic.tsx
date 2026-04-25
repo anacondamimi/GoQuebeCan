@@ -62,7 +62,7 @@ const restaurants = [
     price: '$$$$',
     mustTry: 'Menu dégustation local',
     schedule: 'Mi-avril à Octobre (selon saison)',
-    image: '/images/restos/bic/chez-saint-pierre.avif',
+    image: '/images/carte.avif',
     vibe: 'Gastro local',
     tip: 'Réservation fortement conseillée en haute saison.',
   },
@@ -74,7 +74,7 @@ const restaurants = [
     price: '$$',
     mustTry: 'Brunch du dimanche',
     schedule: "Toute l'année",
-    image: '/images/restos/bic/la-cabane.avif',
+    image: '/images/carte.avif',
     vibe: 'Confort & simple',
     tip: 'Parfait pour un matin slow avant le parc.',
   },
@@ -86,7 +86,7 @@ const restaurants = [
     price: '$$',
     mustTry: 'Fish & Chips maison',
     schedule: 'Juin à Septembre',
-    image: '/images/restos/bic/cantine-du-parc.avif',
+    image: '/images/carte.avif',
     vibe: 'Rapide & efficace',
     tip: 'Idéal après une rando : simple, bon, sans perdre de temps.',
   },
@@ -201,7 +201,7 @@ export default function BlogArticleBic() {
         { label: 'Budget', value: 'Accès parc + repas local (15–45 $/pers)' },
       ]}
       utilityLinks={[
-        { label: '🎥 Voir les vidéos du Bic', href: '/videos/bic', variant: 'outline' },
+        { label: '🎥 Voir les vidéos du Bic', href: '/videos', variant: 'outline' },
         { label: '🍺 Producteurs locaux', href: '/producteurs', variant: 'outline' },
         { label: '🗺 Planifier mon itinéraire', href: '/planificateur', variant: 'primary' },
         { label: '🚗 Guide voyage en voiture', href: '/blog/voyage-voiture', variant: 'outline' },
@@ -560,6 +560,7 @@ export default function BlogArticleBic() {
           </a>
         </div>
       </section>
+
     </DestinationArticleTemplate>
   );
 }

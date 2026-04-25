@@ -2,7 +2,6 @@ import Image from 'next/image';
 import H2 from '@/components/typography/H2';
 import H3 from '@/components/typography/H3';
 import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
-
 import { HotelGrid } from '@/components/hotels/HotelGrid';
 import { pickHotels } from '@/data/hotels/hotelCatalog.generated';
 import { HOTEL_IDS_CHAMBLY } from '@/data/hotels/byArticle/chambly';
@@ -974,6 +973,7 @@ export default function BlogArticleChambly() {
           </a>
         </div>
       </section>
+
     </DestinationArticleTemplate>
   );
 }

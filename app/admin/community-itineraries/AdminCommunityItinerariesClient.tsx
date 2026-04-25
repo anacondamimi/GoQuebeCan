@@ -204,8 +204,14 @@ export default function AdminCommunityItinerariesClient() {
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-col gap-3 sm:flex-row">
             <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">Statut</label>
+              <label
+                htmlFor="filter-status"
+                className="mb-1 block text-sm font-medium text-gray-700"
+              >
+                Statut
+              </label>
               <select
+                id="filter-status"
                 value={filter}
                 onChange={(e) => setFilter(e.target.value as StatusFilter)}
                 className="rounded-xl border px-3 py-2 text-sm"
@@ -218,8 +224,11 @@ export default function AdminCommunityItinerariesClient() {
             </div>
 
             <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">Type</label>
+              <label htmlFor="filter-type" className="mb-1 block text-sm font-medium text-gray-700">
+                Type
+              </label>
               <select
+                id="filter-type"
                 value={contentFilter}
                 onChange={(e) => setContentFilter(e.target.value as ContentFilter)}
                 className="rounded-xl border px-3 py-2 text-sm"

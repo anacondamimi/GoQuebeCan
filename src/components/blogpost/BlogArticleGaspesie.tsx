@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import H1 from '@/components/typography/H1';
@@ -12,7 +10,7 @@ import { buildHowToLd } from '@/lib/seo/buildHowToLd';
 import { buildFaqLd } from '@/lib/seo/buildFaqLd';
 import { JsonLd, HeadExtras } from '@/lib/seo/HeadExtras';
 import { bookingAwin } from '@/lib/awin';
-
+import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
 export const dynamic = 'force-static';
 export const revalidate = 60 * 60 * 24; // 24 h
 
@@ -21,8 +19,8 @@ export const revalidate = 60 * 60 * 24; // 24 h
 const TITLE = 'Gaspésie – Road trip en famille (7 jours) | Guide 2025';
 const DESCRIPTION =
   'Itinéraire 7 jours en Gaspésie avec enfants : Forillon, Percé, baleines, plages, campings, hôtels famille, cantines, producteurs locaux et conseils pratiques. Road trip clé en main avec liens vers le planificateur GoQuébeCAN.';
-const CANONICAL = 'https://goquebecan.com/blog/gaspesie';
-const OG_IMAGE = 'https://goquebecan.com/images/destinations/gaspesie-og-1200x630.jpg';
+const CANONICAL = 'https://www.goquebecan.com/blog/gaspesie';
+const OG_IMAGE = 'https://www.goquebecan.com/images/destinations/gaspesie-og-1200x630.jpg';
 
 const KEYWORDS = [
   'Gaspésie',
@@ -38,7 +36,7 @@ const KEYWORDS = [
 ];
 
 const PUBLISHED = '2025-07-01';
-const MODIFIED = '2026-01-14';
+const MODIFIED = '2026-04-14';
 
 // ======= METADATA SEO 2025 =======
 
@@ -77,7 +75,7 @@ const hotelsVueMer: StayCardProps[] = [
     type: 'Hôtel vue mer',
     description:
       'Chambres modernes face au Rocher Percé, avec terrasse pour admirer le lever du soleil et finir la journée en douceur après les excursions en bateau.',
-    link: 'https://www.booking.com/hotel/ca/riotel-perce.fr.html',
+    link: bookingAwin('https://www.booking.com/hotel/ca/riotel-perce.fr.html'),
     image: '/images/destinations/hotels/riohotel-perce.avif',
     extra:
       'Idéal pour les familles qui veulent un peu de confort tout en restant au cœur de l’action.',
@@ -88,7 +86,9 @@ const hotelsVueMer: StayCardProps[] = [
     type: 'Hôtel centre-ville',
     description:
       'Point de chute pratique pour explorer le parc Forillon, avec restaurants et services accessibles à pied. Parfait pour alterner journées “plein air” et moments plus urbains.',
-    link: 'https://www.booking.com/hotel/ca/motel-plante.fr.html?aid=304142&label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&sid=9d202b892b581cafd0019c7f0748e2a5&age=0&all_sr_blocks=31445511_421538538_2_0_0&checkin=2026-01-28&checkout=2026-01-29&dest_id=-565124&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=31445511_421538538_2_0_0&hpos=2&matching_block_id=31445511_421538538_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=31445511_421538538_2_0_0__14995&srepoch=1768430475&srpvid=4fe59f52eb1f0444&type=total&ucfs=1&',
+    link: bookingAwin(
+      'https://www.booking.com/hotel/ca/motel-plante.fr.html?aid=304142&label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&sid=9d202b892b581cafd0019c7f0748e2a5&age=0&all_sr_blocks=31445511_421538538_2_0_0&checkin=2026-01-28&checkout=2026-01-29&dest_id=-565124&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=31445511_421538538_2_0_0&hpos=2&matching_block_id=31445511_421538538_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=31445511_421538538_2_0_0__14995&srepoch=1768430475&srpvid=4fe59f52eb1f0444&type=total&ucfs=1&',
+    ),
     image: '/images/destinations/hotels/hotel-plante.avif',
     extra: 'Pratique si tu voyages avec des ados qui aiment flâner en ville le soir.',
   },
@@ -98,7 +98,7 @@ const hotelsVueMer: StayCardProps[] = [
     type: 'Hôtel bord de mer',
     description:
       'Atmosphère chaleureuse, vue sur la baie et accès facile à la plage pour les couchers de soleil. Une belle option pour finir le road trip sur une note relax.',
-    link: 'https://www.booking.com/hotel/ca/manoir-belle-plage.fr.html',
+    link: bookingAwin('https://www.booking.com/hotel/ca/manoir-belle-plage.fr.html'),
     image: '/images/destinations/hotels/manoir-belle-plage.avif',
     extra: 'Excellent pour recharger les batteries avant le retour vers la maison.',
   },
@@ -111,7 +111,9 @@ const hotelsFamillePiscine: StayCardProps[] = [
     type: 'Hôtel famille',
     description:
       'Chambres confortables et accueil chaleureux, pratique comme base pour découvrir le parc national de la Gaspésie tout en gardant un bon niveau de confort.',
-    link: 'https://www.booking.com/hotel/ca/auberge-seigneurie-des-monts.fr.html?label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&aid=304142&ucfs=1&checkin=2026-04-06&checkout=2026-04-10&dest_id=3602&dest_type=region&group_adults=2&no_rooms=1&group_children=0&srpvid=087ea0c971000196&srepoch=1768431159&matching_block_id=40613001_203767764_2_0_0&atlas_src=sr_iw_title',
+    link: bookingAwin(
+      'https://www.booking.com/hotel/ca/auberge-seigneurie-des-monts.fr.html?label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&aid=304142&ucfs=1&checkin=2026-04-06&checkout=2026-04-10&dest_id=3602&dest_type=region&group_adults=2&no_rooms=1&group_children=0&srpvid=087ea0c971000196&srepoch=1768431159&matching_block_id=40613001_203767764_2_0_0&atlas_src=sr_iw_title',
+    ),
     image: '/images/destinations/hotels/auberge-seigneurie-des-monts.avif',
     extra: 'Parfait pour les familles qui alternent randonnée et moments cocooning.',
   },
@@ -121,7 +123,7 @@ const hotelsFamillePiscine: StayCardProps[] = [
     type: 'Hôtel avec piscine',
     description:
       'Grande piscine extérieure en saison, accès à la plage et vue sur la baie. Les enfants adorent se baigner pendant que les adultes profitent du paysage.',
-    link: 'https://www.booking.com/hotel/ca/hostellerie-baie-bleue.fr.html',
+    link: bookingAwin('https://www.booking.com/hotel/ca/hostellerie-baie-bleue.fr.html'),
     image: '/images/destinations/hotels/riotel-carleton.avif',
     extra: 'Solution idéale pour les journées de vent fort ou de météo incertaine.',
   },
@@ -131,7 +133,9 @@ const hotelsFamillePiscine: StayCardProps[] = [
     type: 'Auberge familiale',
     description:
       'Ambiance simple et conviviale, avec chambres adaptées aux familles et proximité du fleuve. Un bon point de chute entre parc de la Gaspésie et mer.',
-    link: 'https://www.booking.com/hotel/ca/chalets-valmont-plein-air.fr.html?label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&aid=304142&ucfs=1&checkin=2026-04-06&checkout=2026-04-10&dest_id=900040525&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=92cea16b831b0590&srepoch=1768431535&matching_block_id=381179907_121141165_2_0_0&atlas_src=sr_iw_title',
+    link: bookingAwin(
+      'https://www.booking.com/hotel/ca/chalets-valmont-plein-air.fr.html?label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&aid=304142&ucfs=1&checkin=2026-04-06&checkout=2026-04-10&dest_id=900040525&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=92cea16b831b0590&srepoch=1768431535&matching_block_id=381179907_121141165_2_0_0&atlas_src=sr_iw_title',
+    ),
     image: '/images/destinations/hotels/chalets-valmont.avif',
     extra: 'Top si tu veux limiter les déplacements quotidiens en voiture.',
   },
@@ -262,8 +266,8 @@ const wildlife: SimpleItem[] = [
 // ======= JSON-LD (Breadcrumb, Destination, HowTo, FAQ) =======
 
 const breadcrumbLd = buildBreadcrumbLd([
-  { name: 'Accueil', item: 'https://goquebecan.com' },
-  { name: 'Blog', item: 'https://goquebecan.com/blog' },
+  { name: 'Accueil', item: 'https://www.goquebecan.com' },
+  { name: 'Blog', item: 'https://www.goquebecan.com/blog' },
   { name: 'Gaspésie', item: CANONICAL },
 ]);
 
@@ -362,46 +366,51 @@ function StayCard({ name, location, type, description, link, image, extra }: Sta
   const finalHref = isBooking ? bookingAwin(link) : link;
 
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md">
-      <div className="relative h-52 w-full overflow-hidden">
-        <a href={finalHref} target="_blank" rel="sponsored noopener nofollow">
-          <Image
-            src={image}
-            alt={`${name} — hébergement recommandé en Gaspésie à ${location}`}
-            fill
-            className="object-cover transition-transform duration-300 hover:scale-[1.03]"
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px"
-          />
-        </a>
-      </div>
-
-      <div className="flex flex-1 flex-col p-4">
-        <header className="mb-2">
-          <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">{type}</p>
-          <H3 className="text-lg font-semibold text-gray-900">{name}</H3>
-          <p className="text-sm text-gray-600">{location}</p>
-        </header>
-
-        <p className="flex-1 text-sm text-gray-700">{description}</p>
-        {extra ? <p className="mt-2 text-sm text-gray-600">{extra}</p> : null}
-
-        <div className="mt-3">
-          <a
-            href={finalHref}
-            target="_blank"
-            rel="sponsored noopener nofollow"
-            className="inline-flex items-center text-sm font-semibold text-indigo-800 underline-offset-2 hover:underline"
-          >
-            {isBooking ? 'Voir les disponibilités sur Booking' : 'Voir les infos / réserver'}
+    <DestinationArticleTemplate
+      slug="gaspesie"
+      title="Gaspésie – le road trip en famille qui reste dans le cœur"
+    >
+      <article className="flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md">
+        <div className="relative h-52 w-full overflow-hidden">
+          <a href={finalHref} target="_blank" rel="sponsored noopener nofollow">
+            <Image
+              src={image}
+              alt={`${name} — hébergement recommandé en Gaspésie à ${location}`}
+              fill
+              className="object-cover transition-transform duration-300 hover:scale-[1.03]"
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px"
+            />
           </a>
-          {isBooking ? (
-            <p className="mt-1 text-[11px] text-gray-500">
-              Lien affilié — ça soutient GoQuébeCAN sans coût pour toi.
-            </p>
-          ) : null}
         </div>
-      </div>
-    </article>
+
+        <div className="flex flex-1 flex-col p-4">
+          <header className="mb-2">
+            <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">{type}</p>
+            <H3 className="text-lg font-semibold text-gray-900">{name}</H3>
+            <p className="text-sm text-gray-600">{location}</p>
+          </header>
+
+          <p className="flex-1 text-sm text-gray-700">{description}</p>
+          {extra ? <p className="mt-2 text-sm text-gray-600">{extra}</p> : null}
+
+          <div className="mt-3">
+            <a
+              href={finalHref}
+              target="_blank"
+              rel="sponsored noopener nofollow"
+              className="inline-flex items-center text-sm font-semibold text-indigo-800 underline-offset-2 hover:underline"
+            >
+              {isBooking ? 'Voir les disponibilités sur Booking' : 'Voir les infos / réserver'}
+            </a>
+            {isBooking ? (
+              <p className="mt-1 text-[11px] text-gray-500">
+                Lien affilié — ça soutient GoQuébeCAN sans coût pour toi.
+              </p>
+            ) : null}
+          </div>
+        </div>
+      </article>
+    </DestinationArticleTemplate>
   );
 }
 
@@ -431,9 +440,9 @@ export default function Page() {
       <HeadExtras
         ogUpdatedTime={`${MODIFIED}T00:00:00-04:00`}
         ogSeeAlso={[
-          'https://goquebecan.com/destinations/fjord-saguenay',
-          'https://goquebecan.com/blog/voyage-voiture',
-          'https://goquebecan.com/blog/voyage-camping',
+          'https://www.goquebecan.com/blog/fjord-saguenay',
+          'https://www.goquebecan.com/blog/voyage-voiture',
+          'https://www.goquebecan.com/blog/voyage-camping',
         ]}
         articlePublishedTime={`${PUBLISHED}T00:00:00-04:00`}
         articleModifiedTime={`${MODIFIED}T00:00:00-04:00`}
@@ -638,7 +647,7 @@ export default function Page() {
               , une journée à l’hôtel avec piscine ou un détour par le Saguenay si les fjords te
               font rêver (notre guide complet sur le{' '}
               <Link
-                href="/destinations/fjord-saguenay"
+                href="/blog/saguenay"
                 className="font-semibold text-indigo-800 underline-offset-2 hover:underline"
               >
                 Saguenay

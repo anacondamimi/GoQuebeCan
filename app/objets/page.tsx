@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     images: [
       'https://images.unsplash.com/photo-1525638164172-b31ea4222ef7?auto=format&fit=crop&q=80',
     ],
-    url: 'https://goquebecan.com/objets',
+    url: 'https://www.goquebecan.com/objets',
     type: 'website',
   },
-  alternates: { canonical: 'https://goquebecan.com/objets' },
+  alternates: { canonical: 'https://www.goquebecan.com/objets' },
 };
 
 export const dynamic = 'force-static';

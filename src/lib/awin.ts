@@ -1,50 +1,48 @@
 // src/lib/awin.ts
+
 export const AWIN_BOOKING = {
-  awinmid: 6776, // Booking.com Amérique du Nord
-  awinaffid: 1950847, // ton Publisher ID
+  awinmid: 6776,
+  awinaffid: 1950847,
   domain: 'www.awin1.com',
-};
+} as const;
 
-/**
- * Nettoie une URL Booking pour éviter les paramètres inutiles (utm, label, sid, checkin...)
- * et garder un lien "propre" qui convertit bien.
- */
-export function cleanBookingUrl(input: string) {
+function isBookingHost(hostname: string): boolean {
+  const host = hostname.toLowerCase();
+  return host === 'booking.com' || host === 'www.booking.com' || host.endsWith('.booking.com');
+}
+
+export function cleanBookingUrl(input: string): string {
   try {
-    const u = new URL(input);
+    const url = new URL(input);
 
-    // Sécurité: on ne nettoie que Booking
-    if (!u.hostname.includes('booking.com')) return input;
-
-    // Paramètres qu'on garde (minimaux, utiles à la page)
-    // - ss (recherche), dest_id/dest_type (ville/région), lang
-    // Le reste (aid, label, utm, sid, checkin, checkout...) est du bruit marketing.
-    const keep = new Set(['ss', 'dest_id', 'dest_type', 'lang', 'checkin', 'checkout']);
-
-    // Si tu veux éviter de figer des dates dans tes liens, commente ces 2 lignes:
-    keep.delete('checkin');
-    keep.delete('checkout');
-
-    // Reconstruire les searchParams
-    const params = new URLSearchParams();
-    for (const [k, v] of u.searchParams.entries()) {
-      if (keep.has(k)) params.set(k, v);
+    if (!isBookingHost(url.hostname)) {
+      return input;
     }
 
-    u.search = params.toString() ? `?${params.toString()}` : '';
-    u.hash = '';
-    return u.toString();
+    url.protocol = 'https:';
+    url.hash = '';
+
+    const keepParams = new Set(['ss', 'dest_id', 'dest_type', 'lang']);
+
+    const cleanedParams = new URLSearchParams();
+
+    for (const [key, value] of url.searchParams.entries()) {
+      if (!keepParams.has(key)) continue;
+      if (!value?.trim()) continue;
+      cleanedParams.set(key, value);
+    }
+
+    url.search = cleanedParams.toString() ? `?${cleanedParams.toString()}` : '';
+
+    return url.toString();
   } catch {
     return input;
   }
 }
 
-/**
- * Transforme une URL Booking (ville/hôtel/recherche) en lien affilié AWIN.
- */
-export function bookingAwin(url: string) {
-  const clean = cleanBookingUrl(url);
-  const ued = encodeURIComponent(clean);
-  const { domain, awinmid, awinaffid } = AWIN_BOOKING;
-  return `https://${domain}/cread.php?awinmid=${awinmid}&awinaffid=${awinaffid}&ued=${ued}`;
+export function bookingAwin(input: string): string {
+  const cleanedUrl = cleanBookingUrl(input);
+  const encodedDestination = encodeURIComponent(cleanedUrl);
+
+  return `https://${AWIN_BOOKING.domain}/cread.php?awinmid=${AWIN_BOOKING.awinmid}&awinaffid=${AWIN_BOOKING.awinaffid}&ued=${encodedDestination}`;
 }

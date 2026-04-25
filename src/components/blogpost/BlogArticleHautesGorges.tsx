@@ -1,8 +1,15 @@
 import Image from 'next/image';
 import React from 'react';
-import H1 from '@/components/typography/H1';
+
 import H2 from '@/components/typography/H2';
 import H3 from '@/components/typography/H3';
+import { HotelGrid } from '@/components/hotels/HotelGrid';
+import { pickHotels } from '@/data/hotels/hotelCatalog.generated';
+import { HOTEL_IDS_HAUTES_GORGES } from '@/data/hotels/byArticle/hautes-gorges';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Compass } from 'lucide-react';
+import { bookingAwin } from '@/lib/awin';
+import { RestaurantPremiumGrid } from '@/components/food/RestaurantPremiumGrid';
+import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
 
 export const metadata = {
   slug: 'hautes-gorges',
@@ -22,36 +29,10 @@ export const metadata = {
   hebergements: ['Auberge des Hautes-Gorges', 'Fairmont Le Manoir Richelieu', 'Auberge La Marmite'],
   publics: ['familles', 'ados', 'aventuriers'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Compass } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
-const hotels = [
-  {
-    name: 'Auberge La Châtelaine',
-    category: 'Vue exceptionnelle',
-    description: 'Chambre double avec salle de bain privée, petit-déjeuner inclus. Note 9,5/10.',
-    price: 'À partir de 156$/nuit',
-    link: 'https://www.booking.com/hotel/ca/auberge-la-chatelaine.fr.html',
-    image: '/images/destinations/hotels/auberge-chatelaine.avif',
-  },
-  {
-    name: 'Auberge Les Sources',
-    category: 'Tranquillité',
-    description: 'Petite chambre double au charme rustique, avec annulation gratuite.',
-    price: 'À partir de 115$/nuit',
-    link: 'https://www.booking.com/hotel/ca/auberge-les-sources.fr.html',
-    image: '/images/destinations/hotels/auberge-les-sources.avif',
-  },
-  {
-    name: 'Auberge La Marmite',
-    category: 'Confort & Cuisine',
-    description: 'Chambre double standard avec petit-déjeuner inclus. Note 8,6/10.',
-    price: 'À partir de 155$/nuit',
-    link: 'https://www.booking.com/hotel/ca/auberge-la-marmite.fr.html',
-    image: '/images/destinations/hotels/auberge-la-marmite.avif',
-  },
-];
+const hotels = pickHotels(HOTEL_IDS_HAUTES_GORGES);
 
 const camping = [
   {
@@ -162,9 +143,12 @@ const teenActivities = [
 
 export function BlogArticleHautesGorges() {
   return (
-    <article id="blog_article_hautes_gorges" className="mx-auto max-w-4xl bg-white px-4 py-12">
+    <DestinationArticleTemplate
+      slug="hautes-gorges"
+      title="Parc national des Hautes-Gorges-de-la-Rivière-Malbaie"
+    >
+      <article id="blog_article_hautes_gorges" className="mx-auto max-w-4xl bg-white px-4 py-12">
       <header className="mb-12 text-center">
-        <H1 className="mb-4">Parc national des Hautes-Gorges-de-la-Rivière-Malbaie</H1>
         <p className="text-xl text-gray-600">
           Découvrez l'un des plus beaux parcs du Québec, où fjord, montagnes et rivière créent un
           spectacle naturel unique
@@ -275,35 +259,8 @@ export function BlogArticleHautesGorges() {
           <Hotel className="size-8 text-indigo-600" />
           Où Dormir ?
         </H2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {hotels.map((hotel) => (
-            <a
-              key={hotel.name}
-              href={hotel.link}
-              className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
-            >
-              <div className="relative h-48">
-                <Image
-                  src={hotel.image}
-                  alt={hotel.name}
-                  className="size-full object-cover"
-                  width={800}
-                  height={600}
-                />
-              </div>
-              <div className="p-6">
-                <div className="mb-2 flex items-start justify-between">
-                  <H3 className="text-xl font-semibold text-gray-900">{hotel.name}</H3>
-                  <span className="rounded bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
-                    {hotel.category}
-                  </span>
-                </div>
-                <p className="mb-4 text-gray-600">{hotel.description}</p>
-                <p className="font-semibold text-indigo-600">{hotel.price}</p>
-              </div>
-            </a>
-          ))}
-        </div>
+        {/* MIGRATED_HOTELS_GRID */}
+        <HotelGrid items={hotels} />
       </section>
 
       <section className="mb-16">
@@ -339,28 +296,7 @@ export function BlogArticleHautesGorges() {
           <Utensils className="size-8 text-indigo-600" />
           Où Manger ?
         </H2>
-        <div className="space-y-6">
-          {restaurants.map((restaurant) => (
-            <div key={restaurant.name} className="rounded-lg bg-white p-6 shadow-md">
-              <div className="mb-4 flex items-start justify-between">
-                <div>
-                  <H3 className="mb-1 text-xl font-semibold text-gray-900">{restaurant.name}</H3>
-                  <p className="text-gray-600">{restaurant.type}</p>
-                </div>
-                <span className="font-semibold text-indigo-600">{restaurant.price}</span>
-              </div>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">Spécialité:</span> {restaurant.speciality}
-              </p>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">À essayer:</span> {restaurant.mustTry}
-              </p>
-              <p className="text-gray-700">
-                <span className="font-medium">Horaires:</span> {restaurant.schedule}
-              </p>
-            </div>
-          ))}
-        </div>
+        <RestaurantPremiumGrid items={restaurants} />
       </section>
 
       <section className="mb-16">
@@ -458,7 +394,9 @@ export function BlogArticleHautesGorges() {
             Réserver votre visite
           </a>
           <a
-            href="https://www.booking.com/landmark/ca/parc-national-des-hautes-gorges.html"
+            href={bookingAwin(
+              'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fauberge-la-chatelaine.fr.html',
+            )}
             className="rounded-lg border border-indigo-600 bg-white px-6 py-3 text-indigo-600 transition-colors hover:bg-indigo-50"
           >
             Trouver un Hébergement
@@ -466,6 +404,7 @@ export function BlogArticleHautesGorges() {
         </div>
       </section>
     </article>
+    </DestinationArticleTemplate>
   );
 }
 

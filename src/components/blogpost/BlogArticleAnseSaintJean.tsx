@@ -13,6 +13,7 @@ import { HOTEL_IDS_ANSE_SAINT_JEAN } from '@/data/hotels/byArticle/anseSaintJean
 import { RestaurantPremiumGrid } from '@/components/food/RestaurantPremiumGrid';
 import { bookingAwin } from '@/lib/awin';
 
+
 export const metadata = {
   slug: 'anse-saint-jean',
   ville: "L'Anse-Saint-Jean",
@@ -369,13 +370,6 @@ export default function BlogArticleAnseSaintJean() {
         </div>
       </section>
 
-      <section className="mb-16" id="ou-dormir">
-        <HotelGrid items={hotels} />
-      </section>
-
-      <section className="mb-16" id="ou-manger">
-        <RestaurantPremiumGrid items={restaurants} />
-      </section>
 
       <section className="mb-16">
         <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
@@ -463,9 +457,6 @@ export default function BlogArticleAnseSaintJean() {
         </div>
       </section>
 
-      <section className="mb-16">
-        <DestinationFaq items={faqItems} />
-      </section>
 
       <section className="rounded-lg bg-gray-50 p-8 text-center">
         <H2 className="mb-4 text-2xl font-bold text-gray-900">
@@ -494,6 +485,7 @@ export default function BlogArticleAnseSaintJean() {
           </a>
         </div>
       </section>
+
     </DestinationArticleTemplate>
   );
 }

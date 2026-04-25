@@ -71,9 +71,9 @@ export type CampingPageData = {
 const COMMON_INTERNAL_LINKS: InternalLink[] = [
   { label: 'Guide complet des campings au Québec', href: '/camping' },
   { label: 'Planificateur d’itinéraire GoQuébeCAN', href: '/planificateur' },
-  { label: 'Carte interactive', href: '/carte-interactive' },
+  { label: 'Carte interactive', href: '/planificateur' },
   { label: 'Producteurs locaux à découvrir', href: '/producteurs' },
-  { label: 'Objets indispensables pour le camping', href: '/objets-indispensables/camping' },
+  { label: 'Objets indispensables pour le camping', href: 'blog/voyage-camping' },
 ];
 
 export const CAMPINGS: CampingPageData[] = [

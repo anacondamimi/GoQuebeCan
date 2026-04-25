@@ -15,8 +15,8 @@ export const metadata: Metadata = buildMetadata2025({
   title: 'Camping au Québec | GoQuébeCAN',
   description:
     'Découvrez les plus beaux campings du Québec : emplacements nature, lacs, forêts, glamping et panoramas uniques pour des vacances inoubliables.',
-  canonical: 'https://goquebecan.com/camping',
-  image: 'https://goquebecan.com/images/og/camping-quebec.jpg',
+  canonical: 'https://www.goquebecan.com/camping',
+  image: 'https://www.goquebecan.com/images/og/camping-quebec.jpg',
   keywords: [
     'camping québec',
     'glamping',
@@ -36,8 +36,8 @@ const jsonLd = buildGenericJsonLd({
   title: 'Guide des campings au Québec',
   description:
     'Sélection des plus beaux campings du Québec : nature, bord de lac, glamping et emplacements VR.',
-  canonical: 'https://goquebecan.com/camping',
-  image: 'https://goquebecan.com/images/og/camping-quebec.jpg',
+  canonical: 'https://www.goquebecan.com/camping',
+  image: 'https://www.goquebecan.com/images/og/camping-quebec.jpg',
   published: '2025-05-01',
   modified: '2026-04-05',
   author: 'GoQuébeCAN',

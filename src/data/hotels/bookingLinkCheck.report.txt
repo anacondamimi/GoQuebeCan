@@ -1,0 +1,204 @@
+VÉRIFICATION DES LIENS BOOKING
+========================================
+
+Total testés : 53
+OK           : 25
+Suspects     : 28
+
+LIENS SUSPECTS
+----------------------------------------
+Fichier   : src\components\blogpost\BlogArticleBaieSaintPaul.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/la-ferme.html
+URL finale: https://www.booking.com/hotel/ca/la-ferme.html
+
+Fichier   : src\components\blogpost\BlogArticleBaieSaintPaul.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/auberge-la-grande-maison.html
+URL finale: https://www.booking.com/hotel/ca/auberge-la-grande-maison.html
+
+Fichier   : src\components\blogpost\BlogArticleBaieSaintPaul.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/la-pignoronde.html
+URL finale: https://www.booking.com/hotel/ca/la-pignoronde.html
+
+Fichier   : src\components\blogpost\BlogArticleGaspesie.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/riotel-perce.fr.html
+URL finale: https://www.booking.com/hotel/ca/riotel-perce.fr.html
+
+Fichier   : src\components\blogpost\BlogArticleGaspesie.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/motel-plante.fr.html?aid=304142&label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&sid=9d202b892b581cafd0019c7f0748e2a5&age=0&all_sr_blocks=31445511_421538538_2_0_0&checkin=2026-01-28&checkout=2026-01-29&dest_id=-565124&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=31445511_421538538_2_0_0&hpos=2&matching_block_id=31445511_421538538_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=31445511_421538538_2_0_0__14995&srepoch=1768430475&srpvid=4fe59f52eb1f0444&type=total&ucfs=1&
+URL finale: https://www.booking.com/hotel/ca/motel-plante.fr.html?aid=304142&label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&sid=9d202b892b581cafd0019c7f0748e2a5&age=0&all_sr_blocks=31445511_421538538_2_0_0&checkin=2026-01-28&checkout=2026-01-29&dest_id=-565124&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=31445511_421538538_2_0_0&hpos=2&matching_block_id=31445511_421538538_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=31445511_421538538_2_0_0__14995&srepoch=1768430475&srpvid=4fe59f52eb1f0444&type=total&ucfs=1&
+
+Fichier   : src\components\blogpost\BlogArticleGaspesie.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/manoir-belle-plage.fr.html
+URL finale: https://www.booking.com/hotel/ca/manoir-belle-plage.fr.html
+
+Fichier   : src\components\blogpost\BlogArticleGaspesie.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/auberge-seigneurie-des-monts.fr.html?label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&aid=304142&ucfs=1&checkin=2026-04-06&checkout=2026-04-10&dest_id=3602&dest_type=region&group_adults=2&no_rooms=1&group_children=0&srpvid=087ea0c971000196&srepoch=1768431159&matching_block_id=40613001_203767764_2_0_0&atlas_src=sr_iw_title
+URL finale: https://www.booking.com/hotel/ca/auberge-seigneurie-des-monts.fr.html?label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&aid=304142&ucfs=1&checkin=2026-04-06&checkout=2026-04-10&dest_id=3602&dest_type=region&group_adults=2&no_rooms=1&group_children=0&srpvid=087ea0c971000196&srepoch=1768431159&matching_block_id=40613001_203767764_2_0_0&atlas_src=sr_iw_title
+
+Fichier   : src\components\blogpost\BlogArticleGaspesie.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/hostellerie-baie-bleue.fr.html
+URL finale: https://www.booking.com/hotel/ca/hostellerie-baie-bleue.fr.html
+
+Fichier   : src\components\blogpost\BlogArticleGaspesie.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/chalets-valmont-plein-air.fr.html?label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&aid=304142&ucfs=1&checkin=2026-04-06&checkout=2026-04-10&dest_id=900040525&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=92cea16b831b0590&srepoch=1768431535&matching_block_id=381179907_121141165_2_0_0&atlas_src=sr_iw_title
+URL finale: https://www.booking.com/hotel/ca/chalets-valmont-plein-air.fr.html?label=gen173rf-10CAsoJ0IMcmlvdGVsLXBlcmNlSA1YA2gniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBogIObG9jYWxob3N0OjMwMDCoAgG4AvqzoMsGwAIB0gIkOGQyNWEwZmQtOGE4NC00YzBmLWIxZmUtYWY3YWViZGRhZDJk2AIB4AIB&aid=304142&ucfs=1&checkin=2026-04-06&checkout=2026-04-10&dest_id=900040525&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=92cea16b831b0590&srepoch=1768431535&matching_block_id=381179907_121141165_2_0_0&atlas_src=sr_iw_title
+
+Fichier   : src\components\blogpost\BlogArticleHautesGorges.tsx
+Type      : awin-direct
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/auberge-la-chatelaine.fr.html
+URL finale: https://www.booking.com/hotel/ca/auberge-la-chatelaine.fr.html
+
+Fichier   : src\components\blogpost\BlogArticleMontmorency.tsx
+Type      : bookingAwin-wrapper
+Status    : 404
+Raison    : HTTP 404
+URL test  : https://www.booking.com/landmark/ca/montmorency-falls.html
+URL finale: https://www.booking.com/landmark/ca/montmorency-falls.html
+
+Fichier   : src\components\blogpost\BlogArticleParcAquatique.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/manoir-du-lac-de-lage-lac-delage-quebec.fr.html?aid=2276516&label=msn-rVoOgT_nB8tmabcidK571Q-80127049560063%3Atikwd-80127307805998%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqsmanoir%20du%20lac%20booking&sid=8871fcaf95f2b4031bb564118f7b26e1&dest_id=-574203&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759180943&srpvid=5f4c9645c9960078&type=total&ucfs=1&
+URL finale: https://www.booking.com/hotel/ca/manoir-du-lac-de-lage-lac-delage-quebec.fr.html?aid=2276516&label=msn-rVoOgT_nB8tmabcidK571Q-80127049560063%3Atikwd-80127307805998%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqsmanoir%20du%20lac%20booking&sid=8871fcaf95f2b4031bb564118f7b26e1&dest_id=-574203&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759180943&srpvid=5f4c9645c9960078&type=total&ucfs=1&
+
+Fichier   : src\components\blogpost\BlogArticleParcAquatique.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/auberge-valcartier.fr.html?aid=2276422&label=msn-iB3esQzOQBCB%2AbWBrLN7Cg-79989606763414%3Atikwd-79989858727355%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqsauberge%20valcartier%20booking&sid=8871fcaf95f2b4031bb564118f7b26e1&dest_id=-575242&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759180752&srpvid=539695e014a0003a&type=total&ucfs=1&
+URL finale: https://www.booking.com/hotel/ca/auberge-valcartier.fr.html?aid=2276422&label=msn-iB3esQzOQBCB%2AbWBrLN7Cg-79989606763414%3Atikwd-79989858727355%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqsauberge%20valcartier%20booking&sid=8871fcaf95f2b4031bb564118f7b26e1&dest_id=-575242&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759180752&srpvid=539695e014a0003a&type=total&ucfs=1&
+
+Fichier   : src\components\blogpost\BlogArticleParcAquatique.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/chateau-bromont-bromont.fr.html?label=msn-QQLmMKuP3Viw7ZGzqQkj4g-80058325963930%3Atikwd-80058585399512%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqscondo+ch%C3%A2teau+bromont&sid=8871fcaf95f2b4031bb564118f7b26e1&aid=2276422&ucfs=1&arphpl=1&dest_id=900048497&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=popularity&srpvid=5396991d94460345&srepoch=1759182402&from_sustainable_property_sr=1&from=searchresults
+URL finale: https://www.booking.com/hotel/ca/chateau-bromont-bromont.fr.html?label=msn-QQLmMKuP3Viw7ZGzqQkj4g-80058325963930%3Atikwd-80058585399512%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqscondo+ch%C3%A2teau+bromont&sid=8871fcaf95f2b4031bb564118f7b26e1&aid=2276422&ucfs=1&arphpl=1&dest_id=900048497&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=popularity&srpvid=5396991d94460345&srepoch=1759182402&from_sustainable_property_sr=1&from=searchresults
+
+Fichier   : src\components\blogpost\BlogArticleParcAquatique.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/condos-chateau-bromont.fr.html?aid=2276422&label=msn-QQLmMKuP3Viw7ZGzqQkj4g-80058325963930%3Atikwd-80058585399512%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqscondo%20ch%C3%A2teau%20bromont&sid=8871fcaf95f2b4031bb564118f7b26e1&dest_id=900048497&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759181976&srpvid=ce3f984be2c1046a&type=total&ucfs=1&
+URL finale: https://www.booking.com/hotel/ca/condos-chateau-bromont.fr.html?aid=2276422&label=msn-QQLmMKuP3Viw7ZGzqQkj4g-80058325963930%3Atikwd-80058585399512%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqscondo%20ch%C3%A2teau%20bromont&sid=8871fcaf95f2b4031bb564118f7b26e1&dest_id=900048497&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759181976&srpvid=ce3f984be2c1046a&type=total&ucfs=1&
+
+Fichier   : src\components\blogpost\BlogArticleParcAquatique.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/le-204-champlain-bromont.html
+URL finale: https://www.booking.com/hotel/ca/le-204-champlain-bromont.html
+
+Fichier   : src\components\blogpost\BlogArticleParcAquatique.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/microtel-casselman.fr.html?label=gen173nr-10CAsoJ0IMbW90ZWwtYmlkZWF1SDNYBGgniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKLwsPIBsACAdICJDI5MGQ0MTEwLWUyMTctNDMxOC05ODA3LTI0YWFiODQzMWE5Y9gCAeACAQ&sid=25da503d934a1bfc72a56a0219f8fa90&aid=304142&ucfs=1&checkin=2026-04-08&checkout=2026-04-09&dest_id=-570760&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=e8bfd62a3792e42fa8ed14ef648bf7f7&srepoch=1762713979&matching_block_id=150597905_94608288_2_1_0&atlas_src=sr_iw_title
+URL finale: https://www.booking.com/hotel/ca/microtel-casselman.fr.html?label=gen173nr-10CAsoJ0IMbW90ZWwtYmlkZWF1SDNYBGgniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKLwsPIBsACAdICJDI5MGQ0MTEwLWUyMTctNDMxOC05ODA3LTI0YWFiODQzMWE5Y9gCAeACAQ&sid=25da503d934a1bfc72a56a0219f8fa90&aid=304142&ucfs=1&checkin=2026-04-08&checkout=2026-04-09&dest_id=-570760&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=e8bfd62a3792e42fa8ed14ef648bf7f7&srepoch=1762713979&matching_block_id=150597905_94608288_2_1_0&atlas_src=sr_iw_title
+
+Fichier   : src\components\blogpost\BlogArticleParcAquatique.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/holiday-inn-select-suites.fr.html?aid=304142&label=gen173nr-10CAsoJ0IMbW90ZWwtYmlkZWF1SDNYBGgniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKLwsPIBsACAdICJDI5MGQ0MTEwLWUyMTctNDMxOC05ODA3LTI0YWFiODQzMWE5Y9gCAeACAQ&sid=25da503d934a1bfc72a56a0219f8fa90&all_sr_blocks=2623619_95150008_2_42_0&checkin=2026-04-08&checkout=2026-04-09&dest_id=-570760&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=4&highlighted_blocks=2623619_95150008_2_42_0&hpos=4&matching_block_id=2623619_95150008_2_42_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=2623619_95150008_2_42_0__20300&srepoch=1762714199&srpvid=e8bfd62a3792e42fa8ed14ef648bf7f7&type=total&ucfs=1&
+URL finale: https://www.booking.com/hotel/ca/holiday-inn-select-suites.fr.html?aid=304142&label=gen173nr-10CAsoJ0IMbW90ZWwtYmlkZWF1SDNYBGgniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKLwsPIBsACAdICJDI5MGQ0MTEwLWUyMTctNDMxOC05ODA3LTI0YWFiODQzMWE5Y9gCAeACAQ&sid=25da503d934a1bfc72a56a0219f8fa90&all_sr_blocks=2623619_95150008_2_42_0&checkin=2026-04-08&checkout=2026-04-09&dest_id=-570760&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=4&highlighted_blocks=2623619_95150008_2_42_0&hpos=4&matching_block_id=2623619_95150008_2_42_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=2623619_95150008_2_42_0__20300&srepoch=1762714199&srpvid=e8bfd62a3792e42fa8ed14ef648bf7f7&type=total&ucfs=1&
+
+Fichier   : src\components\blogpost\BlogArticleParcAquatique.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/ac-by-marriott-ottawa-downtown.fr.html?aid=304142&label=gen173nr-10CAsoJ0IMbW90ZWwtYmlkZWF1SDNYBGgniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKLwsPIBsACAdICJDI5MGQ0MTEwLWUyMTctNDMxOC05ODA3LTI0YWFiODQzMWE5Y9gCAeACAQ&sid=25da503d934a1bfc72a56a0219f8fa90&all_sr_blocks=1359334202_408254657_0_0_0&checkin=2026-04-08&checkout=2026-04-09&dest_id=-570760&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=3&highlighted_blocks=1359334202_408254657_0_0_0&hpos=3&matching_block_id=1359334202_408254657_0_0_0&nflt=swimming_pool_options%3D433&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=bayesian_review_score&sr_pri_blocks=1359334202_408254657_0_0_0__35100&srepoch=1762714456&srpvid=e8bfd62a3792e42fa8ed14ef648bf7f7&type=total&ucfs=1&
+URL finale: https://www.booking.com/hotel/ca/ac-by-marriott-ottawa-downtown.fr.html?aid=304142&label=gen173nr-10CAsoJ0IMbW90ZWwtYmlkZWF1SDNYBGgniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKLwsPIBsACAdICJDI5MGQ0MTEwLWUyMTctNDMxOC05ODA3LTI0YWFiODQzMWE5Y9gCAeACAQ&sid=25da503d934a1bfc72a56a0219f8fa90&all_sr_blocks=1359334202_408254657_0_0_0&checkin=2026-04-08&checkout=2026-04-09&dest_id=-570760&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=3&highlighted_blocks=1359334202_408254657_0_0_0&hpos=3&matching_block_id=1359334202_408254657_0_0_0&nflt=swimming_pool_options%3D433&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=bayesian_review_score&sr_pri_blocks=1359334202_408254657_0_0_0__35100&srepoch=1762714456&srpvid=e8bfd62a3792e42fa8ed14ef648bf7f7&type=total&ucfs=1&
+
+Fichier   : src\components\blogpost\BlogArticlePerce.tsx
+Type      : awin-direct
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/riotel-perce.fr.html
+URL finale: https://www.booking.com/hotel/ca/riotel-perce.fr.html
+
+Fichier   : src\components\blogpost\BlogArticleQuebec.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/royal-dalhousie.html
+URL finale: https://www.booking.com/hotel/ca/royal-dalhousie.html
+
+Fichier   : src\components\blogpost\BlogArticleQuebec.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/coeur-de-ville.fr.html
+URL finale: https://www.booking.com/hotel/ca/coeur-de-ville.fr.html
+
+Fichier   : src\components\blogpost\BlogArticleSaguenay.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/hotels-gouverneur-saguenay.fr.html?aid=357028
+URL finale: https://www.booking.com/hotel/ca/hotels-gouverneur-saguenay.fr.html?aid=357028
+
+Fichier   : src\components\blogpost\BlogArticleSaguenay.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/le-montagnais-and-convention-center.fr.html?aid=357028
+URL finale: https://www.booking.com/hotel/ca/le-montagnais-and-convention-center.fr.html?aid=357028
+
+Fichier   : src\components\blogpost\BlogArticleSaguenay.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/gite-du-haut-des-arbres.fr.html?aid=357028
+URL finale: https://www.booking.com/hotel/ca/gite-du-haut-des-arbres.fr.html?aid=357028
+
+Fichier   : src\components\blogpost\BlogArticleSandbanks.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/newsroom-suites.fr.html?aid=304142
+URL finale: https://www.booking.com/hotel/ca/newsroom-suites.fr.html?aid=304142
+
+Fichier   : src\components\blogpost\BlogArticleSandbanks.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/the-village-suites.fr.html?aid=304142
+URL finale: https://www.booking.com/hotel/ca/the-village-suites.fr.html?aid=304142
+
+Fichier   : src\components\blogpost\BlogArticleSandbanks.tsx
+Type      : bookingAwin-wrapper
+Status    : 202
+Raison    : la page ne ressemble pas à une vraie fiche hôtel
+URL test  : https://www.booking.com/hotel/ca/twin-birch-suites-b-amp-b-cottages.fr.html?aid=304142
+URL finale: https://www.booking.com/hotel/ca/twin-birch-suites-b-amp-b-cottages.fr.html?aid=304142

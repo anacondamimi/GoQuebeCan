@@ -1,8 +1,16 @@
+
+
 import Image from 'next/image';
 import React from 'react';
-import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
 import H3 from '@/components/typography/H3';
+import { HotelGrid } from '@/components/hotels/HotelGrid';
+import { pickHotels } from '@/data/hotels/hotelCatalog.generated';
+import { HOTEL_IDS_MONTREAL } from '@/data/hotels/byArticle/montreal';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Building } from 'lucide-react';
+import { bookingAwin } from '@/lib/awin';
+import { RestaurantPremiumGrid } from '@/components/food/RestaurantPremiumGrid';
+import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
 
 export const metadata = {
   slug: 'montreal',
@@ -12,37 +20,10 @@ export const metadata = {
   hebergements: ['Fairmont Le Reine Elizabeth', 'Hôtel Nelligan', 'Le Plateau Hotel'],
   publics: ['amateurs de culture'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Building } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
-const hotels = [
-  {
-    name: 'Fairmont Le Reine Elizabeth',
-    category: 'Luxe',
-    description: 'Hôtel historique au cœur du centre-ville',
-    price: 'À partir de 299$/nuit',
-    link: 'https://www.booking.com/hotel/ca/fairmont-the-queen-elizabeth.html',
-    image: '/images/destinations/hotels/fairmont-montreal.avif',
-  },
-  {
-    name: 'Best Western Plus Montréal',
-    category: 'Confort',
-    description: 'Hôtel moderne proche du métro avec un excellent rapport qualité-prix',
-    price: 'À partir de 179$/nuit',
-    link: 'https://www.booking.com/hotel/ca/best-western-europa-downtown.fr.html',
-    image: '/images/destinations/hotels/best-western-plus.avif',
-  },
-
-  {
-    name: 'AC Hotel Montréal Centre-Ville',
-    category: 'Moderne',
-    description: 'Hôtel élégant avec piscine intérieure et vue sur la ville',
-    price: 'À partir de 399$/nuit',
-    link: 'https://www.booking.com/hotel/ca/ac-by-marriott-montreal-downtown.fr.html',
-    image: '/images/destinations/hotels/ac-montreal.avif',
-  },
-];
+const hotels = pickHotels(HOTEL_IDS_MONTREAL);
 
 const restaurants = [
   {
@@ -97,9 +78,12 @@ const activities = [
 
 export default function BlogArticleMontreal() {
   return (
-    <article className="mx-auto max-w-4xl bg-white px-4 py-12">
+    <DestinationArticleTemplate
+      slug="montreal"
+      title="Montréal - Métropole Culturelle et Festive"
+    >
+      <article className="mx-auto max-w-4xl bg-white px-4 py-12">
       <header className="mb-12 text-center">
-        <H1 className="mb-4">Montréal - Métropole Culturelle et Festive</H1>
         <p className="text-xl text-gray-600">
           Découvrez la plus grande ville francophone d'Amérique, où histoire, culture et modernité
           se rencontrent
@@ -178,35 +162,8 @@ export default function BlogArticleMontreal() {
           <Hotel className="size-8 text-indigo-600" />
           Où Dormir ?
         </H2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {hotels.map((hotel) => (
-            <a
-              key={hotel.name}
-              href={hotel.link}
-              className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
-            >
-              <div className="relative h-48">
-                <Image
-                  src={hotel.image}
-                  alt={hotel.name}
-                  className="size-full object-cover"
-                  width={800}
-                  height={600}
-                />
-              </div>
-              <div className="p-6">
-                <div className="mb-2 flex items-start justify-between">
-                  <H3 className="text-xl font-semibold text-gray-900">{hotel.name}</H3>
-                  <span className="rounded bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
-                    {hotel.category}
-                  </span>
-                </div>
-                <p className="mb-4 text-gray-600">{hotel.description}</p>
-                <p className="font-semibold text-indigo-600">{hotel.price}</p>
-              </div>
-            </a>
-          ))}
-        </div>
+        {/* MIGRATED_HOTELS_GRID */}
+<HotelGrid items={hotels} />
       </section>
 
       <section className="mb-16">
@@ -214,28 +171,7 @@ export default function BlogArticleMontreal() {
           <Utensils className="size-8 text-indigo-600" />
           Où Manger ?
         </H2>
-        <div className="space-y-6">
-          {restaurants.map((restaurant) => (
-            <div key={restaurant.name} className="rounded-lg bg-white p-6 shadow-md">
-              <div className="mb-4 flex items-start justify-between">
-                <div>
-                  <H3 className="mb-1 text-xl font-semibold text-gray-900">{restaurant.name}</H3>
-                  <p className="text-gray-600">{restaurant.type}</p>
-                </div>
-                <span className="font-semibold text-indigo-600">{restaurant.price}</span>
-              </div>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">Spécialité:</span> {restaurant.speciality}
-              </p>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">À essayer:</span> {restaurant.mustTry}
-              </p>
-              <p className="text-gray-700">
-                <span className="font-medium">Horaires:</span> {restaurant.schedule}
-              </p>
-            </div>
-          ))}
-        </div>
+        <RestaurantPremiumGrid items={restaurants} />
       </section>
 
       <section className="mb-16">
@@ -350,7 +286,7 @@ export default function BlogArticleMontreal() {
         </p>
         <div className="flex justify-center gap-4">
           <a
-            href="https://www.booking.com/city/ca/montreal.html"
+            href={bookingAwin('https://www.booking.com/city/ca/montreal.html')}
             className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
           >
             Réserver un Hébergement
@@ -364,5 +300,6 @@ export default function BlogArticleMontreal() {
         </div>
       </section>
     </article>
+    </DestinationArticleTemplate>
   );
 }

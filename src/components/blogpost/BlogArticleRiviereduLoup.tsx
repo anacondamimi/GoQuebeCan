@@ -1,9 +1,17 @@
+
+
 import React from 'react';
 import Image from 'next/image';
 import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
-import H1 from '@/components/typography/H1';
+
 import H2 from '@/components/typography/H2';
 import H3 from '@/components/typography/H3';
+import { HotelGrid } from '@/components/hotels/HotelGrid';
+import { pickHotels } from '@/data/hotels/hotelCatalog.generated';
+import { HOTEL_IDS_RIVIEREDU_LOUP } from '@/data/hotels/byArticle/rivieredu-loup';
+import { bookingAwin } from '@/lib/awin';
+import { RestaurantPremiumGrid } from '@/components/food/RestaurantPremiumGrid';
+import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
 
 export const metadata = {
   slug: 'riviere-du-loup',
@@ -26,34 +34,7 @@ export const metadata = {
 
 // ✅ Imports déplacés automatiquement
 
-const hotels = [
-  {
-    name: 'Hôtel Universel',
-    category: '4 étoiles',
-    description: 'Vue sur le fleuve et piscine intérieure',
-    price: 'À partir de 159$/nuit',
-    link: 'https://www.booking.com/hotel/ca/ha-tel-universel-centre-de-congra-s-rivia-re-du-loup.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=31994701_382796525_2_0_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=-572316&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=31994701_382796525_2_0_0&hpos=2&matching_block_id=31994701_382796525_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=31994701_382796525_2_0_0__34900&srepoch=1761337521&srpvid=df5e8f7bd26e006a&type=total&ucfs=1&',
-    image: '/images/destinations/hotels/hotel-universel-riviereduloup.avif',
-  },
-  {
-    name: 'Comfort Inn Rivière-du-Loup',
-    category: '3 étoiles',
-    description:
-      'Chambres confortables près du fleuve, petit-déjeuner inclus et accueil chaleureux.',
-    price: 'À partir de 149 $/nuit',
-    link: 'https://www.booking.com/hotel/ca/comfort-inn-riviere-du-loup.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=24034208_91468373_2_1_0&checkin=2025-10-27&checkout=2025-10-29&dest_id=-572316&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=3&highlighted_blocks=24034208_91468373_2_1_0&hpos=3&matching_block_id=24034208_91468373_2_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=24034208_91468373_2_1_0__35614&srepoch=1761337234&srpvid=0ef28eef21e203af&type=total&ucfs=1&',
-    image: '/images/destinations/hotels/hotel-confort-riviereduloup.avif',
-  },
-
-  {
-    name: 'Auberge de la Pointe',
-    category: 'Vue sur Mer',
-    description: 'Site exceptionnel sur le Saint-Laurent',
-    price: 'À partir de 169$/nuit',
-    link: 'https://www.booking.com/hotel/ca/auberge-de-la-pointe.html',
-    image: '/images/destinations/hotels/hotel-pointe-riviereduloup.avif',
-  },
-];
+const hotels = pickHotels(HOTEL_IDS_RIVIEREDU_LOUP);
 
 const restaurants = [
   {
@@ -147,9 +128,12 @@ const teenActivities = [
 
 export default function BlogArticleRiviereduLoup() {
   return (
-    <article id="blog_article_riviere_du_loup" className="mx-auto max-w-4xl bg-white px-4 py-12">
+    <DestinationArticleTemplate
+      slug="riviere-du-loup"
+      title="Rivière-du-Loup - Porte d'entrée du Bas-Saint-Laurent"
+    >
+      <article id="blog_article_riviere_du_loup" className="mx-auto max-w-4xl bg-white px-4 py-12">
       <header className="mb-12 text-center">
-        <H1 className="mb-4">Rivière-du-Loup - Porte d'entrée du Bas-Saint-Laurent</H1>
         <p className="text-xl text-gray-600">
           Découvrez cette ville historique où le fleuve Saint-Laurent rencontre la nature sauvage
         </p>
@@ -262,35 +246,8 @@ export default function BlogArticleRiviereduLoup() {
           <Hotel className="size-8 text-indigo-600" />
           Où Dormir ?
         </H2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {hotels.map((hotel) => (
-            <a
-              key={hotel.name}
-              href={hotel.link}
-              className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
-            >
-              <div className="relative h-48">
-                <Image
-                  src={hotel.image}
-                  alt={hotel.name}
-                  className="size-full object-cover"
-                  width={800}
-                  height={600}
-                />
-              </div>
-              <div className="p-6">
-                <div className="mb-2 flex items-start justify-between">
-                  <H3 className="text-xl font-semibold text-gray-900">{hotel.name}</H3>
-                  <span className="rounded bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
-                    {hotel.category}
-                  </span>
-                </div>
-                <p className="mb-4 text-gray-600">{hotel.description}</p>
-                <p className="font-semibold text-indigo-600">{hotel.price}</p>
-              </div>
-            </a>
-          ))}
-        </div>
+        {/* MIGRATED_HOTELS_GRID */}
+<HotelGrid items={hotels} />
       </section>
 
       <section className="mb-16">
@@ -298,28 +255,7 @@ export default function BlogArticleRiviereduLoup() {
           <Utensils className="size-8 text-indigo-600" />
           Où Manger ?
         </H2>
-        <div className="space-y-6">
-          {restaurants.map((restaurant) => (
-            <div key={restaurant.name} className="rounded-lg bg-white p-6 shadow-md">
-              <div className="mb-4 flex items-start justify-between">
-                <div>
-                  <H3 className="mb-1 text-xl font-semibold text-gray-900">{restaurant.name}</H3>
-                  <p className="text-gray-600">{restaurant.type}</p>
-                </div>
-                <span className="font-semibold text-indigo-600">{restaurant.price}</span>
-              </div>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">Spécialité:</span> {restaurant.speciality}
-              </p>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">À essayer:</span> {restaurant.mustTry}
-              </p>
-              <p className="text-gray-700">
-                <span className="font-medium">Horaires:</span> {restaurant.schedule}
-              </p>
-            </div>
-          ))}
-        </div>
+        <RestaurantPremiumGrid items={restaurants} />
       </section>
 
       <section className="mb-16">
@@ -410,7 +346,7 @@ export default function BlogArticleRiviereduLoup() {
         </p>
         <div className="flex justify-center gap-4">
           <a
-            href="https://www.booking.com/city/ca/riviere-du-loup.html"
+            href={bookingAwin('https://www.booking.com/city/ca/riviere-du-loup.html')}
             className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
           >
             Réserver un Hébergement
@@ -424,5 +360,6 @@ export default function BlogArticleRiviereduLoup() {
         </div>
       </section>
     </article>
+    </DestinationArticleTemplate>
   );
 }

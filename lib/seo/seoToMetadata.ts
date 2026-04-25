@@ -36,11 +36,11 @@ function toAuthors(author?: SEOInput['author']): NonNullable<Metadata['authors']
 
 /** Récupère l'URL de base du site depuis l'ENV (fallback vers prod) */
 function getSiteBase(): URL {
-  const raw = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://goquebecan.com';
+  const raw = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://www.goquebecan.com';
   try {
     return new URL(raw);
   } catch {
-    return new URL('https://goquebecan.com');
+    return new URL('https://www.goquebecan.com');
   }
 }
 

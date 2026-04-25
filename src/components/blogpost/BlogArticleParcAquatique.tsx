@@ -1,3 +1,7 @@
+/* =========================
+ * SEO 2025 – Metadata & JSON-LD
+ * ========================= */
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,10 +15,7 @@ import { buildDestinationLd } from '@/lib/seo/buildDestinationLd';
 import { buildBreadcrumbLd } from '@/lib/seo/buildBreadcrumbLd';
 import { buildHowToLd } from '@/lib/seo/buildHowToLd';
 import { JsonLd, HeadExtras } from '@/lib/seo/HeadExtras';
-
-/* =========================
- * SEO 2025 – Metadata & JSON-LD
- * ========================= */
+import { bookingAwin } from '@/lib/awin';
 
 export const metadata = buildMetadata2025({
   title: 'Parcs aquatiques préférés des familles (Québec & Ontario) | GoQuébeCAN 2025',
@@ -223,7 +224,9 @@ const parks: WaterPark[] = [
       },
       {
         name: 'Le Manoir du Lac Delage',
-        link: 'https://www.booking.com/hotel/ca/manoir-du-lac-de-lage-lac-delage-quebec.fr.html?aid=2276516&label=msn-rVoOgT_nB8tmabcidK571Q-80127049560063%3Atikwd-80127307805998%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqsmanoir%20du%20lac%20booking&sid=8871fcaf95f2b4031bb564118f7b26e1&dest_id=-574203&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759180943&srpvid=5f4c9645c9960078&type=total&ucfs=1&',
+        link: bookingAwin(
+          'https://www.booking.com/hotel/ca/manoir-du-lac-de-lage-lac-delage-quebec.fr.html?aid=2276516&label=msn-rVoOgT_nB8tmabcidK571Q-80127049560063%3Atikwd-80127307805998%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqsmanoir%20du%20lac%20booking&sid=8871fcaf95f2b4031bb564118f7b26e1&dest_id=-574203&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759180943&srpvid=5f4c9645c9960078&type=total&ucfs=1&',
+        ),
         distance: '10 km',
         price: 'Dès 189 $/nuit',
         poi: 'Vue sur le lac, spa et ambiance très zen après une journée de glissades',
@@ -232,7 +235,9 @@ const parks: WaterPark[] = [
       },
       {
         name: 'Auberge Valcartier',
-        link: 'https://www.booking.com/hotel/ca/auberge-valcartier.fr.html?aid=2276422&label=msn-iB3esQzOQBCB%2AbWBrLN7Cg-79989606763414%3Atikwd-79989858727355%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqsauberge%20valcartier%20booking&sid=8871fcaf95f2b4031bb564118f7b26e1&dest_id=-575242&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759180752&srpvid=539695e014a0003a&type=total&ucfs=1&',
+        link: bookingAwin(
+          'https://www.booking.com/hotel/ca/auberge-valcartier.fr.html?aid=2276422&label=msn-iB3esQzOQBCB%2AbWBrLN7Cg-79989606763414%3Atikwd-79989858727355%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqsauberge%20valcartier%20booking&sid=8871fcaf95f2b4031bb564118f7b26e1&dest_id=-575242&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759180752&srpvid=539695e014a0003a&type=total&ucfs=1&',
+        ),
         distance: 'À proximité',
         price: 'Dès 95 $/nuit',
         poi: 'Option économique pratique pour familles qui veulent surtout profiter du parc aquatique',
@@ -314,7 +319,9 @@ const parks: WaterPark[] = [
     hotels: [
       {
         name: 'Hôtel Château-Bromont',
-        link: 'https://www.booking.com/hotel/ca/chateau-bromont-bromont.fr.html?label=msn-QQLmMKuP3Viw7ZGzqQkj4g-80058325963930%3Atikwd-80058585399512%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqscondo+ch%C3%A2teau+bromont&sid=8871fcaf95f2b4031bb564118f7b26e1&aid=2276422&ucfs=1&arphpl=1&dest_id=900048497&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=popularity&srpvid=5396991d94460345&srepoch=1759182402&from_sustainable_property_sr=1&from=searchresults',
+        link: bookingAwin(
+          'https://www.booking.com/hotel/ca/chateau-bromont-bromont.fr.html?label=msn-QQLmMKuP3Viw7ZGzqQkj4g-80058325963930%3Atikwd-80058585399512%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqscondo+ch%C3%A2teau+bromont&sid=8871fcaf95f2b4031bb564118f7b26e1&aid=2276422&ucfs=1&arphpl=1&dest_id=900048497&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=popularity&srpvid=5396991d94460345&srepoch=1759182402&from_sustainable_property_sr=1&from=searchresults',
+        ),
         distance: '2 km',
         price: 'Dès 199 $/nuit',
         poi: 'Piscine, spa et vue sur la montagne ; parfait pour relâcher la pression en famille',
@@ -323,15 +330,17 @@ const parks: WaterPark[] = [
       },
       {
         name: 'Condos Château-Bromont',
-        link: 'https://www.booking.com/hotel/ca/condos-chateau-bromont.fr.html?aid=2276422&label=msn-QQLmMKuP3Viw7ZGzqQkj4g-80058325963930%3Atikwd-80058585399512%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqscondo%20ch%C3%A2teau%20bromont&sid=8871fcaf95f2b4031bb564118f7b26e1&dest_id=900048497&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759181976&srpvid=ce3f984be2c1046a&type=total&ucfs=1&',
+        link: bookingAwin(
+          'https://www.booking.com/hotel/ca/condos-chateau-bromont.fr.html?aid=2276422&label=msn-QQLmMKuP3Viw7ZGzqQkj4g-80058325963930%3Atikwd-80058585399512%3Aloc-4064%3Aneo%3Amte%3Alp124427%3Adec%3Aqscondo%20ch%C3%A2teau%20bromont&sid=8871fcaf95f2b4031bb564118f7b26e1&dest_id=900048497&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1759181976&srpvid=ce3f984be2c1046a&type=total&ucfs=1&',
+        ),
         distance: '2,3 km',
         price: 'Dès 170 $/nuit',
         poi: 'Cuisine équipée, idéal pour 3–5 personnes et les familles qui aiment être autonomes',
-        image: '/images/destinations/hotels/appartement-bromont.avif',
+        image: '/images/destinations/hotels/appartement-bromont2.avif',
       },
       {
         name: 'Le 204 Champlain',
-        link: 'https://www.booking.com/hotel/ca/le-204-champlain-bromont.html',
+        link: bookingAwin('https://www.booking.com/hotel/ca/le-204-champlain-bromont.html'),
         distance: '1,5 km',
         price: 'Dès 160 $/nuit',
         poi: 'Appartement très bien noté, pratique pour un week-end actif dans les Cantons-de-l’Est',
@@ -418,7 +427,9 @@ const parks: WaterPark[] = [
     hotels: [
       {
         name: 'Microtel Inn & Suites Casselman',
-        link: 'https://www.booking.com/hotel/ca/microtel-casselman.fr.html?label=gen173nr-10CAsoJ0IMbW90ZWwtYmlkZWF1SDNYBGgniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKLwsPIBsACAdICJDI5MGQ0MTEwLWUyMTctNDMxOC05ODA3LTI0YWFiODQzMWE5Y9gCAeACAQ&sid=25da503d934a1bfc72a56a0219f8fa90&aid=304142&ucfs=1&checkin=2026-04-08&checkout=2026-04-09&dest_id=-570760&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=e8bfd62a3792e42fa8ed14ef648bf7f7&srepoch=1762713979&matching_block_id=150597905_94608288_2_1_0&atlas_src=sr_iw_title',
+        link: bookingAwin(
+          'https://www.booking.com/hotel/ca/microtel-casselman.fr.html?label=gen173nr-10CAsoJ0IMbW90ZWwtYmlkZWF1SDNYBGgniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKLwsPIBsACAdICJDI5MGQ0MTEwLWUyMTctNDMxOC05ODA3LTI0YWFiODQzMWE5Y9gCAeACAQ&sid=25da503d934a1bfc72a56a0219f8fa90&aid=304142&ucfs=1&checkin=2026-04-08&checkout=2026-04-09&dest_id=-570760&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=e8bfd62a3792e42fa8ed14ef648bf7f7&srepoch=1762713979&matching_block_id=150597905_94608288_2_1_0&atlas_src=sr_iw_title',
+        ),
         distance: '15 km',
         price: 'Dès 159 $/nuit',
         poi: 'Déjeuner inclus et accès pratique à l’autoroute 417',
@@ -426,7 +437,9 @@ const parks: WaterPark[] = [
       },
       {
         name: 'Holiday Inn Express Ottawa East – Orléans',
-        link: 'https://www.booking.com/hotel/ca/holiday-inn-select-suites.fr.html?aid=304142&label=gen173nr-10CAsoJ0IMbW90ZWwtYmlkZWF1SDNYBGgniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKLwsPIBsACAdICJDI5MGQ0MTEwLWUyMTctNDMxOC05ODA3LTI0YWFiODQzMWE5Y9gCAeACAQ&sid=25da503d934a1bfc72a56a0219f8fa90&all_sr_blocks=2623619_95150008_2_42_0&checkin=2026-04-08&checkout=2026-04-09&dest_id=-570760&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=4&highlighted_blocks=2623619_95150008_2_42_0&hpos=4&matching_block_id=2623619_95150008_2_42_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=2623619_95150008_2_42_0__20300&srepoch=1762714199&srpvid=e8bfd62a3792e42fa8ed14ef648bf7f7&type=total&ucfs=1&',
+        link: bookingAwin(
+          'https://www.booking.com/hotel/ca/holiday-inn-select-suites.fr.html?aid=304142&label=gen173nr-10CAsoJ0IMbW90ZWwtYmlkZWF1SDNYBGgniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKLwsPIBsACAdICJDI5MGQ0MTEwLWUyMTctNDMxOC05ODA3LTI0YWFiODQzMWE5Y9gCAeACAQ&sid=25da503d934a1bfc72a56a0219f8fa90&all_sr_blocks=2623619_95150008_2_42_0&checkin=2026-04-08&checkout=2026-04-09&dest_id=-570760&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=4&highlighted_blocks=2623619_95150008_2_42_0&hpos=4&matching_block_id=2623619_95150008_2_42_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=2623619_95150008_2_42_0__20300&srepoch=1762714199&srpvid=e8bfd62a3792e42fa8ed14ef648bf7f7&type=total&ucfs=1&',
+        ),
         distance: '30 km',
         price: 'Dès 169 $/nuit',
         poi: 'Piscine intérieure, déjeuner inclus, quartier familial d’Orléans',
@@ -435,7 +448,9 @@ const parks: WaterPark[] = [
       },
       {
         name: 'AC Hotel by Marriott Ottawa Downtown',
-        link: 'https://www.booking.com/hotel/ca/ac-by-marriott-ottawa-downtown.fr.html?aid=304142&label=gen173nr-10CAsoJ0IMbW90ZWwtYmlkZWF1SDNYBGgniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKLwsPIBsACAdICJDI5MGQ0MTEwLWUyMTctNDMxOC05ODA3LTI0YWFiODQzMWE5Y9gCAeACAQ&sid=25da503d934a1bfc72a56a0219f8fa90&all_sr_blocks=1359334202_408254657_0_0_0&checkin=2026-04-08&checkout=2026-04-09&dest_id=-570760&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=3&highlighted_blocks=1359334202_408254657_0_0_0&hpos=3&matching_block_id=1359334202_408254657_0_0_0&nflt=swimming_pool_options%3D433&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=bayesian_review_score&sr_pri_blocks=1359334202_408254657_0_0_0__35100&srepoch=1762714456&srpvid=e8bfd62a3792e42fa8ed14ef648bf7f7&type=total&ucfs=1&',
+        link: bookingAwin(
+          'https://www.booking.com/hotel/ca/ac-by-marriott-ottawa-downtown.fr.html?aid=304142&label=gen173nr-10CAsoJ0IMbW90ZWwtYmlkZWF1SDNYBGgniAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKLwsPIBsACAdICJDI5MGQ0MTEwLWUyMTctNDMxOC05ODA3LTI0YWFiODQzMWE5Y9gCAeACAQ&sid=25da503d934a1bfc72a56a0219f8fa90&all_sr_blocks=1359334202_408254657_0_0_0&checkin=2026-04-08&checkout=2026-04-09&dest_id=-570760&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=3&highlighted_blocks=1359334202_408254657_0_0_0&hpos=3&matching_block_id=1359334202_408254657_0_0_0&nflt=swimming_pool_options%3D433&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=bayesian_review_score&sr_pri_blocks=1359334202_408254657_0_0_0__35100&srepoch=1762714456&srpvid=e8bfd62a3792e42fa8ed14ef648bf7f7&type=total&ucfs=1&',
+        ),
         distance: 'Centre-ville d’Ottawa',
         price: 'Confort dès 220 $/nuit',
         poi: 'Hôtel moderne avec piscine intérieure et vue urbaine, parfait si vous combinez parc aquatique et visite d’Ottawa',

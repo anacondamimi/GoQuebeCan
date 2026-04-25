@@ -1,86 +1,121 @@
 'use client';
 
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Image from 'next/image';
 import H2 from '@/components/typography/H2';
 
 declare global {
   interface Window {
-    dataLayer: any[];
-    gtag?: (...args: any[]) => void;
+    dataLayer: unknown[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
+
+type CookiePrefs = {
+  functional: true;
+  statistics: boolean;
+  marketing: boolean;
+};
+
+type StoredConsent = CookiePrefs & {
+  version?: string;
+  date?: number;
+};
 
 const BRAND = {
   blue: '#36b5ff',
   violet: '#aa7fd5',
-  white: '#ffffff',
-  dark: '#111111',
 };
 
-const CONSENT_VERSION = '2.1';
+const CONSENT_VERSION = '2.2';
 const EXPIRATION_DAYS = 365;
 const GA_ID = 'G-GZP1YZLT2F';
 
-const defaultPrefs = {
+const defaultPrefs: CookiePrefs = {
   functional: true,
   statistics: false,
   marketing: false,
 };
-console.log('COOKIEBANNER VERSION AVRIL 2026');
+
 const translations = {
   fr: {
     title: 'Cookies & confidentialité',
     intro:
-      'Nous utilisons des cookies pour assurer le bon fonctionnement du site, améliorer votre expérience et analyser le trafic.',
+      'Nous utilisons quelques cookies pour faire fonctionner le site, comprendre ce qui vous aide le plus et améliorer GoQuébeCAN. Vous gardez le contrôle à tout moment.',
     policy: 'Lire la politique de confidentialité',
-    functional: 'Cookies fonctionnels (obligatoires)',
-    statistics: 'Cookies statistiques (Google Analytics, etc.)',
-    marketing: 'Cookies marketing (publicité ciblée)',
+    functional: 'Cookies fonctionnels — nécessaires au bon fonctionnement du site',
+    statistics: 'Cookies statistiques — nous aident à améliorer le site',
+    marketing: 'Cookies marketing — utiles pour les publicités et contenus personnalisés',
     customize: 'Personnaliser',
-    save: 'Sauvegarder',
+    save: 'Sauvegarder mes choix',
     acceptAll: 'Tout accepter',
     rejectAll: 'Tout refuser',
+    helper: 'Vous pouvez modifier vos choix plus tard depuis la politique de confidentialité.',
+    close: 'Fermer',
   },
   en: {
     title: 'Cookies & Privacy',
     intro:
-      'We use cookies to ensure the site works properly, improve your experience and analyze traffic.',
+      'We use a few cookies to make the website work, understand what helps visitors most, and improve GoQuébeCAN. You stay in control at all times.',
     policy: 'Read privacy policy',
-    functional: 'Functional cookies (required)',
-    statistics: 'Analytics cookies (Google Analytics, etc.)',
-    marketing: 'Marketing cookies (targeted ads)',
+    functional: 'Functional cookies — required for the website to work',
+    statistics: 'Analytics cookies — help us improve the website',
+    marketing: 'Marketing cookies — used for ads and personalized content',
     customize: 'Customize',
-    save: 'Save',
+    save: 'Save my choices',
     acceptAll: 'Accept all',
     rejectAll: 'Reject all',
+    helper: 'You can update your choices later from the privacy policy.',
+    close: 'Close',
   },
 };
 
-function setConsent(data: typeof defaultPrefs) {
-  const payload = { ...data, version: CONSENT_VERSION, date: Date.now() };
-  localStorage.setItem('cookie_consent', JSON.stringify(payload));
-  document.cookie = `cookie_consent=${btoa(JSON.stringify(payload))}; path=/; max-age=${
-    EXPIRATION_DAYS * 86400
-  }; SameSite=Strict; Secure`;
+function encodeConsent(payload: StoredConsent) {
+  try {
+    return btoa(JSON.stringify(payload));
+  } catch {
+    return '';
+  }
 }
 
-function getConsent(): (typeof defaultPrefs & { version?: string; date?: number }) | null {
+function setConsent(data: CookiePrefs) {
+  if (typeof window === 'undefined') return;
+
+  const payload: StoredConsent = {
+    ...data,
+    version: CONSENT_VERSION,
+    date: Date.now(),
+  };
+
+  localStorage.setItem('cookie_consent', JSON.stringify(payload));
+
+  const encoded = encodeConsent(payload);
+
+  if (encoded) {
+    document.cookie = `cookie_consent=${encoded}; path=/; max-age=${
+      EXPIRATION_DAYS * 86400
+    }; SameSite=Strict; Secure`;
+  }
+}
+
+function getConsent(): StoredConsent | null {
   if (typeof window === 'undefined') return null;
 
   const stored = localStorage.getItem('cookie_consent');
+
   if (!stored) return null;
 
   try {
-    return JSON.parse(stored);
+    return JSON.parse(stored) as StoredConsent;
   } catch {
     return null;
   }
 }
 
 export function manageCookies() {
-  const event = new CustomEvent('openCookieBanner');
-  window.dispatchEvent(event);
+  if (typeof window === 'undefined') return;
+
+  window.dispatchEvent(new CustomEvent('openCookieBanner'));
 }
 
 function ensureGtagBase() {
@@ -89,23 +124,10 @@ function ensureGtagBase() {
   window.dataLayer = window.dataLayer || [];
 
   if (!window.gtag) {
-    window.gtag = function (...args: any[]) {
+    window.gtag = (...args: unknown[]) => {
       window.dataLayer.push(args);
     };
   }
-}
-
-function updateGoogleConsent(prefs: typeof defaultPrefs) {
-  if (typeof window === 'undefined') return;
-
-  ensureGtagBase();
-
-  window.gtag?.('consent', 'update', {
-    ad_storage: prefs.marketing ? 'granted' : 'denied',
-    analytics_storage: prefs.statistics ? 'granted' : 'denied',
-    ad_user_data: prefs.marketing ? 'granted' : 'denied',
-    ad_personalization: prefs.marketing ? 'granted' : 'denied',
-  });
 }
 
 function setDefaultGoogleConsent() {
@@ -118,6 +140,30 @@ function setDefaultGoogleConsent() {
     analytics_storage: 'denied',
     ad_user_data: 'denied',
     ad_personalization: 'denied',
+    wait_for_update: 500,
+  });
+}
+
+function updateGoogleConsent(prefs: CookiePrefs) {
+  if (typeof window === 'undefined') return;
+
+  ensureGtagBase();
+
+  window.gtag?.('consent', 'update', {
+    ad_storage: prefs.marketing ? 'granted' : 'denied',
+    analytics_storage: prefs.statistics ? 'granted' : 'denied',
+    ad_user_data: prefs.marketing ? 'granted' : 'denied',
+    ad_personalization: prefs.marketing ? 'granted' : 'denied',
+  });
+}
+
+function sendPageView() {
+  if (typeof window === 'undefined') return;
+
+  window.gtag?.('config', GA_ID, {
+    page_path: window.location.pathname,
+    page_location: window.location.href,
+    page_title: document.title,
   });
 }
 
@@ -129,45 +175,56 @@ function loadGoogleAnalytics() {
   const existing = document.querySelector(
     `script[src*="googletagmanager.com/gtag/js?id=${GA_ID}"]`,
   );
-  if (existing) return;
 
-  const s = document.createElement('script');
-  s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-  s.async = true;
-  document.head.appendChild(s);
+  if (existing) {
+    sendPageView();
+    return;
+  }
+
+  const script = document.createElement('script');
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  script.async = true;
+  document.head.appendChild(script);
 
   window.gtag?.('js', new Date());
-  window.gtag?.('config', GA_ID, {
-    page_path: window.location.pathname,
-  });
+  sendPageView();
 }
 
 function loadFacebookPixel() {
   if (typeof window === 'undefined') return;
 
   const existing = document.querySelector('script[src*="connect.facebook.net"]');
+
   if (existing) return;
 
-  const fb = document.createElement('script');
-  fb.src = 'https://connect.facebook.net/en_US/fbevents.js';
-  fb.async = true;
-  document.head.appendChild(fb);
+  const script = document.createElement('script');
+  script.src = 'https://connect.facebook.net/en_US/fbevents.js';
+  script.async = true;
+  document.head.appendChild(script);
+}
+
+function normalizePrefs(stored: StoredConsent): CookiePrefs {
+  return {
+    functional: true,
+    statistics: Boolean(stored.statistics),
+    marketing: Boolean(stored.marketing),
+  };
 }
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
   const [closing, setClosing] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
-  const [preferences, setPreferences] = useState(defaultPrefs);
+  const [preferences, setPreferences] = useState<CookiePrefs>(defaultPrefs);
   const [ready, setReady] = useState(false);
+  const [reopened, setReopened] = useState(false);
 
   const userLang =
     typeof navigator !== 'undefined' && navigator.language.startsWith('en') ? 'en' : 'fr';
+
   const t = translations[userLang];
 
-  const loadConsentedScripts = useCallback((prefs: typeof defaultPrefs) => {
-    if (typeof window === 'undefined') return;
-
+  const loadConsentedScripts = useCallback((prefs: CookiePrefs) => {
     updateGoogleConsent(prefs);
 
     if (prefs.statistics) {
@@ -188,12 +245,7 @@ export default function CookieBanner() {
       setVisible(true);
       setPreferences(defaultPrefs);
     } else {
-      const restoredPrefs = {
-        functional: true,
-        statistics: !!stored.statistics,
-        marketing: !!stored.marketing,
-      };
-
+      const restoredPrefs = normalizePrefs(stored);
       setPreferences(restoredPrefs);
       loadConsentedScripts(restoredPrefs);
     }
@@ -202,28 +254,40 @@ export default function CookieBanner() {
 
     const openHandler = () => {
       const current = getConsent();
+
       if (current) {
-        setPreferences({
-          functional: true,
-          statistics: !!current.statistics,
-          marketing: !!current.marketing,
-        });
+        setPreferences(normalizePrefs(current));
       }
+
+      setReopened(true);
       setVisible(true);
       setClosing(false);
     };
 
     window.addEventListener('openCookieBanner', openHandler);
-    return () => window.removeEventListener('openCookieBanner', openHandler);
+
+    return () => {
+      window.removeEventListener('openCookieBanner', openHandler);
+    };
   }, [loadConsentedScripts]);
 
   const closeBanner = () => {
     setClosing(true);
-    setTimeout(() => setVisible(false), 600);
+
+    window.setTimeout(() => {
+      setVisible(false);
+      setClosing(false);
+      setShowOptions(false);
+    }, 450);
   };
 
   const acceptAll = () => {
-    const all = { functional: true, statistics: true, marketing: true };
+    const all: CookiePrefs = {
+      functional: true,
+      statistics: true,
+      marketing: true,
+    };
+
     setConsent(all);
     setPreferences(all);
     loadConsentedScripts(all);
@@ -231,7 +295,12 @@ export default function CookieBanner() {
   };
 
   const rejectAll = () => {
-    const none = { functional: true, statistics: false, marketing: false };
+    const none: CookiePrefs = {
+      functional: true,
+      statistics: false,
+      marketing: false,
+    };
+
     setConsent(none);
     setPreferences(none);
     loadConsentedScripts(none);
@@ -252,46 +321,50 @@ export default function CookieBanner() {
       aria-labelledby="cookie-title"
       aria-describedby="cookie-desc"
       aria-modal="true"
-      className={`fixed inset-x-0 bottom-0 z-50 border-t-4 bg-white text-gray-800 shadow-[0_-3px_15px_rgba(0,0,0,0.25)] transition-all duration-500 ease-out dark:bg-[#111111] dark:text-gray-100 ${
-        closing ? 'animate-slideDownFadeOut' : 'animate-slideUpFadeIn'
+      className={`fixed inset-x-0 bottom-0 z-50 border-t bg-white text-gray-900 shadow-[0_-8px_30px_rgba(0,0,0,0.18)] transition-all duration-500 ease-out dark:bg-[#111111] dark:text-gray-100 ${
+        closing ? 'animate-cookieSlideDown' : 'animate-cookieSlideUp'
       }`}
       style={{ borderTopColor: BRAND.blue }}
     >
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-5 py-6 md:flex-row md:justify-between">
-        <div className="flex items-start gap-3 md:w-3/5">
+      <div className="mx-auto flex max-w-6xl flex-col gap-5 p-5 md:flex-row md:items-center md:justify-between">
+        <div className="flex gap-4 md:w-3/5">
           <Image
             src="/logo.png"
-            alt="GoQuébeCan logo"
+            alt="Logo GoQuébeCAN"
             width={52}
             height={52}
             priority
-            className="rounded-md"
+            className="size-[52px] rounded-lg"
           />
-          <div>
-            <H2 id="cookie-title" className="flex items-center gap-2 text-sm font-semibold">
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                className="animate-spin-slow"
-              >
-                <circle cx="12" cy="12" r="10" fill={BRAND.blue} />
-                <circle cx="8" cy="10" r="1.5" fill={BRAND.violet} />
-                <circle cx="14" cy="8" r="1" fill={BRAND.violet} />
-                <circle cx="16" cy="14" r="1.2" fill={BRAND.violet} />
-                <circle cx="10" cy="16" r="1" fill={BRAND.violet} />
-              </svg>
-              {t.title}
-            </H2>
 
-            <p id="cookie-desc" className="mt-1 text-sm leading-snug">
+          <div>
+            <div className="flex items-start justify-between gap-3">
+              <H2 id="cookie-title" className="text-base font-bold">
+                {t.title}
+              </H2>
+
+              {reopened && (
+                <button
+                  type="button"
+                  onClick={closeBanner}
+                  aria-label={t.close}
+                  className="rounded-full px-2 text-lg leading-none text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:hover:bg-gray-800 dark:hover:text-white"
+                >
+                  ×
+                </button>
+              )}
+            </div>
+
+            <p
+              id="cookie-desc"
+              className="mt-2 text-sm leading-relaxed text-gray-700 dark:text-gray-300"
+            >
               {t.intro}
             </p>
 
             <a
               href="/confidentialite"
-              className="text-xs underline hover:text-blue-800 dark:hover:text-blue-300"
+              className="mt-2 inline-block text-sm font-medium underline underline-offset-4 hover:opacity-80"
               style={{ color: BRAND.blue }}
             >
               {t.policy}
@@ -299,69 +372,104 @@ export default function CookieBanner() {
           </div>
         </div>
 
-        {showOptions && (
-          <div
-            className="animate-fadeIn w-full space-y-2 rounded border border-gray-200 bg-gray-50 p-3 text-sm md:w-auto dark:border-gray-700 dark:bg-[#222]"
-            aria-live="polite"
-          >
-            <label className="flex items-center gap-2">
-              <input type="checkbox" checked disabled /> {t.functional}
-            </label>
+        <div className="flex flex-col gap-3 md:w-auto">
+          {showOptions && (
+            <div
+              className="animate-cookieFadeIn w-full space-y-3 rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm md:min-w-[340px] dark:border-gray-700 dark:bg-[#1c1c1c]"
+              aria-live="polite"
+            >
+              <div className="flex items-start gap-3">
+                <input id="cookies-functional" type="checkbox" checked disabled className="mt-1" />
+                <label htmlFor="cookies-functional" className="leading-snug">
+                  {t.functional}
+                </label>
+              </div>
 
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                checked={preferences.statistics}
-                onChange={(e) => setPreferences({ ...preferences, statistics: e.target.checked })}
-              />
-              {t.statistics}
-            </label>
+              <div className="flex items-start gap-3">
+                <input
+                  id="cookies-statistics"
+                  type="checkbox"
+                  checked={preferences.statistics}
+                  onChange={(e) =>
+                    setPreferences((current) => ({
+                      ...current,
+                      statistics: e.target.checked,
+                    }))
+                  }
+                  className="mt-1"
+                />
+                <label htmlFor="cookies-statistics" className="leading-snug">
+                  {t.statistics}
+                </label>
+              </div>
 
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                checked={preferences.marketing}
-                onChange={(e) => setPreferences({ ...preferences, marketing: e.target.checked })}
-              />
-              {t.marketing}
-            </label>
+              <div className="flex items-start gap-3">
+                <input
+                  id="cookies-marketing"
+                  type="checkbox"
+                  checked={preferences.marketing}
+                  onChange={(e) =>
+                    setPreferences((current) => ({
+                      ...current,
+                      marketing: e.target.checked,
+                    }))
+                  }
+                  className="mt-1"
+                />
+                <label htmlFor="cookies-marketing" className="leading-snug">
+                  {t.marketing}
+                </label>
+              </div>
+
+              <p className="border-t border-gray-200 pt-3 text-xs text-gray-500 dark:border-gray-700 dark:text-gray-400">
+                {t.helper}
+              </p>
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:flex md:flex-wrap md:justify-end">
+            <button
+              type="button"
+              onClick={acceptAll}
+              className="rounded-lg px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:scale-[1.02] hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              style={{ backgroundColor: BRAND.blue }}
+            >
+              {t.acceptAll}
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setShowOptions((value) => !value)}
+              className="rounded-lg border px-5 py-2.5 text-sm font-semibold transition hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:hover:bg-blue-950/40"
+              style={{ borderColor: BRAND.blue, color: BRAND.blue }}
+            >
+              {t.customize}
+            </button>
+
+            {showOptions && (
+              <button
+                type="button"
+                onClick={saveConsent}
+                className="rounded-lg px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:scale-[1.02] hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                style={{ backgroundColor: BRAND.violet }}
+              >
+                {t.save}
+              </button>
+            )}
+
+            <button
+              type="button"
+              onClick={rejectAll}
+              className="rounded-lg px-5 py-2.5 text-sm font-medium text-gray-600 underline underline-offset-4 transition hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
+            >
+              {t.rejectAll}
+            </button>
           </div>
-        )}
-
-        <div className="flex flex-wrap justify-end gap-2 md:flex-nowrap md:justify-start">
-          <button
-            onClick={() => setShowOptions((v) => !v)}
-            className="rounded border px-4 py-2 text-sm font-medium hover:bg-blue-50 focus:ring-2 focus:ring-blue-400 dark:hover:bg-blue-900/30"
-            style={{ borderColor: BRAND.blue, color: BRAND.blue }}
-          >
-            {t.customize}
-          </button>
-
-          <button
-            onClick={rejectAll}
-            className="rounded border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:ring-2 focus:ring-gray-400 dark:hover:bg-gray-800"
-          >
-            {t.rejectAll}
-          </button>
-
-          <button
-            onClick={saveConsent}
-            className="rounded border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:ring-2 focus:ring-gray-400 dark:hover:bg-gray-800"
-          >
-            {t.save}
-          </button>
-
-          <button
-            onClick={acceptAll}
-            className="rounded border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:ring-2 focus:ring-gray-400 dark:hover:bg-gray-800"
-          >
-            {t.acceptAll}
-          </button>
         </div>
       </div>
 
       <style jsx global>{`
-        @keyframes slideUpFadeIn {
+        @keyframes cookieSlideUp {
           from {
             transform: translateY(100%);
             opacity: 0;
@@ -372,7 +480,7 @@ export default function CookieBanner() {
           }
         }
 
-        @keyframes slideDownFadeOut {
+        @keyframes cookieSlideDown {
           from {
             transform: translateY(0);
             opacity: 1;
@@ -383,38 +491,27 @@ export default function CookieBanner() {
           }
         }
 
-        .animate-slideUpFadeIn {
-          animation: slideUpFadeIn 0.6s ease-out forwards;
-        }
-
-        .animate-slideDownFadeOut {
-          animation: slideDownFadeOut 0.6s ease-in forwards;
-        }
-
-        @keyframes fadeIn {
+        @keyframes cookieFadeIn {
           from {
             opacity: 0;
+            transform: translateY(6px);
           }
           to {
             opacity: 1;
+            transform: translateY(0);
           }
         }
 
-        .animate-fadeIn {
-          animation: fadeIn 0.4s ease-out forwards;
+        .animate-cookieSlideUp {
+          animation: cookieSlideUp 0.45s ease-out forwards;
         }
 
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
+        .animate-cookieSlideDown {
+          animation: cookieSlideDown 0.45s ease-in forwards;
         }
 
-        .animate-spin-slow {
-          animation: spin-slow 7s linear infinite;
+        .animate-cookieFadeIn {
+          animation: cookieFadeIn 0.25s ease-out forwards;
         }
       `}</style>
     </div>

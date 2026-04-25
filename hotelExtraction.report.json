@@ -57,7 +57,7 @@
       "description": "Charmant gîte au bord du fleuve avec jardin et ambiance artistique unique, parfait pour les couples.",
       "price": "À partir de 169 $/nuit",
       "bookingUrl": "https://www.booking.com/hotel/ca/maison-du-photograph.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=44581501_206267159_2_0_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=445815&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=44581501_206267159_2_0_0&hpos=1&matching_block_id=44581501_206267159_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=44581501_206267159_2_0_0__34200&srepoch=1761338503&srpvid=56a0918223a60160&type=total&ucfs=1&",
-      "image": "/images/destinations/hotels/hotel-maisonphotographe-canyon.avif",
+      "image": "/images/destinations/hotels/hotel-maison-photographe-canyon.avif",
       "category": "3 étoiles",
       "sourceFile": "src/components/blogpost/BlogArticleCanyon.tsx",
       "sourceSlug": "canyon"
@@ -682,7 +682,7 @@
       "description": "Hôtel-boutique en Haute-Ville, au cœur du Vieux-Québec, avec déco contemporaine, mini-cuisines et certaines chambres offrant une vue superbe sur la ville.",
       "price": "À partir d’environ 250–350 $/nuit (selon la saison)",
       "bookingUrl": "https://www.booking.com/hotel/ca/coeur-de-ville.fr.html",
-      "image": "/images/destinations/hotels/monsieurjean-quebec.avif",
+      "image": "/images/destinations/hotels/monsieur-jean-quebec.avif",
       "category": "Boutique & design",
       "sourceFile": "src/components/blogpost/BlogArticleQuebec.tsx",
       "sourceSlug": "quebec"
@@ -692,7 +692,7 @@
       "description": "Condos haut de gamme dans le Vieux-Port, avec grandes fenêtres, cuisines équipées et vue directe sur le fleuve et le mouvement des bateaux.",
       "price": "À partir d’environ 300–400 $/nuit (selon la saison)",
       "bookingUrl": "https://www.booking.com/hotel/ca/royal-dalhousie.html",
-      "image": "/images/destinations/hotels/royaldaousie-quebec.avif",
+      "image": "/images/destinations/hotels/royal-daousie-quebec.avif",
       "category": "Appartements vue fleuve",
       "sourceFile": "src/components/blogpost/BlogArticleQuebec.tsx",
       "sourceSlug": "quebec"

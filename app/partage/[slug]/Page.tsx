@@ -155,7 +155,7 @@ export default function Page() {
 
     await exportToPDF(`itineraire-${item.slug ?? 'communaute'}.pdf`, itineraryForPdf, {
       brand: 'GoQuébeCAN',
-      logoUrl: '/images/logo.png',
+      logoUrl: '/logo.png',
       cardUrl: '/images/carte.avif',
       greeting:
         'Bonnes vacances au Québec ! Profitez des paysages, des saveurs locales et de la chaleur de nos producteurs — GoQuébeCAN vous accompagne à chaque étape.',

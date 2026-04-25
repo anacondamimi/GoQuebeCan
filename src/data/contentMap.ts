@@ -14,7 +14,7 @@ export const contentMap = {
     planner: '/planificateur',
   },
   carleton: {
-    blog: '/blog/carleton-sur-mer',
+    blog: 'blog/carleton-sur-mer-sur-mer',
     video: '/videos',
     objects: '/objets',
     planner: '/planificateur',
@@ -128,7 +128,7 @@ export const contentMap = {
     planner: '/planificateur',
   },
   orléans: {
-    blog: "/blog/ile-d'orleans",
+    blog: '/blog/ile-orleans',
     video: '/videos',
     objects: '/objets',
     planner: '/planificateur',

@@ -13,12 +13,12 @@ export const metadata: Metadata = {
     'Location de VR au Canada 2025 — Comparatif complet (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream)',
   description:
     'Le guide 2025 le plus utile sur la location de VR au Canada : comparatif détaillé d’Outdoorsy, RVezy, Authentik Canada, Fraserway et CanaDream, villes de départ, tailles de VR, options one-way, assurance, et bons plans relocations dès 1 $/jour. Liens pratiques vers itinéraires, vidéos et producteurs du Québec.',
-  alternates: { canonical: 'https://goquebecan.com/blog/location-vr-canada-2025' },
+  alternates: { canonical: 'https://www.goquebecan.com/blog/location-vr' },
   openGraph: {
     title: 'Location de VR au Canada 2025 — Comparatif complet',
     description:
       'Outdoorsy vs RVezy vs Authentik Canada vs Fraserway vs CanaDream. Le comparatif 2025 le plus utile : villes de prise en charge, tailles de VR, assurance, one-way, relocations 1 $/jour.',
-    url: 'https://goquebecan.com/blog/location-vr-canada-2025',
+    url: 'https://www.goquebecan.com/blog/location-vr',
     siteName: BRAND_NAME,
     type: 'article',
   },
@@ -378,7 +378,7 @@ export default function Page() {
           { href: '/blog/voyage-voiture', label: 'Voyage en voiture' },
           { href: '/producteurs', label: 'Découvrire les Producteurs Quebecois' },
           { href: '/videos', label: 'Explorer les joyaux du Quebec' },
-          { href: '/Planificateur', label: 'Planifier vos vacances ' },
+          { href: '/planificateur', label: 'Planifier vos vacances ' },
         ]}
       />
       {/* JSON-LD Article + FAQ pour SEO 2025 */}
@@ -392,7 +392,7 @@ export default function Page() {
               'Location de VR au Canada 2025 — Comparatif complet (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream)',
             author: { '@type': 'Organization', name: 'GoQuébeCan' },
             publisher: { '@type': 'Organization', name: 'GoQuébeCan' },
-            mainEntityOfPage: 'https://goquebecan.com/blog/location-vr-canada-2025',
+            mainEntityOfPage: 'https://www.goquebecan.com/blog/location-vr',
             inLanguage: 'fr-CA',
           }),
         }}

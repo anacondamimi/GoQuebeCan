@@ -1,8 +1,17 @@
+
+
 import Image from 'next/image';
 import React from 'react';
-import H1 from '@/components/typography/H1';
+
 import H2 from '@/components/typography/H2';
 import H3 from '@/components/typography/H3';
+import { HotelGrid } from '@/components/hotels/HotelGrid';
+import { pickHotels } from '@/data/hotels/hotelCatalog.generated';
+import { HOTEL_IDS_SABREVOIS } from '@/data/hotels/byArticle/sabrevois';
+import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun } from 'lucide-react';
+import { bookingAwin } from '@/lib/awin';
+import { RestaurantPremiumGrid } from '@/components/food/RestaurantPremiumGrid';
+import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
 
 export const metadata = {
   slug: 'sabrevois',
@@ -22,39 +31,10 @@ export const metadata = {
   hebergements: ['Les Huttes du Richelieu', 'Auberge du Richelieu', 'Gîte des Îles'],
   publics: ['familles', 'ados'],
 };
-import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun } from 'lucide-react';
 
 // ✅ Imports déplacés automatiquement
 
-const hotels = [
-  {
-    name: 'Grande maison moderne 4 chambres – Spa, Jardin & Parking gratuit',
-    category: 'Maison de vacances familiale',
-    description:
-      'Spacieuse maison tout équipée avec spa Jacuzzi, grand jardin et stationnement privé. Idéale pour les familles et groupes à Saint-Jean-sur-Richelieu, à deux pas du centre-ville.',
-    price: 'À partir de 282 $/nuit (≈ 563 $ pour 2 nuits)',
-    link: 'https://www.booking.com/hotel/ca/kouaks.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=1405569501_412356963_0_0_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=900056369&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=6&highlighted_blocks=1405569501_412356963_0_0_0&hpos=6&matching_block_id=1405569501_412356963_0_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1405569501_412356963_0_0_0__56272&srepoch=1761338965&srpvid=56a09249244a03b9&type=total&ucfs=1&',
-    image: '/images/destinations/hotels/hotel-grandemaison-sabrevois.avif',
-  },
-  {
-    name: 'Holiday Inn (Saint-Jean-sur-Richelieu)',
-    category: 'Hotel chaîne, piscine intérieure',
-    description:
-      'Hôtel confortable de style Holiday Inn à Saint-Jean-sur-Richelieu, avec chambres spacieuses, stationnement facile et accès autoroute pratique pour explorer la Montérégie.',
-    price: 'À partir de 189 $/nuit',
-    link: 'https://www.booking.com/hotel/ca/gouverneur-quebec1.fr.html?aid=2369661&label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&all_sr_blocks=2675210_412424930_2_2_0&checkin=2025-12-08&checkout=2025-12-10&dest_id=900040733&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=2675210_412424930_2_2_0&hpos=2&matching_block_id=2675210_412424930_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=2675210_412424930_2_2_0__37700&srepoch=1761339092&srpvid=accc92a644dc0180&type=total&ucfs=1&',
-    image: '/images/destinations/hotels/hotel-holiday-sabrevois.avif',
-  },
-  {
-    name: 'La Cache du Lac Champlain',
-    category: '4 étoiles supérieur',
-    description:
-      'Complexe hôtelier au bord du lac Champlain avec spa, golf et restaurant offrant une vue magnifique.',
-    price: 'À partir de 239 $/nuit',
-    link: 'https://www.booking.com/hotel/ca/la-cache-du-lac-champlain.fr.html?label=msn-1iEsdfBWGqhcgsbeYD7wQA-80814291883212%3Atikwd-80814466518286%3Aaud-816715537%3Aloc-32%3Aneo%3Amte%3Alp124427%3Adec%3Aqsbooking&sid=d8c900df91676294fb6594e03d6845ce&aid=2369661&ucfs=1&checkin=2025-12-08&checkout=2025-12-10&dest_id=900040733&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=3832934a7e5c043f&srepoch=1761339453&matching_block_id=221154004_372912007_4_0_0&atlas_src=sr_iw_title',
-    image: '/images/destinations/hotels/hotel-cachelac-sabrevois.avif',
-  },
-];
+const hotels = pickHotels(HOTEL_IDS_SABREVOIS);
 
 const restaurants = [
   {
@@ -148,11 +128,12 @@ const teenActivities = [
 
 export default function BlogArticleSabrevois() {
   return (
-    <article id="blog_article_sabrevois" className="mx-auto max-w-4xl bg-white px-4 py-12">
+    <DestinationArticleTemplate
+      slug="sabrevois"
+      title="Sainte-Anne-de-Sabrevois - L'Expérience Unique des Huttes sur l'Eau"
+    >
+      <article id="blog_article_sabrevois" className="mx-auto max-w-4xl bg-white px-4 py-12">
       <header className="mb-12 text-center">
-        <H1 className="mb-4">
-          Sainte-Anne-de-Sabrevois - L'Expérience Unique des Huttes sur l'Eau
-        </H1>
         <p className="text-xl text-gray-600">
           Découvrez ce village unique de la Montérégie où des huttes polynésiennes flottantes
           offrent une expérience d'hébergement inoubliable
@@ -260,35 +241,8 @@ export default function BlogArticleSabrevois() {
           <Hotel className="size-8 text-indigo-600" />
           Où Dormir ?
         </H2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {hotels.map((hotel) => (
-            <a
-              key={hotel.name}
-              href={hotel.link}
-              className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
-            >
-              <div className="relative h-48">
-                <Image
-                  src={hotel.image}
-                  alt={hotel.name}
-                  className="size-full object-cover"
-                  width={800}
-                  height={600}
-                />
-              </div>
-              <div className="p-6">
-                <div className="mb-2 flex items-start justify-between">
-                  <H3 className="text-xl font-semibold text-gray-900">{hotel.name}</H3>
-                  <span className="rounded bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
-                    {hotel.category}
-                  </span>
-                </div>
-                <p className="mb-4 text-gray-600">{hotel.description}</p>
-                <p className="font-semibold text-indigo-600">{hotel.price}</p>
-              </div>
-            </a>
-          ))}
-        </div>
+        {/* MIGRATED_HOTELS_GRID */}
+<HotelGrid items={hotels} />
       </section>
 
       <section className="mb-16">
@@ -296,28 +250,7 @@ export default function BlogArticleSabrevois() {
           <Utensils className="size-8 text-indigo-600" />
           Où Manger ?
         </H2>
-        <div className="space-y-6">
-          {restaurants.map((restaurant) => (
-            <div key={restaurant.name} className="rounded-lg bg-white p-6 shadow-md">
-              <div className="mb-4 flex items-start justify-between">
-                <div>
-                  <H3 className="mb-1 text-xl font-semibold text-gray-900">{restaurant.name}</H3>
-                  <p className="text-gray-600">{restaurant.type}</p>
-                </div>
-                <span className="font-semibold text-indigo-600">{restaurant.price}</span>
-              </div>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">Spécialité:</span> {restaurant.speciality}
-              </p>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">À essayer:</span> {restaurant.mustTry}
-              </p>
-              <p className="text-gray-700">
-                <span className="font-medium">Horaires:</span> {restaurant.schedule}
-              </p>
-            </div>
-          ))}
-        </div>
+        <RestaurantPremiumGrid items={restaurants} />
       </section>
 
       <section className="mb-16">
@@ -407,7 +340,7 @@ export default function BlogArticleSabrevois() {
         </p>
         <div className="flex justify-center gap-4">
           <a
-            href="https://www.booking.com/city/ca/sainte-anne-de-sabrevois.html"
+            href={bookingAwin('https://www.booking.com/city/ca/sainte-anne-de-sabrevois.html')}
             className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
           >
             Réserver un Hébergement
@@ -421,5 +354,6 @@ export default function BlogArticleSabrevois() {
         </div>
       </section>
     </article>
+    </DestinationArticleTemplate>
   );
 }

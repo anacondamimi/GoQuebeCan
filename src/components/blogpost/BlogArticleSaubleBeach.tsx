@@ -1,10 +1,17 @@
+
+
 import React from 'react';
 import Image from 'next/image';
 import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun } from 'lucide-react';
 import { SectionTitle } from '@/components/ui/SectionTitle';
-import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
 import H3 from '@/components/typography/H3';
+import { HotelGrid } from '@/components/hotels/HotelGrid';
+import { pickHotels } from '@/data/hotels/hotelCatalog.generated';
+import { HOTEL_IDS_SAUBLE_BEACH } from '@/data/hotels/byArticle/sauble-beach';
+import { bookingAwin } from '@/lib/awin';
+import { RestaurantPremiumGrid } from '@/components/food/RestaurantPremiumGrid';
+import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
 
 export const metadata = {
   slug: 'sauble-beach',
@@ -24,35 +31,7 @@ export const metadata = {
   hebergements: ['Sauble Beach Lodge', 'Beach Resort Sauble', 'Sauble River Marina'],
   publics: ['familles', 'ados'],
 };
-const hotels = [
-  {
-    name: 'Paradise Inn On The Beach',
-    category: 'Face à la plage',
-    description:
-      'Petite adresse directement en bord de plage, parfaite pour profiter des couchers de soleil et des balades pieds nus dans le sable.',
-    price: 'À partir de 260 $/nuit',
-    link: 'https://www.expedia.ca/fr/Owen-Sound-Hotels-Paradise-Inn-On-The-Beach.h54295457.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918306&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=260&top_cur=CAD&userIntent=&selectedRoomType=314055824&selectedRatePlan=381539755&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366',
-    image: '/images/destinations/hotels/hotel-paradise-saublebeach.avif',
-  },
-  {
-    name: 'Holiday Inn Express & Suites Port Elgin, an IHG Hotel',
-    category: 'Confort moderne',
-    description:
-      'Hôtel récent avec piscine intérieure et déjeuner inclus, pratique pour rayonner autour des plages du lac Huron.',
-    price: 'À partir de 254 $/nuit',
-    link: 'https://www.expedia.ca/fr/Owen-Sound-Hotels-Holiday-Inn-Express-Suites-Port-Elgin.h52866408.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918201&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=254&top_cur=CAD&userIntent=&selectedRoomType=233143560&selectedRatePlan=381089403&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366',
-    image: '/images/destinations/hotels/Holidayinn-saublebeach.avif',
-  },
-  {
-    name: 'The Sands',
-    category: 'Près de la plage',
-    description:
-      'Hôtel moderne et confortable à South Bruce Peninsula, pratique pour profiter de Singing Beach et des environs.',
-    price: 'À partir de 241 $/nuit',
-    link: 'https://www.expedia.ca/fr/South-Bruce-Peninsula-Hotels-The-Sands.h106853214.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763709635574&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=241&top_cur=CAD&userIntent=&selectedRoomType=326825590&selectedRatePlan=402936326&searchId=227769ba-4939-4a9e-90ba-897d97517b01',
-    image: '/images/destinations/hotels/south-bruce-singingbeach.avif',
-  },
-];
+const hotels = pickHotels(HOTEL_IDS_SAUBLE_BEACH);
 
 const restaurants = [
   {
@@ -146,9 +125,12 @@ const teenActivities = [
 
 export default function BlogArticleSaubleBeach() {
   return (
-    <article id="blog_article_sauble_beach" className="mx-auto max-w-4xl bg-white px-4 py-12">
+    <DestinationArticleTemplate
+      slug="sauble-beach"
+      title="Sauble Beach – La grande plage familiale de la Bruce Peninsula"
+    >
+      <article id="blog_article_sauble_beach" className="mx-auto max-w-4xl bg-white px-4 py-12">
       <header className="mb-12 text-center">
-        <H1 className="mb-4">Sauble Beach – La grande plage familiale de la Bruce Peninsula</H1>
         <p className="text-xl text-gray-600">
           Étendue de sable immense, eau claire du lac Huron, ambiance estivale et activités pour
           tous — parfaite pour une journée détente en famille.
@@ -231,35 +213,8 @@ export default function BlogArticleSaubleBeach() {
           subtitle="Découvrez les meilleures options d’hébergement à proximité de la plage."
           icon={<Hotel className="size-6" />}
         />
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {hotels.map((hotel) => (
-            <a
-              key={hotel.name}
-              href={hotel.link}
-              className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
-            >
-              <div className="relative h-48">
-                <Image
-                  src={hotel.image}
-                  alt={hotel.name}
-                  className="size-full object-cover"
-                  width={800}
-                  height={600}
-                />
-              </div>
-              <div className="p-6">
-                <div className="mb-2 flex items-start justify-between">
-                  <H3 className="text-xl font-semibold text-gray-900">{hotel.name}</H3>
-                  <span className="rounded bg-indigo-100 px-2 py-1 text-sm text-indigo-700">
-                    {hotel.category}
-                  </span>
-                </div>
-                <p className="mb-4 text-gray-600">{hotel.description}</p>
-                <p className="font-semibold text-indigo-600">{hotel.price}</p>
-              </div>
-            </a>
-          ))}
-        </div>
+        {/* MIGRATED_HOTELS_GRID */}
+<HotelGrid items={hotels} />
       </section>
 
       <section className="mb-16">
@@ -268,28 +223,7 @@ export default function BlogArticleSaubleBeach() {
           subtitle="Restaurants recommandés pour toutes les envies."
           icon={<Utensils className="size-6" />}
         />
-        <div className="space-y-6">
-          {restaurants.map((restaurant) => (
-            <div key={restaurant.name} className="rounded-lg bg-white p-6 shadow-md">
-              <div className="mb-4 flex items-start justify-between">
-                <div>
-                  <H3 className="mb-1 text-xl font-semibold text-gray-900">{restaurant.name}</H3>
-                  <p className="text-gray-600">{restaurant.type}</p>
-                </div>
-                <span className="font-semibold text-indigo-600">{restaurant.price}</span>
-              </div>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">Spécialité:</span> {restaurant.speciality}
-              </p>
-              <p className="mb-2 text-gray-700">
-                <span className="font-medium">À essayer:</span> {restaurant.mustTry}
-              </p>
-              <p className="text-gray-700">
-                <span className="font-medium">Horaires:</span> {restaurant.schedule}
-              </p>
-            </div>
-          ))}
-        </div>
+        <RestaurantPremiumGrid items={restaurants} />
       </section>
 
       <section className="mb-16">
@@ -379,7 +313,7 @@ export default function BlogArticleSaubleBeach() {
         </p>
         <div className="flex justify-center gap-4">
           <a
-            href="https://www.booking.com/city/ca/sauble-beach.html"
+            href={bookingAwin('https://www.booking.com/city/ca/sauble-beach.html')}
             className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
           >
             Réserver un Hébergement
@@ -393,5 +327,6 @@ export default function BlogArticleSaubleBeach() {
         </div>
       </section>
     </article>
+    </DestinationArticleTemplate>
   );
 }

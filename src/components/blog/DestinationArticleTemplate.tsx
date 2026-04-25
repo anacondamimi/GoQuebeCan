@@ -384,11 +384,7 @@ export default function DestinationArticleTemplate({
 
           <ConclusionSection conclusion={conclusion} />
 
-          {showNearbyDestinations ? (
-            <div className="mt-16">
-              <NearbyDestinations currentSlug={slug} />
-            </div>
-          ) : null}
+          {showNearbyDestinations ? <NearbyDestinations currentSlug={slug} /> : null}
         </div>
 
         <div className={cx(sidebarClassName)}>
