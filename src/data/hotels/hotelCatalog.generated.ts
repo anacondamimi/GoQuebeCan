@@ -441,7 +441,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     bookingUrl:
       'https://www.expedia.ca/fr/Lambton-Shores-Hotels-Colonial-Hotel-Suites.h71648848.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918347&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=149&top_cur=CAD&userIntent=&selectedRoomType=324828646&selectedRatePlan=395949071&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366',
     image: {
-      src: '/images/destinations/hotels/colonial-hotel-granbendavif.avif',
+      src: '/images/destinations/hotels/colonial-hotel-granbend.avif',
       alt: 'Colonial Hotel & Suites — hébergement recommandé',
     },
     variant: 'compact',
@@ -1670,7 +1670,7 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     bookingUrl:
       'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Ftadoussac.fr.html',
     image: {
-      src: '/images/destinations/hotels/hotel tadoussac.avif',
+      src: '/images/destinations/hotels/hotel-tadoussac.avif',
       alt: 'Hôtel Tadoussac — hébergement recommandé',
     },
     variant: 'compact',

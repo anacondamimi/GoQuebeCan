@@ -1,0 +1,2296 @@
+{
+  "generatedAt": "2026-04-25T20:39:29.619Z",
+  "siteUrl": "https://www.goquebecan.com",
+  "purpose": "Base de connaissances utilisée par l’agent IA GoQuébeCAN pour répondre aux questions des visiteurs.",
+  "rules": {
+    "tone": "Conseiller voyage chaleureux, clair, utile et orienté action.",
+    "answerStyle": "Réponse courte d’abord, puis suggestions concrètes avec liens internes utiles.",
+    "preferredLinks": [
+      "/planificateur",
+      "/producteurs",
+      "/videos",
+      "/blog"
+    ],
+    "avoid": "Ne pas inventer de prix, horaires, disponibilités ou informations non présentes dans la base."
+  },
+  "counts": {
+    "destinations": 64,
+    "producers": 673,
+    "offers": 6
+  },
+  "destinations": [
+    {
+      "slug": "anse-saint-jean",
+      "title": "Anse Saint Jean",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/anse-saint-jean.avif",
+      "links": [
+        "/blog/anse-saint-jean",
+        "/destinations/anse-saint-jean",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Anse Saint Jean"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Anse Saint Jean ?",
+        "Où dormir près de Anse Saint Jean ?",
+        "Quels producteurs visiter près de Anse Saint Jean ?",
+        "Peux-tu me créer un itinéraire vers Anse Saint Jean ?"
+      ]
+    },
+    {
+      "slug": "ansesaintjean",
+      "title": "Anse Saint Jean",
+      "region": "Québec",
+      "summary": "Découvrez Anse Saint Jean, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/default-destination.avif",
+      "activities": [],
+      "hotels": [],
+      "audiences": [
+        "amateurs de culture",
+        "aventuriers",
+        "couples"
+      ],
+      "keywords": [
+        "amateurs de culture",
+        "Anse Saint Jean",
+        "aventuriers",
+        "Québec"
+      ],
+      "links": [
+        "/blog/ansesaintjean",
+        "/destinations/ansesaintjean",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Anse Saint Jean ?",
+        "Où dormir près de Anse Saint Jean ?",
+        "Quels producteurs visiter près de Anse Saint Jean ?",
+        "Peux-tu me créer un itinéraire vers Anse Saint Jean ?"
+      ]
+    },
+    {
+      "slug": "baie-saint-paul",
+      "title": "Baie Saint Paul",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/baie-saint-paul.avif",
+      "links": [
+        "/blog/baie-saint-paul",
+        "/destinations/baie-saint-paul",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Baie Saint Paul"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Baie Saint Paul ?",
+        "Où dormir près de Baie Saint Paul ?",
+        "Quels producteurs visiter près de Baie Saint Paul ?",
+        "Peux-tu me créer un itinéraire vers Baie Saint Paul ?"
+      ]
+    },
+    {
+      "slug": "baiesaintpaul",
+      "title": "Baie Saint Paul",
+      "region": "Québec",
+      "summary": "Découvrez Baie Saint Paul, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/default-destination.avif",
+      "activities": [],
+      "hotels": [],
+      "audiences": [
+        "amateurs de culture",
+        "aventuriers"
+      ],
+      "keywords": [
+        "amateurs de culture",
+        "aventuriers",
+        "Baie Saint Paul",
+        "Québec"
+      ],
+      "links": [
+        "/blog/baiesaintpaul",
+        "/destinations/baiesaintpaul",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Baie Saint Paul ?",
+        "Où dormir près de Baie Saint Paul ?",
+        "Quels producteurs visiter près de Baie Saint Paul ?",
+        "Peux-tu me créer un itinéraire vers Baie Saint Paul ?"
+      ]
+    },
+    {
+      "slug": "banff",
+      "title": "Banff",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/banff.avif",
+      "links": [
+        "/blog/banff",
+        "/destinations/banff",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Banff"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Banff ?",
+        "Où dormir près de Banff ?",
+        "Quels producteurs visiter près de Banff ?",
+        "Peux-tu me créer un itinéraire vers Banff ?"
+      ]
+    },
+    {
+      "slug": "bic",
+      "title": "Bic",
+      "region": "Québec",
+      "summary": "Bic : découvrez Centre de Découverte, Kayak Aventure, avec des idées parfaites pour ados et aventuriers.",
+      "image": "/images/destinations/bic.avif",
+      "links": [
+        "/blog/bic",
+        "/destinations/bic",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Bic",
+        "ados",
+        "aventuriers",
+        "Centre de Découverte",
+        "Kayak Aventure",
+        "Kayak de Mer",
+        "Québec"
+      ],
+      "activities": [
+        "Centre de Découverte",
+        "Kayak Aventure",
+        "Kayak de Mer",
+        "Observation des Phoques",
+        "Plage du Havre du Bic",
+        "Randonnée Photo",
+        "Randonnée Pic Champlain",
+        "Sentier Le Chemin du Nord",
+        "Vélo de Montagne"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "aventuriers",
+        "familles"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Bic ?",
+        "Où dormir près de Bic ?",
+        "Quels producteurs visiter près de Bic ?",
+        "Peux-tu me créer un itinéraire vers Bic ?"
+      ]
+    },
+    {
+      "slug": "bromont-granby",
+      "title": "Bromont Granby",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/bromont-granby.avif",
+      "links": [
+        "/blog/bromont-granby",
+        "/destinations/bromont-granby",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Bromont Granby"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Bromont Granby ?",
+        "Où dormir près de Bromont Granby ?",
+        "Quels producteurs visiter près de Bromont Granby ?",
+        "Peux-tu me créer un itinéraire vers Bromont Granby ?"
+      ]
+    },
+    {
+      "slug": "bromontgranby",
+      "title": "Bromont Granby",
+      "region": "Québec",
+      "summary": "Bromont Granby : découvrez Arbre en Arbre, Parc aquatique Bromont, avec des idées parfaites pour ados et aventuriers.",
+      "image": "/images/default-destination.avif",
+      "activities": [
+        "Arbre en Arbre",
+        "Parc aquatique Bromont",
+        "Ski de Soirée",
+        "Vélo de Montagne",
+        "Yamaska National Park",
+        "Zoo de Granby"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "aventuriers",
+        "familles"
+      ],
+      "keywords": [
+        "ados",
+        "Arbre en Arbre",
+        "aventuriers",
+        "Bromont Granby",
+        "Parc aquatique Bromont",
+        "Québec",
+        "Ski de Soirée"
+      ],
+      "links": [
+        "/blog/bromontgranby",
+        "/destinations/bromontgranby",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Bromont Granby ?",
+        "Où dormir près de Bromont Granby ?",
+        "Quels producteurs visiter près de Bromont Granby ?",
+        "Peux-tu me créer un itinéraire vers Bromont Granby ?"
+      ]
+    },
+    {
+      "slug": "canyon",
+      "title": "Canyon",
+      "region": "Québec",
+      "summary": "Canyon : découvrez Mini-Passerelle, Passerelle Suspendue, avec des idées parfaites pour ados et aventuriers.",
+      "image": "/images/destinations/canyon.avif",
+      "links": [
+        "/blog/canyon",
+        "/destinations/canyon",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Canyon",
+        "ados",
+        "aventuriers",
+        "Mini-Passerelle",
+        "Passerelle Suspendue",
+        "Photographie Nature",
+        "Québec"
+      ],
+      "activities": [
+        "Mini-Passerelle",
+        "Passerelle Suspendue",
+        "Photographie Nature",
+        "Rallye Nature",
+        "Randonnée Extrême",
+        "Sentier Découverte",
+        "Sentiers de Randonnée",
+        "Via Ferrata",
+        "Via Ferrata Découverte"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "aventuriers",
+        "familles"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Canyon ?",
+        "Où dormir près de Canyon ?",
+        "Quels producteurs visiter près de Canyon ?",
+        "Peux-tu me créer un itinéraire vers Canyon ?"
+      ]
+    },
+    {
+      "slug": "carleton",
+      "title": "Carleton",
+      "region": "Québec",
+      "summary": "Carleton : découvrez Chasse aux Trésors, Club nautique, avec des idées parfaites pour ados et amateurs de culture.",
+      "image": "/images/destinations/carleton.avif",
+      "links": [
+        "/blog/carleton",
+        "/destinations/carleton",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Carleton",
+        "ados",
+        "amateurs de culture",
+        "Chasse aux Trésors",
+        "Club nautique",
+        "École de Voile",
+        "Québec"
+      ],
+      "activities": [
+        "Chasse aux Trésors",
+        "Club nautique",
+        "École de Voile",
+        "Initiation au Kayak",
+        "Mini-Golf Maritime",
+        "Mont Saint-Joseph",
+        "Plage de Carleton",
+        "Planche à Pagaie",
+        "Vélo de Montagne"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "amateurs de culture",
+        "aventuriers",
+        "familles"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Carleton ?",
+        "Où dormir près de Carleton ?",
+        "Quels producteurs visiter près de Carleton ?",
+        "Peux-tu me créer un itinéraire vers Carleton ?"
+      ]
+    },
+    {
+      "slug": "chambly",
+      "title": "Chambly",
+      "region": "Montréal et sa région",
+      "summary": "Chambly : découvrez Balade courte près des écluses, Découverte gourmande locale, avec des idées parfaites pour ados et amateurs de culture.",
+      "image": "/images/destinations/chambly.avif",
+      "activities": [
+        "Balade courte près des écluses",
+        "Découverte gourmande locale",
+        "Ferme Guyon",
+        "Fort Chambly",
+        "Marché de Chambly ou arrêt gourmand local",
+        "Parc naturel des Ruisseaux",
+        "Pause microbrasserie + ambiance locale",
+        "Pique-nique au bord du Richelieu",
+        "Promenade près des écluses",
+        "Sortie vélo plus dynamique",
+        "Vélo sur le canal de Chambly",
+        "Visite du Fort Chambly en famille"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "amateurs de culture",
+        "aventuriers",
+        "couples",
+        "familles"
+      ],
+      "keywords": [
+        "ados",
+        "amateurs de culture",
+        "Balade courte près des écluses",
+        "Chambly",
+        "Découverte gourmande locale",
+        "Ferme Guyon",
+        "Montréal et sa région"
+      ],
+      "links": [
+        "/blog/chambly",
+        "/destinations/chambly",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Chambly ?",
+        "Où dormir près de Chambly ?",
+        "Quels producteurs visiter près de Chambly ?",
+        "Peux-tu me créer un itinéraire vers Chambly ?"
+      ]
+    },
+    {
+      "slug": "eeyou-istchee",
+      "title": "Eeyou Istchee",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/eeyou-istchee.avif",
+      "links": [
+        "/blog/eeyou-istchee",
+        "/destinations/eeyou-istchee",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Eeyou Istchee"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Eeyou Istchee ?",
+        "Où dormir près de Eeyou Istchee ?",
+        "Quels producteurs visiter près de Eeyou Istchee ?",
+        "Peux-tu me créer un itinéraire vers Eeyou Istchee ?"
+      ]
+    },
+    {
+      "slug": "eeyouistchee",
+      "title": "Eeyou Istchee",
+      "region": "Québec",
+      "summary": "Découvrez Eeyou Istchee, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/default-destination.avif",
+      "activities": [],
+      "hotels": [],
+      "audiences": [
+        "amateurs de culture",
+        "aventuriers",
+        "couples"
+      ],
+      "keywords": [
+        "amateurs de culture",
+        "aventuriers",
+        "Eeyou Istchee",
+        "Québec"
+      ],
+      "links": [
+        "/blog/eeyouistchee",
+        "/destinations/eeyouistchee",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Eeyou Istchee ?",
+        "Où dormir près de Eeyou Istchee ?",
+        "Quels producteurs visiter près de Eeyou Istchee ?",
+        "Peux-tu me créer un itinéraire vers Eeyou Istchee ?"
+      ]
+    },
+    {
+      "slug": "forillon",
+      "title": "Forillon",
+      "region": "Gaspésie",
+      "summary": "Forillon : découvrez Découvrir les marées et le bord de mer, Kayak de mer, avec des idées parfaites pour ados et amateurs de culture.",
+      "image": "/images/destinations/forillon.avif",
+      "links": [
+        "/blog/forillon",
+        "/destinations/forillon",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Forillon",
+        "ados",
+        "amateurs de culture",
+        "Découvrir les marées et le bord de mer",
+        "Gaspésie",
+        "Kayak de mer",
+        "Mont Saint-Alban"
+      ],
+      "activities": [
+        "Découvrir les marées et le bord de mer",
+        "Kayak de mer",
+        "Mont Saint-Alban",
+        "Petites randonnées accessibles",
+        "Pique-nique avec vue",
+        "Road trip photo dans le parc"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "amateurs de culture",
+        "aventuriers",
+        "couples",
+        "familles"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Forillon ?",
+        "Où dormir près de Forillon ?",
+        "Quels producteurs visiter près de Forillon ?",
+        "Peux-tu me créer un itinéraire vers Forillon ?"
+      ]
+    },
+    {
+      "slug": "gaspesie",
+      "title": "Gaspésie",
+      "region": "Gaspésie",
+      "summary": "Découvrez Gaspésie, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/default-destination.avif",
+      "links": [
+        "/blog/gaspesie",
+        "/destinations/gaspesie",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Gaspesie",
+        "amateurs de culture",
+        "aventuriers",
+        "Gaspésie"
+      ],
+      "activities": [],
+      "hotels": [],
+      "audiences": [
+        "amateurs de culture",
+        "aventuriers",
+        "couples"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Gaspésie ?",
+        "Où dormir près de Gaspésie ?",
+        "Quels producteurs visiter près de Gaspésie ?",
+        "Peux-tu me créer un itinéraire vers Gaspésie ?"
+      ]
+    },
+    {
+      "slug": "grand-bend",
+      "title": "Grand Bend",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/grand-bend.avif",
+      "links": [
+        "/blog/grand-bend",
+        "/destinations/grand-bend",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Grand Bend"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Grand Bend ?",
+        "Où dormir près de Grand Bend ?",
+        "Quels producteurs visiter près de Grand Bend ?",
+        "Peux-tu me créer un itinéraire vers Grand Bend ?"
+      ]
+    },
+    {
+      "slug": "grandbend",
+      "title": "Grand Bend",
+      "region": "Québec",
+      "summary": "Grand Bend : découvrez École de Surf, Grand Bend Marina, avec des idées parfaites pour ados et familles.",
+      "image": "/images/default-destination.avif",
+      "activities": [
+        "École de Surf",
+        "Grand Bend Marina",
+        "Grand Bend Splash Pad",
+        "Location de Jet-Ski",
+        "Main Beach",
+        "Mini-Golf Adventure",
+        "Parasailing",
+        "Pinery Provincial Park",
+        "Plage Familiale"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "familles"
+      ],
+      "keywords": [
+        "ados",
+        "École de Surf",
+        "familles",
+        "Grand Bend",
+        "Grand Bend Marina",
+        "Grand Bend Splash Pad",
+        "Québec"
+      ],
+      "links": [
+        "/blog/grandbend",
+        "/destinations/grandbend",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Grand Bend ?",
+        "Où dormir près de Grand Bend ?",
+        "Quels producteurs visiter près de Grand Bend ?",
+        "Peux-tu me créer un itinéraire vers Grand Bend ?"
+      ]
+    },
+    {
+      "slug": "hautes-gorges",
+      "title": "Hautes Gorges",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/hautes-gorges.avif",
+      "links": [
+        "/blog/hautes-gorges",
+        "/destinations/hautes-gorges",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Hautes Gorges"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Hautes Gorges ?",
+        "Où dormir près de Hautes Gorges ?",
+        "Quels producteurs visiter près de Hautes Gorges ?",
+        "Peux-tu me créer un itinéraire vers Hautes Gorges ?"
+      ]
+    },
+    {
+      "slug": "hautesgorges",
+      "title": "Hautes Gorges",
+      "region": "Québec",
+      "summary": "Hautes Gorges : découvrez Atelier Junior Ranger, Croisière sur la Rivière Malbaie, avec des idées parfaites pour ados et aventuriers.",
+      "image": "/images/default-destination.avif",
+      "activities": [
+        "Atelier Junior Ranger",
+        "Croisière sur la Rivière Malbaie",
+        "Initiation à l'Escalade",
+        "Location de Kayak",
+        "Mini-Croisière Découverte",
+        "Rallye Nature",
+        "Randonnée L'Acropole",
+        "Sentier des Érables",
+        "Via Ferrata de la Charlevoix"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "aventuriers",
+        "familles"
+      ],
+      "keywords": [
+        "ados",
+        "Atelier Junior Ranger",
+        "aventuriers",
+        "Croisière sur la Rivière Malbaie",
+        "Hautes Gorges",
+        "Initiation à l'Escalade",
+        "Québec"
+      ],
+      "links": [
+        "/blog/hautesgorges",
+        "/destinations/hautesgorges",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Hautes Gorges ?",
+        "Où dormir près de Hautes Gorges ?",
+        "Quels producteurs visiter près de Hautes Gorges ?",
+        "Peux-tu me créer un itinéraire vers Hautes Gorges ?"
+      ]
+    },
+    {
+      "slug": "ile-orleans",
+      "title": "Ile Orleans",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/ile-orleans.avif",
+      "links": [
+        "/blog/ile-orleans",
+        "/destinations/ile-orleans",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Ile Orleans"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Ile Orleans ?",
+        "Où dormir près de Ile Orleans ?",
+        "Quels producteurs visiter près de Ile Orleans ?",
+        "Peux-tu me créer un itinéraire vers Ile Orleans ?"
+      ]
+    },
+    {
+      "slug": "voyagehotel",
+      "title": "Indispensables pour un Séjour à l’Hôtel (Canada & International) — 2025",
+      "region": "Québec",
+      "summary": "Découvrez Indispensables pour un Séjour à l’Hôtel (Canada & International) — 2025, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/default-destination.avif",
+      "activities": [],
+      "hotels": [],
+      "audiences": [],
+      "keywords": [
+        "Indispensables pour un Séjour à l’Hôtel (Canada & International) — 2025",
+        "Québec"
+      ],
+      "links": [
+        "/blog/voyagehotel",
+        "/destinations/voyagehotel",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Indispensables pour un Séjour à l’Hôtel (Canada & International) — 2025 ?",
+        "Où dormir près de Indispensables pour un Séjour à l’Hôtel (Canada & International) — 2025 ?",
+        "Quels producteurs visiter près de Indispensables pour un Séjour à l’Hôtel (Canada & International) — 2025 ?",
+        "Peux-tu me créer un itinéraire vers Indispensables pour un Séjour à l’Hôtel (Canada & International) — 2025 ?"
+      ]
+    },
+    {
+      "slug": "voyageavion",
+      "title": "Indispensables pour Voyager en Avion en 2025",
+      "region": "Québec",
+      "summary": "Découvrez Indispensables pour Voyager en Avion en 2025, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/default-destination.avif",
+      "activities": [],
+      "hotels": [],
+      "audiences": [],
+      "keywords": [
+        "Indispensables pour Voyager en Avion en 2025",
+        "Québec"
+      ],
+      "links": [
+        "/blog/voyageavion",
+        "/destinations/voyageavion",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Indispensables pour Voyager en Avion en 2025 ?",
+        "Où dormir près de Indispensables pour Voyager en Avion en 2025 ?",
+        "Quels producteurs visiter près de Indispensables pour Voyager en Avion en 2025 ?",
+        "Peux-tu me créer un itinéraire vers Indispensables pour Voyager en Avion en 2025 ?"
+      ]
+    },
+    {
+      "slug": "kamouraska",
+      "title": "Kamouraska",
+      "region": "Québec",
+      "summary": "Kamouraska : découvrez Atelier Photo, Centre d'Art de Kamouraska, avec des idées parfaites pour ados et amateurs de culture.",
+      "image": "/images/destinations/kamouraska.avif",
+      "links": [
+        "/blog/kamouraska",
+        "/destinations/kamouraska",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Kamouraska",
+        "ados",
+        "amateurs de culture",
+        "Atelier Photo",
+        "Centre d'Art de Kamouraska",
+        "Coucher de Soleil sur le Fleuve",
+        "Québec"
+      ],
+      "activities": [
+        "Atelier Photo",
+        "Centre d'Art de Kamouraska",
+        "Coucher de Soleil sur le Fleuve",
+        "Ferme Gijamika",
+        "Location de Kayak",
+        "Musée régional de Kamouraska",
+        "Plage de Kamouraska",
+        "Sentier du Cabouron",
+        "Vélo sur la Route Verte"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "amateurs de culture",
+        "aventuriers",
+        "familles"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Kamouraska ?",
+        "Où dormir près de Kamouraska ?",
+        "Quels producteurs visiter près de Kamouraska ?",
+        "Peux-tu me créer un itinéraire vers Kamouraska ?"
+      ]
+    },
+    {
+      "slug": "kuururjuaq",
+      "title": "Kuururjuaq",
+      "region": "Québec",
+      "summary": "Découvrez Kuururjuaq, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/destinations/kuururjuaq.avif",
+      "links": [
+        "/blog/kuururjuaq",
+        "/destinations/kuururjuaq",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Kuururjuaq",
+        "amateurs de culture",
+        "Québec"
+      ],
+      "activities": [],
+      "hotels": [],
+      "audiences": [
+        "amateurs de culture"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Kuururjuaq ?",
+        "Où dormir près de Kuururjuaq ?",
+        "Quels producteurs visiter près de Kuururjuaq ?",
+        "Peux-tu me créer un itinéraire vers Kuururjuaq ?"
+      ]
+    },
+    {
+      "slug": "voyagecamping",
+      "title": "Les Meilleurs Accessoires pour le Camping au Québec en 2025",
+      "region": "Québec",
+      "summary": "Découvrez Les Meilleurs Accessoires pour le Camping au Québec en 2025, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/default-destination.avif",
+      "activities": [],
+      "hotels": [],
+      "audiences": [
+        "aventuriers"
+      ],
+      "keywords": [
+        "aventuriers",
+        "Les Meilleurs Accessoires pour le Camping au Québec en 2025",
+        "Québec"
+      ],
+      "links": [
+        "/blog/voyagecamping",
+        "/destinations/voyagecamping",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Les Meilleurs Accessoires pour le Camping au Québec en 2025 ?",
+        "Où dormir près de Les Meilleurs Accessoires pour le Camping au Québec en 2025 ?",
+        "Quels producteurs visiter près de Les Meilleurs Accessoires pour le Camping au Québec en 2025 ?",
+        "Peux-tu me créer un itinéraire vers Les Meilleurs Accessoires pour le Camping au Québec en 2025 ?"
+      ]
+    },
+    {
+      "slug": "locationvrcomparatif",
+      "title": "Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream)",
+      "region": "Québec",
+      "summary": "Découvrez Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream), ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/default-destination.avif",
+      "activities": [],
+      "hotels": [],
+      "audiences": [
+        "couples"
+      ],
+      "keywords": [
+        "couples",
+        "Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream)",
+        "Québec"
+      ],
+      "links": [
+        "/blog/locationvrcomparatif",
+        "/destinations/locationvrcomparatif",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream) ?",
+        "Où dormir près de Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream) ?",
+        "Quels producteurs visiter près de Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream) ?",
+        "Peux-tu me créer un itinéraire vers Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream) ?"
+      ]
+    },
+    {
+      "slug": "locationvr",
+      "title": "Location VR",
+      "region": "Québec",
+      "summary": "Découvrez Location VR, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/default-destination.avif",
+      "activities": [],
+      "hotels": [],
+      "audiences": [],
+      "keywords": [
+        "Location VR",
+        "Québec"
+      ],
+      "links": [
+        "/blog/locationvr",
+        "/destinations/locationvr",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Location VR ?",
+        "Où dormir près de Location VR ?",
+        "Quels producteurs visiter près de Location VR ?",
+        "Peux-tu me créer un itinéraire vers Location VR ?"
+      ]
+    },
+    {
+      "slug": "magog-orford",
+      "title": "Magog Orford",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/magog-orford.avif",
+      "links": [
+        "/blog/magog-orford",
+        "/destinations/magog-orford",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Magog Orford"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Magog Orford ?",
+        "Où dormir près de Magog Orford ?",
+        "Quels producteurs visiter près de Magog Orford ?",
+        "Peux-tu me créer un itinéraire vers Magog Orford ?"
+      ]
+    },
+    {
+      "slug": "magogorford",
+      "title": "Magog Orford",
+      "region": "Québec",
+      "summary": "Magog Orford : découvrez École de Voile, Escalade, avec des idées parfaites pour ados et aventuriers.",
+      "image": "/images/default-destination.avif",
+      "activities": [
+        "École de Voile",
+        "Escalade",
+        "Location de Kayak",
+        "Marais de la Rivière aux Cerises",
+        "Parc de la Plage-des-Cantons",
+        "Vélo de Montagne"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "aventuriers",
+        "familles"
+      ],
+      "keywords": [
+        "ados",
+        "aventuriers",
+        "École de Voile",
+        "Escalade",
+        "Location de Kayak",
+        "Magog Orford",
+        "Québec"
+      ],
+      "links": [
+        "/blog/magogorford",
+        "/destinations/magogorford",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Magog Orford ?",
+        "Où dormir près de Magog Orford ?",
+        "Quels producteurs visiter près de Magog Orford ?",
+        "Peux-tu me créer un itinéraire vers Magog Orford ?"
+      ]
+    },
+    {
+      "slug": "massif",
+      "title": "Massif",
+      "region": "Québec",
+      "summary": "Massif : découvrez Camp Ados Freeride, Chasse au Trésor, avec des idées parfaites pour ados et aventuriers.",
+      "image": "/images/default-destination.avif",
+      "links": [
+        "/blog/massif",
+        "/destinations/massif",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Massif",
+        "ados",
+        "aventuriers",
+        "Camp Ados Freeride",
+        "Chasse au Trésor",
+        "Descente en Fat Bike",
+        "Québec"
+      ],
+      "activities": [
+        "Camp Ados Freeride",
+        "Chasse au Trésor",
+        "Descente en Fat Bike",
+        "École de Ski Junior",
+        "Parc d'Aventure",
+        "Snowpark"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "aventuriers",
+        "familles"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Massif ?",
+        "Où dormir près de Massif ?",
+        "Quels producteurs visiter près de Massif ?",
+        "Peux-tu me créer un itinéraire vers Massif ?"
+      ]
+    },
+    {
+      "slug": "matane",
+      "title": "Matane",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/matane.avif",
+      "links": [
+        "/blog/matane",
+        "/destinations/matane",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Matane"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Matane ?",
+        "Où dormir près de Matane ?",
+        "Quels producteurs visiter près de Matane ?",
+        "Peux-tu me créer un itinéraire vers Matane ?"
+      ]
+    },
+    {
+      "slug": "mingan",
+      "title": "Mingan",
+      "region": "Québec",
+      "summary": "Découvrez Mingan, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/destinations/mingan.avif",
+      "links": [
+        "/blog/mingan",
+        "/destinations/mingan",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Mingan",
+        "aventuriers",
+        "Québec"
+      ],
+      "activities": [],
+      "hotels": [],
+      "audiences": [
+        "aventuriers"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Mingan ?",
+        "Où dormir près de Mingan ?",
+        "Quels producteurs visiter près de Mingan ?",
+        "Peux-tu me créer un itinéraire vers Mingan ?"
+      ]
+    },
+    {
+      "slug": "levis",
+      "title": "Mini road trip à Lévis en famille (2025)",
+      "region": "Québec",
+      "summary": "Découvrez Mini road trip à Lévis en famille (2025), ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/destinations/levis.avif",
+      "links": [
+        "/blog/levis",
+        "/destinations/levis",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Levis",
+        "aventuriers",
+        "Mini road trip à Lévis en famille (2025)",
+        "Québec"
+      ],
+      "activities": [],
+      "hotels": [],
+      "audiences": [
+        "aventuriers"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Mini road trip à Lévis en famille (2025) ?",
+        "Où dormir près de Mini road trip à Lévis en famille (2025) ?",
+        "Quels producteurs visiter près de Mini road trip à Lévis en famille (2025) ?",
+        "Peux-tu me créer un itinéraire vers Mini road trip à Lévis en famille (2025) ?"
+      ]
+    },
+    {
+      "slug": "montmorency",
+      "title": "Montmorency",
+      "region": "Ville de Québec",
+      "summary": "Montmorency : découvrez Escalier + photos + Québec ensuite, Escalier panoramique, avec des idées parfaites pour ados et aventuriers.",
+      "image": "/images/default-destination.avif",
+      "links": [
+        "/blog/montmorency",
+        "/destinations/montmorency",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Montmorency",
+        "ados",
+        "aventuriers",
+        "Escalier + photos + Québec ensuite",
+        "Escalier panoramique",
+        "Passerelle et belvédères en famille",
+        "Ville de Québec"
+      ],
+      "activities": [
+        "Escalier + photos + Québec ensuite",
+        "Escalier panoramique",
+        "Passerelle et belvédères en famille",
+        "Passerelle suspendue",
+        "Rallye-découverte du site",
+        "Sentiers et belvédères",
+        "Téléphérique panoramique",
+        "Tyrolienne",
+        "Via ferrata"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "aventuriers",
+        "couples",
+        "familles"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Montmorency ?",
+        "Où dormir près de Montmorency ?",
+        "Quels producteurs visiter près de Montmorency ?",
+        "Peux-tu me créer un itinéraire vers Montmorency ?"
+      ]
+    },
+    {
+      "slug": "montreal",
+      "title": "Montreal",
+      "region": "Montréal et sa région",
+      "summary": "Montreal : découvrez Biodôme, Mont Royal, avec des idées parfaites pour amateurs de culture.",
+      "image": "/images/destinations/montreal.avif",
+      "links": [
+        "/blog/montreal",
+        "/destinations/montreal",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Montreal",
+        "amateurs de culture",
+        "Biodôme",
+        "Mont Royal",
+        "Montréal et sa région",
+        "Vieux-Montréal"
+      ],
+      "activities": [
+        "Biodôme",
+        "Mont Royal",
+        "Vieux-Montréal"
+      ],
+      "hotels": [],
+      "audiences": [
+        "amateurs de culture"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Montreal ?",
+        "Où dormir près de Montreal ?",
+        "Quels producteurs visiter près de Montreal ?",
+        "Peux-tu me créer un itinéraire vers Montreal ?"
+      ]
+    },
+    {
+      "slug": "orleans",
+      "title": "Orleans",
+      "region": "Québec",
+      "summary": "Orleans : découvrez Location de Vélos, Tour Gourmand de l'Île d'Orléans, avec des idées parfaites pour amateurs de culture et aventuriers.",
+      "image": "/images/default-destination.avif",
+      "activities": [
+        "Location de Vélos",
+        "Tour Gourmand de l'Île d'Orléans",
+        "Vignobles et Cidreries"
+      ],
+      "hotels": [],
+      "audiences": [
+        "amateurs de culture",
+        "aventuriers"
+      ],
+      "keywords": [
+        "amateurs de culture",
+        "aventuriers",
+        "Location de Vélos",
+        "Orleans",
+        "Québec",
+        "Tour Gourmand de l'Île d'Orléans",
+        "Vignobles et Cidreries"
+      ],
+      "links": [
+        "/blog/orleans",
+        "/destinations/orleans",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Orleans ?",
+        "Où dormir près de Orleans ?",
+        "Quels producteurs visiter près de Orleans ?",
+        "Peux-tu me créer un itinéraire vers Orleans ?"
+      ]
+    },
+    {
+      "slug": "parc-aquatique",
+      "title": "Parc Aquatique",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/parc-aquatique.avif",
+      "links": [
+        "/blog/parc-aquatique",
+        "/destinations/parc-aquatique",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Parc Aquatique"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Parc Aquatique ?",
+        "Où dormir près de Parc Aquatique ?",
+        "Quels producteurs visiter près de Parc Aquatique ?",
+        "Peux-tu me créer un itinéraire vers Parc Aquatique ?"
+      ]
+    },
+    {
+      "slug": "parcaquatique",
+      "title": "Parcs aquatiques préférés des familles (Québec & Ontario)",
+      "region": "Québec",
+      "summary": "Découvrez Parcs aquatiques préférés des familles (Québec & Ontario), ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/default-destination.avif",
+      "activities": [],
+      "hotels": [],
+      "audiences": [
+        "amateurs de culture"
+      ],
+      "keywords": [
+        "amateurs de culture",
+        "Parcs aquatiques préférés des familles (Québec & Ontario)",
+        "Québec"
+      ],
+      "links": [
+        "/blog/parcaquatique",
+        "/destinations/parcaquatique",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Parcs aquatiques préférés des familles (Québec & Ontario) ?",
+        "Où dormir près de Parcs aquatiques préférés des familles (Québec & Ontario) ?",
+        "Quels producteurs visiter près de Parcs aquatiques préférés des familles (Québec & Ontario) ?",
+        "Peux-tu me créer un itinéraire vers Parcs aquatiques préférés des familles (Québec & Ontario) ?"
+      ]
+    },
+    {
+      "slug": "perce",
+      "title": "Perce",
+      "region": "Gaspésie",
+      "summary": "Découvrez Perce, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/destinations/perce.avif",
+      "links": [
+        "/blog/perce",
+        "/destinations/perce",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Perce",
+        "amateurs de culture",
+        "Gaspésie"
+      ],
+      "activities": [],
+      "hotels": [],
+      "audiences": [
+        "amateurs de culture"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Perce ?",
+        "Où dormir près de Perce ?",
+        "Quels producteurs visiter près de Perce ?",
+        "Peux-tu me créer un itinéraire vers Perce ?"
+      ]
+    },
+    {
+      "slug": "sandbanks",
+      "title": "Plage de Sandbanks",
+      "region": "Québec",
+      "summary": "Découvrez Plage de Sandbanks, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/default-destination.avif",
+      "links": [
+        "/blog/sandbanks",
+        "/destinations/sandbanks",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Sandbanks",
+        "Plage de Sandbanks",
+        "Québec"
+      ],
+      "activities": [],
+      "hotels": [
+        "Newsroom Suites",
+        "The Birch",
+        "The Village Suites"
+      ],
+      "audiences": [],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Plage de Sandbanks ?",
+        "Où dormir près de Plage de Sandbanks ?",
+        "Quels producteurs visiter près de Plage de Sandbanks ?",
+        "Peux-tu me créer un itinéraire vers Plage de Sandbanks ?"
+      ]
+    },
+    {
+      "slug": "port-au-persil",
+      "title": "Port Au Persil",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/port-au-persil.avif",
+      "links": [
+        "/blog/port-au-persil",
+        "/destinations/port-au-persil",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Port Au Persil"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Port Au Persil ?",
+        "Où dormir près de Port Au Persil ?",
+        "Quels producteurs visiter près de Port Au Persil ?",
+        "Peux-tu me créer un itinéraire vers Port Au Persil ?"
+      ]
+    },
+    {
+      "slug": "portaupersil",
+      "title": "Port Au Persil",
+      "region": "Québec",
+      "summary": "Port Au Persil : découvrez Kayak Aventure, Kayak de Mer, avec des idées parfaites pour ados et aventuriers.",
+      "image": "/images/default-destination.avif",
+      "activities": [
+        "Kayak Aventure",
+        "Kayak de Mer",
+        "Mini-Croisière",
+        "Observation des Baleines",
+        "Pêche aux Coques",
+        "Plage de Port-au-Persil",
+        "Randonnée Photo",
+        "Sentier des Caps",
+        "Vélo de Montagne"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "aventuriers",
+        "familles"
+      ],
+      "keywords": [
+        "ados",
+        "aventuriers",
+        "Kayak Aventure",
+        "Kayak de Mer",
+        "Mini-Croisière",
+        "Port Au Persil",
+        "Québec"
+      ],
+      "links": [
+        "/blog/portaupersil",
+        "/destinations/portaupersil",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Port Au Persil ?",
+        "Où dormir près de Port Au Persil ?",
+        "Quels producteurs visiter près de Port Au Persil ?",
+        "Peux-tu me créer un itinéraire vers Port Au Persil ?"
+      ]
+    },
+    {
+      "slug": "port-cartier",
+      "title": "Port Cartier",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/port-cartier.avif",
+      "links": [
+        "/blog/port-cartier",
+        "/destinations/port-cartier",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Port Cartier"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Port Cartier ?",
+        "Où dormir près de Port Cartier ?",
+        "Quels producteurs visiter près de Port Cartier ?",
+        "Peux-tu me créer un itinéraire vers Port Cartier ?"
+      ]
+    },
+    {
+      "slug": "portcartier",
+      "title": "Port Cartier",
+      "region": "Québec",
+      "summary": "Port Cartier : découvrez Centre d'Interprétation, Kayak de Mer, avec des idées parfaites pour ados et amateurs de culture.",
+      "image": "/images/default-destination.avif",
+      "activities": [
+        "Centre d'Interprétation",
+        "Kayak de Mer",
+        "Parc de la Taïga",
+        "Parc Récréotouristique",
+        "Pêche au Saumon",
+        "Plage Rochelois",
+        "Port Industriel",
+        "Rivière aux Rochers",
+        "Vélo de Montagne"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "amateurs de culture",
+        "aventuriers",
+        "familles"
+      ],
+      "keywords": [
+        "ados",
+        "amateurs de culture",
+        "Centre d'Interprétation",
+        "Kayak de Mer",
+        "Parc de la Taïga",
+        "Port Cartier",
+        "Québec"
+      ],
+      "links": [
+        "/blog/portcartier",
+        "/destinations/portcartier",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Port Cartier ?",
+        "Où dormir près de Port Cartier ?",
+        "Quels producteurs visiter près de Port Cartier ?",
+        "Peux-tu me créer un itinéraire vers Port Cartier ?"
+      ]
+    },
+    {
+      "slug": "port-dover",
+      "title": "Port Dover",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/port-dover.avif",
+      "links": [
+        "/blog/port-dover",
+        "/destinations/port-dover",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Port Dover"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Port Dover ?",
+        "Où dormir près de Port Dover ?",
+        "Quels producteurs visiter près de Port Dover ?",
+        "Peux-tu me créer un itinéraire vers Port Dover ?"
+      ]
+    },
+    {
+      "slug": "portdover",
+      "title": "Port Dover",
+      "region": "Québec",
+      "summary": "Port Dover : découvrez Location de SUP, Long Point Eco-Adventures, avec des idées parfaites pour ados et amateurs de culture.",
+      "image": "/images/default-destination.avif",
+      "activities": [
+        "Location de SUP",
+        "Long Point Eco-Adventures",
+        "Mini-Golf Pirates",
+        "Plage Principale",
+        "Port Dover Beach",
+        "Port Dover Harbour Museum",
+        "Surf sur le Lac",
+        "Tyrolienne"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "amateurs de culture",
+        "familles"
+      ],
+      "keywords": [
+        "ados",
+        "amateurs de culture",
+        "Location de SUP",
+        "Long Point Eco-Adventures",
+        "Mini-Golf Pirates",
+        "Port Dover",
+        "Québec"
+      ],
+      "links": [
+        "/blog/portdover",
+        "/destinations/portdover",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Port Dover ?",
+        "Où dormir près de Port Dover ?",
+        "Quels producteurs visiter près de Port Dover ?",
+        "Peux-tu me créer un itinéraire vers Port Dover ?"
+      ]
+    },
+    {
+      "slug": "pourquoi-louer-un-vr-au-quebec-avec-authentik-canada",
+      "title": "Pourquoi Louer Un Vr Au Quebec Avec Authentik Canada",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/pourquoi-louer-un-vr-au-quebec-avec-authentik-canada.avif",
+      "links": [
+        "/blog/pourquoi-louer-un-vr-au-quebec-avec-authentik-canada",
+        "/destinations/pourquoi-louer-un-vr-au-quebec-avec-authentik-canada",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Pourquoi Louer Un Vr Au Quebec Avec Authentik Canada"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Pourquoi Louer Un Vr Au Quebec Avec Authentik Canada ?",
+        "Où dormir près de Pourquoi Louer Un Vr Au Quebec Avec Authentik Canada ?",
+        "Quels producteurs visiter près de Pourquoi Louer Un Vr Au Quebec Avec Authentik Canada ?",
+        "Peux-tu me créer un itinéraire vers Pourquoi Louer Un Vr Au Quebec Avec Authentik Canada ?"
+      ]
+    },
+    {
+      "slug": "quebec",
+      "title": "Quebec",
+      "region": "Ville de Québec",
+      "summary": "Découvrez Quebec, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/destinations/quebec.avif",
+      "links": [
+        "/blog/quebec",
+        "/destinations/quebec",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Quebec",
+        "amateurs de culture",
+        "aventuriers",
+        "Ville de Québec"
+      ],
+      "activities": [],
+      "hotels": [],
+      "audiences": [
+        "amateurs de culture",
+        "aventuriers"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Quebec ?",
+        "Où dormir près de Quebec ?",
+        "Quels producteurs visiter près de Quebec ?",
+        "Peux-tu me créer un itinéraire vers Quebec ?"
+      ]
+    },
+    {
+      "slug": "riviere-du-loup",
+      "title": "Riviere Du Loup",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/riviere-du-loup.avif",
+      "links": [
+        "/blog/riviere-du-loup",
+        "/destinations/riviere-du-loup",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Riviere Du Loup"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Riviere Du Loup ?",
+        "Où dormir près de Riviere Du Loup ?",
+        "Quels producteurs visiter près de Riviere Du Loup ?",
+        "Peux-tu me créer un itinéraire vers Riviere Du Loup ?"
+      ]
+    },
+    {
+      "slug": "riviereduloup",
+      "title": "Rivieredu Loup",
+      "region": "Québec",
+      "summary": "Rivieredu Loup : découvrez Centre Premier Tech, Croisière aux Baleines, avec des idées parfaites pour ados et amateurs de culture.",
+      "image": "/images/default-destination.avif",
+      "activities": [
+        "Centre Premier Tech",
+        "Croisière aux Baleines",
+        "Escalade Intérieure",
+        "Kayak de Mer",
+        "Manoir Fraser",
+        "Mini-Croisière",
+        "Parc des Chutes",
+        "Vélo sur la Route Verte"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "amateurs de culture",
+        "aventuriers",
+        "familles"
+      ],
+      "keywords": [
+        "ados",
+        "amateurs de culture",
+        "Centre Premier Tech",
+        "Croisière aux Baleines",
+        "Escalade Intérieure",
+        "Québec",
+        "Rivieredu Loup"
+      ],
+      "links": [
+        "/blog/riviereduloup",
+        "/destinations/riviereduloup",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Rivieredu Loup ?",
+        "Où dormir près de Rivieredu Loup ?",
+        "Quels producteurs visiter près de Rivieredu Loup ?",
+        "Peux-tu me créer un itinéraire vers Rivieredu Loup ?"
+      ]
+    },
+    {
+      "slug": "roadtripquebec",
+      "title": "Road Trip Quebec",
+      "region": "Ville de Québec",
+      "summary": "Découvrez Road Trip Quebec, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/default-destination.avif",
+      "activities": [],
+      "hotels": [],
+      "audiences": [
+        "amateurs de culture",
+        "aventuriers"
+      ],
+      "keywords": [
+        "amateurs de culture",
+        "aventuriers",
+        "Road Trip Quebec",
+        "Ville de Québec"
+      ],
+      "links": [
+        "/blog/roadtripquebec",
+        "/destinations/roadtripquebec",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Road Trip Quebec ?",
+        "Où dormir près de Road Trip Quebec ?",
+        "Quels producteurs visiter près de Road Trip Quebec ?",
+        "Peux-tu me créer un itinéraire vers Road Trip Quebec ?"
+      ]
+    },
+    {
+      "slug": "sabrevois",
+      "title": "Sabrevois",
+      "region": "Québec",
+      "summary": "Sabrevois : découvrez Cours de Voile, Ferme Pédagogique, avec des idées parfaites pour ados et aventuriers.",
+      "image": "/images/destinations/sabrevois.avif",
+      "links": [
+        "/blog/sabrevois",
+        "/destinations/sabrevois",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Sabrevois",
+        "ados",
+        "aventuriers",
+        "Cours de Voile",
+        "Ferme Pédagogique",
+        "Kayak sur le Richelieu",
+        "Québec"
+      ],
+      "activities": [
+        "Cours de Voile",
+        "Ferme Pédagogique",
+        "Kayak sur le Richelieu",
+        "Location de SUP",
+        "Mini-Croisière",
+        "Nuitée en Hutte Flottante",
+        "Pêche Sportive",
+        "Plage du Richelieu",
+        "Vélo le long du Richelieu"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "aventuriers",
+        "familles"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Sabrevois ?",
+        "Où dormir près de Sabrevois ?",
+        "Quels producteurs visiter près de Sabrevois ?",
+        "Peux-tu me créer un itinéraire vers Sabrevois ?"
+      ]
+    },
+    {
+      "slug": "saguenay",
+      "title": "Saguenay (Chicoutimi, Jonquière, La Baie) — le pour des vacances inoubliables",
+      "region": "Québec",
+      "summary": "Découvrez Saguenay (Chicoutimi, Jonquière, La Baie) — le pour des vacances inoubliables, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/default-destination.avif",
+      "links": [
+        "/blog/saguenay",
+        "/destinations/saguenay",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Saguenay",
+        "amateurs de culture",
+        "aventuriers",
+        "Québec",
+        "Saguenay (Chicoutimi, Jonquière, La Baie) — le pour des vacances inoubliables"
+      ],
+      "activities": [],
+      "hotels": [],
+      "audiences": [
+        "amateurs de culture",
+        "aventuriers"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Saguenay (Chicoutimi, Jonquière, La Baie) — le pour des vacances inoubliables ?",
+        "Où dormir près de Saguenay (Chicoutimi, Jonquière, La Baie) — le pour des vacances inoubliables ?",
+        "Quels producteurs visiter près de Saguenay (Chicoutimi, Jonquière, La Baie) — le pour des vacances inoubliables ?",
+        "Peux-tu me créer un itinéraire vers Saguenay (Chicoutimi, Jonquière, La Baie) — le pour des vacances inoubliables ?"
+      ]
+    },
+    {
+      "slug": "sauble-beach",
+      "title": "Sauble Beach",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/sauble-beach.avif",
+      "links": [
+        "/blog/sauble-beach",
+        "/destinations/sauble-beach",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Sauble Beach"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Sauble Beach ?",
+        "Où dormir près de Sauble Beach ?",
+        "Quels producteurs visiter près de Sauble Beach ?",
+        "Peux-tu me créer un itinéraire vers Sauble Beach ?"
+      ]
+    },
+    {
+      "slug": "saublebeach",
+      "title": "Sauble Beach",
+      "region": "Québec",
+      "summary": "Sauble Beach : découvrez Beach Volleyball, École de Surf, avec des idées parfaites pour ados et aventuriers.",
+      "image": "/images/default-destination.avif",
+      "activities": [
+        "Beach Volleyball",
+        "École de Surf",
+        "Location de Jet-Ski",
+        "Mini-Golf Sauble",
+        "Parc Aquatique Gonflable",
+        "Plage de Sauble",
+        "Sauble Falls Provincial Park",
+        "Sauble Speedway",
+        "Zone Familiale de la Plage"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "aventuriers",
+        "familles"
+      ],
+      "keywords": [
+        "ados",
+        "aventuriers",
+        "Beach Volleyball",
+        "École de Surf",
+        "Location de Jet-Ski",
+        "Québec",
+        "Sauble Beach"
+      ],
+      "links": [
+        "/blog/saublebeach",
+        "/destinations/saublebeach",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Sauble Beach ?",
+        "Où dormir près de Sauble Beach ?",
+        "Quels producteurs visiter près de Sauble Beach ?",
+        "Peux-tu me créer un itinéraire vers Sauble Beach ?"
+      ]
+    },
+    {
+      "slug": "sept-iles",
+      "title": "Sept Iles",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/sept-iles.avif",
+      "links": [
+        "/blog/sept-iles",
+        "/destinations/sept-iles",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Sept Iles"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Sept Iles ?",
+        "Où dormir près de Sept Iles ?",
+        "Quels producteurs visiter près de Sept Iles ?",
+        "Peux-tu me créer un itinéraire vers Sept Iles ?"
+      ]
+    },
+    {
+      "slug": "septiles",
+      "title": "Sept Iles",
+      "region": "Québec",
+      "summary": "Sept Iles : découvrez Archipel des Sept Îles, Centre des Sciences, avec des idées parfaites pour ados et amateurs de culture.",
+      "image": "/images/default-destination.avif",
+      "activities": [
+        "Archipel des Sept Îles",
+        "Centre des Sciences",
+        "Kayak de Mer",
+        "Mini-Croisière",
+        "Musée Régional de la Côte-Nord",
+        "Plage Monaghan",
+        "Planche à Pagaie",
+        "Randonnée des Falaises",
+        "Vieux-Quai"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "amateurs de culture",
+        "aventuriers",
+        "familles"
+      ],
+      "keywords": [
+        "ados",
+        "amateurs de culture",
+        "Archipel des Sept Îles",
+        "Centre des Sciences",
+        "Kayak de Mer",
+        "Québec",
+        "Sept Iles"
+      ],
+      "links": [
+        "/blog/septiles",
+        "/destinations/septiles",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Sept Iles ?",
+        "Où dormir près de Sept Iles ?",
+        "Quels producteurs visiter près de Sept Iles ?",
+        "Peux-tu me créer un itinéraire vers Sept Iles ?"
+      ]
+    },
+    {
+      "slug": "sherbrooke",
+      "title": "Sherbrooke",
+      "region": "Québec",
+      "summary": "Sherbrooke : découvrez Centre de Sciences, Escalade Intérieure, avec des idées parfaites pour ados et amateurs de culture.",
+      "image": "/images/destinations/sherbrooke.avif",
+      "links": [
+        "/blog/sherbrooke",
+        "/destinations/sherbrooke",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Sherbrooke",
+        "ados",
+        "amateurs de culture",
+        "Centre de Sciences",
+        "Escalade Intérieure",
+        "Musée de la Nature et des Sciences",
+        "Québec"
+      ],
+      "activities": [
+        "Centre de Sciences",
+        "Escalade Intérieure",
+        "Musée de la Nature et des Sciences",
+        "Parc Jacques-Cartier",
+        "Skateparc",
+        "Vélo de Montagne"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "amateurs de culture",
+        "aventuriers",
+        "familles"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Sherbrooke ?",
+        "Où dormir près de Sherbrooke ?",
+        "Quels producteurs visiter près de Sherbrooke ?",
+        "Peux-tu me créer un itinéraire vers Sherbrooke ?"
+      ]
+    },
+    {
+      "slug": "singing-sands",
+      "title": "Singing Sands",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/singing-sands.avif",
+      "links": [
+        "/blog/singing-sands",
+        "/destinations/singing-sands",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Singing Sands"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Singing Sands ?",
+        "Où dormir près de Singing Sands ?",
+        "Quels producteurs visiter près de Singing Sands ?",
+        "Peux-tu me créer un itinéraire vers Singing Sands ?"
+      ]
+    },
+    {
+      "slug": "singingsands",
+      "title": "Singing Sands",
+      "region": "Québec",
+      "summary": "Singing Sands : découvrez Bruce Peninsula National Park, Centre des Visiteurs, avec des idées parfaites pour ados et aventuriers.",
+      "image": "/images/default-destination.avif",
+      "activities": [
+        "Bruce Peninsula National Park",
+        "Centre des Visiteurs",
+        "Fathom Five Marine Park",
+        "Kayak sur le Lac",
+        "Plage Singing Sands",
+        "Plongée en Apnée",
+        "Randonnée Bruce Trail",
+        "Sentier des Orchidées",
+        "Singing Sands Beach"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "aventuriers",
+        "familles"
+      ],
+      "keywords": [
+        "ados",
+        "aventuriers",
+        "Bruce Peninsula National Park",
+        "Centre des Visiteurs",
+        "Fathom Five Marine Park",
+        "Québec",
+        "Singing Sands"
+      ],
+      "links": [
+        "/blog/singingsands",
+        "/destinations/singingsands",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Singing Sands ?",
+        "Où dormir près de Singing Sands ?",
+        "Quels producteurs visiter près de Singing Sands ?",
+        "Peux-tu me créer un itinéraire vers Singing Sands ?"
+      ]
+    },
+    {
+      "slug": "tadoussac",
+      "title": "Tadoussac",
+      "region": "Côte-Nord",
+      "summary": "Découvrez Tadoussac, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/destinations/tadoussac.avif",
+      "links": [
+        "/blog/tadoussac",
+        "/destinations/tadoussac",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Tadoussac",
+        "aventuriers",
+        "Côte-Nord",
+        "couples"
+      ],
+      "activities": [],
+      "hotels": [],
+      "audiences": [
+        "aventuriers",
+        "couples"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Tadoussac ?",
+        "Où dormir près de Tadoussac ?",
+        "Quels producteurs visiter près de Tadoussac ?",
+        "Peux-tu me créer un itinéraire vers Tadoussac ?"
+      ]
+    },
+    {
+      "slug": "voyagevoiture",
+      "title": "Voyage Voiture",
+      "region": "Québec",
+      "summary": "Découvrez Voyage Voiture, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+      "image": "/images/default-destination.avif",
+      "activities": [],
+      "hotels": [],
+      "audiences": [],
+      "keywords": [
+        "Québec",
+        "Voyage Voiture"
+      ],
+      "links": [
+        "/blog/voyagevoiture",
+        "/destinations/voyagevoiture",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Voyage Voiture ?",
+        "Où dormir près de Voyage Voiture ?",
+        "Quels producteurs visiter près de Voyage Voiture ?",
+        "Peux-tu me créer un itinéraire vers Voyage Voiture ?"
+      ]
+    },
+    {
+      "slug": "wasaga-beach",
+      "title": "Wasaga Beach",
+      "region": "Québec",
+      "summary": "",
+      "image": "/images/destinations/wasaga-beach.avif",
+      "links": [
+        "/blog/wasaga-beach",
+        "/destinations/wasaga-beach",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "keywords": [
+        "Wasaga Beach"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Wasaga Beach ?",
+        "Où dormir près de Wasaga Beach ?",
+        "Quels producteurs visiter près de Wasaga Beach ?",
+        "Peux-tu me créer un itinéraire vers Wasaga Beach ?"
+      ]
+    },
+    {
+      "slug": "wasagabeach",
+      "title": "Wasaga Beach",
+      "region": "Québec",
+      "summary": "Wasaga Beach : découvrez Beach Volleyball, Location de Pédalos, avec des idées parfaites pour ados et amateurs de culture.",
+      "image": "/images/default-destination.avif",
+      "activities": [
+        "Beach Volleyball",
+        "Location de Pédalos",
+        "Location de SUP",
+        "Mini-Golf Pirates",
+        "Nancy Island Historic Site",
+        "Plage Principale",
+        "Plage Zone 1",
+        "Surf sur la Baie",
+        "Wasaga Beach Provincial Park"
+      ],
+      "hotels": [],
+      "audiences": [
+        "ados",
+        "amateurs de culture",
+        "aventuriers",
+        "familles"
+      ],
+      "keywords": [
+        "ados",
+        "amateurs de culture",
+        "Beach Volleyball",
+        "Location de Pédalos",
+        "Location de SUP",
+        "Québec",
+        "Wasaga Beach"
+      ],
+      "links": [
+        "/blog/wasagabeach",
+        "/destinations/wasagabeach",
+        "/planificateur",
+        "/producteurs",
+        "/videos"
+      ],
+      "producers": [],
+      "suggestedQuestions": [
+        "Que faire à Wasaga Beach ?",
+        "Où dormir près de Wasaga Beach ?",
+        "Quels producteurs visiter près de Wasaga Beach ?",
+        "Peux-tu me créer un itinéraire vers Wasaga Beach ?"
+      ]
+    }
+  ],
+  "offers": [
+    {
+      "title": "Train de Charlevoix — Vue sur le fleuve",
+      "url": "https://www.tuango.ca/fr/deal/unique-experience-quebec-train-charlevoix?utm_source=Direct&utm_campaign=Direct&utm_medium=Tuango+Site"
+    },
+    {
+      "title": "Hôtel Manoir des Sables — Forfait détente",
+      "url": "https://www.tuango.ca/fr/deal/sejour-golf-petits-dejeuners-manoir-des-sables?utm_source=Direct&utm_campaign=Direct&utm_medium=Tuango+Site"
+    },
+    {
+      "title": "Besoin de souffler, de retrouver de la clarté et un meilleur équilibre intérieur ?",
+      "url": "https://anamimizen.com"
+    },
+    {
+      "title": "Au Petit Chalet — Repas table d’hôte & bières (Tuango)",
+      "url": "https://www.tuango.ca/fr/deal/repas-table-dhote-bieres-au-petit-chalet?utm_source=Direct&utm_campaign=Direct&utm_medium=Tuango+Site"
+    },
+    {
+      "title": "Dreams Bahia Mita Surf & Spa — Riviera Nayarit (Sunwing)",
+      "url": "https://www.sunwing.ca/en/hotel/mexico/riviera-nayarit/dreams-bahia-mita-surf-and-spa-resort"
+    },
+    {
+      "title": "Promenades Fantômes — Visites animées du Vieux-Québec (Tuango)",
+      "url": "https://www.tuango.ca/fr/deal/promenades-fantomes-visites-animees-vieux-quebec?utm_source=Direct&utm_campaign=Direct&utm_medium=Tuango+Site"
+    }
+  ],
+  "globalLinks": [
+    {
+      "label": "Planificateur d’itinéraire",
+      "url": "/planificateur",
+      "intent": "Créer un itinéraire personnalisé."
+    },
+    {
+      "label": "Producteurs locaux",
+      "url": "/producteurs",
+      "intent": "Trouver des fermes, fromageries, vignobles, microbrasseries et arrêts gourmands."
+    },
+    {
+      "label": "Vidéos populaires",
+      "url": "/videos",
+      "intent": "Voir des vidéos inspirantes par destination."
+    },
+    {
+      "label": "Blog destinations",
+      "url": "/blog",
+      "intent": "Lire les guides complets."
+    },
+    {
+      "label": "Offres spéciales",
+      "url": "/offres",
+      "intent": "Voir les offres et bons plans."
+    }
+  ]
+}

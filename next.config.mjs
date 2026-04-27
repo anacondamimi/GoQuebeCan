@@ -3,45 +3,19 @@
 
 const CONTENT_SECURITY_POLICY = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' 'unsafe-eval'
-    https://www.googletagmanager.com
-    https://www.google-analytics.com
-    https://creator.expediagroup.com
-    https://www.google.com
-    https://connect.facebook.net
-    https://www.gstatic.com;
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://creator.expediagroup.com https://www.google.com https://connect.facebook.net https://www.gstatic.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   img-src 'self' data: blob: https: http: https://*.basemaps.cartocdn.com;
-  connect-src 'self'
-    https://api.mapbox.com
-    https://events.mapbox.com
-    https://*.mapbox.com
-    https://router.project-osrm.org
-    https://*.basemaps.cartocdn.com
-    https://creator.expediagroup.com
-    https://*.expediagroup.com
-    https://*.expedia.com
-    https://www.google-analytics.com
-    https://www.googletagmanager.com
-    https://www.google.com
-    https://www.gstatic.com
-    https://recaptcha.google.com
-    https://www.facebook.com
-https://connect.facebook.net
-    https://*.supabase.co
-    https://hbjqefbnjpgfxxqifvcu.supabase.co;
+  connect-src 'self' https://api.mapbox.com https://events.mapbox.com https://*.mapbox.com https://router.project-osrm.org https://*.basemaps.cartocdn.com https://creator.expediagroup.com https://*.expediagroup.com https://*.expedia.com https://www.google-analytics.com https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://recaptcha.google.com https://www.facebook.com https://connect.facebook.net https://*.supabase.co https://hbjqefbnjpgfxxqifvcu.supabase.co;
   font-src 'self' data: https://fonts.gstatic.com https://fonts.googleapis.com;
-  frame-src 'self'
-    https://www.youtube.com
-    https://player.vimeo.com
-    https://www.google.com
-    https://recaptcha.google.com;
+  frame-src 'self' https://www.youtube.com https://player.vimeo.com https://www.google.com https://recaptcha.google.com;
   media-src 'self' data: blob: https: http:;
   object-src 'none';
   base-uri 'self';
   form-action 'self';
   frame-ancestors 'self';
 `
+  .replace(/[\r\n\t]+/g, ' ')
   .replace(/\s{2,}/g, ' ')
   .trim();
 
@@ -116,12 +90,7 @@ const nextConfig = {
  async redirects() {
   return [
     // 🔹 Canonical domain (très important SEO)
-    {
-      source: '/:path*',
-      has: [{ type: 'host', value: 'goquebecan.com' }],
-      destination: 'https://www.goquebecan.com/:path*',
-      permanent: true,
-    },
+
 
     // 🔹 Redirections SEO internes
     {
@@ -129,11 +98,7 @@ const nextConfig = {
       destination: '/blog/location-vr',
       permanent: true,
     },
-    {
-      source: '/Planificateur',
-      destination: '/planificateur',
-      permanent: true,
-    },
+    
     {
       source: '/carte-interactive',
       destination: '/planificateur',

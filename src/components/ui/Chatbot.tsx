@@ -361,7 +361,7 @@ export default function Chatbot() {
     }));
 
     try {
-      if (detectedSlug) {
+      if (detectedSlug && !isProducerIntent(normText)) {
         try {
           const suggestion = getContentSuggestions(detectedSlug);
           const blogUrl = suggestion?.blogUrl ?? `/blog/${detectedSlug}`;
@@ -540,26 +540,6 @@ Vous voulez des vidéos pour une destination précise, ou juste pour trouver l�
         return;
       }
 
-      if (isProducerIntent(normText)) {
-        setMessages((prev: Message[]) => [
-          ...prev,
-          {
-            text: `Très bon choix. Les producteurs locaux rendent souvent le voyage beaucoup plus vivant et gourmand.
-
-**Vous choisissez :**
-- [🧺 Voir les producteurs locaux](${INTERNAL_ROUTES.producteurs})
-- [🗺️ Ouvrir le planificateur](${INTERNAL_ROUTES.planner})
-- [📍 Explorer les destinations](${INTERNAL_ROUTES.destinations})
-
-Vous avez déjà une destination en tête pour que je vous oriente vers le bon secteur ?`,
-            isUser: false,
-            timestamp: new Date().toISOString(),
-          },
-        ]);
-
-        setIsTyping(false);
-        return;
-      }
 
       if (isItineraryIntent(normText)) {
         setMessages((prev: Message[]) => [

@@ -160,7 +160,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.goquebecan.comblog/carleton-sur-mer</loc>
+    <loc>https://www.goquebecan.com/blog/carleton-sur-mer</loc>
     <lastmod>2025-10-26T17:55:55.740Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -345,12 +345,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.goquebecan.com/blog/anse-saint-jean</loc>
-    <lastmod>2025-10-13T18:43:16.297Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://www.goquebecan.com/blog/baie-saint-paul</loc>
     <lastmod>2025-09-20T15:50:08.389Z</lastmod>
@@ -376,7 +371,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.goquebecan.comblog/carleton-sur-mer</loc>
+    <loc>https://www.goquebecan.com/blog/carleton-sur-mer</loc>
     <lastmod>2025-09-20T15:52:21.963Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
