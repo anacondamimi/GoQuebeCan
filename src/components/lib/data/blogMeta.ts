@@ -263,8 +263,8 @@ export const blogMeta = {
     ]
   },
   "gaspesie": {
-    "title": "Gaspésie",
-    "description": "Découvrez Gaspésie, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "title": "Gaspesie",
+    "description": "Découvrez Gaspesie, ses attraits touristiques, ses activités et ses hébergements incontournables.",
     "image": "/images/default-destination.avif",
     "activites": [],
     "hebergements": [],
@@ -277,6 +277,7 @@ export const blogMeta = {
     "keywords": [
       "amateurs de culture",
       "aventuriers",
+      "Gaspesie",
       "Gaspésie"
     ]
   },
