@@ -42,7 +42,7 @@ export default function Page() {
         <Card
           title="PDFs communauté"
           desc="Ajouter, consulter et retirer des itinéraires PDF partagés."
-          href="/admin/community-pdf"
+          href="/admin/community-itineraries"
         />
       </div>
 

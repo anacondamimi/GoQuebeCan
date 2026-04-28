@@ -3,9 +3,11 @@ import { NextRequest, NextResponse } from 'next/server';
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  const isAdminRoute = pathname.startsWith('/admin');
+  if (!pathname.startsWith('/admin')) {
+    return NextResponse.next();
+  }
 
-  if (!isAdminRoute) {
+  if (process.env.NODE_ENV === 'development') {
     return NextResponse.next();
   }
 

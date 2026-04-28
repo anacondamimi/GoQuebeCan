@@ -100,6 +100,13 @@ export async function saveContact(form: ContactForm): Promise<SaveContactResult>
 
   const token = await maybeGetRecaptchaToken('contact');
 
+  if (!token && process.env.NODE_ENV !== 'development') {
+    return {
+      success: false,
+      error: "La vérification anti-spam n'a pas pu être chargée. Recharge la page puis réessaie.",
+    };
+  }
+
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 10000);
 

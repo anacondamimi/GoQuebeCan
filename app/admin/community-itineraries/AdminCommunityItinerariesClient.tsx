@@ -39,7 +39,7 @@ export default function AdminCommunityItinerariesClient() {
   const [items, setItems] = useState<CommunityItinerary[]>([]);
   const [loading, setLoading] = useState(true);
   const [busyId, setBusyId] = useState<string | null>(null);
-  const [filter, setFilter] = useState<StatusFilter>('pending');
+  const [filter, setFilter] = useState<StatusFilter>('all');
   const [contentFilter, setContentFilter] = useState<ContentFilter>('all');
   const [statusMsg, setStatusMsg] = useState<string | null>(null);
 
