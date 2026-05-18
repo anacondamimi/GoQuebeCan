@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import OFFERS from '@/data/offers-data';
+import OFFERS from '@/data/offres-data';
 import OfferCard from '@/components/OfferCard';
 
 export default function Offers() {

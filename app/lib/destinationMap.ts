@@ -45,7 +45,7 @@ export const destinationMap = {
   },
   carleton: {
     label: 'Carleton',
-    blogUrl: 'blog/carleton-sur-mer-sur-mer',
+    blogUrl: '/blog/carleton-sur-mer',
     videoUrl: '/videos#carleton',
     objectsUrl: '/objets',
     plannerUrl: '/planificateur',
@@ -108,7 +108,7 @@ export const destinationMap = {
   },
   locationvr: {
     label: 'LocationVR',
-    blogUrl: '/blog/locationvr',
+    blogUrl: '/blog/location-vr',
     videoUrl: '/videos#locationvr',
     objectsUrl: '/objets',
     plannerUrl: '/planificateur',

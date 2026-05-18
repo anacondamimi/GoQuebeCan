@@ -73,7 +73,7 @@ const videos: VideoItem[] = [
       'Une vidéo pour ressentir l’ambiance de Carleton-sur-Mer entre mer, détente et paysages côtiers.',
     thumbnail: 'https://img.youtube.com/vi/XdCDPgbeQjw/hqdefault.jpg',
     videoUrl: 'https://www.youtube.com/embed/XdCDPgbeQjw',
-    articleUrl: 'blog/carleton-sur-mer-sur-mer',
+    articleUrl: '/blog/carleton-sur-mer',
   },
   {
     id: 'video103',

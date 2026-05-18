@@ -32,7 +32,7 @@ export default function Page() {
         <Card
           title="Offres spéciales"
           desc="Créer, éditer et exporter des offres à publier sur le site."
-          href="/admin/offers"
+          href="/admin/offres"
         />
         <Card
           title="Producteurs"
@@ -42,7 +42,7 @@ export default function Page() {
         <Card
           title="PDFs communauté"
           desc="Ajouter, consulter et retirer des itinéraires PDF partagés."
-          href="/admin/community-itineraries"
+          href="/admin/itineraires-communaute"
         />
       </div>
 

@@ -184,6 +184,13 @@ function loadGoogleAnalytics() {
   const script = document.createElement('script');
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
   script.async = true;
+
+  script.onerror = () => {
+    if (process.env.NODE_ENV === 'development') {
+      console.info('Google Analytics non chargé : bloqué par le navigateur ou une extension.');
+    }
+  };
+
   document.head.appendChild(script);
 
   window.gtag?.('js', new Date());
@@ -200,6 +207,13 @@ function loadFacebookPixel() {
   const script = document.createElement('script');
   script.src = 'https://connect.facebook.net/en_US/fbevents.js';
   script.async = true;
+
+  script.onerror = () => {
+    if (process.env.NODE_ENV === 'development') {
+      console.info('Google Analytics non chargé : bloqué par le navigateur ou une extension.');
+    }
+  };
+
   document.head.appendChild(script);
 }
 
@@ -334,7 +348,7 @@ export default function CookieBanner() {
             width={52}
             height={52}
             priority
-            className="size-[52px] rounded-lg"
+            className="h-[52px] w-auto rounded-lg"
           />
 
           <div>

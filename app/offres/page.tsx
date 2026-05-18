@@ -1,7 +1,7 @@
 // app/offres/page.tsx
 import type { Metadata } from 'next';
-import Offers from '@/components/Offers';
-import OFFERS from '@/data/offers-data';
+import Offers from '@/components/Offres';
+import OFFERS from '@/data/offres-data';
 import H1 from '@/components/typography/H1';
 
 export const revalidate = 21600; // 6h

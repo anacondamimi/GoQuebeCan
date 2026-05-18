@@ -11,7 +11,7 @@ import dynamic from 'next/dynamic';
 import BrandName from '@/components/brand/BrandName';
 
 const PopularVideos = dynamic(() => import('@/components/PopularVideos'), { ssr: false });
-const Offers = dynamic(() => import('@/components/OfferCard'), { ssr: false });
+const Offers = dynamic(() => import('@/components/Offres'), { ssr: false });
 const Chatbot = dynamic(() => import('@/components/ui/Chatbot'), { ssr: false });
 
 export default function Home() {

@@ -415,26 +415,13 @@ export const blogMeta = {
     "image": "/images/default-destination.avif",
     "activites": [],
     "hebergements": [],
-    "publics": [],
-    "region": "Québec",
-    "keywords": [
-      "Location VR",
-      "Québec"
-    ]
-  },
-  "locationvrcomparatif": {
-    "title": "Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream)",
-    "description": "Découvrez Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream), ses attraits touristiques, ses activités et ses hébergements incontournables.",
-    "image": "/images/default-destination.avif",
-    "activites": [],
-    "hebergements": [],
     "publics": [
       "couples"
     ],
     "region": "Québec",
     "keywords": [
       "couples",
-      "Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream)",
+      "Location VR",
       "Québec"
     ]
   },
@@ -822,21 +809,22 @@ export const blogMeta = {
     ]
   },
   "saguenay": {
-    "title": "Saguenay (Chicoutimi, Jonquière, La Baie) — le pour des vacances inoubliables",
-    "description": "Découvrez Saguenay (Chicoutimi, Jonquière, La Baie) — le pour des vacances inoubliables, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "title": "Saguenay",
+    "description": "Découvrez Saguenay, ses attraits touristiques, ses activités et ses hébergements incontournables.",
     "image": "/images/default-destination.avif",
     "activites": [],
     "hebergements": [],
     "publics": [
       "amateurs de culture",
-      "aventuriers"
+      "aventuriers",
+      "couples"
     ],
     "region": "Québec",
     "keywords": [
       "amateurs de culture",
       "aventuriers",
       "Québec",
-      "Saguenay (Chicoutimi, Jonquière, La Baie) — le pour des vacances inoubliables"
+      "Saguenay"
     ]
   },
   "sandbanks": {

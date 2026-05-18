@@ -1,4 +1,4 @@
-// src/app/admin/offers/page.tsx
+// src/app/admin/offres/page.tsx
 import type { Metadata } from 'next';
 import AdminOffersClient from './AdminOffersClient';
 

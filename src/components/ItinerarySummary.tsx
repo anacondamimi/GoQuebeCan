@@ -153,7 +153,7 @@ export default function ItinerarySummary() {
         notes: (s as StepData).notes || null,
       }));
 
-      const res = await fetch('/api/community-itineraries/submit', {
+      const res = await fetch('/api/itineraires-communaute/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

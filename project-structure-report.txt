@@ -1620,7 +1620,7 @@ main().catch((error) => {
       "priority": 0.8
     },
     {
-      "route": "/community-itineraries",
+      "route": "/itineraires-communaute",
       "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.6
@@ -1944,7 +1944,7 @@ main().catch((error) => {
       "priority": 0.8
     },
     {
-      "route": "/offers",
+      "route": "/offres",
       "lastModified": "2026-04-11T16:45:40.717Z",
       "changeFrequency": "monthly",
       "priority": 0.6

@@ -98,15 +98,16 @@ export default function Navbar() {
         <div className="flex h-16 w-full items-center justify-between">
           {/* Logo */}
           <Link href="/" aria-label="Accueil" className="shrink-0">
-            <Image
-              src="/logo2.avif"
-              alt="Logo GoQuébeCan"
-              width={48}
-              height={48}
-              unoptimized
-              priority
-              className="object-contain"
-            />
+            <div className="relative h-12 w-12">
+              <Image
+                src="/logo2.avif"
+                alt="Logo GoQuébeCan"
+                fill
+                unoptimized
+                priority
+                className="object-contain"
+              />
+            </div>
           </Link>
 
           {/* Menu Desktop */}

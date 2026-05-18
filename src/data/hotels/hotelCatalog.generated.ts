@@ -1363,6 +1363,70 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     },
     variant: 'compact',
   },
+  otl_gouverneur_saguenay: {
+    id: 'otl_gouverneur_saguenay',
+    name: 'OTL Gouverneur Saguenay',
+    category: 'Luxe & Spa',
+    location: 'Chicoutimi',
+    description:
+      'Hôtel moderne haut de gamme avec spa, restaurant Boefish, chambres élégantes et excellente localisation pour explorer le Saguenay.',
+    extra:
+      'Très bon choix pour un séjour plus confortable avec ambiance moderne et accès rapide aux principaux secteurs.',
+    price: 'À partir de 199$/nuit',
+    ratingText: 'Excellent',
+    perks: ['Spa', 'Restaurant', 'Piscine', 'Stationnement'],
+    tags: ['Couple', 'Road trip', 'Confort'],
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fotl-gouverneur-saguenay.fr.html',
+    image: {
+      src: '/images/destinations/hotels/hotel-gouverneur-saguenay.avif',
+      alt: 'OTL Gouverneur Saguenay — hébergement recommandé',
+    },
+    variant: 'compact',
+  },
+
+  hotel_le_montagnais_saguenay: {
+    id: 'hotel_le_montagnais_saguenay',
+    name: 'Hôtel Le Montagnais',
+    category: 'Familial',
+    location: 'Chicoutimi',
+    description:
+      'Hôtel très apprécié des familles avec piscine intérieure, jeux d’eau et emplacement pratique pour visiter Saguenay.',
+    extra: 'Excellent équilibre entre confort, prix et installations familiales.',
+    price: 'À partir de 169$/nuit',
+    ratingText: 'Très bien',
+    perks: ['Piscine', 'Famille', 'Restaurant', 'Stationnement'],
+    tags: ['Famille', 'Enfants', 'Road trip'],
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fle-montagnais-and-convention-center.fr.html',
+    image: {
+      src: '/images/destinations/hotels/montagnais-saguenay.avif',
+      alt: 'Hôtel Le Montagnais — hébergement recommandé',
+    },
+    variant: 'compact',
+  },
+
+  gite_du_haut_des_arbres_saguenay: {
+    id: 'gite_du_haut_des_arbres_saguenay',
+    name: 'Gîte du Haut des Arbres',
+    category: 'Nature & Détente',
+    location: 'Saguenay',
+    description:
+      'Petit hébergement chaleureux entouré de nature, parfait pour ralentir et profiter du calme du Saguenay.',
+    extra:
+      'Très belle option pour les voyageurs qui recherchent une ambiance plus intime et relaxante.',
+    price: 'À partir de 124$/nuit',
+    ratingText: 'Coup de cœur',
+    perks: ['Nature', 'Calme', 'Déconnexion'],
+    tags: ['Nature', 'Couple', 'Repos'],
+    bookingUrl:
+      'https://www.awin1.com/cread.php?awinmid=6776&awinaffid=1950847&ued=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fca%2Fgite-du-haut-des-arbres.fr.html',
+    image: {
+      src: '/images/destinations/hotels/gite-haut-arbre-saguenay.avif',
+      alt: 'Gîte du Haut des Arbres — hébergement recommandé',
+    },
+    variant: 'compact',
+  },
   newsroom_suites_sandbanks: {
     id: 'newsroom_suites_sandbanks',
     name: 'Newsroom Suites',

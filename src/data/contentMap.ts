@@ -14,7 +14,7 @@ export const contentMap = {
     planner: '/planificateur',
   },
   carleton: {
-    blog: 'blog/carleton-sur-mer-sur-mer',
+    blog: '/blog/carleton-sur-mer',
     video: '/videos',
     objects: '/objets',
     planner: '/planificateur',
@@ -205,10 +205,5 @@ export const contentMap = {
     objects: '/objets',
     planner: '/planificateur',
   },
-  'pourquoi louer un vr au quebec avec authentik canada': {
-    blog: '/blog/pourquoi-louer-un-vr-au-quebec-avec-authentik-canada',
-    video: '/videos',
-    objects: '/objets',
-    planner: '/planificateur',
-  },
+ 
 };

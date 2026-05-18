@@ -9,9 +9,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   const links = [
     { href: '/admin', label: 'Dashboard' },
-    { href: '/admin/offers', label: 'Offres' },
+    { href: '/admin/offres', label: 'Offres' },
     { href: '/admin/producteurs', label: 'Producteurs' },
-    { href: '/admin/community-itineraries', label: 'Communauté' },
+    { href: '/admin/itineraires-communaute', label: 'Communauté' },
   ];
 
   return (

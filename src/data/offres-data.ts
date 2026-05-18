@@ -1,4 +1,4 @@
-// src/data/offers-data.ts
+// src/data/offres-data.ts
 import type { OfferInput, Offer } from '@/types/offer';
 import { normalizeOffer, sortAndFilterOffers } from '@/types/offer';
 
@@ -48,7 +48,7 @@ const RAW_OFFERS: OfferInput[] = [
       'AnamimiZen vous offre un cadre attentif pour apaiser le mental, relâcher les tensions émotionnelles et retrouver plus de sérénité au quotidien.',
     image: {
       // 👉 image locale recommandée
-      src: '/images/offers/anamimizen.avif',
+      src: '/images/offres/anamimizen.avif',
       alt: 'Moment de calme et de recentrage — accompagnement bien-être AnamimiZen',
       provider: 'local',
     },

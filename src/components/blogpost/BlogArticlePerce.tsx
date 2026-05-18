@@ -90,7 +90,7 @@ const aroundPerce = [
     title: 'Carleton-sur-Mer',
     description:
       'Une belle idée pour poursuivre le voyage avec un mélange de mer, détente, hébergements et atmosphère de vacances.',
-    href: 'blog/carleton-sur-mer',
+    href: '/blog/carleton-sur-mer',
     image: '/images/destinations/carleton.avif',
   },
 ];
@@ -445,7 +445,7 @@ export default function BlogArticlePerce() {
               Bonaventure
             </Link>{' '}
             ou{' '}
-            <Link href="blog/carleton-sur-mer" className="font-semibold underline">
+            <Link href="/blog/carleton-sur-mer" className="font-semibold underline">
               Carleton-sur-Mer
             </Link>
             .

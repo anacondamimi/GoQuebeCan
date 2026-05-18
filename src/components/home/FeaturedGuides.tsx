@@ -58,7 +58,7 @@ const guides = [
     description:
       'Villages charmants, producteurs locaux, expériences bien-être et découvertes inspirantes au Québec.',
     href: '/coups-de-coeur',
-    image: '/images/offers/anamimizen.avif',
+    image: '/images/offres/anamimizen.avif',
   },
 ];
 

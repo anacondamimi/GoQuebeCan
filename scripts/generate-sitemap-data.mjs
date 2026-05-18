@@ -21,18 +21,53 @@ const SUPABASE_ANON_KEY =
 
 const PAGE_FILES = new Set(['page.tsx', 'page.ts', 'page.jsx', 'page.js']);
 
-const EXCLUDED_SEGMENTS = new Set(['api', 'admin', 'expansion']);
-const EXCLUDED_ROUTES = new Set(['/ia-mathieu', '/static-page']);
+const EXCLUDED_SEGMENTS = new Set(['api', 'admin', 'expansion', 'lib']);
+
+const EXCLUDED_ROUTES = new Set([
+  '/ia-mathieu',
+  '/static-page',
+  '/test-youtube',
+  '/stats',
+  '/destinations-monde',
+  '/destinations-monde/slug',
+  '/experiences',
+  '/objets',
+]);
 
 const STATIC_LASTMOD = '2025-10-26T17:55:55.740Z';
 
 function normalizeRoute(route) {
   if (!route) return '/';
+
   let value = String(route).trim();
   if (!value.startsWith('/')) value = `/${value}`;
+
   value = value.replace(/\/+/g, '/');
-  if (value.length > 1) value = value.replace(/\/+$/, '');
+
+  if (value.length > 1) {
+    value = value.replace(/\/+$/, '');
+  }
+
   return value;
+}
+
+function isAllowedRoute(route) {
+  if (!route) return false;
+
+  const normalized = normalizeRoute(route);
+  const invalidSegments = ['slug', 'undefined', 'null', '[slug]'];
+
+  if (EXCLUDED_ROUTES.has(normalized)) return false;
+  if (normalized.startsWith('/api')) return false;
+  if (normalized.startsWith('/admin')) return false;
+  if (normalized.startsWith('/expansion')) return false;
+  if (normalized.includes('[') || normalized.includes(']')) return false;
+
+  if (invalidSegments.some((segment) => normalized.includes(`/${segment}`))) {
+    return false;
+  }
+
+  return true;
 }
 
 async function exists(filePath) {
@@ -53,16 +88,29 @@ async function getFileMTime(filePath) {
   }
 }
 
-function shouldIgnoreSegment(segment) {
-  if (!segment) return true;
-  if (segment.startsWith('(') && segment.endsWith(')')) return true;
-  if (segment.startsWith('_')) return true;
-  if (EXCLUDED_SEGMENTS.has(segment)) return true;
-  return false;
+async function readJsonSafe(filePath, fallback = null) {
+  try {
+    const raw = await fs.readFile(filePath, 'utf8');
+    return JSON.parse(raw);
+  } catch {
+    return fallback;
+  }
+}
+
+function isRouteGroup(segment) {
+  return segment.startsWith('(') && segment.endsWith(')');
+}
+
+function isPrivateSegment(segment) {
+  return segment.startsWith('_');
 }
 
 function isDynamicSegment(segment) {
   return /^\[.*\]$/.test(segment);
+}
+
+function hasExcludedSegment(parts) {
+  return parts.some((segment) => EXCLUDED_SEGMENTS.has(segment));
 }
 
 async function walk(dir, files = []) {
@@ -78,6 +126,9 @@ async function walk(dir, files = []) {
     const full = path.join(dir, entry.name);
 
     if (entry.isDirectory()) {
+      if (EXCLUDED_SEGMENTS.has(entry.name)) continue;
+      if (isPrivateSegment(entry.name)) continue;
+
       await walk(full, files);
       continue;
     }
@@ -97,24 +148,52 @@ function routeFromPageFile(filePath) {
   const fileName = parts.at(-1);
   if (!fileName || !PAGE_FILES.has(fileName)) return null;
 
-  const segments = parts.slice(0, -1).filter((seg) => !shouldIgnoreSegment(seg));
+  const rawSegments = parts.slice(0, -1);
 
-  if (segments.some(isDynamicSegment)) return null;
+  if (hasExcludedSegment(rawSegments)) return null;
+  if (rawSegments.some(isPrivateSegment)) return null;
+  if (rawSegments.some(isDynamicSegment)) return null;
 
-  const route = normalizeRoute(`/${segments.join('/') || ''}`);
+  const routeSegments = rawSegments.filter((segment) => !isRouteGroup(segment));
+  const route = normalizeRoute(`/${routeSegments.join('/') || ''}`);
 
-  if (EXCLUDED_ROUTES.has(route)) return null;
-  if (route.startsWith('/expansion')) return null;
+  if (!isAllowedRoute(route)) return null;
 
   return route;
 }
 
-function routeToPageFile(route) {
-  if (route === '/') {
-    return path.join(APP_DIR, 'page.tsx');
+async function findPageFileForRoute(route) {
+  const normalized = normalizeRoute(route);
+
+  if (normalized === '/') {
+    const rootCandidates = [
+      path.join(APP_DIR, 'page.tsx'),
+      path.join(APP_DIR, 'page.ts'),
+      path.join(APP_DIR, 'page.jsx'),
+      path.join(APP_DIR, 'page.js'),
+    ];
+
+    for (const candidate of rootCandidates) {
+      if (await exists(candidate)) return candidate;
+    }
+
+    return null;
   }
 
-  return path.join(APP_DIR, route.replace(/^\/+/, ''), 'page.tsx');
+  const routeWithoutSlash = normalized.replace(/^\/+/, '');
+
+  const candidates = [
+    path.join(APP_DIR, routeWithoutSlash, 'page.tsx'),
+    path.join(APP_DIR, routeWithoutSlash, 'page.ts'),
+    path.join(APP_DIR, routeWithoutSlash, 'page.jsx'),
+    path.join(APP_DIR, routeWithoutSlash, 'page.js'),
+  ];
+
+  for (const candidate of candidates) {
+    if (await exists(candidate)) return candidate;
+  }
+
+  return null;
 }
 
 function normalizeSlug(input) {
@@ -133,45 +212,66 @@ function normalizeSlug(input) {
   return clean;
 }
 
-async function readJsonSafe(filePath, fallback = null) {
-  try {
-    const raw = await fs.readFile(filePath, 'utf8');
-    return JSON.parse(raw);
-  } catch {
-    return fallback;
-  }
-}
-
 async function readDestinationRoutes() {
-  const filePath = path.join(PUBLIC_DIR, 'destinations.json');
-  const data = await readJsonSafe(filePath, []);
-
-  if (!Array.isArray(data)) return [];
+  const possibleFiles = [
+    path.join(PUBLIC_DIR, 'destinations.json'),
+    path.join(SRC_DIR, 'data', 'destinations.json'),
+  ];
 
   const routes = new Map();
 
-  for (const item of data) {
-    const candidates = [item?.slug, item?.href, item?.url, item?.path].filter(Boolean);
+  for (const filePath of possibleFiles) {
+    const data = await readJsonSafe(filePath, []);
+    if (!Array.isArray(data)) continue;
 
-    for (const candidate of candidates) {
-      const slug = normalizeSlug(candidate);
-      if (!slug) continue;
-      if (slug.toLowerCase().startsWith('en/')) continue;
+    const sourceMTime = await getFileMTime(filePath);
 
-      const route = slug.includes('/')
-        ? normalizeRoute(`/${slug}`)
-        : normalizeRoute(`/destinations/${slug}`);
+    for (const item of data) {
+      const candidates = [item?.slug, item?.href, item?.url, item?.path].filter(Boolean);
 
-      if (!route.startsWith('/destinations/')) continue;
+      for (const candidate of candidates) {
+        const slug = normalizeSlug(candidate);
+        if (!slug) continue;
+        if (slug.toLowerCase().startsWith('en/')) continue;
 
-      routes.set(route, {
-        route,
-        lastModified: item?.lastModified || item?.updatedAt || item?.modifiedTime || null,
-      });
+        const route = slug.includes('/')
+          ? normalizeRoute(`/${slug}`)
+          : normalizeRoute(`/destinations/${slug}`);
+
+        if (!route.startsWith('/destinations/')) continue;
+        if (!isAllowedRoute(route)) continue;
+
+        routes.set(route, {
+          route,
+          lastModified:
+            item?.lastModified || item?.updatedAt || item?.modifiedTime || sourceMTime || null,
+        });
+      }
     }
   }
 
   return [...routes.values()].sort((a, b) => a.route.localeCompare(b.route, 'fr'));
+}
+
+function extractSlugsFromSource(raw) {
+  return [...raw.matchAll(/['"`]([a-z0-9][a-z0-9-]{1,})['"`]/gi)]
+    .map((match) => match[1])
+    .filter(Boolean)
+    .filter((slug) => {
+      const lower = slug.toLowerCase();
+
+      return ![
+        'use',
+        'client',
+        'server',
+        'blog',
+        'slug',
+        'slugs',
+        'default',
+        'true',
+        'false',
+      ].includes(lower);
+    });
 }
 
 async function readBlogRoutes() {
@@ -189,21 +289,11 @@ async function readBlogRoutes() {
 
     try {
       const raw = await fs.readFile(filePath, 'utf8');
+      const slugs = extractSlugsFromSource(raw);
 
-      const matches = [...raw.matchAll(/['"`]([a-z0-9-]+)['"`]/gi)]
-        .map((match) => match[1])
-        .filter(Boolean);
-
-      for (const slug of matches) {
-        if (
-          ['use', 'client', 'server', 'blog', 'slug', 'slugs', 'default'].includes(
-            slug.toLowerCase(),
-          )
-        ) {
-          continue;
-        }
-
+      for (const slug of slugs) {
         const route = normalizeRoute(`/blog/${slug}`);
+        if (!isAllowedRoute(route)) continue;
 
         routes.set(route, {
           route,
@@ -226,35 +316,33 @@ async function readBlogRoutes() {
       const name = entry.name;
 
       if (name.startsWith('[')) continue;
-      if (name.startsWith('(')) continue;
+      if (isRouteGroup(name)) continue;
+      if (isPrivateSegment(name)) continue;
 
-      const pageFiles = [
+      const pageCandidates = [
         path.join(blogDir, name, 'page.tsx'),
         path.join(blogDir, name, 'page.ts'),
         path.join(blogDir, name, 'page.jsx'),
         path.join(blogDir, name, 'page.js'),
       ];
 
-      const pageFile = pageFiles.find(async (file) => exists(file));
+      let pageFile = null;
 
-      const hasPage =
-        (await exists(path.join(blogDir, name, 'page.tsx'))) ||
-        (await exists(path.join(blogDir, name, 'page.ts'))) ||
-        (await exists(path.join(blogDir, name, 'page.jsx'))) ||
-        (await exists(path.join(blogDir, name, 'page.js')));
+      for (const candidate of pageCandidates) {
+        if (await exists(candidate)) {
+          pageFile = candidate;
+          break;
+        }
+      }
 
-      if (!hasPage) continue;
+      if (!pageFile) continue;
 
       const route = normalizeRoute(`/blog/${name}`);
-      const lastModified =
-        (await getFileMTime(path.join(blogDir, name, 'page.tsx'))) ||
-        (await getFileMTime(path.join(blogDir, name, 'page.ts'))) ||
-        (await getFileMTime(path.join(blogDir, name, 'page.jsx'))) ||
-        (await getFileMTime(path.join(blogDir, name, 'page.js')));
+      if (!isAllowedRoute(route)) continue;
 
       routes.set(route, {
         route,
-        lastModified,
+        lastModified: await getFileMTime(pageFile),
       });
     }
   } catch {
@@ -292,10 +380,11 @@ async function readCommunityRoutes() {
 
     return rows
       .map((row) => ({
-        route: normalizeRoute(`/partage/${row.slug}`),
+        route: normalizeRoute(`/itineraires-communaute/${row.slug}`),
         lastModified: row.approved_at || row.created_at || null,
       }))
-      .filter((item) => item.route && item.route !== '/partage')
+      .filter((item) => item.route && item.route !== '/itineraires-communaute')
+      .filter((item) => isAllowedRoute(item.route))
       .sort((a, b) => a.route.localeCompare(b.route, 'fr'));
   } catch (error) {
     console.warn('community_itineraries fetch error:', error);
@@ -335,7 +424,7 @@ function getSeoMetaForRoute(route) {
   if (route.startsWith('/blog/')) {
     return {
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.82,
     };
   }
 
@@ -346,7 +435,7 @@ function getSeoMetaForRoute(route) {
     };
   }
 
-  if (route.startsWith('/partage/')) {
+  if (route.startsWith('/itineraires-communaute/')) {
     return {
       changeFrequency: 'weekly',
       priority: 0.7,
@@ -397,33 +486,44 @@ function getSeoMetaForRoute(route) {
   };
 }
 
-async function createEntry(route, overrides = {}) {
-  const pageMTime = await getFileMTime(routeToPageFile(route));
-  const seo = getSeoMetaForRoute(route);
-
+async function findImageForRoute(route) {
   const slug = route.split('/').pop();
+  if (!slug) return null;
+
+  const candidates = [
+    path.join(PUBLIC_DIR, 'images', 'destinations', `${slug}.avif`),
+    path.join(PUBLIC_DIR, 'images', 'destinations', `${slug}.webp`),
+    path.join(PUBLIC_DIR, 'images', 'destinations', `${slug}.jpg`),
+    path.join(PUBLIC_DIR, 'images', `${slug}.avif`),
+  ];
+
+  for (const filePath of candidates) {
+    if (await exists(filePath)) {
+      const relative = `/${path.relative(PUBLIC_DIR, filePath).split(path.sep).join('/')}`;
+      return `${SITE_URL}${relative}`;
+    }
+  }
+
+  return null;
+}
+
+async function createEntry(route, overrides = {}) {
+  const normalizedRoute = normalizeRoute(route);
+  const pageFile = await findPageFileForRoute(normalizedRoute);
+  const pageMTime = pageFile ? await getFileMTime(pageFile) : null;
+  const seo = getSeoMetaForRoute(normalizedRoute);
+
+  const slug = normalizedRoute.split('/').pop();
+  const image = await findImageForRoute(normalizedRoute);
 
   return {
-    route,
+    route: normalizedRoute,
     lastModified: overrides.lastModified || pageMTime || STATIC_LASTMOD,
     changeFrequency: overrides.changeFrequency || seo.changeFrequency,
     priority: typeof overrides.priority === 'number' ? overrides.priority : seo.priority,
-
-    // 🔥 AJOUT IMAGE
-    image: slug ? `${SITE_URL}/images/destinations/${slug}.avif` : null,
-
-    imageTitle: slug ? `Découvrez ${slug.replace(/-/g, ' ')} au Québec` : null,
+    image,
+    imageTitle: image && slug ? `Découvrez ${slug.replace(/-/g, ' ')} au Québec` : null,
   };
-}
-
-function isAllowedRoute(route) {
-  if (!route) return false;
-  if (EXCLUDED_ROUTES.has(route)) return false;
-  if (route.startsWith('/api')) return false;
-  if (route.startsWith('/admin')) return false;
-  if (route.startsWith('/expansion')) return false;
-  if (route.includes('[') || route.includes(']')) return false;
-  return true;
 }
 
 function dedupeEntries(entries) {
@@ -449,16 +549,23 @@ function dedupeEntries(entries) {
     const existingDate = existing.lastModified ? new Date(existing.lastModified).getTime() : 0;
     const currentDate = current.lastModified ? new Date(current.lastModified).getTime() : 0;
 
-    if (currentDate > existingDate) {
-      map.set(route, {
-        ...existing,
-        ...current,
-        priority: Math.max(existing.priority || 0, current.priority || 0.6),
-      });
-    }
+    const newest = currentDate > existingDate ? current : existing;
+
+    map.set(route, {
+      ...existing,
+      ...newest,
+      priority: Math.max(existing.priority || 0, current.priority || 0.6),
+      image: existing.image || current.image || null,
+      imageTitle: existing.imageTitle || current.imageTitle || null,
+    });
   }
 
   return [...map.values()].sort((a, b) => a.route.localeCompare(b.route, 'fr'));
+}
+
+function countByPrefix(entries, prefix) {
+  return entries.filter((entry) => entry.route === prefix || entry.route.startsWith(`${prefix}/`))
+    .length;
 }
 
 async function main() {
@@ -476,7 +583,7 @@ async function main() {
     staticRoutes
       .filter((route) => !route.startsWith('/blog/'))
       .filter((route) => !route.startsWith('/destinations/'))
-      .filter((route) => !route.startsWith('/partage/'))
+      .filter((route) => !route.startsWith('/itineraires-communaute/'))
       .map((route) => createEntry(route)),
   );
 
@@ -505,11 +612,10 @@ async function main() {
   );
 
   const allEntries = [...staticEntries, ...destinationEntries, ...blogEntries, ...communityEntries];
-
   const entries = dedupeEntries(allEntries);
 
   const payload = {
-    generatedAt: await getFileMTime(pageFile),
+    generatedAt: new Date().toISOString(),
     siteUrl: SITE_URL,
     counts: {
       static: staticEntries.length,
@@ -519,6 +625,11 @@ async function main() {
       totalBeforeDedupe: allEntries.length,
       total: entries.length,
       duplicatesRemoved: allEntries.length - entries.length,
+      withImages: entries.filter((entry) => Boolean(entry.image)).length,
+      withoutImages: entries.filter((entry) => !entry.image).length,
+      blogFinal: countByPrefix(entries, '/blog'),
+      destinationsFinal: countByPrefix(entries, '/destinations'),
+      communityFinal: countByPrefix(entries, '/itineraires-communaute'),
     },
     entries,
   };

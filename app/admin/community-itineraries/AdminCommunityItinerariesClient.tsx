@@ -115,7 +115,7 @@ export default function AdminCommunityItinerariesClient() {
       setBusyId(id);
       setStatusMsg(null);
 
-      const res = await fetch('/api/community-itineraries/approve', {
+      const res = await fetch('/api/itineraires-communaute/approve', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id }),
@@ -144,7 +144,7 @@ export default function AdminCommunityItinerariesClient() {
       setBusyId(id);
       setStatusMsg(null);
 
-      const res = await fetch('/api/community-itineraries/reject', {
+      const res = await fetch('/api/itineraires-communaute/reject', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id, validationNote }),

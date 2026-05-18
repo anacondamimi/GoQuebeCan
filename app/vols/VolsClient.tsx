@@ -30,7 +30,7 @@ export default function VolsClient() {
                 alt="French Bee – compagnie aérienne"
                 width={140}
                 height={40}
-                className="size-auto"
+                className="h-auto w-[140px]"
                 priority
               />
               <p className="mt-2 text-sm text-gray-600">

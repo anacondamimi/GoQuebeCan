@@ -327,7 +327,7 @@
       "summary": "Carleton : découvrez Chasse aux Trésors, Club nautique, avec des idées parfaites pour ados et amateurs de culture.",
       "image": "/images/destinations/carleton.avif",
       "links": [
-        "/blog/carleton",
+        "/blog/carleton-sur-mer",
         "/destinations/carleton",
         "/planificateur",
         "/producteurs",
@@ -889,65 +889,7 @@
         "Peux-tu me créer un itinéraire vers Les Meilleurs Accessoires pour le Camping au Québec en 2025 ?"
       ]
     },
-    {
-      "slug": "locationvrcomparatif",
-      "title": "Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream)",
-      "region": "Québec",
-      "summary": "Découvrez Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream), ses attraits touristiques, ses activités et ses hébergements incontournables.",
-      "image": "/images/default-destination.avif",
-      "activities": [],
-      "hotels": [],
-      "audiences": [
-        "couples"
-      ],
-      "keywords": [
-        "couples",
-        "Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream)",
-        "Québec"
-      ],
-      "links": [
-        "/blog/locationvrcomparatif",
-        "/destinations/locationvrcomparatif",
-        "/planificateur",
-        "/producteurs",
-        "/videos"
-      ],
-      "producers": [],
-      "suggestedQuestions": [
-        "Que faire à Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream) ?",
-        "Où dormir près de Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream) ?",
-        "Quels producteurs visiter près de Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream) ?",
-        "Peux-tu me créer un itinéraire vers Location de VR au Canada en 2025 — Le comparatif utile (Outdoorsy, RVezy, Authentik, Fraserway, CanaDream) ?"
-      ]
-    },
-    {
-      "slug": "locationvr",
-      "title": "Location VR",
-      "region": "Québec",
-      "summary": "Découvrez Location VR, ses attraits touristiques, ses activités et ses hébergements incontournables.",
-      "image": "/images/default-destination.avif",
-      "activities": [],
-      "hotels": [],
-      "audiences": [],
-      "keywords": [
-        "Location VR",
-        "Québec"
-      ],
-      "links": [
-        "/blog/locationvr",
-        "/destinations/locationvr",
-        "/planificateur",
-        "/producteurs",
-        "/videos"
-      ],
-      "producers": [],
-      "suggestedQuestions": [
-        "Que faire à Location VR ?",
-        "Où dormir près de Location VR ?",
-        "Quels producteurs visiter près de Location VR ?",
-        "Peux-tu me créer un itinéraire vers Location VR ?"
-      ]
-    },
+    
     {
       "slug": "magog-orford",
       "title": "Magog Orford",
@@ -1281,7 +1223,6 @@
       "image": "/images/destinations/parc-aquatique.avif",
       "links": [
         "/blog/parc-aquatique",
-        "/destinations/parc-aquatique",
         "/planificateur",
         "/producteurs",
         "/videos"
@@ -1605,30 +1546,7 @@
         "Peux-tu me créer un itinéraire vers Port Dover ?"
       ]
     },
-    {
-      "slug": "pourquoi-louer-un-vr-au-quebec-avec-authentik-canada",
-      "title": "Pourquoi Louer Un Vr Au Quebec Avec Authentik Canada",
-      "region": "Québec",
-      "summary": "",
-      "image": "/images/destinations/pourquoi-louer-un-vr-au-quebec-avec-authentik-canada.avif",
-      "links": [
-        "/blog/pourquoi-louer-un-vr-au-quebec-avec-authentik-canada",
-        "/destinations/pourquoi-louer-un-vr-au-quebec-avec-authentik-canada",
-        "/planificateur",
-        "/producteurs",
-        "/videos"
-      ],
-      "keywords": [
-        "Pourquoi Louer Un Vr Au Quebec Avec Authentik Canada"
-      ],
-      "producers": [],
-      "suggestedQuestions": [
-        "Que faire à Pourquoi Louer Un Vr Au Quebec Avec Authentik Canada ?",
-        "Où dormir près de Pourquoi Louer Un Vr Au Quebec Avec Authentik Canada ?",
-        "Quels producteurs visiter près de Pourquoi Louer Un Vr Au Quebec Avec Authentik Canada ?",
-        "Peux-tu me créer un itinéraire vers Pourquoi Louer Un Vr Au Quebec Avec Authentik Canada ?"
-      ]
-    },
+
     {
       "slug": "quebec",
       "title": "Quebec",

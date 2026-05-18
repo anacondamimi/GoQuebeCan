@@ -172,7 +172,7 @@ export default function ShareItineraryButton() {
     try {
       setSubmitting(true);
 
-      const response = await fetch('/api/community-itineraries/submit', {
+      const response = await fetch('/api/itineraires-communaute/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

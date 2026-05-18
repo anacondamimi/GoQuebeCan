@@ -750,9 +750,7 @@ Exemple : **"3 jours en famille au départ de Montréal"**.`,
           </div>
         )}
 
-        <div className="mt-3">
-          <ChatbotCTAButtons />
-        </div>
+        
       </div>
 
       <form onSubmit={handleSend} className="flex items-center gap-2 border-t p-3">

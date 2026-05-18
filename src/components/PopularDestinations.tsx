@@ -219,7 +219,7 @@ const regions: Region[] = [
         name: 'Sauble Beach',
         description: '11 km de sable blanc',
         image: '/images/destinations/sauble-beach.avif',
-        blogId: 'blog_article_sauble_beach',
+        blogId: 'blog/sauble-beach',
       },
       {
         name: 'Grand Bend',
