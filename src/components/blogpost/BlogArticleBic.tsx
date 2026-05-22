@@ -560,7 +560,6 @@ export default function BlogArticleBic() {
           </a>
         </div>
       </section>
-
     </DestinationArticleTemplate>
   );
 }

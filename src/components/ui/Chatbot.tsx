@@ -540,7 +540,6 @@ Vous voulez des vidéos pour une destination précise, ou juste pour trouver l�
         return;
       }
 
-
       if (isItineraryIntent(normText)) {
         setMessages((prev: Message[]) => [
           ...prev,
@@ -749,8 +748,6 @@ Exemple : **"3 jours en famille au départ de Montréal"**.`,
             </div>
           </div>
         )}
-
-        
       </div>
 
       <form onSubmit={handleSend} className="flex items-center gap-2 border-t p-3">

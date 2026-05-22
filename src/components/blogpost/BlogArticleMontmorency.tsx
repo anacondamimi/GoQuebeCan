@@ -10,16 +10,7 @@ import { pickHotels } from '@/data/hotels/hotelCatalog.generated';
 import { HOTEL_IDS_MONTMORENCY } from '@/data/hotels/byArticle/montmorency';
 import { bookingAwin } from '@/lib/awin';
 import { NearbyDestinations } from '@/components/blog/NearbyDestinations';
-import {
-  
-  Bus,
-  Calendar,
-
-  Star,
-  Trees,
-  Camera,
-  Map,
-} from 'lucide-react';
+import { Bus, Calendar, Star, Trees, Camera, Map } from 'lucide-react';
 
 export const metadata = {
   slug: 'montmorency',

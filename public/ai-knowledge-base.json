@@ -5,12 +5,7 @@
   "rules": {
     "tone": "Conseiller voyage chaleureux, clair, utile et orienté action.",
     "answerStyle": "Réponse courte d’abord, puis suggestions concrètes avec liens internes utiles.",
-    "preferredLinks": [
-      "/planificateur",
-      "/producteurs",
-      "/videos",
-      "/blog"
-    ],
+    "preferredLinks": ["/planificateur", "/producteurs", "/videos", "/blog"],
     "avoid": "Ne pas inventer de prix, horaires, disponibilités ou informations non présentes dans la base."
   },
   "counts": {
@@ -32,9 +27,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Anse Saint Jean"
-      ],
+      "keywords": ["Anse Saint Jean"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Anse Saint Jean ?",
@@ -51,17 +44,8 @@
       "image": "/images/default-destination.avif",
       "activities": [],
       "hotels": [],
-      "audiences": [
-        "amateurs de culture",
-        "aventuriers",
-        "couples"
-      ],
-      "keywords": [
-        "amateurs de culture",
-        "Anse Saint Jean",
-        "aventuriers",
-        "Québec"
-      ],
+      "audiences": ["amateurs de culture", "aventuriers", "couples"],
+      "keywords": ["amateurs de culture", "Anse Saint Jean", "aventuriers", "Québec"],
       "links": [
         "/blog/ansesaintjean",
         "/destinations/ansesaintjean",
@@ -90,9 +74,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Baie Saint Paul"
-      ],
+      "keywords": ["Baie Saint Paul"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Baie Saint Paul ?",
@@ -109,16 +91,8 @@
       "image": "/images/default-destination.avif",
       "activities": [],
       "hotels": [],
-      "audiences": [
-        "amateurs de culture",
-        "aventuriers"
-      ],
-      "keywords": [
-        "amateurs de culture",
-        "aventuriers",
-        "Baie Saint Paul",
-        "Québec"
-      ],
+      "audiences": ["amateurs de culture", "aventuriers"],
+      "keywords": ["amateurs de culture", "aventuriers", "Baie Saint Paul", "Québec"],
       "links": [
         "/blog/baiesaintpaul",
         "/destinations/baiesaintpaul",
@@ -140,16 +114,8 @@
       "region": "Québec",
       "summary": "",
       "image": "/images/destinations/banff.avif",
-      "links": [
-        "/blog/banff",
-        "/destinations/banff",
-        "/planificateur",
-        "/producteurs",
-        "/videos"
-      ],
-      "keywords": [
-        "Banff"
-      ],
+      "links": ["/blog/banff", "/destinations/banff", "/planificateur", "/producteurs", "/videos"],
+      "keywords": ["Banff"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Banff ?",
@@ -164,13 +130,7 @@
       "region": "Québec",
       "summary": "Bic : découvrez Centre de Découverte, Kayak Aventure, avec des idées parfaites pour ados et aventuriers.",
       "image": "/images/destinations/bic.avif",
-      "links": [
-        "/blog/bic",
-        "/destinations/bic",
-        "/planificateur",
-        "/producteurs",
-        "/videos"
-      ],
+      "links": ["/blog/bic", "/destinations/bic", "/planificateur", "/producteurs", "/videos"],
       "keywords": [
         "Bic",
         "ados",
@@ -192,11 +152,7 @@
         "Vélo de Montagne"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "aventuriers", "familles"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Bic ?",
@@ -218,9 +174,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Bromont Granby"
-      ],
+      "keywords": ["Bromont Granby"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Bromont Granby ?",
@@ -244,11 +198,7 @@
         "Zoo de Granby"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "aventuriers", "familles"],
       "keywords": [
         "ados",
         "Arbre en Arbre",
@@ -307,11 +257,7 @@
         "Via Ferrata Découverte"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "aventuriers", "familles"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Canyon ?",
@@ -354,12 +300,7 @@
         "Vélo de Montagne"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "amateurs de culture",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "amateurs de culture", "aventuriers", "familles"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Carleton ?",
@@ -389,13 +330,7 @@
         "Visite du Fort Chambly en famille"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "amateurs de culture",
-        "aventuriers",
-        "couples",
-        "familles"
-      ],
+      "audiences": ["ados", "amateurs de culture", "aventuriers", "couples", "familles"],
       "keywords": [
         "ados",
         "amateurs de culture",
@@ -433,9 +368,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Eeyou Istchee"
-      ],
+      "keywords": ["Eeyou Istchee"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Eeyou Istchee ?",
@@ -452,17 +385,8 @@
       "image": "/images/default-destination.avif",
       "activities": [],
       "hotels": [],
-      "audiences": [
-        "amateurs de culture",
-        "aventuriers",
-        "couples"
-      ],
-      "keywords": [
-        "amateurs de culture",
-        "aventuriers",
-        "Eeyou Istchee",
-        "Québec"
-      ],
+      "audiences": ["amateurs de culture", "aventuriers", "couples"],
+      "keywords": ["amateurs de culture", "aventuriers", "Eeyou Istchee", "Québec"],
       "links": [
         "/blog/eeyouistchee",
         "/destinations/eeyouistchee",
@@ -509,13 +433,7 @@
         "Road trip photo dans le parc"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "amateurs de culture",
-        "aventuriers",
-        "couples",
-        "familles"
-      ],
+      "audiences": ["ados", "amateurs de culture", "aventuriers", "couples", "familles"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Forillon ?",
@@ -537,19 +455,10 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Gaspesie",
-        "amateurs de culture",
-        "aventuriers",
-        "Gaspésie"
-      ],
+      "keywords": ["Gaspesie", "amateurs de culture", "aventuriers", "Gaspésie"],
       "activities": [],
       "hotels": [],
-      "audiences": [
-        "amateurs de culture",
-        "aventuriers",
-        "couples"
-      ],
+      "audiences": ["amateurs de culture", "aventuriers", "couples"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Gaspésie ?",
@@ -571,9 +480,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Grand Bend"
-      ],
+      "keywords": ["Grand Bend"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Grand Bend ?",
@@ -600,10 +507,7 @@
         "Plage Familiale"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "familles"
-      ],
+      "audiences": ["ados", "familles"],
       "keywords": [
         "ados",
         "École de Surf",
@@ -641,9 +545,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Hautes Gorges"
-      ],
+      "keywords": ["Hautes Gorges"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Hautes Gorges ?",
@@ -670,11 +572,7 @@
         "Via Ferrata de la Charlevoix"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "aventuriers", "familles"],
       "keywords": [
         "ados",
         "Atelier Junior Ranger",
@@ -712,9 +610,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Ile Orleans"
-      ],
+      "keywords": ["Ile Orleans"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Ile Orleans ?",
@@ -760,10 +656,7 @@
       "activities": [],
       "hotels": [],
       "audiences": [],
-      "keywords": [
-        "Indispensables pour Voyager en Avion en 2025",
-        "Québec"
-      ],
+      "keywords": ["Indispensables pour Voyager en Avion en 2025", "Québec"],
       "links": [
         "/blog/voyageavion",
         "/destinations/voyageavion",
@@ -813,12 +706,7 @@
         "Vélo sur la Route Verte"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "amateurs de culture",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "amateurs de culture", "aventuriers", "familles"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Kamouraska ?",
@@ -840,16 +728,10 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Kuururjuaq",
-        "amateurs de culture",
-        "Québec"
-      ],
+      "keywords": ["Kuururjuaq", "amateurs de culture", "Québec"],
       "activities": [],
       "hotels": [],
-      "audiences": [
-        "amateurs de culture"
-      ],
+      "audiences": ["amateurs de culture"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Kuururjuaq ?",
@@ -866,9 +748,7 @@
       "image": "/images/default-destination.avif",
       "activities": [],
       "hotels": [],
-      "audiences": [
-        "aventuriers"
-      ],
+      "audiences": ["aventuriers"],
       "keywords": [
         "aventuriers",
         "Les Meilleurs Accessoires pour le Camping au Québec en 2025",
@@ -889,7 +769,7 @@
         "Peux-tu me créer un itinéraire vers Les Meilleurs Accessoires pour le Camping au Québec en 2025 ?"
       ]
     },
-    
+
     {
       "slug": "magog-orford",
       "title": "Magog Orford",
@@ -903,9 +783,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Magog Orford"
-      ],
+      "keywords": ["Magog Orford"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Magog Orford ?",
@@ -929,11 +807,7 @@
         "Vélo de Montagne"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "aventuriers", "familles"],
       "keywords": [
         "ados",
         "aventuriers",
@@ -989,11 +863,7 @@
         "Snowpark"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "aventuriers", "familles"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Massif ?",
@@ -1015,9 +885,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Matane"
-      ],
+      "keywords": ["Matane"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Matane ?",
@@ -1039,16 +907,10 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Mingan",
-        "aventuriers",
-        "Québec"
-      ],
+      "keywords": ["Mingan", "aventuriers", "Québec"],
       "activities": [],
       "hotels": [],
-      "audiences": [
-        "aventuriers"
-      ],
+      "audiences": ["aventuriers"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Mingan ?",
@@ -1063,24 +925,11 @@
       "region": "Québec",
       "summary": "Découvrez Mini road trip à Lévis en famille (2025), ses attraits touristiques, ses activités et ses hébergements incontournables.",
       "image": "/images/destinations/levis.avif",
-      "links": [
-        "/blog/levis",
-        "/destinations/levis",
-        "/planificateur",
-        "/producteurs",
-        "/videos"
-      ],
-      "keywords": [
-        "Levis",
-        "aventuriers",
-        "Mini road trip à Lévis en famille (2025)",
-        "Québec"
-      ],
+      "links": ["/blog/levis", "/destinations/levis", "/planificateur", "/producteurs", "/videos"],
+      "keywords": ["Levis", "aventuriers", "Mini road trip à Lévis en famille (2025)", "Québec"],
       "activities": [],
       "hotels": [],
-      "audiences": [
-        "aventuriers"
-      ],
+      "audiences": ["aventuriers"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Mini road trip à Lévis en famille (2025) ?",
@@ -1123,12 +972,7 @@
         "Via ferrata"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "aventuriers",
-        "couples",
-        "familles"
-      ],
+      "audiences": ["ados", "aventuriers", "couples", "familles"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Montmorency ?",
@@ -1158,15 +1002,9 @@
         "Montréal et sa région",
         "Vieux-Montréal"
       ],
-      "activities": [
-        "Biodôme",
-        "Mont Royal",
-        "Vieux-Montréal"
-      ],
+      "activities": ["Biodôme", "Mont Royal", "Vieux-Montréal"],
       "hotels": [],
-      "audiences": [
-        "amateurs de culture"
-      ],
+      "audiences": ["amateurs de culture"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Montreal ?",
@@ -1187,10 +1025,7 @@
         "Vignobles et Cidreries"
       ],
       "hotels": [],
-      "audiences": [
-        "amateurs de culture",
-        "aventuriers"
-      ],
+      "audiences": ["amateurs de culture", "aventuriers"],
       "keywords": [
         "amateurs de culture",
         "aventuriers",
@@ -1221,15 +1056,8 @@
       "region": "Québec",
       "summary": "",
       "image": "/images/destinations/parc-aquatique.avif",
-      "links": [
-        "/blog/parc-aquatique",
-        "/planificateur",
-        "/producteurs",
-        "/videos"
-      ],
-      "keywords": [
-        "Parc Aquatique"
-      ],
+      "links": ["/blog/parc-aquatique", "/planificateur", "/producteurs", "/videos"],
+      "keywords": ["Parc Aquatique"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Parc Aquatique ?",
@@ -1246,9 +1074,7 @@
       "image": "/images/default-destination.avif",
       "activities": [],
       "hotels": [],
-      "audiences": [
-        "amateurs de culture"
-      ],
+      "audiences": ["amateurs de culture"],
       "keywords": [
         "amateurs de culture",
         "Parcs aquatiques préférés des familles (Québec & Ontario)",
@@ -1275,23 +1101,11 @@
       "region": "Gaspésie",
       "summary": "Découvrez Perce, ses attraits touristiques, ses activités et ses hébergements incontournables.",
       "image": "/images/destinations/perce.avif",
-      "links": [
-        "/blog/perce",
-        "/destinations/perce",
-        "/planificateur",
-        "/producteurs",
-        "/videos"
-      ],
-      "keywords": [
-        "Perce",
-        "amateurs de culture",
-        "Gaspésie"
-      ],
+      "links": ["/blog/perce", "/destinations/perce", "/planificateur", "/producteurs", "/videos"],
+      "keywords": ["Perce", "amateurs de culture", "Gaspésie"],
       "activities": [],
       "hotels": [],
-      "audiences": [
-        "amateurs de culture"
-      ],
+      "audiences": ["amateurs de culture"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Perce ?",
@@ -1313,17 +1127,9 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Sandbanks",
-        "Plage de Sandbanks",
-        "Québec"
-      ],
+      "keywords": ["Sandbanks", "Plage de Sandbanks", "Québec"],
       "activities": [],
-      "hotels": [
-        "Newsroom Suites",
-        "The Birch",
-        "The Village Suites"
-      ],
+      "hotels": ["Newsroom Suites", "The Birch", "The Village Suites"],
       "audiences": [],
       "producers": [],
       "suggestedQuestions": [
@@ -1346,9 +1152,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Port Au Persil"
-      ],
+      "keywords": ["Port Au Persil"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Port Au Persil ?",
@@ -1375,11 +1179,7 @@
         "Vélo de Montagne"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "aventuriers", "familles"],
       "keywords": [
         "ados",
         "aventuriers",
@@ -1417,9 +1217,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Port Cartier"
-      ],
+      "keywords": ["Port Cartier"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Port Cartier ?",
@@ -1446,12 +1244,7 @@
         "Vélo de Montagne"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "amateurs de culture",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "amateurs de culture", "aventuriers", "familles"],
       "keywords": [
         "ados",
         "amateurs de culture",
@@ -1489,9 +1282,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Port Dover"
-      ],
+      "keywords": ["Port Dover"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Port Dover ?",
@@ -1517,11 +1308,7 @@
         "Tyrolienne"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "amateurs de culture",
-        "familles"
-      ],
+      "audiences": ["ados", "amateurs de culture", "familles"],
       "keywords": [
         "ados",
         "amateurs de culture",
@@ -1560,18 +1347,10 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Quebec",
-        "amateurs de culture",
-        "aventuriers",
-        "Ville de Québec"
-      ],
+      "keywords": ["Quebec", "amateurs de culture", "aventuriers", "Ville de Québec"],
       "activities": [],
       "hotels": [],
-      "audiences": [
-        "amateurs de culture",
-        "aventuriers"
-      ],
+      "audiences": ["amateurs de culture", "aventuriers"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Quebec ?",
@@ -1593,9 +1372,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Riviere Du Loup"
-      ],
+      "keywords": ["Riviere Du Loup"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Riviere Du Loup ?",
@@ -1621,12 +1398,7 @@
         "Vélo sur la Route Verte"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "amateurs de culture",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "amateurs de culture", "aventuriers", "familles"],
       "keywords": [
         "ados",
         "amateurs de culture",
@@ -1659,16 +1431,8 @@
       "image": "/images/default-destination.avif",
       "activities": [],
       "hotels": [],
-      "audiences": [
-        "amateurs de culture",
-        "aventuriers"
-      ],
-      "keywords": [
-        "amateurs de culture",
-        "aventuriers",
-        "Road Trip Quebec",
-        "Ville de Québec"
-      ],
+      "audiences": ["amateurs de culture", "aventuriers"],
+      "keywords": ["amateurs de culture", "aventuriers", "Road Trip Quebec", "Ville de Québec"],
       "links": [
         "/blog/roadtripquebec",
         "/destinations/roadtripquebec",
@@ -1718,11 +1482,7 @@
         "Vélo le long du Richelieu"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "aventuriers", "familles"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Sabrevois ?",
@@ -1753,10 +1513,7 @@
       ],
       "activities": [],
       "hotels": [],
-      "audiences": [
-        "amateurs de culture",
-        "aventuriers"
-      ],
+      "audiences": ["amateurs de culture", "aventuriers"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Saguenay (Chicoutimi, Jonquière, La Baie) — le pour des vacances inoubliables ?",
@@ -1778,9 +1535,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Sauble Beach"
-      ],
+      "keywords": ["Sauble Beach"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Sauble Beach ?",
@@ -1807,11 +1562,7 @@
         "Zone Familiale de la Plage"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "aventuriers", "familles"],
       "keywords": [
         "ados",
         "aventuriers",
@@ -1849,9 +1600,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Sept Iles"
-      ],
+      "keywords": ["Sept Iles"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Sept Iles ?",
@@ -1878,12 +1627,7 @@
         "Vieux-Quai"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "amateurs de culture",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "amateurs de culture", "aventuriers", "familles"],
       "keywords": [
         "ados",
         "amateurs de culture",
@@ -1939,12 +1683,7 @@
         "Vélo de Montagne"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "amateurs de culture",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "amateurs de culture", "aventuriers", "familles"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Sherbrooke ?",
@@ -1966,9 +1705,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Singing Sands"
-      ],
+      "keywords": ["Singing Sands"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Singing Sands ?",
@@ -1995,11 +1732,7 @@
         "Singing Sands Beach"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "aventuriers", "familles"],
       "keywords": [
         "ados",
         "aventuriers",
@@ -2037,18 +1770,10 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Tadoussac",
-        "aventuriers",
-        "Côte-Nord",
-        "couples"
-      ],
+      "keywords": ["Tadoussac", "aventuriers", "Côte-Nord", "couples"],
       "activities": [],
       "hotels": [],
-      "audiences": [
-        "aventuriers",
-        "couples"
-      ],
+      "audiences": ["aventuriers", "couples"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Tadoussac ?",
@@ -2066,10 +1791,7 @@
       "activities": [],
       "hotels": [],
       "audiences": [],
-      "keywords": [
-        "Québec",
-        "Voyage Voiture"
-      ],
+      "keywords": ["Québec", "Voyage Voiture"],
       "links": [
         "/blog/voyagevoiture",
         "/destinations/voyagevoiture",
@@ -2098,9 +1820,7 @@
         "/producteurs",
         "/videos"
       ],
-      "keywords": [
-        "Wasaga Beach"
-      ],
+      "keywords": ["Wasaga Beach"],
       "producers": [],
       "suggestedQuestions": [
         "Que faire à Wasaga Beach ?",
@@ -2127,12 +1847,7 @@
         "Wasaga Beach Provincial Park"
       ],
       "hotels": [],
-      "audiences": [
-        "ados",
-        "amateurs de culture",
-        "aventuriers",
-        "familles"
-      ],
+      "audiences": ["ados", "amateurs de culture", "aventuriers", "familles"],
       "keywords": [
         "ados",
         "amateurs de culture",

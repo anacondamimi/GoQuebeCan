@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import Image from 'next/image';
 import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star } from 'lucide-react';
@@ -133,233 +131,233 @@ export default function BlogArticleRiviereduLoup() {
       title="Rivière-du-Loup - Porte d'entrée du Bas-Saint-Laurent"
     >
       <article id="blog_article_riviere_du_loup" className="mx-auto max-w-4xl bg-white px-4 py-12">
-      <header className="mb-12 text-center">
-        <p className="text-xl text-gray-600">
-          Découvrez cette ville historique où le fleuve Saint-Laurent rencontre la nature sauvage
-        </p>
-      </header>
+        <header className="mb-12 text-center">
+          <p className="text-xl text-gray-600">
+            Découvrez cette ville historique où le fleuve Saint-Laurent rencontre la nature sauvage
+          </p>
+        </header>
 
-      <section className="prose mb-12 lg:prose-xl">
-        <p>
-          Située stratégiquement sur la rive sud du Saint-Laurent, Rivière-du-Loup est une ville
-          dynamique qui combine patrimoine historique, attractions naturelles et activités
-          maritimes. Point de départ idéal pour l'observation des baleines et porte d'entrée vers
-          les Maritimes, elle offre une expérience authentique du Bas-Saint-Laurent.
-        </p>
-        <div className="my-8">
-          <Image
-            src="/images/destinations/chute-riviere-du-loup.avif"
-            alt="Rivière-du-Loup"
-            width={1200}
-            height={500}
-            className="w-full rounded-lg object-cover shadow-lg"
-          />
-        </div>
-      </section>
+        <section className="prose mb-12 lg:prose-xl">
+          <p>
+            Située stratégiquement sur la rive sud du Saint-Laurent, Rivière-du-Loup est une ville
+            dynamique qui combine patrimoine historique, attractions naturelles et activités
+            maritimes. Point de départ idéal pour l'observation des baleines et porte d'entrée vers
+            les Maritimes, elle offre une expérience authentique du Bas-Saint-Laurent.
+          </p>
+          <div className="my-8">
+            <Image
+              src="/images/destinations/chute-riviere-du-loup.avif"
+              alt="Rivière-du-Loup"
+              width={1200}
+              height={500}
+              className="w-full rounded-lg object-cover shadow-lg"
+            />
+          </div>
+        </section>
 
-      <section className="mb-16">
-        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
-          <Star className="size-8 text-indigo-600" />
-          Pourquoi Visiter Rivière-du-Loup ?
-        </H2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="rounded-lg bg-white p-6 shadow-md">
-            <H3 className="mb-3 text-xl font-semibold">Observation des Baleines</H3>
-            <p className="text-gray-600">
-              L'un des meilleurs endroits au Québec pour observer les baleines dans leur habitat
-              naturel.
-            </p>
+        <section className="mb-16">
+          <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+            <Star className="size-8 text-indigo-600" />
+            Pourquoi Visiter Rivière-du-Loup ?
+          </H2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="rounded-lg bg-white p-6 shadow-md">
+              <H3 className="mb-3 text-xl font-semibold">Observation des Baleines</H3>
+              <p className="text-gray-600">
+                L'un des meilleurs endroits au Québec pour observer les baleines dans leur habitat
+                naturel.
+              </p>
+            </div>
+            <div className="rounded-lg bg-white p-6 shadow-md">
+              <H3 className="mb-3 text-xl font-semibold">Patrimoine Historique</H3>
+              <p className="text-gray-600">
+                Architecture victorienne et sites historiques bien préservés.
+              </p>
+            </div>
+            <div className="rounded-lg bg-white p-6 shadow-md">
+              <H3 className="mb-3 text-xl font-semibold">Nature Accessible</H3>
+              <p className="text-gray-600">
+                Parcs, sentiers et activités de plein air à proximité du centre-ville.
+              </p>
+            </div>
           </div>
-          <div className="rounded-lg bg-white p-6 shadow-md">
-            <H3 className="mb-3 text-xl font-semibold">Patrimoine Historique</H3>
-            <p className="text-gray-600">
-              Architecture victorienne et sites historiques bien préservés.
-            </p>
-          </div>
-          <div className="rounded-lg bg-white p-6 shadow-md">
-            <H3 className="mb-3 text-xl font-semibold">Nature Accessible</H3>
-            <p className="text-gray-600">
-              Parcs, sentiers et activités de plein air à proximité du centre-ville.
-            </p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="mb-16">
-        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
-          Activités et Attractions
-        </H2>
-        <div className="space-y-8">
-          {activities.map((activity) => (
-            <div key={activity.name} className="overflow-hidden rounded-lg bg-white shadow-md">
-              <div className="p-6">
-                <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.name}</H3>
-                <p className="mb-4 text-gray-600">{activity.description}</p>
-                <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-                  <span>Type: {activity.type}</span>
-                  <span>Durée: {activity.duration}</span>
-                  <span>Prix: {activity.price}</span>
+        <section className="mb-16">
+          <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+            Activités et Attractions
+          </H2>
+          <div className="space-y-8">
+            {activities.map((activity) => (
+              <div key={activity.name} className="overflow-hidden rounded-lg bg-white shadow-md">
+                <div className="p-6">
+                  <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.name}</H3>
+                  <p className="mb-4 text-gray-600">{activity.description}</p>
+                  <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+                    <span>Type: {activity.type}</span>
+                    <span>Durée: {activity.duration}</span>
+                    <span>Prix: {activity.price}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
 
-      <section className="mb-16">
-        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
-          <Star className="size-8 text-indigo-600" />
-          Activités pour Enfants
-        </H2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {familyActivities.map((activity) => (
-            <div key={activity.title} className="rounded-lg bg-white p-6 shadow-md">
-              <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.title}</H3>
-              <p className="mb-2 text-gray-600">{activity.description}</p>
-              <p className="font-medium text-indigo-600">{activity.price}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
-          <Star className="size-8 text-indigo-600" />
-          Activités pour Adolescents
-        </H2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {teenActivities.map((activity) => (
-            <div key={activity.title} className="rounded-lg bg-white p-6 shadow-md">
-              <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.title}</H3>
-              <p className="mb-2 text-gray-600">{activity.description}</p>
-              <div className="mt-4 flex flex-col gap-1">
+        <section className="mb-16">
+          <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+            <Star className="size-8 text-indigo-600" />
+            Activités pour Enfants
+          </H2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {familyActivities.map((activity) => (
+              <div key={activity.title} className="rounded-lg bg-white p-6 shadow-md">
+                <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.title}</H3>
+                <p className="mb-2 text-gray-600">{activity.description}</p>
                 <p className="font-medium text-indigo-600">{activity.price}</p>
-                <p className="text-sm text-gray-500">Durée: {activity.duration}</p>
               </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-16">
+          <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+            <Star className="size-8 text-indigo-600" />
+            Activités pour Adolescents
+          </H2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {teenActivities.map((activity) => (
+              <div key={activity.title} className="rounded-lg bg-white p-6 shadow-md">
+                <H3 className="mb-2 text-xl font-semibold text-gray-900">{activity.title}</H3>
+                <p className="mb-2 text-gray-600">{activity.description}</p>
+                <div className="mt-4 flex flex-col gap-1">
+                  <p className="font-medium text-indigo-600">{activity.price}</p>
+                  <p className="text-sm text-gray-500">Durée: {activity.duration}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-16">
+          <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+            <Hotel className="size-8 text-indigo-600" />
+            Où Dormir ?
+          </H2>
+          {/* MIGRATED_HOTELS_GRID */}
+          <HotelGrid items={hotels} />
+        </section>
+
+        <section className="mb-16">
+          <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+            <Utensils className="size-8 text-indigo-600" />
+            Où Manger ?
+          </H2>
+          <RestaurantPremiumGrid items={restaurants} />
+        </section>
+
+        <section className="mb-16">
+          <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+            <Bus className="size-8 text-indigo-600" />
+            Comment s'y Rendre ?
+          </H2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="rounded-lg bg-white p-6 shadow-md">
+              <H3 className="mb-4 text-xl font-semibold">Depuis les Grandes Villes</H3>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2">
+                  <span className="size-2 rounded-full bg-indigo-600" />
+                  4h30 en voiture depuis Montréal
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="size-2 rounded-full bg-indigo-600" />
+                  2h en voiture depuis Québec
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="size-2 rounded-full bg-indigo-600" />
+                  Bus Orléans Express quotidien
+                </li>
+              </ul>
             </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
-          <Hotel className="size-8 text-indigo-600" />
-          Où Dormir ?
-        </H2>
-        {/* MIGRATED_HOTELS_GRID */}
-<HotelGrid items={hotels} />
-      </section>
-
-      <section className="mb-16">
-        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
-          <Utensils className="size-8 text-indigo-600" />
-          Où Manger ?
-        </H2>
-        <RestaurantPremiumGrid items={restaurants} />
-      </section>
-
-      <section className="mb-16">
-        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
-          <Bus className="size-8 text-indigo-600" />
-          Comment s'y Rendre ?
-        </H2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="rounded-lg bg-white p-6 shadow-md">
-            <H3 className="mb-4 text-xl font-semibold">Depuis les Grandes Villes</H3>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-indigo-600" />
-                4h30 en voiture depuis Montréal
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-indigo-600" />
-                2h en voiture depuis Québec
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-indigo-600" />
-                Bus Orléans Express quotidien
-              </li>
-            </ul>
+            <div className="rounded-lg bg-white p-6 shadow-md">
+              <H3 className="mb-4 text-xl font-semibold">Sur Place</H3>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2">
+                  <span className="size-2 rounded-full bg-indigo-600" />
+                  Centre-ville accessible à pied
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="size-2 rounded-full bg-indigo-600" />
+                  Location de vélos disponible
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="size-2 rounded-full bg-indigo-600" />
+                  Taxi pour les excursions
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className="rounded-lg bg-white p-6 shadow-md">
-            <H3 className="mb-4 text-xl font-semibold">Sur Place</H3>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-indigo-600" />
-                Centre-ville accessible à pied
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-indigo-600" />
-                Location de vélos disponible
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-indigo-600" />
-                Taxi pour les excursions
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="mb-16">
-        <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
-          <Calendar className="size-8 text-indigo-600" />
-          Conseils Pratiques
-        </H2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="rounded-lg bg-white p-6 shadow-md">
-            <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
-              <Calendar className="size-5 text-indigo-600" />
-              Meilleure Période
-            </H3>
-            <p className="text-gray-600">
-              De juin à septembre pour les croisières aux baleines et activités extérieures.
-            </p>
+        <section className="mb-16">
+          <H2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-gray-900">
+            <Calendar className="size-8 text-indigo-600" />
+            Conseils Pratiques
+          </H2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="rounded-lg bg-white p-6 shadow-md">
+              <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
+                <Calendar className="size-5 text-indigo-600" />
+                Meilleure Période
+              </H3>
+              <p className="text-gray-600">
+                De juin à septembre pour les croisières aux baleines et activités extérieures.
+              </p>
+            </div>
+            <div className="rounded-lg bg-white p-6 shadow-md">
+              <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
+                <DollarSign className="size-5 text-indigo-600" />
+                Budget
+              </H3>
+              <p className="text-gray-600">
+                Hébergement: 129-169$/nuit Activités: 25-79$/jour Repas: 15-50$/personne
+              </p>
+            </div>
+            <div className="rounded-lg bg-white p-6 shadow-md">
+              <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
+                <Shield className="size-5 text-indigo-600" />À Noter
+              </H3>
+              <p className="text-gray-600">
+                Réservation conseillée pour les croisières en haute saison. Prévoir des vêtements
+                chauds même l'été.
+              </p>
+            </div>
           </div>
-          <div className="rounded-lg bg-white p-6 shadow-md">
-            <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
-              <DollarSign className="size-5 text-indigo-600" />
-              Budget
-            </H3>
-            <p className="text-gray-600">
-              Hébergement: 129-169$/nuit Activités: 25-79$/jour Repas: 15-50$/personne
-            </p>
-          </div>
-          <div className="rounded-lg bg-white p-6 shadow-md">
-            <H3 className="mb-3 flex items-center gap-2 text-xl font-semibold">
-              <Shield className="size-5 text-indigo-600" />À Noter
-            </H3>
-            <p className="text-gray-600">
-              Réservation conseillée pour les croisières en haute saison. Prévoir des vêtements
-              chauds même l'été.
-            </p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="rounded-lg bg-gray-50 p-8 text-center">
-        <H2 className="mb-4 text-2xl font-bold text-gray-900">
-          Prêt à Découvrir Rivière-du-Loup ?
-        </H2>
-        <p className="mb-6 text-gray-600">
-          Réservez votre séjour maintenant et profitez de cette destination unique
-        </p>
-        <div className="flex justify-center gap-4">
-          <a
-            href={bookingAwin('https://www.booking.com/city/ca/riviere-du-loup.html')}
-            className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
-          >
-            Réserver un Hébergement
-          </a>
-          <a
-            href="https://www.croisieresaml.com/"
-            className="rounded-lg border border-indigo-600 bg-white px-6 py-3 text-indigo-600 transition-colors hover:bg-indigo-50"
-          >
-            Réserver une Croisière
-          </a>
-        </div>
-      </section>
-    </article>
+        <section className="rounded-lg bg-gray-50 p-8 text-center">
+          <H2 className="mb-4 text-2xl font-bold text-gray-900">
+            Prêt à Découvrir Rivière-du-Loup ?
+          </H2>
+          <p className="mb-6 text-gray-600">
+            Réservez votre séjour maintenant et profitez de cette destination unique
+          </p>
+          <div className="flex justify-center gap-4">
+            <a
+              href={bookingAwin('https://www.booking.com/city/ca/riviere-du-loup.html')}
+              className="rounded-lg bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700"
+            >
+              Réserver un Hébergement
+            </a>
+            <a
+              href="https://www.croisieresaml.com/"
+              className="rounded-lg border border-indigo-600 bg-white px-6 py-3 text-indigo-600 transition-colors hover:bg-indigo-50"
+            >
+              Réserver une Croisière
+            </a>
+          </div>
+        </section>
+      </article>
     </DestinationArticleTemplate>
   );
 }

@@ -19,27 +19,21 @@
     "ok": false,
     "finalUrl": "",
     "error": "fetch failed",
-    "files": [
-      "src\\components\\blogpost\\BlogArticleBaieSaintPaul.tsx"
-    ]
+    "files": ["src\\components\\blogpost\\BlogArticleBaieSaintPaul.tsx"]
   },
   {
     "url": "https://www.goquebecan.com/images/destinations/gaspe.avif",
     "status": 404,
     "ok": false,
     "finalUrl": "https://www.goquebecan.com/images/destinations/gaspe.avif",
-    "files": [
-      "src\\components\\blogpost\\BlogArticlePerce.tsx"
-    ]
+    "files": ["src\\components\\blogpost\\BlogArticlePerce.tsx"]
   },
   {
     "url": "https://www.goquebecan.com/images/destinations/bonaventure.avif",
     "status": 404,
     "ok": false,
     "finalUrl": "https://www.goquebecan.com/images/destinations/bonaventure.avif",
-    "files": [
-      "src\\components\\blogpost\\BlogArticlePerce.tsx"
-    ]
+    "files": ["src\\components\\blogpost\\BlogArticlePerce.tsx"]
   },
   {
     "url": "https://frenchbeefr.pxf.io/c/6175749/2240413/25450",
@@ -47,198 +41,154 @@
     "ok": false,
     "finalUrl": "",
     "error": "fetch failed",
-    "files": [
-      "src\\components\\FrenchBeeBanner.tsx"
-    ]
+    "files": ["src\\components\\FrenchBeeBanner.tsx"]
   },
   {
     "url": "https://www.googletagmanager.com",
     "status": 404,
     "ok": false,
     "finalUrl": "https://www.googletagmanager.com/",
-    "files": [
-      "src\\components\\seo\\HeadExtrasGlobal.tsx"
-    ]
+    "files": ["src\\components\\seo\\HeadExtrasGlobal.tsx"]
   },
   {
     "url": "https://www.goquebecan.com/images/hotel/gan-65w.avif",
     "status": 404,
     "ok": false,
     "finalUrl": "https://www.goquebecan.com/images/hotel/gan-65w.avif",
-    "files": [
-      "src\\components\\TravelContentKit.tsx"
-    ]
+    "files": ["src\\components\\TravelContentKit.tsx"]
   },
   {
     "url": "https://images.unsplash.com/photo-1583865288305-5e474e19542f?auto=format&fit=crop&q=80",
     "status": 404,
     "ok": false,
     "finalUrl": "https://images.unsplash.com/photo-1583865288305-5e474e19542f?auto=format&fit=crop&q=80",
-    "files": [
-      "src\\components\\TravelGuide.tsx"
-    ]
+    "files": ["src\\components\\TravelGuide.tsx"]
   },
   {
     "url": "https://www.goquebecan.com/images/image.avif",
     "status": 404,
     "ok": false,
     "finalUrl": "https://www.goquebecan.com/images/image.avif",
-    "files": [
-      "src\\data\\destinationsData.ts"
-    ]
+    "files": ["src\\data\\destinationsData.ts"]
   },
   {
     "url": "https://www.expedia.ca/fr/Lambton-Shores-Hotels-Colonial-Hotel-Suites.h71648848.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918347&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=149&top_cur=CAD&userIntent=&selectedRoomType=324828646&selectedRatePlan=395949071&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366",
     "status": 429,
     "ok": false,
     "finalUrl": "https://www.expedia.ca/fr/Lambton-Shores-Hotels-Colonial-Hotel-Suites.h71648848.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918347&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=149&top_cur=CAD&userIntent=&selectedRoomType=324828646&selectedRatePlan=395949071&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.generated.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.generated.ts"]
   },
   {
     "url": "https://www.expedia.ca/fr/Central-Huron-Hotels-Dreamz-Inn.h8274788.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918267&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=167&top_cur=CAD&userIntent=&selectedRoomType=200693312&selectedRatePlan=203441088&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366",
     "status": 429,
     "ok": false,
     "finalUrl": "https://www.expedia.ca/fr/Central-Huron-Hotels-Dreamz-Inn.h8274788.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918267&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=167&top_cur=CAD&userIntent=&selectedRoomType=200693312&selectedRatePlan=203441088&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.generated.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.generated.ts"]
   },
   {
     "url": "https://www.expedia.ca/fr/Ashfield-Colborne-Wawanosh-Hotels-Samuels-Boutique-Hotel.h10218772.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918227&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=215&top_cur=CAD&userIntent=&selectedRoomType=200932920&selectedRatePlan=274388838&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366",
     "status": 429,
     "ok": false,
     "finalUrl": "https://www.expedia.ca/fr/Ashfield-Colborne-Wawanosh-Hotels-Samuels-Boutique-Hotel.h10218772.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918227&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=215&top_cur=CAD&userIntent=&selectedRoomType=200932920&selectedRatePlan=274388838&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.generated.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.generated.ts"]
   },
   {
     "url": "https://www.villeport-cartier.com/tourisme/camping-municipal",
     "status": 404,
     "ok": false,
     "finalUrl": "https://villeport-cartier.com/tourisme/camping-municipal",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.generated.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.generated.ts"]
   },
   {
     "url": "https://www.expedia.ca/fr/Hamilton-Hotels-Clonmel-Castle.h16779270.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763712608571&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=3963&destination=Hamilton+%28et+environs%29%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.25658%2C-79.871643&sort=REVIEW_RELEVANT&top_dp=256&top_cur=CAD&userIntent=&selectedRoomType=320999539&selectedRatePlan=387763411&searchId=46083969-eb9c-49a9-aa69-043fb15b4980",
     "status": 429,
     "ok": false,
     "finalUrl": "https://www.expedia.ca/fr/Hamilton-Hotels-Clonmel-Castle.h16779270.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763712608571&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=3963&destination=Hamilton+%28et+environs%29%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.25658%2C-79.871643&sort=REVIEW_RELEVANT&top_dp=256&top_cur=CAD&userIntent=&selectedRoomType=320999539&selectedRatePlan=387763411&searchId=46083969-eb9c-49a9-aa69-043fb15b4980",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.generated.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.generated.ts"]
   },
   {
     "url": "https://www.expedia.ca/fr/London-Hotels-Luxury-Hayloft-Retreat-Close-To-Turkey-Point-And-Port-Dover.h114318594.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763712608492&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=3963&destination=Hamilton+%28et+environs%29%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.25658%2C-79.871643&sort=REVIEW_RELEVANT&top_dp=250&top_cur=CAD&userIntent=&selectedRoomType=114318594&selectedRatePlan=00007f5cec84d314467daefd4e180b230c9a&searchId=46083969-eb9c-49a9-aa69-043fb15b4980",
     "status": 429,
     "ok": false,
     "finalUrl": "https://www.expedia.ca/fr/London-Hotels-Luxury-Hayloft-Retreat-Close-To-Turkey-Point-And-Port-Dover.h114318594.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763712608492&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=3963&destination=Hamilton+%28et+environs%29%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.25658%2C-79.871643&sort=REVIEW_RELEVANT&top_dp=250&top_cur=CAD&userIntent=&selectedRoomType=114318594&selectedRatePlan=00007f5cec84d314467daefd4e180b230c9a&searchId=46083969-eb9c-49a9-aa69-043fb15b4980",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.generated.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.generated.ts"]
   },
   {
     "url": "https://www.expedia.ca/fr/Norfolk-County-Hotels-3-Bed-With-Large-Balcony-And-Private-Beach.h83723077.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763712608476&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=3963&destination=Hamilton+%28et+environs%29%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.25658%2C-79.871643&sort=REVIEW_RELEVANT&top_dp=164&top_cur=CAD&userIntent=&selectedRoomType=83723077&selectedRatePlan=000099a34ebd39224021b34362d73129b59f&searchId=46083969-eb9c-49a9-aa69-043fb15b4980",
     "status": 429,
     "ok": false,
     "finalUrl": "https://www.expedia.ca/fr/Norfolk-County-Hotels-3-Bed-With-Large-Balcony-And-Private-Beach.h83723077.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763712608476&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=3963&destination=Hamilton+%28et+environs%29%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.25658%2C-79.871643&sort=REVIEW_RELEVANT&top_dp=164&top_cur=CAD&userIntent=&selectedRoomType=83723077&selectedRatePlan=000099a34ebd39224021b34362d73129b59f&searchId=46083969-eb9c-49a9-aa69-043fb15b4980",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.generated.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.generated.ts"]
   },
   {
     "url": "https://www.expedia.ca/fr/Owen-Sound-Hotels-Paradise-Inn-On-The-Beach.h54295457.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918306&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=260&top_cur=CAD&userIntent=&selectedRoomType=314055824&selectedRatePlan=381539755&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366",
     "status": 429,
     "ok": false,
     "finalUrl": "https://www.expedia.ca/fr/Owen-Sound-Hotels-Paradise-Inn-On-The-Beach.h54295457.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918306&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=260&top_cur=CAD&userIntent=&selectedRoomType=314055824&selectedRatePlan=381539755&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.generated.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.generated.ts"]
   },
   {
     "url": "https://www.expedia.ca/fr/Owen-Sound-Hotels-Holiday-Inn-Express-Suites-Port-Elgin.h52866408.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918201&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=254&top_cur=CAD&userIntent=&selectedRoomType=233143560&selectedRatePlan=381089403&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366",
     "status": 429,
     "ok": false,
     "finalUrl": "https://www.expedia.ca/fr/Owen-Sound-Hotels-Holiday-Inn-Express-Suites-Port-Elgin.h52866408.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763710918201&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=MARKET&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=254&top_cur=CAD&userIntent=&selectedRoomType=233143560&selectedRatePlan=381089403&searchId=fac64ac8-42a6-40ab-a46b-35d8d7e4d366",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.generated.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.generated.ts"]
   },
   {
     "url": "https://www.expedia.ca/fr/South-Bruce-Peninsula-Hotels-The-Sands.h106853214.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763709635574&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=241&top_cur=CAD&userIntent=&selectedRoomType=326825590&selectedRatePlan=402936326&searchId=227769ba-4939-4a9e-90ba-897d97517b01",
     "status": 429,
     "ok": false,
     "finalUrl": "https://www.expedia.ca/fr/South-Bruce-Peninsula-Hotels-The-Sands.h106853214.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763709635574&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=241&top_cur=CAD&userIntent=&selectedRoomType=326825590&selectedRatePlan=402936326&searchId=227769ba-4939-4a9e-90ba-897d97517b01",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.generated.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.generated.ts"]
   },
   {
     "url": "https://www.expedia.ca/fr/Northern-Bruce-Peninsula-Hotels-Stone-Cove-Waterfront-Adults-Only-BB.h69567566.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763709635564&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=208&top_cur=CAD&userIntent=&selectedRoomType=322355851&selectedRatePlan=390870828&searchId=227769ba-4939-4a9e-90ba-897d97517b01",
     "status": 429,
     "ok": false,
     "finalUrl": "https://www.expedia.ca/fr/Northern-Bruce-Peninsula-Hotels-Stone-Cove-Waterfront-Adults-Only-BB.h69567566.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763709635564&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=208&top_cur=CAD&userIntent=&selectedRoomType=322355851&selectedRatePlan=390870828&searchId=227769ba-4939-4a9e-90ba-897d97517b01",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.generated.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.generated.ts"]
   },
   {
     "url": "https://www.expedia.ca/fr/Owen-Sound-Hotels-The-Inn-At-Cobble-Beach.h10988635.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763709635642&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=269&top_cur=CAD&userIntent=&selectedRoomType=201381901&selectedRatePlan=206817993&searchId=227769ba-4939-4a9e-90ba-897d97517b01",
     "status": 429,
     "ok": false,
     "finalUrl": "https://www.expedia.ca/fr/Owen-Sound-Hotels-The-Inn-At-Cobble-Beach.h10988635.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763709635642&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=11178&destination=Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=43.653482%2C-79.383935&sort=REVIEW_RELEVANT&top_dp=269&top_cur=CAD&userIntent=&selectedRoomType=201381901&selectedRatePlan=206817993&searchId=227769ba-4939-4a9e-90ba-897d97517b01",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.generated.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.generated.ts"]
   },
   {
     "url": "https://www.expedia.ca/fr/Wasaga-Beach-Hotels-SAGA-RESORT.h17405117.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763713351541&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=181914&destination=Wasaga+Beach%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=44.520741%2C-80.016067&sort=REVIEW_RELEVANT&top_dp=120&top_cur=CAD&userIntent=&selectedRoomType=201838547&selectedRatePlan=400296313&searchId=527dc4aa-81cc-404f-a4c7-9516c75cd205",
     "status": 429,
     "ok": false,
     "finalUrl": "https://www.expedia.ca/fr/Wasaga-Beach-Hotels-SAGA-RESORT.h17405117.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763713351541&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=181914&destination=Wasaga+Beach%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=44.520741%2C-80.016067&sort=REVIEW_RELEVANT&top_dp=120&top_cur=CAD&userIntent=&selectedRoomType=201838547&selectedRatePlan=400296313&searchId=527dc4aa-81cc-404f-a4c7-9516c75cd205",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.generated.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.generated.ts"]
   },
   {
     "url": "https://www.expedia.ca/fr/Wasaga-Beach-Hotels-Hidden-Gem.h94741293.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763713561441&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=181914&destination=Wasaga+Beach%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=44.520741%2C-80.016067&sort=REVIEW_RELEVANT&top_dp=340&top_cur=CAD&userIntent=&selectedRoomType=94741293&selectedRatePlan=00009ac40984a33c4dc49c8c118db165efd7&searchId=adb0bdb1-4661-49b9-8edf-ea8f29e81d85",
     "status": 429,
     "ok": false,
     "finalUrl": "https://www.expedia.ca/fr/Wasaga-Beach-Hotels-Hidden-Gem.h94741293.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763713561441&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=181914&destination=Wasaga+Beach%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=44.520741%2C-80.016067&sort=REVIEW_RELEVANT&top_dp=340&top_cur=CAD&userIntent=&selectedRoomType=94741293&selectedRatePlan=00009ac40984a33c4dc49c8c118db165efd7&searchId=adb0bdb1-4661-49b9-8edf-ea8f29e81d85",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.generated.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.generated.ts"]
   },
   {
     "url": "https://www.expedia.ca/fr/Barrie-Orillia-Hotels-SANDPIPER-BEACH-RESORT-Cottage-10.h38854991.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763713561429&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=181914&destination=Wasaga+Beach%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=44.520741%2C-80.016067&sort=REVIEW_RELEVANT&top_dp=375&top_cur=CAD&userIntent=&selectedRoomType=38854991&selectedRatePlan=0000b518e7a24aeb4c6d970c57cb3170df8c&searchId=adb0bdb1-4661-49b9-8edf-ea8f29e81d85",
     "status": 429,
     "ok": false,
     "finalUrl": "https://www.expedia.ca/fr/Barrie-Orillia-Hotels-SANDPIPER-BEACH-RESORT-Cottage-10.h38854991.Description-Hotel?chkin=2026-04-14&chkout=2026-04-15&x_pwa=1&rfrr=HSR&pwa_ts=1763713561429&referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jYS9Ib3RlbC1TZWFyY2g%3D&useRewards=false&rm1=a2&regionId=181914&destination=Wasaga+Beach%2C+Ontario%2C+Canada&destType=BOUNDING_BOX&latLong=44.520741%2C-80.016067&sort=REVIEW_RELEVANT&top_dp=375&top_cur=CAD&userIntent=&selectedRoomType=38854991&selectedRatePlan=0000b518e7a24aeb4c6d970c57cb3170df8c&searchId=adb0bdb1-4661-49b9-8edf-ea8f29e81d85",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.generated.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.generated.ts"]
   },
   {
     "url": "https://www.goquebecan.com/images/destinations/hotels/hotel-mirage.avif",
     "status": 404,
     "ok": false,
     "finalUrl": "https://www.goquebecan.com/images/destinations/hotels/hotel-mirage.avif",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.ts"]
   },
   {
     "url": "https://www.goquebecan.com/images/destinations/hotels/hotel-trois-soeurs.avif",
     "status": 404,
     "ok": false,
     "finalUrl": "https://www.goquebecan.com/images/destinations/hotels/hotel-trois-soeurs.avif",
-    "files": [
-      "src\\data\\hotels\\hotelCatalog.ts"
-    ]
+    "files": ["src\\data\\hotels\\hotelCatalog.ts"]
   },
   {
     "url": "https://anamimizen.com",
@@ -246,8 +196,6 @@
     "ok": false,
     "finalUrl": "",
     "error": "fetch failed",
-    "files": [
-      "src\\data\\offers-data.ts"
-    ]
+    "files": ["src\\data\\offers-data.ts"]
   }
 ]

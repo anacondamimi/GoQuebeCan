@@ -3,27 +3,21 @@
     "file": "BlogArticleAnseSaintJean.tsx",
     "slug": "anse-saint-jean",
     "status": "skipped",
-    "reasons": [
-      "byArticle introuvable: anse-saint-jean.ts"
-    ],
+    "reasons": ["byArticle introuvable: anse-saint-jean.ts"],
     "steps": []
   },
   {
     "file": "BlogArticleBaieSaintPaul.tsx",
     "slug": "baie-saint-paul",
     "status": "skipped",
-    "reasons": [
-      "byArticle introuvable: baie-saint-paul.ts"
-    ],
+    "reasons": ["byArticle introuvable: baie-saint-paul.ts"],
     "steps": []
   },
   {
     "file": "BlogArticleBic.tsx",
     "slug": "bic",
     "status": "skipped",
-    "reasons": [
-      "classification=deja_migre"
-    ],
+    "reasons": ["classification=deja_migre"],
     "steps": []
   },
   {
@@ -69,18 +63,14 @@
     "file": "BlogArticleChambly.tsx",
     "slug": "chambly",
     "status": "skipped",
-    "reasons": [
-      "classification=deja_migre"
-    ],
+    "reasons": ["classification=deja_migre"],
     "steps": []
   },
   {
     "file": "BlogArticleEeyouIstchee.tsx",
     "slug": "eeyou-istchee",
     "status": "skipped",
-    "reasons": [
-      "byArticle introuvable: eeyou-istchee.ts"
-    ],
+    "reasons": ["byArticle introuvable: eeyou-istchee.ts"],
     "steps": []
   },
   {
@@ -100,9 +90,7 @@
     "file": "BlogArticleGaspesie.tsx",
     "slug": "gaspesie",
     "status": "skipped",
-    "reasons": [
-      "byArticle introuvable: gaspesie.ts"
-    ],
+    "reasons": ["byArticle introuvable: gaspesie.ts"],
     "steps": []
   },
   {
@@ -148,36 +136,28 @@
     "file": "BlogArticleKuururjuaq.tsx",
     "slug": "kuururjuaq",
     "status": "skipped",
-    "reasons": [
-      "byArticle introuvable: kuururjuaq.ts"
-    ],
+    "reasons": ["byArticle introuvable: kuururjuaq.ts"],
     "steps": []
   },
   {
     "file": "BlogArticleLevis.tsx",
     "slug": "levis",
     "status": "skipped",
-    "reasons": [
-      "byArticle introuvable: levis.ts"
-    ],
+    "reasons": ["byArticle introuvable: levis.ts"],
     "steps": []
   },
   {
     "file": "BlogArticleLocationVR.tsx",
     "slug": "location-v-r",
     "status": "skipped",
-    "reasons": [
-      "byArticle introuvable: location-v-r.ts"
-    ],
+    "reasons": ["byArticle introuvable: location-v-r.ts"],
     "steps": []
   },
   {
     "file": "BlogArticleLocationVRComparatif.tsx",
     "slug": "location-v-r-comparatif",
     "status": "skipped",
-    "reasons": [
-      "byArticle introuvable: location-v-r-comparatif.ts"
-    ],
+    "reasons": ["byArticle introuvable: location-v-r-comparatif.ts"],
     "steps": []
   },
   {
@@ -262,18 +242,14 @@
     "file": "BlogArticleParcAquatique.tsx",
     "slug": "parc-aquatique",
     "status": "skipped",
-    "reasons": [
-      "byArticle introuvable: parc-aquatique.ts"
-    ],
+    "reasons": ["byArticle introuvable: parc-aquatique.ts"],
     "steps": []
   },
   {
     "file": "BlogArticlePerce.tsx",
     "slug": "perce",
     "status": "skipped",
-    "reasons": [
-      "pas de const hotels = [...] détecté"
-    ],
+    "reasons": ["pas de const hotels = [...] détecté"],
     "steps": []
   },
   {
@@ -319,12 +295,8 @@
     "file": "BlogArticleQuebec.tsx",
     "slug": "quebec",
     "status": "skipped",
-    "reasons": [
-      "remplacement du const hotels impossible"
-    ],
-    "steps": [
-      "imports ajoutés avant metadata"
-    ]
+    "reasons": ["remplacement du const hotels impossible"],
+    "steps": ["imports ajoutés avant metadata"]
   },
   {
     "file": "BlogArticleRiviereduLoup.tsx",
@@ -343,9 +315,7 @@
     "file": "BlogArticleRoadTripQuebec.tsx",
     "slug": "road-trip-quebec",
     "status": "skipped",
-    "reasons": [
-      "byArticle introuvable: road-trip-quebec.ts"
-    ],
+    "reasons": ["byArticle introuvable: road-trip-quebec.ts"],
     "steps": []
   },
   {
@@ -365,18 +335,14 @@
     "file": "BlogArticleSaguenay.tsx",
     "slug": "saguenay",
     "status": "skipped",
-    "reasons": [
-      "byArticle introuvable: saguenay.ts"
-    ],
+    "reasons": ["byArticle introuvable: saguenay.ts"],
     "steps": []
   },
   {
     "file": "BlogArticleSandbanks.tsx",
     "slug": "sandbanks",
     "status": "skipped",
-    "reasons": [
-      "pas de const hotels = [...] détecté"
-    ],
+    "reasons": ["pas de const hotels = [...] détecté"],
     "steps": []
   },
   {
@@ -448,36 +414,28 @@
     "file": "BlogArticleVoyageAvion.tsx",
     "slug": "voyage-avion",
     "status": "skipped",
-    "reasons": [
-      "byArticle introuvable: voyage-avion.ts"
-    ],
+    "reasons": ["byArticle introuvable: voyage-avion.ts"],
     "steps": []
   },
   {
     "file": "BlogArticleVoyageCamping.tsx",
     "slug": "voyage-camping",
     "status": "skipped",
-    "reasons": [
-      "byArticle introuvable: voyage-camping.ts"
-    ],
+    "reasons": ["byArticle introuvable: voyage-camping.ts"],
     "steps": []
   },
   {
     "file": "BlogArticleVoyageHotel.tsx",
     "slug": "voyage-hotel",
     "status": "skipped",
-    "reasons": [
-      "byArticle introuvable: voyage-hotel.ts"
-    ],
+    "reasons": ["byArticle introuvable: voyage-hotel.ts"],
     "steps": []
   },
   {
     "file": "BlogArticleVoyageVoiture.tsx",
     "slug": "voyage-voiture",
     "status": "skipped",
-    "reasons": [
-      "byArticle introuvable: voyage-voiture.ts"
-    ],
+    "reasons": ["byArticle introuvable: voyage-voiture.ts"],
     "steps": []
   },
   {

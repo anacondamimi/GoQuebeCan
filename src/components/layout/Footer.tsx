@@ -58,6 +58,7 @@ const footerLinks: FooterLinkGroup[] = [
     title: 'Infos',
     links: [
       { label: 'Notre mission', href: '/notre-mission' },
+      { label: 'Devenir partenaire', href: '/devenir-partenaire' },
       { label: 'Contact', href: '/contact' },
       { label: 'Confidentialité', href: '/confidentialite' },
       { label: 'Mentions légales', href: '/mentions-legales' },

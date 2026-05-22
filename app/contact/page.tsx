@@ -1,13 +1,39 @@
 'use client';
 
-import React, { useCallback, useState } from 'react';
-import { saveContact, type ContactForm } from '@/components/lib/saveContact';
-import H1 from '@/components/typography/H1';
+import React, { useCallback, useMemo, useState } from 'react';
+import Link from 'next/link';
+import { Handshake, Mail, MapPinned, Send, Sparkles, Wheat, Route } from 'lucide-react';
 
-type UiContactForm = ContactForm & {
-  honey?: string; // honeypot anti-bot (champ caché)
-  token?: string; // reCAPTCHA v3 (si tu l’actives plus tard)
+import { saveContact, type ContactForm } from '@/components/lib/saveContact';
+import BrandName from '@/components/brand/BrandName';
+import H1 from '@/components/typography/H1';
+import H2 from '@/components/typography/H2';
+
+type ContactType = ContactForm['type'] | 'partenaire';
+
+type UiContactForm = Omit<ContactForm, 'type'> & {
+  type: ContactType;
+  honey?: string;
+  token?: string;
 };
+
+const contactCards = [
+  {
+    title: 'Partenariat long terme',
+    text: 'Producteurs, hébergements, offices touristiques ou entreprises locales : construisons une collaboration sérieuse.',
+    icon: Handshake,
+  },
+  {
+    title: 'Producteurs locaux',
+    text: 'Ajoutez votre activité au réseau GoQuébeCAN et donnez envie aux voyageurs de faire un arrêt chez vous.',
+    icon: Wheat,
+  },
+  {
+    title: 'Itinéraires de voyage',
+    text: 'Partagez vos idées de road trip, vos coups de cœur et vos expériences au Québec.',
+    icon: Route,
+  },
+];
 
 export default function ContactPage() {
   const [form, setForm] = useState<UiContactForm>({
@@ -18,28 +44,99 @@ export default function ContactPage() {
     honey: '',
     token: '',
   });
+
   const [confirmation, setConfirmation] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Helper type-safe pour maj d’un champ
   const setField = useCallback(<K extends keyof UiContactForm>(key: K, value: UiContactForm[K]) => {
     setForm((prev) => ({ ...prev, [key]: value }));
   }, []);
 
+  const contextualMessage = useMemo(() => {
+    if (form.type === 'partenaire') {
+      return {
+        icon: '🤝',
+        title: 'Vous souhaitez devenir partenaire ?',
+        text: 'Présentez votre entreprise, votre région, votre site web et le type de collaboration souhaité. Nous privilégions les partenariats sérieux, humains et durables.',
+        className: 'border-emerald-300 bg-emerald-50 text-emerald-800',
+      };
+    }
+
+    if (form.type === 'itineraire') {
+      return {
+        icon: '🧭',
+        title: 'Vous souhaitez partager un itinéraire ?',
+        text: 'Décrivez votre parcours, la région, la durée et les points forts. Si vous avez un PDF, vous pourrez aussi l’envoyer à contact@goquebecan.com.',
+        className: 'border-yellow-300 bg-yellow-50 text-yellow-800',
+      };
+    }
+
+    if (form.type === 'producteur') {
+      return {
+        icon: '🏞️',
+        title: 'Vous êtes un producteur local ?',
+        text: 'Présentez votre activité, votre localisation, vos produits et ce qui rend votre lieu intéressant pour les voyageurs.',
+        className: 'border-blue-300 bg-blue-50 text-blue-800',
+      };
+    }
+
+    return {
+      icon: '📩',
+      title: 'Une question ou une suggestion ?',
+      text: 'Écrivez-nous simplement. GoQuebeCan est en développement constant pour mieux aider les voyageurs à découvrir le Québec.',
+      className: 'border-indigo-200 bg-indigo-50 text-indigo-800',
+    };
+  }, [form.type]);
+
+  const messagePlaceholder = useMemo(() => {
+    if (form.type === 'partenaire') {
+      return 'Présentez votre entreprise, votre région, votre site web, vos objectifs et le type de partenariat souhaité.';
+    }
+
+    if (form.type === 'itineraire') {
+      return 'Décrivez brièvement votre itinéraire : région, durée, étapes, thèmes, conseils, etc.';
+    }
+
+    if (form.type === 'producteur') {
+      return 'Décrivez votre activité : type de production, localisation, saison, site web, photos disponibles, etc.';
+    }
+
+    return 'Votre message';
+  }, [form.type]);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
+
     if (isSubmitting) return;
+
+    if (form.honey) {
+      setConfirmation('Votre message a bien été envoyé.');
+      return;
+    }
+
     setIsSubmitting(true);
     setConfirmation('');
 
     try {
-      // On n’envoie au backend QUE les champs du ContactForm
       const { nom, email, message, type } = form;
-      const result = await saveContact({ nom, email, message, type });
+
+      const result = await saveContact({
+        nom,
+        email,
+        message,
+        type: type as ContactForm['type'],
+      });
 
       if (result.success) {
         setConfirmation('✅ Merci ! Votre message a bien été envoyé.');
-        setForm({ nom: '', email: '', message: '', type: 'contact', honey: '', token: '' });
+        setForm({
+          nom: '',
+          email: '',
+          message: '',
+          type: 'contact',
+          honey: '',
+          token: '',
+        });
       } else {
         setConfirmation(result.error ?? "❌ Une erreur s'est produite. Merci de réessayer.");
       }
@@ -51,127 +148,187 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-20">
-      <div className="w-full max-w-xl rounded-lg border bg-white p-8 text-center shadow-lg">
-        <H1 className="mb-4 text-3xl font-bold text-indigo-700">📬 Contact</H1>
+    <main className="min-h-screen bg-background">
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:py-24">
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
+          <div className="lg:col-span-6">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+              <Sparkles size={16} />
+              Contact & partenariats
+            </div>
 
-        <p className="mb-6 text-gray-600">
-          Vous êtes producteur local, voyageur, ou souhaitez partager un itinéraire ? Remplissez ce
-          formulaire, nous vous répondrons rapidement.
-        </p>
+            <H1>Contactez GoQuébeCAN</H1>
 
-        {/* Messages contextuels */}
-        {form.type === 'itineraire' && (
-          <div className="mb-4 rounded border border-yellow-400 bg-yellow-100 p-3 text-left text-sm text-yellow-700">
-            🧭 <strong>Vous souhaitez partager un itinéraire ?</strong>
-            <br />
-            Merci de remplir ce formulaire puis d’envoyer votre PDF à :{' '}
-            <span className="font-medium text-indigo-700">contact@goquebecan.com</span>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral">
+              Une question, une proposition, un itinéraire à partager ou une envie de devenir
+              partenaire ? <BrandName /> souhaite créer des liens durables avec les voyageurs, les
+              producteurs locaux et les acteurs touristiques du Québec.
+            </p>
+
+            <div className="mt-6 flex items-center gap-3 rounded-3xl border border-gray-200 bg-white p-5 shadow-card">
+              <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <MapPinned size={22} />
+              </div>
+              <div>
+                <p className="font-semibold text-secondary">
+                  Une plateforme pensée pour le Québec authentique
+                </p>
+                <p className="mt-1 text-sm text-neutral">
+                  Régions, producteurs locaux, road trips, expériences humaines et tourisme durable.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {contactCards.map((card) => {
+                const Icon = card.icon;
+
+                return (
+                  <article
+                    key={card.title}
+                    className="rounded-3xl border border-gray-200 bg-white p-5 shadow-sm"
+                  >
+                    <div className="mb-4 flex size-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <Icon size={20} />
+                    </div>
+                    <h2 className="text-sm font-bold text-secondary">{card.title}</h2>
+                    <p className="mt-2 text-sm leading-relaxed text-neutral">{card.text}</p>
+                  </article>
+                );
+              })}
+            </div>
           </div>
-        )}
 
-        {form.type === 'producteur' && (
-          <div className="mb-4 rounded border border-blue-400 bg-blue-50 p-3 text-left text-sm text-blue-700">
-            🏞️ <strong>Vous êtes un producteur local ?</strong>
-            <br />
-            Envoyez une ou plusieurs photos de votre ferme à :{' '}
-            <span className="font-medium text-indigo-700">contact@goquebecan.com</span>
+          <div className="lg:col-span-6">
+            <div className="rounded-4xl border border-gray-200 bg-white p-6 shadow-card md:p-8">
+              <div className="mb-6">
+                <BrandName className="text-xl" />
+                <H2 className="mt-4">Écrivez-nous</H2>
+                <p className="mt-3 text-sm leading-relaxed text-neutral">
+                  Sélectionnez le type de demande afin que votre message soit mieux orienté.
+                </p>
+              </div>
+
+              <div
+                className={`mb-5 rounded-2xl border p-4 text-left text-sm ${contextualMessage.className}`}
+              >
+                <p className="font-semibold">
+                  {contextualMessage.icon} {contextualMessage.title}
+                </p>
+                <p className="mt-1 leading-relaxed">{contextualMessage.text}</p>
+              </div>
+
+              <form
+                onSubmit={(e) => {
+                  void handleSubmit(e);
+                }}
+                className="space-y-4"
+              >
+                <input
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden"
+                  aria-hidden="true"
+                  name="website"
+                  value={form.honey}
+                  onChange={(e) => setField('honey', e.target.value)}
+                />
+
+                <label className="block">
+                  <span className="mb-1 block text-sm font-semibold text-secondary">
+                    Type de demande
+                  </span>
+                  <select
+                    name="type"
+                    value={form.type}
+                    onChange={(e) => setField('type', e.target.value as ContactType)}
+                    className="w-full rounded-2xl border border-gray-300 bg-white p-3 text-sm text-neutral outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  >
+                    <option value="contact">📩 Contacter l’équipe</option>
+                    <option value="partenaire">🤝 Devenir partenaire</option>
+                    <option value="producteur">🏞️ Je suis un producteur local</option>
+                    <option value="itineraire">🧭 Partager un itinéraire de voyage</option>
+                  </select>
+                </label>
+
+                <label className="block">
+                  <span className="mb-1 block text-sm font-semibold text-secondary">Votre nom</span>
+                  <input
+                    type="text"
+                    name="nom"
+                    placeholder="Votre nom"
+                    value={form.nom}
+                    onChange={(e) => setField('nom', e.target.value)}
+                    required
+                    autoComplete="name"
+                    className="w-full rounded-2xl border border-gray-300 p-3 text-sm text-neutral outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  />
+                </label>
+
+                <label className="block">
+                  <span className="mb-1 block text-sm font-semibold text-secondary">
+                    Votre adresse email
+                  </span>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="votre@email.com"
+                    value={form.email}
+                    onChange={(e) => setField('email', e.target.value)}
+                    required
+                    autoComplete="email"
+                    inputMode="email"
+                    className="w-full rounded-2xl border border-gray-300 p-3 text-sm text-neutral outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  />
+                </label>
+
+                <label className="block">
+                  <span className="mb-1 block text-sm font-semibold text-secondary">
+                    Votre message
+                  </span>
+                  <textarea
+                    name="message"
+                    placeholder={messagePlaceholder}
+                    value={form.message}
+                    onChange={(e) => setField('message', e.target.value)}
+                    required
+                    rows={6}
+                    className="w-full resize-none rounded-2xl border border-gray-300 p-3 text-sm text-neutral outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  />
+                </label>
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  <Send size={16} />
+                  {isSubmitting ? 'Envoi en cours…' : 'Envoyer le message'}
+                </button>
+
+                <p className="min-h-5 text-center text-sm font-medium" aria-live="polite">
+                  {confirmation}
+                </p>
+              </form>
+
+              <div className="mt-6 rounded-2xl bg-primary/5 p-4 text-sm text-neutral">
+                <p>
+                  Pour mieux comprendre l’esprit de la plateforme, vous pouvez aussi visiter la page{' '}
+                  <Link href="/devenir-partenaire" className="font-semibold text-primary underline">
+                    Devenir partenaire
+                  </Link>
+                  .
+                </p>
+              </div>
+
+              <div className="mt-4 flex items-center gap-2 text-sm text-neutral">
+                <Mail size={16} className="text-primary" />
+                <span>contact@goquebecan.com</span>
+              </div>
+            </div>
           </div>
-        )}
-
-        <form
-          onSubmit={(e) => {
-            void handleSubmit(e);
-          }}
-          className="space-y-4 text-left"
-        >
-          {/* Honeypot invisible (anti-bot) */}
-          <input
-            tabIndex={-1}
-            autoComplete="off"
-            className="hidden"
-            aria-hidden="true"
-            name="website"
-            value={form.honey}
-            onChange={(e) => setField('honey', e.target.value)}
-          />
-
-          <label className="block">
-            <span className="sr-only">Type de message</span>
-            <select
-              name="type"
-              value={form.type}
-              onChange={(e) => setField('type', e.target.value as UiContactForm['type'])}
-              className="w-full rounded border border-gray-300 p-2"
-            >
-              <option value="contact">📩 Contacter l'équipe</option>
-              <option value="producteur">🏞️ Je suis un producteur local</option>
-              <option value="itineraire">🧭 Partager un itinéraire de voyage</option>
-            </select>
-          </label>
-
-          <label className="block">
-            <span className="sr-only">Votre nom</span>
-            <input
-              type="text"
-              name="nom"
-              placeholder="Votre nom"
-              value={form.nom}
-              onChange={(e) => setField('nom', e.target.value)}
-              required
-              autoComplete="name"
-              className="w-full rounded border border-gray-300 p-2"
-            />
-          </label>
-
-          <label className="block">
-            <span className="sr-only">Votre adresse email</span>
-            <input
-              type="email"
-              name="email"
-              placeholder="Votre adresse email"
-              value={form.email}
-              onChange={(e) => setField('email', e.target.value)}
-              required
-              autoComplete="email"
-              inputMode="email"
-              className="w-full rounded border border-gray-300 p-2"
-            />
-          </label>
-
-          <label className="block">
-            <span className="sr-only">Votre message</span>
-            <textarea
-              name="message"
-              placeholder={
-                form.type === 'itineraire'
-                  ? 'Décrivez brièvement votre itinéraire : région, durée, thèmes, etc.'
-                  : form.type === 'producteur'
-                    ? 'Décrivez votre activité (type de production, localisation, etc.)'
-                    : 'Votre message'
-              }
-              value={form.message}
-              onChange={(e) => setField('message', e.target.value)}
-              required
-              rows={4}
-              className="w-full rounded border border-gray-300 p-2"
-            />
-          </label>
-
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full rounded bg-indigo-600 py-2 text-white hover:bg-indigo-700 disabled:opacity-60"
-          >
-            {isSubmitting ? 'Envoi…' : 'Envoyer'}
-          </button>
-
-          {/* annonce visuelle & screen readers */}
-          <p className="mt-2 min-h-5 text-sm" aria-live="polite">
-            {confirmation}
-          </p>
-        </form>
-      </div>
+        </div>
+      </section>
     </main>
   );
 }

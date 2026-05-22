@@ -169,7 +169,7 @@ function main() {
   const alreadyMigrated = results.filter((r) => r.alreadyTemplate);
 
   console.log('\n=== AUDIT DESTINATION ARTICLE TEMPLATE ===\n');
-console.log(`Articles exclus de la migration : ${excluded.length}`);
+  console.log(`Articles exclus de la migration : ${excluded.length}`);
   console.log(`Total articles BlogArticle*.tsx : ${results.length}`);
   console.log(`Articles déjà migrés : ${alreadyMigrated.length}`);
   console.log(`Articles sans DestinationArticleTemplate : ${notMigrated.length}`);
@@ -183,12 +183,12 @@ console.log(`Articles exclus de la migration : ${excluded.length}`);
   for (const item of notMigrated) {
     console.log(`  - ${item.fileName} | slug: ${item.slug} | title: ${item.title}`);
   }
-if (excluded.length) {
-  console.log('\n🚫 Articles exclus volontairement :');
-  for (const item of excluded) {
-    console.log(`  - ${item.fileName}`);
+  if (excluded.length) {
+    console.log('\n🚫 Articles exclus volontairement :');
+    for (const item of excluded) {
+      console.log(`  - ${item.fileName}`);
+    }
   }
-}
   if (!SHOULD_FIX) {
     console.log('\nℹ️ Audit seulement. Pour tenter une migration automatique :');
     console.log('node scripts/auditAndMigrateDestinationTemplate.mjs --fix');

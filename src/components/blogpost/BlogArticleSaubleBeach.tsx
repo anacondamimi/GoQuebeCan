@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import Image from 'next/image';
 import { Hotel, Utensils, Bus, Calendar, DollarSign, Shield, Star, Sun } from 'lucide-react';

@@ -98,7 +98,7 @@ export default function Navbar() {
         <div className="flex h-16 w-full items-center justify-between">
           {/* Logo */}
           <Link href="/" aria-label="Accueil" className="shrink-0">
-            <div className="relative h-12 w-12">
+            <div className="relative size-12">
               <Image
                 src="/logo2.avif"
                 alt="Logo GoQuébeCan"

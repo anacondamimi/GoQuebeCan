@@ -31,7 +31,9 @@ const hotels: HotelInfo[] = [
       'Studios et appartements confortables à Wellington, note globale 9,1 avec situation géographique 9,6. Parfait pour une base tranquille après une journée de plage.',
     price: 'Dès ~148 $ + taxes/nuit',
     image: '/images/destinations/hotels/the-village-sandbank.avif',
-    bookingUrl: bookingAwin('https://www.booking.com/hotel/ca/the-village-suites.fr.html?aid=304142'),
+    bookingUrl: bookingAwin(
+      'https://www.booking.com/hotel/ca/the-village-suites.fr.html?aid=304142',
+    ),
   },
   {
     name: 'The Birch',
@@ -39,7 +41,9 @@ const hotels: HotelInfo[] = [
       'Bungalow complet en bord de l’eau, note 9,1 “Fabuleux” avec situation 9,7. Idéal pour une ambiance chalet, avec un vrai sentiment de vacances.',
     price: 'Dès ~270 $ + taxes/nuit',
     image: '/images/destinations/hotels/the-birch-sandbank.avif',
-    bookingUrl: bookingAwin('https://www.booking.com/hotel/ca/twin-birch-suites-b-amp-b-cottages.fr.html?aid=304142'),
+    bookingUrl: bookingAwin(
+      'https://www.booking.com/hotel/ca/twin-birch-suites-b-amp-b-cottages.fr.html?aid=304142',
+    ),
   },
 ];
 
@@ -49,40 +53,40 @@ function HotelRow({ hotel }: { hotel: HotelInfo }) {
   return (
     <DestinationArticleTemplate
       slug="sandbanks"
-      title="Plage de Sandbanks : l&apos;évasion parfaite pour les familles québécoises"
+      title="Plage de Sandbanks : l'évasion parfaite pour les familles québécoises"
     >
       <li className="group flex items-center gap-4 rounded-lg py-3 transition hover:bg-gray-50 hover:shadow-sm">
-      <Link
-        href={hotel.bookingUrl}
-        target={hotel.bookingUrl.startsWith('http') ? '_blank' : undefined}
-        rel={hotel.bookingUrl.startsWith('http') ? 'noopener noreferrer sponsored' : undefined}
-        className="flex w-full items-center gap-4"
-      >
-        <div className="relative h-20 w-28 shrink-0 overflow-hidden rounded-lg ring-1 ring-gray-200 md:h-24 md:w-32">
-          <Image
-            src={src}
-            alt={`Hébergement près de Sandbanks : ${hotel.name}`}
-            fill
-            className="object-cover object-center transition group-hover:scale-[1.03]"
-            sizes="(max-width: 768px) 120px, 160px"
-          />
-        </div>
-
-        <div className="min-w-0 flex-1">
-          <p className="line-clamp-2 font-semibold leading-tight text-gray-900">{hotel.name}</p>
-          <p className="mt-0.5 text-sm text-gray-700">{hotel.description}</p>
-        </div>
-
-        <div className="w-36 shrink-0 text-right">
-          <div className="font-semibold text-indigo-800 group-hover:text-indigo-900">
-            {hotel.price}
+        <Link
+          href={hotel.bookingUrl}
+          target={hotel.bookingUrl.startsWith('http') ? '_blank' : undefined}
+          rel={hotel.bookingUrl.startsWith('http') ? 'noopener noreferrer sponsored' : undefined}
+          className="flex w-full items-center gap-4"
+        >
+          <div className="relative h-20 w-28 shrink-0 overflow-hidden rounded-lg ring-1 ring-gray-200 md:h-24 md:w-32">
+            <Image
+              src={src}
+              alt={`Hébergement près de Sandbanks : ${hotel.name}`}
+              fill
+              className="object-cover object-center transition group-hover:scale-[1.03]"
+              sizes="(max-width: 768px) 120px, 160px"
+            />
           </div>
-          <div className="text-xs text-indigo-700 underline-offset-2 group-hover:underline">
-            Voir les disponibilités ↗
+
+          <div className="min-w-0 flex-1">
+            <p className="line-clamp-2 font-semibold leading-tight text-gray-900">{hotel.name}</p>
+            <p className="mt-0.5 text-sm text-gray-700">{hotel.description}</p>
           </div>
-        </div>
-      </Link>
-    </li>
+
+          <div className="w-36 shrink-0 text-right">
+            <div className="font-semibold text-indigo-800 group-hover:text-indigo-900">
+              {hotel.price}
+            </div>
+            <div className="text-xs text-indigo-700 underline-offset-2 group-hover:underline">
+              Voir les disponibilités ↗
+            </div>
+          </div>
+        </Link>
+      </li>
     </DestinationArticleTemplate>
   );
 }

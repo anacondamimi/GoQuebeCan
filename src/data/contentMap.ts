@@ -205,5 +205,4 @@ export const contentMap = {
     objects: '/objets',
     planner: '/planificateur',
   },
- 
 };

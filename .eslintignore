@@ -52,6 +52,7 @@ tsconfig.tsbuildinfo
 Thumbs.db
 
 # 🧩 Dossiers spéciaux
+src/generated/**
 playground/
 tests/e2e/
 tests/unit/

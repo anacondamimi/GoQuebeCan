@@ -87,61 +87,60 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
 
- async redirects() {
-  return [
-    // 🔹 Canonical domain (très important SEO)
+  async redirects() {
+    return [
+      // 🔹 Canonical domain (très important SEO)
 
+      // 🔹 Redirections SEO internes
+      {
+        source: '/vr',
+        destination: '/blog/location-vr',
+        permanent: true,
+      },
 
-    // 🔹 Redirections SEO internes
-    {
-      source: '/vr',
-      destination: '/blog/location-vr',
-      permanent: true,
-    },
-    
-    {
-      source: '/carte-interactive',
-      destination: '/planificateur',
-      permanent: true,
-    },
+      {
+        source: '/carte-interactive',
+        destination: '/planificateur',
+        permanent: true,
+      },
 
-    // 🔹 Anciennes routes → nouvelles
-    {
-      source: '/voyage/hotel',
-      destination: '/blog/voyage-hotel',
-      permanent: true,
-    },
-    {
-      source: '/voyage/avion',
-      destination: '/blog/voyage-avion',
-      permanent: true,
-    },
-    {
-      source: '/voyage/voiture-electrique',
-      destination: '/blog/voyage-voiture',
-      permanent: true,
-    },
+      // 🔹 Anciennes routes → nouvelles
+      {
+        source: '/voyage/hotel',
+        destination: '/blog/voyage-hotel',
+        permanent: true,
+      },
+      {
+        source: '/voyage/avion',
+        destination: '/blog/voyage-avion',
+        permanent: true,
+      },
+      {
+        source: '/voyage/voiture-electrique',
+        destination: '/blog/voyage-voiture',
+        permanent: true,
+      },
 
-    // 🔹 Contenu SEO
-    {
-      source: '/objets-indispensables/camping',
-      destination: '/blog/voyage-camping',
-      permanent: true,
-    },
+      // 🔹 Contenu SEO
+      {
+        source: '/objets-indispensables/camping',
+        destination: '/blog/voyage-camping',
+        permanent: true,
+      },
 
-    // 🔹 Blog erreurs détectées
-    {
-      source: '/blog/gaspe',
-      destination: '/blog/gaspesie',
-      permanent: true,
-    },
-    {
-      source: '/blog/parc-national-forillon',
-      destination: '/blog/forillon',
-      permanent: true,
-    },
-  ];
-},
+      // 🔹 Blog erreurs détectées
+      {
+        source: '/blog/gaspe',
+        destination: '/blog/gaspesie',
+        permanent: true,
+      },
+      {
+        source: '/blog/parc-national-forillon',
+        destination: '/blog/forillon',
+        permanent: true,
+      },
+    ];
+  },
 
   async headers() {
     return [

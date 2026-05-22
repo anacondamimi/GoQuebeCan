@@ -65,25 +65,25 @@ function stopServer(child) {
 (async () => {
   const alreadyRunning = await isPortBusy(PORT);
 
-if (alreadyRunning) {
-  console.log(`⚠️ Port ${PORT} déjà utilisé`);
-  console.log('➡️ Utilisation du serveur existant...');
-} else {
-  console.log('🚀 Démarrage du serveur Next.js...');
-}
+  if (alreadyRunning) {
+    console.log(`⚠️ Port ${PORT} déjà utilisé`);
+    console.log('➡️ Utilisation du serveur existant...');
+  } else {
+    console.log('🚀 Démarrage du serveur Next.js...');
+  }
   console.log(`🌐 URL testée : ${BASE_URL}`);
-async function isPortBusy(port) {
-  return new Promise((resolve) => {
-    const tester = http
-      .createServer()
-      .once('error', () => resolve(true))
-      .once('listening', () => {
-        tester.close();
-        resolve(false);
-      })
-      .listen(port);
-  });
-}
+  async function isPortBusy(port) {
+    return new Promise((resolve) => {
+      const tester = http
+        .createServer()
+        .once('error', () => resolve(true))
+        .once('listening', () => {
+          tester.close();
+          resolve(false);
+        })
+        .listen(port);
+    });
+  }
   const server = alreadyRunning
     ? null
     : spawn('pnpm', ['start'], {
@@ -94,33 +94,33 @@ async function isPortBusy(port) {
 
   try {
     await waitForServer(`${BASE_URL}/blog`);
-await new Promise((r) => setTimeout(r, 8000));
+    await new Promise((r) => setTimeout(r, 8000));
 
     console.log('🔍 Analyse des liens internes...');
 
     const result = await check({
-  path: BASE_URL,
-  recurse: true,
-  silent: false,
-  concurrency: 3,
-  timeout: 30_000,
-  retry: false,
-  maxDepth: 2,
-retryErrors: true,
-directoryListing: false,
+      path: BASE_URL,
+      recurse: true,
+      silent: false,
+      concurrency: 3,
+      timeout: 30_000,
+      retry: false,
+      maxDepth: 2,
+      retryErrors: true,
+      directoryListing: false,
       linksToSkip: [
         /^mailto:/i,
         /^tel:/i,
         /^javascript:/i,
         /\/_next\//i,
-         /^#/,
-/\.(avif|webp|jpg|jpeg|png|gif|svg|ico|css|js|map|json|pdf)$/i,
-/booking\.com/i,
-/awin1\.com/i,
-/youtube\.com/i,
-/google/i,
-/facebook/i,
-/instagram/i,
+        /^#/,
+        /\.(avif|webp|jpg|jpeg|png|gif|svg|ico|css|js|map|json|pdf)$/i,
+        /booking\.com/i,
+        /awin1\.com/i,
+        /youtube\.com/i,
+        /google/i,
+        /facebook/i,
+        /instagram/i,
       ],
     });
 

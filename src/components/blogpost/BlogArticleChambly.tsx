@@ -973,7 +973,6 @@ export default function BlogArticleChambly() {
           </a>
         </div>
       </section>
-
     </DestinationArticleTemplate>
   );
 }
