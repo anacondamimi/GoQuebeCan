@@ -1,34 +1,77 @@
 'use client';
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useMemo, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import ChatbotCTAButtons from '@/components/ChatbotCTAButtons';
-import { MessageSquare, X, Send } from 'lucide-react';
+import {
+  MessageSquare,
+  X,
+  Send,
+  MapPinned,
+  Users,
+  CalendarDays,
+  Route,
+  Wheat,
+  Sparkles,
+} from 'lucide-react';
 import { useSite, Message } from '@/components/contexts/SiteContext';
-import { getContentSuggestions } from '@/components/lib/getContentSuggestions';
-import { suggestNearbyProducers } from '@/utils/suggestNearbyProducers';
-import type { Suggestion } from '@/utils/suggestNearbyProducers';
-import type { Producer } from '@/types/Producer';
-
-import producersData from '@/data/producers.json';
 import { BLOG_SLUGS } from '@/data/blog-slugs';
 
-const producersList: Producer[] = producersData as Producer[];
+type AssistantIntent =
+  | 'idea'
+  | 'destination'
+  | 'hotel'
+  | 'article'
+  | 'videos'
+  | 'planner'
+  | 'producers'
+  | 'beginner'
+  | 'compare'
+  | 'roadtrip'
+  | 'general';
+
+type TravelerProfile = {
+  origin?: string;
+  destination?: string;
+  durationDays?: number;
+  dateText?: string;
+  season?: 'printemps' | 'ete' | 'automne' | 'hiver' | 'unknown';
+  travelersText?: string;
+  withKids?: boolean;
+  travelStyle?: string;
+  budget?: 'petit' | 'moyen' | 'haut' | 'unknown';
+  pace?: 'relax' | 'equilibre' | 'intense' | 'unknown';
+  transport?: 'auto' | 'vr' | 'moto' | 'avion' | 'unknown';
+  interests?: string[];
+  likesLocalFood?: boolean;
+  avoidsCrowds?: boolean;
+  needsLodging?: boolean;
+};
+
+type SuggestedItineraryDay = {
+  day: number;
+  title: string;
+  description: string;
+  relatedSlug?: string;
+};
+
+type AssistantProducer = {
+  name: string;
+  type?: string;
+  city?: string;
+  region?: string;
+  reason?: string;
+};
 
 type AssistantApiResponse = {
   message?: string;
   markdown?: string;
-  intent?:
-    | 'idea'
-    | 'destination'
-    | 'hotel'
-    | 'article'
-    | 'videos'
-    | 'planner'
-    | 'producers'
-    | 'beginner'
-    | 'general';
+  intent?: AssistantIntent;
+  travelerProfile?: TravelerProfile;
+  recommendationSummary?: string;
+  suggestedItinerary?: SuggestedItineraryDay[];
+  producers?: AssistantProducer[];
   links?: Array<{ label: string; href: string }>;
   nextQuestion?: string | null;
   detectedDestination?: string;
@@ -38,223 +81,18 @@ type AssistantApiResponse = {
 
 type TravelAssistantState = {
   stage: 'welcome' | 'discovery' | 'destination' | 'lodging' | 'planner' | 'producers' | 'general';
-  destination?: string;
-  origin?: string;
-  durationDays?: number;
-  dateText?: string;
-  travelersText?: string;
-  travelStyle?: string;
+  profile: TravelerProfile;
+  lastIntent?: AssistantIntent;
+  suggestedItinerary: SuggestedItineraryDay[];
+  producers: AssistantProducer[];
 };
 
-/** -----------------------
- * Helpers
- * ----------------------*/
-
-function normalizeText(input: string) {
-  return input
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '');
-}
-
-function isNeedIdeaIntent(normText: string) {
-  return (
-    normText.includes('ou partir') ||
-    normText.includes('où partir') ||
-    normText.includes('idee') ||
-    normText.includes('idée') ||
-    normText.includes('inspiration') ||
-    normText.includes('je ne sais pas') ||
-    normText.includes('pas sur') ||
-    normText.includes('pas sûr') ||
-    normText.includes('suggestion') ||
-    normText.includes('recommande') ||
-    normText.includes('recommandes')
-  );
-}
-
-function isItineraryIntent(normText: string) {
-  return (
-    /\b(itineraire|itinéraire|planifier|parcours|road\s?trip|boucle|trajet)\b/.test(normText) ||
-    /\b(\d+)\s?(j|jours)\b/.test(normText)
-  );
-}
-
-function isHotelBookingIntent(normText: string) {
-  return /\b(reserver|réserver|hotel|hôtel|hebergement|hébergement|ou dormir|où dormir|chambre|booking)\b/.test(
-    normText,
-  );
-}
-
-function isBeginnerIntent(normText: string) {
-  return (
-    normText.includes('je ne sais pas') ||
-    normText.includes('je suis perdu') ||
-    normText.includes('aide moi') ||
-    normText.includes('aide-moi') ||
-    normText.includes('premieres vacances') ||
-    normText.includes('premières vacances') ||
-    normText.includes("je n'ai jamais") ||
-    normText.includes('je ne sais pas par ou commencer') ||
-    normText.includes('je ne sais pas par où commencer')
-  );
-}
-
-function isVideosIntent(normText: string) {
-  return /\b(video|vidéo|videos|vidéos|youtube)\b/.test(normText);
-}
-
-function isProducerIntent(normText: string) {
-  return /\b(producteur|producteurs|ferme|fromagerie|cidrerie|microbrasserie|marche local|marché local)\b/.test(
-    normText,
-  );
-}
-
-function hasInternalLinksMarkdown(text: string) {
-  return /\]\(\/[a-z0-9#/-]+/i.test(text);
-}
-
-function detectTravelTypeSlug(normText: string): string {
-  const has = (re: RegExp) => re.test(normText);
-
-  if (has(/\bcamping\b/) || has(/\btente\b/) || has(/\bcaravane\b/) || has(/\bvanlife\b/)) {
-    return 'voyage-camping';
-  }
-
-  if (
-    has(/\bavion\b/) ||
-    has(/\baeroport\b/) ||
-    has(/\baéroport\b/) ||
-    has(/\bvols?\b/) ||
-    has(/\bvalise\b/)
-  ) {
-    return 'voyage-avion';
-  }
-
-  if (
-    has(/\bvoiture\b/) ||
-    has(/\broad\s?trip\b/) ||
-    has(/\bitineraire\b/) ||
-    has(/\bitinéraire\b/) ||
-    has(/\broute\b/)
-  ) {
-    return 'voyage-voiture';
-  }
-
-  if (
-    has(/\bh[ôo]tel\b/) ||
-    has(/\bhebergement\b/) ||
-    has(/\bhébergement\b/) ||
-    has(/\bchambre\b/)
-  ) {
-    return 'voyage-hotel';
-  }
-
-  return '';
-}
-
-function extractSlugFromText(input: string): string {
-  const norm = normalizeText(input);
-  const sorted = [...BLOG_SLUGS].sort((a, b) => b.length - a.length);
-
-  for (const slug of sorted) {
-    const slugNorm = normalizeText(slug);
-    const pattern = slugNorm.replace(/-/g, '[-\\s]?');
-    const re = new RegExp(`(?:^|[^a-z0-9])${pattern}(?:[^a-z0-9]|$)`);
-    if (re.test(norm)) return slug;
-  }
-
-  return '';
-}
-
-function extractDurationDays(input: string): number | undefined {
-  const norm = normalizeText(input);
-  const match = norm.match(/\b(\d{1,2})\s?(jour|jours|j)\b/);
-  if (!match) return undefined;
-
-  const days = Number(match[1]);
-  return Number.isFinite(days) ? days : undefined;
-}
-
-function extractOrigin(input: string): string | undefined {
-  const patterns = [
-    /\bdepart de ([a-zA-ZÀ-ÿ' -]+)/i,
-    /\bon part de ([a-zA-ZÀ-ÿ' -]+)/i,
-    /\bje pars de ([a-zA-ZÀ-ÿ' -]+)/i,
-    /\bnous partons de ([a-zA-ZÀ-ÿ' -]+)/i,
-  ];
-
-  for (const pattern of patterns) {
-    const match = input.match(pattern);
-    if (match?.[1]) return match[1].trim();
-  }
-
-  return undefined;
-}
-
-function extractTravelersText(input: string): string | undefined {
-  const norm = normalizeText(input);
-
-  const simplePatterns = [
-    /\b(\d+)\s?(adulte|adultes)\b/i,
-    /\b(\d+)\s?(enfant|enfants)\b/i,
-    /\b(\d+)\s?(personne|personnes)\b/i,
-    /\ben famille\b/i,
-    /\ben couple\b/i,
-    /\bentre amis\b/i,
-    /\bavec les enfants\b/i,
-  ];
-
-  const hits = simplePatterns
-    .map((pattern) => input.match(pattern)?.[0])
-    .filter((v): v is string => typeof v === 'string' && v.trim().length > 0);
-
-  if (hits.length > 0) return hits.join(', ');
-  if (norm.includes('famille')) return 'famille';
-  if (norm.includes('couple')) return 'couple';
-
-  return undefined;
-}
-
-function extractTravelStyle(input: string): string | undefined {
-  const norm = normalizeText(input);
-  const found: string[] = [];
-
-  if (norm.includes('nature')) found.push('nature');
-  if (norm.includes('famille')) found.push('famille');
-  if (norm.includes('gourmand')) found.push('gourmand');
-  if (norm.includes('romantique')) found.push('romantique');
-  if (norm.includes('detente') || norm.includes('détente')) found.push('détente');
-  if (norm.includes('road trip') || norm.includes('roadtrip')) found.push('road trip');
-  if (norm.includes('bord de l eau') || norm.includes("bord de l'eau")) found.push('bord de l’eau');
-
-  return found.length > 0 ? found.join(', ') : undefined;
-}
-
-function getLastMessages(all: Message[], userMessage: Message, limit = 8) {
-  const merged = [...all, userMessage];
-  return merged.slice(Math.max(0, merged.length - limit));
-}
-
-function buildMarkdownFromApiResponse(data: AssistantApiResponse): string {
-  if (data.markdown && data.markdown.trim()) return data.markdown.trim();
-
-  const lines: string[] = [];
-  if (data.message) lines.push(data.message.trim());
-
-  if (data.links && data.links.length > 0) {
-    lines.push('', '**Vous choisissez :**');
-    for (const link of data.links) {
-      lines.push(`- [${link.label}](${link.href})`);
-    }
-  }
-
-  if (data.nextQuestion) {
-    lines.push('', data.nextQuestion.trim());
-  }
-
-  return lines.join('\n').trim();
-}
+const INITIAL_ASSISTANT_STATE: TravelAssistantState = {
+  stage: 'welcome',
+  profile: {},
+  suggestedItinerary: [],
+  producers: [],
+};
 
 const INTERNAL_ROUTES = {
   destinations: '/#destinations-populaires',
@@ -264,15 +102,323 @@ const INTERNAL_ROUTES = {
   coupsDeCoeur: '/coups-de-coeur',
   offres: '/offres',
   videos: '/videos',
-  vols: '/vols',
-  vr: '/blog/location-vr',
-  camping: '/camping',
-  experiences: '/experiences',
   voyageVoiture: '/blog/voyage-voiture',
   voyageHotel: '/blog/voyage-hotel',
   voyageCamping: '/blog/voyage-camping',
   voyageAvion: '/blog/voyage-avion',
 } as const;
+
+function normalizeText(input: string) {
+  return input
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[’']/g, ' ')
+    .replace(/[^a-z0-9\s-]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function hasInternalLinksMarkdown(text: string) {
+  return /\]\(\/[a-z0-9#/-]+/i.test(text);
+}
+
+function getLastMessages(all: Message[], userMessage: Message, limit = 10) {
+  const merged = [...all, userMessage];
+  return merged.slice(Math.max(0, merged.length - limit));
+}
+
+function buildMarkdownFromApiResponse(data: AssistantApiResponse): string {
+  if (data.markdown && data.markdown.trim()) return data.markdown.trim();
+
+  const lines: string[] = [];
+  if (data.message) lines.push(data.message.trim());
+  if (data.recommendationSummary) lines.push('', data.recommendationSummary.trim());
+
+
+
+  if (data.producers && data.producers.length > 0) {
+    lines.push('', '**Haltes locales possibles :**');
+    for (const producer of data.producers.slice(0, 4)) {
+      const meta = [producer.type, producer.city || producer.region].filter(Boolean).join(' · ');
+      lines.push(
+        `- **${producer.name}**${meta ? ` — ${meta}` : ''}${producer.reason ? ` : ${producer.reason}` : ''}`,
+      );
+    }
+  }
+
+  if (data.links && data.links.length > 0) {
+    lines.push('', '**Vous choisissez :**');
+    for (const link of data.links.slice(0, 4)) {
+      lines.push(`- [${link.label}](${link.href})`);
+    }
+  }
+
+  if (data.nextQuestion) lines.push('', data.nextQuestion.trim());
+  return lines.join('\n').trim();
+}
+
+function compactDestinationLabel(slug?: string) {
+  if (!slug) return '';
+  return slug
+    .split('-')
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
+function mergeProfile(prev: TravelerProfile, next?: TravelerProfile): TravelerProfile {
+  if (!next) return prev;
+
+  const mergedInterests = Array.from(
+    new Set([...(prev.interests ?? []), ...(Array.isArray(next.interests) ? next.interests : [])]),
+  );
+
+  return {
+    ...prev,
+    ...next,
+    interests: mergedInterests,
+  };
+}
+
+function inferLocalProfile(input: string, previousProfile: TravelerProfile): TravelerProfile {
+  const norm = normalizeText(input);
+  const profile: TravelerProfile = { ...previousProfile };
+
+  const duration = norm.match(/\b(\d{1,2})\s?(jour|jours|j)\b/);
+  if (duration) profile.durationDays = Number(duration[1]);
+
+  const originPatterns = [
+    /\bdépart de ([a-zA-ZÀ-ÿ' -]+)/i,
+    /\bdepart de ([a-zA-ZÀ-ÿ' -]+)/i,
+    /\bon part de ([a-zA-ZÀ-ÿ' -]+)/i,
+    /\bje pars de ([a-zA-ZÀ-ÿ' -]+)/i,
+    /\bnous partons de ([a-zA-ZÀ-ÿ' -]+)/i,
+  ];
+
+  for (const pattern of originPatterns) {
+    const match = input.match(pattern);
+    if (match?.[1]) {
+      profile.origin = match[1].trim().replace(/[?.!,;:]+$/g, '');
+      break;
+    }
+  }
+
+  const sortedSlugs = [...BLOG_SLUGS].sort((a, b) => b.length - a.length);
+  for (const slug of sortedSlugs) {
+    const slugNorm = normalizeText(slug);
+    const pattern = slugNorm.replace(/-/g, '[-\\s]?');
+    const re = new RegExp(`(?:^|[^a-z0-9])${pattern}(?:[^a-z0-9]|$)`);
+    if (re.test(norm)) {
+      profile.destination = slug;
+      break;
+    }
+  }
+
+  const interests = new Set(profile.interests ?? []);
+  if (norm.includes('nature') || norm.includes('plein air')) interests.add('nature');
+  if (norm.includes('producteur') || norm.includes('local') || norm.includes('gourmand'))
+    interests.add('producteurs locaux');
+  if (norm.includes('hotel') || norm.includes('hebergement')) interests.add('hébergement');
+  if (norm.includes('camping')) interests.add('camping');
+  if (norm.includes('video') || norm.includes('youtube')) interests.add('vidéos');
+  profile.interests = Array.from(interests);
+
+  if (norm.includes('famille') || norm.includes('enfant')) {
+    profile.withKids = true;
+    profile.travelersText = profile.travelersText ?? 'famille';
+  }
+
+  if (norm.includes('couple')) profile.travelersText = profile.travelersText ?? 'couple';
+  if (
+    norm.includes('eviter la foule') ||
+    norm.includes('pas trop touristique') ||
+    norm.includes('tranquille')
+  ) {
+    profile.avoidsCrowds = true;
+    profile.pace = profile.pace ?? 'relax';
+  }
+  if (norm.includes('relax') || norm.includes('repos')) profile.pace = 'relax';
+  if (norm.includes('intense') || norm.includes('beaucoup de choses')) profile.pace = 'intense';
+  if (norm.includes('pas cher') || norm.includes('petit budget')) profile.budget = 'petit';
+  if (
+    norm.includes('hotel') ||
+    norm.includes('hebergement') ||
+    norm.includes('ou dormir') ||
+    norm.includes('où dormir')
+  ) {
+    profile.needsLodging = true;
+  }
+  if (
+    norm.includes('producteur') ||
+    norm.includes('fromage') ||
+    norm.includes('cidre') ||
+    norm.includes('biere')
+  ) {
+    profile.likesLocalFood = true;
+  }
+
+  return profile;
+}
+
+function getStageFromIntent(intent?: AssistantIntent): TravelAssistantState['stage'] {
+  if (intent === 'hotel') return 'lodging';
+  if (intent === 'planner' || intent === 'roadtrip') return 'planner';
+  if (intent === 'producers') return 'producers';
+  if (intent === 'destination' || intent === 'article') return 'destination';
+  if (intent === 'idea' || intent === 'beginner' || intent === 'compare') return 'discovery';
+  return 'general';
+}
+
+function ProfileChip({ icon, label }: { icon: React.ReactNode; label: string }) {
+  return (
+    <span className="inline-flex items-center gap-1 rounded-full border bg-white px-2 py-1 text-xs text-gray-700 shadow-sm">
+      {icon}
+      {label}
+    </span>
+  );
+}
+
+function TravelerProfilePanel({ profile }: { profile: TravelerProfile }) {
+  const chips = useMemo(() => {
+    const result: Array<{ key: string; icon: React.ReactNode; label: string }> = [];
+
+    if (profile.origin) {
+      result.push({
+        key: 'origin',
+        icon: <MapPinned className="size-3" />,
+        label: `Départ : ${profile.origin}`,
+      });
+    }
+    if (profile.destination) {
+      result.push({
+        key: 'destination',
+        icon: <Route className="size-3" />,
+        label: `Destination : ${compactDestinationLabel(profile.destination)}`,
+      });
+    }
+    if (profile.durationDays) {
+      result.push({
+        key: 'duration',
+        icon: <CalendarDays className="size-3" />,
+        label: `${profile.durationDays} jours`,
+      });
+    }
+    if (profile.travelersText) {
+      result.push({
+        key: 'travelers',
+        icon: <Users className="size-3" />,
+        label: profile.travelersText,
+      });
+    }
+    if (profile.likesLocalFood) {
+      result.push({ key: 'local', icon: <Wheat className="size-3" />, label: 'Local / gourmand' });
+    }
+    if (profile.avoidsCrowds) {
+      result.push({ key: 'crowds', icon: <Sparkles className="size-3" />, label: 'Tranquille' });
+    }
+    if (profile.pace && profile.pace !== 'unknown') {
+      result.push({
+        key: 'pace',
+        icon: <Sparkles className="size-3" />,
+        label: `Rythme : ${profile.pace}`,
+      });
+    }
+
+    return result;
+  }, [profile]);
+
+  if (chips.length === 0) return null;
+
+  return (
+    <div className="border-b bg-blue-50/60 p-3">
+      <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-blue-800">
+        Profil du voyage
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {chips.map((chip) => (
+          <ProfileChip key={chip.key} icon={chip.icon} label={chip.label} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ItineraryPreview({ days }: { days: SuggestedItineraryDay[] }) {
+  if (!days.length) return null;
+
+  return (
+    <div className="mt-3 rounded-xl border bg-white p-3 shadow-sm">
+      <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-gray-900">
+        <Route className="size-4 text-blue-600" />
+        Parcours proposé
+      </div>
+      <div className="space-y-2">
+        {days.slice(0, 5).map((day) => (
+          <div
+            key={`${day.day}-${day.title}`}
+            className="rounded-lg bg-gray-50 p-2 text-xs text-gray-700"
+          >
+            <div className="font-semibold text-gray-900">
+              Jour {day.day} — {day.title}
+            </div>
+            <div className="mt-1 leading-relaxed">{day.description}</div>
+            {day.relatedSlug &&
+            BLOG_SLUGS.includes(day.relatedSlug as (typeof BLOG_SLUGS)[number]) ? (
+              <a
+                href={`/blog/${day.relatedSlug}`}
+                className="mt-1 inline-block text-blue-700 underline"
+              >
+                Lire l’article lié
+              </a>
+            ) : null}
+          </div>
+        ))}
+      </div>
+      <a
+        href={INTERNAL_ROUTES.planner}
+        className="mt-3 inline-flex w-full items-center justify-center rounded-lg bg-blue-600 px-3 py-2 text-xs font-semibold text-white hover:bg-blue-700"
+      >
+        Ouvrir le planificateur
+      </a>
+    </div>
+  );
+}
+
+function ProducersPreview({ producers }: { producers: AssistantProducer[] }) {
+  if (!producers.length) return null;
+
+  return (
+    <div className="mt-3 rounded-xl border bg-white p-3 shadow-sm">
+      <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-gray-900">
+        <Wheat className="size-4 text-amber-600" />
+        Haltes locales suggérées
+      </div>
+      <ul className="space-y-2 text-xs text-gray-700">
+        {producers.slice(0, 4).map((producer, index) => {
+          const meta = [producer.type, producer.city || producer.region]
+            .filter(Boolean)
+            .join(' · ');
+          return (
+            <li key={`${producer.name}-${index}`} className="rounded-lg bg-gray-50 p-2">
+              <div className="font-semibold text-gray-900">{producer.name}</div>
+              {meta ? <div className="text-gray-500">{meta}</div> : null}
+              {producer.reason ? (
+                <div className="mt-1 leading-relaxed">{producer.reason}</div>
+              ) : null}
+            </li>
+          );
+        })}
+      </ul>
+      <a
+        href={INTERNAL_ROUTES.producteurs}
+        className="mt-3 inline-block text-xs font-semibold text-blue-700 underline"
+      >
+        Voir tous les producteurs locaux
+      </a>
+    </div>
+  );
+}
 
 export default function Chatbot() {
   const {
@@ -285,11 +431,8 @@ export default function Chatbot() {
   } = useSite();
 
   const [input, setInput] = useState('');
-  const [nearbyProducers, setNearbyProducers] = useState<Suggestion[]>([]);
-  const [assistantState, setAssistantState] = useState<TravelAssistantState>({
-    stage: 'welcome',
-  });
-
+  const [assistantState, setAssistantState] =
+    useState<TravelAssistantState>(INITIAL_ASSISTANT_STATE);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -315,14 +458,22 @@ export default function Chatbot() {
     if (!isOpen) return;
     setTimeout(() => inputRef.current?.focus(), 50);
   }, [isOpen]);
+useEffect(() => {
+  const saved = localStorage.getItem('goquebecan-assistant-state');
+  if (!saved) return;
 
+  try {
+    setAssistantState(JSON.parse(saved));
+  } catch {
+    localStorage.removeItem('goquebecan-assistant-state');
+  }
+}, []);
   const handleSend = async (e?: React.FormEvent) => {
     e?.preventDefault();
     if (!input.trim()) return;
 
     const currentInput = input.trim();
     setInput('');
-    setNearbyProducers([]);
 
     const userMessage: Message = {
       text: currentInput,
@@ -330,242 +481,24 @@ export default function Chatbot() {
       timestamp: new Date().toISOString(),
     };
 
-    setMessages((prev: Message[]) => [...prev, userMessage]);
-    setIsTyping(true);
-
-    const normText = normalizeText(currentInput);
-    const detectedSlug = extractSlugFromText(currentInput);
-    const detectedDuration = extractDurationDays(currentInput);
-    const detectedOrigin = extractOrigin(currentInput);
-    const detectedTravelers = extractTravelersText(currentInput);
-    const detectedStyle = extractTravelStyle(currentInput);
+    const localProfile = inferLocalProfile(currentInput, assistantState.profile);
 
     setAssistantState((prev) => ({
       ...prev,
-      destination: detectedSlug || prev.destination,
-      durationDays: detectedDuration ?? prev.durationDays,
-      origin: detectedOrigin ?? prev.origin,
-      travelersText: detectedTravelers ?? prev.travelersText,
-      travelStyle: detectedStyle ?? prev.travelStyle,
-      stage: detectedSlug
-        ? 'destination'
-        : isHotelBookingIntent(normText)
-          ? 'lodging'
-          : isItineraryIntent(normText)
-            ? 'planner'
-            : isProducerIntent(normText)
-              ? 'producers'
-              : isNeedIdeaIntent(normText) || isBeginnerIntent(normText)
-                ? 'discovery'
-                : prev.stage,
+      profile: localProfile,
     }));
 
+    setMessages((prev: Message[]) => [...prev, userMessage]);
+    setIsTyping(true);
+
     try {
-      if (detectedSlug && !isProducerIntent(normText)) {
-        try {
-          const suggestion = getContentSuggestions(detectedSlug);
-          const blogUrl = suggestion?.blogUrl ?? `/blog/${detectedSlug}`;
-          const videoUrl = suggestion?.videoUrl ?? INTERNAL_ROUTES.videos;
-          const prepUrl =
-            suggestion?.objectsUrl ??
-            (isHotelBookingIntent(normText)
-              ? INTERNAL_ROUTES.voyageHotel
-              : isItineraryIntent(normText)
-                ? INTERNAL_ROUTES.voyageVoiture
-                : INTERNAL_ROUTES.voyageVoiture);
-          const plannerUrl = suggestion?.plannerUrl ?? INTERNAL_ROUTES.planner;
-          const destinationLabel = suggestion?.destination ?? detectedSlug;
-
-          let extraQuestion =
-            'Pour aller un peu plus loin : vous partez d’où et pour combien de jours ?';
-
-          if (isHotelBookingIntent(normText)) {
-            extraQuestion =
-              'Pour bien vous orienter côté hébergement : vous cherchez plutôt pratique, romantique ou familial ?';
-          } else if (isItineraryIntent(normText)) {
-            extraQuestion =
-              'Pour que je vous guide mieux : vous partez d’où et vous avez combien de jours ?';
-          } else if (isVideosIntent(normText)) {
-            extraQuestion = 'Vous voulez surtout vous inspirer, ou préparer un vrai itinéraire ?';
-          }
-
-          if (detectedSlug === 'tadoussac') {
-            try {
-              const waypoint: [number, number][] = [[48.1446, -69.7174]];
-              const suggested = suggestNearbyProducers(producersList, waypoint);
-              setNearbyProducers(suggested);
-            } catch (error) {
-              console.error('Erreur lors de la récupération des producteurs :', error);
-            }
-          }
-
-          const hotelLine = isHotelBookingIntent(normText)
-            ? '\n\nAvant de réserver, le plus utile est de voir rapidement l’ambiance de la destination puis de préparer votre parcours pour éviter de choisir un hôtel mal placé.'
-            : '';
-
-          setMessages((prev: Message[]) => [
-            ...prev,
-            {
-              text: `Parfait. Pour **${destinationLabel}**, je peux vous aider à découvrir les incontournables, préparer votre parcours et repérer aussi des **producteurs locaux** pour rendre le voyage plus vivant et gourmand.${hotelLine}
-
-**Vous choisissez :**
-- [📘 Lire l'article](${blogUrl})
-- [🎥 Voir les vidéos](${videoUrl})
-- [🗺️ Ouvrir le planificateur](${plannerUrl})
-- [🧺 Producteurs locaux](${INTERNAL_ROUTES.producteurs})
-- [🚗 Préparer le voyage](${prepUrl})
-- [💛 Coups de cœur du mois](${INTERNAL_ROUTES.coupsDeCoeur})
-
-${extraQuestion}`,
-              isUser: false,
-              timestamp: new Date().toISOString(),
-            },
-          ]);
-
-          setIsTyping(false);
-          return;
-        } catch (error) {
-          console.error('Erreur suggestion destination:', error);
-        }
-      }
-
-      const travelTypeSlug = detectTravelTypeSlug(normText);
-      if (travelTypeSlug && BLOG_SLUGS.includes(travelTypeSlug as (typeof BLOG_SLUGS)[number])) {
-        const guideUrl = `/blog/${travelTypeSlug}`;
-
-        setMessages((prev: Message[]) => [
-          ...prev,
-          {
-            text: `Très bon angle. Je peux vous aider à préparer ce type de voyage de façon simple, sans vous noyer dans trop d’options.
-
-**Vous choisissez :**
-- [📘 Guide complet](${guideUrl})
-- [💛 Coups de cœur du mois](${INTERNAL_ROUTES.coupsDeCoeur})
-- [🎥 Vidéos](${INTERNAL_ROUTES.videos})
-- [🗺️ Ouvrir le planificateur](${INTERNAL_ROUTES.planner})
-
-Vous cherchez plutôt un voyage **relax**, **famille**, ou **bien rempli** avec plusieurs arrêts ?`,
-            isUser: false,
-            timestamp: new Date().toISOString(),
-          },
-        ]);
-
-        setIsTyping(false);
-        return;
-      }
-
-      if (isBeginnerIntent(normText)) {
-        setMessages((prev: Message[]) => [
-          ...prev,
-          {
-            text: `Pas de souci, on va faire ça simplement, étape par étape. Je peux vous aider à choisir une destination, voir l’ambiance, puis préparer un parcours clair.
-
-**Vous choisissez un départ simple :**
-- [📍 Explorer les destinations](${INTERNAL_ROUTES.destinations})
-- [🧺 Producteurs locaux](${INTERNAL_ROUTES.producteurs})
-- [🎥 Vidéos pour s’inspirer](${INTERNAL_ROUTES.videos})
-- [💛 Coups de cœur du mois](${INTERNAL_ROUTES.coupsDeCoeur})
-
-Première question : vous partez plutôt en **couple**, **en famille** ou **entre amis** ?`,
-            isUser: false,
-            timestamp: new Date().toISOString(),
-          },
-        ]);
-
-        setIsTyping(false);
-        return;
-      }
-
-      if (isNeedIdeaIntent(normText)) {
-        setMessages((prev: Message[]) => [
-          ...prev,
-          {
-            text: `Je peux vous aider à trouver une destination qui vous ressemble, sans compliquer les choses. Et si vous aimez découvrir le territoire autrement, on peut aussi intégrer des **producteurs locaux** proches de votre future destination.
-
-**Vous choisissez un point de départ :**
-- [📍 Explorer les destinations](${INTERNAL_ROUTES.destinations})
-- [🧺 Découvrir les producteurs locaux](${INTERNAL_ROUTES.producteurs})
-- [🎥 Vidéos pour s’inspirer](${INTERNAL_ROUTES.videos})
-- [💛 Coups de cœur du mois](${INTERNAL_ROUTES.coupsDeCoeur})
-
-Vous cherchez plutôt **nature**, **famille**, **gourmand/local** ou **route panoramique** ?`,
-            isUser: false,
-            timestamp: new Date().toISOString(),
-          },
-        ]);
-
-        setIsTyping(false);
-        return;
-      }
-
-      if (isHotelBookingIntent(normText) && !detectedSlug && !assistantState.destination) {
-        setMessages((prev: Message[]) => [
-          ...prev,
-          {
-            text: `Oui, je peux vous aider à préparer la réservation d’un hôtel, mais le plus important d’abord est de viser la bonne destination et le bon secteur.
-
-**Vous choisissez :**
-- [📍 Explorer les destinations](${INTERNAL_ROUTES.destinations})
-- [🎥 Voir les vidéos](${INTERNAL_ROUTES.videos})
-- [🗺️ Ouvrir le planificateur](${INTERNAL_ROUTES.planner})
-
-Pour que je vous oriente correctement : vous avez déjà une destination en tête, ou vous voulez que je vous en suggère ?`,
-            isUser: false,
-            timestamp: new Date().toISOString(),
-          },
-        ]);
-
-        setIsTyping(false);
-        return;
-      }
-
-      if (isVideosIntent(normText)) {
-        setMessages((prev: Message[]) => [
-          ...prev,
-          {
-            text: `Bonne idée. Les vidéos sont parfaites pour se projeter avant de choisir une destination ou un parcours.
-
-**Vous choisissez :**
-- [🎥 Voir les vidéos](${INTERNAL_ROUTES.videos})
-- [📍 Explorer les destinations](${INTERNAL_ROUTES.destinations})
-- [🗺️ Ouvrir le planificateur](${INTERNAL_ROUTES.planner})
-
-Vous voulez des vidéos pour une destination précise, ou juste pour trouver l’inspiration ?`,
-            isUser: false,
-            timestamp: new Date().toISOString(),
-          },
-        ]);
-
-        setIsTyping(false);
-        return;
-      }
-
-      if (isItineraryIntent(normText)) {
-        setMessages((prev: Message[]) => [
-          ...prev,
-          {
-            text: `Je peux vous aider à construire un parcours simple et agréable, même si tout n’est pas encore défini. Et si vous le souhaitez, on peut aussi y ajouter des **producteurs locaux** pour faire de vraies belles haltes en route.
-
-**Vous choisissez :**
-- [🗺️ Ouvrir le planificateur](${INTERNAL_ROUTES.planner})
-- [🧺 Voir les producteurs locaux](${INTERNAL_ROUTES.producteurs})
-- [📍 Explorer les destinations](${INTERNAL_ROUTES.destinations})
-- [🎥 Vidéos](${INTERNAL_ROUTES.videos})
-
-Pour que je vise juste : vous partez d’où et vous avez combien de jours ?`,
-            isUser: false,
-            timestamp: new Date().toISOString(),
-          },
-        ]);
-
-        setIsTyping(false);
-        return;
-      }
-
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: getLastMessages(messages, userMessage, 8) }),
+        body: JSON.stringify({
+          messages: getLastMessages(messages, userMessage, 10),
+          profile: localProfile,
+        }),
       });
 
       if (!res.ok) throw new Error(`Erreur API: ${res.status}`);
@@ -573,38 +506,23 @@ Pour que je vise juste : vous partez d’où et vous avez combien de jours ?`,
       const data: AssistantApiResponse = await res.json();
       const finalMarkdown =
         buildMarkdownFromApiResponse(data) ||
-        "Je n'ai pas compris, peux-tu reformuler avec une destination, un nombre de jours ou un style de voyage ?";
+        "Je n'ai pas assez d'informations pour vous guider correctement. Dites-moi votre point de départ, votre durée ou votre style de voyage.";
 
-      if (data.detectedDestination || data.detectedDurationDays || data.detectedOrigin) {
-        setAssistantState((prev) => ({
-          ...prev,
-          destination: data.detectedDestination ?? prev.destination,
-          durationDays: data.detectedDurationDays ?? prev.durationDays,
-          origin: data.detectedOrigin ?? prev.origin,
-          stage:
-            data.intent === 'hotel'
-              ? 'lodging'
-              : data.intent === 'planner'
-                ? 'planner'
-                : data.intent === 'producers'
-                  ? 'producers'
-                  : data.intent === 'destination'
-                    ? 'destination'
-                    : data.intent === 'idea' || data.intent === 'beginner'
-                      ? 'discovery'
-                      : prev.stage,
-        }));
-      }
+      const mergedProfile = mergeProfile(localProfile, data.travelerProfile);
 
-      if (data.detectedDestination === 'tadoussac' || assistantState.destination === 'tadoussac') {
-        try {
-          const waypoint: [number, number][] = [[48.1446, -69.7174]];
-          const suggested = suggestNearbyProducers(producersList, waypoint);
-          setNearbyProducers(suggested);
-        } catch (error) {
-          console.error('Erreur lors de la récupération des producteurs :', error);
-        }
-      }
+      if (data.detectedDestination) mergedProfile.destination = data.detectedDestination;
+      if (typeof data.detectedDurationDays === 'number')
+        mergedProfile.durationDays = data.detectedDurationDays;
+      if (data.detectedOrigin) mergedProfile.origin = data.detectedOrigin;
+
+      setAssistantState((prev) => ({
+        ...prev,
+        stage: getStageFromIntent(data.intent),
+        lastIntent: data.intent,
+        profile: mergedProfile,
+        suggestedItinerary: Array.isArray(data.suggestedItinerary) ? data.suggestedItinerary : [],
+        producers: Array.isArray(data.producers) ? data.producers : [],
+      }));
 
       setMessages((prev: Message[]) => [
         ...prev,
@@ -614,23 +532,17 @@ Pour que je vise juste : vous partez d’où et vous avez combien de jours ?`,
           timestamp: new Date().toISOString(),
         },
       ]);
-
-      setIsTyping(false);
     } catch (err) {
       console.error('Erreur chatbot:', err);
       setMessages((prev: Message[]) => [
         ...prev,
         {
-          text: `Je sens un petit accroc technique. Pour repartir simplement, dites-moi juste :
-- une **destination**
-- ou un **nombre de jours**
-- ou votre **style de voyage**
-
-Exemple : **"3 jours en famille au départ de Montréal"**.`,
+          text: 'Je sens un petit accroc technique, mais on peut repartir simplement.\n\nDites-moi par exemple : **"4 jours en famille au départ de Montréal, nature et producteurs locaux"**.',
           isUser: false,
           timestamp: new Date().toISOString(),
         },
       ]);
+    } finally {
       setIsTyping(false);
     }
   };
@@ -638,9 +550,9 @@ Exemple : **"3 jours en famille au départ de Montréal"**.`,
   if (!isOpen) {
     return (
       <button
-        aria-label="Ouvrir le chatbot"
+        aria-label="Ouvrir l’assistant de voyage"
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-50 rounded-full bg-blue-600 p-4 text-white shadow-lg"
+        className="fixed bottom-6 right-6 z-50 rounded-full bg-blue-600 p-4 text-white shadow-lg hover:bg-blue-700"
       >
         <MessageSquare className="size-6" />
       </button>
@@ -648,21 +560,11 @@ Exemple : **"3 jours en famille au départ de Montréal"**.`,
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex h-[520px] w-[360px] flex-col overflow-hidden rounded-2xl border bg-white shadow-2xl">
+    <div className="fixed bottom-6 right-6 z-50 flex h-[620px] w-[380px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border bg-white shadow-2xl">
       <div className="flex items-center justify-between border-b bg-white p-3">
         <div>
           <div className="font-semibold">Assistant GoQuébeCAN</div>
-          {assistantState.destination || assistantState.durationDays || assistantState.origin ? (
-            <div className="mt-1 text-xs text-gray-500">
-              {assistantState.destination ? `Destination: ${assistantState.destination}` : ''}
-              {assistantState.destination && assistantState.durationDays ? ' · ' : ''}
-              {assistantState.durationDays ? `${assistantState.durationDays} jours` : ''}
-              {(assistantState.destination || assistantState.durationDays) && assistantState.origin
-                ? ' · '
-                : ''}
-              {assistantState.origin ? `Départ: ${assistantState.origin}` : ''}
-            </div>
-          ) : null}
+          <div className="mt-1 text-xs text-gray-500">Conseiller de voyage intelligent</div>
         </div>
 
         <button
@@ -674,14 +576,30 @@ Exemple : **"3 jours en famille au départ de Montréal"**.`,
         </button>
       </div>
 
+      <TravelerProfilePanel profile={assistantState.profile} />
+
       <div className="flex-1 overflow-auto p-3">
+        {messages.length === 0 ? (
+          <div className="mb-3 rounded-2xl bg-blue-50 p-3 text-sm text-gray-800">
+            Bonjour, je peux vous aider à choisir une destination, construire un itinéraire, trouver
+            des producteurs locaux ou préparer un voyage selon votre départ, votre durée et votre
+            style.
+            <div className="mt-2 text-xs text-gray-600">
+              Exemple :{' '}
+              <strong>
+                4 jours en famille au départ de Montréal, nature et producteurs locaux
+              </strong>
+            </div>
+          </div>
+        ) : null}
+
         {messages.map((msg: Message, i: number) => (
           <div
             key={`${msg.timestamp}-${i}`}
             className={`mb-3 flex ${msg.isUser ? 'justify-end' : 'justify-start'}`}
           >
             <div
-              className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm ${
+              className={`max-w-[88%] rounded-2xl px-3 py-2 text-sm leading-relaxed ${
                 msg.isUser ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-900'
               }`}
             >
@@ -697,57 +615,16 @@ Exemple : **"3 jours en famille au départ de Montréal"**.`,
         {isTyping && (
           <div className="mb-3 flex justify-start">
             <div className="rounded-2xl bg-gray-100 px-3 py-2 text-sm text-gray-700">
-              Je réfléchis…
+              Je prépare une réponse personnalisée…
             </div>
           </div>
         )}
+
+        <ItineraryPreview days={assistantState.suggestedItinerary} />
+        <ProducersPreview producers={assistantState.producers} />
 
         <div ref={messagesEndRef} />
-        <ChatbotCTAButtons visible={showStaticCtas} />
-
-        {nearbyProducers.length > 0 && (
-          <div className="mt-3 max-h-48 overflow-y-auto rounded-xl border bg-white p-4">
-            <p className="mb-2 font-semibold">Producteurs recommandés</p>
-            <ul className="list-disc pl-5 text-sm">
-              {nearbyProducers.map((p, idx) => {
-                const anyP = p as unknown as Record<string, unknown>;
-
-                const label =
-                  (typeof anyP.name === 'string' && anyP.name) ||
-                  (typeof anyP.title === 'string' && anyP.title) ||
-                  (typeof anyP.label === 'string' && anyP.label) ||
-                  (typeof anyP.company === 'string' && anyP.company) ||
-                  'Producteur';
-
-                const kind =
-                  (typeof anyP.type === 'string' && anyP.type) ||
-                  (typeof anyP.category === 'string' && anyP.category) ||
-                  (typeof anyP.kind === 'string' && anyP.kind) ||
-                  '';
-
-                const distance =
-                  typeof anyP.distanceKm === 'number'
-                    ? `${anyP.distanceKm.toFixed(1)} km`
-                    : typeof anyP.distance === 'number'
-                      ? `${anyP.distance.toFixed(1)} km`
-                      : '';
-
-                return (
-                  <li key={`${label}-${idx}`}>
-                    {label}
-                    {kind ? ` — ${kind}` : ''}
-                    {distance ? ` (${distance})` : ''}
-                  </li>
-                );
-              })}
-            </ul>
-            <div className="mt-3 text-sm">
-              <a className="underline" href={INTERNAL_ROUTES.producteurs}>
-                Voir tous les producteurs
-              </a>
-            </div>
-          </div>
-        )}
+        <ChatbotCTAButtons visible={showStaticCtas && messages.length > 0} />
       </div>
 
       <form onSubmit={handleSend} className="flex items-center gap-2 border-t p-3">
@@ -756,7 +633,10 @@ Exemple : **"3 jours en famille au départ de Montréal"**.`,
           value={input}
           onChange={(e) => setInput(e.target.value)}
           className="flex-1 rounded-xl border px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-300"
-          placeholder="Ex: 3 jours en famille au départ de Montréal"
+          placeholder="Ex: 4 jours nature au départ de Montréal"
+          autoComplete="off"
+          name="goquebecan-travel-assistant-input"
+          id="goquebecan-travel-assistant-input"
         />
         <button
           type="submit"

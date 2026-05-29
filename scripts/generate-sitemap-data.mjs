@@ -32,6 +32,7 @@ const EXCLUDED_ROUTES = new Set([
   '/destinations-monde/slug',
   '/experiences',
   '/objets',
+  '/blog',
 ]);
 
 const STATIC_LASTMOD = '2025-10-26T17:55:55.740Z';
@@ -236,9 +237,9 @@ async function readDestinationRoutes() {
 
         const route = slug.includes('/')
           ? normalizeRoute(`/${slug}`)
-          : normalizeRoute(`/destinations/${slug}`);
+          : normalizeRoute(`/blog/${slug}`);
 
-        if (!route.startsWith('/destinations/')) continue;
+        if (!route.startsWith('/blog/')) continue;
         if (!isAllowedRoute(route)) continue;
 
         routes.set(route, {
@@ -380,7 +381,7 @@ async function readCommunityRoutes() {
 
     return rows
       .map((row) => ({
-        route: normalizeRoute(`/itineraires-communaute/${row.slug}`),
+        route: normalizeRoute(`/partage/${row.slug}`),
         lastModified: row.approved_at || row.created_at || null,
       }))
       .filter((item) => item.route && item.route !== '/itineraires-communaute')
@@ -399,7 +400,12 @@ function getSeoMetaForRoute(route) {
       priority: 1.0,
     };
   }
-
+if (route.startsWith('/partage/')) {
+  return {
+    changeFrequency: 'weekly',
+    priority: 0.7,
+  };
+}
   if (route === '/blog') {
     return {
       changeFrequency: 'daily',

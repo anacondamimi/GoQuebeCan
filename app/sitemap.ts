@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     /^\/expansion/i,
     /^\/ia-mathieu/i,
     /^\/experiences/i,
+    /^\/destinations\//i,
     /^\/destinations-monde/i,
     /^\/objets/i,
   ];

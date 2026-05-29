@@ -14,7 +14,6 @@ type ContactType = ContactForm['type'] | 'partenaire';
 type UiContactForm = Omit<ContactForm, 'type'> & {
   type: ContactType;
   honey?: string;
-  token?: string;
 };
 
 const contactCards = [
@@ -35,14 +34,13 @@ const contactCards = [
   },
 ];
 
-export default function ContactPage() {
+export default function ContactPageClient() {
   const [form, setForm] = useState<UiContactForm>({
     nom: '',
     email: '',
     message: '',
     type: 'contact',
     honey: '',
-    token: '',
   });
 
   const [confirmation, setConfirmation] = useState('');
@@ -83,7 +81,7 @@ export default function ContactPage() {
     return {
       icon: '📩',
       title: 'Une question ou une suggestion ?',
-      text: 'Écrivez-nous simplement. GoQuebeCan est en développement constant pour mieux aider les voyageurs à découvrir le Québec.',
+      text: 'Écrivez-nous simplement. GoQuébeCan est en développement constant pour mieux aider les voyageurs à découvrir le Québec.',
       className: 'border-indigo-200 bg-indigo-50 text-indigo-800',
     };
   }, [form.type]);
@@ -120,11 +118,14 @@ export default function ContactPage() {
     try {
       const { nom, email, message, type } = form;
 
+      const finalMessage =
+        type === 'partenaire' ? `[Demande de partenariat]\n\n${message}` : message;
+
       const result = await saveContact({
         nom,
         email,
-        message,
-        type: type as ContactForm['type'],
+        message: finalMessage,
+        type: type === 'partenaire' ? 'contact' : (type as ContactForm['type']),
       });
 
       if (result.success) {
@@ -135,7 +136,6 @@ export default function ContactPage() {
           message: '',
           type: 'contact',
           honey: '',
-          token: '',
         });
       } else {
         setConfirmation(result.error ?? "❌ Une erreur s'est produite. Merci de réessayer.");

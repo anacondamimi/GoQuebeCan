@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: 'GoQuébeCan | Explorez le Québec et le Canada',
   description: 'Guide complet des itinéraires, hébergements et activités au Québec et au Canada.',
   metadataBase: new URL('https://www.goquebecan.com'),
-  alternates: { canonical: 'https://www.goquebecan.com' },
+
   openGraph: {
     title: 'GoQuébeCan | Explorez le Québec et le Canada',
     description:
@@ -32,22 +32,24 @@ export const metadata: Metadata = {
     locale: 'fr_CA',
     type: 'website',
   },
+
   twitter: {
     card: 'summary_large_image',
     title: 'GoQuébeCan',
     description: 'Découvrez le Québec et le Canada autrement.',
     creator: '@goquebecan',
   },
+
   robots: { index: true, follow: true },
   keywords: ['Québec', 'Canada', 'Itinéraires', 'Voyage', 'Producteurs locaux', 'Tourisme'],
   category: 'travel',
+
   verification: {
     other: {
       'impact-site-verification': 'b3e59d2b-b9c5-4a0d-bcf3-cacc26c52a4',
     },
   },
 
-  // ✅ Important : on remplace le favicon AVIF par une déclaration complète et standard
   ...FAVICON_METADATA,
 };
 
