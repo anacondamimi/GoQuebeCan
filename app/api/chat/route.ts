@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'node:fs';
 import path from 'node:path';
-import { BLOG_SLUGS } from '@/data/blog-slugs';
+import { BLOG_SLUGS } from '@/lib/blog/componentMap';
 
 type ChatMessage = {
   text: string;

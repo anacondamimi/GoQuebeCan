@@ -153,7 +153,7 @@ function HeroSection({
         </p>
       ) : null}
 
-      <H1>{title}</H1>
+      <H1 as="div">{title}</H1>
 
       {subtitle ? (
         <p className="mt-4 max-w-3xl text-base leading-7 text-gray-600 sm:text-lg">{subtitle}</p>

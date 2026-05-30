@@ -93,6 +93,10 @@ export default async function BlogArticlePage({ params }: PageParams) {
       <meta itemProp="author" content="GoQuébeCAN" />
       <meta itemProp="publisher" content="GoQuébeCAN" />
 
+      <h1 className="sr-only">{meta?.title ?? slug}</h1>
+
+      <BlogArticleClient slug={slug} />
+
       {/* rendu du contenu, côté client */}
       <BlogArticleClient slug={slug} />
 

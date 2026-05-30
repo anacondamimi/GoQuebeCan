@@ -255,33 +255,25 @@ async function readDestinationRoutes() {
 }
 
 function extractSlugsFromSource(raw) {
-  return [...raw.matchAll(/['"`]([a-z0-9][a-z0-9-]{1,})['"`]/gi)]
-    .map((match) => match[1])
-    .filter(Boolean)
-    .filter((slug) => {
-      const lower = slug.toLowerCase();
+  const slugs = new Set();
 
-      return ![
-        'use',
-        'client',
-        'server',
-        'blog',
-        'slug',
-        'slugs',
-        'default',
-        'true',
-        'false',
-      ].includes(lower);
-    });
+  const quotedKeys = raw.matchAll(/^\s*['"`]([a-z0-9][a-z0-9-]*)['"`]\s*:/gim);
+  for (const match of quotedKeys) {
+    slugs.add(match[1]);
+  }
+
+  const unquotedKeys = raw.matchAll(/^\s*([a-z0-9][a-z0-9-]*)\s*:/gim);
+  for (const match of unquotedKeys) {
+    slugs.add(match[1]);
+  }
+
+  return [...slugs].sort((a, b) => a.localeCompare(b, 'fr'));
 }
 
 async function readBlogRoutes() {
   const routes = new Map();
 
-  const possibleSources = [
-    path.join(SRC_DIR, 'data', 'blog-slugs.ts'),
-    path.join(SRC_DIR, 'components', 'blog', 'blogSlugs.server.ts'),
-  ];
+  const possibleSources = [path.join(SRC_DIR, 'lib', 'blog', 'componentMap.ts')];
 
   for (const filePath of possibleSources) {
     if (!(await exists(filePath))) continue;
@@ -291,7 +283,7 @@ async function readBlogRoutes() {
     try {
       const raw = await fs.readFile(filePath, 'utf8');
       const slugs = extractSlugsFromSource(raw);
-
+console.log('SLUGS TROUVÉS :', slugs);
       for (const slug of slugs) {
         const route = normalizeRoute(`/blog/${slug}`);
         if (!isAllowedRoute(route)) continue;

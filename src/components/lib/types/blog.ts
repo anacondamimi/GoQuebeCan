@@ -1,8 +1,10 @@
 export interface BlogMetaSEO {
+  title?: string;
+  description?: string;
   keywords?: string | string[];
-  publishedTime?: string; // ISO ex: "2025-09-20T10:00:00.000Z"
-  modifiedTime?: string; // ISO
-  locale?: string; // ex: "fr_CA"
+  publishedTime?: string;
+  modifiedTime?: string;
+  locale?: string;
 }
 
 export type ExtendedBlogMetaItem<TBase> = TBase & BlogMetaSEO;
