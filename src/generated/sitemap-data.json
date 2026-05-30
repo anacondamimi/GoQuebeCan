@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-30T18:18:28.536Z",
+  "generatedAt": "2026-05-30T19:06:58.999Z",
   "siteUrl": "https://www.goquebecan.com",
   "counts": {
     "static": 18,
@@ -18,7 +18,7 @@
   "entries": [
     {
       "route": "/",
-      "lastModified": "2026-05-18T16:01:33.144Z",
+      "lastModified": "2026-05-30T18:48:55.956Z",
       "changeFrequency": "daily",
       "priority": 1,
       "image": null,
@@ -402,7 +402,7 @@
     },
     {
       "route": "/contact",
-      "lastModified": "2026-05-29T19:37:37.318Z",
+      "lastModified": "2026-05-30T19:05:28.513Z",
       "changeFrequency": "monthly",
       "priority": 0.6,
       "image": null,
@@ -434,7 +434,7 @@
     },
     {
       "route": "/devenir-partenaire",
-      "lastModified": "2026-05-30T12:31:00.217Z",
+      "lastModified": "2026-05-30T18:59:39.571Z",
       "changeFrequency": "monthly",
       "priority": 0.6,
       "image": null,
