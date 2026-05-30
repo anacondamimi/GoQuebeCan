@@ -11,7 +11,7 @@ import { RestaurantPremiumGrid } from '@/components/food/RestaurantPremiumGrid';
 import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
 
 export const metadata = {
-  slug: 'carleton',
+  slug: 'carleton-sur-mer',
   ville: 'Carleton',
   resume: 'Découverte de Carleton et de ses attraits touristiques.',
   activites: [
@@ -126,7 +126,7 @@ const teenActivities = [
 export function BlogArticleCarleton() {
   return (
     <DestinationArticleTemplate
-      slug="carleton"
+      slug="carleton-sur-mer"
       title="Carleton-sur-Mer - Perle de la Baie des Chaleurs"
     >
       <article id="blog_article_carleton" className="mx-auto max-w-4xl bg-white px-4 py-12">

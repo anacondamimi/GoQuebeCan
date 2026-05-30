@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-05-30T17:42:59.831Z",
+  "generatedAt": "2026-05-30T18:18:28.536Z",
   "siteUrl": "https://www.goquebecan.com",
   "counts": {
     "static": 18,
-    "destinations": 38,
+    "destinations": 36,
     "blog": 43,
     "community": 0,
-    "totalBeforeDedupe": 99,
-    "total": 64,
-    "duplicatesRemoved": 35,
+    "totalBeforeDedupe": 97,
+    "total": 61,
+    "duplicatesRemoved": 36,
     "withImages": 38,
-    "withoutImages": 26,
-    "blogFinal": 46,
+    "withoutImages": 23,
+    "blogFinal": 43,
     "destinationsFinal": 1,
     "communityFinal": 1
   },
@@ -34,7 +34,7 @@
     },
     {
       "route": "/blog/anse-saint-jean",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/anse-saint-jean.avif",
@@ -42,23 +42,15 @@
     },
     {
       "route": "/blog/baie-saint-paul",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/baie-saint-paul.avif",
       "imageTitle": "Découvrez baie saint paul au Québec"
     },
     {
-      "route": "/blog/banff",
-      "lastModified": "2026-05-22T20:23:08.467Z",
-      "changeFrequency": "weekly",
-      "priority": 0.82,
-      "image": null,
-      "imageTitle": null
-    },
-    {
       "route": "/blog/bic",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/bic.avif",
@@ -66,7 +58,7 @@
     },
     {
       "route": "/blog/bromont-granby",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/bromont-granby.avif",
@@ -74,23 +66,15 @@
     },
     {
       "route": "/blog/canyon",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/canyon.avif",
       "imageTitle": "Découvrez canyon au Québec"
     },
     {
-      "route": "/blog/carleton",
-      "lastModified": "2026-05-22T20:23:08.467Z",
-      "changeFrequency": "weekly",
-      "priority": 0.82,
-      "image": null,
-      "imageTitle": null
-    },
-    {
       "route": "/blog/carleton-sur-mer",
-      "lastModified": "2026-04-25T18:56:27.689Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/carleton-sur-mer.avif",
@@ -106,7 +90,7 @@
     },
     {
       "route": "/blog/eeyou-istchee",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/eeyou-istchee.avif",
@@ -114,7 +98,7 @@
     },
     {
       "route": "/blog/forillon",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/forillon.avif",
@@ -122,7 +106,7 @@
     },
     {
       "route": "/blog/gaspesie",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/gaspesie.avif",
@@ -130,7 +114,7 @@
     },
     {
       "route": "/blog/grand-bend",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/grand-bend.avif",
@@ -138,7 +122,7 @@
     },
     {
       "route": "/blog/hautes-gorges",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/hautes-gorges.avif",
@@ -146,7 +130,7 @@
     },
     {
       "route": "/blog/ile-orleans",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/ile-orleans.avif",
@@ -154,7 +138,7 @@
     },
     {
       "route": "/blog/kamouraska",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/kamouraska.avif",
@@ -162,7 +146,7 @@
     },
     {
       "route": "/blog/kuururjuaq",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/kuururjuaq.avif",
@@ -170,7 +154,7 @@
     },
     {
       "route": "/blog/levis",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/levis.avif",
@@ -186,7 +170,7 @@
     },
     {
       "route": "/blog/magog-orford",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/magog-orford.avif",
@@ -194,23 +178,15 @@
     },
     {
       "route": "/blog/massif",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/massif.avif",
       "imageTitle": "Découvrez massif au Québec"
     },
     {
-      "route": "/blog/matane",
-      "lastModified": "2026-05-22T20:23:08.467Z",
-      "changeFrequency": "weekly",
-      "priority": 0.82,
-      "image": null,
-      "imageTitle": null
-    },
-    {
       "route": "/blog/mingan",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/mingan.avif",
@@ -218,7 +194,7 @@
     },
     {
       "route": "/blog/montmorency",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/montmorency.avif",
@@ -226,7 +202,7 @@
     },
     {
       "route": "/blog/montreal",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/montreal.avif",
@@ -234,7 +210,7 @@
     },
     {
       "route": "/blog/parc-aquatique",
-      "lastModified": "2026-05-22T20:23:01.850Z",
+      "lastModified": "2026-05-30T18:17:14.203Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/parc-aquatique.avif",
@@ -242,7 +218,7 @@
     },
     {
       "route": "/blog/perce",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/perce.avif",
@@ -258,7 +234,7 @@
     },
     {
       "route": "/blog/port-au-persil",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/port-au-persil.avif",
@@ -266,7 +242,7 @@
     },
     {
       "route": "/blog/port-cartier",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/port-cartier.avif",
@@ -274,7 +250,7 @@
     },
     {
       "route": "/blog/port-dover",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/port-dover.avif",
@@ -282,7 +258,7 @@
     },
     {
       "route": "/blog/quebec",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/quebec.avif",
@@ -290,7 +266,7 @@
     },
     {
       "route": "/blog/riviere-du-loup",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/riviere-du-loup.avif",
@@ -298,7 +274,7 @@
     },
     {
       "route": "/blog/sabrevois",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/sabrevois.avif",
@@ -306,7 +282,7 @@
     },
     {
       "route": "/blog/saguenay",
-      "lastModified": "2026-05-22T20:23:01.850Z",
+      "lastModified": "2026-05-30T18:17:14.203Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/saguenay.avif",
@@ -314,7 +290,7 @@
     },
     {
       "route": "/blog/sandbanks",
-      "lastModified": "2026-05-30T17:26:04.338Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/sandbanks.avif",
@@ -322,7 +298,7 @@
     },
     {
       "route": "/blog/sauble-beach",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/sauble-beach.avif",
@@ -330,7 +306,7 @@
     },
     {
       "route": "/blog/sept-iles",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/sept-iles.avif",
@@ -338,7 +314,7 @@
     },
     {
       "route": "/blog/sherbrooke",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/sherbrooke.avif",
@@ -346,7 +322,7 @@
     },
     {
       "route": "/blog/singing-sands",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/singing-sands.avif",
@@ -354,7 +330,7 @@
     },
     {
       "route": "/blog/tadoussac",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/tadoussac.avif",
@@ -394,7 +370,7 @@
     },
     {
       "route": "/blog/wasaga-beach",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T18:13:34.770Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/wasaga-beach.avif",

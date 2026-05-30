@@ -36,13 +36,7 @@
     "hebergements": ["Le Germain Charlevoix", "Auberge La Grande Maison", "Maison Otis"],
     "publics": ["familles", "ados", "amateurs de culture", "aventuriers"]
   },
-  {
-    "slug": "banff",
-    "ville": "Banff",
-    "resume": "Découvrez les merveilles de Banff et planifiez votre séjour avec notre guide local interactif.",
-    "lat": 51.496845,
-    "lng": -115.928055
-  },
+
   {
     "slug": "bic",
     "ville": "Bic",
@@ -95,7 +89,7 @@
     "publics": ["familles", "ados", "aventuriers"]
   },
   {
-    "slug": "carleton",
+    "slug": "carleton-sur-mer",
     "ville": "Carleton",
     "resume": "Découverte de Carleton et de ses attraits touristiques.",
     "activites": [
@@ -276,16 +270,7 @@
     "hebergements": ["Hôtel Le Massif", "Refuge Le Massif", "Chalets du Massif"],
     "publics": ["familles", "ados", "aventuriers"]
   },
-  {
-    "slug": "matane",
-    "ville": "Matane",
-    "resume": "Découverte de Matane, un joyau sur la Côte-Nord.",
-    "lat": 48.8468773,
-    "lng": -67.5295498,
-    "activites": [],
-    "hebergements": [],
-    "publics": []
-  },
+
   {
     "slug": "mingan",
     "ville": "Mingan",
