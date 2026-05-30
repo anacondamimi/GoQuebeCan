@@ -1,73 +1,79 @@
-// app/camping/page.tsx
 import * as React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+
 import { buildMetadata2025, buildGenericJsonLd } from '@/lib/seo/seoConfig2025';
 import { JsonLd, HeadExtras } from '@/lib/seo/HeadExtras';
-import H1 from '@/components/typography/H1';
-
 import CampingGuideWrapper from './CampingGuideWrapper';
 
-// ─────────────────────────────
-// 🔍 MÉTADONNÉES SEO (2025)
-// ─────────────────────────────
+const CANONICAL = 'https://www.goquebecan.com/camping';
+const OG_IMAGE = 'https://www.goquebecan.com/images/og/camping-quebec.jpg';
+
 export const metadata: Metadata = buildMetadata2025({
-  title: 'Camping au Québec | GoQuébeCAN',
+  title: 'Camping au Québec | Guide nature, famille, VR et glamping | GoQuébeCAN',
   description:
-    'Découvrez les plus beaux campings du Québec : emplacements nature, lacs, forêts, glamping et panoramas uniques pour des vacances inoubliables.',
-  canonical: 'https://www.goquebecan.com/camping',
-  image: 'https://www.goquebecan.com/images/og/camping-quebec.jpg',
+    'Découvrez les plus beaux campings du Québec : emplacements en nature, bord de lac, camping familial, VR, glamping, conseils pratiques et idées d’itinéraires.',
+  canonical: CANONICAL,
+  image: OG_IMAGE,
   keywords: [
-    'camping québec',
-    'glamping',
-    'camping nature',
-    'camping famille',
-    'camping VR',
-    'meilleurs campings du québec',
+    'camping Québec',
+    'camping au Québec',
+    'meilleurs campings Québec',
+    'camping famille Québec',
+    'camping VR Québec',
+    'glamping Québec',
+    'camping bord de lac Québec',
+    'camping nature Québec',
+    'GoQuébeCAN',
   ],
   type: 'article',
 });
 
-// ─────────────────────────────
-// 🏕️ STRUCTURED DATA JSON-LD
-// ─────────────────────────────
 const jsonLd = buildGenericJsonLd({
   type: 'article',
-  title: 'Guide des campings au Québec',
+  title: 'Camping au Québec : guide nature, famille, VR et glamping',
   description:
-    'Sélection des plus beaux campings du Québec : nature, bord de lac, glamping et emplacements VR.',
-  canonical: 'https://www.goquebecan.com/camping',
-  image: 'https://www.goquebecan.com/images/og/camping-quebec.jpg',
+    'Guide pratique pour choisir un camping au Québec : nature, bord de lac, camping familial, VR, glamping, conseils de réservation et idées d’itinéraires.',
+  canonical: CANONICAL,
+  image: OG_IMAGE,
   published: '2025-05-01',
   modified: '2026-04-05',
   author: 'GoQuébeCAN',
   faq: [
     {
-      question: 'Quels sont les meilleurs campings familiaux au Québec ?',
+      question: 'Quels sont les meilleurs endroits pour faire du camping au Québec ?',
       answer:
-        'Le Parc du Bic, le Fjord du Saguenay et la Baie-des-Chaleurs figurent parmi les campings les plus appréciés des familles.',
+        'Les régions comme la Gaspésie, Charlevoix, le Saguenay, le Bas-Saint-Laurent, les Cantons-de-l’Est et les Laurentides offrent de très belles options pour camper en nature.',
     },
     {
-      question: 'Où camper au bord de l’eau au Québec ?',
+      question: 'Où faire du camping familial au Québec ?',
       answer:
-        'Les campings du Fjord du Saguenay et de la Baie-des-Chaleurs offrent plusieurs emplacements spectaculaires au bord de l’eau.',
+        'Pour un séjour familial, privilégiez les campings avec accès à l’eau, sentiers faciles, activités pour enfants, blocs sanitaires propres et services à proximité.',
+    },
+    {
+      question: 'Peut-on voyager en VR facilement au Québec ?',
+      answer:
+        'Oui, plusieurs campings accueillent les VR au Québec. Il est conseillé de vérifier la taille des emplacements, les branchements, l’accès à l’eau, l’électricité et les services de vidange.',
+    },
+    {
+      question: 'Quelle est la meilleure période pour camper au Québec ?',
+      answer:
+        'La période la plus populaire va de juin à septembre. Mai, septembre et début octobre peuvent aussi être très agréables pour éviter les foules, selon la région et la météo.',
     },
   ],
   places: [
-    'Camping du Fjord du Saguenay',
-    'Camping de la Baie-des-Chaleurs',
-    'Camping du Mont-Orford',
+    'Camping au Québec',
+    'Camping familial au Québec',
+    'Camping VR au Québec',
+    'Glamping au Québec',
+    'Camping en nature',
+    'Camping bord de lac',
   ],
 });
 
-// ─────────────────────────────
-// 🏕️ PAGE PRINCIPALE
-// ─────────────────────────────
 export default function CampingPage() {
   return (
     <main className="min-h-screen bg-white pt-8">
-      <H1 className="sr-only">Guide des campings au Québec</H1>
-
       <HeadExtras />
       <JsonLd data={jsonLd} />
 
@@ -75,26 +81,25 @@ export default function CampingPage() {
         <CampingGuideWrapper />
       </section>
 
-      {/* CTA de fin de page */}
-      <section className="mx-auto max-w-5xl px-4 pb-14 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border bg-gray-50 px-6 py-8 text-center">
+      <section className="mx-auto max-w-5xl px-4 pb-16 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-gray-200 bg-gradient-to-br from-emerald-50 via-white to-blue-50 px-6 py-10 text-center shadow-sm sm:px-10">
           <h2 className="text-2xl font-semibold text-gray-900 sm:text-3xl">
-            Préparer votre séjour camping
+            Préparer votre séjour camping au Québec
           </h2>
 
-          <p className="mx-auto mt-3 max-w-2xl text-base text-gray-600 sm:text-lg">
-            Complétez votre lecture avec notre guide pratique, le planificateur d’itinéraire et des
-            idées de découvertes locales pour rendre votre voyage encore plus agréable.
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-gray-600 sm:text-lg">
+            Complétez votre lecture avec notre guide pratique, le planificateur d’itinéraire et les
+            producteurs locaux pour transformer votre séjour camping en vraie escapade québécoise.
           </p>
 
           <nav
-            aria-label="Navigation complémentaire"
-            className="mt-6 flex flex-wrap justify-center gap-3"
+            aria-label="Navigation complémentaire camping"
+            className="mt-8 flex flex-wrap justify-center gap-3"
           >
             <Link
               href="/#destinations-populaires"
               aria-label="Retourner aux destinations populaires"
-              className="rounded-full border border-gray-300 px-5 py-3 text-sm font-medium transition hover:bg-white"
+              className="rounded-full border border-gray-300 bg-white px-5 py-3 text-sm font-medium text-gray-800 transition hover:bg-gray-50"
             >
               ← Retour aux destinations
             </Link>
@@ -102,7 +107,7 @@ export default function CampingPage() {
             <Link
               href="/blog/voyage-camping"
               aria-label="Découvrir le guide voyage camping"
-              className="rounded-full border border-gray-300 px-5 py-3 text-sm font-medium transition hover:bg-white"
+              className="rounded-full border border-gray-300 bg-white px-5 py-3 text-sm font-medium text-gray-800 transition hover:bg-gray-50"
             >
               🏕️ Guide voyage camping
             </Link>
@@ -118,7 +123,7 @@ export default function CampingPage() {
             <Link
               href="/producteurs"
               aria-label="Découvrir les producteurs locaux"
-              className="rounded-full border border-gray-300 px-5 py-3 text-sm font-medium transition hover:bg-white"
+              className="rounded-full border border-gray-300 bg-white px-5 py-3 text-sm font-medium text-gray-800 transition hover:bg-gray-50"
             >
               🧺 Producteurs locaux
             </Link>
