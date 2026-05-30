@@ -142,7 +142,7 @@ export default function BannerCarousel({ title }: Props) {
       {/* Contenu */}
       <div className="absolute inset-0 z-20 flex items-center justify-center px-3 sm:px-6">
         <div className="w-full max-w-5xl space-y-4 text-center sm:space-y-5">
-          <motion.h1
+          <motion.p
             key={resolvedTitle}
             initial={{ opacity: 0, y: prefersReducedMotion ? 0 : -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -150,7 +150,7 @@ export default function BannerCarousel({ title }: Props) {
             className="text-[clamp(1.7rem,5.2vw,3.2rem)] font-extrabold leading-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,.35)]"
           >
             {resolvedTitle}
-          </motion.h1>
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0 }}
