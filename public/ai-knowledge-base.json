@@ -108,22 +108,7 @@
         "Peux-tu me créer un itinéraire vers Baie Saint Paul ?"
       ]
     },
-    {
-      "slug": "banff",
-      "title": "Banff",
-      "region": "Québec",
-      "summary": "",
-      "image": "/images/destinations/banff.avif",
-      "links": ["/blog/banff", "/destinations/banff", "/planificateur", "/producteurs", "/videos"],
-      "keywords": ["Banff"],
-      "producers": [],
-      "suggestedQuestions": [
-        "Que faire à Banff ?",
-        "Où dormir près de Banff ?",
-        "Quels producteurs visiter près de Banff ?",
-        "Peux-tu me créer un itinéraire vers Banff ?"
-      ]
-    },
+    
     {
       "slug": "bic",
       "title": "Bic",

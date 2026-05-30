@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-30T17:08:18.043Z",
+  "generatedAt": "2026-05-30T17:09:37.927Z",
   "siteUrl": "https://www.goquebecan.com",
   "counts": {
     "static": 18,
@@ -48,14 +48,7 @@
       "image": null,
       "imageTitle": null
     },
-    {
-      "route": "/blog/banff",
-      "lastModified": "2026-05-22T20:23:08.467Z",
-      "changeFrequency": "weekly",
-      "priority": 0.82,
-      "image": null,
-      "imageTitle": null
-    },
+   
     {
       "route": "/blog/bic",
       "lastModified": "2026-05-22T20:23:08.467Z",
@@ -81,21 +74,14 @@
       "imageTitle": "Découvrez canyon au Québec"
     },
     {
-      "route": "/blog/carleton",
+      "route": "/blog/carleton-sur-mer",
       "lastModified": "2026-05-22T20:23:08.467Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": "https://www.goquebecan.com/images/destinations/carleton.avif",
       "imageTitle": "Découvrez carleton au Québec"
     },
-    {
-      "route": "/blog/carleton-sur-mer",
-      "lastModified": "2026-04-25T18:56:27.689Z",
-      "changeFrequency": "weekly",
-      "priority": 0.82,
-      "image": null,
-      "imageTitle": null
-    },
+
     {
       "route": "/blog/chambly",
       "lastModified": "2026-04-25T18:56:27.689Z",
