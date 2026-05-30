@@ -91,7 +91,7 @@ const aroundPerce = [
     description:
       'Une belle idée pour poursuivre le voyage avec un mélange de mer, détente, hébergements et atmosphère de vacances.',
     href: '/blog/carleton-sur-mer',
-    image: '/images/destinations/carleton.avif',
+    image: '/images/destinations/carleton-sur-mer.avif',
   },
 ];
 

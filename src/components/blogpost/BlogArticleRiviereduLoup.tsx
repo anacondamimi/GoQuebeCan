@@ -146,7 +146,7 @@ export default function BlogArticleRiviereduLoup() {
           </p>
           <div className="my-8">
             <Image
-              src="/images/destinations/chute-riviere-du-loup.avif"
+              src="/images/destinations/riviere-du-loup.avif"
               alt="Rivière-du-Loup"
               width={1200}
               height={500}

@@ -44,13 +44,13 @@ const regions: Region[] = [
       {
         name: "Île d'Orléans",
         description: 'Terroir québécois, vignobles et patrimoine agricole',
-        image: '/images/destinations/ile-dorleans.avif',
+        image: '/images/destinations/ile-orleans.avif',
         blogId: '/blog/ile-orleans',
       },
       {
         name: 'Chute Montmorency',
         description: 'Cascade spectaculaire de 83 mètres de hauteur',
-        image: '/images/destinations/chute-montmorency.avif',
+        image: '/images/destinations/montmorency.avif',
         blogId: 'blog_article_montmorency',
       },
       {
@@ -80,7 +80,7 @@ const regions: Region[] = [
       {
         name: 'Carleton-sur-Mer',
         description: 'Plages magnifiques et sports nautiques',
-        image: '/images/destinations/carleton.avif',
+        image: '/images/destinations/carleton-sur-mer.avif',
         blogId: 'blog_article_carleton',
       },
     ],
@@ -92,13 +92,13 @@ const regions: Region[] = [
       {
         name: 'Baie-Saint-Paul',
         description: "Village d'artistes et gastronomie locale",
-        image: '/images/destinations/baie-st-paul.avif',
+        image: '/images/destinations/baie-saint-paul.avif',
         blogId: 'blog_article_baie_saint_paul',
       },
       {
         name: 'Le Massif de Charlevoix',
         description: 'Station de ski avec vue sur le fleuve Saint-Laurent',
-        image: '/images/destinations/le-massif.avif',
+        image: '/images/destinations/massif.avif',
         blogId: 'blog_article_massif',
       },
       {
@@ -116,7 +116,7 @@ const regions: Region[] = [
       {
         name: 'Magog-Orford',
         description: 'Lac Memphrémagog et activités de plein air',
-        image: '/images/destinations/magog.avif',
+        image: '/images/destinations/magog-orford.avif',
         blogId: 'blog_article_magog_orford',
       },
       {
@@ -128,7 +128,7 @@ const regions: Region[] = [
       {
         name: 'Bromont et Granby',
         description: 'Activités quatre saisons et Zoo de Granby',
-        image: '/images/destinations/bromont.avif',
+        image: '/images/destinations/bromont-granby.avif',
         blogId: 'blog_article_bromont_granby',
       },
     ],
@@ -140,7 +140,7 @@ const regions: Region[] = [
       {
         name: 'Rivière-du-Loup',
         description: 'Observation des baleines et îles du Saint-Laurent',
-        image: '/images/destinations/chute-riviere-du-loup.avif',
+        image: '/images/destinations/riviere-du-loup.avif',
         blogId: 'blog_article_riviere_du_loup',
       },
       {
@@ -164,7 +164,7 @@ const regions: Region[] = [
       {
         name: 'Saguenay',
         description: 'Observation des baleines et îles du Saint-Laurent',
-        image: '/images/destinations/fjord-saguenay.avif',
+        image: '/images/destinations/saguenay.avif',
         blogId: 'blog_article_saguenay',
       },
       {
@@ -236,7 +236,7 @@ const regions: Region[] = [
       {
         name: 'Sandbanks',
         description: 'Dunes de sable spectaculaires',
-        image: '/images/destinations/sand-banks.avif',
+        image: '/images/destinations/sandbanks.avif',
         blogId: 'blog_article_sandbanks',
       },
       {
@@ -267,7 +267,7 @@ const regions: Region[] = [
         name: 'Eeyou Istchee Baie-James',
         description:
           'Territoire nordique avec taïga et lacs immenses, éco-gîtes de Matagami et kayak à Wemindji',
-        image: '/images/destinations/eeyou-istchee-baiejames.avif',
+        image: '/images/destinations/eeyou-istchee.avif',
         blogId: 'blog_article_eeyou_istchee',
       },
       {

@@ -68,7 +68,7 @@ export default function BlogArticleEeyouIstcheeBaieJames() {
           <header className="mb-8 space-y-4">
             <div className="mt-4 overflow-hidden rounded-3xl border border-slate-100 shadow-sm">
               <Image
-                src="/images/destinations/eeyou-istchee-baiejames.avif" // ou "/eeyou-istchee-baiejames.avif" selon ton dossier
+                src="/images/destinations/eeyou-istchee.avif" // ou "/eeyou-istchee-baiejames.avif" selon ton dossier
                 alt="Paysage nordique d’Eeyou Istchee Baie-James"
                 width={1200}
                 height={675}

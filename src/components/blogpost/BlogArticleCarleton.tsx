@@ -144,7 +144,7 @@ export function BlogArticleCarleton() {
           </p>
           <div className="my-8">
             <Image
-              src="/images/destinations/carleton.avif"
+              src="/images/destinations/carleton-sur-mer.avif"
               alt="Baie des Chaleurs"
               className="h-96 w-full rounded-lg object-cover shadow-lg"
               width={800}

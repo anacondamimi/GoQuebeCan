@@ -108,7 +108,7 @@
         "Peux-tu me créer un itinéraire vers Baie Saint Paul ?"
       ]
     },
-    
+
     {
       "slug": "bic",
       "title": "Bic",
@@ -256,7 +256,7 @@
       "title": "Carleton",
       "region": "Québec",
       "summary": "Carleton : découvrez Chasse aux Trésors, Club nautique, avec des idées parfaites pour ados et amateurs de culture.",
-      "image": "/images/destinations/carleton.avif",
+      "image": "/images/destinations/carleton-sur-mer.avif",
       "links": [
         "/blog/carleton-sur-mer",
         "/destinations/carleton",
@@ -857,28 +857,7 @@
         "Peux-tu me créer un itinéraire vers Massif ?"
       ]
     },
-    {
-      "slug": "matane",
-      "title": "Matane",
-      "region": "Québec",
-      "summary": "",
-      "image": "/images/destinations/matane.avif",
-      "links": [
-        "/blog/matane",
-        "/destinations/matane",
-        "/planificateur",
-        "/producteurs",
-        "/videos"
-      ],
-      "keywords": ["Matane"],
-      "producers": [],
-      "suggestedQuestions": [
-        "Que faire à Matane ?",
-        "Où dormir près de Matane ?",
-        "Quels producteurs visiter près de Matane ?",
-        "Peux-tu me créer un itinéraire vers Matane ?"
-      ]
-    },
+
     {
       "slug": "mingan",
       "title": "Mingan",

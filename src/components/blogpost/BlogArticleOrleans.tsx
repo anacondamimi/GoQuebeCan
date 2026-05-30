@@ -136,7 +136,7 @@ export default function BlogArticleOrleans() {
           </p>
           <div className="my-8">
             <Image
-              src="/images/destinations/ile-dorleans.avif"
+              src="/images/destinations/ile-orleans.avif"
               alt="Découvrez les trésors de l'île d'Orleans"
               width={800}
               height={500}

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Explorez les plus beaux endroits à visiter au Québec et au Canada',
     images: [
       {
-        url: '/images/parc-gaspesie.avif',
+        url: '/images/gaspesie.avif',
         width: 1200,
         height: 630,
         alt: 'Location de VR au Canada',

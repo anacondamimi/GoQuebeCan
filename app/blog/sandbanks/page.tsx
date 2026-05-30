@@ -16,7 +16,7 @@ export const metadata = buildMetadata2025({
   description:
     'Sable blond, dunes et eau turquoise : découvrez comment organiser une escapade en famille à la plage de Sandbanks en Ontario. Accès, conseils parents, hébergements, producteurs locaux et idées de roadtrip avec GoQuébeCAN.',
   canonical: '/blog/sandbanks',
-  image: '/images/destinations/sand-banks.avif',
+  image: '/images/destinations/sandbanks.avif',
   keywords: [
     'Sandbanks',
     'plage Sandbanks',
@@ -48,7 +48,7 @@ const destinationLd = buildDestinationLd({
   description:
     'La plage de Sandbanks en Ontario est l’une des plus belles plages d’eau douce du Canada, avec ses grandes dunes de sable, ses eaux turquoise et ses larges espaces parfaits pour les familles québécoises.',
   url: '/blog/sandbanks',
-  image: '/images/destinations/sand-banks.avif',
+  image: '/images/destinations/sandbanks.avif',
   latitude: 43.938, // approx. Sandbanks Provincial Park
   longitude: -77.228,
   containedPlaces: ['Prince Edward County', 'Ontario', 'Canada'],
@@ -61,7 +61,7 @@ const howToLd = buildHowToLd({
   description:
     'Étapes clés pour organiser une journée à la plage de Sandbanks en Ontario avec des enfants : choix de la plage, préparation du sac, gestion du trajet et des pauses, sécurité et idées pour prolonger le plaisir.',
   url: '/blog/sandbanks',
-  image: '/images/destinations/sand-banks.avif',
+  image: '/images/destinations/sandbanks.avif',
   steps: [
     {
       name: 'Choisir la bonne plage à Sandbanks',

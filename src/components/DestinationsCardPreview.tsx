@@ -16,12 +16,12 @@ const destinations = [
   },
   {
     name: 'Charlevoix',
-    image: '/images/destinations/le-massif.avif',
+    image: '/images/destinations/massif.avif',
     link: '/blog/charlevoix',
   },
   {
     name: 'Gaspésie',
-    image: '/images/destinations/parc-gaspesie.avif',
+    image: '/images/destinations/gaspesie.avif',
     link: '/blog/gaspesie',
   },
 ];

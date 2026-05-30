@@ -16,7 +16,7 @@ const experiences = [
         slug: 'eeyou-istchee',
         description:
           'Territoire nordique avec taïga et lacs immenses, éco-gîtes de Matagami et kayak à Wemindji',
-        image: '/images/destinations/eeyou-istchee-baiejames.avif',
+        image: '/images/destinations/eeyou-istchee.avif',
       },
       {
         name: 'Parc Kuururjuaq',

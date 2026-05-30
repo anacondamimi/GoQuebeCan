@@ -83,7 +83,7 @@ export const CAMPINGS: CampingPageData[] = [
     name: 'Camping du Fjord du Saguenay',
     region: 'Saguenay–Lac-Saint-Jean',
     location: 'L’Anse-Saint-Jean, Québec',
-    heroImage: '/images/destinations/fjord-saguenay.avif',
+    heroImage: '/images/destinations/saguenay.avif',
     heroImageAlt: 'Vue sur le fjord du Saguenay depuis un emplacement de camping en hauteur.',
     shortDescription:
       'Emplacements en terrasse avec vue sur le fjord, ambiance calme et accès facile aux activités nautiques et de randonnée.',
@@ -198,7 +198,7 @@ export const CAMPINGS: CampingPageData[] = [
     name: 'Camping – Parc national de la Gaspésie',
     region: 'Gaspésie',
     location: 'Mont-Albert, Québec',
-    heroImage: '/images/destinations/parc-gaspesie.avif',
+    heroImage: '/images/destinations/gaspesie.avif',
     heroImageAlt: 'Tentes et VR au pied des montagnes dans le parc national de la Gaspésie.',
     shortDescription:
       'Au cœur des Chic-Chocs, un camping de montagne parfait pour les randonneurs et amateurs de paysages spectaculaires.',

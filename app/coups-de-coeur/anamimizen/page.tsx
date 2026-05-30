@@ -81,7 +81,7 @@ export default function CoupDeCoeurAnamimiZenPage() {
           {/* Colonne droite : image */}
           <div className="relative h-64 w-full overflow-hidden rounded-3xl border bg-gray-50 md:h-80">
             <Image
-              src="/images/offres/anamimizen.avif"
+              src="/images/offres/coups-de-coeur-anamimizen.avif"
               alt="AnamimiZen — Coup de cœur GoQuébeCan"
               fill
               className="object-cover"

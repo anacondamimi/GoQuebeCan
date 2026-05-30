@@ -43,7 +43,7 @@ const restaurants = [
     price: '$$$',
     mustTry: 'Table d’hôte ou plat de saison avec vue sur la chute',
     schedule: 'Selon saison et horaires du site',
-    image: '/images/destinations/chute-montmorency.avif',
+    image: '/images/destinations/montmorency.avif',
     vibe: 'Panoramique & élégant',
     tip: 'Très bon choix si tu veux vivre l’expérience complète directement sur le site.',
   },
@@ -323,7 +323,7 @@ export default function BlogArticleMontmorency() {
           <div className="overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-sm">
             <div className="relative mx-auto aspect-square w-full max-w-[900px]">
               <Image
-                src="/images/destinations/chute-montmorency.avif"
+                src="/images/destinations/montmorency.avif"
                 alt="Chute Montmorency près de Québec"
                 fill
                 className="object-cover"

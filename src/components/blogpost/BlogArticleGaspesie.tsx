@@ -156,7 +156,7 @@ const campings: StayCardProps[] = [
     description:
       'Emplacements en bord de baie, aire de jeux et accès facile aux services du village. L’endroit parfait pour une fin de séjour tout en douceur.',
     link: 'https://campingcarletonsurmer.com',
-    image: '/images/destinations/carleton.avif',
+    image: '/images/destinations/carleton-sur-mer.avif',
     extra: 'Très apprécié des familles qui aiment combiner vélo, plage et cantine.',
   },
 ];
@@ -430,7 +430,7 @@ export default function Page() {
         hero={{
           image: (
             <Image
-              src="/images/destinations/parc-gaspesie.avif"
+              src="/images/destinations/gaspesie.avif"
               alt="Route de la Gaspésie en bord de mer, falaises, mer bleue et ciel dégagé"
               width={1920}
               height={1080}

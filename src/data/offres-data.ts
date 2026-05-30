@@ -48,7 +48,7 @@ const RAW_OFFERS: OfferInput[] = [
       'AnamimiZen vous offre un cadre attentif pour apaiser le mental, relâcher les tensions émotionnelles et retrouver plus de sérénité au quotidien.',
     image: {
       // 👉 image locale recommandée
-      src: '/images/offres/anamimizen.avif',
+      src: '/images/offres/coups-de-coeur-anamimizen.avif',
       alt: 'Moment de calme et de recentrage — accompagnement bien-être AnamimiZen',
       provider: 'local',
     },

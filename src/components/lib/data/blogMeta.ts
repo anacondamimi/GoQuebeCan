@@ -145,7 +145,7 @@ export const blogMeta = {
   "carleton": {
     "title": "Carleton",
     "description": "Carleton : découvrez Chasse aux Trésors, Club nautique, avec des idées parfaites pour ados et amateurs de culture.",
-    "image": "/images/destinations/carleton.avif",
+    "image": "/images/default-destination.avif",
     "activites": [
       "Chasse aux Trésors",
       "Club nautique",
@@ -265,7 +265,7 @@ export const blogMeta = {
   "gaspesie": {
     "title": "Gaspesie",
     "description": "Découvrez Gaspesie, ses attraits touristiques, ses activités et ses hébergements incontournables.",
-    "image": "/images/default-destination.avif",
+    "image": "/images/destinations/gaspesie.avif",
     "activites": [],
     "hebergements": [],
     "publics": [
@@ -457,7 +457,7 @@ export const blogMeta = {
   "massif": {
     "title": "Massif",
     "description": "Massif : découvrez Camp Ados Freeride, Chasse au Trésor, avec des idées parfaites pour ados et aventuriers.",
-    "image": "/images/default-destination.avif",
+    "image": "/images/destinations/massif.avif",
     "activites": [
       "Camp Ados Freeride",
       "Chasse au Trésor",
@@ -502,7 +502,7 @@ export const blogMeta = {
   "montmorency": {
     "title": "Montmorency",
     "description": "Montmorency : découvrez Escalier + photos + Québec ensuite, Escalier panoramique, avec des idées parfaites pour ados et aventuriers.",
-    "image": "/images/default-destination.avif",
+    "image": "/images/destinations/montmorency.avif",
     "activites": [
       "Escalier + photos + Québec ensuite",
       "Escalier panoramique",
@@ -811,7 +811,7 @@ export const blogMeta = {
   "saguenay": {
     "title": "Saguenay",
     "description": "Découvrez Saguenay, ses attraits touristiques, ses activités et ses hébergements incontournables.",
-    "image": "/images/default-destination.avif",
+    "image": "/images/destinations/saguenay.avif",
     "activites": [],
     "hebergements": [],
     "publics": [
@@ -830,7 +830,7 @@ export const blogMeta = {
   "sandbanks": {
     "title": "Plage de Sandbanks",
     "description": "Découvrez Plage de Sandbanks, ses attraits touristiques, ses activités et ses hébergements incontournables.",
-    "image": "/images/default-destination.avif",
+    "image": "/images/destinations/sandbanks.avif",
     "activites": [],
     "hebergements": [
       "Newsroom Suites",

@@ -133,7 +133,7 @@ export default function BlogArticleSaguenay() {
         image: (
           <div className="relative h-[260px] w-full overflow-hidden sm:h-[340px] lg:h-[430px]">
             <Image
-              src="/images/destinations/fjord-saguenay.avif"
+              src="/images/destinations/saguenay.avif"
               alt="Fjord du Saguenay avec falaises, eau profonde et paysage nordique"
               fill
               className="object-cover"

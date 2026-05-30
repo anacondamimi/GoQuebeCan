@@ -144,7 +144,7 @@ const parks: WaterPark[] = [
     location: 'Québec',
     tagline:
       'Glissades géantes, rivière thématique et Bora Parc intérieur : un classique familial 4 saisons, tout près de Québec.',
-    image: '/images/destinations/parc-valcartier.avif',
+    image: '/images/destinations/parc-aquatique.avif',
     intro: (
       <>
         <p>

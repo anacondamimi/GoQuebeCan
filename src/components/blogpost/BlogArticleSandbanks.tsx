@@ -229,7 +229,7 @@ export default function BlogArticleSandbanks() {
       <section className="mx-auto mt-8 max-w-4xl">
         <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
           <Image
-            src="/images/destinations/sand-banks.avif"
+            src="/images/destinations/sandbanks.avif"
             alt="Plage de Sandbanks avec dune de sable et famille au bord de l’eau"
             fill
             className="object-cover"

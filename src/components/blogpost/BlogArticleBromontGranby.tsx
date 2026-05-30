@@ -215,7 +215,7 @@ export default function BlogArticleBromontGranby() {
           </p>
           <div className="my-8">
             <Image
-              src="/images/destinations/bromont.avif"
+              src="/images/destinations/bromont-granby.avif"
               alt="Bromont en été"
               className="h-96 w-full rounded-lg object-cover shadow-lg"
               width={800}

@@ -164,7 +164,7 @@ export default function BlogArticleMagogOrford() {
           </p>
           <div className="my-8">
             <Image
-              src="/images/destinations/magog.avif"
+              src="/images/destinations/magog-orford.avif"
               alt="Lac Memphrémagog"
               className="h-96 w-full rounded-lg object-cover shadow-lg"
               width={800}

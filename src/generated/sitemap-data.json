@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-30T17:09:37.927Z",
+  "generatedAt": "2026-05-30T17:42:59.831Z",
   "siteUrl": "https://www.goquebecan.com",
   "counts": {
     "static": 18,
@@ -9,8 +9,8 @@
     "totalBeforeDedupe": 99,
     "total": 64,
     "duplicatesRemoved": 35,
-    "withImages": 26,
-    "withoutImages": 38,
+    "withImages": 38,
+    "withoutImages": 26,
     "blogFinal": 46,
     "destinationsFinal": 1,
     "communityFinal": 1
@@ -45,10 +45,17 @@
       "lastModified": "2026-05-22T20:23:08.467Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
+      "image": "https://www.goquebecan.com/images/destinations/baie-saint-paul.avif",
+      "imageTitle": "Découvrez baie saint paul au Québec"
+    },
+    {
+      "route": "/blog/banff",
+      "lastModified": "2026-05-22T20:23:08.467Z",
+      "changeFrequency": "weekly",
+      "priority": 0.82,
       "image": null,
       "imageTitle": null
     },
-   
     {
       "route": "/blog/bic",
       "lastModified": "2026-05-22T20:23:08.467Z",
@@ -62,8 +69,8 @@
       "lastModified": "2026-05-22T20:23:08.467Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": null,
-      "imageTitle": null
+      "image": "https://www.goquebecan.com/images/destinations/bromont-granby.avif",
+      "imageTitle": "Découvrez bromont granby au Québec"
     },
     {
       "route": "/blog/canyon",
@@ -74,14 +81,21 @@
       "imageTitle": "Découvrez canyon au Québec"
     },
     {
-      "route": "/blog/carleton-sur-mer",
+      "route": "/blog/carleton",
       "lastModified": "2026-05-22T20:23:08.467Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/carleton.avif",
-      "imageTitle": "Découvrez carleton au Québec"
+      "image": null,
+      "imageTitle": null
     },
-
+    {
+      "route": "/blog/carleton-sur-mer",
+      "lastModified": "2026-04-25T18:56:27.689Z",
+      "changeFrequency": "weekly",
+      "priority": 0.82,
+      "image": "https://www.goquebecan.com/images/destinations/carleton-sur-mer.avif",
+      "imageTitle": "Découvrez carleton sur mer au Québec"
+    },
     {
       "route": "/blog/chambly",
       "lastModified": "2026-04-25T18:56:27.689Z",
@@ -95,8 +109,8 @@
       "lastModified": "2026-05-22T20:23:08.467Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": null,
-      "imageTitle": null
+      "image": "https://www.goquebecan.com/images/destinations/eeyou-istchee.avif",
+      "imageTitle": "Découvrez eeyou istchee au Québec"
     },
     {
       "route": "/blog/forillon",
@@ -111,8 +125,8 @@
       "lastModified": "2026-05-22T20:23:08.467Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": null,
-      "imageTitle": null
+      "image": "https://www.goquebecan.com/images/destinations/gaspesie.avif",
+      "imageTitle": "Découvrez gaspesie au Québec"
     },
     {
       "route": "/blog/grand-bend",
@@ -135,8 +149,8 @@
       "lastModified": "2026-05-22T20:23:08.467Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": null,
-      "imageTitle": null
+      "image": "https://www.goquebecan.com/images/destinations/ile-orleans.avif",
+      "imageTitle": "Découvrez ile orleans au Québec"
     },
     {
       "route": "/blog/kamouraska",
@@ -175,16 +189,16 @@
       "lastModified": "2026-05-22T20:23:08.467Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": null,
-      "imageTitle": null
+      "image": "https://www.goquebecan.com/images/destinations/magog-orford.avif",
+      "imageTitle": "Découvrez magog orford au Québec"
     },
     {
       "route": "/blog/massif",
       "lastModified": "2026-05-22T20:23:08.467Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": null,
-      "imageTitle": null
+      "image": "https://www.goquebecan.com/images/destinations/massif.avif",
+      "imageTitle": "Découvrez massif au Québec"
     },
     {
       "route": "/blog/matane",
@@ -207,8 +221,8 @@
       "lastModified": "2026-05-22T20:23:08.467Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": null,
-      "imageTitle": null
+      "image": "https://www.goquebecan.com/images/destinations/montmorency.avif",
+      "imageTitle": "Découvrez montmorency au Québec"
     },
     {
       "route": "/blog/montreal",
@@ -223,8 +237,8 @@
       "lastModified": "2026-05-22T20:23:01.850Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": null,
-      "imageTitle": null
+      "image": "https://www.goquebecan.com/images/destinations/parc-aquatique.avif",
+      "imageTitle": "Découvrez parc aquatique au Québec"
     },
     {
       "route": "/blog/perce",
@@ -279,8 +293,8 @@
       "lastModified": "2026-05-22T20:23:08.467Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": null,
-      "imageTitle": null
+      "image": "https://www.goquebecan.com/images/destinations/riviere-du-loup.avif",
+      "imageTitle": "Découvrez riviere du loup au Québec"
     },
     {
       "route": "/blog/sabrevois",
@@ -295,16 +309,16 @@
       "lastModified": "2026-05-22T20:23:01.850Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": null,
-      "imageTitle": null
+      "image": "https://www.goquebecan.com/images/destinations/saguenay.avif",
+      "imageTitle": "Découvrez saguenay au Québec"
     },
     {
       "route": "/blog/sandbanks",
-      "lastModified": "2026-05-22T20:23:08.467Z",
+      "lastModified": "2026-05-30T17:26:04.338Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": null,
-      "imageTitle": null
+      "image": "https://www.goquebecan.com/images/destinations/sandbanks.avif",
+      "imageTitle": "Découvrez sandbanks au Québec"
     },
     {
       "route": "/blog/sauble-beach",
@@ -420,7 +434,7 @@
     },
     {
       "route": "/coups-de-coeur",
-      "lastModified": "2026-05-18T15:58:27.231Z",
+      "lastModified": "2026-05-30T17:21:15.324Z",
       "changeFrequency": "weekly",
       "priority": 0.8,
       "image": null,
@@ -428,7 +442,7 @@
     },
     {
       "route": "/coups-de-coeur/anamimizen",
-      "lastModified": "2026-05-18T15:58:27.447Z",
+      "lastModified": "2026-05-30T17:21:30.347Z",
       "changeFrequency": "weekly",
       "priority": 0.8,
       "image": null,
@@ -436,7 +450,7 @@
     },
     {
       "route": "/destinations",
-      "lastModified": "2026-04-25T18:36:20.896Z",
+      "lastModified": "2026-05-30T17:33:34.098Z",
       "changeFrequency": "weekly",
       "priority": 0.9,
       "image": null,
