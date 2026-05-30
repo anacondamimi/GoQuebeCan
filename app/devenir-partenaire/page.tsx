@@ -18,9 +18,9 @@ export const metadata = {
   title: 'Devenir partenaire | GoQuébeCAN',
   description:
     'GoQuébeCAN développe des partenariats long terme avec producteurs locaux, hébergements, restaurants et acteurs touristiques du Québec.',
-    alternates: {
-    canonical: 'https://www.goquebecan.com/',
-},
+  alternates: {
+    canonical: 'https://www.goquebecan.com/devenir-partenaire',
+  },
 };
 const partnerBenefits = [
   {
