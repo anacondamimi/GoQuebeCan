@@ -52,8 +52,9 @@ tsconfig.tsbuildinfo
 Thumbs.db
 
 # 🧩 Dossiers spéciaux
-src/generated/**
+src/generated/
 playground/
 tests/e2e/
 tests/unit/
-
+*.json
+src/components/lib/data/blogMeta.ts

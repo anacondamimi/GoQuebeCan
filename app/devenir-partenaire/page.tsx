@@ -86,55 +86,46 @@ const offerItems = [
 export default function DevenirPartenairePage() {
   return (
     <main className="bg-background">
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/photo-quebec-partenaire.avif"
-            alt="Paysage du Québec pour les partenaires GoQuébeCAN"
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/55" />
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-6 pb-8 pt-16">
+          <H1>Devenir partenaire de GoQuébeCAN</H1>
+
+          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-neutral">
+            Faites découvrir votre entreprise à des voyageurs qui recherchent des expériences
+            authentiques, des producteurs locaux et des trésors cachés partout au Québec.
+          </p>
+
+          <p className="mt-4 max-w-3xl leading-relaxed text-neutral">
+            <BrandName /> met en valeur les régions, les producteurs locaux, les expériences
+            authentiques et les voyages au Québec à travers une plateforme moderne pensée pour les
+            voyageurs d’aujourd’hui.
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/contact"
+              className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:brightness-110"
+            >
+              Discutons d’un partenariat
+            </Link>
+
+            <Link
+              href="/producteurs"
+              className="rounded-full border border-gray-300 bg-white px-6 py-3 text-sm font-semibold text-secondary transition hover:bg-gray-50"
+            >
+              Voir les producteurs locaux
+            </Link>
+          </div>
         </div>
 
-        <div className="relative mx-auto flex min-h-[620px] max-w-7xl flex-col justify-center px-6 py-24 text-white">
-          <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/15 px-4 py-2 backdrop-blur">
-              <Image src="/logo2.avif" alt="Logo GoQuébeCAN" width={34} height={34} />
-              <BrandName className="text-lg text-white" />
-            </div>
-
-            <H1 className="text-white">Devenir partenaire de GoQuébeCAN</H1>
-
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/90">
-              <BrandName /> met en valeur les régions, les producteurs locaux, les expériences
-              authentiques et les voyages au Québec à travers une plateforme moderne pensée pour les
-              voyageurs d’aujourd’hui.
-            </p>
-
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/85">
-              Nous développons actuellement des partenariats avec des acteurs touristiques,
-              hébergements, producteurs locaux et entreprises souhaitant promouvoir le Québec
-              autrement.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/contact"
-                className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:brightness-110"
-              >
-                Discutons d’un partenariat
-              </Link>
-
-              <Link
-                href="/producteurs"
-                className="rounded-full border border-white/60 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
-              >
-                Voir les producteurs locaux
-              </Link>
-            </div>
-          </div>
+        <div className="relative mx-auto aspect-[16/9] w-full max-w-7xl overflow-hidden rounded-none bg-white md:rounded-3xl">
+          <Image
+            src="/images/photo-quebec-partenaire.avif"
+            alt="Famille de voyageurs devant un kiosque de produits locaux au Québec"
+            fill
+            priority
+            className="object-cover object-center"
+          />
         </div>
       </section>
 
@@ -240,30 +231,30 @@ export default function DevenirPartenairePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-14">
-        <div className="rounded-3xl bg-secondary p-8 text-white shadow-card md:p-12">
-          <div className="max-w-3xl">
-            <H2 className="text-white">Ensemble, faisons rayonner le Québec autrement.</H2>
-            <p className="mt-5 leading-relaxed text-white/85">
-              Vous représentez un producteur, un hébergement, une activité, une entreprise locale ou
-              un organisme touristique ? Parlons d’une collaboration simple, sérieuse et durable.
-            </p>
+      <section className="mx-auto max-w-7xl px-6 py-16">
+        <div className="rounded-3xl bg-gradient-to-r from-green-50 via-white to-blue-50 p-10 text-center shadow-card md:p-16">
+          <H2 className="mx-auto max-w-4xl">Ensemble, faisons découvrir le meilleur du Québec.</H2>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/contact"
-                className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110"
-              >
-                Aller au formulaire de contact
-              </Link>
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-neutral">
+            Vous êtes producteur, restaurateur, propriétaire de camping, hôtelier, artisan ou acteur
+            touristique ? Rejoignez <BrandName /> et faites connaître votre entreprise à des
+            voyageurs en quête d'authenticité et de découvertes locales.
+          </p>
 
-              <Link
-                href="/planificateur"
-                className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Découvrir le planificateur
-              </Link>
-            </div>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="rounded-full bg-primary px-8 py-4 text-base font-semibold text-white shadow-lg transition hover:scale-105 hover:brightness-110"
+            >
+              🤝 Devenir partenaire
+            </Link>
+
+            <Link
+              href="/producteurs"
+              className="rounded-full border border-primary px-8 py-4 text-base font-semibold text-primary transition hover:bg-primary/5"
+            >
+              🧀 Voir les producteurs locaux
+            </Link>
           </div>
         </div>
       </section>
