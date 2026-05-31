@@ -269,7 +269,30 @@ function extractSlugsFromSource(raw) {
 
   return [...slugs].sort((a, b) => a.localeCompare(b, 'fr'));
 }
+async function readProducerRegionRoutes() {
+  const producerRegions = [
+    'abitibi-temiscamingue',
+    'bas-saint-laurent',
+    'cantons-de-lest',
+    'centre-du-quebec',
+    'charlevoix',
+    'cote-nord',
+    'gaspesie',
+    'lanaudiere',
+    'laurentides',
+    'mauricie',
+    'montreal',
+    'nord-du-quebec',
+    'outaouais',
+    'saguenay-lac-saint-jean',
+    'ville-de-quebec',
+  ];
 
+  return producerRegions.map((slug) => ({
+    route: normalizeRoute(`/producteurs/${slug}`),
+    lastModified: STATIC_LASTMOD,
+  }));
+}
 async function readBlogRoutes() {
   const routes = new Map();
 
@@ -386,7 +409,13 @@ async function readCommunityRoutes() {
 }
 
 function getSeoMetaForRoute(route) {
-  if (route === '/') {
+
+  if (route.startsWith('/producteurs/')) {
+    return {
+      changeFrequency: 'weekly',
+      priority: 0.78,
+    };
+  }if (route === '/') {
     return {
       changeFrequency: 'daily',
       priority: 1.0,
@@ -576,6 +605,7 @@ async function main() {
   const destinationRoutes = await readDestinationRoutes();
   const blogRoutes = await readBlogRoutes();
   const communityRoutes = await readCommunityRoutes();
+  const producerRegionRoutes = await readProducerRegionRoutes();
 
   const staticEntries = await Promise.all(
     staticRoutes
@@ -584,7 +614,15 @@ async function main() {
       .filter((route) => !route.startsWith('/itineraires-communaute/'))
       .map((route) => createEntry(route)),
   );
-
+const producerRegionEntries = await Promise.all(
+  producerRegionRoutes.map((item) =>
+    createEntry(item.route, {
+      lastModified: item.lastModified || undefined,
+      changeFrequency: 'weekly',
+      priority: 0.78,
+    }),
+  ),
+);
   const destinationEntries = await Promise.all(
     destinationRoutes.map((item) =>
       createEntry(item.route, {
@@ -609,7 +647,13 @@ async function main() {
     ),
   );
 
-  const allEntries = [...staticEntries, ...destinationEntries, ...blogEntries, ...communityEntries];
+  const allEntries = [
+    ...staticEntries,
+    ...destinationEntries,
+    ...blogEntries,
+    ...communityEntries,
+    ...producerRegionEntries,
+  ];
   const entries = dedupeEntries(allEntries);
 
   const payload = {
@@ -628,6 +672,8 @@ async function main() {
       blogFinal: countByPrefix(entries, '/blog'),
       destinationsFinal: countByPrefix(entries, '/destinations'),
       communityFinal: countByPrefix(entries, '/itineraires-communaute'),
+      producerRegions: producerRegionEntries.length,
+      producerRegionsFinal: countByPrefix(entries, '/producteurs'),
     },
     entries,
   };

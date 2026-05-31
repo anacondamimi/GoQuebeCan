@@ -1,19 +1,21 @@
 {
-  "generatedAt": "2026-05-31T17:47:52.332Z",
+  "generatedAt": "2026-05-31T18:11:54.687Z",
   "siteUrl": "https://www.goquebecan.com",
   "counts": {
     "static": 18,
     "destinations": 36,
     "blog": 43,
     "community": 0,
-    "totalBeforeDedupe": 97,
-    "total": 61,
+    "totalBeforeDedupe": 112,
+    "total": 76,
     "duplicatesRemoved": 36,
-    "withImages": 38,
-    "withoutImages": 23,
+    "withImages": 40,
+    "withoutImages": 36,
     "blogFinal": 43,
     "destinationsFinal": 1,
-    "communityFinal": 1
+    "communityFinal": 1,
+    "producerRegions": 15,
+    "producerRegionsFinal": 16
   },
   "entries": [
     {
@@ -487,6 +489,126 @@
       "priority": 0.8,
       "image": "https://www.goquebecan.com/images/producteurs.avif",
       "imageTitle": "Découvrez producteurs au Québec"
+    },
+    {
+      "route": "/producteurs/abitibi-temiscamingue",
+      "lastModified": "2025-10-26T17:55:55.740Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/producteurs/bas-saint-laurent",
+      "lastModified": "2025-10-26T17:55:55.740Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/producteurs/cantons-de-lest",
+      "lastModified": "2025-10-26T17:55:55.740Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/producteurs/centre-du-quebec",
+      "lastModified": "2025-10-26T17:55:55.740Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/producteurs/charlevoix",
+      "lastModified": "2025-10-26T17:55:55.740Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/producteurs/cote-nord",
+      "lastModified": "2025-10-26T17:55:55.740Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/producteurs/gaspesie",
+      "lastModified": "2025-10-26T17:55:55.740Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": "https://www.goquebecan.com/images/destinations/gaspesie.avif",
+      "imageTitle": "Découvrez gaspesie au Québec"
+    },
+    {
+      "route": "/producteurs/lanaudiere",
+      "lastModified": "2025-10-26T17:55:55.740Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/producteurs/laurentides",
+      "lastModified": "2025-10-26T17:55:55.740Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/producteurs/mauricie",
+      "lastModified": "2025-10-26T17:55:55.740Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/producteurs/montreal",
+      "lastModified": "2025-10-26T17:55:55.740Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": "https://www.goquebecan.com/images/destinations/montreal.avif",
+      "imageTitle": "Découvrez montreal au Québec"
+    },
+    {
+      "route": "/producteurs/nord-du-quebec",
+      "lastModified": "2025-10-26T17:55:55.740Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/producteurs/outaouais",
+      "lastModified": "2025-10-26T17:55:55.740Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/producteurs/saguenay-lac-saint-jean",
+      "lastModified": "2025-10-26T17:55:55.740Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/producteurs/ville-de-quebec",
+      "lastModified": "2025-10-26T17:55:55.740Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
     },
     {
       "route": "/videos",
