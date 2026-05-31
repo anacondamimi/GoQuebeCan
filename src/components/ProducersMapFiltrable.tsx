@@ -3,7 +3,6 @@
 import React, { useMemo, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet';
 import { Icon, LatLngExpression } from 'leaflet';
-// ❌ plus de `import 'leaflet/dist/leaflet.css';` ici
 
 import producersJson from '@/data/producers.json';
 import ProducerTypeFilter from './ProducerTypeFilter';
@@ -15,6 +14,12 @@ import {
   type Producer,
   type ProducerCategory,
 } from '@/utils/producersFilters';
+
+type ProducerWithRegion = Producer & {
+  region?: string;
+  city?: string | null;
+  county?: string | null;
+};
 
 type Props = {
   points?: Coord[];
@@ -38,29 +43,53 @@ export default function ProducersMapFiltrable({
   defaultNearby = false,
   height = 420,
 }: Props) {
-  // ✅ state typé correctement
   const [selectedCategories, setSelectedCategories] = useState<ProducerCategory[]>(ALL_CATEGORIES);
   const [onlyNearby, setOnlyNearby] = useState<boolean>(points.length >= 2 ? defaultNearby : false);
+  const [selectedRegion, setSelectedRegion] = useState<string>('Toutes');
 
-  const producers = useMemo(() => producersJson as unknown as Producer[], []);
+  const producers = useMemo(() => producersJson as unknown as ProducerWithRegion[], []);
 
-  const list = useMemo(
-    () =>
-      filterProducers({
-        producers,
-        selectedCategories,
-        onlyNearby,
-        routePoints: points,
-        thresholdKm: 30,
-      }),
-    [producers, selectedCategories, onlyNearby, points],
-  );
+  const regions = useMemo(() => {
+    return [
+      'Toutes',
+      ...Array.from(
+        new Set(
+          producers
+            .map((producer) => producer.region)
+            .filter((region): region is string => Boolean(region)),
+        ),
+      ).sort(),
+    ];
+  }, [producers]);
 
-  // ✅ plus de "as any" : on tape center en LatLngExpression
+  const regionCounts = useMemo(() => {
+    return producers.reduce<Record<string, number>>((acc, producer) => {
+      const region = producer.region || 'À classer';
+      acc[region] = (acc[region] || 0) + 1;
+      return acc;
+    }, {});
+  }, [producers]);
+
+  const list = useMemo(() => {
+    const filteredByTypeAndRoute = filterProducers({
+      producers,
+      selectedCategories,
+      onlyNearby,
+      routePoints: points,
+      thresholdKm: 30,
+    }) as ProducerWithRegion[];
+
+    if (selectedRegion === 'Toutes') {
+      return filteredByTypeAndRoute;
+    }
+
+    return filteredByTypeAndRoute.filter((producer) => producer.region === selectedRegion);
+  }, [producers, selectedCategories, onlyNearby, points, selectedRegion]);
+
   const center: LatLngExpression = useMemo(() => {
     if (points.length >= 1) return points[0];
     if (list.length >= 1) return [list[0].lat, list[0].lng];
-    return [46.829, -71.254]; // Québec
+    return [46.829, -71.254];
   }, [points, list]);
 
   const toggleCategory = (cat: ProducerCategory) =>
@@ -70,7 +99,32 @@ export default function ProducersMapFiltrable({
 
   return (
     <div className="space-y-4">
+      <div className="rounded-xl border bg-white p-4 shadow-sm">
+        <label htmlFor="region-filter" className="mb-2 block text-sm font-semibold text-gray-800">
+          Filtrer par région
+        </label>
+
+        <select
+          id="region-filter"
+          value={selectedRegion}
+          onChange={(e) => setSelectedRegion(e.target.value)}
+          className="w-full rounded-md border border-gray-300 bg-white p-2 text-sm text-gray-800"
+        >
+          {regions.map((region) => (
+            <option key={region} value={region}>
+              {region === 'Toutes'
+                ? `Toutes les régions (${producers.length})`
+                : `${region} (${regionCounts[region] || 0})`}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <ProducerTypeFilter selected={selectedCategories} onToggle={toggleCategory} />
+
+      <p className="text-sm text-gray-600">
+        {list.length} producteur{list.length > 1 ? 's' : ''} affiché{list.length > 1 ? 's' : ''}
+      </p>
 
       {points.length >= 2 && (
         <button
@@ -93,12 +147,19 @@ export default function ProducersMapFiltrable({
         {list.map((p) => {
           const cat = detectCategory(p);
           const icon = icons[cat] || icons.default;
+
           return (
             <Marker key={p.id} position={[p.lat, p.lng]} icon={icon}>
               <Popup>
                 <div className="w-64 space-y-2 text-sm">
                   <div className="font-semibold">{p.name}</div>
+
                   {p.type && <div className="text-gray-600">{p.type}</div>}
+
+                  {p.region && <div className="text-gray-600">Région : {p.region}</div>}
+
+                  {p.city && <div className="text-gray-500">Ville : {p.city}</div>}
+
                   {p.website ? (
                     <a
                       href={p.website}

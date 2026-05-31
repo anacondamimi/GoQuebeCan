@@ -1,21 +1,22 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Apple,
   Beer,
   Handshake,
   Leaf,
-  MapPinned,
   Route,
   Sparkles,
   Store,
   Wheat,
 } from 'lucide-react';
-
+import ProducteursRegionsLinks from '@/components/ProducteursRegionsLinks';
 import BrandName from '@/components/brand/BrandName';
 import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
 import ProducteursMapSection from './ProducteursMapSection';
+import ProducteursStats from '@/components/ProducteursStats';
 
 const siteUrl = 'https://www.goquebecan.com';
 
@@ -34,12 +35,21 @@ export const metadata: Metadata = {
     siteName: 'GoQuébeCan',
     locale: 'fr_CA',
     type: 'website',
+    images: [
+      {
+        url: `${siteUrl}/images/saveurs-du-quebec.avif`,
+        width: 1200,
+        height: 630,
+        alt: 'Producteurs locaux et saveurs du Québec',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Producteurs locaux du Québec | GoQuébeCan',
     description:
       'Fermes, fromageries, cidreries, microbrasseries et marchés publics à découvrir au Québec.',
+    images: [`${siteUrl}/images/saveurs-du-quebec.avif`],
   },
   robots: {
     index: true,
@@ -93,7 +103,7 @@ export default function ProducteursPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:py-24">
+      <section className="mx-auto max-w-7xl px-6 py-14 lg:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
             <Sparkles size={16} />
@@ -132,33 +142,50 @@ export default function ProducteursPage() {
             return (
               <article
                 key={category.title}
-                className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm"
+                className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
                 <div className="mb-4 flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                   <Icon size={22} />
                 </div>
+
                 <H2 className="text-lg font-bold text-secondary">{category.title}</H2>
+
                 <p className="mt-3 text-sm leading-relaxed text-neutral">{category.text}</p>
               </article>
             );
           })}
         </div>
 
-        <section className="mt-16 rounded-4xl border border-gray-200 bg-white p-6 shadow-card md:p-8">
-          <div className="mb-8 text-center">
-            <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-              <MapPinned size={22} />
-            </div>
+        <section className="overflow-hidden rounded-[2rem] border border-gray-200 bg-white shadow-card">
+          <Image
+            src="/images/saveurs-du-quebec.avif"
+            alt="Saveurs du Québec"
+            width={1400}
+            height={700}
+            className="w-full object-cover"
+            priority
+          />
 
-            <H2>Carte interactive des producteurs locaux</H2>
-
-            <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-neutral md:text-base">
-              Utilisez la carte pour repérer des producteurs à proximité de vos destinations, créer
-              des arrêts plus authentiques et soutenir les entreprises locales pendant votre voyage.
+          <div className="p-8 md:p-10 text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary">
+              Carte interactive
             </p>
-          </div>
 
-          <ProducteursMapSection />
+            <H2 className="text-4xl font-bold">Découvrez les saveurs du Québec</H2>
+
+            <p className="mx-auto mt-4 max-w-4xl text-lg leading-relaxed text-neutral">
+              Microbrasseries, fromageries, fermes, marchés publics, vignobles, cidreries et
+              producteurs passionnés à découvrir partout au Québec.
+            </p>
+
+            <div className="mt-8">
+              <ProducteursStats />
+            </div>
+          </div>
+          <ProducteursRegionsLinks />
+          <div className="border-t border-gray-200 p-4 md:p-6">
+            <ProducteursMapSection />
+          </div>
         </section>
 
         <section className="mt-16 grid gap-6 lg:grid-cols-2">
@@ -198,14 +225,14 @@ export default function ProducteursPage() {
           </article>
         </section>
 
-        <section className="mt-16 rounded-4xl bg-secondary px-6 py-10 text-center text-white">
-          <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-2xl bg-white/10 text-white">
+        <section className="mt-16 rounded-[2rem] bg-[#36b5ff] px-6 py-12 text-center text-white shadow-md">
+          <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-2xl bg-white/20 text-white">
             <Apple size={22} />
           </div>
 
           <H2 className="text-white">Voyager local, c’est donner du sens à son itinéraire</H2>
 
-          <p className="mx-auto mt-4 max-w-3xl leading-relaxed text-white/90">
+          <p className="mx-auto mt-4 max-w-3xl leading-relaxed text-white">
             GoQuébeCan veut aider les voyageurs à relier les plus beaux paysages du Québec aux
             producteurs, artisans et lieux authentiques qui font vivre les régions.
           </p>
@@ -213,7 +240,7 @@ export default function ProducteursPage() {
           <div className="mt-8">
             <Link
               href="/planificateur"
-              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-secondary transition hover:opacity-90"
+              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0b4f71] shadow-sm transition hover:opacity-90"
             >
               Créer mon itinéraire avec des arrêts locaux
             </Link>

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-30T19:55:11.796Z",
+  "generatedAt": "2026-05-31T17:47:52.332Z",
   "siteUrl": "https://www.goquebecan.com",
   "counts": {
     "static": 18,
@@ -378,7 +378,7 @@
     },
     {
       "route": "/camping",
-      "lastModified": "2026-04-25T18:36:20.884Z",
+      "lastModified": "2026-05-30T20:22:27.069Z",
       "changeFrequency": "weekly",
       "priority": 0.8,
       "image": null,
@@ -434,7 +434,7 @@
     },
     {
       "route": "/devenir-partenaire",
-      "lastModified": "2026-05-30T18:59:39.571Z",
+      "lastModified": "2026-05-30T20:05:10.076Z",
       "changeFrequency": "monthly",
       "priority": 0.6,
       "image": null,
@@ -498,7 +498,7 @@
     },
     {
       "route": "/vols",
-      "lastModified": "2026-04-25T18:36:20.920Z",
+      "lastModified": "2026-05-30T20:10:49.827Z",
       "changeFrequency": "weekly",
       "priority": 0.8,
       "image": null,

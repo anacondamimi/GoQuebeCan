@@ -29,7 +29,7 @@ export default function H2({
 }: H2Props) {
   const Tag: ElementType = as;
 
-  const sizeCls = size === 'sm' ? 'text-xl sm:text-2xl' : 'text-2xl sm:text-3xl md:text-4xl'; // taille standard H2
+  const sizeCls = size === 'sm' ? 'text-lg sm:text-xl' : 'text-xl sm:text-2xl md:text-3xl';// taille standard H2
 
   const alignWrap = align === 'left' ? '' : 'text-center';
   const accentWidth = size === 'sm' ? 'w-12' : 'w-16';

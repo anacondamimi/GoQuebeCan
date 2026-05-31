@@ -27,7 +27,7 @@ export default function H3({
 }: H3Props) {
   const Tag: ElementType = as;
 
-  const sizeCls = size === 'sm' ? 'text-lg sm:text-xl' : 'text-xl sm:text-2xl md:text-3xl'; // H3 en-dessous du H2
+  const sizeCls = size === 'sm' ? 'text-base sm:text-lg' : 'text-lg sm:text-xl md:text-2xl'; // H3 en-dessous du H2
 
   const alignCls = align === 'left' ? 'text-left' : 'text-center';
 
