@@ -139,7 +139,7 @@ export default function CoupDeCoeurFromagerieJulioPage() {
               <H1>
                 Fromagerie Julio{' '}
                 <span className="text-gray-500">
-                  : une adresse où les produits et les gens donnent envie de revenir
+                  : Des produits d'exeption, un acceuil qui fait toute la différence
                 </span>
               </H1>
             </div>
@@ -492,7 +492,7 @@ export default function CoupDeCoeurFromagerieJulioPage() {
         </div>
       </section>
 
-    
+
 
       <section className="mt-10 rounded-3xl border bg-white p-6 text-center shadow-sm md:p-8">
         <p className="text-sm font-semibold uppercase tracking-wide text-red-700">

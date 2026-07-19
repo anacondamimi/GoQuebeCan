@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T14:44:45.282Z",
+  "generatedAt": "2026-07-19T15:30:17.998Z",
   "siteUrl": "https://goquebecan.com",
   "counts": {
     "static": 19,
@@ -434,7 +434,7 @@
     },
     {
       "route": "/coups-de-coeur/fromagerie-julio",
-      "lastModified": "2026-07-18T20:33:18.431Z",
+      "lastModified": "2026-07-19T15:26:09.024Z",
       "changeFrequency": "monthly",
       "priority": 0.6,
       "image": null,
