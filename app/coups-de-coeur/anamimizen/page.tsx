@@ -26,7 +26,7 @@ export default function CoupDeCoeurAnamimiZenPage() {
           <div className="absolute -bottom-24 -right-24 size-72 rounded-full bg-[#8b5cf6]/10 blur-3xl" />
         </div>
 
-        <div className="relative grid gap-6 md:grid-cols-2 md:items-center">
+        <div className="relative grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-center">
           {/* Colonne gauche */}
           <div>
             <div className="flex flex-wrap items-center gap-2">

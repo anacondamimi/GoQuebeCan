@@ -35,7 +35,7 @@ export function loadBlogComponent(slug: BlogSlug): ComponentType {
   if (!loader) return NotFoundArticle;
 
   return dynamic(() => loader().then((mod) => mod.default), {
-    ssr: false,
+    ssr: true,
     loading: () => (
       <div className="flex min-h-[40vh] animate-pulse flex-col items-center justify-center text-gray-500">
         <span className="text-base sm:text-lg">Chargement de l’article…</span>

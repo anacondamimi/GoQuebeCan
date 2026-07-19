@@ -156,7 +156,7 @@ export default function ProducteursPage() {
           })}
         </div>
 
-        <section className="overflow-hidden rounded-[2rem] border border-gray-200 bg-white shadow-card">
+        <section className="overflow-hidden rounded-4xl border border-gray-200 bg-white shadow-card">
           <Image
             src="/images/saveurs-du-quebec.avif"
             alt="Saveurs du Québec"
@@ -166,7 +166,7 @@ export default function ProducteursPage() {
             priority
           />
 
-          <div className="p-8 md:p-10 text-center">
+          <div className="p-8 text-center md:p-10">
             <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary">
               Carte interactive
             </p>
@@ -225,7 +225,7 @@ export default function ProducteursPage() {
           </article>
         </section>
 
-        <section className="mt-16 rounded-[2rem] bg-[#36b5ff] px-6 py-12 text-center text-white shadow-md">
+        <section className="mt-16 rounded-4xl bg-[#36b5ff] px-6 py-12 text-center text-white shadow-md">
           <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-2xl bg-white/20 text-white">
             <Apple size={22} />
           </div>

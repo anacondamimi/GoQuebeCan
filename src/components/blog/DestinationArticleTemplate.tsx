@@ -265,7 +265,10 @@ function ConclusionSection({ conclusion }: { conclusion?: ConclusionBlock }) {
   if (!conclusion) return null;
 
   return (
-    <section className="mt-14 rounded-3xl border border-indigo-100 bg-gradient-to-br from-indigo-50 via-white to-white p-6 shadow-sm sm:p-8">
+    <section
+      id="cta"
+      className="mt-14 scroll-mt-24 rounded-3xl border border-indigo-100 bg-gradient-to-br from-indigo-50 via-white to-white p-6 shadow-sm sm:p-8"
+    >
       <H2 className="mb-4">{conclusion.title ?? 'Conclusion'}</H2>
 
       <p className="text-base leading-8 text-gray-700">{conclusion.text}</p>

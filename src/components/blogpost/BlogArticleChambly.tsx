@@ -9,17 +9,7 @@ import { bookingAwin } from '@/lib/awin';
 import { RestaurantPremiumGrid } from '@/components/food/RestaurantPremiumGrid';
 import DestinationFaq from '@/components/blog/DestinationFaq';
 
-import {
-  Hotel,
-  Bike,
-  Calendar,
-  DollarSign,
-  Shield,
-  Star,
-  Trees,
-  Map,
-  ShoppingBasket,
-} from 'lucide-react';
+import { Bike, Calendar, DollarSign, Shield, Star, Trees, Map, ShoppingBasket } from 'lucide-react';
 
 export const metadata = {
   slug: 'chambly',
@@ -346,7 +336,7 @@ export default function BlogArticleChambly() {
         { id: 'kids', label: 'Activités pour enfants' },
         { id: 'teens', label: 'Activités pour ados / actifs' },
         { id: 'bakeries', label: 'Boulangeries' },
-        { id: 'terroir', label: 'Producteurs, fromages & marché' },
+        { id: 'terroir', label: 'Épicerie, marché & producteurs' },
         { id: 'vr-camping', label: 'VR, stationnement & infos pratiques' },
         { id: 'ou-dormir', label: 'Où dormir' },
         { id: 'ou-manger', label: 'Où manger' },
@@ -370,6 +360,21 @@ export default function BlogArticleChambly() {
       hotelSection={<HotelGrid items={hotels} />}
       restaurantSection={<RestaurantPremiumGrid items={restaurants} />}
       faqSection={<DestinationFaq items={faqItems} />}
+      conclusion={{
+        title: 'Réserver et liens utiles',
+        text: 'Chambly, c’est une escapade simple, gourmande et facile à combiner avec le reste de ton itinéraire au Québec. Voici les meilleurs points d’entrée pour continuer ta préparation.',
+        ctas: [
+          {
+            label: 'Voir les hébergements autour de Chambly',
+            href: ctaBookingUrl,
+            target: '_blank',
+            variant: 'primary',
+          },
+          { label: 'Planifier mon itinéraire', href: '/planificateur', variant: 'outline' },
+          { label: 'Découvrir les producteurs', href: '/producteurs', variant: 'outline' },
+          { label: 'Voir plus d’inspiration', href: '/videos', variant: 'soft' },
+        ],
+      }}
       quickFacts={[
         { label: 'Région', value: 'Montérégie / Rive-Sud de Montréal' },
         { label: 'Durée idéale', value: '1 journée à 1 week-end' },
@@ -745,7 +750,7 @@ export default function BlogArticleChambly() {
       </section>
 
       <section id="terroir" className="mt-10 scroll-mt-24">
-        <H2>Producteurs locaux, marché, fromages, fruits et légumes</H2>
+        <H2>Où faire l’épicerie et découvrir les producteurs locaux</H2>
         <p className="mt-4 text-gray-700">
           La région autour de Chambly possède une vraie richesse agricole et gourmande. Ajouter un
           arrêt terroir à ton itinéraire change complètement la perception de la sortie : tu ne fais
@@ -919,59 +924,6 @@ export default function BlogArticleChambly() {
             .
           </li>
         </ul>
-      </section>
-
-      <section id="cta" className="mt-10 scroll-mt-24">
-        <H2>Réserver et liens utiles</H2>
-        <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          <a
-            href={ctaBookingUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-2xl border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <Hotel className="mb-3 size-5 text-gray-900" />
-            <p className="text-base font-bold text-gray-900">
-              Voir les hébergements autour de Chambly
-            </p>
-            <p className="mt-2 text-sm text-gray-700">
-              Compare les options pour dormir sur la Rive-Sud et prolonger l’escapade sans stress.
-            </p>
-          </a>
-
-          <a
-            href="/planificateur"
-            className="rounded-2xl border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <Map className="mb-3 size-5 text-gray-900" />
-            <p className="text-base font-bold text-gray-900">Planifier mon itinéraire</p>
-            <p className="mt-2 text-sm text-gray-700">
-              Construit ton trajet avec Chambly, les producteurs locaux et d’autres étapes proches.
-            </p>
-          </a>
-
-          <a
-            href="/producteurs"
-            className="rounded-2xl border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <ShoppingBasket className="mb-3 size-5 text-gray-900" />
-            <p className="text-base font-bold text-gray-900">Découvrir les producteurs</p>
-            <p className="mt-2 text-sm text-gray-700">
-              Ajoute marchés, fermes, fromageries et gourmandises locales à ton itinéraire.
-            </p>
-          </a>
-
-          <a
-            href="/videos"
-            className="rounded-2xl border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <Calendar className="mb-3 size-5 text-gray-900" />
-            <p className="text-base font-bold text-gray-900">Voir plus d’inspiration</p>
-            <p className="mt-2 text-sm text-gray-700">
-              Regarde nos vidéos et complète avec nos coups de cœur pour préparer une belle sortie.
-            </p>
-          </a>
-        </div>
       </section>
     </DestinationArticleTemplate>
   );

@@ -6,7 +6,6 @@ import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
 import H3 from '@/components/typography/H3';
 import { bookingAwin } from '@/lib/awin';
-import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
 
 type HotelInfo = {
   name: string;
@@ -51,10 +50,7 @@ function HotelRow({ hotel }: { hotel: HotelInfo }) {
   const src = hotel.image || '/images/placeholder/placeholder.avif';
 
   return (
-    <DestinationArticleTemplate
-      slug="sandbanks"
-      title="Plage de Sandbanks : l'évasion parfaite pour les familles québécoises"
-    >
+
       <li className="group flex items-center gap-4 rounded-lg py-3 transition hover:bg-gray-50 hover:shadow-sm">
         <Link
           href={hotel.bookingUrl}
@@ -87,7 +83,6 @@ function HotelRow({ hotel }: { hotel: HotelInfo }) {
           </div>
         </Link>
       </li>
-    </DestinationArticleTemplate>
   );
 }
 

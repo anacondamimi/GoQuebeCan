@@ -1,26 +1,24 @@
 {
-  "generatedAt": "2026-05-31T18:11:54.687Z",
-  "siteUrl": "https://www.goquebecan.com",
+  "generatedAt": "2026-07-19T14:44:45.282Z",
+  "siteUrl": "https://goquebecan.com",
   "counts": {
-    "static": 18,
-    "destinations": 36,
-    "blog": 43,
-    "community": 0,
-    "totalBeforeDedupe": 112,
-    "total": 76,
-    "duplicatesRemoved": 36,
-    "withImages": 40,
-    "withoutImages": 36,
-    "blogFinal": 43,
-    "destinationsFinal": 1,
-    "communityFinal": 1,
+    "static": 19,
+    "blog": 44,
+    "community": 1,
     "producerRegions": 15,
+    "totalBeforeDedupe": 79,
+    "total": 79,
+    "duplicatesRemoved": 0,
+    "withImages": 40,
+    "withoutImages": 39,
+    "blogFinal": 44,
+    "communityFinal": 1,
     "producerRegionsFinal": 16
   },
   "entries": [
     {
       "route": "/",
-      "lastModified": "2026-05-30T18:48:55.956Z",
+      "lastModified": "2026-07-19T14:14:37.634Z",
       "changeFrequency": "daily",
       "priority": 1,
       "image": null,
@@ -36,135 +34,143 @@
     },
     {
       "route": "/blog/anse-saint-jean",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/anse-saint-jean.avif",
+      "image": "https://goquebecan.com/images/destinations/anse-saint-jean.avif",
       "imageTitle": "Découvrez anse saint jean au Québec"
     },
     {
       "route": "/blog/baie-saint-paul",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/baie-saint-paul.avif",
+      "image": "https://goquebecan.com/images/destinations/baie-saint-paul.avif",
       "imageTitle": "Découvrez baie saint paul au Québec"
     },
     {
       "route": "/blog/bic",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/bic.avif",
+      "image": "https://goquebecan.com/images/destinations/bic.avif",
       "imageTitle": "Découvrez bic au Québec"
     },
     {
       "route": "/blog/bromont-granby",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/bromont-granby.avif",
+      "image": "https://goquebecan.com/images/destinations/bromont-granby.avif",
       "imageTitle": "Découvrez bromont granby au Québec"
     },
     {
-      "route": "/blog/canyon",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "route": "/blog/brossard",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/canyon.avif",
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/blog/canyon",
+      "lastModified": "2026-07-11T19:52:07.063Z",
+      "changeFrequency": "weekly",
+      "priority": 0.82,
+      "image": "https://goquebecan.com/images/destinations/canyon.avif",
       "imageTitle": "Découvrez canyon au Québec"
     },
     {
       "route": "/blog/carleton-sur-mer",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/carleton-sur-mer.avif",
+      "image": "https://goquebecan.com/images/destinations/carleton-sur-mer.avif",
       "imageTitle": "Découvrez carleton sur mer au Québec"
     },
     {
       "route": "/blog/chambly",
-      "lastModified": "2026-04-25T18:56:27.689Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/chambly.avif",
+      "image": "https://goquebecan.com/images/destinations/chambly.avif",
       "imageTitle": "Découvrez chambly au Québec"
     },
     {
       "route": "/blog/eeyou-istchee",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/eeyou-istchee.avif",
+      "image": "https://goquebecan.com/images/destinations/eeyou-istchee.avif",
       "imageTitle": "Découvrez eeyou istchee au Québec"
     },
     {
       "route": "/blog/forillon",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/forillon.avif",
+      "image": "https://goquebecan.com/images/destinations/forillon.avif",
       "imageTitle": "Découvrez forillon au Québec"
     },
     {
       "route": "/blog/gaspesie",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/gaspesie.avif",
+      "image": "https://goquebecan.com/images/destinations/gaspesie.avif",
       "imageTitle": "Découvrez gaspesie au Québec"
     },
     {
       "route": "/blog/grand-bend",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/grand-bend.avif",
+      "image": "https://goquebecan.com/images/destinations/grand-bend.avif",
       "imageTitle": "Découvrez grand bend au Québec"
     },
     {
       "route": "/blog/hautes-gorges",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/hautes-gorges.avif",
+      "image": "https://goquebecan.com/images/destinations/hautes-gorges.avif",
       "imageTitle": "Découvrez hautes gorges au Québec"
     },
     {
       "route": "/blog/ile-orleans",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/ile-orleans.avif",
+      "image": "https://goquebecan.com/images/destinations/ile-orleans.avif",
       "imageTitle": "Découvrez ile orleans au Québec"
     },
     {
       "route": "/blog/kamouraska",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/kamouraska.avif",
+      "image": "https://goquebecan.com/images/destinations/kamouraska.avif",
       "imageTitle": "Découvrez kamouraska au Québec"
     },
     {
       "route": "/blog/kuururjuaq",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/kuururjuaq.avif",
+      "image": "https://goquebecan.com/images/destinations/kuururjuaq.avif",
       "imageTitle": "Découvrez kuururjuaq au Québec"
     },
     {
       "route": "/blog/levis",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/levis.avif",
+      "image": "https://goquebecan.com/images/destinations/levis.avif",
       "imageTitle": "Découvrez levis au Québec"
     },
     {
       "route": "/blog/location-vr",
-      "lastModified": "2026-04-25T18:56:27.689Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": null,
@@ -172,58 +178,58 @@
     },
     {
       "route": "/blog/magog-orford",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/magog-orford.avif",
+      "image": "https://goquebecan.com/images/destinations/magog-orford.avif",
       "imageTitle": "Découvrez magog orford au Québec"
     },
     {
       "route": "/blog/massif",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/massif.avif",
+      "image": "https://goquebecan.com/images/destinations/massif.avif",
       "imageTitle": "Découvrez massif au Québec"
     },
     {
       "route": "/blog/mingan",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/mingan.avif",
+      "image": "https://goquebecan.com/images/destinations/mingan.avif",
       "imageTitle": "Découvrez mingan au Québec"
     },
     {
       "route": "/blog/montmorency",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/montmorency.avif",
+      "image": "https://goquebecan.com/images/destinations/montmorency.avif",
       "imageTitle": "Découvrez montmorency au Québec"
     },
     {
       "route": "/blog/montreal",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/montreal.avif",
+      "image": "https://goquebecan.com/images/destinations/montreal.avif",
       "imageTitle": "Découvrez montreal au Québec"
     },
     {
       "route": "/blog/parc-aquatique",
-      "lastModified": "2026-05-30T18:17:14.203Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/parc-aquatique.avif",
+      "image": "https://goquebecan.com/images/destinations/parc-aquatique.avif",
       "imageTitle": "Découvrez parc aquatique au Québec"
     },
     {
       "route": "/blog/perce",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/perce.avif",
+      "image": "https://goquebecan.com/images/destinations/perce.avif",
       "imageTitle": "Découvrez perce au Québec"
     },
     {
@@ -236,111 +242,111 @@
     },
     {
       "route": "/blog/port-au-persil",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/port-au-persil.avif",
+      "image": "https://goquebecan.com/images/destinations/port-au-persil.avif",
       "imageTitle": "Découvrez port au persil au Québec"
     },
     {
       "route": "/blog/port-cartier",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/port-cartier.avif",
+      "image": "https://goquebecan.com/images/destinations/port-cartier.avif",
       "imageTitle": "Découvrez port cartier au Québec"
     },
     {
       "route": "/blog/port-dover",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/port-dover.avif",
+      "image": "https://goquebecan.com/images/destinations/port-dover.avif",
       "imageTitle": "Découvrez port dover au Québec"
     },
     {
       "route": "/blog/quebec",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/quebec.avif",
+      "image": "https://goquebecan.com/images/destinations/quebec.avif",
       "imageTitle": "Découvrez quebec au Québec"
     },
     {
       "route": "/blog/riviere-du-loup",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/riviere-du-loup.avif",
+      "image": "https://goquebecan.com/images/destinations/riviere-du-loup.avif",
       "imageTitle": "Découvrez riviere du loup au Québec"
     },
     {
       "route": "/blog/sabrevois",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/sabrevois.avif",
+      "image": "https://goquebecan.com/images/destinations/sabrevois.avif",
       "imageTitle": "Découvrez sabrevois au Québec"
     },
     {
       "route": "/blog/saguenay",
-      "lastModified": "2026-05-30T18:17:14.203Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/saguenay.avif",
+      "image": "https://goquebecan.com/images/destinations/saguenay.avif",
       "imageTitle": "Découvrez saguenay au Québec"
     },
     {
       "route": "/blog/sandbanks",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-05-30T17:26:04.338Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/sandbanks.avif",
+      "image": "https://goquebecan.com/images/destinations/sandbanks.avif",
       "imageTitle": "Découvrez sandbanks au Québec"
     },
     {
       "route": "/blog/sauble-beach",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/sauble-beach.avif",
+      "image": "https://goquebecan.com/images/destinations/sauble-beach.avif",
       "imageTitle": "Découvrez sauble beach au Québec"
     },
     {
       "route": "/blog/sept-iles",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/sept-iles.avif",
+      "image": "https://goquebecan.com/images/destinations/sept-iles.avif",
       "imageTitle": "Découvrez sept iles au Québec"
     },
     {
       "route": "/blog/sherbrooke",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/sherbrooke.avif",
+      "image": "https://goquebecan.com/images/destinations/sherbrooke.avif",
       "imageTitle": "Découvrez sherbrooke au Québec"
     },
     {
       "route": "/blog/singing-sands",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/singing-sands.avif",
+      "image": "https://goquebecan.com/images/destinations/singing-sands.avif",
       "imageTitle": "Découvrez singing sands au Québec"
     },
     {
       "route": "/blog/tadoussac",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/tadoussac.avif",
+      "image": "https://goquebecan.com/images/destinations/tadoussac.avif",
       "imageTitle": "Découvrez tadoussac au Québec"
     },
     {
       "route": "/blog/voyage-avion",
-      "lastModified": "2026-04-25T18:56:27.689Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": null,
@@ -348,7 +354,7 @@
     },
     {
       "route": "/blog/voyage-camping",
-      "lastModified": "2026-04-25T18:56:27.689Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": null,
@@ -356,7 +362,7 @@
     },
     {
       "route": "/blog/voyage-hotel",
-      "lastModified": "2026-04-25T18:56:27.689Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": null,
@@ -364,7 +370,7 @@
     },
     {
       "route": "/blog/voyage-voiture",
-      "lastModified": "2026-04-25T18:56:27.689Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": null,
@@ -372,10 +378,10 @@
     },
     {
       "route": "/blog/wasaga-beach",
-      "lastModified": "2026-05-30T18:13:34.770Z",
+      "lastModified": "2026-07-11T19:52:07.063Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
-      "image": "https://www.goquebecan.com/images/destinations/wasaga-beach.avif",
+      "image": "https://goquebecan.com/images/destinations/wasaga-beach.avif",
       "imageTitle": "Découvrez wasaga beach au Québec"
     },
     {
@@ -412,7 +418,7 @@
     },
     {
       "route": "/coups-de-coeur",
-      "lastModified": "2026-05-30T17:21:15.324Z",
+      "lastModified": "2026-07-18T20:28:13.972Z",
       "changeFrequency": "weekly",
       "priority": 0.8,
       "image": null,
@@ -420,9 +426,17 @@
     },
     {
       "route": "/coups-de-coeur/anamimizen",
-      "lastModified": "2026-05-30T17:21:30.347Z",
+      "lastModified": "2026-07-11T13:27:28.216Z",
       "changeFrequency": "weekly",
       "priority": 0.8,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/coups-de-coeur/fromagerie-julio",
+      "lastModified": "2026-07-18T20:33:18.431Z",
+      "changeFrequency": "monthly",
+      "priority": 0.6,
       "image": null,
       "imageTitle": null
     },
@@ -436,7 +450,7 @@
     },
     {
       "route": "/devenir-partenaire",
-      "lastModified": "2026-05-30T20:05:10.076Z",
+      "lastModified": "2026-06-03T20:43:39.529Z",
       "changeFrequency": "monthly",
       "priority": 0.6,
       "image": null,
@@ -475,6 +489,14 @@
       "imageTitle": null
     },
     {
+      "route": "/partage/10-jours-le-long-de-la-cote-nord",
+      "lastModified": "2026-04-04T15:04:01.077246",
+      "changeFrequency": "weekly",
+      "priority": 0.7,
+      "image": null,
+      "imageTitle": null
+    },
+    {
       "route": "/planificateur",
       "lastModified": "2025-10-26T17:55:55.740Z",
       "changeFrequency": "weekly",
@@ -487,7 +509,7 @@
       "lastModified": "2025-10-26T17:55:55.740Z",
       "changeFrequency": "weekly",
       "priority": 0.8,
-      "image": "https://www.goquebecan.com/images/producteurs.avif",
+      "image": "https://goquebecan.com/images/producteurs.avif",
       "imageTitle": "Découvrez producteurs au Québec"
     },
     {
@@ -543,7 +565,7 @@
       "lastModified": "2025-10-26T17:55:55.740Z",
       "changeFrequency": "weekly",
       "priority": 0.78,
-      "image": "https://www.goquebecan.com/images/destinations/gaspesie.avif",
+      "image": "https://goquebecan.com/images/destinations/gaspesie.avif",
       "imageTitle": "Découvrez gaspesie au Québec"
     },
     {
@@ -575,7 +597,7 @@
       "lastModified": "2025-10-26T17:55:55.740Z",
       "changeFrequency": "weekly",
       "priority": 0.78,
-      "image": "https://www.goquebecan.com/images/destinations/montreal.avif",
+      "image": "https://goquebecan.com/images/destinations/montreal.avif",
       "imageTitle": "Découvrez montreal au Québec"
     },
     {

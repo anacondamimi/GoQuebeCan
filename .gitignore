@@ -1,5 +1,25 @@
-@"
-# Logs
+# ---------- Dependencies ----------
+node_modules/
+.pnp
+.pnp.js
+
+# ---------- Build outputs ----------
+.next/
+out/
+dist/
+dist-ssr/
+build/
+
+# ---------- TypeScript caches ----------
+*.tsbuildinfo
+next-env.d.ts
+
+# ---------- Env files ----------
+.env
+.env.*
+!.env.example
+
+# ---------- Logs ----------
 logs
 *.log
 npm-debug.log*
@@ -8,22 +28,9 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Local env files
-.env*
-!.env.example
-.env.local
-
-# Build outputs
-.next/
-out/
-dist/
-dist-ssr/
-
-# Dependencies
-node_modules/
-
-# OS / IDE
+# ---------- OS / IDE ----------
 .DS_Store
+Thumbs.db
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -33,6 +40,25 @@ node_modules/
 *.sln
 *.sw?
 
-# Misc
+# ---------- Générés / rapports (régénérables) ----------
+/reports/
+/seo-reports/
+arborescence*.txt
+tree*.txt
+project-dirs.txt
+project-structure-report.txt
+image-*-report.txt
+sitemap-audit.txt
+sitemap-coverage-report.json
+next-routes-scan.json
+site-structure.json
+hotelExtraction.report.json
+broken-urls.json
+
+# ---------- Backups / artefacts ----------
+*.backup-domain
+*.bad
+.gitignore.bad
+
+# ---------- Misc ----------
 *.local
-"@ | Out-File -Encoding utf8 .gitignore

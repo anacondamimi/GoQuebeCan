@@ -28,7 +28,7 @@ export default function ProducteursRegions({ selectedRegion, onRegionSelect }: P
             key={region}
             onClick={() => onRegionSelect(region)}
             className={`rounded-full px-4 py-2 transition ${
-              selectedRegion === region ? 'bg-red-700 text-white' : 'bg-white border'
+              selectedRegion === region ? 'bg-red-700 text-white' : 'border bg-white'
             }`}
           >
             {region} ({count})

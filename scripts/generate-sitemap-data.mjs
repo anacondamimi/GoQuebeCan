@@ -1,7 +1,49 @@
 import fs from 'node:fs/promises';
+import fsSync from 'node:fs';
 import path from 'node:path';
 
 const ROOT = process.cwd();
+
+/**
+ * Charge .env.local (puis .env) dans process.env, sans dépendance externe.
+ * Utile car `node script.mjs` ne lit PAS ces fichiers automatiquement
+ * (contrairement à Next.js). Ne réécrase pas une variable déjà définie.
+ */
+function loadEnvFiles() {
+  const files = ['.env.local', '.env'];
+
+  for (const file of files) {
+    const full = path.join(ROOT, file);
+    if (!fsSync.existsSync(full)) continue;
+
+    const raw = fsSync.readFileSync(full, 'utf8');
+
+    for (const line of raw.split(/\r?\n/)) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+
+      const eq = trimmed.indexOf('=');
+      if (eq === -1) continue;
+
+      const key = trimmed.slice(0, eq).trim();
+      let value = trimmed.slice(eq + 1).trim();
+
+      // retire les guillemets englobants éventuels
+      if (
+        (value.startsWith('"') && value.endsWith('"')) ||
+        (value.startsWith("'") && value.endsWith("'"))
+      ) {
+        value = value.slice(1, -1);
+      }
+
+      if (key && !(key in process.env)) {
+        process.env[key] = value;
+      }
+    }
+  }
+}
+
+loadEnvFiles();
 const APP_DIR = path.join(ROOT, 'app');
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const SRC_DIR = path.join(ROOT, 'src');
@@ -86,15 +128,6 @@ async function getFileMTime(filePath) {
     return stats.mtime.toISOString();
   } catch {
     return null;
-  }
-}
-
-async function readJsonSafe(filePath, fallback = null) {
-  try {
-    const raw = await fs.readFile(filePath, 'utf8');
-    return JSON.parse(raw);
-  } catch {
-    return fallback;
   }
 }
 
@@ -197,78 +230,33 @@ async function findPageFileForRoute(route) {
   return null;
 }
 
-function normalizeSlug(input) {
-  if (!input || typeof input !== 'string') return '';
-
-  const noHost = input.replace(/^https?:\/\/[^/]+/i, '');
-  const noQuery = noHost.split('?')[0]?.split('#')[0] ?? '';
-  const clean = noQuery.trim().replace(/^\/+/, '').replace(/\/+$/, '');
-
-  const destinationMatch = clean.match(/^destinations\/(.+)$/i);
-  if (destinationMatch?.[1]) return destinationMatch[1].trim();
-
-  const blogMatch = clean.match(/^blog\/(.+)$/i);
-  if (blogMatch?.[1]) return blogMatch[1].trim();
-
-  return clean;
-}
-
-async function readDestinationRoutes() {
-  const possibleFiles = [
-    path.join(PUBLIC_DIR, 'destinations.json'),
-    path.join(SRC_DIR, 'data', 'destinations.json'),
-  ];
-
-  const routes = new Map();
-
-  for (const filePath of possibleFiles) {
-    const data = await readJsonSafe(filePath, []);
-    if (!Array.isArray(data)) continue;
-
-    const sourceMTime = await getFileMTime(filePath);
-
-    for (const item of data) {
-      const candidates = [item?.slug, item?.href, item?.url, item?.path].filter(Boolean);
-
-      for (const candidate of candidates) {
-        const slug = normalizeSlug(candidate);
-        if (!slug) continue;
-        if (slug.toLowerCase().startsWith('en/')) continue;
-
-        const route = slug.includes('/')
-          ? normalizeRoute(`/${slug}`)
-          : normalizeRoute(`/blog/${slug}`);
-
-        if (!route.startsWith('/blog/')) continue;
-        if (!isAllowedRoute(route)) continue;
-
-        routes.set(route, {
-          route,
-          lastModified:
-            item?.lastModified || item?.updatedAt || item?.modifiedTime || sourceMTime || null,
-        });
-      }
-    }
-  }
-
-  return [...routes.values()].sort((a, b) => a.route.localeCompare(b.route, 'fr'));
-}
-
-function extractSlugsFromSource(raw) {
+/**
+ * Extrait les slugs de blog depuis componentMap.ts.
+ *
+ * ⚠️ Ne parse QUE les clés du bloc `const componentMap: ... = { ... }`,
+ * pas tout le fichier (l'ancienne version ramassait aussi des clés hors-objet
+ * via des regex trop larges). BLOG_SLUGS = Object.keys(componentMap) reste la
+ * source unique de vérité côté app ; on la reproduit fidèlement ici.
+ */
+function extractBlogSlugsFromComponentMap(raw) {
   const slugs = new Set();
 
-  const quotedKeys = raw.matchAll(/^\s*['"`]([a-z0-9][a-z0-9-]*)['"`]\s*:/gim);
-  for (const match of quotedKeys) {
-    slugs.add(match[1]);
-  }
+  // Isole le corps de l'objet componentMap = { ... };
+  const objectMatch = raw.match(/componentMap[^=]*=\s*\{([\s\S]*?)\n\}\s*;/);
+  const body = objectMatch ? objectMatch[1] : raw;
 
-  const unquotedKeys = raw.matchAll(/^\s*([a-z0-9][a-z0-9-]*)\s*:/gim);
-  for (const match of unquotedKeys) {
+  // Chaque entrée est de la forme  'slug': () => import(...)  ou  slug: () => import(...)
+  // On ne capture que les clés suivies de `() => import`
+  const entryRegex = /(?:^|,|\{)\s*['"`]?([a-z0-9][a-z0-9-]*)['"`]?\s*:\s*\(\s*\)\s*=>\s*import/gim;
+
+  let match;
+  while ((match = entryRegex.exec(body)) !== null) {
     slugs.add(match[1]);
   }
 
   return [...slugs].sort((a, b) => a.localeCompare(b, 'fr'));
 }
+
 async function readProducerRegionRoutes() {
   const producerRegions = [
     'abitibi-temiscamingue',
@@ -293,34 +281,37 @@ async function readProducerRegionRoutes() {
     lastModified: STATIC_LASTMOD,
   }));
 }
+
 async function readBlogRoutes() {
   const routes = new Map();
 
-  const possibleSources = [path.join(SRC_DIR, 'lib', 'blog', 'componentMap.ts')];
+  const componentMapPath = path.join(SRC_DIR, 'lib', 'blog', 'componentMap.ts');
 
-  for (const filePath of possibleSources) {
-    if (!(await exists(filePath))) continue;
-
-    const sourceMTime = await getFileMTime(filePath);
+  if (await exists(componentMapPath)) {
+    const sourceMTime = await getFileMTime(componentMapPath);
 
     try {
-      const raw = await fs.readFile(filePath, 'utf8');
-      const slugs = extractSlugsFromSource(raw);
-console.log('SLUGS TROUVÉS :', slugs);
+      const raw = await fs.readFile(componentMapPath, 'utf8');
+      const slugs = extractBlogSlugsFromComponentMap(raw);
+
+      if (slugs.length === 0) {
+        console.warn('⚠️  Aucun slug extrait de componentMap.ts — vérifie le format du fichier.');
+      }
+
       for (const slug of slugs) {
         const route = normalizeRoute(`/blog/${slug}`);
         if (!isAllowedRoute(route)) continue;
 
-        routes.set(route, {
-          route,
-          lastModified: sourceMTime,
-        });
+        routes.set(route, { route, lastModified: sourceMTime });
       }
-    } catch {
-      // ignore
+    } catch (error) {
+      console.warn('componentMap.ts read error:', error);
     }
+  } else {
+    console.warn(`⚠️  componentMap.ts introuvable à ${componentMapPath}`);
   }
 
+  // Complément : dossiers statiques app/blog/<name>/page.tsx (articles hors componentMap)
   const blogDir = path.join(APP_DIR, 'blog');
 
   try {
@@ -330,7 +321,6 @@ console.log('SLUGS TROUVÉS :', slugs);
       if (!entry.isDirectory()) continue;
 
       const name = entry.name;
-
       if (name.startsWith('[')) continue;
       if (isRouteGroup(name)) continue;
       if (isPrivateSegment(name)) continue;
@@ -343,7 +333,6 @@ console.log('SLUGS TROUVÉS :', slugs);
       ];
 
       let pageFile = null;
-
       for (const candidate of pageCandidates) {
         if (await exists(candidate)) {
           pageFile = candidate;
@@ -356,13 +345,10 @@ console.log('SLUGS TROUVÉS :', slugs);
       const route = normalizeRoute(`/blog/${name}`);
       if (!isAllowedRoute(route)) continue;
 
-      routes.set(route, {
-        route,
-        lastModified: await getFileMTime(pageFile),
-      });
+      routes.set(route, { route, lastModified: await getFileMTime(pageFile) });
     }
   } catch {
-    // ignore
+    // pas de dossier app/blog, on ignore
   }
 
   return [...routes.values()].sort((a, b) => a.route.localeCompare(b.route, 'fr'));
@@ -387,7 +373,18 @@ async function readCommunityRoutes() {
     });
 
     if (!res.ok) {
-      console.warn(`community_itineraries fetch failed: ${res.status} ${res.statusText}`);
+      let body = '';
+      try {
+        body = await res.text();
+      } catch {
+        // ignore
+      }
+      console.warn(
+        `community_itineraries fetch failed: ${res.status} ${res.statusText}${body ? ` — ${body}` : ''}`,
+      );
+      console.warn(
+        `  (clé utilisée: ${SUPABASE_SERVICE_ROLE_KEY ? 'SERVICE_ROLE' : SUPABASE_ANON_KEY ? 'ANON' : 'AUCUNE'})`,
+      );
       return [];
     }
 
@@ -409,66 +406,33 @@ async function readCommunityRoutes() {
 }
 
 function getSeoMetaForRoute(route) {
-
   if (route.startsWith('/producteurs/')) {
-    return {
-      changeFrequency: 'weekly',
-      priority: 0.78,
-    };
-  }if (route === '/') {
-    return {
-      changeFrequency: 'daily',
-      priority: 1.0,
-    };
+    return { changeFrequency: 'weekly', priority: 0.78 };
   }
-if (route.startsWith('/partage/')) {
-  return {
-    changeFrequency: 'weekly',
-    priority: 0.7,
-  };
-}
+  if (route === '/') {
+    return { changeFrequency: 'daily', priority: 1.0 };
+  }
+  if (route.startsWith('/partage/')) {
+    return { changeFrequency: 'weekly', priority: 0.7 };
+  }
   if (route === '/blog') {
-    return {
-      changeFrequency: 'daily',
-      priority: 0.9,
-    };
+    return { changeFrequency: 'daily', priority: 0.9 };
   }
-
   if (route === '/destinations') {
-    return {
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    };
+    return { changeFrequency: 'weekly', priority: 0.9 };
   }
-
   if (route === '/planificateur') {
-    return {
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    };
+    return { changeFrequency: 'weekly', priority: 0.9 };
   }
-
   if (route.startsWith('/blog/')) {
-    return {
-      changeFrequency: 'weekly',
-      priority: 0.82,
-    };
+    return { changeFrequency: 'weekly', priority: 0.82 };
   }
-
   if (route.startsWith('/destinations/')) {
-    return {
-      changeFrequency: 'weekly',
-      priority: 0.75,
-    };
+    return { changeFrequency: 'weekly', priority: 0.75 };
   }
-
   if (route.startsWith('/itineraires-communaute/')) {
-    return {
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    };
+    return { changeFrequency: 'weekly', priority: 0.7 };
   }
-
   if (
     [
       '/producteurs',
@@ -483,34 +447,20 @@ if (route.startsWith('/partage/')) {
       '/coups-de-coeur/anamimizen',
     ].includes(route)
   ) {
-    return {
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    };
+    return { changeFrequency: 'weekly', priority: 0.8 };
   }
-
   if (['/contact', '/notre-mission'].includes(route)) {
-    return {
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    };
+    return { changeFrequency: 'monthly', priority: 0.6 };
   }
-
   if (
     ['/conditions-utilisation', '/mentions-legales', '/confidentialite', '/accessibilite'].includes(
       route,
     )
   ) {
-    return {
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    };
+    return { changeFrequency: 'yearly', priority: 0.3 };
   }
 
-  return {
-    changeFrequency: 'monthly',
-    priority: 0.6,
-  };
+  return { changeFrequency: 'monthly', priority: 0.6 };
 }
 
 async function findImageForRoute(route) {
@@ -561,11 +511,7 @@ function dedupeEntries(entries) {
 
     if (!isAllowedRoute(route)) continue;
 
-    const current = {
-      ...entry,
-      route,
-    };
-
+    const current = { ...entry, route };
     const existing = map.get(route);
 
     if (!existing) {
@@ -602,10 +548,15 @@ async function main() {
     ...new Set(pageFiles.map(routeFromPageFile).filter(Boolean).filter(isAllowedRoute)),
   ].sort((a, b) => a.localeCompare(b, 'fr'));
 
-  const destinationRoutes = await readDestinationRoutes();
   const blogRoutes = await readBlogRoutes();
   const communityRoutes = await readCommunityRoutes();
   const producerRegionRoutes = await readProducerRegionRoutes();
+
+  // NOTE : plus de destinationRoutes.
+  // Il n'existe aucune route /destinations/[slug] dynamique, et les anciens
+  // destinations.json (src/data + public) ne sont plus importés nulle part.
+  // C'était la source des URLs fantômes du sitemap. Seule /destinations (index)
+  // existe, et elle est déjà captée par walk() → staticRoutes.
 
   const staticEntries = await Promise.all(
     staticRoutes
@@ -614,19 +565,13 @@ async function main() {
       .filter((route) => !route.startsWith('/itineraires-communaute/'))
       .map((route) => createEntry(route)),
   );
-const producerRegionEntries = await Promise.all(
-  producerRegionRoutes.map((item) =>
-    createEntry(item.route, {
-      lastModified: item.lastModified || undefined,
-      changeFrequency: 'weekly',
-      priority: 0.78,
-    }),
-  ),
-);
-  const destinationEntries = await Promise.all(
-    destinationRoutes.map((item) =>
+
+  const producerRegionEntries = await Promise.all(
+    producerRegionRoutes.map((item) =>
       createEntry(item.route, {
         lastModified: item.lastModified || undefined,
+        changeFrequency: 'weekly',
+        priority: 0.78,
       }),
     ),
   );
@@ -649,7 +594,6 @@ const producerRegionEntries = await Promise.all(
 
   const allEntries = [
     ...staticEntries,
-    ...destinationEntries,
     ...blogEntries,
     ...communityEntries,
     ...producerRegionEntries,
@@ -661,18 +605,16 @@ const producerRegionEntries = await Promise.all(
     siteUrl: SITE_URL,
     counts: {
       static: staticEntries.length,
-      destinations: destinationEntries.length,
       blog: blogEntries.length,
       community: communityEntries.length,
+      producerRegions: producerRegionEntries.length,
       totalBeforeDedupe: allEntries.length,
       total: entries.length,
       duplicatesRemoved: allEntries.length - entries.length,
       withImages: entries.filter((entry) => Boolean(entry.image)).length,
       withoutImages: entries.filter((entry) => !entry.image).length,
       blogFinal: countByPrefix(entries, '/blog'),
-      destinationsFinal: countByPrefix(entries, '/destinations'),
       communityFinal: countByPrefix(entries, '/itineraires-communaute'),
-      producerRegions: producerRegionEntries.length,
       producerRegionsFinal: countByPrefix(entries, '/producteurs'),
     },
     entries,

@@ -97,8 +97,6 @@ export default async function BlogArticlePage({ params }: PageParams) {
 
       <BlogArticleClient slug={slug} />
 
-      {/* rendu du contenu, côté client */}
-      <BlogArticleClient slug={slug} />
 
       {/* JSON-LD enrichi pour Google Discover / SGE */}
       <script

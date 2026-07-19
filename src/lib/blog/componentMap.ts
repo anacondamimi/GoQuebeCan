@@ -50,6 +50,7 @@ const componentMap: Record<string, () => Promise<{ default: ComponentType<any> }
   'voyage-camping': () => import('@/components/blogpost/BlogArticleVoyageCamping'),
   'voyage-hotel': () => import('@/components/blogpost/BlogArticleVoyageHotel'),
   'voyage-voiture': () => import('@/components/blogpost/BlogArticleVoyageVoiture'),
+  'brossard': () => import('@/components/blogpost/BlogArticleBrossard'),
 };
 
 /** Export typed list of slugs so everything (sitemap, routes) stays in sync. */

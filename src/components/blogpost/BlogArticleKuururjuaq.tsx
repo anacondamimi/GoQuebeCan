@@ -329,7 +329,7 @@ export default function BlogArticleKuururjuaq() {
               '@type': 'WebPage',
               '@id': 'https://www.goquebecan.com/blog/kuururjuaq',
             },
-            image: ['https://www.goquebecan.com/images/blog/kuururjuaq-nunavik.avif'],
+            image: ['https://www.goquebecan.com/images/destinations/kuururjuaq.avif'],
             description:
               'Découvrez le Nunavik et Kuujjuaq : nature arctique, culture inuite, hôtels coopératifs, itinéraires et carte interactive du Grand Nord.',
             keywords: [
@@ -354,7 +354,7 @@ export default function BlogArticleKuururjuaq() {
             description:
               'Découvrez Kuujjuaq et le Nunavik, destination unique du nord du Québec : culture inuite, hébergements coopératifs, nature arctique et aurores boréales.',
             url: 'https://www.goquebecan.com/blog/kuururjuaq',
-            image: ['https://www.goquebecan.com/images/blog/kuururjuaq-nunavik.avif'],
+            image: ['https://www.goquebecan.com/images/destinations/kuururjuaq.avif'],
             touristType: ['Voyage aventure', 'Famille', 'Culture inuite', 'Expédition arctique'],
             geo: {
               '@type': 'GeoCoordinates',

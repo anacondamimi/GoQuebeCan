@@ -1,5 +1,4 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import GroupedDestinations from '@/components/GroupedDestinations';
@@ -7,12 +6,44 @@ import FeaturedGuides from '@/components/home/FeaturedGuides';
 import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
 import Testimonials from '@/components/home/Testimonials';
-import dynamic from 'next/dynamic';
 import BrandName from '@/components/brand/BrandName';
+import { HomePopularVideos, HomeOffers, HomeChatbot } from './HomeClientBlocks';
 
-const PopularVideos = dynamic(() => import('@/components/PopularVideos'), { ssr: false });
-const Offers = dynamic(() => import('@/components/Offres'), { ssr: false });
-const Chatbot = dynamic(() => import('@/components/ui/Chatbot'), { ssr: false });
+// ✅ Server Component → peut exporter sa propre metadata.
+// Surcharge le title/description génériques du layout par une version
+// optimisée pour la home (mots-clés Québec / voyage / itinéraire).
+export const metadata: Metadata = {
+  title: 'Voyage au Québec et au Canada : itinéraires, cartes et guides | GoQuébeCan',
+  description:
+    'Planifiez votre voyage au Québec et au Canada : itinéraires personnalisés, cartes interactives, producteurs locaux, guides pratiques et bonnes adresses pour une escapade authentique.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Voyage au Québec et au Canada : itinéraires, cartes et guides',
+    description:
+      'Itinéraires personnalisés, cartes interactives, producteurs locaux et conseils concrets pour préparer un voyage authentique au Québec et au Canada.',
+    url: 'https://www.goquebecan.com',
+    siteName: 'GoQuébeCan',
+    locale: 'fr_CA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Voyage au Québec et au Canada | GoQuébeCan',
+    description:
+      'Itinéraires, cartes interactives, producteurs locaux et guides pratiques pour explorer le Québec et le Canada.',
+  },
+  keywords: [
+    'voyage Québec',
+    'itinéraire Québec',
+    'road trip Québec',
+    'voyage Canada',
+    'producteurs locaux Québec',
+    'que faire au Québec',
+    'tourisme Québec',
+  ],
+};
 
 export default function Home() {
   return (
@@ -105,7 +136,7 @@ export default function Home() {
               Regardez l’ambiance d’un lieu avant même de partir et inspirez-vous pour votre
               prochain parcours.
             </p>
-            <PopularVideos />
+            <HomePopularVideos />
           </div>
         </section>
 
@@ -251,7 +282,7 @@ export default function Home() {
         {/* Offres */}
         <section id="offres" className="bg-background py-16 text-center">
           <div className="mx-auto max-w-6xl px-4">
-            <Offers />
+            <HomeOffers />
           </div>
         </section>
 
@@ -291,7 +322,7 @@ export default function Home() {
           </div>
         </section>
 
-        <Chatbot />
+        <HomeChatbot />
       </main>
     </>
   );

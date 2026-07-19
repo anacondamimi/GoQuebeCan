@@ -1839,6 +1839,25 @@ export const HOTEL_CATALOG: Record<string, HotelItem> = {
     },
     variant: 'compact',
   },
+  https_www_hotelsone_com_brossard_hotels_ca_hotel_alt_quartier_dix30_fr_html_cur_cad_uid_77dc7c34_1324_4755_9f65_b976bdff86f4_cmpid_30787423_agid_865847663_msid_f36c7f097a851fc9696e155be4ef785c_as_b_aid_78683973561875_dsti_1765191_dstt_8_utm_source_bing_utm_campaign_ca_canada_hotels_oe_en_utm_medium_cpc_utm_content_ca_20_20brossard_20_201765191_20_20hotel_alt_quartier_dix30_msclkid_f36c7f097a851fc9696e155be4ef785c_brossard: {
+    id: 'https_www_hotelsone_com_brossard_hotels_ca_hotel_alt_quartier_dix30_fr_html_cur_cad_uid_77dc7c34_1324_4755_9f65_b976bdff86f4_cmpid_30787423_agid_865847663_msid_f36c7f097a851fc9696e155be4ef785c_as_b_aid_78683973561875_dsti_1765191_dstt_8_utm_source_bing_utm_campaign_ca_canada_hotels_oe_en_utm_medium_cpc_utm_content_ca_20_20brossard_20_201765191_20_20hotel_alt_quartier_dix30_msclkid_f36c7f097a851fc9696e155be4ef785c_brossard',
+    name: 'https://www.hotelsone.com/brossard-hotels-ca/hotel-alt-quartier-dix30.fr.html?cur=CAD&uid=77dc7c34-1324-4755-9f65-b976bdff86f4&cmpid=30787423&agid=865847663&msid=f36c7f097a851fc9696e155be4ef785c&as=b&aid=78683973561875&dsti=1765191&dstt=8&utm_source=bing&utm_campaign=ca-Canada-Hotels-oe-en&utm_medium=cpc&utm_content=ca%20|%20brossard%20|%201765191%20|%20hotel-alt-quartier-dix30&msclkid=f36c7f097a851fc9696e155be4ef785c',
+    category: 'hotel boutique',
+    location: 'brossard',
+    description: "L'Alt Hôtel Quartier DIX30 est un hôtel boutique moderne situé au cœur du Quartier DIX30 à Brossard. Ses chambres confortables, son design contemporain et son emplacement à quelques pas des restaurants, boutiques et lieux de divertissement en font un excellent choix pour un séjour d'affaires, une escapade urbaine ou un week-end de magasinage",
+    extra: 'Un excellent choix pour séjourner à brossard.',
+    price: 'Voir les tarifs',
+    ratingText: 'Très bien',
+    ratingNumber: 9.0,
+    perks: [],
+    tags: ['brossard'],
+    bookingUrl: 'https://www.marriott.com/fr/search/findHotels.mi?pageType=advanced&searchType=InCity&destinationAddress.latitude=45.447818&destinationAddress.longitude=-73.430171&destinationAddress.destination=Courtyard+Montreal+Brossard&nst=paid&cid=PAI_GLB0004E34_GLE000A7BE_GLF000KH84&ppc=ppc&pId=ustbppc&gclid=a792fa9b02f01abf192190c9990e7a00&gclsrc=3p.ds&msclkid=a792fa9b02f01abf192190c9990e7a00&utm_source=bing&utm_medium=cpc&utm_campaign=SE~BNG_FS~TB_MB~MLT_KC~BP_DS~IMA_MK~NA_LG~FR_SC~In+Market_exact&utm_term=courtyard+montreal+brossard+%C3%A0+brossard&utm_content=YULBC_CY_Brossard_Canada&deviceType=desktop-web&view=list#/0/',
+    image: {
+      src: '/images/destinations/hotels/https-www-hotelsone-com-brossard-hotels-ca-hotel-alt-quartier-dix30-fr-html-cur-cad-uid-77dc7c34-1324-4755-9f65-b976bdff86f4-cmpid-30787423-agid-865847663-msid-f36c7f097a851fc9696e155be4ef785c-as-b-aid-78683973561875-dsti-1765191-dstt-8-utm-source-bing-utm-campaign-ca-canada-hotels-oe-en-utm-medium-cpc-utm-content-ca-20-20brossard-20-201765191-20-20hotel-alt-quartier-dix30-msclkid-f36c7f097a851fc9696e155be4ef785c.avif',
+      alt: 'https://www.hotelsone.com/brossard-hotels-ca/hotel-alt-quartier-dix30.fr.html?cur=CAD&uid=77dc7c34-1324-4755-9f65-b976bdff86f4&cmpid=30787423&agid=865847663&msid=f36c7f097a851fc9696e155be4ef785c&as=b&aid=78683973561875&dsti=1765191&dstt=8&utm_source=bing&utm_campaign=ca-Canada-Hotels-oe-en&utm_medium=cpc&utm_content=ca%20|%20brossard%20|%201765191%20|%20hotel-alt-quartier-dix30&msclkid=f36c7f097a851fc9696e155be4ef785c — hébergement recommandé à brossard',
+    },
+    variant: 'compact',
+  },
 };
 
 export function pickHotels(ids: string[]): HotelItem[] {

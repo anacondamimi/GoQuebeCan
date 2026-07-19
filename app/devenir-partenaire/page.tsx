@@ -13,6 +13,7 @@ import {
 import BrandName from '@/components/brand/BrandName';
 import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
+import PartnersGrid from '@/components/partners/PartnersGrid';
 
 export const metadata = {
   title: 'Devenir partenaire | GoQuébeCAN',
@@ -232,7 +233,18 @@ export default function DevenirPartenairePage() {
           </div>
         </div>
       </section>
+      <section className="mx-auto max-w-7xl px-6 py-16">
+        <H2>Partenaires et entreprises québécoises</H2>
 
+        <p className="mt-4 text-neutral">
+          Découvrez les entreprises, producteurs et organismes qui contribuent au rayonnement du
+          Québec.
+        </p>
+
+        <div className="mt-8">
+          <PartnersGrid />
+        </div>
+      </section>
       <section className="mx-auto max-w-7xl px-6 py-16">
         <div className="rounded-3xl bg-gradient-to-r from-green-50 via-white to-blue-50 p-10 text-center shadow-card md:p-16">
           <H2 className="mx-auto max-w-4xl">Ensemble, faisons découvrir le meilleur du Québec.</H2>

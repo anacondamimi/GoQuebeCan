@@ -110,6 +110,24 @@ export const blogMeta = {
       "Ski de Soirée"
     ]
   },
+  "brossard": {
+    "title": "Brossard",
+    "description": "Découvrez Brossard, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/default-destination.avif",
+    "activites": [],
+    "hebergements": [],
+    "publics": [
+      "amateurs de culture",
+      "aventuriers"
+    ],
+    "region": "Montréal et sa région",
+    "keywords": [
+      "amateurs de culture",
+      "aventuriers",
+      "Brossard",
+      "Montréal et sa région"
+    ]
+  },
   "canyon": {
     "title": "Canyon",
     "description": "Canyon : découvrez Mini-Passerelle, Passerelle Suspendue, avec des idées parfaites pour ados et aventuriers.",
