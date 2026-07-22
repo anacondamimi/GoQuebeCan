@@ -798,25 +798,24 @@ export default function BlogArticleVilleDeQuebec() {
             </p>
             <ul>
               <li>
-                le <strong>planificateur d’itinéraire</strong> (
-                <Link href="/planificateur">/planificateur</Link>) pour organiser tes journées entre
-                Vieux-Québec, excursions alentours et activités d’hiver ;
+                le <Link href="/planificateur">planificateur d’itinéraire</Link> pour organiser tes
+                journées entre Vieux-Québec, excursions alentours et activités d’hiver ;
               </li>
               <li>
-                la section <strong>Vidéos</strong> (<Link href="/videos">/videos</Link>) pour
-                visualiser l’ambiance de la ville en été comme en hiver avant de partir ;
+                la <Link href="/videos">section Vidéos</Link> pour visualiser l’ambiance de la ville
+                en été comme en hiver avant de partir ;
               </li>
               <li>
-                la carte des <strong>producteurs locaux</strong> (
-                <Link href="/producteurs">/producteurs</Link>), idéale si tu veux combiner Québec
-                avec un détour sur l’île d’Orléans, la Côte-de-Beaupré ou d’autres régions
-                gourmandes ;
+                la <Link href="/producteurs">carte des producteurs locaux</Link>, idéale si tu veux
+                combiner Québec avec un détour sur l’île d’Orléans, la Côte-de-Beaupré ou d’autres
+                régions gourmandes ;
               </li>
               <li>
-                les articles pratiques sur les{' '}
-                <strong>produits indispensables pour un voyage à l’hôtel</strong> (
-                <Link href="/blog/voyage-hotel">/blog/voyage-hotel</Link>) pour optimiser ta valise
-                et ton confort.
+                nos conseils sur les{' '}
+                <Link href="/blog/voyage-hotel">
+                  produits indispensables pour un voyage à l’hôtel
+                </Link>{' '}
+                pour optimiser ta valise et ton confort.
               </li>
             </ul>
           </section>
