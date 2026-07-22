@@ -2,9 +2,9 @@ import type { BlogMetaSEO } from '@/components/lib/types/blog';
 
 export const blogMetaSEOPatch: Record<string, BlogMetaSEO> = {
   quebec: {
-    title: 'Ville de Québec : que faire, visiter et où dormir | GoQuébeCan',
+    title: 'Québec : Petit-Champlain, Montmorency et guide complet | GoQuébeCan',
     description:
-      'Explorez la Ville de Québec : Vieux-Québec, Château Frontenac, Montmorency, activités, hébergements et conseils voyage.',
+      "Visiter la ville de Québec : Petit-Champlain, Place-Royale, terrasse Dufferin, chute Montmorency et son téléphérique, île d'Orléans, météo et conseils par saison.",
     locale: 'fr_CA',
   },
 
@@ -58,9 +58,9 @@ export const blogMetaSEOPatch: Record<string, BlogMetaSEO> = {
   },
 
   'wasaga-beach': {
-    title: 'Wasaga Beach : plage, activités et séjour familial | GoQuébeCan',
+    title: 'Wasaga Beach : plages, stationnement et guide complet | GoQuébeCan',
     description:
-      'Préparez votre visite à Wasaga Beach : grande plage, activités nautiques, hébergements et conseils pour un séjour familial.',
+      "La plus longue plage d'eau douce au monde : quelle zone choisir, comment réserver son permis de stationnement, météo, qualité de l'air et règles de feux.",
     locale: 'fr_CA',
   },
 
@@ -163,9 +163,9 @@ export const blogMetaSEOPatch: Record<string, BlogMetaSEO> = {
   },
 
   sandbanks: {
-    title: 'Sandbanks : plages, dunes et escapade familiale en Ontario | GoQuébeCan',
+    title: 'Sandbanks : plages, dunes et camping en Ontario | GoQuébeCan',
     description:
-      'Découvrez Sandbanks : plages, dunes, baignade, camping, comté de Prince Edward et conseils pour une escapade depuis le Québec.',
+      "Guide complet du parc Sandbanks : trois plages, permis obligatoire, camping, météo, qualité de l'air et règles de feux de camp. À 4 h de Montréal.",
     locale: 'fr_CA',
   },
 
@@ -240,9 +240,9 @@ export const blogMetaSEOPatch: Record<string, BlogMetaSEO> = {
   },
 
   gaspesie: {
-    title: 'Gaspésie : road trip, plages, villages et incontournables | GoQuébeCan',
+    title: 'Gaspésie : road trip, parc national, Percé et météo | Guide complet',
     description:
-      'Planifiez votre voyage en Gaspésie : Percé, Forillon, plages, villages côtiers, randonnées et conseils pour un road trip réussi.',
+      'Guide complet de la Gaspésie : itinéraire road trip, Parc national et mont Jacques-Cartier, Géoparc de Percé, Jardins de Métis, camping et météo par secteur.',
     locale: 'fr_CA',
   },
 

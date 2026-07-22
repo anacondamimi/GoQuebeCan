@@ -846,20 +846,19 @@ export const blogMeta = {
     ]
   },
   "sandbanks": {
-    "title": "Plage de Sandbanks",
-    "description": "Découvrez Plage de Sandbanks, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "title": "Sandbanks",
+    "description": "Découvrez Sandbanks, ses attraits touristiques, ses activités et ses hébergements incontournables.",
     "image": "/images/destinations/sandbanks.avif",
     "activites": [],
-    "hebergements": [
-      "Newsroom Suites",
-      "The Birch",
-      "The Village Suites"
+    "hebergements": [],
+    "publics": [
+      "aventuriers"
     ],
-    "publics": [],
     "region": "Québec",
     "keywords": [
-      "Plage de Sandbanks",
-      "Québec"
+      "aventuriers",
+      "Québec",
+      "Sandbanks"
     ]
   },
   "saublebeach": {
@@ -1064,33 +1063,16 @@ export const blogMeta = {
   },
   "wasagabeach": {
     "title": "Wasaga Beach",
-    "description": "Wasaga Beach : découvrez Beach Volleyball, Location de Pédalos, avec des idées parfaites pour ados et amateurs de culture.",
+    "description": "Découvrez Wasaga Beach, ses attraits touristiques, ses activités et ses hébergements incontournables.",
     "image": "/images/default-destination.avif",
-    "activites": [
-      "Beach Volleyball",
-      "Location de Pédalos",
-      "Location de SUP",
-      "Mini-Golf Pirates",
-      "Nancy Island Historic Site",
-      "Plage Principale",
-      "Plage Zone 1",
-      "Surf sur la Baie",
-      "Wasaga Beach Provincial Park"
-    ],
+    "activites": [],
     "hebergements": [],
     "publics": [
-      "ados",
-      "amateurs de culture",
-      "aventuriers",
-      "familles"
+      "aventuriers"
     ],
     "region": "Québec",
     "keywords": [
-      "ados",
-      "amateurs de culture",
-      "Beach Volleyball",
-      "Location de Pédalos",
-      "Location de SUP",
+      "aventuriers",
       "Québec",
       "Wasaga Beach"
     ]

@@ -1,0 +1,281 @@
+[1mdiff --git a/src/components/blogpost/BlogArticleGaspesie.tsx b/src/components/blogpost/BlogArticleGaspesie.tsx[m
+[1mindex 64afe81..0531f64 100644[m
+[1m--- a/src/components/blogpost/BlogArticleGaspesie.tsx[m
+[1m+++ b/src/components/blogpost/BlogArticleGaspesie.tsx[m
+[36m@@ -14,23 +14,29 @@[m [mimport DestinationArticleTemplate from '@/components/blog/DestinationArticleTemp[m
+ export const dynamic = 'force-static';[m
+ export const revalidate = 60 * 60 * 24;[m
+ [m
+[31m-const TITLE = 'Gaspésie – Road trip en famille (7 jours) | Guide 2025';[m
+[32m+[m[32mconst TITLE = 'Gaspésie : road trip, parc national, Percé et météo | Guide complet';[m
+ const DESCRIPTION =[m
+[31m-  'Itinéraire 7 jours en Gaspésie avec enfants : Forillon, Percé, baleines, plages, campings, hôtels famille, cantines, producteurs locaux et conseils pratiques. Road trip clé en main avec liens vers le planificateur GoQuébeCAN.';[m
+[32m+[m[32m  'Guide complet de la Gaspésie : itinéraire road trip, Parc national de la Gaspésie et mont Jacques-Cartier, Géoparc de Percé, Jardins de Métis, camping, météo et conseils pratiques pour préparer votre voyage.';[m
+ const CANONICAL = 'https://www.goquebecan.com/blog/gaspesie';[m
+ const OG_IMAGE = 'https://www.goquebecan.com/images/destinations/gaspesie-og-1200x630.jpg';[m
+ [m
+ const KEYWORDS = [[m
+   'Gaspésie',[m
+[32m+[m[32m  'Gaspésie Québec',[m
+   'road trip Gaspésie',[m
+   'Gaspésie en famille',[m
+[32m+[m[32m  'météo Gaspésie',[m
+[32m+[m[32m  'Parc national de la Gaspésie',[m
+[32m+[m[32m  'mont Jacques-Cartier',[m
+[32m+[m[32m  'Géoparc de Percé',[m
+[32m+[m[32m  'Jardins de Métis',[m
+[32m+[m[32m  'camping Gaspésie',[m
+[32m+[m[32m  'camping Percé',[m
+[32m+[m[32m  'rivière aux Émeraudes',[m
+   'Forillon',[m
+   'Percé',[m
+   'baleines Gaspésie',[m
+[31m-  'camping Gaspésie',[m
+   'hôtels Gaspésie',[m
+[31m-  'road trip Québec',[m
+[31m-  'idées vacances Québec',[m
+ ];[m
+ [m
+ const PUBLISHED = '2025-07-01';[m
+[36m@@ -337,6 +343,41 @@[m [mconst faqLd = buildFaqLd([[m
+     answer:[m
+       'Une semaine est un bon minimum pour faire le tour sans courir, mais tu peux facilement étirer à 10 ou 14 jours.',[m
+   },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    question: 'Quelle est la météo en Gaspésie et comment s’y préparer ?',[m
+[32m+[m[32m    answer:[m
+[32m+[m[32m      'La météo en Gaspésie change vite et varie beaucoup d’un secteur à l’autre. Il peut faire soleil à Percé et être dans le brouillard au sommet des Chic-Chocs le même jour. Consultez les prévisions par municipalité plutôt que pour la région entière, et surtout la météo du Parc national de la Gaspésie séparément : en altitude, il peut faire 10 à 15 degrés de moins qu’au bord du fleuve, avec du vent et de la neige possible même en été.',[m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    question: 'Comment accéder au mont Jacques-Cartier ?',[m
+[32m+[m[32m    answer:[m
+[32m+[m[32m      'L’accès est strictement réglementé pour protéger le troupeau de caribous. Le sentier est ouvert du 1er juillet au 30 septembre, uniquement entre 10 h et 16 h, et aucun départ n’est autorisé après midi. La navette est obligatoire : elle part de l’accueil du camping du Mont-Jacques-Cartier. Les places sont limitées, la réservation est fortement recommandée. Les chiens ne sont pas admis et il est interdit de sortir des sentiers balisés.',[m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    question: 'Quelle est la difficulté du sentier du mont Jacques-Cartier ?',[m
+[32m+[m[32m    answer:[m
+[32m+[m[32m      'Environ 8 km aller-retour pour 465 mètres de dénivelé, comptez à peu près 4 heures. Le sentier est large, rocailleux et facile à suivre, avec des escaliers de bois avant le sommet. Il est classé difficile surtout à cause du terrain et de la durée, mais il reste accessible à des marcheurs en forme raisonnable.',[m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    question: 'Qu’est-ce que le Géoparc de Percé et que peut-on y faire ?',[m
+[32m+[m[32m    answer:[m
+[32m+[m[32m      'C’est un géoparc mondial UNESCO qui raconte 500 millions d’années d’histoire de la Terre. On y trouve 23 géosites, 18 km de sentiers sur le mont Sainte-Anne et le mont Blanc, l’exposition multimédia TEKTONIK, une tyrolienne, un espace de jeux intérieur pour les enfants et une plateforme vitrée suspendue à 200 mètres d’altitude avec vue sur le village. La projection extérieure La Légende de Gluskap est présentée les soirs d’été.',[m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    question: 'Comment accéder à la plateforme vitrée suspendue du Géoparc ?',[m
+[32m+[m[32m    answer:[m
+[32m+[m[32m      'Deux options : à pied par le réseau de sentiers, en empruntant le sentier des Arpenteurs puis celui des Belvédères — la plateforme se trouve au troisième belvédère — ou en navette au départ du pavillon principal. L’accès à la plateforme est payant et la navette représente un coût additionnel, tandis que la marche en sentier est gratuite.',[m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    question: 'Peut-on camper à Percé ?',[m
+[32m+[m[32m    answer:[m
+[32m+[m[32m      'Oui. Le Géoparc de Percé exploite un camping situé au cœur du village, ce qui permet de tout faire à pied. D’autres campings privés et municipaux se répartissent autour de Percé. Comme partout en Gaspésie l’été, réservez plusieurs mois à l’avance, surtout pour juillet et les vacances de la construction.',[m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m    question: 'Que sont les Jardins de Métis et valent-ils le détour ?',[m
+[32m+[m[32m    answer:[m
+[32m+[m[32m      'Créés par Elsie Reford et ouverts au public depuis 1962, les Jardins de Métis à Grand-Métis couvrent environ 18 hectares et rassemblent près de 3 000 variétés de plantes. Le site est reconnu lieu historique national du Canada. C’est souvent la première ou la dernière étape d’un tour de la Gaspésie selon le sens du trajet, et une belle pause pour couper la route.',[m
+[32m+[m[32m  },[m
+ ]);[m
+ [m
+ function StayCard({ name, location, type, description, link, image, extra }: StayCardProps) {[m
+[36m@@ -427,6 +468,22 @@[m [mexport default function Page() {[m
+         slug="gaspesie"[m
+         title="Gaspésie – le road trip en famille qui reste dans le cœur"[m
+         subtitle="Route 132, villages colorés, phares, baleines et couchers de soleil sur la plage : la Gaspésie, c’est plus qu’un itinéraire, c’est un voyage qui se vit en famille."[m
+[32m+[m[32m        toc={[[m
+[32m+[m[32m          { id: 'intro-gaspesie', label: 'Introduction' },[m
+[32m+[m[32m          { id: 'itineraire', label: 'Itinéraire conseillé' },[m
+[32m+[m[32m          { id: 'parc-national', label: 'Parc national de la Gaspésie' },[m
+[32m+[m[32m          { id: 'jacques-cartier', label: 'Mont Jacques-Cartier' },[m
+[32m+[m[32m          { id: 'geoparc-perce', label: 'Géoparc de Percé' },[m
+[32m+[m[32m          { id: 'jardins-metis', label: 'Jardins de Métis' },[m
+[32m+[m[32m          { id: 'camping', label: 'Camping en Gaspésie' },[m
+[32m+[m[32m          { id: 'meteo', label: 'Météo en Gaspésie' },[m
+[32m+[m[32m          { id: 'hebergements', label: 'Où dormir' },[m
+[32m+[m[32m          { id: 'gastronomie', label: 'Où manger' },[m
+[32m+[m[32m          { id: 'activites', label: 'Activités' },[m
+[32m+[m[32m          { id: 'conseils', label: 'Conseils pratiques' },[m
+[32m+[m[32m          { id: 'faq', label: 'FAQ' },[m
+[32m+[m[32m          { id: 'conclusion', label: 'Pour conclure' },[m
+[32m+[m[32m        ]}[m
+         hero={{[m
+           image: ([m
+             <Image[m
+[36m@@ -540,6 +597,283 @@[m [mexport default function Page() {[m
+           ))}[m
+         </section>[m
+ [m
+[32m+[m[32m        {/* Parc national de la Gaspésie */}[m
+[32m+[m[32m        <section id="parc-national" className="mx-auto mt-10 max-w-3xl space-y-4">[m
+[32m+[m[32m          <H2 className="text-2xl font-semibold text-gray-900">[m
+[32m+[m[32m            Le Parc national de la Gaspésie, cœur sauvage de la péninsule[m
+[32m+[m[32m          </H2>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            Beaucoup de voyageurs longent la côte sans jamais monter dans les terres. C’est dommage[m
+[32m+[m[32m            : le <strong>parc de la Gaspésie</strong> abrite les plus hautes montagnes du sud du[m
+[32m+[m[32m            Québec, avec plus de 800 km² de territoire et un réseau d’environ 130 km de sentiers[m
+[32m+[m[32m            dans les monts Chic-Chocs et McGerrigle.[m
+[32m+[m[32m          </p>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            C’est un tout autre visage de la région : forêt boréale, toundra alpine, lacs de[m
+[32m+[m[32m            montagne et surtout le dernier troupeau de caribous des bois au sud du fleuve[m
+[32m+[m[32m            Saint-Laurent. Prévoyez au moins une journée complète, idéalement deux, en gardant en[m
+[32m+[m[32m            tête que les distances internes sont longues et que plusieurs routes sont en gravier.[m
+[32m+[m[32m          </p>[m
+[32m+[m
+[32m+[m[32m          <H3 className="mt-6 text-xl font-semibold text-gray-900">La rivière aux Émeraudes</H3>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            Son nom dit tout : l’eau y prend une teinte verte translucide, particulièrement[m
+[32m+[m[32m            frappante quand la lumière tombe bien. C’est une halte photo facile et une belle[m
+[32m+[m[32m            introduction au parc pour les familles qui ne feront pas de longue randonnée. Un bon[m
+[32m+[m[32m            complément à une journée plus sportive ailleurs dans le secteur.[m
+[32m+[m[32m          </p>[m
+[32m+[m
+[32m+[m[32m          <H3 className="mt-6 text-xl font-semibold text-gray-900">Sommets et sentiers</H3>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            Le mont Albert et le mont Xalibu comptent parmi les randonnées les plus appréciées, et[m
+[32m+[m[32m            le lac aux Américains offre un point de vue spectaculaire pour un effort modéré. Les[m
+[32m+[m[32m            marcheurs expérimentés peuvent enchaîner Xalibu et Jacques-Cartier en linéaire — environ[m
+[32m+[m[32m            18 km et 905 m de dénivelé, avec retour en navette.[m
+[32m+[m[32m          </p>[m
+[32m+[m[32m        </section>[m
+[32m+[m
+[32m+[m[32m        {/* Mont Jacques-Cartier */}[m
+[32m+[m[32m        <section id="jacques-cartier" className="mx-auto mt-10 max-w-3xl space-y-4">[m
+[32m+[m[32m          <H2 className="text-2xl font-semibold text-gray-900">[m
+[32m+[m[32m            Mont Jacques-Cartier : la randonnée aux caribous[m
+[32m+[m[32m          </H2>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            C’est la randonnée emblématique du parc, et celle qui demande le plus de préparation.[m
+[32m+[m[32m            Culminant à 1 270 mètres, le <strong>mont Jacques-Cartier</strong> est le plus haut[m
+[32m+[m[32m            sommet des Chic-Chocs et le deuxième du Québec. Son plateau de toundra alpine, épargné[m
+[32m+[m[32m            par les glaciers, est le meilleur endroit de la province pour observer le caribou.[m
+[32m+[m[32m          </p>[m
+[32m+[m
+[32m+[m[32m          <div className="rounded-xl bg-amber-50 p-4 ring-1 ring-amber-200">[m
+[32m+[m[32m            <p className="text-gray-800">[m
+[32m+[m[32m              <strong>Accès strictement réglementé.</strong> Pour protéger le troupeau, le sentier[m
+[32m+[m[32m              n’est ouvert que du 1<sup>er</sup> juillet au 30 septembre, uniquement entre 10 h et[m
+[32m+[m[32m              16 h, et aucun départ n’est autorisé après midi. Il est interdit de sortir des[m
+[32m+[m[32m              sentiers balisés et les chiens ne sont pas admis. Un garde-parc veille au respect de[m
+[32m+[m[32m              ces règles.[m
+[32m+[m[32m            </p>[m
+[32m+[m[32m          </div>[m
+[32m+[m
+[32m+[m[32m          <H3 className="mt-6 text-xl font-semibold text-gray-900">La navette, obligatoire</H3>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            On ne se rend pas au départ du sentier avec sa propre voiture : la navette part de[m
+[32m+[m[32m            l’accueil du camping du Mont-Jacques-Cartier. Les places sont limitées et la réservation[m
+[32m+[m[32m            est fortement recommandée. Arriver tôt le matin au centre de services augmente vos[m
+[32m+[m[32m            chances d’obtenir une place le jour même, mais mieux vaut ne pas compter dessus en haute[m
+[32m+[m[32m            saison.[m
+[32m+[m[32m          </p>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            Notez que le camping du Mont-Jacques-Cartier se trouve à une quarantaine de kilomètres[m
+[32m+[m[32m            du centre de découverte, en partie sur une route de gravier : comptez le temps de trajet[m
+[32m+[m[32m            dans votre planification.[m
+[32m+[m[32m          </p>[m
+[32m+[m
+[32m+[m[32m          <H3 className="mt-6 text-xl font-semibold text-gray-900">La randonnée elle-même</H3>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            Environ 8 km aller-retour, 465 mètres de dénivelé, à peu près 4 heures. Le sentier est[m
+[32m+[m[32m            large et rocailleux, en montée constante, avec des escaliers de bois avant le sommet.[m
+[32m+[m[32m            Classé difficile surtout pour le terrain et la durée, il reste accessible à des[m
+[32m+[m[32m            marcheurs en forme raisonnable. Au sommet, une boucle d’un kilomètre — le sentier du[m
+[32m+[m[32m            Caribou — permet de parcourir le plateau, avec une tour d’observation et un abri.[m
+[32m+[m[32m          </p>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            Habillez-vous en conséquence : au sommet, il peut faire nettement plus froid et venteux[m
+[32m+[m[32m            qu’au stationnement, même en plein mois de juillet.[m
+[32m+[m[32m          </p>[m
+[32m+[m[32m        </section>[m
+[32m+[m
+[32m+[m[32m        {/* Géoparc de Percé */}[m
+[32m+[m[32m        <section id="geoparc-perce" className="mx-auto mt-10 max-w-3xl space-y-4">[m
+[32m+[m[32m          <H2 className="text-2xl font-semibold text-gray-900">[m
+[32m+[m[32m            Le Géoparc de Percé, 500 millions d’années sous les pieds[m
+[32m+[m[32m          </H2>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            Reconnu <strong>géoparc mondial UNESCO</strong>, le site raconte l’histoire géologique[m
+[32m+[m[32m            de la région à travers 23 géosites et un réseau d’environ 18 km de sentiers sur le mont[m
+[32m+[m[32m            Sainte-Anne et le mont Blanc. C’est une visite qui fonctionne beau temps mauvais temps,[m
+[32m+[m[32m            ce qui en fait une carte à garder en réserve pour une journée grise.[m
+[32m+[m[32m          </p>[m
+[32m+[m
+[32m+[m[32m          <H3 className="mt-6 text-xl font-semibold text-gray-900">[m
+[32m+[m[32m            La plateforme vitrée suspendue[m
+[32m+[m[32m          </H3>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            C’est l’attraction signature : une plateforme de verre ancrée dans la falaise à 200[m
+[32m+[m[32m            mètres d’altitude, avec vue plongeante sur le village et l’amphithéâtre naturel de[m
+[32m+[m[32m            Percé. Effet vertigineux garanti.[m
+[32m+[m[32m          </p>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            Deux façons d’y accéder. À pied, par le sentier des Arpenteurs puis celui des Belvédères[m
+[32m+[m[32m            — la plateforme se trouve au troisième belvédère — sachant que{' '}[m
+[32m+[m[32m            <strong>la marche en sentier est gratuite</strong>. Ou en navette, au départ du pavillon[m
+[32m+[m[32m            principal. L’accès à la plateforme est payant, et la navette représente un coût[m
+[32m+[m[32m            additionnel.[m
+[32m+[m[32m          </p>[m
+[32m+[m
+[32m+[m[32m          <H3 className="mt-6 text-xl font-semibold text-gray-900">Avec des enfants</H3>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            L’exposition multimédia TEKTONIK propose un voyage à travers l’histoire géologique, et[m
+[32m+[m[32m            un espace de jeux intérieur inspiré des fonds marins occupe les plus jeunes. Les[m
+[32m+[m[32m            amateurs de sensations trouveront une tyrolienne double et un mur d’escalade. En soirée[m
+[32m+[m[32m            d’été, la projection extérieure gratuite de <em>La Légende de Gluskap</em>, un[m
+[32m+[m[32m            court-métrage de douze minutes inspiré d’un récit mi’gmaq, clôt bien la journée.[m
+[32m+[m[32m          </p>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            La saison estivale s’étend généralement de la mi-mai au début octobre, avec une[m
+[32m+[m[32m            ouverture prolongée les fins de semaine à l’automne. En hiver, les sentiers se[m
+[32m+[m[32m            parcourent en raquettes. Vérifiez les horaires et la tarification en vigueur avant de[m
+[32m+[m[32m            vous déplacer.[m
+[32m+[m[32m          </p>[m
+[32m+[m[32m        </section>[m
+[32m+[m
+[32m+[m[32m        {/* Jardins de Métis */}[m
+[32m+[m[32m        <section id="jardins-metis" className="mx-auto mt-10 max-w-3xl space-y-4">[m
+[32m+[m[32m          <H2 className="text-2xl font-semibold text-gray-900">[m
+[32m+[m[32m            Les Jardins de Métis, la porte d’entrée de la Gaspésie[m
+[32m+[m[32m          </H2>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            À Grand-Métis, ces jardins créés par Elsie Reford et ouverts au public depuis 1962[m
+[32m+[m[32m            couvrent environ 18 hectares et rassemblent près de 3 000 variétés de plantes. Le site[m
+[32m+[m[32m            est reconnu lieu historique national du Canada et classé au patrimoine québécois.[m
+[32m+[m[32m          </p>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            Selon le sens de votre tour, c’est souvent la première ou la dernière étape du voyage.[m
+[32m+[m[32m            En venant de Québec par la route 132, les <strong>Jardins de Métis</strong> arrivent[m
+[32m+[m[32m            juste après Sainte-Flavie, au moment précis où l’on commence à sentir qu’on entre[m
+[32m+[m[32m            vraiment en Gaspésie. Une halte agréable pour couper une longue journée de route,[m
+[32m+[m[32m            surtout avec des enfants qui ont besoin de bouger autrement qu’en voiture.[m
+[32m+[m[32m          </p>[m
+[32m+[m
+[32m+[m[32m          <p className="text-gray-700">[m
+[32m+[m[32m            Des visites guidées d’une heure sont offertes en haute saison moyennant un supplément[m
+[32m+[m[32m            modeste. Les jardins ferment à l’automne et rouvrent au printemps : vérifiez les dates[m
+[32m+[m[32m            avant de bâtir votre itinéraire autour de cette étape.[m
+[32m+[m[32m          </p>[m
+[32m+[m[32m        </section>[m
+[32m+[m
+[32m+[m[32m        {/* Camping */}[m
+[32m+[m[32m        <section id="camping" className="mx-auto mt-10 max-w-3xl space-y-4">[m
+[32m+[m[32m          <H2 className="text-2xl font

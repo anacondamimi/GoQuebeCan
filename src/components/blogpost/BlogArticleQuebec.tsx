@@ -47,6 +47,46 @@ const faqJsonLd = {
     },
     {
       '@type': 'Question',
+      name: 'Comment accéder au quartier Petit-Champlain depuis le Vieux-Québec ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Trois options depuis la Haute-Ville : l’escalier Casse-Cou, le plus ancien escalier de la ville avec sa soixantaine de marches ; le funiculaire du Vieux-Québec, accessible par la maison Louis-Jolliet et qui relie directement la terrasse Dufferin ; ou la côte de la Montagne à pied. Le funiculaire est l’option la plus simple avec une poussette ou de jeunes enfants.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Combien coûte le téléphérique de la chute Montmorency ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'L’accès au parc est payant et le téléphérique s’ajoute selon la formule retenue. Les forfaits combinant entrée et téléphérique sont généralement plus avantageux, et il est possible de prendre un aller simple pour redescendre par l’escalier panoramique. Les tarifs changent chaque saison : vérifiez-les sur le site officiel du parc avant votre visite.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'La chute Montmorency se visite-t-elle en hiver ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Oui, mais partiellement. L’escalier panoramique et le secteur du pied de la chute ferment pour raisons de sécurité à cause de la glace. La chute reste superbe depuis le haut, le pont suspendu et le belvédère. L’hiver est aussi la saison du pain de sucre, ce cône de glace formé par les embruns qui peut atteindre une trentaine de mètres en janvier et février.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quelle est la meilleure période pour visiter la ville de Québec ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'L’automne, de septembre à la mi-octobre, offre souvent le meilleur compromis : couleurs spectaculaires sur l’île d’Orléans, foules réduites après la rentrée et températures agréables pour marcher. L’été est chaud et animé mais achalandé, l’hiver est magique pour qui accepte le froid, et le printemps reste imprévisible avec plusieurs attraits fermés entre deux saisons.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Combien de temps prévoir pour l’île d’Orléans ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Le chemin Royal fait le tour de l’île sur une soixantaine de kilomètres à travers six villages. Le tour se boucle en une demi-journée sans arrêt, mais l’intérêt de l’île réside justement dans les haltes chez les producteurs : fraises, cidreries, vignobles, fromageries et chocolateries. Comptez une journée complète et prévoyez une glacière. La voiture est indispensable sur place.',
+      },
+    },
+    {
+      '@type': 'Question',
       name: 'Faut-il choisir Québec ou Montréal pour un premier voyage au Québec ?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -91,6 +131,22 @@ export default function BlogArticleVilleDeQuebec() {
     <DestinationArticleTemplate
       slug="quebec"
       title="Québec, été comme hiver : la ville qui fait battre le cœur du fleuve"
+      toc={[
+        { id: 'introduction', label: 'Introduction' },
+        { id: 'comprendre', label: 'Comprendre Québec' },
+        { id: 'petit-champlain', label: 'Petit-Champlain & Place-Royale' },
+        { id: 'dufferin', label: 'Terrasse Dufferin & Frontenac' },
+        { id: 'montmorency', label: 'Chute Montmorency & téléphérique' },
+        { id: 'ile-orleans', label: "Île d'Orléans" },
+        { id: 'meteo', label: 'Météo & quand y aller' },
+        { id: 'ete', label: 'Québec en été' },
+        { id: 'hiver', label: 'Québec en hiver' },
+        { id: 'roadtrip', label: 'Road trip 3 jours' },
+        { id: 'incontournables', label: 'Incontournables' },
+        { id: 'hebergements', label: 'Où dormir' },
+        { id: 'faq', label: 'FAQ' },
+        { id: 'liens', label: 'Liens utiles' },
+      ]}
     >
       <>
         <script
@@ -235,6 +291,227 @@ export default function BlogArticleVilleDeQuebec() {
           </section>
 
           {/* ÉTÉ */}
+          {/* Petit-Champlain et Place-Royale */}
+          <section id="petit-champlain" className="prose prose-slate mt-10 max-w-none">
+            <H2>Petit-Champlain et Place-Royale, le berceau de Québec</H2>
+
+            <p>
+              Si tu ne devais visiter qu’un secteur, ce serait celui-là. Au pied du cap Diamant, le{' '}
+              <strong>quartier Petit-Champlain</strong> aligne ses rues pavées, ses maisons
+              séculaires et sa cinquantaine de boutiques et d’ateliers d’artisans sur à peine
+              quelques centaines de mètres. La rue du Petit-Champlain, longue d’environ 275 mètres,
+              est considérée comme l’une des plus anciennes artères commerçantes d’Amérique du Nord.
+            </p>
+
+            <p>
+              Le quartier accueille environ 1,5 million de visiteurs par année, et ça se sent en
+              juillet. Notre conseil : viens tôt le matin, avant 9 h, ou en fin de journée. La
+              lumière est plus belle, les photos sont sans foule, et les commerçants ont le temps de
+              jaser.
+            </p>
+
+            <H3>L’escalier Casse-Cou</H3>
+
+            <p>
+              C’est le plus ancien escalier de la ville : il figurait déjà sur un plan de Québec en
+              1660, et un passage existait à cet endroit avant même 1640. Son surnom vient du 19
+              <sup>e</sup> siècle, quand les guides anglophones l’avaient baptisé{' '}
+              <em>Breakneck Steps</em> — la version en bois de l’époque était réellement dangereuse.
+              Aujourd’hui, il relie la Basse-Ville à la Haute-Ville en une soixantaine de marches,
+              et c’est l’une des photos les plus reprises de Québec.
+            </p>
+
+            <H3>Le funiculaire, l’alternative sans effort</H3>
+
+            <p>
+              Juste à côté de l’escalier, le funiculaire du Vieux-Québec grimpe jusqu’à la terrasse
+              Dufferin. Il est en service depuis la fin du 19<sup>e</sup> siècle et son accès se
+              fait par la maison Louis-Jolliet, ancienne résidence du découvreur du Mississippi.
+              C’est l’option évidente avec une poussette, des genoux fatigués ou après une longue
+              journée de marche.
+            </p>
+
+            <H3>Place-Royale</H3>
+
+            <p>
+              À deux pas, la <strong>Place-Royale</strong> marque l’endroit exact où Samuel de
+              Champlain fit construire son habitation en 1608. C’est littéralement le berceau de la
+              ville. L’église Notre-Dame-des-Victoires, la Batterie Royale aménagée en 1691, la
+              fresque des Québécois et les galeries d’art des rues environnantes composent un
+              ensemble qu’on parcourt facilement en une heure ou deux, sans plan précis.
+            </p>
+
+            <p>
+              L’ensemble du secteur fait partie du Vieux-Québec inscrit au patrimoine mondial de
+              l’UNESCO — le seul ensemble urbain fortifié au nord du Mexique.
+            </p>
+          </section>
+
+          {/* Terrasse Dufferin */}
+          <section id="dufferin" className="prose prose-slate mt-10 max-w-none">
+            <H2>Terrasse Dufferin et Château Frontenac</H2>
+
+            <p>
+              C’est la carte postale de Québec, et pour une fois la réalité dépasse l’image. La{' '}
+              <strong>terrasse Dufferin</strong> est une longue promenade de bois suspendue
+              au-dessus du fleuve, adossée au Château Frontenac, avec vue sur le Saint-Laurent,
+              Lévis et l’île d’Orléans au loin.
+            </p>
+
+            <p>
+              L’endroit vit à toute heure : musiciens de rue et glaces en été, patinoire et glissade
+              en hiver, couchers de soleil spectaculaires à l’année. C’est aussi le point de départ
+              naturel vers la promenade des Gouverneurs et les Plaines d’Abraham si tu continues
+              vers le sud.
+            </p>
+
+            <p>
+              Le <strong>Château Frontenac</strong>, l’hôtel le plus photographié au monde selon la
+              légende locale, se visite même sans y séjourner : les visites guidées costumées
+              racontent son histoire, et le hall vaut le coup d’œil. Sinon, contente-toi de le
+              contempler depuis la terrasse — c’est gratuit et l’effet est le même.
+            </p>
+
+            <p>
+              Astuce : depuis la terrasse, l’escalier Casse-Cou et le funiculaire descendent
+              directement vers le Petit-Champlain. Enchaîne les deux secteurs dans la même
+              demi-journée plutôt que d’en faire deux sorties séparées.
+            </p>
+          </section>
+
+          {/* Chute Montmorency */}
+          <section id="montmorency" className="prose prose-slate mt-10 max-w-none">
+            <H2>La chute Montmorency et son téléphérique</H2>
+
+            <p>
+              À une quinzaine de minutes du centre-ville, la <strong>chute Montmorency</strong>{' '}
+              culmine à 83 mètres — soit une trentaine de mètres de plus que les chutes du Niagara.
+              C’est l’excursion la plus facile à greffer à un séjour en ville, et elle fonctionne en
+              toutes saisons.
+            </p>
+
+            <H3>Le téléphérique</H3>
+
+            <p>
+              Le <strong>téléphérique</strong> relie la gare, en bas, au Manoir Montmorency, en
+              haut, en quelques minutes. Chaque cabine peut accueillir jusqu’à 40 passagers. Tu peux
+              le prendre en aller-retour, ou en aller simple et redescendre à pied par l’escalier
+              panoramique — c’est souvent la formule la plus intéressante.
+            </p>
+
+            <p>
+              L’accès au parc est payant, et le téléphérique s’ajoute selon la formule choisie. Les
+              forfaits combinés existent et sont généralement plus avantageux. Achète tes billets à
+              l’avance en haute saison pour éviter la file.
+            </p>
+
+            <H3>Le circuit panoramique</H3>
+
+            <p>
+              Depuis le haut : la promenade le long de la falaise, le pont suspendu au-dessus de la
+              chute — sensations garanties — puis le belvédère de la Baronne. La descente se fait
+              par l’<strong>escalier panoramique</strong> et ses 487 marches accrochées au flanc de
+              la falaise. En bas, un promontoire de béton te place directement dans les embruns.
+            </p>
+
+            <p>
+              Une tyrolienne double de 300 mètres survole aussi la chute pour les amateurs de
+              sensations, et des sentiers de 0,5 à 3 km sillonnent le parc.
+            </p>
+
+            <div className="not-prose rounded-xl bg-amber-50 p-4 ring-1 ring-amber-200">
+              <p className="text-gray-800">
+                <strong>
+                  En hiver, l’escalier panoramique et le secteur du pied de la chute ferment
+                </strong>{' '}
+                pour raisons de sécurité, à cause de la glace. La chute reste magnifique vue d’en
+                haut et du pont suspendu. C’est aussi la saison du <strong>pain de sucre</strong>,
+                ce cône de glace formé par les embruns accumulés qui peut atteindre une trentaine de
+                mètres en janvier et février.
+              </p>
+            </div>
+          </section>
+
+          {/* Île d'Orléans */}
+          <section id="ile-orleans" className="prose prose-slate mt-10 max-w-none">
+            <H2>L’île d’Orléans, la campagne à quinze minutes</H2>
+
+            <p>
+              L’<strong>île d’Orléans</strong> se trouve à environ un quart d’heure de la chute
+              Montmorency, ce qui en fait la suite logique d’une matinée aux chutes. Le chemin Royal
+              en fait le tour sur une soixantaine de kilomètres, en passant par six villages.
+            </p>
+
+            <p>
+              C’est le pays des producteurs : fraises et framboises en saison, cidreries, vignobles,
+              fromageries, chocolateries, cabanes à sucre et kiosques en bordure de route. Prévois
+              une glacière dans le coffre, tu ne repartiras pas les mains vides.
+            </p>
+
+            <p>
+              Le tour complet se fait en une demi-journée si tu roules sans t’arrêter, mais
+              l’intérêt est justement de t’arrêter. Compte une journée pour bien en profiter, et
+              garde à l’esprit que la voiture est indispensable ici — il n’y a pas de transport en
+              commun utile sur l’île.
+            </p>
+          </section>
+
+          {/* Météo */}
+          <section id="meteo" className="prose prose-slate mt-10 max-w-none">
+            <H2>Météo à Québec : à quoi s’attendre selon la saison</H2>
+
+            <p>
+              La <strong>météo à Québec</strong> est franche : les saisons y sont marquées, et
+              chacune change complètement l’expérience de la ville. Voici les repères pour
+              planifier.
+            </p>
+
+            <H3>Été (juin à août)</H3>
+
+            <p>
+              Chaud et parfois humide, avec des journées qui invitent aux terrasses et aux Plaines.
+              C’est la haute saison : réserve tôt et attends-toi à de l’affluence dans le
+              Vieux-Québec. Les orages de fin d’après-midi sont fréquents mais passent vite.
+            </p>
+
+            <H3>Automne (septembre-octobre)</H3>
+
+            <p>
+              Souvent le meilleur compromis. Les couleurs sur l’île d’Orléans et la Côte-de-Beaupré
+              sont spectaculaires, les foules diminuent après la rentrée et les températures restent
+              agréables pour marcher. Le pic des couleurs varie d’une année à l’autre, généralement
+              entre la fin septembre et la mi-octobre.
+            </p>
+
+            <H3>Hiver (décembre à mars)</H3>
+
+            <p>
+              Le froid est réel, avec des pointes bien en dessous de zéro et un facteur vent qui
+              accentue la sensation. Mais c’est aussi ce qui rend la ville magique : neige sur les
+              toits de tôle, Carnaval, patinoire, marché de Noël. Habillé en conséquence — couches,
+              vraies bottes, tuque et mitaines — l’hiver devient un terrain de jeu plutôt qu’une
+              épreuve.
+            </p>
+
+            <H3>Printemps (avril-mai)</H3>
+
+            <p>
+              La saison la plus imprévisible. Ça dégèle, certaines activités hivernales ferment
+              tandis que les estivales n’ont pas encore ouvert. En contrepartie, les tarifs sont bas
+              et la ville est calme. Vérifie l’ouverture des attraits qui t’intéressent avant de
+              réserver.
+            </p>
+
+            <div className="not-prose rounded-xl bg-blue-50 p-4 ring-1 ring-blue-100">
+              <p className="text-gray-800">
+                <strong>Le réflexe utile :</strong> consulte la météo la veille et regarde le
+                facteur vent autant que la température. Au bord du fleuve, sur la terrasse Dufferin
+                ou au pont suspendu de Montmorency, le vent fait souvent plus de différence que le
+                thermomètre. En hiver, vérifie aussi les fermetures liées à la glace.
+              </p>
+            </div>
+          </section>
+
           <section id="ete" className="prose prose-slate mt-10 max-w-none">
             <H2>Québec en été : terrasses, fleuve et grandes pelouses</H2>
 
