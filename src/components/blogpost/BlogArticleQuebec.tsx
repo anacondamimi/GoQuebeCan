@@ -39,6 +39,22 @@ const faqJsonLd = {
     },
     {
       '@type': 'Question',
+      name: 'Où se garer dans le Vieux-Québec ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Le stationnement sur rue est rare et limité dans le temps dans le Vieux-Québec. Le plus simple est de viser un stationnement souterrain (comme celui de l’hôtel de ville ou du complexe Marie-Guyart) et d’y laisser la voiture toute la journée, puisque tout se visite à pied. Si tu comptes utiliser ta voiture pour des excursions, choisis un hébergement qui inclut le stationnement : cela t’évite des frais quotidiens et la chasse à la place libre.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quel budget prévoir pour un séjour à Québec ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Le poste principal reste l’hébergement, très variable selon la saison : compte souvent 150 à 250 $/nuit hors haute saison, et davantage en été, pendant le Carnaval ou le temps des Fêtes. Les grands classiques comme flâner dans le Vieux-Québec, les Plaines d’Abraham ou admirer le Château Frontenac sont gratuits. Les postes à budgéter sont les restos, le stationnement, le téléphérique de Montmorency et les activités payantes (musées, chiens de traîneau, Hôtel de glace).',
+      },
+    },
+    {
+      '@type': 'Question',
       name: 'La ville de Québec convient-elle aux familles ?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -51,6 +67,14 @@ const faqJsonLd = {
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'Trois options depuis la Haute-Ville : l’escalier Casse-Cou, le plus ancien escalier de la ville avec sa soixantaine de marches ; le funiculaire du Vieux-Québec, accessible par la maison Louis-Jolliet et qui relie directement la terrasse Dufferin ; ou la côte de la Montagne à pied. Le funiculaire est l’option la plus simple avec une poussette ou de jeunes enfants.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Peut-on visiter Québec sans voiture ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Tout à fait. Un séjour centré sur le Vieux-Québec se fait entièrement à pied : Haute-Ville, Basse-Ville, Petit-Champlain, Plaines d’Abraham et traversier vers Lévis sont tous accessibles sans voiture. Pour la chute Montmorency, un service de bus relie le centre-ville, et l’île d’Orléans ou Valcartier peuvent se faire via des excursions organisées. La voiture ne devient vraiment utile que si tu veux multiplier les excursions à ton rythme.',
       },
     },
     {
@@ -188,6 +212,31 @@ export default function BlogArticleVilleDeQuebec() {
                   </a>
                 </li>
                 <li>
+                  <a href="#petit-champlain" className="hover:underline">
+                    Petit-Champlain &amp; Place-Royale
+                  </a>
+                </li>
+                <li>
+                  <a href="#dufferin" className="hover:underline">
+                    Terrasse Dufferin &amp; Château Frontenac
+                  </a>
+                </li>
+                <li>
+                  <a href="#montmorency" className="hover:underline">
+                    Chute Montmorency &amp; téléphérique
+                  </a>
+                </li>
+                <li>
+                  <a href="#ile-orleans" className="hover:underline">
+                    Île d&apos;Orléans
+                  </a>
+                </li>
+                <li>
+                  <a href="#meteo" className="hover:underline">
+                    Météo &amp; quand y aller
+                  </a>
+                </li>
+                <li>
                   <a href="#ete" className="hover:underline">
                     Québec en été : terrasses et fleuve
                   </a>
@@ -210,11 +259,6 @@ export default function BlogArticleVilleDeQuebec() {
                 <li>
                   <a href="#hebergements" className="hover:underline">
                     Où dormir à Québec ?
-                  </a>
-                </li>
-                <li>
-                  <a href="#goquebecan" className="hover:underline">
-                    Préparer ton séjour avec <BrandName />
                   </a>
                 </li>
                 <li>
@@ -251,8 +295,9 @@ export default function BlogArticleVilleDeQuebec() {
             </p>
             <p>
               Cet article est pensé pour t’aider à préparer un voyage à Québec en toute saison : que
-              faire, où dormir, comment profiter à la fois des grands classiques et de petites
-              adresses coup de cœur, été comme hiver, avec en bonus une idée de{' '}
+              faire, combien de jours prévoir, où dormir, comment se déplacer, combien budgéter, et
+              comment profiter à la fois des grands classiques et de petites adresses coup de cœur,
+              été comme hiver, avec en bonus une idée de{' '}
               <strong>
                 road trip de 3 jours Québec – Valcartier – chiens de traîneau – Hôtel de glace
               </strong>
@@ -288,9 +333,40 @@ export default function BlogArticleVilleDeQuebec() {
                 adresses gourmandes.
               </li>
             </ul>
+
+            <H3>Combien de jours prévoir ?</H3>
+            <p>
+              Pour une première visite, <strong>3 à 4 jours</strong> représentent le bon équilibre :
+              une à deux journées pour le Vieux-Québec à pied, une journée pour une excursion
+              (Montmorency et île d’Orléans se combinent bien), et une demi-journée tampon pour un
+              musée, le traversier ou simplement flâner. Si Québec s’inscrit dans un road trip plus
+              large vers Charlevoix, la Gaspésie ou le Bas-Saint-Laurent, 5 à 7 jours te laissent
+              respirer. Le plus simple est de bloquer ce découpage dans le{' '}
+              <Link href="/planificateur">planificateur</Link> de <BrandName /> avant de réserver.
+            </p>
+
+            <H3>Comment se déplacer</H3>
+            <p>
+              Bonne nouvelle : un séjour centré sur la ville se fait presque entièrement{' '}
+              <strong>à pied</strong>. Entre la Haute-Ville, la Basse-Ville et le Petit-Champlain,
+              les distances se comptent en minutes de marche, avec l’escalier Casse-Cou et le
+              funiculaire pour relier les niveaux. Le réseau de bus dessert le reste, y compris la
+              chute Montmorency, et le traversier vers Lévis fait office de mini-croisière. La
+              voiture ne devient réellement utile que pour l’île d’Orléans, Valcartier ou les
+              centres de chiens de traîneau — auquel cas mieux vaut un hébergement avec
+              stationnement.
+            </p>
+
+            <div className="not-prose rounded-xl bg-blue-50 p-4 ring-1 ring-blue-100">
+              <p className="text-gray-800">
+                <strong>Le réflexe stationnement :</strong> les places sur rue sont rares et
+                limitées dans le temps dans le Vieux-Québec. Vise plutôt un stationnement souterrain
+                pour la journée, ou choisis un hébergement qui l’inclut. Tu récupères ta voiture
+                uniquement pour les excursions, et tu t’épargnes la chasse à la place libre.
+              </p>
+            </div>
           </section>
 
-          {/* ÉTÉ */}
           {/* Petit-Champlain et Place-Royale */}
           <section id="petit-champlain" className="prose prose-slate mt-10 max-w-none">
             <H2>Petit-Champlain et Place-Royale, le berceau de Québec</H2>
@@ -328,7 +404,8 @@ export default function BlogArticleVilleDeQuebec() {
               Dufferin. Il est en service depuis la fin du 19<sup>e</sup> siècle et son accès se
               fait par la maison Louis-Jolliet, ancienne résidence du découvreur du Mississippi.
               C’est l’option évidente avec une poussette, des genoux fatigués ou après une longue
-              journée de marche.
+              journée de marche. Le tarif est modique, et la petite montée vitrée offre déjà une
+              belle vue sur la Basse-Ville.
             </p>
 
             <H3>Place-Royale</H3>
@@ -387,7 +464,7 @@ export default function BlogArticleVilleDeQuebec() {
               À une quinzaine de minutes du centre-ville, la <strong>chute Montmorency</strong>{' '}
               culmine à 83 mètres — soit une trentaine de mètres de plus que les chutes du Niagara.
               C’est l’excursion la plus facile à greffer à un séjour en ville, et elle fonctionne en
-              toutes saisons.
+              toutes saisons. Sans voiture, un bus depuis le centre-ville t’y dépose également.
             </p>
 
             <H3>Le téléphérique</H3>
@@ -402,7 +479,8 @@ export default function BlogArticleVilleDeQuebec() {
             <p>
               L’accès au parc est payant, et le téléphérique s’ajoute selon la formule choisie. Les
               forfaits combinés existent et sont généralement plus avantageux. Achète tes billets à
-              l’avance en haute saison pour éviter la file.
+              l’avance en haute saison pour éviter la file, et vérifie les tarifs à jour sur le site
+              officiel du parc avant de partir : ils changent d’une saison à l’autre.
             </p>
 
             <H3>Le circuit panoramique</H3>
@@ -445,7 +523,9 @@ export default function BlogArticleVilleDeQuebec() {
             <p>
               C’est le pays des producteurs : fraises et framboises en saison, cidreries, vignobles,
               fromageries, chocolateries, cabanes à sucre et kiosques en bordure de route. Prévois
-              une glacière dans le coffre, tu ne repartiras pas les mains vides.
+              une glacière dans le coffre, tu ne repartiras pas les mains vides. Tu peux repérer
+              plusieurs de ces adresses à l’avance sur la carte des{' '}
+              <Link href="/producteurs">producteurs locaux</Link> de <BrandName />.
             </p>
 
             <p>
@@ -512,6 +592,7 @@ export default function BlogArticleVilleDeQuebec() {
             </div>
           </section>
 
+          {/* ÉTÉ */}
           <section id="ete" className="prose prose-slate mt-10 max-w-none">
             <H2>Québec en été : terrasses, fleuve et grandes pelouses</H2>
 
@@ -628,6 +709,16 @@ export default function BlogArticleVilleDeQuebec() {
               s’ouvre devant nous.
             </p>
 
+            <H3>Le Carnaval de Québec</H3>
+            <p>
+              Si tu viens entre la fin janvier et la mi-février, le{' '}
+              <strong>Carnaval de Québec</strong> est l’un des plus grands carnavals d’hiver au
+              monde. Bonhomme, défilés nocturnes, sculptures sur glace, bain de neige et activités
+              familiales rythment plusieurs fins de semaine. C’est aussi la période la plus
+              achalandée de l’hiver : réserve ton hébergement bien à l’avance et attends-toi à des
+              tarifs plus élevés.
+            </p>
+
             <H3>Traversier sur le fleuve gelé</H3>
             <p>
               Reprendre le <strong>traversier Québec–Lévis en hiver</strong> n’a rien à voir avec
@@ -660,7 +751,7 @@ export default function BlogArticleVilleDeQuebec() {
               Découverte du Vieux-Québec”.
             </p>
 
-            <H3>Jour 2 – Village Vacances Valcartier & Hôtel de glace</H3>
+            <H3>Jour 2 – Village Vacances Valcartier &amp; Hôtel de glace</H3>
             <p>
               Le lendemain, direction <strong>Village Vacances Valcartier</strong>, à moins d’une
               heure de route : glissades sur neige, rafting sur bouées, activités familiales. En
@@ -676,7 +767,7 @@ export default function BlogArticleVilleDeQuebec() {
               t’aidera à préparer ton sac (couches chaudes, accessoires de confort, etc.).
             </p>
 
-            <H3>Jour 3 – Chiens de traîneau & retour à Québec</H3>
+            <H3>Jour 3 – Chiens de traîneau &amp; retour à Québec</H3>
             <p>
               Pour le troisième jour, réserve une activité <strong>chien de traîneau</strong> dans
               la région (plusieurs entreprises proposent des demi-journées autour de Québec et de
@@ -716,6 +807,10 @@ export default function BlogArticleVilleDeQuebec() {
               <li>
                 explorer les <strong>musées</strong> (Musée de la civilisation, Musée national des
                 beaux-arts du Québec) ;
+              </li>
+              <li>
+                longer les <strong>fortifications</strong> et les remparts, seul ensemble urbain
+                fortifié au nord du Mexique ;
               </li>
               <li>
                 partir à la journée vers l’<strong>île d’Orléans</strong> : fraises, pommes, vins,
@@ -847,6 +942,33 @@ export default function BlogArticleVilleDeQuebec() {
               Valcartier ou certains centres de chiens de traîneau, une voiture rend tout beaucoup
               plus simple. Dans ce cas, privilégie un hébergement avec stationnement comme
               l’Appartement Luxe ou certains hôtels partenaires.
+            </p>
+
+            <H3>Où se garer dans le Vieux-Québec ?</H3>
+            <p>
+              Le stationnement sur rue est rare et limité dans le temps. Le plus simple est de viser
+              un <strong>stationnement souterrain</strong> et d’y laisser la voiture pour la
+              journée, puisque tout se visite à pied. Si tu comptes utiliser ta voiture pour des
+              excursions, choisis un hébergement qui inclut le stationnement : tu évites les frais
+              quotidiens et la chasse à la place libre.
+            </p>
+
+            <H3>Quel budget prévoir pour un séjour à Québec ?</H3>
+            <p>
+              Le poste principal reste l’<strong>hébergement</strong>, très variable selon la
+              saison, et plus élevé en été, pendant le Carnaval et au temps des Fêtes. Beaucoup des
+              plus beaux moments sont gratuits (Vieux-Québec, Plaines d’Abraham, Château Frontenac
+              vu de la terrasse). Les postes à budgéter sont les restos, le stationnement, le
+              téléphérique de Montmorency et les activités payantes (musées, chiens de traîneau,
+              Hôtel de glace).
+            </p>
+
+            <H3>Peut-on visiter Québec sans voiture ?</H3>
+            <p>
+              Oui, sans problème. Le Vieux-Québec, les Plaines et le traversier vers Lévis se font
+              entièrement à pied. Un bus dessert la chute Montmorency, et des excursions organisées
+              couvrent l’île d’Orléans ou Valcartier. La voiture ne devient vraiment utile que si tu
+              veux multiplier les excursions à ton propre rythme.
             </p>
 
             <H3>Québec convient-elle aux familles ?</H3>

@@ -29,7 +29,7 @@ const BRAND = {
 
 const CONSENT_VERSION = '2.2';
 const EXPIRATION_DAYS = 365;
-const GA_ID = 'G-GZP1YZLT2F';
+const GA_ID = 'G-YVQ8STPPG1';
 
 const defaultPrefs: CookiePrefs = {
   functional: true,

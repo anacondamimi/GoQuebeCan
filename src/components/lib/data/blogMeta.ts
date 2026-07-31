@@ -412,8 +412,8 @@ export const blogMeta = {
     ]
   },
   "levis": {
-    "title": "Mini road trip à Lévis en famille (2025)",
-    "description": "Découvrez Mini road trip à Lévis en famille (2025), ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "title": "Levis",
+    "description": "Découvrez Levis, ses attraits touristiques, ses activités et ses hébergements incontournables.",
     "image": "/images/destinations/levis.avif",
     "activites": [],
     "hebergements": [],
@@ -423,7 +423,7 @@ export const blogMeta = {
     "region": "Québec",
     "keywords": [
       "aventuriers",
-      "Mini road trip à Lévis en famille (2025)",
+      "Levis",
       "Québec"
     ]
   },
@@ -433,12 +433,9 @@ export const blogMeta = {
     "image": "/images/default-destination.avif",
     "activites": [],
     "hebergements": [],
-    "publics": [
-      "couples"
-    ],
+    "publics": [],
     "region": "Québec",
     "keywords": [
-      "couples",
       "Location VR",
       "Québec"
     ]

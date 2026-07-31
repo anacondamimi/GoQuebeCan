@@ -1,562 +1,738 @@
 'use client';
-
-import Image from 'next/image';
 import Link from 'next/link';
-import H1 from '@/components/typography/H1';
+import Image from 'next/image';
+
 import H2 from '@/components/typography/H2';
 import H3 from '@/components/typography/H3';
-import { buildHowToLd } from '@/lib/seo/buildHowToLd';
-import { buildFaqLd } from '@/lib/seo/buildFaqLd';
-import { buildBreadcrumbLd } from '@/lib/seo/buildBreadcrumbLd';
-import { JsonLd, HeadExtras } from '@/lib/seo/HeadExtras';
+import BrandName from '@/components/brand/BrandName';
 
-const TITLE = 'Location VR au Québec et au Canada : prix, comparatif, assurance et conseils';
+import DestinationArticleTemplate from '@/components/blog/DestinationArticleTemplate';
 
-const CANONICAL = 'https://www.goquebecan.com/blog/location-vr';
-const IMAGE = '/images/destinations/vr-suite.avif';
-const PUBLISHED = '2025-12-01';
-const MODIFIED = '2026-05-18';
-
-const AFF_OUTDOORSY = 'https://www.outdoorsy.com/?utm_source=aff_goquebecan';
-const AFF_RVEZY = 'https://www.rvezy.com/?utm_source=aff_goquebecan';
-const AFF_AUTHENTIK = 'https://www.authentikcanada.com/?utm_source=aff_goquebecan';
-const INFO_IMOOVA = 'https://www.imoova.com/';
-
-const faqItems = [
-  {
-    question: 'Quel type de VR choisir pour un couple ?',
-    answer:
-      'Un van aménagé ou un VR compact est souvent le meilleur choix pour un couple : plus facile à conduire, plus simple à stationner et généralement plus agréable pour un road trip flexible.',
-  },
-  {
-    question: 'Quel type de VR choisir pour une famille ?',
-    answer:
-      'Un VR Classe C est souvent le meilleur compromis pour une famille. Il offre plus d’espace, des zones de couchage plus pratiques et reste généralement plus accessible à conduire qu’un très gros motorisé.',
-  },
-  {
-    question: 'Combien coûte une location de VR au Québec ou au Canada ?',
-    answer:
-      'Le prix varie selon la saison, le modèle, la durée, le kilométrage inclus, l’assurance, les frais de préparation et les options. Il faut toujours comparer le coût total du voyage, pas seulement le prix affiché par jour.',
-  },
-  {
-    question: 'Quelle est la meilleure plateforme pour louer un VR au Canada ?',
-    answer:
-      'Outdoorsy est intéressant pour le choix, RVezy pour l’offre locale canadienne, Authentik Canada pour comparer plusieurs loueurs historiques, et Fraserway ou CanaDream pour une logistique plus structurée.',
-  },
-  {
-    question: 'Les allers simples en VR sont-ils possibles ?',
-    answer:
-      'Oui, surtout avec les loueurs historiques ou les comparateurs, mais cela dépend des routes, des villes de prise en charge et des frais. En location entre particuliers, c’est plus rare et souvent à négocier.',
-  },
-  {
-    question: 'Existe-t-il des locations de VR vraiment pas chères ?',
-    answer:
-      'Oui, certaines offres de relocation peuvent être très économiques, parfois autour de 1 $ par jour. En échange, le trajet, les dates et la durée sont souvent imposés.',
-  },
-  {
-    question: 'Où peut-on dormir en VR au Québec ?',
-    answer:
-      'Les campings restent l’option la plus simple. On peut aussi utiliser certains lieux d’accueil, haltes agrotouristiques ou terrains autorisés, mais il faut toujours vérifier les règles locales avant de s’installer.',
-  },
-  {
-    question: 'Faut-il une assurance spéciale pour louer un VR ?',
-    answer:
-      'Oui. Il faut vérifier l’assurance du loueur, la franchise, les exclusions, les conducteurs autorisés et les conditions en cas de dommage ou d’annulation.',
-  },
-];
-
-const breadcrumb = buildBreadcrumbLd([
-  { name: 'Accueil', item: 'https://www.goquebecan.com/' },
-  { name: 'Blog', item: 'https://www.goquebecan.com/blog' },
-  { name: 'Location VR au Québec et au Canada', item: CANONICAL },
-]);
-
-const howTo = buildHowToLd({
-  name: 'Comment louer un VR au Québec et au Canada',
-  description:
-    'Étapes pour bien louer un véhicule récréatif : choisir le bon format, comparer les plateformes, vérifier les coûts, organiser les haltes et réserver au bon moment.',
-  steps: [
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      name: 'Choisir le bon format',
-      text: 'Déterminez si vous avez besoin d’un van aménagé, d’un VR compact, d’un Classe C, d’un Classe A ou d’une roulotte selon votre budget, votre aisance de conduite et le nombre de voyageurs.',
+      '@type': 'Question',
+      name: 'Faut-il un permis spécial pour conduire un VR au Québec ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Pour la grande majorité des VR de location (classe B, classe C, motorisés compacts) et pour tracter une roulotte, le permis de conduire régulier de classe 5 suffit au Québec. Un permis particulier ne devient nécessaire que pour les véhicules très lourds ou les ensembles dépassant certains seuils de poids. Vérifie toujours le poids total du véhicule et de la remorque auprès du loueur avant de réserver.',
+      },
     },
     {
-      name: 'Comparer les plateformes',
-      text: 'Comparez les marketplaces comme Outdoorsy ou RVezy, les comparateurs comme Authentik Canada et les loueurs historiques comme Fraserway ou CanaDream.',
+      '@type': 'Question',
+      name: 'Combien coûte la location d’un VR au Québec ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Les tarifs varient beaucoup selon le type de véhicule et la saison. En haute saison (juin à août), compte souvent de 150 à 250 $ par nuit pour un van aménagé ou un petit motorisé, et davantage pour un grand classe A ou C familial. À ces montants s’ajoutent le kilométrage, l’assurance, les frais de ménage et parfois une trousse de literie ou de cuisine. Réserver tôt et voyager hors des semaines de vacances scolaires fait baisser la facture.',
+      },
     },
     {
-      name: 'Comparer le coût total',
-      text: 'Comparez le prix par jour, le kilométrage inclus, l’assurance, la franchise, les frais de préparation, la literie, la vaisselle, les options et les frais de plateforme.',
+      '@type': 'Question',
+      name: 'Quelle est la meilleure période pour louer un VR au Québec ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'La saison de camping s’étend surtout de la mi-mai à la mi-octobre. Juillet et août sont les plus achalandés et les plus chers ; la fin de l’été et le début de l’automne, avec les couleurs, offrent souvent le meilleur compromis entre météo, disponibilité et tarifs. Si tu vises un VR pour l’été, réserve dès le printemps : les meilleurs véhicules partent vite.',
+      },
     },
     {
-      name: 'Construire un itinéraire réaliste',
-      text: 'Repérez les étapes, les campings, les haltes chez des producteurs, les distances, les points de service et les villes de prise en charge avant de réserver.',
+      '@type': 'Question',
+      name: 'VR motorisé ou roulotte : que choisir pour un premier voyage ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Pour un premier voyage, un VR motorisé (classe B ou C) est souvent plus simple : tout est intégré, rien à atteler, et on conduit comme un gros véhicule. La roulotte revient moins cher à la nuit mais suppose un véhicule capable de la tracter et une certaine aisance pour reculer et stationner. Si tu n’as jamais tracté, commence par un motorisé compact.',
+      },
     },
     {
-      name: 'Réserver au bon moment',
-      text: 'En haute saison, réservez le plus tôt possible pour avoir plus de choix, surtout pour les modèles familiaux, les vans populaires et les itinéraires avec aller simple.',
+      '@type': 'Question',
+      name: 'Peut-on louer un VR entre particuliers au Québec ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Oui. Des plateformes de location entre particuliers permettent de louer le VR d’un propriétaire, souvent à un prix plus avantageux qu’en agence, avec une assurance incluse par la plateforme. C’est une bonne option pour accéder à une plus grande variété de véhicules. Lis attentivement les conditions de kilométrage, d’assurance et d’annulation avant de réserver.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Peut-on stationner un VR n’importe où pour dormir au Québec ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Non. Le camping sauvage est réglementé et souvent interdit sur les terrains publics et les stationnements commerciaux. Le plus simple est de réserver des campings avec services (électricité, eau, vidange), très nombreux au Québec et dans les parcs de la Sépaq. Certains réseaux proposent aussi des haltes chez des producteurs ou des vignobles pour une nuit.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quel type de VR convient à une famille ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Les familles se tournent souvent vers un motorisé de classe C avec sa capucine (couchage au-dessus de la cabine) ou vers une roulotte familiale avec chambre séparée et lits superposés. L’important est de vérifier le nombre de places de couchage réelles et le nombre de ceintures de sécurité homologuées, qui limite le nombre de passagers en mouvement.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Existe-t-il des VR ou roulottes 4 saisons pour le climat du Québec ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Oui. Les modèles dits 4 saisons (ou « grand froid ») sont conçus pour les climats froids : isolation renforcée, soubassement fermé et chauffé, réservoirs et conduites protégés du gel, doubles fenêtres et chaufferette plus puissante. Ils permettent de camper au printemps et à l’automne, quand les nuits québécoises descendent sous zéro, et parfois même l’hiver. Si tu voyages hors de la pleine saison estivale, demande précisément au loueur si le véhicule est isolé 4 saisons et si ses systèmes d’eau sont protégés contre le gel.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Faut-il de l’expérience pour conduire un VR ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Pas nécessairement, mais quelques réflexes aident : anticiper le freinage, surveiller la hauteur du véhicule aux entrées et viaducs, élargir ses virages et prendre son temps pour reculer, idéalement à deux. La plupart des loueurs donnent une prise en main du véhicule au départ. Pour une première fois, choisis un modèle compact et des étapes courtes.',
+      },
     },
   ],
-  totalTimeISO: 'P3D',
-  image: IMAGE,
-  url: CANONICAL,
-});
-
-const faq = buildFaqLd(faqItems);
+} as const;
 
 export default function BlogArticleLocationVR() {
   return (
-    <article className="prose prose-lg mx-auto max-w-4xl px-5 py-10">
-      <HeadExtras articlePublishedTime={PUBLISHED} articleModifiedTime={MODIFIED} />
-      <JsonLd data={breadcrumb} />
-      <JsonLd data={howTo} />
-      {faq ? <JsonLd data={faq} /> : null}
-
-      <H1 size="lg" accent="bar">
-        {TITLE}
-      </H1>
-
-      <p className="lead">
-        Louer un VR au Québec ou ailleurs au Canada, c’est choisir une façon de voyager plus libre,
-        plus flexible et plus immersive. Mais pour que l’expérience reste agréable, il faut bien
-        comprendre les types de véhicules, les plateformes de location, les frais réels,
-        l’assurance, les villes de prise en charge, les règles de stationnement et la logique d’un
-        bon itinéraire.
-      </p>
-
-      <figure className="my-8">
-        <Image
-          src={IMAGE}
-          alt="Voyage en VR au Québec sur une route panoramique entre forêt, montagne et liberté"
-          width={1200}
-          height={675}
-          className="w-full rounded-2xl shadow-md"
-          priority
+    <DestinationArticleTemplate
+      slug="location-vr-quebec"
+      title="Louer un VR au Québec : le guide complet pour voyager libre, été comme automne"
+      toc={[
+        { id: 'introduction', label: 'Introduction' },
+        { id: 'pourquoi', label: 'Pourquoi voyager en VR' },
+        { id: 'types', label: 'Types de VR & roulottes' },
+        { id: 'ou-louer', label: 'Où louer' },
+        { id: 'budget', label: 'Budget & coûts' },
+        { id: 'permis', label: 'Permis & conduite' },
+        { id: 'quatre-saisons', label: 'VR 4 saisons' },
+        { id: 'quand', label: 'Quand partir' },
+        { id: 'itineraires', label: 'Idées d’itinéraires' },
+        { id: 'dormir', label: 'Où dormir en VR' },
+        { id: 'checklist', label: 'Checklist départ' },
+        { id: 'faq', label: 'FAQ' },
+        { id: 'liens', label: 'Liens utiles' },
+      ]}
+    >
+      <>
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
-        <figcaption className="mt-2 text-center text-sm text-gray-600">
-          Un voyage en VR réussi commence rarement par le véhicule : il commence par un itinéraire
-          réaliste.
-        </figcaption>
-      </figure>
 
-      <div className="not-prose my-8 rounded-2xl border border-blue-100 bg-blue-50 p-5">
-        <p className="mb-3 font-semibold text-blue-950">À retenir avant de réserver</p>
-        <ul className="grid gap-2 text-sm text-blue-950 md:grid-cols-2">
-          <li>• Compare toujours le prix total, pas seulement le prix par jour.</li>
-          <li>• Vérifie l’assurance, la franchise et les conducteurs autorisés.</li>
-          <li>• Choisis la plateforme selon ta ville de départ et ton itinéraire.</li>
-          <li>• Prévois des étapes courtes au début du voyage.</li>
-          <li>• Réserve tôt pour l’été, les longs weekends et les modèles familiaux.</li>
-          <li>• Surveille les relocations si tu es flexible sur les dates et le trajet.</li>
-        </ul>
-      </div>
+        <article className="mx-auto max-w-3xl px-4 py-10 lg:max-w-4xl lg:px-0">
+          <header className="mb-8 space-y-4">
+            <div className="mt-4 overflow-hidden rounded-3xl border border-slate-100 shadow-sm">
+              <Image
+                src="/images/destinations/location-vr.avif" // adapte le chemin si besoin
+                alt="VR motorisé stationné devant un paysage du Québec au coucher du soleil"
+                width={1200}
+                height={675}
+                className="h-auto w-full rounded-3xl object-cover"
+                priority
+              />
+            </div>
 
-      <H2>Pourquoi louer un VR pour voyager au Québec ou au Canada ?</H2>
+            <p className="text-sm uppercase tracking-wide text-slate-500">
+              Location VR • Roulotte • Van aménagé • Road trip Québec
+            </p>
+            <nav
+              aria-label="Sommaire de l'article"
+              className="mt-6 rounded-xl border border-slate-200 bg-slate-50/80 p-4 text-sm text-slate-700"
+            >
+              <p className="mb-2 font-semibold">Dans cet article :</p>
+              <ul className="grid gap-1 md:grid-cols-2">
+                <li>
+                  <a href="#introduction" className="hover:underline">
+                    Pourquoi la location de VR séduit
+                  </a>
+                </li>
+                <li>
+                  <a href="#pourquoi" className="hover:underline">
+                    Voyager en VR : la liberté au quotidien
+                  </a>
+                </li>
+                <li>
+                  <a href="#types" className="hover:underline">
+                    Types de VR &amp; roulottes
+                  </a>
+                </li>
+                <li>
+                  <a href="#ou-louer" className="hover:underline">
+                    Où louer un VR au Québec
+                  </a>
+                </li>
+                <li>
+                  <a href="#budget" className="hover:underline">
+                    Budget &amp; coûts à prévoir
+                  </a>
+                </li>
+                <li>
+                  <a href="#permis" className="hover:underline">
+                    Permis, poids &amp; conduite
+                  </a>
+                </li>
+                <li>
+                  <a href="#quatre-saisons" className="hover:underline">
+                    VR &amp; roulottes 4 saisons
+                  </a>
+                </li>
+                <li>
+                  <a href="#quand" className="hover:underline">
+                    Quand partir au Québec
+                  </a>
+                </li>
+                <li>
+                  <a href="#itineraires" className="hover:underline">
+                    Idées d’itinéraires
+                  </a>
+                </li>
+                <li>
+                  <a href="#dormir" className="hover:underline">
+                    Où dormir en VR
+                  </a>
+                </li>
+                <li>
+                  <a href="#checklist" className="hover:underline">
+                    Checklist avant le départ
+                  </a>
+                </li>
+                <li>
+                  <a href="#faq" className="hover:underline">
+                    FAQ – Questions fréquentes
+                  </a>
+                </li>
+                <li>
+                  <a href="#liens" className="hover:underline">
+                    Continuer avec <BrandName />
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </header>
 
-      <p>
-        Le VR offre un équilibre très intéressant entre liberté, confort et maîtrise du rythme. On
-        peut dormir près d’un parc, cuisiner face au fleuve, ralentir dans une région qu’on aime ou
-        changer de plan si la météo n’est pas idéale. C’est une formule forte pour les couples, les
-        familles et les voyageurs qui veulent vivre la route comme une partie du voyage.
-      </p>
+          {/* INTRODUCTION */}
+          <section id="introduction" className="prose prose-slate max-w-none">
+            <p>
+              Voyager en VR au Québec, c’est décider chaque matin où l’on veut se réveiller. Un lac
+              au petit-déjeuner, une plage du Bas-Saint-Laurent au dîner, une forêt de Charlevoix au
+              coucher du soleil : le véhicule récréatif transforme la province en un immense terrain
+              de jeu où l’hébergement suit le paysage plutôt que l’inverse.
+            </p>
+            <p>
+              Avant même de choisir ton véhicule, tu peux préparer ton parcours avec les outils de{' '}
+              <BrandName /> : tracer tes étapes avec le{' '}
+              <Link href="/planificateur">planificateur</Link>, repérer l’ambiance des régions dans
+              les <Link href="/videos">vidéos</Link>, et localiser les{' '}
+              <Link href="/producteurs">producteurs locaux</Link> pour transformer chaque halte en
+              découverte gourmande.
+            </p>
+            <p>
+              Ce guide t’explique comment <strong>louer un VR ou une roulotte au Québec</strong> :
+              les types de véhicules, où les trouver, combien prévoir, quel permis, quand partir, où
+              dormir légalement, et une checklist pour ne rien oublier au départ.
+            </p>
+          </section>
 
-      <p>
-        Pour éviter les mauvaises surprises, commencez par dessiner votre parcours dans le{' '}
-        <Link href="/planificateur" className="text-blue-600 underline">
-          planificateur GoQuébeCAN
-        </Link>
-        . Ensuite, choisissez la plateforme ou le loueur qui colle le mieux à vos villes de départ,
-        d’arrivée et aux régions que vous voulez traverser.
-      </p>
+          {/* POURQUOI */}
+          <section id="pourquoi" className="prose prose-slate mt-10 max-w-none">
+            <H2>Pourquoi voyager en VR plutôt qu’en hôtel</H2>
+            <p>
+              Le VR n’est pas qu’un moyen de transport : c’est une façon de voyager. Voici ce qui
+              séduit la plupart des voyageurs qui essaient une première fois.
+            </p>
+            <ul>
+              <li>
+                <strong>La liberté d’itinéraire</strong> : pas de réservation d’hôtel à respecter,
+                on ajuste selon la météo et les coups de cœur.
+              </li>
+              <li>
+                <strong>Un budget prévisible</strong> : le logement et le transport sont réunis, et
+                cuisiner à bord réduit la facture de restaurant.
+              </li>
+              <li>
+                <strong>La proximité de la nature</strong> : on dort dans les parcs, au bord des
+                lacs, loin des zones touristiques saturées.
+              </li>
+              <li>
+                <strong>Un rythme familial</strong> : les enfants ont leurs repères, leur lit, leurs
+                jouets, ce qui simplifie énormément les longues journées.
+              </li>
+            </ul>
+          </section>
 
-      <H2>Quel type de VR choisir ?</H2>
+          {/* TYPES */}
+          <section id="types" className="prose prose-slate mt-10 max-w-none">
+            <H2>Les types de VR et de roulottes à connaître</H2>
+            <p>
+              Le vocabulaire peut dérouter au début. Voici les grandes familles, du plus simple à
+              conduire au plus spacieux.
+            </p>
 
-      <p>
-        Le bon véhicule dépend surtout de votre façon de voyager. Un couple qui veut bouger souvent
-        n’aura pas les mêmes besoins qu’une famille qui veut du confort, des rangements et des nuits
-        plus simples.
-      </p>
+            <H3>Van aménagé (classe B)</H3>
+            <p>
+              Un fourgon transformé en mini-maison : compact, facile à conduire et à stationner,
+              idéal pour un couple ou un voyageur solo. On passe partout, mais l’espace de vie est
+              restreint. C’est souvent le meilleur choix pour une première location sans stress de
+              conduite.
+            </p>
 
-      <div className="not-prose my-8 overflow-x-auto rounded-2xl border border-gray-200">
-        <table className="w-full min-w-[720px] text-left text-sm">
-          <thead className="bg-gray-50 text-gray-900">
-            <tr>
-              <th className="p-4">Type</th>
-              <th className="p-4">Idéal pour</th>
-              <th className="p-4">Avantages</th>
-              <th className="p-4">À surveiller</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y">
-            <tr>
-              <td className="p-4 font-semibold">Van aménagé / Classe B</td>
-              <td className="p-4">Couple, solo, voyage flexible</td>
-              <td className="p-4">Conduite facile, stationnement plus simple, ambiance aventure</td>
-              <td className="p-4">Espace réduit, confort limité par mauvais temps</td>
-            </tr>
-            <tr>
-              <td className="p-4 font-semibold">Classe C</td>
-              <td className="p-4">Famille, premier voyage en VR</td>
-              <td className="p-4">Bon équilibre confort / conduite / rangements</td>
-              <td className="p-4">Plus gourmand, plus long à stationner</td>
-            </tr>
-            <tr>
-              <td className="p-4 font-semibold">Classe A</td>
-              <td className="p-4">Long séjour, confort maximal</td>
-              <td className="p-4">Très spacieux, sensation de maison roulante</td>
-              <td className="p-4">Coût élevé, conduite plus intimidante</td>
-            </tr>
-            <tr>
-              <td className="p-4 font-semibold">Roulotte</td>
-              <td className="p-4">Voyageurs avec véhicule adapté</td>
-              <td className="p-4">Permet de détacher le véhicule sur place</td>
-              <td className="p-4">Nécessite remorquage, expérience et équipement</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+            <H3>Motorisé de classe C</H3>
+            <p>
+              Reconnaissable à sa capucine au-dessus de la cabine, le classe C est le grand
+              classique familial : couchages multiples, cuisine, salle d’eau, tout intégré. Plus
+              volumineux qu’un van, il reste conduisible avec un permis régulier et convient très
+              bien aux familles.
+            </p>
 
-      <H2>Les meilleures options pour louer un VR au Canada</H2>
+            <H3>Motorisé de classe A</H3>
+            <p>
+              Le plus grand et le plus confortable, façon autobus aménagé. Beaucoup d’espace et
+              d’équipements, mais un gabarit imposant qui demande de l’aisance au volant et coûte
+              plus cher à louer et en carburant. À réserver aux voyageurs déjà à l’aise.
+            </p>
 
-      <p>
-        Il existe trois grandes familles de solutions : les plateformes entre particuliers, les
-        comparateurs et les loueurs historiques. Le meilleur choix dépend de votre budget, de votre
-        ville de départ, de votre besoin d’aller simple et du niveau de support souhaité.
-      </p>
+            <H3>Roulotte de voyage</H3>
+            <p>
+              Une remorque que l’on attelle à son propre véhicule (si celui-ci a la capacité de
+              remorquage). Moins chère à la nuit, elle laisse la liberté de détacher le véhicule une
+              fois installé au camping. En revanche, atteler, reculer et stationner demandent un peu
+              de pratique.
+            </p>
 
-      <H3>Outdoorsy : grand choix et flexibilité</H3>
-      <p>
-        Outdoorsy est une marketplace internationale entre particuliers. On y trouve souvent une
-        grande variété de véhicules, du van compact au gros motorisé. C’est une bonne option si vous
-        voulez comparer plusieurs styles de VR près des grandes villes.
-      </p>
-      <p>
-        <a href={AFF_OUTDOORSY} target="_blank" rel="nofollow sponsored noopener noreferrer">
-          Explorer les VR sur Outdoorsy
-        </a>
-      </p>
+            <H3>Roulotte à sellette (fifth wheel)</H3>
+            <p>
+              Une grande roulotte qui s’attelle dans la boîte d’une camionnette, très spacieuse et
+              stable sur la route. Réservée à ceux qui possèdent un camion adapté ; on la voit
+              surtout en location longue durée ou en usage saisonnier.
+            </p>
 
-      <H3>RVezy : l’option canadienne locale</H3>
-      <p>
-        RVezy est très intéressant pour chercher une offre locale au Canada. Selon la région, on
-        peut trouver des propriétaires proches de chez soi, des prix compétitifs et des modèles
-        parfois plus personnalisés que dans les grandes flottes commerciales.
-      </p>
-      <p>
-        <a href={AFF_RVEZY} target="_blank" rel="nofollow sponsored noopener noreferrer">
-          Voir les offres RVezy
-        </a>
-      </p>
+            <H3>Tente-roulotte et hybrides</H3>
+            <p>
+              Légères et abordables, elles se déploient une fois sur place avec des sections en
+              toile. Un bon compromis pour goûter au camping en remorque sans le poids d’une
+              roulotte rigide, mais moins isolées par temps frais.
+            </p>
 
-      <H3>Authentik Canada : comparer les loueurs historiques</H3>
-      <p>
-        Authentik Canada est utile pour comparer plusieurs loueurs établis sur une même interface.
-        C’est pratique si vous préparez un itinéraire structuré, un départ depuis une grande ville
-        ou un voyage avec possibilité d’aller simple.
-      </p>
-      <p>
-        <a href={AFF_AUTHENTIK} target="_blank" rel="nofollow sponsored noopener noreferrer">
-          Comparer avec Authentik Canada
-        </a>
-      </p>
+            <H3>VR ou roulotte : lequel choisir ?</H3>
+            <p>
+              La <strong>différence entre un VR motorisé et une roulotte</strong> tient surtout à la
+              conduite et au budget. Le <strong>VR motorisé</strong> réunit tout dans un seul
+              véhicule : rien à atteler, on conduit directement, on arrive et on est installé. C’est
+              plus cher à la nuit, mais plus simple, et une fois garé on ne peut plus se déplacer
+              sans tout remballer.
+            </p>
+            <p>
+              La <strong>roulotte</strong> coûte moins cher, se laisse au camping pendant qu’on
+              rayonne avec le véhicule tracteur, mais suppose un véhicule capable de la tirer et une
+              certaine aisance pour atteler, reculer et stationner. En résumé&nbsp;: motorisé pour
+              la simplicité et le confort de conduite, roulotte pour l’économie et la liberté une
+              fois sur place. Si tu hésites encore, la question suivante t’aidera à trancher.
+            </p>
 
-      <H3>Fraserway, CanaDream et autres loueurs à connaître</H3>
-      <p>
-        Fraserway et CanaDream sont des valeurs sûres pour les voyageurs qui veulent une logistique
-        plus encadrée, des bases fixes et une flotte professionnelle. Ils sont souvent pertinents
-        pour les itinéraires plus longs, les familles et les voyages qui commencent ou terminent
-        dans une grande ville comme Montréal, Toronto, Calgary, Vancouver, Halifax ou Whitehorse.
-      </p>
+            <H3>Quel VR choisir pour débuter : nos conseils pour un premier VR</H3>
+            <p>
+              Pour un <strong>premier VR</strong>, privilégie la simplicité. Un{' '}
+              <strong>motorisé compact (classe B ou C)</strong> se conduit sans stress d’attelage et
+              se stationne plus facilement qu’un grand classe A ou qu’un ensemble avec roulotte.
+              Quelques conseils pour un premier voyage réussi&nbsp;:
+            </p>
+            <ul>
+              <li>choisis un modèle récent et bien noté, avec une prise en main au départ ;</li>
+              <li>vise des étapes courtes et un itinéraire simple pour la première fois ;</li>
+              <li>
+                vérifie le nombre de couchages <em>réels</em> et de ceintures homologuées avant de
+                réserver ;
+              </li>
+              <li>
+                si tu voyages au printemps ou à l’automne, demande un véhicule bien isolé (voir la
+                section 4 saisons ci-dessous) ;
+              </li>
+              <li>
+                fais quelques manœuvres à vide dans un stationnement désert avant de prendre la
+                route.
+              </li>
+            </ul>
+          </section>
 
-      <H2>Comparatif rapide des plateformes de location VR</H2>
+          {/* OÙ LOUER */}
+          <section id="ou-louer" className="prose prose-slate mt-10 max-w-none">
+            <H2>Où louer un VR au Québec</H2>
+            <p>Deux grandes voies s’offrent à toi, chacune avec ses avantages.</p>
 
-      <div className="not-prose my-8 overflow-x-auto rounded-2xl border border-gray-200">
-        <table className="w-full min-w-[900px] text-left text-sm">
-          <thead className="bg-gray-50 text-gray-900">
-            <tr>
-              <th className="p-4">Critère</th>
-              <th className="p-4">Outdoorsy</th>
-              <th className="p-4">RVezy</th>
-              <th className="p-4">Authentik Canada</th>
-              <th className="p-4">Fraserway / CanaDream</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y">
-            <tr>
-              <td className="p-4 font-semibold">Type de service</td>
-              <td className="p-4">Location entre particuliers</td>
-              <td className="p-4">Location entre particuliers</td>
-              <td className="p-4">Comparateur de loueurs</td>
-              <td className="p-4">Loueurs professionnels</td>
-            </tr>
-            <tr>
-              <td className="p-4 font-semibold">Profil idéal</td>
-              <td className="p-4">Choix maximal et flexibilité</td>
-              <td className="p-4">Budget local et proximité</td>
-              <td className="p-4">Vue d’ensemble et logistique</td>
-              <td className="p-4">Voyage structuré, famille, one-way</td>
-            </tr>
-            <tr>
-              <td className="p-4 font-semibold">Villes de départ</td>
-              <td className="p-4">Selon les propriétaires, souvent près des grandes villes</td>
-              <td className="p-4">Selon les propriétaires, bonne logique canadienne</td>
-              <td className="p-4">Selon les bases des loueurs partenaires</td>
-              <td className="p-4">Bases fixes dans plusieurs grandes villes</td>
-            </tr>
-            <tr>
-              <td className="p-4 font-semibold">Aller simple</td>
-              <td className="p-4">Rare, à négocier</td>
-              <td className="p-4">Rare, à négocier</td>
-              <td className="p-4">Possible selon loueur et route</td>
-              <td className="p-4">Possible sur certaines routes, souvent avec frais</td>
-            </tr>
-            <tr>
-              <td className="p-4 font-semibold">À surveiller</td>
-              <td className="p-4">Frais, règles du propriétaire, disponibilité</td>
-              <td className="p-4">Kilométrage, assurance, conditions locales</td>
-              <td className="p-4">Conditions propres à chaque loueur</td>
-              <td className="p-4">Frais one-way, options, disponibilité saisonnière</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+            <H3>Les agences de location</H3>
+            <p>
+              Des entreprises spécialisées louent des flottes de motorisés et de vans, souvent
+              récents et bien entretenus, avec assistance routière et forfaits kilométrage. C’est
+              rassurant pour une première fois : véhicules standardisés, contrats clairs, prise en
+              main encadrée. Les points de départ se trouvent surtout autour de Montréal et de
+              Québec.
+            </p>
 
-      <H2>Le critère qui change tout : la ville de prise en charge</H2>
+            <H3>La location entre particuliers</H3>
+            <p>
+              Des plateformes comme <strong>RVezy</strong> ou <strong>Outdoorsy</strong> mettent en
+              relation propriétaires et voyageurs, avec une assurance fournie par la plateforme. On
+              y trouve une plus grande variété de véhicules et souvent de meilleurs prix, en échange
+              d’un peu plus de vérifications à faire soi-même (état, équipements, conditions).
+            </p>
 
-      <p>
-        Un bon prix n’est pas toujours une bonne affaire si vous devez faire un grand détour pour
-        récupérer le VR. Avant de réserver, comparez la ville de prise en charge avec votre trajet
-        réel. Montréal, Québec, Ottawa, Toronto, Calgary, Vancouver, Halifax ou Whitehorse peuvent
-        complètement changer la logique du voyage.
-      </p>
+            <div className="not-prose rounded-xl bg-blue-50 p-4 ring-1 ring-blue-100">
+              <p className="text-gray-800">
+                <strong>Le réflexe avant de réserver :</strong> compare le prix affiché{' '}
+                <em>tout inclus</em>. Le tarif à la nuit cache souvent le kilométrage, l’assurance,
+                les frais de ménage, la vidange et la trousse de literie/cuisine. Un véhicule
+                «&nbsp;moins cher&nbsp;» peut revenir plus haut une fois ces frais ajoutés.
+              </p>
+            </div>
+          </section>
 
-      <p>
-        Si vous rêvez d’un aller simple, par exemple Vancouver vers Calgary ou Montréal vers une
-        autre région, vérifiez les frais avant de réserver vos nuits. Les loueurs historiques et les
-        comparateurs sont souvent plus adaptés que les plateformes entre particuliers pour ce type
-        de trajet.
-      </p>
+          {/* BUDGET */}
+          <section id="budget" className="prose prose-slate mt-10 max-w-none">
+            <H2>Budget : combien coûte un voyage en VR</H2>
+            <p>
+              Les tarifs bougent selon le véhicule et la saison, mais voici des repères pour
+              construire ton budget.
+            </p>
+            <ul>
+              <li>
+                <strong>Location (haute saison) :</strong> souvent 150 à 250 $/nuit pour un van ou
+                un petit motorisé, davantage pour un grand classe A ou C familial.
+              </li>
+              <li>
+                <strong>Kilométrage :</strong> parfois inclus jusqu’à un plafond, puis facturé au
+                kilomètre. Estime ta distance à l’avance sur le{' '}
+                <Link href="/planificateur">planificateur</Link>.
+              </li>
+              <li>
+                <strong>Carburant :</strong> un poste réel, surtout pour les gros motorisés. Compte
+                large et privilégie des étapes rapprochées.
+              </li>
+              <li>
+                <strong>Camping :</strong> de quelques dizaines de dollars la nuit selon les
+                services (électricité, eau, vidange).
+              </li>
+              <li>
+                <strong>Extras :</strong> assurance, frais de ménage, literie, vidange, éventuel
+                équipement (chaises, BBQ).
+              </li>
+            </ul>
+            <p>
+              Astuce budget : cuisiner à bord et viser la fin de l’été ou l’automne, moins chers et
+              moins achalandés, allège nettement la facture par rapport à juillet-août.
+            </p>
+          </section>
 
-      <H2>Bons plans : les relocations de VR</H2>
+          {/* PERMIS */}
+          <section id="permis" className="prose prose-slate mt-10 max-w-none">
+            <H2>Quel permis pour conduire un VR ?</H2>
 
-      <p>
-        Certaines entreprises doivent rapatrier leurs véhicules d’une ville à l’autre. Elles peuvent
-        donc proposer des locations de relocation à prix très bas, parfois autour de 1 $ par jour.
-        C’est une excellente option pour les voyageurs flexibles, mais il faut accepter un trajet
-        imposé, une durée limitée et moins de liberté.
-      </p>
+            <H3>Louer un VR sans permis spécial : ce qu’il faut savoir</H3>
+            <p>
+              Bonne nouvelle : pour la <strong>grande majorité des VR de location</strong> et pour
+              tracter une roulotte, le permis de conduire régulier (classe 5) suffit au Québec —
+              donc <strong>sans permis spécial</strong> dans la plupart des cas. Un permis
+              particulier ne devient nécessaire que pour les véhicules très lourds ou les ensembles
+              dépassant certains seuils de poids. Vérifie toujours le poids total du véhicule et de
+              la remorque auprès du loueur.
+            </p>
+            <p>Quelques réflexes de conduite qui changent tout&nbsp;:</p>
+            <ul>
+              <li>surveiller la hauteur du véhicule aux entrées de stationnement et viaducs ;</li>
+              <li>anticiper le freinage, plus long avec le poids ;</li>
+              <li>élargir les virages pour ne pas monter sur les trottoirs ;</li>
+              <li>reculer lentement, idéalement à deux, avec un guide à l’extérieur ;</li>
+              <li>
+                pour une roulotte, faire quelques manœuvres à vide dans un stationnement vide avant
+                de partir.
+              </li>
+            </ul>
+          </section>
 
-      <ul>
-        <li>
-          Consultez régulièrement{' '}
-          <a href={INFO_IMOOVA} target="_blank" rel="noopener noreferrer">
-            Imoova
-          </a>{' '}
-          si vous êtes flexible sur les dates.
-        </li>
-        <li>Demandez aussi aux loueurs historiques s’ils ont des véhicules à repositionner.</li>
-        <li>Vérifiez toujours le kilométrage inclus, l’assurance et les frais cachés.</li>
-      </ul>
+          {/* 4 SAISONS */}
+          <section id="quatre-saisons" className="prose prose-slate mt-10 max-w-none">
+            <H2>VR et roulottes 4 saisons au Québec</H2>
+            <p>
+              Au Québec, la question du <strong>4 saisons</strong> n’est pas un détail : dès le
+              printemps et jusqu’à l’automne, les nuits descendent régulièrement sous zéro, et un
+              véhicule mal isolé transforme vite le voyage en épreuve. Si tu comptes voyager hors de
+              la pleine saison estivale, c’est le critère à surveiller en premier.
+            </p>
 
-      <H2>Combien coûte une location de VR au Québec ou au Canada ?</H2>
+            <H3>Ce qui distingue un VR ou une roulotte 4 saisons</H3>
+            <p>
+              Les modèles dits <strong>4 saisons</strong> (ou «&nbsp;grand froid&nbsp;») sont conçus
+              pour les climats froids. Concrètement, on y retrouve&nbsp;:
+            </p>
+            <ul>
+              <li>
+                une <strong>isolation renforcée</strong> des murs, du toit et du plancher ;
+              </li>
+              <li>
+                un <strong>soubassement fermé et chauffé</strong> qui protège les réservoirs et les
+                conduites d’eau du gel ;
+              </li>
+              <li>
+                des <strong>doubles fenêtres</strong> et de meilleurs joints contre les courants
+                d’air ;
+              </li>
+              <li>
+                une <strong>chaufferette plus puissante</strong> et parfois un plancher chauffant ;
+              </li>
+              <li>des réservoirs d’eaux usées isolés ou réchauffés.</li>
+            </ul>
 
-      <p>
-        Le prix affiché n’est qu’une partie du budget. Pour comparer correctement deux locations, il
-        faut additionner les frais obligatoires, les options, l’assurance, le kilométrage, le
-        carburant et les nuits en camping.
-      </p>
+            <H3>Quand ça change tout</H3>
+            <p>
+              Un véhicule 4 saisons permet de camper confortablement au <strong>printemps</strong>{' '}
+              et à l’<strong>automne</strong> québécois — justement les meilleures périodes pour les
+              couleurs et les tarifs — et parfois même l’<strong>hiver</strong> pour les plus
+              aventureux. À l’inverse, un VR d’été utilisé par temps froid expose au gel des
+              conduites et à des nuits inconfortables.
+            </p>
 
-      <H3>Les frais à vérifier avant de réserver</H3>
+            <div className="not-prose rounded-xl bg-blue-50 p-4 ring-1 ring-blue-100">
+              <p className="text-gray-800">
+                <strong>La question à poser au loueur :</strong> «&nbsp;Ce véhicule est-il isolé 4
+                saisons, et ses systèmes d’eau sont-ils protégés contre le gel&nbsp;?&nbsp;» Si tu
+                voyages en mai, en septembre-octobre ou plus tard, la réponse doit être claire.
+                Pense aussi à confirmer que le chauffage fonctionne et à prévoir de la literie
+                chaude.
+              </p>
+            </div>
+          </section>
 
-      <ul>
-        <li>Prix par jour ou par nuit.</li>
-        <li>Kilométrage inclus et coût des kilomètres supplémentaires.</li>
-        <li>Frais de préparation ou de nettoyage.</li>
-        <li>Assurance, franchise et options de protection.</li>
-        <li>Literie, vaisselle, chaises, BBQ, génératrice ou équipements inclus.</li>
-        <li>Frais de service de la plateforme, s’il y en a.</li>
-        <li>Frais d’aller simple si vous ne retournez pas au point de départ.</li>
-        <li>Politique d’annulation et de modification.</li>
-      </ul>
+          {/* QUAND */}
+          <section id="quand" className="prose prose-slate mt-10 max-w-none">
+            <H2>Quand partir en VR au Québec</H2>
 
-      <p>
-        La bonne question n’est donc pas seulement : “combien coûte le VR ?”. La vraie question est
-        :<strong> combien coûte le voyage complet une fois toutes les options ajoutées ?</strong>
-      </p>
+            <H3>Été (juin à août)</H3>
+            <p>
+              La pleine saison : longues journées, lacs baignables, tous les campings ouverts. C’est
+              aussi le plus achalandé et le plus cher, et les meilleurs véhicules se réservent des
+              mois à l’avance. Réserve tôt.
+            </p>
 
-      <H2>Assurance, franchise et sécurité : le point à ne pas négliger</H2>
+            <H3>Fin d’été et automne (septembre-octobre)</H3>
+            <p>
+              Souvent le meilleur compromis. Les couleurs d’automne dans Charlevoix, en Mauricie ou
+              dans les Cantons-de-l’Est sont spectaculaires, les foules diminuent et les tarifs
+              baissent. Les nuits fraîchissent : vise un véhicule bien isolé et vérifie le
+              chauffage.
+            </p>
 
-      <p>
-        L’assurance est l’un des éléments les plus importants dans une location de VR. Un prix
-        attractif peut devenir moins intéressant si la franchise est élevée, si plusieurs exclusions
-        s’appliquent ou si certains conducteurs ne sont pas couverts.
-      </p>
+            <H3>Printemps (mai)</H3>
+            <p>
+              Le début de saison, plus calme et plus abordable, mais tous les campings ne sont pas
+              encore ouverts et la météo reste variable. Vérifie les ouvertures avant de tracer ton
+              itinéraire.
+            </p>
 
-      <div className="not-prose my-8 rounded-2xl border border-amber-200 bg-amber-50 p-5">
-        <p className="mb-3 font-semibold text-amber-950">Checklist assurance</p>
-        <ul className="space-y-2 text-sm text-amber-950">
-          <li>• Montant exact de la franchise.</li>
-          <li>• Conducteurs autorisés et âge minimum.</li>
-          <li>• Couverture en cas de bris de vitre, pneus, toit ou accessoires.</li>
-          <li>• Assistance routière incluse ou non.</li>
-          <li>• Règles pour les routes non pavées ou les régions éloignées.</li>
-          <li>• Conditions en cas de retard, panne, annulation ou modification.</li>
-        </ul>
-      </div>
+            <div className="not-prose rounded-xl bg-amber-50 p-4 ring-1 ring-amber-200">
+              <p className="text-gray-800">
+                <strong>Saisonnalité de la demande :</strong> les recherches de location de VR
+                explosent au <strong>printemps</strong>, quand tout le monde planifie l’été. Si tu
+                veux du choix et de bons prix, réserve dès mars-avril pour un départ estival.
+              </p>
+            </div>
+          </section>
 
-      <H2>Où dormir en VR au Québec ?</H2>
+          {/* ITINÉRAIRES */}
+          <section id="itineraires" className="prose prose-slate mt-10 max-w-none">
+            <H2>Idées d’itinéraires en VR</H2>
 
-      <p>
-        Pour un premier voyage, les campings restent la solution la plus simple : branchements,
-        douches, eau, vidange, sécurité et emplacement réservé. C’est particulièrement pratique avec
-        des enfants ou si vous ne voulez pas gérer trop d’improvisation.
-      </p>
+            <H3>Le tour de la Gaspésie</H3>
+            <p>
+              L’itinéraire de rêve : la route 132 qui longe le fleuve puis la mer, le rocher Percé,
+              le parc Forillon, les phares et les villages de pêcheurs. Prévois au moins une semaine
+              pour ne pas courir, et réserve les campings côtiers à l’avance en été.
+            </p>
 
-      <p>
-        Pour un voyage plus local, vous pouvez aussi ajouter des arrêts chez des producteurs,
-        artisans ou lieux d’accueil autorisés. Cela donne une vraie couleur au road trip : dormir
-        près d’un vignoble, d’une ferme, d’une microbrasserie ou d’un lieu gourmand change beaucoup
-        l’expérience.
-      </p>
+            <H3>Charlevoix et la Côte-Nord</H3>
+            <p>
+              Des paysages de montagnes qui plongent dans le fleuve, Baie-Saint-Paul, Tadoussac et
+              l’observation des baleines. Un parcours plus court, idéal pour un premier road trip en
+              VR de quelques jours au départ de Québec.
+            </p>
 
-      <p>
-        Pour repérer des haltes intéressantes, explorez notre page{' '}
-        <Link href="/producteurs" className="text-blue-600 underline">
-          producteurs locaux
-        </Link>{' '}
-        et combinez-la avec le{' '}
-        <Link href="/planificateur" className="text-blue-600 underline">
-          planificateur GoQuébeCAN
-        </Link>
-        .
-      </p>
+            <H3>La boucle Mauricie – Lanaudière</H3>
+            <p>
+              Lacs, forêts et parcs nationaux à distance raisonnable des grands centres. Parfait
+              pour une première sortie relax, avec des campings bien équipés et des étapes
+              rapprochées.
+            </p>
 
-      <H2>Idées d’itinéraires VR au Québec et au Canada</H2>
+            <p>
+              Tu peux bâtir et ajuster chacun de ces parcours dans le{' '}
+              <Link href="/planificateur">planificateur d’itinéraire</Link> de <BrandName />, en
+              intégrant tes haltes chez les <Link href="/producteurs">producteurs locaux</Link>.
+            </p>
+          </section>
 
-      <p>
-        Un bon itinéraire en VR doit éviter les journées trop longues. L’objectif n’est pas de
-        conduire toute la journée, mais de créer un rythme agréable entre route, pauses, nature et
-        découvertes.
-      </p>
+          {/* DORMIR */}
+          <section id="dormir" className="prose prose-slate mt-10 max-w-none">
+            <H2>Camping avec un VR : où dormir légalement</H2>
+            <p>
+              Contrairement à une idée reçue, on ne se stationne pas n’importe où pour la nuit. Le
+              camping sauvage est réglementé et souvent interdit sur les terrains publics et les
+              stationnements commerciaux. Les bonnes options&nbsp;:
+            </p>
+            <ul>
+              <li>
+                <strong>Les campings avec services</strong> : électricité, eau et vidange, très
+                nombreux partout au Québec.
+              </li>
+              <li>
+                <strong>Les parcs nationaux (Sépaq)</strong> : emplacements en pleine nature, à
+                réserver tôt en haute saison.
+              </li>
+              <li>
+                <strong>Les haltes chez des producteurs ou vignobles</strong> : certains réseaux
+                permettent une nuit sur place, une belle façon de découvrir le terroir.
+              </li>
+            </ul>
+            <p>
+              Vérifie toujours les services dont ton véhicule a besoin (branchement électrique,
+              vidange des eaux) au moment de réserver ton emplacement.
+            </p>
+          </section>
 
-      <div className="not-prose my-8 grid gap-4 md:grid-cols-3">
-        <div className="rounded-2xl border bg-white p-5 shadow-sm">
-          <H3 className="mb-2 text-xl">Route facile pour débuter</H3>
-          <p className="text-sm text-gray-700">
-            Québec, Charlevoix, Kamouraska ou Cantons-de-l’Est : parfait pour tester le VR sans trop
-            allonger les distances.
-          </p>
-        </div>
+          {/* CHECKLIST */}
+          <section id="checklist" className="prose prose-slate mt-10 max-w-none">
+            <H2>Checklist avant le départ</H2>
+            <ul>
+              <li>prise en main du véhicule avec le loueur (systèmes d’eau, gaz, électricité) ;</li>
+              <li>vérifier les niveaux, la pression des pneus et l’attelage si roulotte ;</li>
+              <li>confirmer le forfait kilométrage et l’assurance ;</li>
+              <li>literie, vaisselle, produits de base et trousse de premiers soins ;</li>
+              <li>réservations de campings pour les premières nuits au moins ;</li>
+              <li>
+                itinéraire chargé sur le <Link href="/planificateur">planificateur</Link> avec les
+                arrêts producteurs et points d’intérêt ;
+              </li>
+              <li>
+                nos conseils pour le confort à bord dans l’article{' '}
+                <Link href="/blog/voyage-hotel">produits indispensables pour voyager</Link>.
+              </li>
+            </ul>
+          </section>
 
-        <div className="rounded-2xl border bg-white p-5 shadow-sm">
-          <H3 className="mb-2 text-xl">Road trip nature</H3>
-          <p className="text-sm text-gray-700">
-            Gaspésie, Forillon, Percé, Bic ou Côte-Nord : plus intense, plus sauvage, idéal avec un
-            peu plus de temps.
-          </p>
-        </div>
+          {/* GOQUEBECAN */}
+          <section id="goquebecan" className="prose prose-slate mt-10 max-w-none">
+            <H2>
+              Préparer ton road trip en VR avec <BrandName />
+            </H2>
+            <p>
+              Pour transformer ta location de VR en voyage fluide, appuie-toi sur les ressources de{' '}
+              <BrandName /> :
+            </p>
+            <ul>
+              <li>
+                le <Link href="/planificateur">planificateur d’itinéraire</Link> pour enchaîner tes
+                étapes et estimer les distances ;
+              </li>
+              <li>
+                la <Link href="/videos">section Vidéos</Link> pour repérer l’ambiance des régions
+                avant de choisir ton parcours ;
+              </li>
+              <li>
+                la <Link href="/producteurs">carte des producteurs locaux</Link>, idéale pour
+                planifier des haltes gourmandes en route ;
+              </li>
+              <li>
+                nos conseils sur les{' '}
+                <Link href="/blog/voyage-hotel">produits indispensables pour voyager</Link> pour
+                optimiser le confort à bord.
+              </li>
+            </ul>
+          </section>
 
-        <div className="rounded-2xl border bg-white p-5 shadow-sm">
-          <H3 className="mb-2 text-xl">Voyage gourmand</H3>
-          <p className="text-sm text-gray-700">
-            Ajoutez fermes, microbrasseries, fromageries, marchés publics et pauses locales pour
-            transformer la route en expérience.
-          </p>
-        </div>
-      </div>
+          {/* FAQ */}
+          <section id="faq" className="prose prose-slate mt-10 max-w-none">
+            <H2>FAQ – Louer un VR au Québec</H2>
 
-      <H2>Conseils pratiques pour réussir un premier voyage en VR</H2>
+            <H3>Faut-il un permis spécial pour conduire un VR ?</H3>
+            <p>
+              Pour la plupart des VR de location et pour tracter une roulotte, le permis régulier de
+              classe 5 suffit au Québec. Un permis particulier ne s’impose que pour les véhicules
+              très lourds ou les ensembles dépassant certains seuils de poids. Vérifie le poids
+              total auprès du loueur avant de réserver.
+            </p>
 
-      <ul>
-        <li>Commencez par un itinéraire simple avec peu d’étapes.</li>
-        <li>Évitez les arrivées tardives au camping.</li>
-        <li>Gardez une marge de temps pour les courses, la vidange et les pauses.</li>
-        <li>Prévoyez une première nuit facile, proche du point de départ.</li>
-        <li>Testez chauffage, eau, électricité et branchements dès le début.</li>
-        <li>Ne remplissez pas trop l’horaire : le VR est fait pour ralentir.</li>
-        <li>Gardez les dimensions du véhicule accessibles pendant la route.</li>
-        <li>Vérifiez les restrictions de stationnement avant d’entrer en ville.</li>
-      </ul>
+            <H3>Combien coûte la location d’un VR ?</H3>
+            <p>
+              En haute saison, compte souvent <strong>150 à 250 $/nuit</strong> pour un van ou un
+              petit motorisé, davantage pour un grand modèle familial. Ajoute le kilométrage,
+              l’assurance, le ménage et parfois la literie. Réserver tôt et éviter juillet-août fait
+              baisser la note.
+            </p>
 
-      <H2>Les erreurs fréquentes à éviter</H2>
+            <H3>VR motorisé ou roulotte pour débuter ?</H3>
+            <p>
+              Un motorisé compact (classe B ou C) est plus simple pour une première fois : rien à
+              atteler, tout intégré. La roulotte coûte moins cher à la nuit mais suppose un véhicule
+              capable de tracter et de l’aisance pour reculer. Si tu n’as jamais tracté, commence
+              par un motorisé.
+            </p>
 
-      <ul>
-        <li>Choisir un VR trop gros pour un premier voyage.</li>
-        <li>Oublier les frais additionnels dans le budget.</li>
-        <li>Prévoir trop de kilomètres par jour.</li>
-        <li>Réserver les campings trop tard en haute saison.</li>
-        <li>Ne pas vérifier les restrictions d’assurance.</li>
-        <li>Confondre prix de location et coût total du voyage.</li>
-        <li>Réserver un VR loin de l’itinéraire pour économiser quelques dollars.</li>
-        <li>
-          Partir sans comprendre le fonctionnement de l’eau, de l’électricité et de la vidange.
-        </li>
-      </ul>
+            <H3>Peut-on louer entre particuliers ?</H3>
+            <p>
+              Oui, via des plateformes qui incluent une assurance et donnent accès à plus de choix,
+              souvent à meilleur prix qu’en agence. Lis bien les conditions de kilométrage,
+              d’assurance et d’annulation avant de réserver.
+            </p>
 
-      <H2>FAQ : location de VR au Québec et au Canada</H2>
+            <H3>Peut-on dormir n’importe où en VR ?</H3>
+            <p>
+              Non : le camping sauvage est réglementé et souvent interdit. Réserve des campings avec
+              services ou des emplacements de la Sépaq ; certains réseaux permettent aussi une nuit
+              chez des producteurs. Tu peux repérer des haltes gourmandes sur la carte des{' '}
+              <Link href="/producteurs">producteurs locaux</Link>.
+            </p>
 
-      <div className="not-prose my-6 space-y-3">
-        {faqItems.map((item) => (
-          <details key={item.question} className="rounded-xl border bg-white p-4">
-            <summary className="cursor-pointer font-semibold text-gray-900">
-              {item.question}
-            </summary>
-            <p className="mt-3 text-sm leading-6 text-gray-700">{item.answer}</p>
-          </details>
-        ))}
-      </div>
+            <H3>Quel VR pour une famille ?</H3>
+            <p>
+              Souvent un classe C avec capucine ou une roulotte familiale avec chambre séparée.
+              Vérifie le nombre de couchages réels et surtout le nombre de ceintures homologuées,
+              qui limite le nombre de passagers en mouvement.
+            </p>
+          </section>
 
-      <H2>Conclusion : est-ce une bonne idée de louer un VR ?</H2>
-
-      <p>
-        Oui, à condition de bien préparer le voyage. La location de VR peut devenir une expérience
-        incroyable : plus libre qu’un séjour classique, plus immersive qu’un simple road trip en
-        voiture, et très forte pour découvrir les régions du Québec et du Canada autrement.
-      </p>
-
-      <p>
-        Le secret, c’est de rester réaliste. Choisissez le bon format, comparez le coût total,
-        vérifiez la plateforme selon votre ville de départ, réservez les nuits importantes, puis
-        construisez un itinéraire qui laisse de la place aux imprévus.
-      </p>
-
-      <div className="not-prose mt-10 rounded-3xl bg-slate-900 p-6 text-center text-white">
-        <H2 className="mb-3 text-2xl text-white">Préparer votre road trip en VR</H2>
-        <p className="mx-auto mb-6 max-w-2xl text-slate-200">
-          Construisez vos étapes, repérez les producteurs locaux, équilibrez les distances et gardez
-          une vue claire sur votre voyage.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link
-            href="/planificateur"
-            className="rounded-full bg-white px-5 py-3 font-medium text-slate-900 no-underline hover:bg-slate-100"
-          >
-            Ouvrir le planificateur
-          </Link>
-
-          <Link
-            href="/producteurs"
-            className="rounded-full border border-white/40 px-5 py-3 font-medium text-white no-underline hover:bg-white/10"
-          >
-            Voir les producteurs locaux
-          </Link>
-
-          <Link
-            href="/videos"
-            className="rounded-full border border-white/40 px-5 py-3 font-medium text-white no-underline hover:bg-white/10"
-          >
-            Voir les vidéos
-          </Link>
-
-          <Link
-            href="/blog/voyage-camping"
-            className="rounded-full border border-white/40 px-5 py-3 font-medium text-white no-underline hover:bg-white/10"
-          >
-            Guide camping
-          </Link>
-        </div>
-      </div>
-    </article>
+          {/* LIENS / RÉCAP */}
+          <section id="liens" className="prose prose-slate mt-10 max-w-none">
+            <H2>
+              Continuer à explorer le Québec avec <BrandName />
+            </H2>
+            <p>
+              Le VR n’est qu’un début. <BrandName /> t’accompagne pour transformer chaque route en
+              découverte.
+            </p>
+            <ul>
+              <li>
+                🧭 Construire ton road trip : le{' '}
+                <Link href="/planificateur">planificateur d’itinéraire</Link>.
+              </li>
+              <li>
+                🎬 Te projeter dans les régions : la page <Link href="/videos">Vidéos</Link>.
+              </li>
+              <li>
+                🧺 Repérer les haltes gourmandes : la carte des{' '}
+                <Link href="/producteurs">producteurs locaux</Link>.
+              </li>
+              <li>
+                🎒 Optimiser ton confort : l’article{' '}
+                <Link href="/blog/voyage-hotel">produits indispensables pour voyager</Link>.
+              </li>
+              <li>
+                📝 Découvrir d’autres destinations : nos articles régions dans la section{' '}
+                <Link href="/blog">blog</Link>.
+              </li>
+            </ul>
+            <p>
+              Envie de tracer ton prochain voyage ?{' '}
+              <Link href="/#destinations-populaires" className="font-semibold underline">
+                Voir tous nos articles sur les plus belles régions du Québec
+              </Link>
+              .
+            </p>
+          </section>
+        </article>
+      </>
+    </DestinationArticleTemplate>
   );
 }
