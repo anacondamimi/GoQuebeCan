@@ -4,11 +4,12 @@
 const CONTENT_SECURITY_POLICY = `
   default-src 'self';
   script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://creator.expediagroup.com https://www.google.com https://connect.facebook.net https://www.gstatic.com https://scripts.stay22.com;
+  worker-src 'self' blob:;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   img-src 'self' data: blob: https: http: https://*.basemaps.cartocdn.com;
   connect-src 'self' https://api.mapbox.com https://events.mapbox.com https://*.mapbox.com https://router.project-osrm.org https://*.basemaps.cartocdn.com https://creator.expediagroup.com https://*.expediagroup.com https://*.expedia.com https://www.google-analytics.com https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://recaptcha.google.com https://www.facebook.com https://connect.facebook.net https://*.supabase.co https://hbjqefbnjpgfxxqifvcu.supabase.co https://*.stay22.com;
   font-src 'self' data: https://fonts.gstatic.com https://fonts.googleapis.com;
-  frame-src 'self' https://www.youtube.com https://player.vimeo.com https://www.google.com https://recaptcha.google.com;
+  frame-src 'self' https://www.youtube.com https://player.vimeo.com https://www.google.com https://recaptcha.google.com https://*.stay22.com;
   media-src 'self' data: blob: https: http:;
   object-src 'none';
   base-uri 'self';

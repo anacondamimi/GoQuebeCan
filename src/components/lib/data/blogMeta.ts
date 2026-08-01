@@ -31,6 +31,19 @@ export const blogMeta = {
       "Québec"
     ]
   },
+  "argentcartesvoyage": {
+    "title": "Argent Cartes Voyage",
+    "description": "Découvrez Argent Cartes Voyage, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/default-destination.avif",
+    "activites": [],
+    "hebergements": [],
+    "publics": [],
+    "region": "Québec",
+    "keywords": [
+      "Argent Cartes Voyage",
+      "Québec"
+    ]
+  },
   "baiesaintpaul": {
     "title": "Baie Saint Paul",
     "description": "Découvrez Baie Saint Paul, ses attraits touristiques, ses activités et ses hébergements incontournables.",
@@ -752,6 +765,19 @@ export const blogMeta = {
       "aventuriers",
       "Quebec",
       "Ville de Québec"
+    ]
+  },
+  "reservervoyagesud": {
+    "title": "Reserver Voyage Sud",
+    "description": "Découvrez Reserver Voyage Sud, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/default-destination.avif",
+    "activites": [],
+    "hebergements": [],
+    "publics": [],
+    "region": "Québec",
+    "keywords": [
+      "Québec",
+      "Reserver Voyage Sud"
     ]
   },
   "riviereduloup": {
