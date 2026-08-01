@@ -498,6 +498,19 @@ export const blogMeta = {
       "Québec"
     ]
   },
+  "mexiqueyucatan": {
+    "title": "Mexique Yucatan",
+    "description": "Découvrez Mexique Yucatan, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/default-destination.avif",
+    "activites": [],
+    "hebergements": [],
+    "publics": [],
+    "region": "Québec",
+    "keywords": [
+      "Mexique Yucatan",
+      "Québec"
+    ]
+  },
   "mingan": {
     "title": "Mingan",
     "description": "Découvrez Mingan, ses attraits touristiques, ses activités et ses hébergements incontournables.",

@@ -85,7 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             (function(s, t, a, y, twenty, two) {
               s.Stay22 = s.Stay22 || {};
               s.Stay22.params = {
-                lmaId: "6a6dfddb8b07e110fea1f8a7"
+                lmaID: "6a6dfddb8b07e110fea1f8a7"
               };
               twenty = t.createElement(a);
               two = t.getElementsByTagName(a)[0];

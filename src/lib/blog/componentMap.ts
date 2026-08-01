@@ -11,6 +11,10 @@ const componentMap: Record<string, () => Promise<{ default: ComponentType<any> }
   'anse-saint-jean': () => import('@/components/blogpost/BlogArticleAnseSaintJean'),
   'baie-saint-paul': () => import('@/components/blogpost/BlogArticleBaieSaintPaul'),
   bic: () => import('@/components/blogpost/BlogArticleBic'),
+  'mexique-yucatan': () => import('@/components/blogpost/BlogArticleMexiqueYucatan'),
+  'reserver-voyage-sud-soi-meme': () =>
+    import('@/components/blogpost/BlogArticleReserverVoyageSud'),
+  'argent-cartes-voyage': () => import('@/components/blogpost/BlogArticleArgentCartesVoyage'),
   'bromont-granby': () => import('@/components/blogpost/BlogArticleBromontGranby'),
   canyon: () => import('@/components/blogpost/BlogArticleCanyon'),
   chambly: () => import('@/components/blogpost/BlogArticleChambly'),
@@ -50,7 +54,7 @@ const componentMap: Record<string, () => Promise<{ default: ComponentType<any> }
   'voyage-camping': () => import('@/components/blogpost/BlogArticleVoyageCamping'),
   'voyage-hotel': () => import('@/components/blogpost/BlogArticleVoyageHotel'),
   'voyage-voiture': () => import('@/components/blogpost/BlogArticleVoyageVoiture'),
-  'brossard': () => import('@/components/blogpost/BlogArticleBrossard'),
+  brossard: () => import('@/components/blogpost/BlogArticleBrossard'),
 };
 
 /** Export typed list of slugs so everything (sitemap, routes) stays in sync. */
