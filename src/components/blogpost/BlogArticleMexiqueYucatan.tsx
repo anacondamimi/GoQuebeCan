@@ -452,12 +452,12 @@ export default function BlogArticleMexiqueYucatan() {
         comblés.
       </p>
       <Figure
-        src="/images/destinations/mexique/valladolid-yucatan.avif"
+        src="/images/destinations/mexique/marche-maison-colores-valadolid-yucatan.avif"
         alt="Valladolid, ville coloniale du Yucatán : cathédrale, rues colorées et places"
         caption="Valladolid, ville coloniale magique le soir, une fois les groupes repartis."
       />
       <Figure
-        src="/images/destinations/mexique/cenote-zaci-yucatan.avif"
+        src="/images/destinations/mexique/cenote-zaci-yucatan-mexique.avif"
         alt="Cenote Zací en plein centre de Valladolid, Yucatán, Mexique"
         caption="Le cenote Zací, en plein cœur de Valladolid, à 700 m de notre logement."
       />
@@ -653,7 +653,7 @@ export default function BlogArticleMexiqueYucatan() {
         voyage, surtout avec un logement à cuisine équipée.
       </p>
       <Figure
-        src="/images/destinations/mexique/restaurant-valladolid-pas-chere-yucatan.avif"
+        src="/images/destinations/mexique/restaurant-valladolid-pas-chere.avif"
         alt="Plats typiques abordables au Loncheria Alich à Valladolid, Yucatán"
         caption="Loncheria Alich à Valladolid : salbutes, panuchos et motuleño, excellents et pas chers."
       />
