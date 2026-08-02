@@ -37,7 +37,7 @@ export default function BlogArticleReserverVoyageSud() {
         caption: 'Organiser son voyage soi-même, étape par étape',
         image: (
           <Image
-            src="/images/reserver-voyage-sud/reserver-voyage-sud.avif"
+            src="/images/blog/reserver-voyage-sud.avif"
             alt="Planifier soi-même son voyage dans le Sud : carte, téléphone et carnet"
             width={1200}
             height={675}
@@ -249,22 +249,53 @@ export default function BlogArticleReserverVoyageSud() {
       <H2 id="etape5">Étape 5 — L’assurance voyage (à ne jamais sauter)</H2>
       <p>
         C’est l’étape que trop de gens négligent, et la plus risquée à oublier. Sans assurance, des
-        soins médicaux à l’étranger peuvent coûter une fortune. On souscrit toujours une couverture
-        adaptée avant le départ, en vérifiant les soins d’urgence et le rapatriement.
+        soins médicaux à l’étranger peuvent coûter une fortune. Nous, on était couverts par
+        l’assurance <strong>incluse à notre carte de crédit</strong> — une situation très fréquente
+        chez les Québécois. Mais attention : ces couvertures incluses ont souvent des limites qu’on
+        découvre trop tard.
+      </p>
+      <p>Avant de te fier à ta carte, vérifie ces points :</p>
+      <ul>
+        <li>
+          la <strong>durée maximale</strong> couverte (souvent limitée à quelques semaines par
+          voyage) ;
+        </li>
+        <li>
+          les <strong>limites d’âge</strong> : la couverture diminue ou disparaît souvent en
+          vieillissant ;
+        </li>
+        <li>
+          les <strong>conditions médicales préexistantes</strong>, fréquemment exclues ou soumises à
+          conditions ;
+        </li>
+        <li>
+          l’obligation, parfois, d’avoir <strong>payé le voyage avec cette carte</strong> pour être
+          couvert ;
+        </li>
+        <li>
+          le <strong>plafond</strong> de couverture, qui peut être insuffisant pour de gros soins.
+        </li>
+      </ul>
+      <p>
+        Si ta couverture carte ne suffit pas — voyage plus long, âge, conditions préexistantes, ou
+        simplement pas d’assurance incluse — une <strong>assurance voyage dédiée</strong> comble le
+        trou. SafetyWing, par exemple, propose une couverture pensée pour les voyageurs, avec
+        actuellement un <strong>avantage de bienvenue pour les nouveaux membres</strong> (offre
+        soumise à conditions, à vérifier sur leur site).
       </p>
       <p>
         Point important pour les Québécois qui partent longtemps (snowbirds) : au-delà d’une
-        certaine durée d’absence, on peut perdre sa couverture RAMQ. On explique ce cas et comment
-        choisir sa police dans notre{' '}
-        <Link href="/blog/assurance-voyage-quebec">guide de l’assurance voyage</Link>.
+        certaine durée d’absence, on peut perdre sa couverture RAMQ. Vérifie la durée maximale
+        permise avant de planifier un long séjour.
       </p>
       <AffiliateCard
         eyebrow="Avant de partir"
         accent="text-indigo-700"
         icon={<ShieldCheck className="size-4" />}
-        title="Comparer les assurances voyage"
-        description="Vérifier soins d’urgence et rapatriement, et comparer les protections avant de choisir."
+        title="Une assurance voyage dédiée, avec offre de bienvenue"
+        description="Si ta carte de crédit ne suffit pas, SafetyWing couvre les soins d’urgence et propose actuellement un avantage pour les nouveaux membres (voir conditions sur leur site)."
         affKey="assurance"
+        ctaLabel="Voir l’offre SafetyWing"
         variant="primary"
       />
 

@@ -50,8 +50,8 @@ export const AFFILIATES = {
 
   /* ---------- Assurance voyage ---------- */
   assurance: {
-    url: '#', // ← SecuriGlobe (québécois) ou HelloSafe (comparateur)
-    label: 'Comparer les assurances voyage',
+    url: 'https://safetywing.com/nomad-insurance?referenceID=26574155&utm_source=26574155&utm_medium=Ambassador',
+    label: "Voir l'assurance voyage SafetyWing",
     rel: 'sponsored',
   },
 

@@ -188,9 +188,10 @@ export default function BlogArticleMexiqueYucatan() {
         eyebrow="Avant de partir"
         accent="text-indigo-700"
         icon={<ShieldCheck className="size-4" />}
-        title="Une assurance voyage couvrant les soins médicaux d’urgence"
-        description="Au Mexique, les frais médicaux peuvent être élevés sans couverture. Compare les protections avant de choisir."
+        title="Une assurance voyage pour le Mexique"
+        description="Au Mexique, les frais médicaux peuvent être élevés sans couverture. Si ta carte de crédit ne suffit pas, SafetyWing propose une protection dédiée, avec actuellement un avantage pour les nouveaux membres (voir conditions)."
         affKey="assurance"
+        ctaLabel="Voir l’offre SafetyWing"
         variant="primary"
       />
 
