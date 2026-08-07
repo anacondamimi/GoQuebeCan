@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Banknote, Plane } from 'lucide-react';
+import {  Banknote, Plane } from 'lucide-react';
 
 import H2 from '@/components/typography/H2';
 import BrandName from '@/components/brand/BrandName';
@@ -286,13 +286,7 @@ export default function BlogArticleArgentCartesVoyage() {
           🌴 <Link href="/blog/mexique-yucatan">Notre guide du Yucatán sans voiture</Link>
         </li>
         <li>
-          🛡️ <Link href="/blog/assurance-voyage-quebec">Choisir son assurance voyage</Link>
-        </li>
-        <li>
           📶 <Link href="/blog/vpn-esim-voyage">eSIM &amp; VPN en voyage</Link>
-        </li>
-        <li>
-          ✈️ <Link href="/blog/partir-ottawa-vs-montreal">Partir d’Ottawa plutôt que Montréal</Link>
         </li>
       </ul>
     </DestinationArticleTemplate>

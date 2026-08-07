@@ -100,6 +100,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "https://scripts.stay22.com/letmeallez.js"
             );
           `}
+          {/* Travelpayouts (vérification + widgets vol) */}
+          <Script
+            id="travelpayouts"
+            strategy="afterInteractive"
+            src="https://emrld.ltd/NTU5ODQ4.js?t=559848"
+            data-cmp-ab="2"
+          />
         </Script>
       </body>
     </html>

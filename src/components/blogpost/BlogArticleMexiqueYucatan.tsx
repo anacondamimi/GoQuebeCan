@@ -452,7 +452,7 @@ export default function BlogArticleMexiqueYucatan() {
         comblés.
       </p>
       <Figure
-        src="/images/destinations/mexique/marche-maison-colores-valadolid-yucatan.avif"
+        src="/images/destinations/mexique/valladolid-yucatan-mexique.avif"
         alt="Valladolid, ville coloniale du Yucatán : cathédrale, rues colorées et places"
         caption="Valladolid, ville coloniale magique le soir, une fois les groupes repartis."
       />
@@ -461,10 +461,6 @@ export default function BlogArticleMexiqueYucatan() {
         alt="Cenote Zací en plein centre de Valladolid, Yucatán, Mexique"
         caption="Le cenote Zací, en plein cœur de Valladolid, à 700 m de notre logement."
       />
-      <p>
-        Tu peux recréer et ajuster cet itinéraire dans le{' '}
-        <Link href="/planificateur">planificateur</Link> de <BrandName />.
-      </p>
 
       {/* ARGENT */}
       <H2 id="argent">Argent, cartes &amp; frais : payer malin au Mexique</H2>
@@ -675,6 +671,29 @@ export default function BlogArticleMexiqueYucatan() {
         notre application dédiée.
       </p>
       <p>{/* [LIEN vers ton app d'espagnol pratique — à insérer ici] */}</p>
+
+      {/* RÉCAP — maillage interne */}
+      <H2>
+        Continuer avec <BrandName />
+      </H2>
+      <p>Notre série pour organiser ton voyage dans le Sud toi-même :</p>
+      <ul>
+        <li>
+          🧭{' '}
+          <Link href="/blog/reserver-voyage-sud-soi-meme">
+            Réserver son voyage dans le Sud soi-même
+          </Link>
+        </li>
+        <li>
+          💳 <Link href="/blog/argent-cartes-voyage">Payer malin en voyage sans frais</Link>
+        </li>
+        <li>
+          📶 <Link href="/blog/vpn-esim-voyage">eSIM &amp; VPN : rester connecté à l’étranger</Link>
+        </li>
+        <li>
+          🧭 <Link href="/planificateur">Planifier ton itinéraire</Link>
+        </li>
+      </ul>
     </DestinationArticleTemplate>
   );
 }

@@ -15,6 +15,8 @@ const componentMap: Record<string, () => Promise<{ default: ComponentType<any> }
   'reserver-voyage-sud-soi-meme': () =>
     import('@/components/blogpost/BlogArticleReserverVoyageSud'),
   'argent-cartes-voyage': () => import('@/components/blogpost/BlogArticleArgentCartesVoyage'),
+  'vpn-esim-voyage': () => import('@/components/blogpost/BlogArticleVpnEsimVoyage'),
+  'valise-mexique': () => import('@/components/blogpost/BlogArticleValiseMexique'),
   'bromont-granby': () => import('@/components/blogpost/BlogArticleBromontGranby'),
   canyon: () => import('@/components/blogpost/BlogArticleCanyon'),
   chambly: () => import('@/components/blogpost/BlogArticleChambly'),

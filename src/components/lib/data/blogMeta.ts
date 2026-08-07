@@ -1042,6 +1042,19 @@ export const blogMeta = {
       "Tadoussac"
     ]
   },
+  "valisemexique": {
+    "title": "Valise Mexique",
+    "description": "Découvrez Valise Mexique, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/default-destination.avif",
+    "activites": [],
+    "hebergements": [],
+    "publics": [],
+    "region": "Québec",
+    "keywords": [
+      "Québec",
+      "Valise Mexique"
+    ]
+  },
   "voyageavion": {
     "title": "Indispensables pour Voyager en Avion en 2025",
     "description": "Découvrez Indispensables pour Voyager en Avion en 2025, ses attraits touristiques, ses activités et ses hébergements incontournables.",
@@ -1095,6 +1108,19 @@ export const blogMeta = {
     "keywords": [
       "Québec",
       "Voyage Voiture"
+    ]
+  },
+  "vpnesimvoyage": {
+    "title": "Vpn Esim Voyage",
+    "description": "Découvrez Vpn Esim Voyage, ses attraits touristiques, ses activités et ses hébergements incontournables.",
+    "image": "/images/default-destination.avif",
+    "activites": [],
+    "hebergements": [],
+    "publics": [],
+    "region": "Québec",
+    "keywords": [
+      "Québec",
+      "Vpn Esim Voyage"
     ]
   },
   "wasagabeach": {

@@ -57,7 +57,7 @@ export const AFFILIATES = {
 
   /* ---------- Connexion (eSIM / VPN) ---------- */
   airalo: {
-    url: '#', // ← Airalo (souvent via Travelpayouts)
+    url: 'https://airalo.pxf.io/dyEgrM', // ← Airalo (souvent via Travelpayouts)
     label: 'Voir les forfaits eSIM',
     rel: 'sponsored',
   },

@@ -37,7 +37,7 @@ export default function BlogArticleReserverVoyageSud() {
         caption: 'Organiser son voyage soi-même, étape par étape',
         image: (
           <Image
-            src="/images/blog/reserver-voyage-sud.avif"
+            src="/images/reserver-voyage-sud/reserver-voyage-sud.avif"
             alt="Planifier soi-même son voyage dans le Sud : carte, téléphone et carnet"
             width={1200}
             height={675}
@@ -154,9 +154,8 @@ export default function BlogArticleReserverVoyageSud() {
         <p className="mt-1">
           Élargis ta recherche de vol à 2-3 aéroports (Montréal, Ottawa, parfois Toronto).
           L’économie peut largement dépasser le coût de la route et d’une nuit d’hôtel. On en a fait
-          un guide dédié :{' '}
-          <Link href="/blog/partir-ottawa-vs-montreal">partir d’Ottawa plutôt que de Montréal</Link>
-          .
+          un guide dédié : élargis ta recherche de vol à plusieurs aéroports (Montréal, Ottawa) et
+          compare — l’économie peut dépasser le coût de la route et d’une nuit sur place.
         </p>
       </div>
 
@@ -420,13 +419,7 @@ export default function BlogArticleReserverVoyageSud() {
           💳 <Link href="/blog/argent-cartes-voyage">Payer malin en voyage sans frais</Link>
         </li>
         <li>
-          🛡️ <Link href="/blog/assurance-voyage-quebec">Choisir son assurance voyage</Link>
-        </li>
-        <li>
           📶 <Link href="/blog/vpn-esim-voyage">eSIM &amp; VPN en voyage</Link>
-        </li>
-        <li>
-          ✈️ <Link href="/blog/partir-ottawa-vs-montreal">Partir d’Ottawa plutôt que Montréal</Link>
         </li>
         <li>
           🧭 <Link href="/planificateur">Le planificateur d’itinéraire</Link>
