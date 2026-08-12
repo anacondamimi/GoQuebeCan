@@ -149,7 +149,7 @@ export function BlogArticleGrandBend() {
             <Image
               src="/images/destinations/grand-bend.avif"
               alt="Grand Bend"
-              className="h-96 w-full rounded-lg object-cover shadow-lg"
+              className="mx-auto h-auto w-full max-w-2xl rounded-xl"
               width={800}
               height={600}
             />

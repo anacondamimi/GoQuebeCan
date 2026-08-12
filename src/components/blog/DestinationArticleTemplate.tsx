@@ -160,8 +160,8 @@ function HeroSection({
       ) : null}
 
       {hero?.image ? (
-        <div className="mt-8 overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-sm">
-          <div>{hero.image}</div>
+        <div className="mx-auto mt-8 max-w-3xl overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-sm">
+          <div> {hero.image}</div>
           {hero.caption ? (
             <div className="border-t border-gray-100 px-4 py-3 text-sm text-gray-500">
               {hero.caption}

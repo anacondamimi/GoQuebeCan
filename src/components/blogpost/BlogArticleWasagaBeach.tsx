@@ -231,7 +231,7 @@ export default function BlogArticleWasagaBeach() {
             alt="Plage de sable et eaux peu profondes de la baie Georgienne à Wasaga Beach en Ontario"
             width={1200}
             height={675}
-            className="rounded-xl"
+            className="mx-auto h-auto w-full max-w-2xl rounded-xl"
             priority
           />
           <figcaption className="mt-2 text-center text-sm text-gray-500">

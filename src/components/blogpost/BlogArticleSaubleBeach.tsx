@@ -148,7 +148,7 @@ export default function BlogArticleSaubleBeach() {
               alt="Sauble Beach"
               width={1200}
               height={600}
-              className="h-96 w-full rounded-lg object-cover shadow-lg"
+              className="mx-auto h-auto w-full max-w-2xl rounded-xl"
             />
           </div>
         </section>

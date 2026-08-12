@@ -26,7 +26,7 @@ import AffiliateCard from '@/components/affiliate/AffiliateCard';
 function Figure({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
   return (
     <figure className="not-prose my-6">
-      <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
+      <div className="mx-auto max-w-md overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
         <Image
           src={src}
           alt={alt}
