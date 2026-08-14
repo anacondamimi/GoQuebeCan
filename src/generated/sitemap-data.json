@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-12T18:22:19.850Z",
+  "generatedAt": "2026-08-14T19:09:10.793Z",
   "siteUrl": "https://goquebecan.com",
   "counts": {
-    "static": 19,
+    "static": 20,
     "blog": 49,
     "community": 1,
     "producerRegions": 15,
-    "totalBeforeDedupe": 84,
-    "total": 84,
+    "totalBeforeDedupe": 85,
+    "total": 85,
     "duplicatesRemoved": 0,
     "withImages": 40,
-    "withoutImages": 44,
+    "withoutImages": 45,
     "blogFinal": 49,
     "communityFinal": 1,
     "producerRegionsFinal": 16
@@ -685,6 +685,14 @@
       "lastModified": "2026-05-30T20:10:49.827Z",
       "changeFrequency": "weekly",
       "priority": 0.8,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/voyager-dans-le-sud",
+      "lastModified": "2026-08-12T19:38:13.584Z",
+      "changeFrequency": "monthly",
+      "priority": 0.6,
       "image": null,
       "imageTitle": null
     }

@@ -114,7 +114,7 @@ export default function Navbar() {
           <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 md:flex">
             {/* Découvrir */}
             <DropdownMenu
-              title="Découvrir"
+              title="Découvrir le Québec"
               icon={<ChevronDown size={16} />}
               items={[
                 { label: '🌄 Destinations', component: <DestinationsMegaMenu /> },
@@ -139,6 +139,27 @@ export default function Navbar() {
                 { label: '🧳 Produits de voyage', component: <DropdownObjetsMenu /> },
                 { label: '📹 Vidéos', href: '/videos' },
                 { label: '✈️ Vols', href: '/vols' },
+              ]}
+            />
+            {/* Voyager dans le Sud */}
+            <DropdownMenu
+              title={
+                <span className="whitespace-nowrap">
+                  <span className="hidden lg:inline">Voyager&nbsp;dans&nbsp;le&nbsp;Sud</span>
+                  <span className="inline lg:hidden">Le Sud</span>
+                </span>
+              }
+              icon={<ChevronDown size={16} />}
+              items={[
+                { label: '🌴 Tous les guides du Sud', href: '/voyager-dans-le-sud' },
+                { label: '🇲🇽 Mexique (Yucatán) sans voiture', href: '/blog/mexique-yucatan' },
+                {
+                  label: '🧭 Réserver son voyage soi-même',
+                  href: '/blog/reserver-voyage-sud-soi-meme',
+                },
+                { label: '💳 Argent & cartes en voyage', href: '/blog/argent-cartes-voyage' },
+                { label: '📶 eSIM & VPN pour rester connecté', href: '/blog/vpn-esim-voyage' },
+                { label: '🧳 Quoi mettre dans sa valise', href: '/blog/valise-mexique' },
               ]}
             />
             {/* Communauté */}
@@ -202,7 +223,7 @@ export default function Navbar() {
       {/* Menu Mobile */}
       <div
         id="mobile-menu"
-        className={`fixed left-0 top-16 z-50 w-full origin-top transition-transform duration-300 ease-in-out md:hidden${
+        className={`fixed left-0 top-16 z-50 w-full origin-top transition-transform duration-300 ease-in-out md:hidden ${
           isMenuOpen ? 'scale-y-100 opacity-100' : 'pointer-events-none scale-y-0 opacity-0'
         }`}
       >
