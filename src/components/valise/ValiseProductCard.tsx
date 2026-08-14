@@ -71,7 +71,7 @@ export default function ValiseProductCard({ product }: { product: ValiseProduct 
         <a
           href={product.url}
           target="_blank"
-          rel="sponsored noopener noreferrer"
+          rel="nofollow sponsored noopener noreferrer"
           className="mt-3 inline-flex items-center justify-center rounded-xl bg-indigo-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-indigo-700"
         >
           {product.cta || 'Voir le produit'}

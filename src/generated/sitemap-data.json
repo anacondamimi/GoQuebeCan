@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T19:09:10.793Z",
+  "generatedAt": "2026-08-14T20:27:07.124Z",
   "siteUrl": "https://goquebecan.com",
   "counts": {
     "static": 20,
@@ -458,7 +458,7 @@
     },
     {
       "route": "/coups-de-coeur",
-      "lastModified": "2026-07-18T20:28:13.972Z",
+      "lastModified": "2026-08-14T19:31:06.030Z",
       "changeFrequency": "weekly",
       "priority": 0.8,
       "image": null,
@@ -498,7 +498,7 @@
     },
     {
       "route": "/itineraires-communaute",
-      "lastModified": "2026-04-06T16:25:48.450Z",
+      "lastModified": "2026-08-14T19:32:53.180Z",
       "changeFrequency": "weekly",
       "priority": 0.8,
       "image": null,
@@ -522,7 +522,7 @@
     },
     {
       "route": "/offres",
-      "lastModified": "2026-05-18T16:08:59.591Z",
+      "lastModified": "2026-08-14T19:34:17.232Z",
       "changeFrequency": "weekly",
       "priority": 0.8,
       "image": null,
@@ -690,7 +690,7 @@
     },
     {
       "route": "/voyager-dans-le-sud",
-      "lastModified": "2026-08-12T19:38:13.584Z",
+      "lastModified": "2026-08-14T19:38:31.135Z",
       "changeFrequency": "monthly",
       "priority": 0.6,
       "image": null,

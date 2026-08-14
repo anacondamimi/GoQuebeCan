@@ -60,9 +60,8 @@ const GUIDES: Guide[] = [
 
 export default function VoyagerDansLeSudPage() {
   return (
-    <main className="min-h-screen pt-8">
+    <main className="min-h-screen pt-24">
       <H1 className="sr-only">Voyager dans le Sud : guides pour fuir l’hiver québécois</H1>
-
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         {/* En-tête */}
         <header className="mx-auto max-w-3xl text-center">

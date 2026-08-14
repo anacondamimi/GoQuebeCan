@@ -141,7 +141,7 @@ function CoupDeCoeurCard({ coupDeCoeur }: { coupDeCoeur: CoupDeCoeur }) {
 
 export default function CoupsDeCoeurPage() {
   return (
-    <main className="mx-auto max-w-6xl px-4 py-10">
+    <main className="mx-auto max-w-6xl px-4 pb-10 pt-24">
       {/* En-tête éditorial */}
       <header className="relative overflow-hidden rounded-3xl border bg-white p-6 shadow-sm md:p-8">
         <div className="pointer-events-none absolute inset-0 opacity-60">

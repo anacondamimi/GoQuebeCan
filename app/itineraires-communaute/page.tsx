@@ -81,7 +81,7 @@ export default async function ItinerairesCommunautePage() {
 
   if (error) {
     return (
-      <main className="mx-auto max-w-6xl px-4 py-10">
+      <main className="mx-auto max-w-6xl px-4 pb-10 pt-24">
         <H1 className="mb-4 text-3xl font-bold">
           Itinéraires de la communauté au Québec et au Canada
         </H1>
@@ -98,7 +98,7 @@ export default async function ItinerairesCommunautePage() {
   const others = items.slice(1);
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-10">
+    <main className="mx-auto max-w-6xl px-4 pb-10 pt-24">
       <header className="mb-12">
         <div className="max-w-4xl">
           <span className="mb-4 inline-flex rounded-full bg-indigo-100 px-3 py-1 text-sm font-semibold text-indigo-700">
