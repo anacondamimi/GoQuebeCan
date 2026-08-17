@@ -4,19 +4,19 @@ import type { ComponentType } from 'react';
 
 /**
  * Map <slug> -> dynamic import for its TSX component.
- * Only add a new entry when you create a new BlogArticle*.tsx file.
+ * Only add a new entry when you create a new BlogArticle*.tsx file
+ * that should be served by the DYNAMIC app/blog/[slug]/page.tsx route.
+ *
+ * ⚠️ Si l'article a son propre app/blog/<slug>/page.tsx dédié (metadata/JSON-LD
+ * sur mesure), NE PAS l'ajouter ici : les deux routes produiraient la même URL
+ * de sortie au build et entreraient en collision (voir src/lib/blog/articleRegistry.ts
+ * pour la liste complète — routing + pages dédiées — utilisée par le chatbot).
  * Sitemap, dynamic routes, and listings will auto‑update from BLOG_SLUGS.
  */
 const componentMap: Record<string, () => Promise<{ default: ComponentType<any> }>> = {
   'anse-saint-jean': () => import('@/components/blogpost/BlogArticleAnseSaintJean'),
   'baie-saint-paul': () => import('@/components/blogpost/BlogArticleBaieSaintPaul'),
   bic: () => import('@/components/blogpost/BlogArticleBic'),
-  'mexique-yucatan': () => import('@/components/blogpost/BlogArticleMexiqueYucatan'),
-  'reserver-voyage-sud-soi-meme': () =>
-    import('@/components/blogpost/BlogArticleReserverVoyageSud'),
-  'argent-cartes-voyage': () => import('@/components/blogpost/BlogArticleArgentCartesVoyage'),
-  'vpn-esim-voyage': () => import('@/components/blogpost/BlogArticleVpnEsimVoyage'),
-  'valise-mexique': () => import('@/components/blogpost/BlogArticleValiseMexique'),
   'bromont-granby': () => import('@/components/blogpost/BlogArticleBromontGranby'),
   canyon: () => import('@/components/blogpost/BlogArticleCanyon'),
   chambly: () => import('@/components/blogpost/BlogArticleChambly'),
@@ -44,7 +44,6 @@ const componentMap: Record<string, () => Promise<{ default: ComponentType<any> }
   quebec: () => import('@/components/blogpost/BlogArticleQuebec'),
   'riviere-du-loup': () => import('@/components/blogpost/BlogArticleRiviereduLoup'),
   sabrevois: () => import('@/components/blogpost/BlogArticleSabrevois'),
-  sandbanks: () => import('@/components/blogpost/BlogArticleSandbanks'),
   'wasaga-beach': () => import('@/components/blogpost/BlogArticleWasagaBeach'),
   'magog-orford': () => import('@/components/blogpost/BlogArticleMagogOrford'),
   'sauble-beach': () => import('@/components/blogpost/BlogArticleSaubleBeach'),

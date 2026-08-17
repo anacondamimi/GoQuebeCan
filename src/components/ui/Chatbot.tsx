@@ -16,7 +16,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { useSite, Message } from '@/components/contexts/SiteContext';
-import { BLOG_SLUGS } from '@/lib/blog/componentMap';
+import { ALL_BLOG_SLUGS as BLOG_SLUGS } from '@/lib/blog/articleRegistry';
 
 type AssistantIntent =
   | 'idea'
