@@ -6,6 +6,7 @@ import { buildBreadcrumbLd } from '@/lib/seo/buildBreadcrumbLd';
 import { buildHowToLd } from '@/lib/seo/buildHowToLd';
 import { buildFaqLd } from '@/lib/seo/buildFaqLd';
 import { JsonLd, HeadExtras } from '@/lib/seo/HeadExtras';
+import H1 from '@/components/typography/H1';
 
 // =========================
 // SEO 2025 – Metadata
@@ -189,6 +190,8 @@ export default function SandbanksPage() {
       {howToLd ? <JsonLd data={howToLd} /> : null}
       {faqLd ? <JsonLd data={faqLd} /> : null}
       {collectionPageLd ? <JsonLd data={collectionPageLd} /> : null}
+
+      <H1 className="sr-only">Plage de Sandbanks en Ontario : guide familles québécoises 2025</H1>
 
       {/* Contenu principal (composant client) */}
       <BlogArticleSandbanks />

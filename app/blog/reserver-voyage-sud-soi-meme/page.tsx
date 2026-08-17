@@ -4,6 +4,7 @@ import { buildMetadata2025 } from '@/lib/seo/buildMetadata2025';
 import { buildBreadcrumbLd } from '@/lib/seo/buildBreadcrumbLd';
 import { buildFaqLd } from '@/lib/seo/buildFaqLd';
 import { JsonLd, HeadExtras } from '@/lib/seo/HeadExtras';
+import H1 from '@/components/typography/H1';
 
 export const metadata = buildMetadata2025({
   title: 'Réserver son voyage dans le Sud soi-même : la méthode complète (Québec) | GoQuébeCAN',
@@ -74,6 +75,10 @@ export default function ReserverVoyageSudPage() {
 
       <JsonLd data={breadcrumbLd} />
       {faqLd ? <JsonLd data={faqLd} /> : null}
+
+      <H1 className="sr-only">
+        Réserver son voyage dans le Sud soi-même : la méthode complète (Québec)
+      </H1>
 
       <BlogArticleReserverVoyageSud />
     </>

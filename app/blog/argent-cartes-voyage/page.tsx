@@ -4,6 +4,7 @@ import { buildMetadata2025 } from '@/lib/seo/buildMetadata2025';
 import { buildBreadcrumbLd } from '@/lib/seo/buildBreadcrumbLd';
 import { buildFaqLd } from '@/lib/seo/buildFaqLd';
 import { JsonLd, HeadExtras } from '@/lib/seo/HeadExtras';
+import H1 from '@/components/typography/H1';
 
 export const metadata = buildMetadata2025({
   title: 'Argent et cartes en voyage : payer sans frais de change (guide Québécois) | GoQuébeCAN',
@@ -70,6 +71,10 @@ export default function ArgentCartesVoyagePage() {
 
       <JsonLd data={breadcrumbLd} />
       {faqLd ? <JsonLd data={faqLd} /> : null}
+
+      <H1 className="sr-only">
+        Argent et cartes en voyage : payer sans frais de change (guide Québécois)
+      </H1>
 
       <BlogArticleArgentCartesVoyage />
     </>

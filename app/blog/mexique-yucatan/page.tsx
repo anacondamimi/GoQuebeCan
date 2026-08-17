@@ -2,6 +2,7 @@
 import BlogArticleMexiqueYucatan from '@/components/blogpost/BlogArticleMexiqueYucatan';
 import { buildBlogPageSeo } from '@/lib/seo/buildBlogPageSeo';
 import { JsonLd, HeadExtras } from '@/lib/seo/HeadExtras';
+import H1 from '@/components/typography/H1';
 
 // =========================
 // SEO 2025 — source unique
@@ -83,6 +84,10 @@ export default function MexiqueYucatanPage() {
       <JsonLd data={seo.breadcrumbLd} />
       {seo.faqLd ? <JsonLd data={seo.faqLd} /> : null}
       {seo.articleLd ? <JsonLd data={seo.articleLd} /> : null}
+
+      <H1 className="sr-only">
+        Voyage au Mexique (Yucatán) sans voiture : Akumal, Tulum, Valladolid
+      </H1>
 
       <BlogArticleMexiqueYucatan />
     </>

@@ -4,6 +4,7 @@ import { buildMetadata2025 } from '@/lib/seo/buildMetadata2025';
 import { buildBreadcrumbLd } from '@/lib/seo/buildBreadcrumbLd';
 import { buildFaqLd } from '@/lib/seo/buildFaqLd';
 import { JsonLd, HeadExtras } from '@/lib/seo/HeadExtras';
+import H1 from '@/components/typography/H1';
 
 export const metadata = buildMetadata2025({
   title: 'eSIM et VPN en voyage : rester connecté et protégé (guide 2026 Québécois) | GoQuébeCAN',
@@ -70,6 +71,10 @@ export default function VpnEsimVoyagePage() {
 
       <JsonLd data={breadcrumbLd} />
       {faqLd ? <JsonLd data={faqLd} /> : null}
+
+      <H1 className="sr-only">
+        eSIM et VPN en voyage : rester connecté et protégé (guide 2026 Québécois)
+      </H1>
 
       <BlogArticleVpnEsimVoyage />
     </>
