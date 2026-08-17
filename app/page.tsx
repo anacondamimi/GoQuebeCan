@@ -6,6 +6,7 @@ import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
 import Testimonials from '@/components/home/Testimonials';
 import BrandName from '@/components/brand/BrandName';
+import HomeJsonLd from '@/components/home/HomeJsonLd';
 import { HomePopularVideos, HomeOffers, HomeChatbot } from './HomeClientBlocks';
 
 // ✅ Server Component → peut exporter sa propre metadata.
@@ -47,6 +48,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <HomeJsonLd />
       <main className="min-h-screen bg-background pt-8 text-neutral">
         {/* Hero */}
         <section className="bg-surface relative py-12 text-center sm:py-16">
