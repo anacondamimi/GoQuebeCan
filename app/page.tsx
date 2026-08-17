@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Navbar from '@/components/Navbar';
 import GroupedDestinations from '@/components/GroupedDestinations';
 import FeaturedGuides from '@/components/home/FeaturedGuides';
 import H1 from '@/components/typography/H1';
@@ -48,13 +47,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      {/* Impact verification – NE PAS MODIFIER */}
-      <div style={{ display: 'none' }}>
-        Impact-Site-Verification: b3e59d2b-b9c5-4a0d-bcf3-cacca26c52a4
-      </div>
-
-      <Navbar />
-
       <main className="min-h-screen bg-background pt-8 text-neutral">
         {/* Hero */}
         <section className="bg-surface relative py-12 text-center sm:py-16">
