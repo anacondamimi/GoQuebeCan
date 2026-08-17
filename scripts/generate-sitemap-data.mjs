@@ -282,6 +282,30 @@ async function readProducerRegionRoutes() {
   }));
 }
 
+async function readCampingRoutes() {
+  const campingsPath = path.join(SRC_DIR, 'data', 'campings.ts');
+  if (!(await exists(campingsPath))) return [];
+
+  const sourceMTime = await getFileMTime(campingsPath);
+  const raw = await fs.readFile(campingsPath, 'utf8');
+
+  const slugs = new Set();
+  const slugRegex = /slug:\s*['"`]([a-z0-9-]+)['"`]/gi;
+
+  let match;
+  while ((match = slugRegex.exec(raw)) !== null) {
+    slugs.add(match[1]);
+  }
+
+  return [...slugs]
+    .sort((a, b) => a.localeCompare(b, 'fr'))
+    .map((slug) => ({
+      route: normalizeRoute(`/camping/${slug}`),
+      lastModified: sourceMTime,
+    }))
+    .filter((item) => isAllowedRoute(item.route));
+}
+
 async function readBlogRoutes() {
   const routes = new Map();
 
@@ -427,6 +451,9 @@ function getSeoMetaForRoute(route) {
   if (route.startsWith('/blog/')) {
     return { changeFrequency: 'weekly', priority: 0.82 };
   }
+  if (route.startsWith('/camping/')) {
+    return { changeFrequency: 'weekly', priority: 0.78 };
+  }
   if (route.startsWith('/destinations/')) {
     return { changeFrequency: 'weekly', priority: 0.75 };
   }
@@ -549,6 +576,7 @@ async function main() {
   const blogRoutes = await readBlogRoutes();
   const communityRoutes = await readCommunityRoutes();
   const producerRegionRoutes = await readProducerRegionRoutes();
+  const campingRoutes = await readCampingRoutes();
 
   // NOTE : plus de destinationRoutes.
   // Il n'existe aucune route /destinations/[slug] dynamique, et les anciens
@@ -582,6 +610,14 @@ async function main() {
     ),
   );
 
+  const campingEntries = await Promise.all(
+    campingRoutes.map((item) =>
+      createEntry(item.route, {
+        lastModified: item.lastModified || undefined,
+      }),
+    ),
+  );
+
   const communityEntries = await Promise.all(
     communityRoutes.map((item) =>
       createEntry(item.route, {
@@ -593,6 +629,7 @@ async function main() {
   const allEntries = [
     ...staticEntries,
     ...blogEntries,
+    ...campingEntries,
     ...communityEntries,
     ...producerRegionEntries,
   ];
@@ -604,6 +641,7 @@ async function main() {
     counts: {
       static: staticEntries.length,
       blog: blogEntries.length,
+      camping: campingEntries.length,
       community: communityEntries.length,
       producerRegions: producerRegionEntries.length,
       totalBeforeDedupe: allEntries.length,
@@ -612,6 +650,7 @@ async function main() {
       withImages: entries.filter((entry) => Boolean(entry.image)).length,
       withoutImages: entries.filter((entry) => !entry.image).length,
       blogFinal: countByPrefix(entries, '/blog'),
+      campingFinal: countByPrefix(entries, '/camping'),
       communityFinal: countByPrefix(entries, '/itineraires-communaute'),
       producerRegionsFinal: countByPrefix(entries, '/producteurs'),
     },

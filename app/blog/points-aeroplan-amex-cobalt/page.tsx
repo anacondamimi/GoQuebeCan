@@ -140,6 +140,8 @@ const jsonLd = [
   aventuraFinancialProductLd,
 ].filter(Boolean);
 
+export const metadata = seo.metadata;
+
 export default function PointsAeroplanCobaltPage() {
   return (
     <main className="min-h-screen bg-white pt-8">

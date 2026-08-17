@@ -7,7 +7,15 @@ export default function robots(): MetadataRoute.Robots {
     'https://www.goquebecan.com'
   ).replace(/\/+$/, '');
 
-  const blocked = ['/admin/', '/api/', '/expansion/', '/ia-mathieu', '/static-page'];
+  const blocked = [
+    '/admin/',
+    '/api/',
+    '/expansion/',
+    '/ia-mathieu',
+    '/static-page',
+    '/objets',
+    '/experiences',
+  ];
 
   return {
     rules: [

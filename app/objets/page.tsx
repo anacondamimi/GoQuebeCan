@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: { canonical: 'https://www.goquebecan.com/objets' },
+  robots: { index: false, follow: false },
 };
 
 export const dynamic = 'force-static';

@@ -1,17 +1,19 @@
 {
-  "generatedAt": "2026-08-17T17:38:15.146Z",
+  "generatedAt": "2026-08-17T19:44:51.790Z",
   "siteUrl": "https://goquebecan.com",
   "counts": {
     "static": 20,
     "blog": 49,
+    "camping": 9,
     "community": 1,
     "producerRegions": 15,
-    "totalBeforeDedupe": 85,
-    "total": 85,
+    "totalBeforeDedupe": 94,
+    "total": 94,
     "duplicatesRemoved": 0,
     "withImages": 40,
-    "withoutImages": 45,
+    "withoutImages": 54,
     "blogFinal": 49,
+    "campingFinal": 10,
     "communityFinal": 1,
     "producerRegionsFinal": 16
   },
@@ -250,7 +252,7 @@
     },
     {
       "route": "/blog/points-aeroplan-amex-cobalt",
-      "lastModified": "2026-08-17T13:35:04.167Z",
+      "lastModified": "2026-08-17T19:43:25.484Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": null,
@@ -429,6 +431,78 @@
       "lastModified": "2026-05-30T20:22:27.069Z",
       "changeFrequency": "weekly",
       "priority": 0.8,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/camping/camping-baie-des-chaleurs",
+      "lastModified": "2026-05-30T17:33:21.645Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/camping/camping-des-erables-cantons-est",
+      "lastModified": "2026-05-30T17:33:21.645Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/camping/camping-du-fjord-saguenay",
+      "lastModified": "2026-05-30T17:33:21.645Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/camping/camping-parc-jacques-cartier",
+      "lastModified": "2026-05-30T17:33:21.645Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/camping/camping-parc-mont-megantic",
+      "lastModified": "2026-05-30T17:33:21.645Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/camping/camping-parc-mont-tremblant",
+      "lastModified": "2026-05-30T17:33:21.645Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/camping/camping-parc-national-bic",
+      "lastModified": "2026-05-30T17:33:21.645Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/camping/camping-parc-national-gaspesie",
+      "lastModified": "2026-05-30T17:33:21.645Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
+      "image": null,
+      "imageTitle": null
+    },
+    {
+      "route": "/camping/camping-tadoussac-cote-nord",
+      "lastModified": "2026-05-30T17:33:21.645Z",
+      "changeFrequency": "weekly",
+      "priority": 0.78,
       "image": null,
       "imageTitle": null
     },

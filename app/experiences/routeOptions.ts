@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.goquebecan.com/experiences',
   },
+  robots: { index: false, follow: false },
 };
 
 export const dynamic = 'force-static';
