@@ -1,22 +1,30 @@
 // app/blog/points-aeroplan-amex-cobalt/page.tsx
 import * as React from 'react';
 import Link from 'next/link';
-import type { Metadata } from 'next';
 import Image from 'next/image';
 
-import { buildMetadata2025, buildGenericJsonLd } from '@/lib/seo/seoConfig2025';
+import { buildBlogPageSeo } from '@/lib/seo/buildBlogPageSeo';
+import { buildHowToLd } from '@/lib/seo/buildHowToLd';
 import { HeadExtras, JsonLd } from '@/lib/seo/HeadExtras';
 import H1 from '@/components/typography/H1';
 import H2 from '@/components/typography/H2';
 
-const CANONICAL = 'https://www.goquebecan.com/blog/points-aeroplan-amex-cobalt';
-const OG_IMAGE = 'https://www.goquebecan.com/images/og/points-aeroplan-cobalt.jpg';
+const CANONICAL_PATH = '/blog/points-aeroplan-amex-cobalt';
+const CANONICAL = `https://www.goquebecan.com${CANONICAL_PATH}`;
+const OG_IMAGE = '/images/og/points-aeroplan-cobalt.jpg';
 
-export const metadata: Metadata = buildMetadata2025({
-  title: 'Voyager moins cher avec Aeroplan, Amex Cobalt et Visa Aventura | Guide complet',
+// =========================
+// SEO 2025 — source unique
+// =========================
+const seo = buildBlogPageSeo({
+  metaTitle: 'Voyager moins cher avec Aeroplan, Amex Cobalt et Visa Aventura | Guide complet',
+  headline:
+    'Comment accumuler des points plus vite et voyager moins cher avec les cartes de crédit',
   description:
     'Apprends une méthode simple pour accumuler des points rapidement (épicerie, dépenses du quotidien), réduire le coût des billets et voyager plus sereinement grâce aux assurances et aux salons d’aéroport. Témoignages voyageurs inclus.',
-  canonical: CANONICAL,
+  articleDescription:
+    'Guide pratique pour transformer les dépenses du quotidien en points, réduire le coût des billets d’avion et voyager plus sereinement grâce aux assurances et aux salons d’aéroport.',
+  canonical: CANONICAL_PATH,
   image: OG_IMAGE,
   keywords: [
     'aeroplan',
@@ -30,63 +38,12 @@ export const metadata: Metadata = buildMetadata2025({
     'prime de bienvenue carte de crédit',
     'goquebecan',
   ],
-  type: 'article',
-});
-
-type JsonLdNode = Record<string, any>;
-
-/** FinancialProduct / CreditCard (schema avancé) — stable, sans chiffres “fragiles” */
-const cobaltFinancialProductLd: JsonLdNode = {
-  '@context': 'https://schema.org',
-  '@type': 'CreditCard',
-  name: 'American Express Cobalt',
-  description:
-    'Carte de crédit axée sur l’accumulation de points et les avantages voyage. Utilisée pour optimiser les dépenses du quotidien et réduire certains coûts liés aux voyages (selon conditions).',
-  areaServed: 'CA',
-  inLanguage: 'fr-CA',
-  provider: { '@type': 'Organization', name: 'American Express' },
-  category: ['Travel rewards', 'CreditCard'],
-  subjectOf: { '@type': 'WebPage', '@id': CANONICAL },
-  isRelatedTo: [
-    { '@type': 'WebPage', '@id': `${CANONICAL}#exemple-epicerie` },
-    { '@type': 'WebPage', '@id': `${CANONICAL}#assurances-voyage` },
-  ],
-};
-
-const aventuraFinancialProductLd: JsonLdNode = {
-  '@context': 'https://schema.org',
-  '@type': 'CreditCard',
-  name: 'Visa Aventura',
-  description:
-    'Carte de crédit orientée voyage, souvent utilisée pour accéder à des avantages comme des salons d’aéroport et des primes de bienvenue (selon la carte et la promotion en vigueur).',
-  areaServed: 'CA',
-  inLanguage: 'fr-CA',
-  provider: { '@type': 'Organization', name: 'Visa' },
-  category: ['Travel rewards', 'CreditCard'],
-  subjectOf: { '@type': 'WebPage', '@id': CANONICAL },
-  isRelatedTo: [
-    { '@type': 'WebPage', '@id': `${CANONICAL}#salons-aeroport` },
-    { '@type': 'WebPage', '@id': `${CANONICAL}#temoignages` },
-  ],
-};
-
-/** JSON-LD “guide” + FAQ (ton builder retourne un tableau) */
-const jsonLdBase = buildGenericJsonLd({
-  type: 'guide',
-  title: 'Comment accumuler des points plus vite et voyager moins cher avec les cartes de crédit',
-  description:
-    'Guide pratique pour transformer les dépenses du quotidien en points, réduire le coût des billets d’avion et voyager plus sereinement grâce aux assurances et aux salons d’aéroport.',
-  canonical: CANONICAL,
-  image: OG_IMAGE,
-  published: '2025-12-16',
-  modified: '2026-03-28',
-  author: 'GoQuébeCAN',
-  steps: [
-    'Choisir une carte qui bonifie l’épicerie et les dépenses récurrentes',
-    'Concentrer les achats du quotidien sur la bonne carte',
-    'Accumuler des points chaque mois sans voyager',
-    'Transférer les points vers un programme aérien (selon conditions)',
-    'Réserver plus intelligemment et profiter des protections/avantages inclus',
+  datePublished: '2025-12-16T09:00:00-05:00',
+  dateModified: '2026-03-28T09:00:00-05:00',
+  breadcrumb: [
+    { name: 'Accueil', item: '/' },
+    { name: 'Blog', item: '/blog' },
+    { name: 'Points Aeroplan, Amex Cobalt & Visa Aventura', item: CANONICAL_PATH },
   ],
   faq: [
     {
@@ -107,13 +64,86 @@ const jsonLdBase = buildGenericJsonLd({
   ],
 });
 
-/** JSON-LD final (un seul JsonLd data={jsonLd}) */
-const jsonLd: JsonLdNode[] = [...jsonLdBase, cobaltFinancialProductLd, aventuraFinancialProductLd];
+// HowTo — la méthode en étapes (conservée depuis l'ancien buildGenericJsonLd type:'guide')
+const howToLd = buildHowToLd({
+  name: 'Comment accumuler des points plus vite et voyager moins cher',
+  description:
+    'Méthode pour transformer les dépenses du quotidien en points et réduire le coût des billets d’avion.',
+  url: CANONICAL,
+  image: OG_IMAGE,
+  steps: [
+    {
+      name: 'Choisir la bonne carte',
+      text: 'Choisir une carte qui bonifie l’épicerie et les dépenses récurrentes.',
+    },
+    {
+      name: 'Centraliser les dépenses',
+      text: 'Concentrer les achats du quotidien sur la bonne carte.',
+    },
+    {
+      name: 'Accumuler chaque mois',
+      text: 'Accumuler des points chaque mois sans voyager.',
+    },
+    {
+      name: 'Transférer les points',
+      text: 'Transférer les points vers un programme aérien (selon conditions).',
+    },
+    {
+      name: 'Réserver intelligemment',
+      text: 'Réserver plus intelligemment et profiter des protections/avantages inclus.',
+    },
+  ],
+});
+
+// FinancialProduct / CreditCard (schémas avancés, conservés tels quels)
+const cobaltFinancialProductLd: Record<string, any> = {
+  '@context': 'https://schema.org',
+  '@type': 'CreditCard',
+  name: 'American Express Cobalt',
+  description:
+    'Carte de crédit axée sur l’accumulation de points et les avantages voyage. Utilisée pour optimiser les dépenses du quotidien et réduire certains coûts liés aux voyages (selon conditions).',
+  areaServed: 'CA',
+  inLanguage: 'fr-CA',
+  provider: { '@type': 'Organization', name: 'American Express' },
+  category: ['Travel rewards', 'CreditCard'],
+  subjectOf: { '@type': 'WebPage', '@id': CANONICAL },
+  isRelatedTo: [
+    { '@type': 'WebPage', '@id': `${CANONICAL}#exemple-epicerie` },
+    { '@type': 'WebPage', '@id': `${CANONICAL}#assurances-voyage` },
+  ],
+};
+
+const aventuraFinancialProductLd: Record<string, any> = {
+  '@context': 'https://schema.org',
+  '@type': 'CreditCard',
+  name: 'Visa Aventura',
+  description:
+    'Carte de crédit orientée voyage, souvent utilisée pour accéder à des avantages comme des salons d’aéroport et des primes de bienvenue (selon la carte et la promotion en vigueur).',
+  areaServed: 'CA',
+  inLanguage: 'fr-CA',
+  provider: { '@type': 'Organization', name: 'Visa' },
+  category: ['Travel rewards', 'CreditCard'],
+  subjectOf: { '@type': 'WebPage', '@id': CANONICAL },
+  isRelatedTo: [
+    { '@type': 'WebPage', '@id': `${CANONICAL}#salons-aeroport` },
+    { '@type': 'WebPage', '@id': `${CANONICAL}#temoignages` },
+  ],
+};
+
+// Un seul <JsonLd> avec le tableau agrégé (style conservé pour cette page riche)
+const jsonLd = [
+  seo.breadcrumbLd,
+  howToLd,
+  seo.faqLd,
+  seo.articleLd,
+  cobaltFinancialProductLd,
+  aventuraFinancialProductLd,
+].filter(Boolean);
 
 export default function PointsAeroplanCobaltPage() {
   return (
     <main className="min-h-screen bg-white pt-8">
-      <HeadExtras />
+      <HeadExtras articlePublishedTime={seo.publishedTime} articleModifiedTime={seo.modifiedTime} />
       <JsonLd data={jsonLd} />
 
       <article className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">

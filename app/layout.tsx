@@ -82,32 +82,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         ) : null}
         <Script id="stay22" strategy="afterInteractive">
-          {`
-            (function(s, t, a, y, twenty, two) {
-              s.Stay22 = s.Stay22 || {};
-              s.Stay22.params = {
-                lmaID: "6a6dfddb8b07e110fea1f8a7"
-              };
-              twenty = t.createElement(a);
-              two = t.getElementsByTagName(a)[0];
-              twenty.async = 1;
-              twenty.src = y;
-              two.parentNode.insertBefore(twenty, two);
-            })(
-              window,
-              document,
-              "script",
-              "https://scripts.stay22.com/letmeallez.js"
-            );
-          `}
-          {/* Travelpayouts (vérification + widgets vol) */}
-          <Script
-            id="travelpayouts"
-            strategy="afterInteractive"
-            src="https://emrld.ltd/NTU5ODQ4.js?t=559848"
-            data-cmp-ab="2"
-          />
-        </Script>
+  {`
+    (function(s, t, a, y, twenty, two) {
+      s.Stay22 = s.Stay22 || {};
+      s.Stay22.params = { lmaID: "6a6dfddb8b07e110fea1f8a7" };
+      twenty = t.createElement(a);
+      two = t.getElementsByTagName(a)[0];
+      twenty.async = 1;
+      twenty.src = y;
+      two.parentNode.insertBefore(twenty, two);
+    })(window, document, "script", "https://scripts.stay22.com/letmeallez.js");
+  `}
+</Script>
+
+<Script
+  id="travelpayouts"
+  strategy="afterInteractive"
+  src="https://emrld.ltd/NTU5ODQ4.js?t=559848"
+  data-cmp-ab="2"
+/>
       </body>
     </html>
   );

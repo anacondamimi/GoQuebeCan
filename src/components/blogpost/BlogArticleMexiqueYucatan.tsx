@@ -368,7 +368,7 @@ export default function BlogArticleMexiqueYucatan() {
         accent="text-sky-700"
         icon={<Palmtree className="size-4" />}
         title="Trouver un hébergement sur la plage d’Akumal"
-        affKey="stay22Hotel"
+        affKey="stay22Akumal"
         ctaLabel="Voir les hôtels à Akumal"
         variant="primary"
       />
@@ -396,11 +396,13 @@ export default function BlogArticleMexiqueYucatan() {
       </p>
 
       <AffiliateCard
-        eyebrow="Location à Valladolid"
+        eyebrow="Où dormir à Valladolid"
         accent="text-rose-700"
-        title="Voir les logements dans le centre de Valladolid"
-        affKey="airbnb"
-        variant="rose"
+        title="Trouver un hébergement dans le centre de Valladolid"
+        description="Une nuit sur place pour vivre la ville coloniale le soir, une fois les excursionnistes repartis."
+        affKey="stay22Valladolid"
+        ctaLabel="Voir les logements à Valladolid"
+        variant="primary"
       />
 
       {/* ITINÉRAIRE */}

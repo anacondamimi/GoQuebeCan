@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T20:29:03.045Z",
+  "generatedAt": "2026-08-17T14:24:19.955Z",
   "siteUrl": "https://goquebecan.com",
   "counts": {
     "static": 20,
@@ -202,7 +202,7 @@
     },
     {
       "route": "/blog/mexique-yucatan",
-      "lastModified": "2026-08-01T15:07:59.359Z",
+      "lastModified": "2026-08-17T13:27:01.779Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": null,
@@ -250,7 +250,7 @@
     },
     {
       "route": "/blog/points-aeroplan-amex-cobalt",
-      "lastModified": "2026-04-25T18:36:20.876Z",
+      "lastModified": "2026-08-17T13:35:04.167Z",
       "changeFrequency": "weekly",
       "priority": 0.82,
       "image": null,

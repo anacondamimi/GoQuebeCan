@@ -1,11 +1,13 @@
 import React from 'react';
-import { aff, type AffiliateKey } from '@/lib/affiliates/links';
+import { aff, isPlaceholder, type AffiliateKey } from '@/lib/affiliates/links';
 
 /**
  * Bouton d'appel à l'action affilié.
  * - Récupère url/label/rel depuis la source unique (links.ts) via la clé.
  * - Force target="_blank" + rel="sponsored noopener noreferrer" (SEO + sécurité).
- * - Variantes de couleur alignées sur les conventions Tailwind du projet.
+ * - Si le lien est encore un placeholder ('#'), ne rend RIEN par défaut
+ *   (évite d'afficher un CTA mort). Passe showWhenPlaceholder pour forcer
+ *   un bouton désactivé à la place.
  *
  * Usage :
  *   <AffiliateButton affKey="stay22Hotel" />
@@ -29,6 +31,8 @@ type AffiliateButtonProps = {
   variant?: Variant;
   className?: string;
   fullWidth?: boolean;
+  /** Si true, rend un bouton désactivé au lieu de masquer quand l'URL est '#'. */
+  showWhenPlaceholder?: boolean;
 };
 
 export default function AffiliateButton({
@@ -37,11 +41,33 @@ export default function AffiliateButton({
   variant = 'primary',
   className,
   fullWidth = false,
+  showWhenPlaceholder = false,
 }: AffiliateButtonProps) {
   const link = aff(affKey);
   const base =
     'inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-bold shadow-sm transition';
   const width = fullWidth ? 'w-full sm:w-auto' : '';
+
+  // Lien pas encore prêt : on masque le CTA (par défaut) pour ne pas afficher
+  // un bouton qui mène vers '#'. En dev, un warning aide à repérer l'oubli.
+  if (isPlaceholder(affKey)) {
+    if (process.env.NODE_ENV !== 'production') {
+      // eslint-disable-next-line no-console
+      console.warn(`[AffiliateButton] Lien affilié "${affKey}" encore en placeholder ('#').`);
+    }
+    if (!showWhenPlaceholder) return null;
+
+    return (
+      <span
+        aria-disabled="true"
+        className={[base, VARIANTS[variant], width, 'cursor-not-allowed opacity-50', className]
+          .filter(Boolean)
+          .join(' ')}
+      >
+        {label ?? link.label}
+      </span>
+    );
+  }
 
   return (
     <a

@@ -436,12 +436,10 @@ function getSeoMetaForRoute(route) {
   if (
     [
       '/producteurs',
-      '/objets',
       '/offres',
       '/videos',
       '/vols',
       '/camping',
-      '/experiences',
       '/itineraires-communaute',
       '/coups-de-coeur',
       '/coups-de-coeur/anamimizen',
