@@ -102,8 +102,8 @@ export default function BlogArticleMexiqueYucatan() {
         plus beaux coins loin de la foule. Du vécu, pas de la théorie.
       </p>
       <p>
-        On a fait ce voyage à deux, sac au dos, en logeant dans un appartement les pieds dans l’eau
-        à Akumal puis dans une petite casa à Valladolid. Pas de bracelet tout-inclus, pas de voiture
+        On a fait ce voyage à deux, sac au dos, en logeant dans un studio les pieds dans l’eau à
+        Akumal puis dans une petite casa à Valladolid. Pas de bracelet tout-inclus, pas de voiture
         de location : des colectivos bondés, des cenotes cachés dans la jungle, des tacos mangés là
         où il n’y a aucun autre touriste. C’est de loin le voyage dont on garde le plus de souvenirs
         précis — et c’est exactement ce qu’on partage ici, chiffres réels à l’appui.
@@ -342,19 +342,19 @@ export default function BlogArticleMexiqueYucatan() {
         riche.
       </p>
 
-      <H3>Akumal : un hôtel calme directement sur la plage</H3>
+      <H3>Akumal : un studio les pieds dans l’eau, au Del Sol Beachfront Hotel and Condos</H3>
       <Figure
         src="/images/destinations/mexique/hotel-delsolfrontbeach-akumal-mexique.avif"
-        alt="Appartement Del Sol Front Beach sur la plage d’Akumal, terrasse et vue mer"
-        caption="Notre appartement les pieds dans l’eau à Akumal : terrasse, hamac et vue sur la mer."
+        alt="Studio au Del Sol Beachfront Hotel and Condos sur la plage d’Akumal, terrasse et vue mer"
+        caption="Notre studio les pieds dans l’eau à Akumal, au Del Sol Beachfront : terrasse, hamac et vue sur la mer."
       />
       <p>
-        À Akumal, on a choisi un <strong>hôtel tranquille, directement sur la plage</strong>. Se
-        réveiller face à la mer, accéder à la baie tôt le matin avant l’affluence pour les tortues :
-        ça change un séjour.
+        À Akumal, on a choisi un <strong>studio tranquille, directement sur la plage</strong>, au{' '}
+        <strong>Del Sol Beachfront Hotel and Condos</strong>. Se réveiller face à la mer, accéder à
+        la baie tôt le matin avant l’affluence pour les tortues : ça change un séjour.
       </p>
       <p>
-        On avait réservé un appartement coloré directement sur la plage :{' '}
+        On avait réservé un studio coloré directement sur la plage :{' '}
         <strong>742 $ pour 5 nuits</strong>, soit un logement de 65 m² avec terrasse intérieure et
         hamac, salle de bain complète, cuisine complète, salle à manger avec vue sur la mer, et une
         terrasse privée pour les couchers de soleil. Se réveiller à 6 h 10 pour voir le soleil se
@@ -388,11 +388,11 @@ export default function BlogArticleMexiqueYucatan() {
         À Valladolid, on a logé à la Casa Daniel : <strong>137 $ pour 2 nuits</strong>. Une grande
         chambre climatisée avec salle de bain, cuisine et une piscine commune partagée entre cinq
         chambres — un vrai bonheur après une journée à 36 °C. Très propre, calme, et idéalement
-        situé : à 300 m du terminal ADO, en face d’une <em>panadería</em> (boulangerie), à 400 m du
-        restaurant qu’on a adoré et à 700 m du cenote Zací en plein centre-ville. Le soir, une fois
-        les groupes d’excursion repartis, Valladolid devient magique : rues colorées, places où les
-        oiseaux chantent fort, cathédrale illuminée. C’est là qu’on a vraiment senti le Yucatán
-        authentique, loin de la côte touristique.
+        situé : à 300 m du terminal ADO, en face de la boulangerie <em>Tartalette</em> (panadería et
+        cafetería), à 400 m du restaurant qu’on a adoré et à 700 m du cenote Zací en plein
+        centre-ville. Le soir, une fois les groupes d’excursion repartis, Valladolid devient magique
+        : rues colorées, places où les oiseaux chantent fort, cathédrale illuminée. C’est là qu’on a
+        vraiment senti le Yucatán authentique, loin de la côte touristique.
       </p>
 
       <AffiliateCard
@@ -414,7 +414,7 @@ export default function BlogArticleMexiqueYucatan() {
       <ul>
         <li>
           <strong>Jour 1 – Arrivée &amp; Akumal.</strong> Vol Ottawa → Cancún, transfert privé vers
-          Akumal, installation dans l’appartement sur la plage, première balade jusqu’à la pointe
+          Akumal, installation dans le studio sur la plage, première balade jusqu’à la pointe
           d’Akumal (on a croisé des iguanes) et petite épicerie locale.
         </li>
         <li>

@@ -164,9 +164,10 @@ export default function BlogArticleReserverVoyageSud() {
       <p>
         Une fois les dates fixées par le vol, réserve <strong>au moins tes premières nuits</strong>.
         Arriver fatigué dans un pays étranger sans savoir où dormir, c’est le stress garanti. On
-        avait bloqué notre appartement d’Akumal en premier (742 $ pour 5 nuits, les pieds dans
-        l’eau, cuisine équipée), puis on a réservé Valladolid plus tard (137 $ pour 2 nuits, avec
-        piscine).
+        avait bloqué en premier notre studio à <strong>Akumal</strong> — un 65 m² les pieds dans
+        l’eau au <strong>Del Sol Beachfront Hotel and Condos</strong> (742 $ pour 5 nuits, cuisine
+        équipée) — puis on a réservé <strong>Valladolid</strong> plus tard, la{' '}
+        <strong>Casa Daniel</strong> en plein centre historique (137 $ pour 2 nuits, avec piscine).
       </p>
       <p>
         Cuisine équipée = économies importantes sur les repas, et un logement bien situé (près d’un
@@ -320,7 +321,9 @@ export default function BlogArticleReserverVoyageSud() {
       </p>
       <ul>
         <li>
-          les <strong>autres nuits</strong> (on a réservé Valladolid une fois sur place) ;
+          les <strong>autres nuits</strong> : on a réservé Valladolid une fois sur place — la{' '}
+          <strong>Casa Daniel</strong>, en plein centre historique, face à la boulangerie{' '}
+          <em>Tartalette</em> (panadería et cafetería qu’on recommande pour le petit-déj) ;
         </li>
         <li>
           les <strong>transports locaux</strong> (colectivos, bus ADO — payés cash au fil de l’eau)
@@ -356,10 +359,11 @@ export default function BlogArticleReserverVoyageSud() {
           <strong>Vol</strong> : ~500 $/personne au départ d’Ottawa
         </li>
         <li>
-          <strong>Hébergement Akumal</strong> : 742 $ (5 nuits, appartement plage)
+          <strong>Hébergement Akumal</strong> : 742 $ (Del Sol Beachfront, studio 65 m² plage, 5
+          nuits)
         </li>
         <li>
-          <strong>Hébergement Valladolid</strong> : 137 $ (2 nuits, avec piscine)
+          <strong>Hébergement Valladolid</strong> : 137 $ (Casa Daniel, centre historique, 2 nuits)
         </li>
         <li>
           <strong>Transfert privé</strong> Cancún → Akumal : ~145 $

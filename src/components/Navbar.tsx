@@ -5,57 +5,86 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
-// Dropdowns
+// Dropdown desktop générique
 import DropdownMenu from '@/components/DropdownMenu';
-import DestinationsMegaMenu from '@/components/DestinationsMegaMenu';
-import DropdownObjetsMenu from '@/components/DropdownObjetsMenu';
-import DropdownDestinations from '@/components/DropdownDestinations';
-import DropdownObjetsMobile from '@/components/DropdownObjetsMobile';
+
+// Source unique + résolveurs de slots
+import { NAV_SECTIONS, NAV_CTAS, type NavItem } from '@/config/navConfig';
+import { resolveDesktopSlot } from '@/config/componentSlots.desktop';
+import { resolveMobileSlot } from '@/config/componentSlots.mobile';
 
 // Icons
-import MapIcon from '@mui/icons-material/Map';
-import GroupsIcon from '@mui/icons-material/Groups';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 
 // ─────────────────────────────────────────────────────────────
+// Résolution des items d'une section pour DropdownMenu (desktop)
+// Transforme les `slot` en composants desktop.
+function toDesktopItems(items: NavItem[]) {
+  return items.map((item) =>
+    item.slot
+      ? { label: item.label, component: resolveDesktopSlot(item.slot) }
+      : { label: item.label, href: item.href },
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
 // Accordion mobile
 function AccordionSection({
   title,
+  href,
   items,
   onClose,
 }: {
   title: string;
-  items: { label: string; href?: string; component?: React.ReactNode }[];
+  href?: string;
+  items: NavItem[];
   onClose: () => void;
 }) {
   const [open, setOpen] = useState(false);
+
   return (
     <div className="border-b border-gray-100 pb-2">
-      <button
-        onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between rounded-md p-2 text-left font-medium text-gray-700 hover:bg-[#e11d48]/10 hover:text-[#e11d48]"
-        aria-expanded={open}
-      >
-        <span className="text-sm">{title}</span>
-        {open ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-      </button>
+      <div className="flex w-full items-center justify-between">
+        {/* Titre : cliquable vers le hub si href fourni, sinon simple libellé */}
+        {href ? (
+          <Link
+            href={href}
+            onClick={onClose}
+            className="flex-1 rounded-md p-2 text-left text-sm font-medium text-gray-700 hover:bg-[#e11d48]/10 hover:text-[#e11d48]"
+          >
+            {title}
+          </Link>
+        ) : (
+          <span className="flex-1 p-2 text-left text-sm font-medium text-gray-700">{title}</span>
+        )}
+
+        {/* Chevron : ne déplie/replie que l'accordéon */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="rounded-md p-2 text-gray-500 hover:bg-[#e11d48]/10 hover:text-[#e11d48]"
+          aria-expanded={open}
+          aria-label={open ? `Replier ${title}` : `Déplier ${title}`}
+        >
+          {open ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+        </button>
+      </div>
 
       {open && (
-        <div className="space-y-2 pl-4 pt-2">
+        <div className="space-y-1 pl-4 pt-1">
           {items.map((item, idx) => (
             <div key={idx}>
-              {item.href ? (
+              {item.slot ? (
+                resolveMobileSlot(item.slot)
+              ) : (
                 <Link
-                  href={item.href}
+                  href={item.href ?? '#'}
                   onClick={onClose}
-                  className="block text-sm text-gray-600 hover:text-[#e11d48]"
+                  className="block rounded-md px-2 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#e11d48]"
                 >
                   {item.label}
                 </Link>
-              ) : (
-                item.component
               )}
             </div>
           ))}
@@ -112,88 +141,46 @@ export default function Navbar() {
 
           {/* Menu Desktop */}
           <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 md:flex">
-            {/* Découvrir */}
-            <DropdownMenu
-              title="Découvrir le Québec"
-              icon={<ChevronDown size={16} />}
-              items={[
-                { label: '🌄 Destinations', component: <DestinationsMegaMenu /> },
-                { label: '🌿 Vivre une expérience', href: '/experiences' },
-                { label: '🚐 Le Canada en VR', href: '/blog/location-vr' },
-                { label: '🧀 Producteurs du Québec', href: '/producteurs' },
-                { label: '⛺ Camping', href: '/camping' },
-              ]}
-            />
+            {NAV_SECTIONS.map((section) => (
+              <DropdownMenu
+                key={section.title}
+                title={section.title}
+                icon={section.icon}
+                items={toDesktopItems(section.items)}
+              />
+            ))}
 
-            {/* Préparer son voyage */}
-            <DropdownMenu
-              title={
-                <span className="whitespace-nowrap">
-                  <span className="hidden lg:inline">Préparer&nbsp;son&nbsp;voyage</span>
-                  <span className="inline lg:hidden">Préparer</span>
-                </span>
-              }
-              icon={<MapIcon style={{ color: '#e11d48', fontSize: 20 }} />}
-              items={[
-                { label: '🗺️ Planifier son itinéraire', href: '/planificateur' },
-                { label: '🧳 Produits de voyage', component: <DropdownObjetsMenu /> },
-                { label: '📹 Vidéos', href: '/videos' },
-                { label: '✈️ Vols', href: '/vols' },
-              ]}
-            />
-            {/* Voyager dans le Sud */}
-            <DropdownMenu
-              title={
-                <span className="whitespace-nowrap">
-                  <span className="hidden lg:inline">Voyager&nbsp;dans&nbsp;le&nbsp;Sud</span>
-                  <span className="inline lg:hidden">Le Sud</span>
-                </span>
-              }
-              icon={<ChevronDown size={16} />}
-              items={[
-                { label: '🌴 Tous les guides du Sud', href: '/voyager-dans-le-sud' },
-                { label: '🇲🇽 Mexique (Yucatán) sans voiture', href: '/blog/mexique-yucatan' },
-                {
-                  label: '🧭 Réserver son voyage soi-même',
-                  href: '/blog/reserver-voyage-sud-soi-meme',
-                },
-                { label: '💳 Argent & cartes en voyage', href: '/blog/argent-cartes-voyage' },
-                { label: '📶 eSIM & VPN pour rester connecté', href: '/blog/vpn-esim-voyage' },
-                { label: '🧳 Quoi mettre dans sa valise', href: '/blog/valise-mexique' },
-              ]}
-            />
-            {/* Communauté */}
-            <DropdownMenu
-              title="Communauté"
-              icon={<GroupsIcon style={{ color: '#8b5cf6', fontSize: 20 }} />}
-              items={[
-                { href: '/itineraires-communaute', label: '🗂️ Itinéraires' },
-                { href: '/contact', label: '📧 Contact' },
-              ]}
-            />
-            {/* coups de coeur du mois (CTA) */}
-            <Link
-              href="/coups-de-coeur"
-              className="inline-flex items-center gap-2 whitespace-nowrap rounded-xl px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100"
-              aria-label="Voir le coup de cœur du mois GoQuébeCan"
-            >
-              <span aria-hidden>❤️</span>
-              <span className="whitespace-nowrap">Coup de cœur</span>
-            </Link>
-            {/* Économiser (CTA) */}
-            <Link
-              href="/offres"
-              className="group inline-flex items-center gap-2 rounded-xl bg-orange-500 px-3 py-2 font-semibold text-white shadow-md shadow-orange-500/20 transition hover:bg-orange-600"
-              aria-label="Voir les offres spéciales pour économiser"
-            >
-              <span className="inline-flex items-center gap-2">
-                <CardGiftcardIcon style={{ fontSize: 18 }} />
-                Économiser
-              </span>
-              <span className="ml-1 rounded-md bg-white/20 px-2 py-0.5 text-xs font-bold tracking-wide group-hover:bg-white/25">
-                Nouveau
-              </span>
-            </Link>
+            {/* CTA top-level */}
+            {NAV_CTAS.map((cta) =>
+              cta.variant === 'solid' ? (
+                <Link
+                  key={cta.href}
+                  href={cta.href}
+                  className="group inline-flex items-center gap-2 rounded-xl bg-orange-500 px-3 py-2 font-semibold text-white shadow-md shadow-orange-500/20 transition hover:bg-orange-600"
+                  aria-label={cta.ariaLabel}
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <CardGiftcardIcon style={{ fontSize: 18 }} />
+                    {cta.label}
+                  </span>
+                  {cta.badge && (
+                    <span className="ml-1 rounded-md bg-white/20 px-2 py-0.5 text-xs font-bold tracking-wide group-hover:bg-white/25">
+                      {cta.badge}
+                    </span>
+                  )}
+                </Link>
+              ) : (
+                <Link
+                  key={cta.href}
+                  href={cta.href}
+                  className="inline-flex items-center gap-2 whitespace-nowrap rounded-xl px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100"
+                  aria-label={cta.ariaLabel}
+                >
+                  {cta.emoji && <span aria-hidden>{cta.emoji}</span>}
+                  <span className="whitespace-nowrap">{cta.label}</span>
+                </Link>
+              ),
+            )}
           </div>
 
           {/* Bouton Menu Mobile */}
@@ -223,76 +210,51 @@ export default function Navbar() {
       {/* Menu Mobile */}
       <div
         id="mobile-menu"
-        className={`fixed left-0 top-16 z-50 w-full origin-top transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed left-0 top-16 z-50 max-h-[calc(100vh-4rem)] w-full origin-top overflow-y-auto transition-transform duration-300 ease-in-out md:hidden ${
           isMenuOpen ? 'scale-y-100 opacity-100' : 'pointer-events-none scale-y-0 opacity-0'
         }`}
       >
-        <div className="space-y-4 rounded-b-xl bg-white px-4 pb-3 pt-2 shadow-lg">
-          <AccordionSection
-            title="Découvrir le Québec"
-            items={[
-              { label: '🌄 Destinations', component: <DropdownDestinations /> },
-              { label: '🌿 Vivre une expérience', href: '/experiences' },
-              { label: '🧀 Producteurs du Québec', href: '/producteurs' },
-              { label: '⛺ Camping', href: '/camping' },
-              { label: '🚐 Le Canada en VR', href: '/blog/location-vr' },
-            ]}
-            onClose={() => setIsMenuOpen(false)}
-          />
-          {/* ✅ Coup de cœur (top-level, au-dessus des accordéons) */}
-          <Link
-            href="/coups-de-coeur"
-            onClick={() => setIsMenuOpen(false)}
-            className="inline-flex w-full items-center gap-2 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100"
-            aria-label="Voir le coup de cœur du mois GoQuébeCan"
-          >
-            <span aria-hidden>❤️</span>
-            <span className="whitespace-nowrap">Coup de cœur</span>
-          </Link>
+        <div className="space-y-3 rounded-b-xl bg-white px-4 pb-4 pt-2 shadow-lg">
+          {NAV_SECTIONS.map((section) => (
+            <AccordionSection
+              key={section.title}
+              title={section.title}
+              href={section.href}
+              items={section.items}
+              onClose={() => setIsMenuOpen(false)}
+            />
+          ))}
 
-          <AccordionSection
-            title="Préparer son voyage"
-            items={[
-              { label: '🗺️ Planifier son itinéraire', href: '/planificateur' },
-              { label: '🎒 Objets utiles', component: <DropdownObjetsMobile /> },
-              { label: '📹 Vidéos', href: '/videos' },
-              { label: '✈️ Vols', href: '/vols' },
-            ]}
-            onClose={() => setIsMenuOpen(false)}
-          />
-
-          <AccordionSection
-            title="Communauté"
-            items={[
-              { label: '🧭 Itinéraires de la communauté', href: '/itineraires-communaute' },
-              { label: '📬 Contact', href: '/contact' },
-            ]}
-            onClose={() => setIsMenuOpen(false)}
-          />
-
-          {/* ✅ Nouvelle section mobile : Économiser */}
-          <AccordionSection
-            title="Économiser"
-            items={[
-              {
-                label: '',
-                component: (
-                  <Link
-                    href="/offres"
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block w-full rounded-lg bg-orange-500 py-3 text-center font-semibold text-white shadow-md shadow-orange-500/20 hover:bg-orange-600"
-                    aria-label="Voir les offres spéciales"
-                  >
-                    🔥 Offres spéciales
-                    <span className="badge-pulse ml-1 rounded-md bg-white/20 px-2 py-0.5 text-xs font-bold tracking-wide group-hover:bg-white/25">
-                      Nouveau
-                    </span>
-                  </Link>
-                ),
-              },
-            ]}
-            onClose={() => setIsMenuOpen(false)}
-          />
+          {/* CTA top-level mobile */}
+          {NAV_CTAS.map((cta) =>
+            cta.variant === 'solid' ? (
+              <Link
+                key={cta.href}
+                href={cta.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="group block w-full rounded-lg bg-orange-500 py-3 text-center font-semibold text-white shadow-md shadow-orange-500/20 hover:bg-orange-600"
+                aria-label={cta.ariaLabel}
+              >
+                🔥 {cta.label}
+                {cta.badge && (
+                  <span className="ml-1 rounded-md bg-white/20 px-2 py-0.5 text-xs font-bold tracking-wide group-hover:bg-white/25">
+                    {cta.badge}
+                  </span>
+                )}
+              </Link>
+            ) : (
+              <Link
+                key={cta.href}
+                href={cta.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="inline-flex w-full items-center gap-2 whitespace-nowrap rounded-lg px-3 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-100"
+                aria-label={cta.ariaLabel}
+              >
+                {cta.emoji && <span aria-hidden>{cta.emoji}</span>}
+                <span className="whitespace-nowrap">{cta.label}</span>
+              </Link>
+            ),
+          )}
         </div>
       </div>
     </nav>
