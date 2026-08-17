@@ -3,8 +3,6 @@
  * Next.js 16+ — Types sûrs sans JSX
  */
 
-import type { Metadata } from 'next';
-
 /* ==========================
    CONSTANTES GLOBALES
    ========================== */
@@ -26,80 +24,8 @@ export const PUBLISHER = {
 /* ==========================
    TYPES OG + FONCTIONS SEO
    ========================== */
-export type AllowedOgType =
-  | 'website'
-  | 'article'
-  | 'profile'
-  | 'book'
-  | 'music.song'
-  | 'video.movie'
-  | 'video.episode'; // ✅ plus de "product"
-
-const ALLOWED_OG_TYPES: AllowedOgType[] = [
-  'website',
-  'article',
-  'profile',
-  'book',
-  'music.song',
-  'video.movie',
-  'video.episode',
-];
-
-/**
- * Génère le Metadata complet (Next.js)
- */
-export function buildMetadata2025({
-  title,
-  description,
-  canonical,
-  image,
-  keywords = [],
-  noIndex = false,
-  type = 'article',
-}: {
-  title: string;
-  description: string;
-  canonical: string;
-  image: string;
-  keywords?: string[];
-  noIndex?: boolean;
-  type?: string;
-}): Metadata {
-  const robots = noIndex
-    ? 'noindex, follow'
-    : 'index, follow, max-image-preview:large, max-video-preview:-1, max-snippet:-1';
-
-  const ogType: AllowedOgType = ALLOWED_OG_TYPES.includes(type as AllowedOgType)
-    ? (type as AllowedOgType)
-    : 'article';
-
-  return {
-    title,
-    description,
-    keywords,
-    alternates: {
-      canonical,
-      languages: { 'fr-CA': canonical },
-    },
-    openGraph: {
-      title,
-      description,
-      url: canonical,
-      siteName: SITE_NAME,
-      type: ogType,
-      images: [{ url: image, width: 1200, height: 630, alt: title }],
-      locale: DEFAULT_LOCALE,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [image],
-    },
-    metadataBase: new URL(SITE_URL),
-    other: { robots },
-  };
-}
+// Source unique : voir ./buildMetadata2025 (évite la définition dupliquée).
+export { buildMetadata2025, type AllowedOgType } from './buildMetadata2025';
 
 /* ==========================
    JSON-LD BUILDERS

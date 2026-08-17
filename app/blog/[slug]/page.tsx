@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 import { BLOG_SLUGS, type BlogSlug } from '@/components/blog/blogSlugs.server';
 import BlogArticleClient from '@/components/blog/BlogArticleClient';
 import { blogMetaExtended } from '@/components/lib/data/blogMeta.extended';
-import { seoToMetadata } from 'lib/seo/seoToMetadata';
+import { buildMetadata2025 } from '@/lib/seo/buildMetadata2025';
+import { HeadExtras } from '@/lib/seo/HeadExtras';
 
 /* ──────────────────────────────────────────────
    ⚙️ CONFIG ISR / SEO / RUNTIME
@@ -35,36 +36,25 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   const slug = params.slug;
   const meta = blogMetaExtended[slug];
 
-  const pageUrl = `${SITE_URL}/blog/${slug}`;
   const safeTitle = meta?.title ?? `GoQuébeCAN — ${slug}`;
   const safeDesc = meta?.description ?? `Découvrez notre article sur ${slug} avec GoQuébeCAN.`;
 
-  const ogImage =
-    meta?.image && meta.image.startsWith('http')
-      ? meta.image
-      : `${SITE_URL}${meta?.image ?? '/og/carte.avif'}`;
+  const ogImageRelative =
+    meta?.image && meta.image.startsWith('http') ? meta.image : (meta?.image ?? '/og/carte.avif');
 
   const keywords = Array.isArray(meta?.keywords)
     ? meta.keywords
     : meta?.keywords
       ? [meta.keywords]
-      : undefined;
+      : [];
 
-  return seoToMetadata({
+  return buildMetadata2025({
     title: safeTitle,
     description: safeDesc,
-    url: pageUrl,
-    image: ogImage,
+    canonical: `/blog/${slug}`,
+    image: ogImageRelative,
     keywords,
     type: 'article',
-    author: { name: 'GoQuébeCAN' },
-    publishedTime: meta?.publishedTime,
-    modifiedTime: meta?.modifiedTime,
-    siteName: 'GoQuébeCAN',
-    locale: meta?.locale ?? 'fr_CA',
-    twitterSite: '@goquebecan',
-    twitterCreator: '@goquebecan',
-    languageAlternates: { 'fr-CA': pageUrl },
   });
 }
 
@@ -88,6 +78,11 @@ export default async function BlogArticlePage({ params }: PageParams) {
 
   return (
     <main className="mx-auto max-w-7xl px-6 py-12" itemScope itemType="https://schema.org/Article">
+      <HeadExtras
+        articlePublishedTime={meta?.publishedTime}
+        articleModifiedTime={meta?.modifiedTime}
+      />
+
       {/* microdata minimal SEO */}
       <meta itemProp="url" content={pageUrl} />
       <meta itemProp="author" content="GoQuébeCAN" />

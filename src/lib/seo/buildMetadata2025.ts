@@ -7,7 +7,8 @@ export type AllowedOgType =
   | 'profile'
   | 'book'
   | 'music.song'
-  | 'video.movie';
+  | 'video.movie'
+  | 'video.episode';
 
 const ALLOWED_OG_TYPES: AllowedOgType[] = [
   'website',
@@ -16,6 +17,7 @@ const ALLOWED_OG_TYPES: AllowedOgType[] = [
   'book',
   'music.song',
   'video.movie',
+  'video.episode',
 ];
 
 export function buildMetadata2025({
