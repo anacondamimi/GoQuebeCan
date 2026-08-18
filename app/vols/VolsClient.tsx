@@ -17,6 +17,18 @@ export default function VolsClient() {
   return (
     <div className="mx-auto max-w-6xl space-y-14">
       {/* ─────────────────────────────
+         DIVULGATION D'AFFILIATION
+         ───────────────────────────── */}
+      <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-center text-sm text-gray-600">
+        Cette page contient des liens partenaires. Si tu réserves via ces liens, GoQuébeCAN peut
+        recevoir une commission, sans coût supplémentaire pour toi.{' '}
+        <Link href="/mentions-legales" className="font-semibold text-blue-600 hover:underline">
+          En savoir plus
+        </Link>
+        .
+      </div>
+
+      {/* ─────────────────────────────
          0) PARTENAIRES VOLS (UX friendly)
          ───────────────────────────── */}
       <div className="grid gap-6 md:grid-cols-2">
