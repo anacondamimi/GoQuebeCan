@@ -3,7 +3,6 @@ import * as React from 'react';
 import VolsWrapper from './VolsWrapper';
 import { buildMetadata2025, buildGenericJsonLd } from '@/lib/seo/seoConfig2025';
 import { JsonLd, HeadExtras } from '@/lib/seo/HeadExtras';
-import H1 from '@/components/typography/H1';
 import type { Metadata } from 'next';
 
 const CANONICAL = 'https://www.goquebecan.com/vols';
@@ -82,8 +81,7 @@ const jsonLd = buildGenericJsonLd({
 export default function VolsPage() {
   return (
     <main className="min-h-screen bg-white pt-8">
-      {/* ✅ H1 masqué pour SEO */}
-      <H1 className="sr-only">Vols pas chers & conseils pour voyager en avion</H1>
+      {/* H1 réel rendu par VolsClient (server-rendered, pas de dynamic ssr:false) */}
 
       {/* ✅ Meta extra et JSON-LD */}
       <HeadExtras />
