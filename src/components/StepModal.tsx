@@ -294,8 +294,8 @@ export default function StepModal({ isOpen, stepIndex, onClose, onDeleteStep }: 
         if (!open) onClose();
       }}
     >
-      <DialogContent className="max-h-[92svh] max-w-2xl overflow-hidden p-0 sm:max-h-[88vh] sm:max-w-5xl">
-        <DialogHeader className="border-b bg-gradient-to-r from-sky-50 via-white to-indigo-50 px-5 pb-4 pt-5">
+      <DialogContent className="!flex !flex-col max-h-[92svh] max-w-2xl overflow-hidden p-0 sm:max-h-[88vh] sm:max-w-5xl">
+        <DialogHeader className="flex-shrink-0 border-b bg-gradient-to-r from-sky-50 via-white to-indigo-50 px-5 pb-4 pt-5">
           <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
             <div>
               <DialogTitle className="text-xl font-semibold sm:text-2xl">
@@ -412,7 +412,7 @@ export default function StepModal({ isOpen, stepIndex, onClose, onDeleteStep }: 
           </div>
         </DialogHeader>
 
-        <div className="border-b bg-white px-5 py-3">
+        <div className="flex-shrink-0 border-b bg-white px-5 py-3">
           <div className="flex flex-wrap gap-2">
             {tabs.map((tab) => {
               const active = activeTab === tab.key;
@@ -434,7 +434,7 @@ export default function StepModal({ isOpen, stepIndex, onClose, onDeleteStep }: 
           </div>
         </div>
 
-        <div className="max-h-[calc(100svh-15rem)] overflow-y-auto px-5 py-4 sm:max-h-[calc(88vh-13rem)]">
+        <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4">
           {hasValidIndex ? (
             <>
               {activeTab === 'infos' && (

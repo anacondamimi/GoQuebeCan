@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T20:34:47.963Z",
+  "generatedAt": "2026-08-18T15:21:58.248Z",
   "siteUrl": "https://goquebecan.com",
   "counts": {
     "static": 20,
@@ -756,7 +756,7 @@
     },
     {
       "route": "/vols",
-      "lastModified": "2026-08-17T20:05:27.934Z",
+      "lastModified": "2026-08-18T15:14:07.414Z",
       "changeFrequency": "weekly",
       "priority": 0.8,
       "image": null,
